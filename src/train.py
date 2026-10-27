@@ -30,6 +30,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
 from eeg_decoder import (
+    BANDS,
     DecoderConfig,
     build_feature_dataset,
     feature_names,
@@ -354,7 +355,7 @@ def write_report(
 1. 从 BDF 文件名解析毫秒级开始时间，以实际事件时间配对 trial 并生成样本标签。
 2. 将 BAD_ACQ_SKIP 掩码传递到窗口级质量判断，含坏段的窗口不参与训练或指标计算。
 3. 每个判断仅使用过去 {config.window_s:g} 秒（{config.window_samples} 点），每 {config.stride_s:g} 秒判断一次。
-4. 当前窗口去均值后计算 {config.welch_s:g} 秒 Welch 频谱、13 个细分频带的绝对/相对对数功率，以及 Hjorth、过零率、频谱熵等 11 个补充特征，共 {len(feature_names())} 维。
+4. 当前窗口去均值后计算 {config.welch_s:g} 秒 Welch 频谱、{len(BANDS)} 个细分频带的绝对/相对对数功率，以及 Hjorth、过零率、频谱熵等 11 个补充特征，共 {len(feature_names())} 维；48–52 Hz 工频区间不构造频带特征。
 5. 训练时排除跨标签窗口；推理时按真实时间顺序输出，不借用未来标签或未来样本。
 6. 流式类只保留 {config.window_s:g} 秒 deque 历史，不使用全记录标准化、双向滤波或未来平滑。
 
@@ -409,7 +410,7 @@ python -m pytest test -q
 def load_or_build_features(data_dir: Path, output_dir: Path, config: DecoderConfig, rebuild: bool) -> tuple[dict, pd.DataFrame]:
     cache_dir = output_dir.parent / "cache"
     cache_dir.mkdir(parents=True, exist_ok=True)
-    key = f"w{config.window_s:g}_s{config.stride_s:g}_welch{config.welch_s:g}_fs{config.fs}"
+    key = f"w{config.window_s:g}_s{config.stride_s:g}_welch{config.welch_s:g}_fs{config.fs}_feat{len(feature_names())}"
     cache_path = cache_dir / f"features_{key}.npz"
     summary_path = cache_dir / f"summaries_{key}.json"
     if cache_path.exists() and summary_path.exists() and not rebuild:
@@ -497,7 +498,7 @@ def main() -> None:
             "joblib": joblib.__version__,
         },
     }
-    joblib.dump(args.model_out and artifact, args.model_out, compress=3)
+    joblib.dump(artifact, args.model_out, compress=3)
     write_report(
         args.report_out,
         config,

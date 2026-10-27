@@ -58,6 +58,9 @@ def main() -> None:
         "threshold": artifact["threshold"],
         "window_s": decoder.config.window_s,
     }
+    args.output.with_suffix(".summary.json").write_text(
+        json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 
 

@@ -28,6 +28,11 @@ BANDS = (
     (30.0, 35.0),
     (35.0, 40.0),
     (40.0, 45.0),
+    (45.0, 48.0),
+    (52.0, 62.0),
+    (62.0, 80.0),
+    (80.0, 100.0),
+    (100.0, 120.0),
 )
 
 
@@ -337,6 +342,7 @@ def discover_records(data_dir: str | Path) -> list[tuple[str, Path, Path]]:
 
 def build_feature_dataset(data_dir: str | Path, config: DecoderConfig) -> tuple[dict, list[dict]]:
     xs, ys, pures, groups, all_endpoints = [], [], [], [], []
+    baselines = []
     summaries = []
     for record_id, bdf_path, event_path in discover_records(data_dir):
         record = load_bdf(bdf_path)
@@ -349,6 +355,18 @@ def build_feature_dataset(data_dir: str | Path, config: DecoderConfig) -> tuple[
         features = extract_record_features(
             record["signal_uv"], record["valid"], labels, config
         )
+        baseline_end = min(round(60 * config.fs), record["n_samples"])
+        baseline_vectors = []
+        for endpoint in range(config.window_samples - 1, baseline_end, config.stride_samples):
+            start = endpoint - config.window_samples + 1
+            if np.all(record["valid"][start : endpoint + 1]):
+                baseline_vectors.append(
+                    extract_features(record["signal_uv"][start : endpoint + 1], config)
+                )
+        if not baseline_vectors:
+            raise ValueError(f"{record_id} 前 60 秒没有有效基线窗口")
+        baseline = np.median(np.asarray(baseline_vectors), axis=0).astype(np.float32)
+        baselines.append(np.repeat(baseline[None, :], len(features["y"]), axis=0))
         xs.append(features["X"])
         ys.append(features["y"])
         pures.append(features["pure"])
@@ -371,6 +389,7 @@ def build_feature_dataset(data_dir: str | Path, config: DecoderConfig) -> tuple[
                 "bad_s": float(np.sum(~record["valid"]) / config.fs),
                 "usable_windows": len(features["y"]),
                 "pure_windows": int(np.sum(features["pure"])),
+                "baseline_windows": len(baseline_vectors),
                 "mean_abs_uv": float(np.mean(np.abs(record["signal_uv"][record["valid"]]))),
             }
         )
@@ -385,6 +404,7 @@ def build_feature_dataset(data_dir: str | Path, config: DecoderConfig) -> tuple[
         "pure": np.concatenate(pures),
         "groups": np.concatenate(groups),
         "endpoints": np.concatenate(all_endpoints),
+        "baseline": np.concatenate(baselines),
     }
     return dataset, summaries
 

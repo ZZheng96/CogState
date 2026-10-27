@@ -26,7 +26,7 @@ from train import make_folds  # noqa: E402
 
 class SimpleModel:
     def predict_proba(self, features):
-        score = 1 / (1 + np.exp(-features[:, 0]))
+        score = 1 / (1 + np.exp(-features[:, feature_names().index("log_variance")]))
         return np.column_stack([1 - score, score])
 
 
@@ -114,7 +114,7 @@ def test_future_changes_cannot_change_past_outputs():
     original = signal()
     modified = original.copy()
     split = 8 * config.fs
-    modified[split:] += 1000
+    modified[split:] *= 100
     outputs = []
     for samples in [original, modified]:
         decoder = CausalStreamDecoder(SimpleModel(), threshold=0.5, config=config)
