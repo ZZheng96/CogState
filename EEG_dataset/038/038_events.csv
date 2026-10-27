@@ -1,0 +1,16 @@
+﻿local_time,event,phase,key
+2026-10-22T18:58:24.7049282+08:00,trial_start,relax,
+2026-10-22T19:03:24.7060139+08:00,trial_end,relax,
+2026-10-22T19:03:24.7093188+08:00,trial_start,task,
+2026-10-22T19:05:18.3955327+08:00,key_press,task,Enter
+2026-10-22T19:08:24.7102461+08:00,trial_end,task,
+2026-10-22T19:08:24.7171256+08:00,trial_start,relax,
+2026-10-22T19:13:24.7042739+08:00,trial_end,relax,
+2026-10-22T19:13:24.7085174+08:00,trial_start,task,
+2026-10-22T19:18:24.7087235+08:00,trial_end,task,
+2026-10-22T19:18:24.7151312+08:00,trial_start,relax,
+2026-10-22T19:23:24.7111027+08:00,trial_end,relax,
+2026-10-22T19:23:24.7174448+08:00,trial_start,task,
+2026-10-22T19:23:57.1732723+08:00,key_press,task,Enter
+2026-10-22T19:27:20.3765514+08:00,key_press,task,Enter
+2026-10-22T19:28:24.7059808+08:00,trial_end,task,
