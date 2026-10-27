@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import platform
 from pathlib import Path
@@ -17,8 +18,9 @@ import scipy
 import sklearn
 from sklearn.base import clone
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.ensemble import ExtraTreesClassifier
+from sklearn.ensemble import ExtraTreesClassifier, HistGradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
+from sklearn.inspection import permutation_importance
 from sklearn.metrics import (
     auc,
     balanced_accuracy_score,
@@ -29,11 +31,17 @@ from sklearn.metrics import (
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
+import eeg_decoder
 from eeg_decoder import (
     BANDS,
+    FEATURE_VERSION,
     DecoderConfig,
     build_feature_dataset,
+    causal_smooth_scores,
+    discover_records,
     feature_names,
+    fuse_protocol_scores,
+    learn_protocol_template,
     model_scores,
 )
 
@@ -89,10 +97,43 @@ def candidates(seed: int) -> dict:
             min_samples_leaf=20,
             max_features=0.8,
             class_weight="balanced",
-            n_jobs=-1,
+            n_jobs=1,
+            random_state=seed,
+        ),
+        "hist_gradient_boosting": HistGradientBoostingClassifier(
+            max_iter=180,
+            learning_rate=0.05,
+            max_leaf_nodes=15,
+            min_samples_leaf=50,
+            l2_regularization=1.0,
+            class_weight="balanced",
+            early_stopping=False,
             random_state=seed,
         ),
     }
+
+
+def feature_names_for_mode(mode: str) -> list[str]:
+    base = feature_names()
+    if mode == "raw":
+        return base
+    if mode == "delta":
+        return [f"baseline_delta_{name}" for name in base]
+    if mode == "raw_delta":
+        return base + [f"baseline_delta_{name}" for name in base]
+    raise ValueError(f"未知 feature_mode: {mode}")
+
+
+def apply_feature_mode(dataset: dict, mode: str) -> dict:
+    transformed = dict(dataset)
+    raw = dataset["X"]
+    if mode == "delta":
+        transformed["X"] = raw - dataset["baseline"]
+    elif mode == "raw_delta":
+        transformed["X"] = np.concatenate([raw, raw - dataset["baseline"]], axis=1)
+    elif mode != "raw":
+        raise ValueError(f"未知 feature_mode: {mode}")
+    return transformed
 
 
 def make_folds(groups: np.ndarray, n_splits: int, seed: int) -> list[np.ndarray]:
@@ -116,7 +157,16 @@ def classification_metrics(y: np.ndarray, scores: np.ndarray, threshold: float =
     }
 
 
-def cross_validate(dataset: dict, folds: list[np.ndarray], seed: int) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
+def cross_validate(
+    dataset: dict,
+    folds: list[np.ndarray],
+    seed: int,
+    postprocess: str = "none",
+    stride_samples: int = 250,
+    protocol_templates: list[dict] | None = None,
+    protocol_weight: float = 0.1,
+    fs: int = 250,
+) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
     y = dataset["y"]
     groups = dataset["groups"]
     pure = dataset["pure"]
@@ -126,11 +176,28 @@ def cross_validate(dataset: dict, folds: list[np.ndarray], seed: int) -> tuple[p
     for name, estimator in candidates(seed).items():
         scores = np.full(len(y), np.nan, dtype=np.float64)
         for fold_index, test_records in enumerate(folds, start=1):
-            test_mask = np.isin(groups, test_records)
-            train_mask = (~np.isin(groups, test_records)) & pure
+            context_mask = np.isin(groups, test_records)
+            test_mask = context_mask & (y >= 0)
+            train_mask = (~context_mask) & pure
             model = clone(estimator)
             model.fit(dataset["X"][train_mask], y[train_mask])
-            scores[test_mask] = model_scores(model, dataset["X"][test_mask])
+            context_scores = model_scores(model, dataset["X"][context_mask])
+            smoothed_context = causal_smooth_scores(
+                context_scores,
+                groups[context_mask],
+                dataset["endpoints"][context_mask],
+                stride_samples,
+                postprocess,
+            )
+            if protocol_templates is not None:
+                smoothed_context = fuse_protocol_scores(
+                    smoothed_context,
+                    dataset["endpoints"][context_mask],
+                    fs,
+                    protocol_templates[fold_index - 1],
+                    protocol_weight,
+                )
+            scores[test_mask] = smoothed_context[test_mask[context_mask]]
             metrics = classification_metrics(y[test_mask], scores[test_mask])
             fold_rows.append(
                 {
@@ -143,10 +210,11 @@ def cross_validate(dataset: dict, folds: list[np.ndarray], seed: int) -> tuple[p
                 }
             )
             print(f"{name} fold {fold_index}: bACC={metrics['bacc']:.4f}, AUC={metrics['auc']:.4f}", flush=True)
-        if not np.all(np.isfinite(scores)):
+        labeled = y >= 0
+        if not np.all(np.isfinite(scores[labeled])):
             raise RuntimeError(f"{name} 的 OOF 预测不完整")
         all_scores[name] = scores
-        metrics = classification_metrics(y, scores)
+        metrics = classification_metrics(y[labeled], scores[labeled])
         model_folds = [row for row in fold_rows if row["model"] == name]
         rows.append(
             {
@@ -236,6 +304,7 @@ def save_best_diagnostics(
     threshold: float,
     final_model,
     output_dir: Path,
+    model_feature_names: list[str],
 ) -> pd.DataFrame:
     y = dataset["y"]
     groups = dataset["groups"]
@@ -258,11 +327,24 @@ def save_best_diagnostics(
     fig.savefig(output_dir / "best_score_diagnostics.png", dpi=180)
     plt.close(fig)
 
-    importance = feature_importance(final_model, feature_names())
+    importance = feature_importance(final_model, model_feature_names)
+    if importance is None:
+        rng = np.random.default_rng(42)
+        candidates = np.flatnonzero(dataset["pure"])
+        selected = rng.choice(candidates, size=min(5000, len(candidates)), replace=False)
+        importance = permutation_importance(
+            final_model,
+            dataset["X"][selected],
+            y[selected],
+            scoring="roc_auc",
+            n_repeats=2,
+            random_state=42,
+            n_jobs=-1,
+        ).importances_mean
     if importance is not None:
         order = np.argsort(np.abs(importance))[-20:][::-1]
         fig, ax = plt.subplots(figsize=(10, 7), constrained_layout=True)
-        names = np.array(feature_names())[order]
+        names = np.array(model_feature_names)[order]
         values = importance[order]
         ax.barh(np.arange(len(order))[::-1], values, color=np.where(values >= 0, "#F58518", "#4C78A8"))
         ax.set_yticks(np.arange(len(order))[::-1], names)
@@ -317,6 +399,10 @@ def save_example_timeline(dataset: dict, scores: np.ndarray, record_metrics: pd.
 def write_report(
     path: Path,
     config: DecoderConfig,
+    feature_mode: str,
+    postprocess: str,
+    protocol_prior: bool,
+    protocol_weight: float,
     summaries: pd.DataFrame,
     comparison: pd.DataFrame,
     best_name: str,
@@ -355,11 +441,14 @@ def write_report(
 1. 从 BDF 文件名解析毫秒级开始时间，以实际事件时间配对 trial 并生成样本标签。
 2. 将 BAD_ACQ_SKIP 掩码传递到窗口级质量判断，含坏段的窗口不参与训练或指标计算。
 3. 每个判断仅使用过去 {config.window_s:g} 秒（{config.window_samples} 点），每 {config.stride_s:g} 秒判断一次。
-4. 当前窗口去均值后计算 {config.welch_s:g} 秒 Welch 频谱、{len(BANDS)} 个细分频带的绝对/相对对数功率，以及 Hjorth、过零率、频谱熵等 11 个补充特征，共 {len(feature_names())} 维；48–52 Hz 工频区间不构造频带特征。
-5. 训练时排除跨标签窗口；推理时按真实时间顺序输出，不借用未来标签或未来样本。
-6. 流式类只保留 {config.window_s:g} 秒 deque 历史，不使用全记录标准化、双向滤波或未来平滑。
+4. 当前窗口去均值后计算 {config.welch_s:g} 秒 Welch 频谱、{len(BANDS)} 个细分频带的绝对/相对对数功率，以及 Hjorth、过零率、频谱熵等 11 个补充特征；48–52 Hz 工频区间不构造频带特征。
+5. 特征模式为 `{feature_mode}`，模型输入共 {len(feature_names_for_mode(feature_mode))} 维。`delta` 使用当前特征减去开头标称 60 秒对应的有效窗口基线中位数，`raw_delta` 同时保留原始与差分特征；坏段自动顺延，校准未完成时使用扩展中位数，全程不使用标签。
+6. 训练时排除跨标签窗口；推理时按真实时间顺序输出，不借用未来标签或未来样本。
+7. 流式类的原始信号缓存只有 {config.window_s:g} 秒，不使用全记录标准化、双向滤波或未来平滑；仅在线自适应模式保存标称 60 秒（坏段顺延）的无标签特征统计。
+8. 后处理为 `{postprocess}`。`mean3` 仅平均当前及前两次有效分数，4 秒窗口下总感受野为 6 秒；遇到坏段或时间间隙即重置。
+9. 协议时间先验启用状态为 `{protocol_prior}`。正式结果仅在关闭该先验时作为纯 EEG 成绩；启用时会根据训练事件的相对录制时刻预测阶段，属于额外时间信息，不能解释为纯 EEG 解码提升。
 
-分数定义为 `P(task)`，越大越倾向认知负荷态；无效窗口输出 `valid=false` 和中性分数 0.5。
+`score_task` 为越大越倾向认知负荷态的连续分数；无效窗口输出 `valid=false` 和中性分数 0.5。
 
 ## 4. 模型对比
 
@@ -392,6 +481,7 @@ def write_report(
 - 窗口跨状态边界时，历史 EEG 与末端标签可能暂时不一致，这是严格因果任务的真实难度，未通过未来信息修正。
 - 当前没有可靠证据把编号记录映射到具体被试，因此按记录分组；若确认同一被试有多条记录，应改为按被试分组重新验证。
 - 概率分布可能在不同被试间漂移，AUC 与 bACC 应同时关注，不能仅报告总体准确率。
+- 协议时间先验不是纯 EEG 解码证据，且赛题未明确允许根据录制时刻推断阶段；正式模型默认关闭该功能，协议实验结果不计入合规优化指标。
 
 ## 7. 复现入口
 
@@ -407,10 +497,26 @@ python -m pytest test -q
     path.write_text(text, encoding="utf-8")
 
 
+def cache_fingerprint(data_dir: Path) -> str:
+    files = []
+    for record_id, bdf_path, event_path in discover_records(data_dir):
+        for path in (bdf_path, event_path):
+            stat = path.stat()
+            files.append([record_id, path.name, stat.st_size, stat.st_mtime_ns])
+    payload = {
+        "data_dir": str(data_dir.resolve()),
+        "files": files,
+        "feature_version": FEATURE_VERSION,
+        "feature_source_sha256": hashlib.sha256(Path(eeg_decoder.__file__).read_bytes()).hexdigest(),
+    }
+    encoded = json.dumps(payload, ensure_ascii=False, sort_keys=True).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()[:16]
+
+
 def load_or_build_features(data_dir: Path, output_dir: Path, config: DecoderConfig, rebuild: bool) -> tuple[dict, pd.DataFrame]:
     cache_dir = output_dir.parent / "cache"
     cache_dir.mkdir(parents=True, exist_ok=True)
-    key = f"w{config.window_s:g}_s{config.stride_s:g}_welch{config.welch_s:g}_fs{config.fs}_feat{len(feature_names())}"
+    key = f"w{config.window_s:g}_s{config.stride_s:g}_welch{config.welch_s:g}_fs{config.fs}_{cache_fingerprint(data_dir)}"
     cache_path = cache_dir / f"features_{key}.npz"
     summary_path = cache_dir / f"summaries_{key}.json"
     if cache_path.exists() and summary_path.exists() and not rebuild:
@@ -437,17 +543,44 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--window-s", type=float, default=4.0)
     parser.add_argument("--stride-s", type=float, default=1.0)
+    parser.add_argument("--feature-mode", choices=["raw", "delta", "raw_delta"], default="raw")
+    parser.add_argument("--postprocess", choices=["none", "mean3"], default="mean3")
+    parser.add_argument("--protocol-prior", action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument("--protocol-weight", type=float, default=0.1)
     parser.add_argument("--rebuild", action="store_true")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     args.model_out.parent.mkdir(parents=True, exist_ok=True)
     config = DecoderConfig(window_s=args.window_s, stride_s=args.stride_s)
+    if args.postprocess == "mean3" and config.window_s + 2 * config.stride_s > 6:
+        raise ValueError("mean3 与当前窗口组合会超过 6 秒有效感受野")
     dataset, summaries = load_or_build_features(args.data, args.output, config, args.rebuild)
+    dataset = apply_feature_mode(dataset, args.feature_mode)
+    model_feature_names = feature_names_for_mode(args.feature_mode)
     summaries.to_csv(args.output / "record_summary.csv", index=False)
     save_data_overview(summaries, args.output / "data_overview.png")
 
     folds = make_folds(dataset["groups"], args.folds, args.seed)
-    comparison, fold_metrics, all_scores = cross_validate(dataset, folds, args.seed)
+    protocol_templates = None
+    if args.protocol_prior:
+        all_records = set(np.unique(dataset["groups"]).tolist())
+        protocol_templates = [
+            learn_protocol_template(args.data, all_records - set(test_records.tolist()))
+            for test_records in folds
+        ]
+    comparison, fold_metrics, all_scores = cross_validate(
+        dataset,
+        folds,
+        args.seed,
+        args.postprocess,
+        config.stride_samples,
+        protocol_templates,
+        args.protocol_weight,
+        config.fs,
+    )
+    labeled = dataset["y"] >= 0
+    dataset = {name: values[labeled] for name, values in dataset.items()}
+    all_scores = {name: values[labeled] for name, values in all_scores.items()}
     comparison.to_csv(args.output / "model_comparison.csv", index=False)
     fold_metrics.to_csv(args.output / "fold_metrics.csv", index=False)
     save_model_comparison(comparison, args.output / "model_comparison.png")
@@ -458,7 +591,9 @@ def main() -> None:
     threshold, tuned_bacc = best_threshold(dataset["y"], scores)
     final_model = clone(candidates(args.seed)[best_name])
     final_model.fit(dataset["X"][dataset["pure"]], dataset["y"][dataset["pure"]])
-    record_metrics = save_best_diagnostics(dataset, scores, threshold, final_model, args.output)
+    record_metrics = save_best_diagnostics(
+        dataset, scores, threshold, final_model, args.output, model_feature_names
+    )
     record_metrics.to_csv(args.output / "record_metrics.csv", index=False)
     example_record = save_example_timeline(
         dataset, scores, record_metrics, threshold, args.output / "example_timeline.png"
@@ -473,18 +608,25 @@ def main() -> None:
         }
     ).to_csv(args.output / "oof_predictions.csv", index=False)
 
+    protocol = learn_protocol_template(args.data) if args.protocol_prior else None
     artifact = {
         "format_version": 1,
+        "feature_version": FEATURE_VERSION,
         "model_name": best_name,
         "model": final_model,
         "threshold": threshold,
         "config": config.to_dict(),
-        "feature_names": feature_names(),
+        "feature_mode": args.feature_mode,
+        "baseline_s": 60.0,
+        "postprocess": args.postprocess,
+        "protocol": protocol,
+        "protocol_weight": args.protocol_weight,
+        "feature_names": model_feature_names,
         "input_unit": "uV",
         "score_direction": "higher means task",
         "train_records": sorted(np.unique(dataset["groups"]).tolist()),
         "validation": {
-            "scheme": f"{args.folds}-fold grouped by record; fixed threshold 0.5 for comparison",
+            "scheme": f"{args.folds}-fold grouped by record; fixed threshold 0.5; protocol prior={args.protocol_prior}",
             "oof_bacc_at_0.5": float(comparison.iloc[0]["bacc"]),
             "oof_auc": float(comparison.iloc[0]["auc"]),
             "oof_bacc_tuned_optimistic": tuned_bacc,
@@ -502,6 +644,10 @@ def main() -> None:
     write_report(
         args.report_out,
         config,
+        args.feature_mode,
+        args.postprocess,
+        args.protocol_prior,
+        args.protocol_weight,
         summaries,
         comparison,
         best_name,

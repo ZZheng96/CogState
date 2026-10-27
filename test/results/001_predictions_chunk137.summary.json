@@ -1,0 +1,17 @@
+{
+  "input": "EEG_dataset\\001\\001_20261017_170137.984_UTC+0800.bdf",
+  "output": "test\\results\\001_predictions_chunk137.csv",
+  "model": "src\\model.joblib",
+  "chunk_size": 137,
+  "input_unit": "uV",
+  "score_direction": "higher means task",
+  "windows": 1914,
+  "valid_windows": 1894,
+  "task_windows": 1274,
+  "threshold": 0.4871062917541215,
+  "window_s": 4.0,
+  "feature_mode": "raw",
+  "postprocess": "mean3",
+  "protocol_prior": false,
+  "protocol_weight": null
+}

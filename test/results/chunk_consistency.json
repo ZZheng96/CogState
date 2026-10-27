@@ -1,0 +1,8 @@
+{
+  "chunk_sizes": [250, 137],
+  "windows": 1914,
+  "sample_index_identical": true,
+  "score_task_bitwise_identical": true,
+  "prediction_identical": true,
+  "valid_identical": true
+}

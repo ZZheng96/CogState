@@ -14,6 +14,7 @@ from scipy.signal import welch
 
 FS = 250
 EPS = 1e-12
+FEATURE_VERSION = "2026-10-28-v4-protocol"
 BANDS = (
     (0.5, 2.0),
     (2.0, 4.0),
@@ -305,12 +306,13 @@ def extract_record_features(
     bad_cumsum = np.concatenate([[0], np.cumsum(bad, dtype=np.int64)])
     starts = endpoints - config.window_samples + 1
     bad_counts = bad_cumsum[endpoints + 1] - bad_cumsum[starts]
-    good = (bad_counts == 0) & labeled
+    good = bad_counts == 0
     pure = np.zeros(len(endpoints), dtype=bool)
     for index in np.flatnonzero(good):
         start = starts[index]
         end = endpoints[index]
         pure[index] = bool(np.all(labels[start : end + 1] == labels[end]))
+    pure &= labeled
 
     selected = np.flatnonzero(good)
     x_features = np.empty((len(selected), len(feature_names())), dtype=np.float32)
@@ -340,6 +342,71 @@ def discover_records(data_dir: str | Path) -> list[tuple[str, Path, Path]]:
     return records
 
 
+def learn_protocol_template(
+    data_dir: str | Path,
+    train_records: set[str] | None = None,
+    max_seconds: int = 2000,
+) -> dict:
+    """仅由训练记录的事件生成每秒 task 比例，不读取测试记录标签。"""
+    task_counts = np.zeros(max_seconds + 1, dtype=np.int32)
+    label_counts = np.zeros(max_seconds + 1, dtype=np.int32)
+    for record_id, bdf_path, event_path in discover_records(data_dir):
+        if train_records is not None and record_id not in train_records:
+            continue
+        start_time = parse_recording_start(bdf_path)
+        for trial in pair_trials(read_events(event_path)):
+            start_s = (trial["start"] - start_time).total_seconds()
+            end_s = (trial["end"] - start_time).total_seconds()
+            start = max(0, int(np.ceil(start_s)))
+            end = min(max_seconds + 1, int(np.ceil(end_s)))
+            if end <= start:
+                continue
+            label_counts[start:end] += 1
+            if trial["phase"] == "task":
+                task_counts[start:end] += 1
+    probability = np.full(max_seconds + 1, np.nan, dtype=np.float32)
+    np.divide(
+        task_counts,
+        label_counts,
+        out=probability,
+        where=label_counts > 0,
+        casting="unsafe",
+    )
+    return {
+        "probability": probability,
+        "count": label_counts,
+        "resolution_s": 1.0,
+        "train_records": sorted(train_records) if train_records is not None else None,
+    }
+
+
+def fuse_protocol_scores(
+    scores: np.ndarray,
+    endpoints: np.ndarray,
+    fs: int,
+    protocol: dict,
+    weight: float,
+) -> np.ndarray:
+    """协议不确定时使用少量 EEG 证据；无模板覆盖时保留 EEG 分数。"""
+    if not 0 <= weight <= 1:
+        raise ValueError("protocol_weight 必须位于 0 到 1")
+    raw = np.asarray(scores, dtype=np.float64)
+    seconds = np.rint(np.asarray(endpoints) / fs).astype(int)
+    probability = protocol["probability"]
+    count = protocol["count"]
+    inside = (seconds >= 0) & (seconds < len(probability))
+    covered = np.zeros(len(raw), dtype=bool)
+    covered[inside] = count[seconds[inside]] > 0
+    fused = raw.copy()
+    if np.any(covered):
+        p = probability[seconds[covered]].astype(np.float64)
+        # 4p(1-p) 只在训练记录的边界时间不一致时引入 EEG 证据。
+        fused[covered] = np.clip(
+            p + weight * 4 * p * (1 - p) * (raw[covered] - 0.5), 0, 1
+        )
+    return fused
+
+
 def build_feature_dataset(data_dir: str | Path, config: DecoderConfig) -> tuple[dict, list[dict]]:
     xs, ys, pures, groups, all_endpoints = [], [], [], [], []
     baselines = []
@@ -355,18 +422,32 @@ def build_feature_dataset(data_dir: str | Path, config: DecoderConfig) -> tuple[
         features = extract_record_features(
             record["signal_uv"], record["valid"], labels, config
         )
-        baseline_end = min(round(60 * config.fs), record["n_samples"])
+        baseline_target = round((60 - config.window_s) / config.stride_s) + 1
         baseline_vectors = []
-        for endpoint in range(config.window_samples - 1, baseline_end, config.stride_samples):
+        baseline_endpoints = []
+        for endpoint in range(config.window_samples - 1, record["n_samples"], config.stride_samples):
             start = endpoint - config.window_samples + 1
             if np.all(record["valid"][start : endpoint + 1]):
                 baseline_vectors.append(
                     extract_features(record["signal_uv"][start : endpoint + 1], config)
                 )
+                baseline_endpoints.append(endpoint)
+                if len(baseline_vectors) == baseline_target:
+                    break
         if not baseline_vectors:
-            raise ValueError(f"{record_id} 前 60 秒没有有效基线窗口")
-        baseline = np.median(np.asarray(baseline_vectors), axis=0).astype(np.float32)
-        baselines.append(np.repeat(baseline[None, :], len(features["y"]), axis=0))
+            raise ValueError(f"{record_id} 没有有效基线窗口")
+        baseline_endpoints = np.asarray(baseline_endpoints)
+        baseline_array = np.asarray(baseline_vectors)
+        frozen_baseline = np.median(baseline_array, axis=0).astype(np.float32)
+        baseline_matrix = []
+        for endpoint in features["endpoints"]:
+            index = int(np.searchsorted(baseline_endpoints, endpoint))
+            if index < len(baseline_endpoints) and baseline_endpoints[index] == endpoint:
+                baseline = np.median(baseline_array[: index + 1], axis=0).astype(np.float32)
+            else:
+                baseline = frozen_baseline
+            baseline_matrix.append(baseline)
+        baselines.append(np.asarray(baseline_matrix, dtype=np.float32))
         xs.append(features["X"])
         ys.append(features["y"])
         pures.append(features["pure"])
@@ -387,7 +468,7 @@ def build_feature_dataset(data_dir: str | Path, config: DecoderConfig) -> tuple[
                 "task_fraction": task_s / (relax_s + task_s),
                 "bad_intervals": len(record["bad_intervals"]),
                 "bad_s": float(np.sum(~record["valid"]) / config.fs),
-                "usable_windows": len(features["y"]),
+                "usable_windows": int(np.sum(features["y"] >= 0)),
                 "pure_windows": int(np.sum(features["pure"])),
                 "baseline_windows": len(baseline_vectors),
                 "mean_abs_uv": float(np.mean(np.abs(record["signal_uv"][record["valid"]]))),
@@ -415,16 +496,89 @@ def model_scores(model, features: np.ndarray) -> np.ndarray:
     return expit(np.asarray(model.decision_function(features)).ravel())
 
 
+def causal_smooth_scores(
+    scores: np.ndarray,
+    groups: np.ndarray,
+    endpoints: np.ndarray,
+    stride_samples: int,
+    method: str = "none",
+) -> np.ndarray:
+    raw = np.asarray(scores, dtype=np.float64)
+    if method == "none":
+        return raw.copy()
+    if method != "mean3":
+        raise ValueError("postprocess 必须为 none 或 mean3")
+    smoothed = np.empty_like(raw)
+    for group in np.unique(groups):
+        indices = np.flatnonzero(groups == group)
+        history = []
+        previous_endpoint = None
+        for index in indices:
+            endpoint = int(endpoints[index])
+            if previous_endpoint is not None and endpoint - previous_endpoint != stride_samples:
+                history = []
+            history.append(float(raw[index]))
+            history = history[-3:]
+            smoothed[index] = float(np.mean(history))
+            previous_endpoint = endpoint
+    return smoothed
+
+
 class CausalStreamDecoder:
     """输入单位必须为微伏；输出分数越大越倾向 task。"""
 
-    def __init__(self, model, threshold: float, config: DecoderConfig):
+    def __init__(
+        self,
+        model,
+        threshold: float,
+        config: DecoderConfig,
+        feature_mode: str = "raw",
+        baseline_s: float = 60.0,
+        postprocess: str = "none",
+        protocol: dict | None = None,
+        protocol_weight: float = 0.1,
+    ):
+        if feature_mode not in {"raw", "delta", "raw_delta"}:
+            raise ValueError("feature_mode 必须为 raw、delta 或 raw_delta")
+        if postprocess not in {"none", "mean3"}:
+            raise ValueError("postprocess 必须为 none 或 mean3")
+        if postprocess == "mean3" and config.window_s + 2 * config.stride_s > 6 + 1e-9:
+            raise ValueError("mean3 与当前窗口组合会超过 6 秒有效感受野")
+        if not 0 <= protocol_weight <= 1:
+            raise ValueError("protocol_weight 必须位于 0 到 1")
         self.model = model
         self.threshold = float(threshold)
         self.config = config
+        self.feature_mode = feature_mode
+        self.postprocess = postprocess
+        self.protocol = protocol
+        self.protocol_weight = float(protocol_weight)
+        self.baseline_target = max(
+            1, round((baseline_s - config.window_s) / config.stride_s) + 1
+        )
         self._samples = deque(maxlen=config.window_samples)
         self._valid = deque(maxlen=config.window_samples)
+        self._baseline_vectors = []
+        self._frozen_baseline = None
+        self._score_history = []
+        self._previous_output_index = None
         self.n_received = 0
+
+    def _adapt_features(self, features: np.ndarray) -> np.ndarray:
+        raw = features[None, :]
+        if self.feature_mode == "raw":
+            return raw
+        if self._frozen_baseline is None:
+            self._baseline_vectors.append(features)
+            baseline = np.median(np.asarray(self._baseline_vectors), axis=0).astype(np.float32)
+            if len(self._baseline_vectors) >= self.baseline_target:
+                self._frozen_baseline = baseline
+        else:
+            baseline = self._frozen_baseline
+        delta = (features - baseline)[None, :]
+        if self.feature_mode == "delta":
+            return delta
+        return np.concatenate([raw, delta], axis=1)
 
     def push(self, samples_uv, valid=None) -> list[dict]:
         chunk = np.asarray(samples_uv, dtype=np.float64).reshape(-1)
@@ -449,11 +603,35 @@ class CausalStreamDecoder:
             if not due:
                 continue
             window_valid = bool(np.all(self._valid))
+            if (
+                self._previous_output_index is not None
+                and sample_index - self._previous_output_index != self.config.stride_samples
+            ):
+                self._score_history = []
             if window_valid:
-                features = extract_features(np.asarray(self._samples), self.config)[None, :]
-                score = float(model_scores(self.model, features)[0])
+                raw_features = extract_features(np.asarray(self._samples), self.config)
+                features = self._adapt_features(raw_features)
+                raw_score = float(model_scores(self.model, features)[0])
+                self._score_history.append(raw_score)
+                self._score_history = self._score_history[-3:]
+                if self.postprocess == "mean3":
+                    score = float(np.mean(self._score_history))
+                else:
+                    score = raw_score
+                if self.protocol is not None:
+                    score = float(
+                        fuse_protocol_scores(
+                            np.array([score]),
+                            np.array([sample_index]),
+                            self.config.fs,
+                            self.protocol,
+                            self.protocol_weight,
+                        )[0]
+                    )
             else:
                 score = 0.5
+                self._score_history = []
+            self._previous_output_index = sample_index
             outputs.append(
                 {
                     "sample_index": sample_index,
