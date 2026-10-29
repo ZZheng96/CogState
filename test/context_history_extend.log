@@ -1,0 +1,153 @@
+[progress] d50_mean_std_exclude_current fold 1/5 train=7429 test=1798 elapsed=16.2s
+[progress] d50_mean_std_exclude_current fold 2/5 train=7403 test=1824 elapsed=22.7s
+[progress] d50_mean_std_exclude_current fold 3/5 train=7406 test=1821 elapsed=28.2s
+[progress] d50_mean_std_exclude_current fold 4/5 train=7266 test=1961 elapsed=33.8s
+[progress] d50_mean_std_exclude_current fold 5/5 train=7404 test=1823 elapsed=39.4s
+[result] d50_mean_std_exclude_current raw AUC=0.9255 bACC=0.8483; smooth5 AUC=0.9254 bACC=0.8455 R->T=0.9341 T->R=0.9125
+[progress] d100_mean_std_exclude_current fold 1/5 train=7429 test=1798 elapsed=46.9s
+[progress] d100_mean_std_exclude_current fold 2/5 train=7403 test=1824 elapsed=53.2s
+[progress] d100_mean_std_exclude_current fold 3/5 train=7406 test=1821 elapsed=58.8s
+[progress] d100_mean_std_exclude_current fold 4/5 train=7266 test=1961 elapsed=64.3s
+[progress] d100_mean_std_exclude_current fold 5/5 train=7404 test=1823 elapsed=69.7s
+[result] d100_mean_std_exclude_current raw AUC=0.8628 bACC=0.7739; smooth5 AUC=0.8779 bACC=0.7929 R->T=0.9191 T->R=0.8051
+[progress] d150_mean_std_exclude_current fold 1/5 train=7429 test=1798 elapsed=77.8s
+[progress] d150_mean_std_exclude_current fold 2/5 train=7403 test=1824 elapsed=83.3s
+[progress] d150_mean_std_exclude_current fold 3/5 train=7406 test=1821 elapsed=88.9s
+[progress] d150_mean_std_exclude_current fold 4/5 train=7266 test=1961 elapsed=94.2s
+[progress] d150_mean_std_exclude_current fold 5/5 train=7404 test=1823 elapsed=99.9s
+[result] d150_mean_std_exclude_current raw AUC=0.8558 bACC=0.7800; smooth5 AUC=0.8682 bACC=0.7942 R->T=0.8996 T->R=0.8093
+[progress] d200_mean_std_exclude_current fold 1/5 train=7429 test=1798 elapsed=107.9s
+[progress] d200_mean_std_exclude_current fold 2/5 train=7403 test=1824 elapsed=113.4s
+[progress] d200_mean_std_exclude_current fold 3/5 train=7406 test=1821 elapsed=119.2s
+[progress] d200_mean_std_exclude_current fold 4/5 train=7266 test=1961 elapsed=125.0s
+[progress] d200_mean_std_exclude_current fold 5/5 train=7404 test=1823 elapsed=130.5s
+[result] d200_mean_std_exclude_current raw AUC=0.8611 bACC=0.7655; smooth5 AUC=0.8696 bACC=0.7775 R->T=0.9013 T->R=0.8084
+[progress] d300_mean_std_exclude_current fold 1/5 train=7429 test=1798 elapsed=140.3s
+[progress] d300_mean_std_exclude_current fold 2/5 train=7403 test=1824 elapsed=158.9s
+[progress] d300_mean_std_exclude_current fold 3/5 train=7406 test=1821 elapsed=187.3s
+[progress] d300_mean_std_exclude_current fold 4/5 train=7266 test=1961 elapsed=215.1s
+[progress] d300_mean_std_exclude_current fold 5/5 train=7404 test=1823 elapsed=228.1s
+[result] d300_mean_std_exclude_current raw AUC=0.8642 bACC=0.7711; smooth5 AUC=0.8751 bACC=0.7826 R->T=0.9072 T->R=0.8178
+[progress] d400_mean_std_exclude_current fold 1/5 train=7429 test=1798 elapsed=236.1s
+[progress] d400_mean_std_exclude_current fold 2/5 train=7403 test=1824 elapsed=242.1s
+[progress] d400_mean_std_exclude_current fold 3/5 train=7406 test=1821 elapsed=248.4s
+[progress] d400_mean_std_exclude_current fold 4/5 train=7266 test=1961 elapsed=254.3s
+[progress] d400_mean_std_exclude_current fold 5/5 train=7404 test=1823 elapsed=260.5s
+[result] d400_mean_std_exclude_current raw AUC=0.8642 bACC=0.7711; smooth5 AUC=0.8751 bACC=0.7826 R->T=0.9072 T->R=0.8178
+[progress] d600_mean_std_exclude_current fold 1/5 train=7429 test=1798 elapsed=268.7s
+[progress] d600_mean_std_exclude_current fold 2/5 train=7403 test=1824 elapsed=274.6s
+[progress] d600_mean_std_exclude_current fold 3/5 train=7406 test=1821 elapsed=280.9s
+[progress] d600_mean_std_exclude_current fold 4/5 train=7266 test=1961 elapsed=286.5s
+[progress] d600_mean_std_exclude_current fold 5/5 train=7404 test=1823 elapsed=292.6s
+[result] d600_mean_std_exclude_current raw AUC=0.8642 bACC=0.7711; smooth5 AUC=0.8751 bACC=0.7826 R->T=0.9072 T->R=0.8178
+[progress] d800_mean_std_exclude_current fold 1/5 train=7429 test=1798 elapsed=300.6s
+[progress] d800_mean_std_exclude_current fold 2/5 train=7403 test=1824 elapsed=306.5s
+[progress] d800_mean_std_exclude_current fold 3/5 train=7406 test=1821 elapsed=312.5s
+[progress] d800_mean_std_exclude_current fold 4/5 train=7266 test=1961 elapsed=318.4s
+[progress] d800_mean_std_exclude_current fold 5/5 train=7404 test=1823 elapsed=324.3s
+[result] d800_mean_std_exclude_current raw AUC=0.8642 bACC=0.7711; smooth5 AUC=0.8751 bACC=0.7826 R->T=0.9072 T->R=0.8178
+[progress] d50_mean_std_include_current fold 1/5 train=7429 test=1798 elapsed=332.5s
+[progress] d50_mean_std_include_current fold 2/5 train=7403 test=1824 elapsed=338.8s
+[progress] d50_mean_std_include_current fold 3/5 train=7406 test=1821 elapsed=344.9s
+[progress] d50_mean_std_include_current fold 4/5 train=7266 test=1961 elapsed=350.8s
+[progress] d50_mean_std_include_current fold 5/5 train=7404 test=1823 elapsed=356.5s
+[result] d50_mean_std_include_current raw AUC=0.9290 bACC=0.8525; smooth5 AUC=0.9289 bACC=0.8502 R->T=0.9366 T->R=0.9173
+[progress] d100_mean_std_include_current fold 1/5 train=7429 test=1798 elapsed=364.5s
+[progress] d100_mean_std_include_current fold 2/5 train=7403 test=1824 elapsed=370.4s
+[progress] d100_mean_std_include_current fold 3/5 train=7406 test=1821 elapsed=375.7s
+[progress] d100_mean_std_include_current fold 4/5 train=7266 test=1961 elapsed=381.3s
+[progress] d100_mean_std_include_current fold 5/5 train=7404 test=1823 elapsed=387.0s
+[result] d100_mean_std_include_current raw AUC=0.8618 bACC=0.7751; smooth5 AUC=0.8748 bACC=0.7942 R->T=0.9194 T->R=0.7996
+[progress] d150_mean_std_include_current fold 1/5 train=7429 test=1798 elapsed=393.9s
+[progress] d150_mean_std_include_current fold 2/5 train=7403 test=1824 elapsed=399.2s
+[progress] d150_mean_std_include_current fold 3/5 train=7406 test=1821 elapsed=404.8s
+[progress] d150_mean_std_include_current fold 4/5 train=7266 test=1961 elapsed=410.5s
+[progress] d150_mean_std_include_current fold 5/5 train=7404 test=1823 elapsed=416.5s
+[result] d150_mean_std_include_current raw AUC=0.8574 bACC=0.7748; smooth5 AUC=0.8676 bACC=0.7898 R->T=0.9037 T->R=0.8051
+[progress] d200_mean_std_include_current fold 1/5 train=7429 test=1798 elapsed=425.6s
+[progress] d200_mean_std_include_current fold 2/5 train=7403 test=1824 elapsed=433.2s
+[progress] d200_mean_std_include_current fold 3/5 train=7406 test=1821 elapsed=441.1s
+[progress] d200_mean_std_include_current fold 4/5 train=7266 test=1961 elapsed=448.5s
+[progress] d200_mean_std_include_current fold 5/5 train=7404 test=1823 elapsed=456.0s
+[result] d200_mean_std_include_current raw AUC=0.8657 bACC=0.7712; smooth5 AUC=0.8729 bACC=0.7793 R->T=0.9045 T->R=0.8187
+[progress] d300_mean_std_include_current fold 1/5 train=7429 test=1798 elapsed=466.2s
+[progress] d300_mean_std_include_current fold 2/5 train=7403 test=1824 elapsed=473.6s
+[progress] d300_mean_std_include_current fold 3/5 train=7406 test=1821 elapsed=481.3s
+[progress] d300_mean_std_include_current fold 4/5 train=7266 test=1961 elapsed=488.6s
+[progress] d300_mean_std_include_current fold 5/5 train=7404 test=1823 elapsed=496.2s
+[result] d300_mean_std_include_current raw AUC=0.8653 bACC=0.7681; smooth5 AUC=0.8771 bACC=0.7796 R->T=0.9053 T->R=0.8165
+[progress] d400_mean_std_include_current fold 1/5 train=7429 test=1798 elapsed=506.6s
+[progress] d400_mean_std_include_current fold 2/5 train=7403 test=1824 elapsed=514.4s
+[progress] d400_mean_std_include_current fold 3/5 train=7406 test=1821 elapsed=522.3s
+[progress] d400_mean_std_include_current fold 4/5 train=7266 test=1961 elapsed=529.5s
+[progress] d400_mean_std_include_current fold 5/5 train=7404 test=1823 elapsed=535.1s
+[result] d400_mean_std_include_current raw AUC=0.8653 bACC=0.7681; smooth5 AUC=0.8771 bACC=0.7796 R->T=0.9053 T->R=0.8165
+[progress] d600_mean_std_include_current fold 1/5 train=7429 test=1798 elapsed=542.8s
+[progress] d600_mean_std_include_current fold 2/5 train=7403 test=1824 elapsed=548.2s
+[progress] d600_mean_std_include_current fold 3/5 train=7406 test=1821 elapsed=554.1s
+[progress] d600_mean_std_include_current fold 4/5 train=7266 test=1961 elapsed=560.0s
+[progress] d600_mean_std_include_current fold 5/5 train=7404 test=1823 elapsed=566.0s
+[result] d600_mean_std_include_current raw AUC=0.8653 bACC=0.7681; smooth5 AUC=0.8771 bACC=0.7796 R->T=0.9053 T->R=0.8165
+[progress] d800_mean_std_include_current fold 1/5 train=7429 test=1798 elapsed=574.1s
+[progress] d800_mean_std_include_current fold 2/5 train=7403 test=1824 elapsed=580.3s
+[progress] d800_mean_std_include_current fold 3/5 train=7406 test=1821 elapsed=592.6s
+[progress] d800_mean_std_include_current fold 4/5 train=7266 test=1961 elapsed=613.0s
+[progress] d800_mean_std_include_current fold 5/5 train=7404 test=1823 elapsed=633.2s
+[result] d800_mean_std_include_current raw AUC=0.8653 bACC=0.7681; smooth5 AUC=0.8771 bACC=0.7796 R->T=0.9053 T->R=0.8165
+[result] combo A_exclude_current raw AUC=0.8841 bACC=0.7904; smooth5 AUC=0.8939 bACC=0.8057 R->T=0.9220 T->R=0.8343
+[result] combo B_exclude_current raw AUC=0.8826 bACC=0.7881; smooth5 AUC=0.8926 bACC=0.8032 R->T=0.9206 T->R=0.8326
+[result] combo C_exclude_current raw AUC=0.8754 bACC=0.7830; smooth5 AUC=0.8855 bACC=0.7952 R->T=0.9163 T->R=0.8352
+[result] combo D_exclude_current raw AUC=0.9112 bACC=0.8215; smooth5 AUC=0.9168 bACC=0.8335 R->T=0.9361 T->R=0.8816
+[result] combo A_include_current raw AUC=0.8858 bACC=0.7908; smooth5 AUC=0.8949 bACC=0.8069 R->T=0.9216 T->R=0.8384
+[result] combo B_include_current raw AUC=0.8843 bACC=0.7879; smooth5 AUC=0.8940 bACC=0.8054 R->T=0.9207 T->R=0.8362
+[result] combo C_include_current raw AUC=0.8766 bACC=0.7826; smooth5 AUC=0.8865 bACC=0.7972 R->T=0.9167 T->R=0.8325
+[result] combo D_include_current raw AUC=0.9136 bACC=0.8248; smooth5 AUC=0.9187 bACC=0.8337 R->T=0.9362 T->R=0.8856
+[recover] rebuilding D_exclude_current and A_include_current shared OOF
+[progress] d50_mean_std_exclude_current fold 1/5 train=7429 test=1798 elapsed=16.0s
+[progress] d50_mean_std_exclude_current fold 2/5 train=7403 test=1824 elapsed=22.6s
+[progress] d50_mean_std_exclude_current fold 3/5 train=7406 test=1821 elapsed=28.9s
+[progress] d50_mean_std_exclude_current fold 4/5 train=7266 test=1961 elapsed=34.3s
+[progress] d50_mean_std_exclude_current fold 5/5 train=7404 test=1823 elapsed=40.6s
+[progress] d100_mean_std_exclude_current fold 1/5 train=7429 test=1798 elapsed=47.2s
+[progress] d100_mean_std_exclude_current fold 2/5 train=7403 test=1824 elapsed=52.9s
+[progress] d100_mean_std_exclude_current fold 3/5 train=7406 test=1821 elapsed=58.3s
+[progress] d100_mean_std_exclude_current fold 4/5 train=7266 test=1961 elapsed=63.5s
+[progress] d100_mean_std_exclude_current fold 5/5 train=7404 test=1823 elapsed=69.3s
+[progress] d200_mean_std_exclude_current fold 1/5 train=7429 test=1798 elapsed=76.0s
+[progress] d200_mean_std_exclude_current fold 2/5 train=7403 test=1824 elapsed=81.5s
+[progress] d200_mean_std_exclude_current fold 3/5 train=7406 test=1821 elapsed=87.4s
+[progress] d200_mean_std_exclude_current fold 4/5 train=7266 test=1961 elapsed=93.4s
+[progress] d200_mean_std_exclude_current fold 5/5 train=7404 test=1823 elapsed=99.8s
+[progress] d400_mean_std_exclude_current fold 1/5 train=7429 test=1798 elapsed=109.8s
+[progress] d400_mean_std_exclude_current fold 2/5 train=7403 test=1824 elapsed=117.3s
+[progress] d400_mean_std_exclude_current fold 3/5 train=7406 test=1821 elapsed=125.1s
+[progress] d400_mean_std_exclude_current fold 4/5 train=7266 test=1961 elapsed=131.5s
+[progress] d400_mean_std_exclude_current fold 5/5 train=7404 test=1823 elapsed=138.0s
+[progress] d800_mean_std_exclude_current fold 1/5 train=7429 test=1798 elapsed=146.8s
+[progress] d800_mean_std_exclude_current fold 2/5 train=7403 test=1824 elapsed=153.4s
+[progress] d800_mean_std_exclude_current fold 3/5 train=7406 test=1821 elapsed=159.5s
+[progress] d800_mean_std_exclude_current fold 4/5 train=7266 test=1961 elapsed=165.5s
+[progress] d800_mean_std_exclude_current fold 5/5 train=7404 test=1823 elapsed=171.8s
+[progress] d100_mean_std_include_current fold 1/5 train=7429 test=1798 elapsed=179.4s
+[progress] d100_mean_std_include_current fold 2/5 train=7403 test=1824 elapsed=185.9s
+[progress] d100_mean_std_include_current fold 3/5 train=7406 test=1821 elapsed=192.3s
+[progress] d100_mean_std_include_current fold 4/5 train=7266 test=1961 elapsed=198.7s
+[progress] d100_mean_std_include_current fold 5/5 train=7404 test=1823 elapsed=205.1s
+[progress] d200_mean_std_include_current fold 1/5 train=7429 test=1798 elapsed=213.1s
+[progress] d200_mean_std_include_current fold 2/5 train=7403 test=1824 elapsed=219.5s
+[progress] d200_mean_std_include_current fold 3/5 train=7406 test=1821 elapsed=226.2s
+[progress] d200_mean_std_include_current fold 4/5 train=7266 test=1961 elapsed=232.2s
+[progress] d200_mean_std_include_current fold 5/5 train=7404 test=1823 elapsed=238.2s
+[progress] d400_mean_std_include_current fold 1/5 train=7429 test=1798 elapsed=245.5s
+[progress] d400_mean_std_include_current fold 2/5 train=7403 test=1824 elapsed=251.5s
+[progress] d400_mean_std_include_current fold 3/5 train=7406 test=1821 elapsed=257.5s
+[progress] d400_mean_std_include_current fold 4/5 train=7266 test=1961 elapsed=263.5s
+[progress] d400_mean_std_include_current fold 5/5 train=7404 test=1823 elapsed=269.2s
+[result] combo D_exclude_current raw AUC=0.9112 bACC=0.8215; smooth5 AUC=0.9168 bACC=0.8335
+[result] combo A_include_current raw AUC=0.8858 bACC=0.7908; smooth5 AUC=0.8949 bACC=0.8069
+[progress] bootstrap 500/2000
+[progress] bootstrap 1000/2000
+[progress] bootstrap 1500/2000
+[progress] bootstrap 2000/2000
+[done] seconds=289.2
+[recover] direction AUC D_exclude_current smooth5 R->T=0.9361 T->R=0.8816; A_include_current smooth5 R->T=0.9216 T->R=0.8384

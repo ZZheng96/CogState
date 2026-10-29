@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "data": [
+      "highdim_deep_features.npz",
+      "emg_features_v2.npz"
+    ],
+    "warmup_windows": 120,
+    "strict_excludes_current": true,
+    "folds": 5,
+    "split_seed": 0,
+    "eval_n": 9227,
+    "combos": {
+      "A": [
+        100,
+        200,
+        400
+      ],
+      "D": [
+        50,
+        100,
+        200,
+        400,
+        800
+      ]
+    },
+    "bootstrap_reps": 2000,
+    "comparison": "D_exclude_current vs A_include_current (旧基线 0.8949 smooth5)"
+  },
+  "models": {},
+  "combos": {
+    "D_exclude_current": {
+      "members": [
+        50,
+        100,
+        200,
+        400,
+        800
+      ],
+      "raw": {
+        "n": 9227,
+        "AUC": 0.9112496247382528,
+        "bACC": 0.821527217145288
+      },
+      "smooth5": {
+        "n": 9227,
+        "AUC": 0.9167524716392366,
+        "bACC": 0.8335454576263603,
+        "R->T": 0.9360801890733595,
+        "T->R": 0.8815545347400916
+      }
+    },
+    "A_include_current": {
+      "members": [
+        100,
+        200,
+        400
+      ],
+      "raw": {
+        "n": 9227,
+        "AUC": 0.8857582754635797,
+        "bACC": 0.7908394467276167
+      },
+      "smooth5": {
+        "n": 9227,
+        "AUC": 0.8949223905423768,
+        "bACC": 0.8069017775718138,
+        "R->T": 0.9215996138998437,
+        "T->R": 0.8384453913278145
+      }
+    }
+  },
+  "bootstrap_D_exclude_vs_A_include": {
+    "dAUC": {
+      "mean": 0.021854410649123395,
+      "p2.5": 0.016128575970283044,
+      "p97.5": 0.028686817284020505
+    },
+    "dbACC": {
+      "mean": 0.026580919371445938,
+      "p2.5": 0.01916291788029598,
+      "p97.5": 0.03480393719491894
+    }
+  },
+  "old_baseline_smooth5_AUC": 0.8949,
+  "new_smooth5_AUC": 0.9167524716392366,
+  "exceeds_old_0.8949": true,
+  "seconds": 289.23367620000136,
+  "deviations": "无；仅重建共同 OOF，沿用原始数据、特征、折分和模型配置。"
+}
