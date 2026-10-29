@@ -1,0 +1,28 @@
+[progress] fold 1/5 variant=base train=7429 thr=0.608 elapsed=138.5s
+[check] subject=009 stream_vs_batch max|diff|=0.00e+00 n=97
+[check] subject=022 stream_vs_batch max|diff|=0.00e+00 n=175
+[check] subject=023 stream_vs_batch max|diff|=0.00e+00 n=174
+[progress] fold 1/5 variant=clean_trans train=6349 thr=0.591 elapsed=266.2s
+[progress] fold 1/5 variant=drop_bad train=7263 thr=0.601 elapsed=394.2s
+[progress] fold 1/5 variant=clean+drop train=6207 thr=0.578 elapsed=513.1s
+[progress] fold 2/5 variant=base train=7403 thr=0.613 elapsed=635.9s
+[progress] fold 2/5 variant=clean_trans train=6323 thr=0.606 elapsed=756.9s
+[progress] fold 2/5 variant=drop_bad train=7141 thr=0.568 elapsed=878.0s
+[progress] fold 2/5 variant=clean+drop train=6109 thr=0.598 elapsed=996.7s
+[progress] fold 3/5 variant=base train=7406 thr=0.597 elapsed=1121.5s
+[progress] fold 3/5 variant=clean_trans train=6326 thr=0.569 elapsed=1244.3s
+[progress] fold 3/5 variant=drop_bad train=7143 thr=0.583 elapsed=1370.9s
+[progress] fold 3/5 variant=clean+drop train=6111 thr=0.559 elapsed=1492.9s
+[progress] fold 4/5 variant=base train=7266 thr=0.566 elapsed=1618.1s
+[progress] fold 4/5 variant=clean_trans train=6210 thr=0.587 elapsed=1731.6s
+[progress] fold 4/5 variant=drop_bad train=7168 thr=0.550 elapsed=1850.3s
+[progress] fold 4/5 variant=clean+drop train=6136 thr=0.565 elapsed=1968.6s
+[progress] fold 5/5 variant=base train=7404 thr=0.593 elapsed=2093.7s
+[progress] fold 5/5 variant=clean_trans train=6324 thr=0.546 elapsed=2213.8s
+[progress] fold 5/5 variant=drop_bad train=7141 thr=0.589 elapsed=2336.9s
+[progress] fold 5/5 variant=clean+drop train=6109 thr=0.562 elapsed=2456.4s
+[result] base smooth5 AUC=0.8168 bACC@.5=0.7305 bACC@youden=0.7386 bACC@causal_median=0.7633
+[result] clean_trans smooth5 AUC=0.8046 bACC@.5=0.7286 bACC@youden=0.7291 bACC@causal_median=0.7671
+[result] drop_bad smooth5 AUC=0.8128 bACC@.5=0.7249 bACC@youden=0.7371 bACC@causal_median=0.7600
+[result] clean+drop smooth5 AUC=0.8022 bACC@.5=0.7249 bACC@youden=0.7343 bACC@causal_median=0.7648
+[done] seconds=2459.6
