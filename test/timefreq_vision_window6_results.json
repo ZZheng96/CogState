@@ -1,0 +1,119 @@
+{
+  "protocol": {
+    "test_subject_isolation": true,
+    "test_history": false,
+    "window_position_schedule_r_t": false,
+    "test_subject_calibration": false,
+    "per_window_only": true,
+    "input_seconds": 6,
+    "stft_center": false,
+    "outer_cv": "StratifiedGroupKFold(5, shuffle=True, random_state=0)",
+    "threshold_primary": 0.5,
+    "validation_threshold_not_used_for_model_selection": false
+  },
+  "model": {
+    "name": "VisionEEG",
+    "parameters": 315649,
+    "input_shape": [
+      3,
+      23,
+      43
+    ],
+    "trainable_parameters": 315649,
+    "epochs_max": 30,
+    "batch_size": 256,
+    "lr": 0.002,
+    "weight_decay": 0.002,
+    "early_stop_patience": 6
+  },
+  "overall_fixed_0.5": {
+    "AUC": 0.6367991309125697,
+    "bACC": 0.5968465520217501
+  },
+  "subject_count": 57,
+  "subject_fixed_0.5": {
+    "AUC": 0.6460967828892872,
+    "bACC": 0.5973768551102462
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "n_train": 10959,
+      "n_test": 3118,
+      "best_epoch": 6,
+      "fixed_0.5": {
+        "AUC": 0.6267862675417428,
+        "bACC": 0.5883640543988953
+      },
+      "validation_threshold": 0.825,
+      "threshold_on_test_for_diagnostic_only": {
+        "AUC": 0.6267862675417428,
+        "bACC": 0.5369874799262843
+      }
+    },
+    {
+      "fold": 2,
+      "n_train": 10806,
+      "n_test": 3264,
+      "best_epoch": 3,
+      "fixed_0.5": {
+        "AUC": 0.6682908696313345,
+        "bACC": 0.6132649708721095
+      },
+      "validation_threshold": 0.535,
+      "threshold_on_test_for_diagnostic_only": {
+        "AUC": 0.6682908696313345,
+        "bACC": 0.6185954780897811
+      }
+    },
+    {
+      "fold": 3,
+      "n_train": 10983,
+      "n_test": 3141,
+      "best_epoch": 2,
+      "fixed_0.5": {
+        "AUC": 0.6600871413407245,
+        "bACC": 0.5942717502629404
+      },
+      "validation_threshold": 0.43000000000000005,
+      "threshold_on_test_for_diagnostic_only": {
+        "AUC": 0.6600871413407245,
+        "bACC": 0.5706766469153863
+      }
+    },
+    {
+      "fold": 4,
+      "n_train": 10649,
+      "n_test": 3401,
+      "best_epoch": 3,
+      "fixed_0.5": {
+        "AUC": 0.6153498606699049,
+        "bACC": 0.5875810165252617
+      },
+      "validation_threshold": 0.405,
+      "threshold_on_test_for_diagnostic_only": {
+        "AUC": 0.6153498606699049,
+        "bACC": 0.5405836509672185
+      }
+    },
+    {
+      "fold": 5,
+      "n_train": 10942,
+      "n_test": 3143,
+      "best_epoch": 8,
+      "fixed_0.5": {
+        "AUC": 0.6402952535748618,
+        "bACC": 0.6006782053493553
+      },
+      "validation_threshold": 0.45499999999999996,
+      "threshold_on_test_for_diagnostic_only": {
+        "AUC": 0.6402952535748618,
+        "bACC": 0.5925463414002071
+      }
+    }
+  ],
+  "_meta": {
+    "seconds": 43.85033049999765,
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER"
+  }
+}
