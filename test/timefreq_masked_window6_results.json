@@ -1,0 +1,77 @@
+{
+  "protocol": {
+    "test_subject_isolation": true,
+    "test_history": false,
+    "window_position_schedule_r_t": false,
+    "test_subject_calibration": false,
+    "per_window_only": true,
+    "input_seconds": 6,
+    "outer_cv": "StratifiedGroupKFold(5, shuffle=True, random_state=0)",
+    "ssl_train_subjects_only": true,
+    "mask_loss": "masked time-frequency reconstruction"
+  },
+  "model": {
+    "parameters": 315649,
+    "ssl_decoder_parameters": 407447,
+    "ssl_epochs_max": 15,
+    "finetune_epochs_max": 25,
+    "batch_size": 256,
+    "ssl_lr": 0.002,
+    "finetune_lr": 0.001,
+    "weight_decay": 0.002
+  },
+  "overall_fixed_0.5": {
+    "AUC": 0.6442485247919554,
+    "bACC": 0.5998862429509058
+  },
+  "subject_fixed_0.5": {
+    "AUC": 0.6562629108115844,
+    "bACC": 0.6005985455449222
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "ssl_epochs": 8,
+      "fixed_0.5": {
+        "AUC": 0.6133688169561027,
+        "bACC": 0.578558946880309
+      }
+    },
+    {
+      "fold": 2,
+      "ssl_epochs": 6,
+      "fixed_0.5": {
+        "AUC": 0.6535810502561714,
+        "bACC": 0.6090584641726009
+      }
+    },
+    {
+      "fold": 3,
+      "ssl_epochs": 8,
+      "fixed_0.5": {
+        "AUC": 0.6904757174401887,
+        "bACC": 0.6032847079354087
+      }
+    },
+    {
+      "fold": 4,
+      "ssl_epochs": 10,
+      "fixed_0.5": {
+        "AUC": 0.6476371635449671,
+        "bACC": 0.605301598301895
+      }
+    },
+    {
+      "fold": 5,
+      "ssl_epochs": 8,
+      "fixed_0.5": {
+        "AUC": 0.6542654982211737,
+        "bACC": 0.6024102630136143
+      }
+    }
+  ],
+  "_meta": {
+    "seconds": 110.50711230000161,
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER"
+  }
+}
