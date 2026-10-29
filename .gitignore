@@ -1,9 +1,6 @@
-# 大体积实验数据、特征缓存与模型权重（不入版本库）
+# 大体积实验数据与特征缓存（不入版本库）；模型权重文件（.pt/.ckpt/.joblib）正常入库
 *.npz
 *.npy
-*.ckpt
-*.pt
-*.joblib
 *.pkl
 __pycache__/
 *.pyc
