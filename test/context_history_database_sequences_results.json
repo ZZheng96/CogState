@@ -1,0 +1,2704 @@
+{
+  "meta": {
+    "data": "database/windows/{relax,task}/*.npz f+e",
+    "n_windows": 16067,
+    "n_subjects": 57,
+    "per_subject_counts": {
+      "R": 8012,
+      "T": 8055
+    },
+    "warmup_windows": 120,
+    "history_excludes_current": true,
+    "folds": "StratifiedGroupKFold(5, shuffle=True, random_state=0)",
+    "D": [
+      50,
+      100,
+      200,
+      400,
+      800
+    ],
+    "smooth_window": 5,
+    "bootstrap_subject_reps": 2000
+  },
+  "arrangements": {
+    "RT_blocks": {
+      "sequence": {
+        "first_labels": [
+          0
+        ],
+        "last_labels": [
+          1
+        ],
+        "runs_min": 2,
+        "runs_median": 2.0,
+        "runs_max": 2,
+        "longest_run_min": 72,
+        "longest_run_median": 145.0,
+        "longest_run_max": 159,
+        "per_subject": {
+          "001": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "002": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 139
+          },
+          "003": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 137
+          },
+          "004": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "005": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "006": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "007": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "008": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "009": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 109
+          },
+          "010": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "011": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "012": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 139
+          },
+          "013": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "014": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "015": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 139
+          },
+          "016": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "017": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "018": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "019": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "020": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "021": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "022": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "023": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "024": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "025": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "026": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "027": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "028": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "029": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 159
+          },
+          "030": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 149
+          },
+          "031": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "034": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 72
+          },
+          "035": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "036": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "037": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "038": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 149
+          },
+          "039": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "040": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 140
+          },
+          "041": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "042": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "043": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "044": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 142
+          },
+          "045": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "046": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 142
+          },
+          "047": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "048": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "049": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 142
+          },
+          "050": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "051": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "052": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "053": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "054": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "055": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "056": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "057": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 141
+          },
+          "058": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "059": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          }
+        }
+      },
+      "window": {
+        "n": 9227,
+        "AUC": 0.9620372498965504,
+        "bACC": 0.8792264459472696,
+        "subject_AUC_median": 0.9951690821256038,
+        "subject_AUC_lt_0.5_frac": 0.01818181818181818,
+        "n_subject_auc": 55
+      },
+      "smooth5": {
+        "n": 9227,
+        "AUC": 0.9706546618343486,
+        "bACC": 0.9281827032062417,
+        "subject_AUC_median": 1.0,
+        "subject_AUC_lt_0.5_frac": 0.01818181818181818,
+        "n_subject_auc": 55
+      },
+      "direction_smooth5": {
+        "R->T": 0.9718927807547335,
+        "T->R": null
+      }
+    },
+    "TR_blocks": {
+      "sequence": {
+        "first_labels": [
+          1
+        ],
+        "last_labels": [
+          0
+        ],
+        "runs_min": 2,
+        "runs_median": 2.0,
+        "runs_max": 2,
+        "longest_run_min": 72,
+        "longest_run_median": 145.0,
+        "longest_run_max": 159,
+        "per_subject": {
+          "001": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "002": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 139
+          },
+          "003": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 137
+          },
+          "004": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "005": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "006": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "007": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "008": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "009": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 109
+          },
+          "010": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "011": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "012": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 139
+          },
+          "013": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "014": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "015": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 139
+          },
+          "016": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "017": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "018": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "019": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "020": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "021": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "022": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "023": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "024": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "025": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "026": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "027": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "028": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "029": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 159
+          },
+          "030": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 149
+          },
+          "031": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "034": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 72
+          },
+          "035": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "036": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "037": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "038": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 149
+          },
+          "039": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "040": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 140
+          },
+          "041": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "042": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "043": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "044": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 142
+          },
+          "045": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "046": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 142
+          },
+          "047": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "048": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "049": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 142
+          },
+          "050": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "051": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "052": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "053": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "054": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "055": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "056": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "057": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 141
+          },
+          "058": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "059": {
+            "first": 1,
+            "last": 0,
+            "runs": 2,
+            "longest_run": 146
+          }
+        }
+      },
+      "window": {
+        "n": 9227,
+        "AUC": 0.9750869561183727,
+        "bACC": 0.896999266293872,
+        "subject_AUC_median": 0.9957142857142857,
+        "subject_AUC_lt_0.5_frac": 0.0,
+        "n_subject_auc": 55
+      },
+      "smooth5": {
+        "n": 9227,
+        "AUC": 0.9852995256077651,
+        "bACC": 0.9348473597139868,
+        "subject_AUC_median": 1.0,
+        "subject_AUC_lt_0.5_frac": 0.01818181818181818,
+        "n_subject_auc": 55
+      },
+      "direction_smooth5": {
+        "R->T": null,
+        "T->R": 0.9796985650996282
+      }
+    },
+    "RT_alternating_blocks_40": {
+      "sequence": {
+        "first_labels": [
+          0
+        ],
+        "last_labels": [
+          1
+        ],
+        "runs_min": 4,
+        "runs_median": 8.0,
+        "runs_max": 8,
+        "longest_run_min": 40,
+        "longest_run_median": 40.0,
+        "longest_run_max": 40,
+        "per_subject": {
+          "001": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "002": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "003": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "004": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "005": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "006": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "007": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "008": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "009": {
+            "first": 0,
+            "last": 1,
+            "runs": 6,
+            "longest_run": 40
+          },
+          "010": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "011": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "012": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "013": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "014": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "015": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "016": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "017": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "018": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "019": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "020": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "021": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "022": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "023": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "024": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "025": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "026": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "027": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "028": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "029": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "030": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "031": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "034": {
+            "first": 0,
+            "last": 1,
+            "runs": 4,
+            "longest_run": 40
+          },
+          "035": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "036": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "037": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "038": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "039": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "040": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "041": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "042": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "043": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "044": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "045": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "046": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "047": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "048": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "049": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "050": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "051": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "052": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "053": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "054": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "055": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "056": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "057": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "058": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          },
+          "059": {
+            "first": 0,
+            "last": 1,
+            "runs": 8,
+            "longest_run": 40
+          }
+        }
+      },
+      "window": {
+        "n": 9227,
+        "AUC": 0.9835210837038157,
+        "bACC": 0.9327423360340756,
+        "subject_AUC_median": 0.9950419313776038,
+        "subject_AUC_lt_0.5_frac": 0.017857142857142856,
+        "n_subject_auc": 56
+      },
+      "smooth5": {
+        "n": 9227,
+        "AUC": 0.9705032181779066,
+        "bACC": 0.8970127837398842,
+        "subject_AUC_median": 0.9827257729541419,
+        "subject_AUC_lt_0.5_frac": 0.017857142857142856,
+        "n_subject_auc": 56
+      },
+      "direction_smooth5": {
+        "R->T": 0.944705144582512,
+        "T->R": 0.9633951829317206
+      }
+    },
+    "RT_alternating_blocks_200": {
+      "sequence": {
+        "first_labels": [
+          0
+        ],
+        "last_labels": [
+          1
+        ],
+        "runs_min": 2,
+        "runs_median": 2.0,
+        "runs_max": 2,
+        "longest_run_min": 72,
+        "longest_run_median": 145.0,
+        "longest_run_max": 159,
+        "per_subject": {
+          "001": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "002": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 139
+          },
+          "003": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 137
+          },
+          "004": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "005": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "006": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "007": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "008": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "009": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 109
+          },
+          "010": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "011": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "012": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 139
+          },
+          "013": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "014": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "015": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 139
+          },
+          "016": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "017": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "018": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "019": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "020": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "021": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "022": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "023": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "024": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "025": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "026": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "027": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "028": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "029": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 159
+          },
+          "030": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 149
+          },
+          "031": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "034": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 72
+          },
+          "035": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "036": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "037": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "038": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 149
+          },
+          "039": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "040": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 140
+          },
+          "041": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "042": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "043": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "044": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 142
+          },
+          "045": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "046": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 142
+          },
+          "047": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "048": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "049": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 142
+          },
+          "050": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "051": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "052": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "053": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "054": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "055": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "056": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "057": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 141
+          },
+          "058": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "059": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          }
+        }
+      },
+      "window": {
+        "n": 9227,
+        "AUC": 0.9620372498965504,
+        "bACC": 0.8792264459472696,
+        "subject_AUC_median": 0.9951690821256038,
+        "subject_AUC_lt_0.5_frac": 0.01818181818181818,
+        "n_subject_auc": 55
+      },
+      "smooth5": {
+        "n": 9227,
+        "AUC": 0.9706546618343486,
+        "bACC": 0.9281827032062417,
+        "subject_AUC_median": 1.0,
+        "subject_AUC_lt_0.5_frac": 0.01818181818181818,
+        "n_subject_auc": 55
+      },
+      "direction_smooth5": {
+        "R->T": 0.9718927807547335,
+        "T->R": null
+      }
+    },
+    "RT_alternating_blocks_800": {
+      "sequence": {
+        "first_labels": [
+          0
+        ],
+        "last_labels": [
+          1
+        ],
+        "runs_min": 2,
+        "runs_median": 2.0,
+        "runs_max": 2,
+        "longest_run_min": 72,
+        "longest_run_median": 145.0,
+        "longest_run_max": 159,
+        "per_subject": {
+          "001": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "002": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 139
+          },
+          "003": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 137
+          },
+          "004": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "005": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "006": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "007": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "008": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "009": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 109
+          },
+          "010": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "011": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "012": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 139
+          },
+          "013": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "014": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "015": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 139
+          },
+          "016": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "017": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "018": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "019": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "020": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "021": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "022": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "023": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "024": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "025": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "026": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "027": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "028": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "029": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 159
+          },
+          "030": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 149
+          },
+          "031": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "034": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 72
+          },
+          "035": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "036": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "037": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "038": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 149
+          },
+          "039": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "040": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 140
+          },
+          "041": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "042": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "043": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "044": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 142
+          },
+          "045": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "046": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 142
+          },
+          "047": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "048": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "049": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 142
+          },
+          "050": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "051": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "052": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "053": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "054": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "055": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "056": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "057": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 141
+          },
+          "058": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "059": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          }
+        }
+      },
+      "window": {
+        "n": 9227,
+        "AUC": 0.9620372498965504,
+        "bACC": 0.8792264459472696,
+        "subject_AUC_median": 0.9951690821256038,
+        "subject_AUC_lt_0.5_frac": 0.01818181818181818,
+        "n_subject_auc": 55
+      },
+      "smooth5": {
+        "n": 9227,
+        "AUC": 0.9706546618343486,
+        "bACC": 0.9281827032062417,
+        "subject_AUC_median": 1.0,
+        "subject_AUC_lt_0.5_frac": 0.01818181818181818,
+        "n_subject_auc": 55
+      },
+      "direction_smooth5": {
+        "R->T": 0.9718927807547335,
+        "T->R": null
+      }
+    },
+    "label_random": {
+      "sequence": {
+        "first_labels": [
+          0,
+          1
+        ],
+        "last_labels": [
+          0,
+          1
+        ],
+        "runs_min": 52,
+        "runs_median": 142.0,
+        "runs_max": 168,
+        "longest_run_min": 6,
+        "longest_run_median": 8.0,
+        "longest_run_max": 15,
+        "per_subject": {
+          "001": {
+            "first": 0,
+            "last": 0,
+            "runs": 151,
+            "longest_run": 9
+          },
+          "002": {
+            "first": 0,
+            "last": 1,
+            "runs": 122,
+            "longest_run": 12
+          },
+          "003": {
+            "first": 0,
+            "last": 0,
+            "runs": 137,
+            "longest_run": 10
+          },
+          "004": {
+            "first": 1,
+            "last": 1,
+            "runs": 129,
+            "longest_run": 11
+          },
+          "005": {
+            "first": 0,
+            "last": 0,
+            "runs": 135,
+            "longest_run": 8
+          },
+          "006": {
+            "first": 0,
+            "last": 1,
+            "runs": 136,
+            "longest_run": 8
+          },
+          "007": {
+            "first": 0,
+            "last": 0,
+            "runs": 123,
+            "longest_run": 10
+          },
+          "008": {
+            "first": 1,
+            "last": 1,
+            "runs": 129,
+            "longest_run": 8
+          },
+          "009": {
+            "first": 0,
+            "last": 1,
+            "runs": 106,
+            "longest_run": 6
+          },
+          "010": {
+            "first": 1,
+            "last": 0,
+            "runs": 160,
+            "longest_run": 11
+          },
+          "011": {
+            "first": 1,
+            "last": 1,
+            "runs": 147,
+            "longest_run": 7
+          },
+          "012": {
+            "first": 0,
+            "last": 1,
+            "runs": 138,
+            "longest_run": 8
+          },
+          "013": {
+            "first": 1,
+            "last": 1,
+            "runs": 145,
+            "longest_run": 7
+          },
+          "014": {
+            "first": 0,
+            "last": 1,
+            "runs": 154,
+            "longest_run": 10
+          },
+          "015": {
+            "first": 0,
+            "last": 0,
+            "runs": 141,
+            "longest_run": 8
+          },
+          "016": {
+            "first": 0,
+            "last": 1,
+            "runs": 148,
+            "longest_run": 8
+          },
+          "017": {
+            "first": 1,
+            "last": 0,
+            "runs": 130,
+            "longest_run": 12
+          },
+          "018": {
+            "first": 0,
+            "last": 0,
+            "runs": 145,
+            "longest_run": 8
+          },
+          "019": {
+            "first": 1,
+            "last": 0,
+            "runs": 150,
+            "longest_run": 6
+          },
+          "020": {
+            "first": 1,
+            "last": 1,
+            "runs": 133,
+            "longest_run": 9
+          },
+          "021": {
+            "first": 1,
+            "last": 1,
+            "runs": 135,
+            "longest_run": 8
+          },
+          "022": {
+            "first": 0,
+            "last": 1,
+            "runs": 124,
+            "longest_run": 15
+          },
+          "023": {
+            "first": 1,
+            "last": 1,
+            "runs": 137,
+            "longest_run": 9
+          },
+          "024": {
+            "first": 0,
+            "last": 0,
+            "runs": 153,
+            "longest_run": 8
+          },
+          "025": {
+            "first": 0,
+            "last": 0,
+            "runs": 149,
+            "longest_run": 8
+          },
+          "026": {
+            "first": 0,
+            "last": 0,
+            "runs": 127,
+            "longest_run": 10
+          },
+          "027": {
+            "first": 1,
+            "last": 0,
+            "runs": 146,
+            "longest_run": 7
+          },
+          "028": {
+            "first": 1,
+            "last": 0,
+            "runs": 158,
+            "longest_run": 6
+          },
+          "029": {
+            "first": 1,
+            "last": 0,
+            "runs": 140,
+            "longest_run": 12
+          },
+          "030": {
+            "first": 0,
+            "last": 1,
+            "runs": 144,
+            "longest_run": 9
+          },
+          "031": {
+            "first": 0,
+            "last": 1,
+            "runs": 156,
+            "longest_run": 7
+          },
+          "034": {
+            "first": 0,
+            "last": 1,
+            "runs": 52,
+            "longest_run": 11
+          },
+          "035": {
+            "first": 0,
+            "last": 0,
+            "runs": 151,
+            "longest_run": 7
+          },
+          "036": {
+            "first": 0,
+            "last": 0,
+            "runs": 149,
+            "longest_run": 8
+          },
+          "037": {
+            "first": 0,
+            "last": 0,
+            "runs": 151,
+            "longest_run": 9
+          },
+          "038": {
+            "first": 0,
+            "last": 1,
+            "runs": 168,
+            "longest_run": 7
+          },
+          "039": {
+            "first": 1,
+            "last": 1,
+            "runs": 139,
+            "longest_run": 8
+          },
+          "040": {
+            "first": 1,
+            "last": 1,
+            "runs": 151,
+            "longest_run": 8
+          },
+          "041": {
+            "first": 0,
+            "last": 0,
+            "runs": 147,
+            "longest_run": 9
+          },
+          "042": {
+            "first": 0,
+            "last": 1,
+            "runs": 162,
+            "longest_run": 7
+          },
+          "043": {
+            "first": 0,
+            "last": 1,
+            "runs": 144,
+            "longest_run": 7
+          },
+          "044": {
+            "first": 1,
+            "last": 0,
+            "runs": 152,
+            "longest_run": 7
+          },
+          "045": {
+            "first": 1,
+            "last": 0,
+            "runs": 140,
+            "longest_run": 10
+          },
+          "046": {
+            "first": 0,
+            "last": 0,
+            "runs": 145,
+            "longest_run": 6
+          },
+          "047": {
+            "first": 0,
+            "last": 1,
+            "runs": 138,
+            "longest_run": 10
+          },
+          "048": {
+            "first": 0,
+            "last": 1,
+            "runs": 134,
+            "longest_run": 8
+          },
+          "049": {
+            "first": 1,
+            "last": 0,
+            "runs": 142,
+            "longest_run": 9
+          },
+          "050": {
+            "first": 1,
+            "last": 0,
+            "runs": 134,
+            "longest_run": 7
+          },
+          "051": {
+            "first": 1,
+            "last": 0,
+            "runs": 150,
+            "longest_run": 8
+          },
+          "052": {
+            "first": 0,
+            "last": 0,
+            "runs": 141,
+            "longest_run": 11
+          },
+          "053": {
+            "first": 0,
+            "last": 1,
+            "runs": 154,
+            "longest_run": 7
+          },
+          "054": {
+            "first": 0,
+            "last": 0,
+            "runs": 139,
+            "longest_run": 6
+          },
+          "055": {
+            "first": 0,
+            "last": 1,
+            "runs": 154,
+            "longest_run": 10
+          },
+          "056": {
+            "first": 0,
+            "last": 1,
+            "runs": 152,
+            "longest_run": 8
+          },
+          "057": {
+            "first": 0,
+            "last": 1,
+            "runs": 136,
+            "longest_run": 10
+          },
+          "058": {
+            "first": 0,
+            "last": 1,
+            "runs": 138,
+            "longest_run": 12
+          },
+          "059": {
+            "first": 1,
+            "last": 1,
+            "runs": 133,
+            "longest_run": 9
+          }
+        }
+      },
+      "window": {
+        "n": 9227,
+        "AUC": 0.6900335194186822,
+        "bACC": 0.64578137475755,
+        "subject_AUC_median": 0.7207605064940672,
+        "subject_AUC_lt_0.5_frac": 0.125,
+        "n_subject_auc": 56
+      },
+      "smooth5": {
+        "n": 9227,
+        "AUC": 0.5842477149972688,
+        "bACC": 0.5594420672040336,
+        "subject_AUC_median": 0.6037113555381354,
+        "subject_AUC_lt_0.5_frac": 0.14285714285714285,
+        "n_subject_auc": 56
+      },
+      "direction_smooth5": {
+        "R->T": 0.5645483432824928,
+        "T->R": 0.5721680677938891
+      }
+    },
+    "within_label_random": {
+      "sequence": {
+        "first_labels": [
+          0
+        ],
+        "last_labels": [
+          1
+        ],
+        "runs_min": 2,
+        "runs_median": 2.0,
+        "runs_max": 2,
+        "longest_run_min": 72,
+        "longest_run_median": 145.0,
+        "longest_run_max": 159,
+        "per_subject": {
+          "001": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "002": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 139
+          },
+          "003": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 137
+          },
+          "004": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "005": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "006": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "007": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "008": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "009": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 109
+          },
+          "010": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "011": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "012": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 139
+          },
+          "013": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "014": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "015": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 139
+          },
+          "016": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "017": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "018": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "019": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "020": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "021": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "022": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "023": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "024": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "025": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "026": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "027": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "028": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "029": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 159
+          },
+          "030": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 149
+          },
+          "031": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "034": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 72
+          },
+          "035": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "036": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "037": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "038": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 149
+          },
+          "039": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "040": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 140
+          },
+          "041": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "042": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 143
+          },
+          "043": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "044": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 142
+          },
+          "045": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "046": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 142
+          },
+          "047": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "048": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "049": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 142
+          },
+          "050": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "051": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 148
+          },
+          "052": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 144
+          },
+          "053": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "054": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "055": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 147
+          },
+          "056": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          },
+          "057": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 141
+          },
+          "058": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 145
+          },
+          "059": {
+            "first": 0,
+            "last": 1,
+            "runs": 2,
+            "longest_run": 146
+          }
+        }
+      },
+      "window": {
+        "n": 9227,
+        "AUC": 0.9579849193292059,
+        "bACC": 0.8620243561629048,
+        "subject_AUC_median": 0.9916958041958042,
+        "subject_AUC_lt_0.5_frac": 0.03636363636363636,
+        "n_subject_auc": 55
+      },
+      "smooth5": {
+        "n": 9227,
+        "AUC": 0.9679313853467215,
+        "bACC": 0.9145848117814742,
+        "subject_AUC_median": 0.9994366197183098,
+        "subject_AUC_lt_0.5_frac": 0.03636363636363636,
+        "n_subject_auc": 55
+      },
+      "direction_smooth5": {
+        "R->T": 0.9624938717812049,
+        "T->R": null
+      }
+    }
+  },
+  "RT_blocks_vs_label_random_bootstrap": {
+    "dAUC": {
+      "point": 0.46719144495775056,
+      "ci95": [
+        0.41891881761495275,
+        0.5111956723381896
+      ]
+    },
+    "dbACC": {
+      "point": 0.4245982452528071,
+      "ci95": [
+        0.37760400136811895,
+        0.46763503068606
+      ]
+    }
+  },
+  "elapsed_s": 1063.0193529000026
+}

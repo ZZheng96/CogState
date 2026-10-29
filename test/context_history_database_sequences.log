@@ -1,0 +1,194 @@
+[     3.1s] loaded n=16067 subjects=57 features=876
+[    17.2s] RT_blocks/D50 fold=1/5 train=7429 test=1798 elapsed=6.9s
+[    22.6s] RT_blocks/D50 fold=2/5 train=7403 test=1824 elapsed=5.4s
+[    28.3s] RT_blocks/D50 fold=3/5 train=7406 test=1821 elapsed=5.7s
+[    33.7s] RT_blocks/D50 fold=4/5 train=7266 test=1961 elapsed=5.4s
+[    39.3s] RT_blocks/D50 fold=5/5 train=7404 test=1823 elapsed=5.6s
+[    46.0s] RT_blocks/D100 fold=1/5 train=7429 test=1798 elapsed=5.7s
+[    51.9s] RT_blocks/D100 fold=2/5 train=7403 test=1824 elapsed=5.9s
+[    57.8s] RT_blocks/D100 fold=3/5 train=7406 test=1821 elapsed=5.9s
+[    63.7s] RT_blocks/D100 fold=4/5 train=7266 test=1961 elapsed=5.8s
+[    69.5s] RT_blocks/D100 fold=5/5 train=7404 test=1823 elapsed=5.8s
+[    76.7s] RT_blocks/D200 fold=1/5 train=7429 test=1798 elapsed=6.2s
+[    82.3s] RT_blocks/D200 fold=2/5 train=7403 test=1824 elapsed=5.6s
+[    87.8s] RT_blocks/D200 fold=3/5 train=7406 test=1821 elapsed=5.5s
+[    93.2s] RT_blocks/D200 fold=4/5 train=7266 test=1961 elapsed=5.4s
+[    98.6s] RT_blocks/D200 fold=5/5 train=7404 test=1823 elapsed=5.4s
+[   105.2s] RT_blocks/D400 fold=1/5 train=7429 test=1798 elapsed=5.6s
+[   110.7s] RT_blocks/D400 fold=2/5 train=7403 test=1824 elapsed=5.5s
+[   116.2s] RT_blocks/D400 fold=3/5 train=7406 test=1821 elapsed=5.5s
+[   121.7s] RT_blocks/D400 fold=4/5 train=7266 test=1961 elapsed=5.5s
+[   127.5s] RT_blocks/D400 fold=5/5 train=7404 test=1823 elapsed=5.8s
+[   133.8s] RT_blocks/D800 fold=1/5 train=7429 test=1798 elapsed=5.3s
+[   139.1s] RT_blocks/D800 fold=2/5 train=7403 test=1824 elapsed=5.4s
+[   144.5s] RT_blocks/D800 fold=3/5 train=7406 test=1821 elapsed=5.3s
+[   149.9s] RT_blocks/D800 fold=4/5 train=7266 test=1961 elapsed=5.4s
+[   155.7s] RT_blocks/D800 fold=5/5 train=7404 test=1823 elapsed=5.8s
+[   156.0s] RT_blocks complete window AUC=0.9620 smooth5 AUC=0.9707
+[   168.9s] TR_blocks/D50 fold=1/5 train=7429 test=1798 elapsed=5.7s
+[   174.7s] TR_blocks/D50 fold=2/5 train=7403 test=1824 elapsed=5.8s
+[   180.6s] TR_blocks/D50 fold=3/5 train=7406 test=1821 elapsed=5.9s
+[   186.0s] TR_blocks/D50 fold=4/5 train=7266 test=1961 elapsed=5.4s
+[   191.6s] TR_blocks/D50 fold=5/5 train=7404 test=1823 elapsed=5.6s
+[   198.3s] TR_blocks/D100 fold=1/5 train=7429 test=1798 elapsed=5.7s
+[   203.7s] TR_blocks/D100 fold=2/5 train=7403 test=1824 elapsed=5.4s
+[   209.1s] TR_blocks/D100 fold=3/5 train=7406 test=1821 elapsed=5.3s
+[   214.5s] TR_blocks/D100 fold=4/5 train=7266 test=1961 elapsed=5.4s
+[   219.6s] TR_blocks/D100 fold=5/5 train=7404 test=1823 elapsed=5.1s
+[   225.7s] TR_blocks/D200 fold=1/5 train=7429 test=1798 elapsed=5.1s
+[   231.1s] TR_blocks/D200 fold=2/5 train=7403 test=1824 elapsed=5.4s
+[   236.2s] TR_blocks/D200 fold=3/5 train=7406 test=1821 elapsed=5.1s
+[   241.2s] TR_blocks/D200 fold=4/5 train=7266 test=1961 elapsed=4.9s
+[   246.7s] TR_blocks/D200 fold=5/5 train=7404 test=1823 elapsed=5.6s
+[   253.5s] TR_blocks/D400 fold=1/5 train=7429 test=1798 elapsed=5.7s
+[   259.0s] TR_blocks/D400 fold=2/5 train=7403 test=1824 elapsed=5.5s
+[   264.5s] TR_blocks/D400 fold=3/5 train=7406 test=1821 elapsed=5.5s
+[   269.7s] TR_blocks/D400 fold=4/5 train=7266 test=1961 elapsed=5.1s
+[   275.0s] TR_blocks/D400 fold=5/5 train=7404 test=1823 elapsed=5.4s
+[   281.5s] TR_blocks/D800 fold=1/5 train=7429 test=1798 elapsed=5.4s
+[   287.1s] TR_blocks/D800 fold=2/5 train=7403 test=1824 elapsed=5.6s
+[   292.7s] TR_blocks/D800 fold=3/5 train=7406 test=1821 elapsed=5.6s
+[   297.9s] TR_blocks/D800 fold=4/5 train=7266 test=1961 elapsed=5.2s
+[   303.4s] TR_blocks/D800 fold=5/5 train=7404 test=1823 elapsed=5.4s
+[   303.7s] TR_blocks complete window AUC=0.9751 smooth5 AUC=0.9853
+[   316.6s] RT_alternating_blocks_40/D50 fold=1/5 train=7429 test=1798 elapsed=5.7s
+[   322.2s] RT_alternating_blocks_40/D50 fold=2/5 train=7403 test=1824 elapsed=5.6s
+[   327.6s] RT_alternating_blocks_40/D50 fold=3/5 train=7406 test=1821 elapsed=5.4s
+[   332.8s] RT_alternating_blocks_40/D50 fold=4/5 train=7266 test=1961 elapsed=5.1s
+[   337.9s] RT_alternating_blocks_40/D50 fold=5/5 train=7404 test=1823 elapsed=5.1s
+[   344.2s] RT_alternating_blocks_40/D100 fold=1/5 train=7429 test=1798 elapsed=5.3s
+[   349.5s] RT_alternating_blocks_40/D100 fold=2/5 train=7403 test=1824 elapsed=5.3s
+[   354.6s] RT_alternating_blocks_40/D100 fold=3/5 train=7406 test=1821 elapsed=5.1s
+[   360.0s] RT_alternating_blocks_40/D100 fold=4/5 train=7266 test=1961 elapsed=5.4s
+[   365.7s] RT_alternating_blocks_40/D100 fold=5/5 train=7404 test=1823 elapsed=5.6s
+[   372.2s] RT_alternating_blocks_40/D200 fold=1/5 train=7429 test=1798 elapsed=5.5s
+[   377.8s] RT_alternating_blocks_40/D200 fold=2/5 train=7403 test=1824 elapsed=5.5s
+[   383.1s] RT_alternating_blocks_40/D200 fold=3/5 train=7406 test=1821 elapsed=5.3s
+[   388.6s] RT_alternating_blocks_40/D200 fold=4/5 train=7266 test=1961 elapsed=5.5s
+[   394.2s] RT_alternating_blocks_40/D200 fold=5/5 train=7404 test=1823 elapsed=5.5s
+[   401.0s] RT_alternating_blocks_40/D400 fold=1/5 train=7429 test=1798 elapsed=5.8s
+[   406.5s] RT_alternating_blocks_40/D400 fold=2/5 train=7403 test=1824 elapsed=5.6s
+[   411.9s] RT_alternating_blocks_40/D400 fold=3/5 train=7406 test=1821 elapsed=5.3s
+[   417.4s] RT_alternating_blocks_40/D400 fold=4/5 train=7266 test=1961 elapsed=5.6s
+[   423.0s] RT_alternating_blocks_40/D400 fold=5/5 train=7404 test=1823 elapsed=5.6s
+[   429.7s] RT_alternating_blocks_40/D800 fold=1/5 train=7429 test=1798 elapsed=5.6s
+[   435.2s] RT_alternating_blocks_40/D800 fold=2/5 train=7403 test=1824 elapsed=5.5s
+[   440.5s] RT_alternating_blocks_40/D800 fold=3/5 train=7406 test=1821 elapsed=5.3s
+[   445.8s] RT_alternating_blocks_40/D800 fold=4/5 train=7266 test=1961 elapsed=5.3s
+[   451.5s] RT_alternating_blocks_40/D800 fold=5/5 train=7404 test=1823 elapsed=5.8s
+[   452.2s] RT_alternating_blocks_40 complete window AUC=0.9835 smooth5 AUC=0.9705
+[   464.9s] RT_alternating_blocks_200/D50 fold=1/5 train=7429 test=1798 elapsed=5.6s
+[   470.1s] RT_alternating_blocks_200/D50 fold=2/5 train=7403 test=1824 elapsed=5.2s
+[   475.5s] RT_alternating_blocks_200/D50 fold=3/5 train=7406 test=1821 elapsed=5.3s
+[   480.9s] RT_alternating_blocks_200/D50 fold=4/5 train=7266 test=1961 elapsed=5.4s
+[   486.0s] RT_alternating_blocks_200/D50 fold=5/5 train=7404 test=1823 elapsed=5.1s
+[   492.6s] RT_alternating_blocks_200/D100 fold=1/5 train=7429 test=1798 elapsed=5.5s
+[   497.6s] RT_alternating_blocks_200/D100 fold=2/5 train=7403 test=1824 elapsed=5.1s
+[   502.8s] RT_alternating_blocks_200/D100 fold=3/5 train=7406 test=1821 elapsed=5.2s
+[   508.2s] RT_alternating_blocks_200/D100 fold=4/5 train=7266 test=1961 elapsed=5.4s
+[   513.5s] RT_alternating_blocks_200/D100 fold=5/5 train=7404 test=1823 elapsed=5.2s
+[   519.8s] RT_alternating_blocks_200/D200 fold=1/5 train=7429 test=1798 elapsed=5.3s
+[   525.2s] RT_alternating_blocks_200/D200 fold=2/5 train=7403 test=1824 elapsed=5.4s
+[   530.5s] RT_alternating_blocks_200/D200 fold=3/5 train=7406 test=1821 elapsed=5.3s
+[   535.7s] RT_alternating_blocks_200/D200 fold=4/5 train=7266 test=1961 elapsed=5.2s
+[   541.1s] RT_alternating_blocks_200/D200 fold=5/5 train=7404 test=1823 elapsed=5.4s
+[   547.5s] RT_alternating_blocks_200/D400 fold=1/5 train=7429 test=1798 elapsed=5.4s
+[   552.6s] RT_alternating_blocks_200/D400 fold=2/5 train=7403 test=1824 elapsed=5.1s
+[   558.1s] RT_alternating_blocks_200/D400 fold=3/5 train=7406 test=1821 elapsed=5.5s
+[   563.3s] RT_alternating_blocks_200/D400 fold=4/5 train=7266 test=1961 elapsed=5.2s
+[   568.6s] RT_alternating_blocks_200/D400 fold=5/5 train=7404 test=1823 elapsed=5.3s
+[   575.4s] RT_alternating_blocks_200/D800 fold=1/5 train=7429 test=1798 elapsed=5.8s
+[   581.0s] RT_alternating_blocks_200/D800 fold=2/5 train=7403 test=1824 elapsed=5.7s
+[   586.4s] RT_alternating_blocks_200/D800 fold=3/5 train=7406 test=1821 elapsed=5.3s
+[   591.7s] RT_alternating_blocks_200/D800 fold=4/5 train=7266 test=1961 elapsed=5.3s
+[   596.8s] RT_alternating_blocks_200/D800 fold=5/5 train=7404 test=1823 elapsed=5.2s
+[   597.2s] RT_alternating_blocks_200 complete window AUC=0.9620 smooth5 AUC=0.9707
+[   609.8s] RT_alternating_blocks_800/D50 fold=1/5 train=7429 test=1798 elapsed=5.5s
+[   615.1s] RT_alternating_blocks_800/D50 fold=2/5 train=7403 test=1824 elapsed=5.3s
+[   620.7s] RT_alternating_blocks_800/D50 fold=3/5 train=7406 test=1821 elapsed=5.6s
+[   626.0s] RT_alternating_blocks_800/D50 fold=4/5 train=7266 test=1961 elapsed=5.3s
+[   631.2s] RT_alternating_blocks_800/D50 fold=5/5 train=7404 test=1823 elapsed=5.2s
+[   637.8s] RT_alternating_blocks_800/D100 fold=1/5 train=7429 test=1798 elapsed=5.6s
+[   643.1s] RT_alternating_blocks_800/D100 fold=2/5 train=7403 test=1824 elapsed=5.3s
+[   648.4s] RT_alternating_blocks_800/D100 fold=3/5 train=7406 test=1821 elapsed=5.3s
+[   653.9s] RT_alternating_blocks_800/D100 fold=4/5 train=7266 test=1961 elapsed=5.5s
+[   659.3s] RT_alternating_blocks_800/D100 fold=5/5 train=7404 test=1823 elapsed=5.4s
+[   666.0s] RT_alternating_blocks_800/D200 fold=1/5 train=7429 test=1798 elapsed=5.6s
+[   671.6s] RT_alternating_blocks_800/D200 fold=2/5 train=7403 test=1824 elapsed=5.6s
+[   677.1s] RT_alternating_blocks_800/D200 fold=3/5 train=7406 test=1821 elapsed=5.6s
+[   682.8s] RT_alternating_blocks_800/D200 fold=4/5 train=7266 test=1961 elapsed=5.6s
+[   688.4s] RT_alternating_blocks_800/D200 fold=5/5 train=7404 test=1823 elapsed=5.6s
+[   694.8s] RT_alternating_blocks_800/D400 fold=1/5 train=7429 test=1798 elapsed=5.4s
+[   700.3s] RT_alternating_blocks_800/D400 fold=2/5 train=7403 test=1824 elapsed=5.5s
+[   705.8s] RT_alternating_blocks_800/D400 fold=3/5 train=7406 test=1821 elapsed=5.4s
+[   711.4s] RT_alternating_blocks_800/D400 fold=4/5 train=7266 test=1961 elapsed=5.6s
+[   717.1s] RT_alternating_blocks_800/D400 fold=5/5 train=7404 test=1823 elapsed=5.7s
+[   723.4s] RT_alternating_blocks_800/D800 fold=1/5 train=7429 test=1798 elapsed=5.3s
+[   728.7s] RT_alternating_blocks_800/D800 fold=2/5 train=7403 test=1824 elapsed=5.3s
+[   733.8s] RT_alternating_blocks_800/D800 fold=3/5 train=7406 test=1821 elapsed=5.1s
+[   738.9s] RT_alternating_blocks_800/D800 fold=4/5 train=7266 test=1961 elapsed=5.1s
+[   744.2s] RT_alternating_blocks_800/D800 fold=5/5 train=7404 test=1823 elapsed=5.3s
+[   744.6s] RT_alternating_blocks_800 complete window AUC=0.9620 smooth5 AUC=0.9707
+[   757.3s] label_random/D50 fold=1/5 train=7429 test=1798 elapsed=5.5s
+[   762.9s] label_random/D50 fold=2/5 train=7403 test=1824 elapsed=5.6s
+[   768.1s] label_random/D50 fold=3/5 train=7406 test=1821 elapsed=5.3s
+[   773.6s] label_random/D50 fold=4/5 train=7266 test=1961 elapsed=5.4s
+[   778.6s] label_random/D50 fold=5/5 train=7404 test=1823 elapsed=5.0s
+[   785.0s] label_random/D100 fold=1/5 train=7429 test=1798 elapsed=5.4s
+[   790.0s] label_random/D100 fold=2/5 train=7403 test=1824 elapsed=5.0s
+[   795.1s] label_random/D100 fold=3/5 train=7406 test=1821 elapsed=5.1s
+[   800.4s] label_random/D100 fold=4/5 train=7266 test=1961 elapsed=5.4s
+[   805.6s] label_random/D100 fold=5/5 train=7404 test=1823 elapsed=5.2s
+[   812.3s] label_random/D200 fold=1/5 train=7429 test=1798 elapsed=5.7s
+[   817.7s] label_random/D200 fold=2/5 train=7403 test=1824 elapsed=5.3s
+[   822.9s] label_random/D200 fold=3/5 train=7406 test=1821 elapsed=5.2s
+[   828.2s] label_random/D200 fold=4/5 train=7266 test=1961 elapsed=5.3s
+[   833.4s] label_random/D200 fold=5/5 train=7404 test=1823 elapsed=5.2s
+[   840.1s] label_random/D400 fold=1/5 train=7429 test=1798 elapsed=5.6s
+[   845.2s] label_random/D400 fold=2/5 train=7403 test=1824 elapsed=5.1s
+[   850.5s] label_random/D400 fold=3/5 train=7406 test=1821 elapsed=5.3s
+[   855.6s] label_random/D400 fold=4/5 train=7266 test=1961 elapsed=5.1s
+[   861.4s] label_random/D400 fold=5/5 train=7404 test=1823 elapsed=5.8s
+[   868.0s] label_random/D800 fold=1/5 train=7429 test=1798 elapsed=5.6s
+[   873.8s] label_random/D800 fold=2/5 train=7403 test=1824 elapsed=5.8s
+[   879.2s] label_random/D800 fold=3/5 train=7406 test=1821 elapsed=5.4s
+[   884.4s] label_random/D800 fold=4/5 train=7266 test=1961 elapsed=5.2s
+[   889.8s] label_random/D800 fold=5/5 train=7404 test=1823 elapsed=5.4s
+[   897.6s] label_random complete window AUC=0.6900 smooth5 AUC=0.5842
+[   910.2s] within_label_random/D50 fold=1/5 train=7429 test=1798 elapsed=5.4s
+[   915.5s] within_label_random/D50 fold=2/5 train=7403 test=1824 elapsed=5.3s
+[   920.9s] within_label_random/D50 fold=3/5 train=7406 test=1821 elapsed=5.4s
+[   926.4s] within_label_random/D50 fold=4/5 train=7266 test=1961 elapsed=5.5s
+[   931.5s] within_label_random/D50 fold=5/5 train=7404 test=1823 elapsed=5.1s
+[   938.2s] within_label_random/D100 fold=1/5 train=7429 test=1798 elapsed=5.6s
+[   943.8s] within_label_random/D100 fold=2/5 train=7403 test=1824 elapsed=5.6s
+[   949.3s] within_label_random/D100 fold=3/5 train=7406 test=1821 elapsed=5.6s
+[   954.8s] within_label_random/D100 fold=4/5 train=7266 test=1961 elapsed=5.5s
+[   960.3s] within_label_random/D100 fold=5/5 train=7404 test=1823 elapsed=5.5s
+[   966.8s] within_label_random/D200 fold=1/5 train=7429 test=1798 elapsed=5.5s
+[   972.5s] within_label_random/D200 fold=2/5 train=7403 test=1824 elapsed=5.7s
+[   978.1s] within_label_random/D200 fold=3/5 train=7406 test=1821 elapsed=5.7s
+[   983.4s] within_label_random/D200 fold=4/5 train=7266 test=1961 elapsed=5.2s
+[   988.9s] within_label_random/D200 fold=5/5 train=7404 test=1823 elapsed=5.6s
+[   995.2s] within_label_random/D400 fold=1/5 train=7429 test=1798 elapsed=5.2s
+[  1000.5s] within_label_random/D400 fold=2/5 train=7403 test=1824 elapsed=5.3s
+[  1005.9s] within_label_random/D400 fold=3/5 train=7406 test=1821 elapsed=5.3s
+[  1011.2s] within_label_random/D400 fold=4/5 train=7266 test=1961 elapsed=5.4s
+[  1016.6s] within_label_random/D400 fold=5/5 train=7404 test=1823 elapsed=5.3s
+[  1022.9s] within_label_random/D800 fold=1/5 train=7429 test=1798 elapsed=5.3s
+[  1028.1s] within_label_random/D800 fold=2/5 train=7403 test=1824 elapsed=5.2s
+[  1033.3s] within_label_random/D800 fold=3/5 train=7406 test=1821 elapsed=5.2s
+[  1038.6s] within_label_random/D800 fold=4/5 train=7266 test=1961 elapsed=5.3s
+[  1044.0s] within_label_random/D800 fold=5/5 train=7404 test=1823 elapsed=5.4s
+[  1044.3s] within_label_random complete window AUC=0.9580 smooth5 AUC=0.9679
+[  1046.2s] bootstrap 200/2000
+[  1048.1s] bootstrap 400/2000
+[  1050.0s] bootstrap 600/2000
+[  1051.8s] bootstrap 800/2000
+[  1053.8s] bootstrap 1000/2000
+[  1055.6s] bootstrap 1200/2000
+[  1057.4s] bootstrap 1400/2000
+[  1059.2s] bootstrap 1600/2000
+[  1061.1s] bootstrap 1800/2000
+[  1062.9s] bootstrap 2000/2000
+[  1063.0s] done elapsed=1063.0s
