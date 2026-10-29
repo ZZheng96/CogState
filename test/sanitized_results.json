@@ -1,0 +1,377 @@
+{
+  "eeg_logistic": {
+    "AUC": 0.6547487583026455,
+    "bACC": 0.6176161037772949,
+    "subject_AUC": 0.6542990026849016,
+    "subject_bACC": 0.616847820386325
+  },
+  "eeg_mlp": {
+    "AUC": 0.6631790210401344,
+    "bACC": 0.6226572462845149,
+    "subject_AUC": 0.6585208668056741,
+    "subject_bACC": 0.6219105876984697
+  },
+  "eeg_histgb": {
+    "AUC": 0.6885014269409044,
+    "bACC": 0.6425578888030462,
+    "subject_AUC": 0.6874402305013294,
+    "subject_bACC": 0.6419442998679289
+  },
+  "eeg_emg_logistic": {
+    "AUC": 0.6712693219636715,
+    "bACC": 0.6312377956962756,
+    "subject_AUC": 0.6703153481205238,
+    "subject_bACC": 0.6299631957588565
+  },
+  "eeg_emg_mlp": {
+    "AUC": 0.6785621304232354,
+    "bACC": 0.634628279492617,
+    "subject_AUC": 0.67369206298265,
+    "subject_bACC": 0.6338286994496749
+  },
+  "eeg_emg_histgb": {
+    "AUC": 0.7105788709858862,
+    "bACC": 0.6557203068767425,
+    "subject_AUC": 0.7086996913994381,
+    "subject_bACC": 0.654867685978941
+  },
+  "combos": {
+    "eeg_logistic+eeg_mlp": {
+      "AUC": 0.6725350754129512,
+      "bACC": 0.6278449721445145,
+      "subject_AUC": 0.667719703652652,
+      "subject_bACC": 0.6265980847648811
+    },
+    "eeg_logistic+eeg_histgb": {
+      "AUC": 0.6910598100366521,
+      "bACC": 0.6432326990581787,
+      "subject_AUC": 0.6877490527649136,
+      "subject_bACC": 0.6421972234484079
+    },
+    "eeg_logistic+eeg_emg_logistic": {
+      "AUC": 0.6683171161941135,
+      "bACC": 0.6291130885918175,
+      "subject_AUC": 0.6676363418555566,
+      "subject_bACC": 0.6278975776401331
+    },
+    "eeg_logistic+eeg_emg_mlp": {
+      "AUC": 0.6816669083897431,
+      "bACC": 0.6356287806031486,
+      "subject_AUC": 0.6765728939891971,
+      "subject_bACC": 0.6343073271530162
+    },
+    "eeg_logistic+eeg_emg_histgb": {
+      "AUC": 0.7059271040676726,
+      "bACC": 0.6523707920428482,
+      "subject_AUC": 0.7032038952079553,
+      "subject_bACC": 0.6510879615300758
+    },
+    "eeg_mlp+eeg_histgb": {
+      "AUC": 0.6865878556466976,
+      "bACC": 0.6381100447404622,
+      "subject_AUC": 0.6827705572436398,
+      "subject_bACC": 0.6369619410904379
+    },
+    "eeg_mlp+eeg_emg_logistic": {
+      "AUC": 0.685035071539184,
+      "bACC": 0.6421160469103917,
+      "subject_AUC": 0.6802252374494027,
+      "subject_bACC": 0.6408541383280559
+    },
+    "eeg_mlp+eeg_emg_mlp": {
+      "AUC": 0.6735642114110026,
+      "bACC": 0.6307850685176457,
+      "subject_AUC": 0.6682498997257489,
+      "subject_bACC": 0.6299252356983289
+    },
+    "eeg_mlp+eeg_emg_histgb": {
+      "AUC": 0.7013807113662218,
+      "bACC": 0.6485092581487794,
+      "subject_AUC": 0.6985641219435547,
+      "subject_bACC": 0.6472980030403447
+    },
+    "eeg_histgb+eeg_emg_logistic": {
+      "AUC": 0.7046070791392055,
+      "bACC": 0.652569671253517,
+      "subject_AUC": 0.7009268477082833,
+      "subject_bACC": 0.6514554150256756
+    },
+    "eeg_histgb+eeg_emg_mlp": {
+      "AUC": 0.6967128528188474,
+      "bACC": 0.6459535944376421,
+      "subject_AUC": 0.6928057279885279,
+      "subject_bACC": 0.6447521922623874
+    },
+    "eeg_histgb+eeg_emg_histgb": {
+      "AUC": 0.7069504526574509,
+      "bACC": 0.651135323705937,
+      "subject_AUC": 0.706032056209294,
+      "subject_bACC": 0.6504135913805597
+    },
+    "eeg_emg_logistic+eeg_emg_mlp": {
+      "AUC": 0.6894349506156655,
+      "bACC": 0.6430514764786402,
+      "subject_AUC": 0.6846782430034132,
+      "subject_bACC": 0.6418952403562104
+    },
+    "eeg_emg_logistic+eeg_emg_histgb": {
+      "AUC": 0.711669258991711,
+      "bACC": 0.6571090136985707,
+      "subject_AUC": 0.7081921528427736,
+      "subject_bACC": 0.6560327768873295
+    },
+    "eeg_emg_mlp+eeg_emg_histgb": {
+      "AUC": 0.7066098865358077,
+      "bACC": 0.6527502275450883,
+      "subject_AUC": 0.7035555440047881,
+      "subject_bACC": 0.6515514488525523
+    },
+    "eeg_logistic+eeg_mlp+eeg_histgb": {
+      "AUC": 0.6891137533302777,
+      "bACC": 0.6408559259186949,
+      "subject_AUC": 0.6850895252828112,
+      "subject_bACC": 0.6398015308276239
+    },
+    "eeg_logistic+eeg_mlp+eeg_emg_logistic": {
+      "AUC": 0.6796782170010037,
+      "bACC": 0.6358233289420308,
+      "subject_AUC": 0.6757758928475179,
+      "subject_bACC": 0.6344896877767457
+    },
+    "eeg_logistic+eeg_mlp+eeg_emg_mlp": {
+      "AUC": 0.6796468859714773,
+      "bACC": 0.6330133756534658,
+      "subject_AUC": 0.6735938450864967,
+      "subject_bACC": 0.6315799149639898
+    },
+    "eeg_logistic+eeg_mlp+eeg_emg_histgb": {
+      "AUC": 0.7000530086310633,
+      "bACC": 0.6476349023950109,
+      "subject_AUC": 0.6960692036134646,
+      "subject_bACC": 0.6463224880152193
+    },
+    "eeg_logistic+eeg_histgb+eeg_emg_logistic": {
+      "AUC": 0.6933877582137036,
+      "bACC": 0.6444828257303679,
+      "subject_AUC": 0.6899676314606769,
+      "subject_bACC": 0.6431224677426617
+    },
+    "eeg_logistic+eeg_histgb+eeg_emg_mlp": {
+      "AUC": 0.6962523238729739,
+      "bACC": 0.644841939449609,
+      "subject_AUC": 0.6916329171174311,
+      "subject_bACC": 0.6437774846706547
+    },
+    "eeg_logistic+eeg_histgb+eeg_emg_histgb": {
+      "AUC": 0.7080075107698477,
+      "bACC": 0.6564806189226402,
+      "subject_AUC": 0.7061054387204456,
+      "subject_bACC": 0.655402477071847
+    },
+    "eeg_logistic+eeg_emg_logistic+eeg_emg_mlp": {
+      "AUC": 0.6839113923776037,
+      "bACC": 0.6364437282623551,
+      "subject_AUC": 0.6797322870248258,
+      "subject_bACC": 0.6353536932983301
+    },
+    "eeg_logistic+eeg_emg_logistic+eeg_emg_histgb": {
+      "AUC": 0.7005278627682312,
+      "bACC": 0.6508896958720827,
+      "subject_AUC": 0.6972712639732384,
+      "subject_bACC": 0.6494215893473521
+    },
+    "eeg_logistic+eeg_emg_mlp+eeg_emg_histgb": {
+      "AUC": 0.7048097159041078,
+      "bACC": 0.649876202146191,
+      "subject_AUC": 0.7004713157437695,
+      "subject_bACC": 0.6487830762470502
+    },
+    "eeg_mlp+eeg_histgb+eeg_emg_logistic": {
+      "AUC": 0.6990425906763691,
+      "bACC": 0.6488252878286542,
+      "subject_AUC": 0.6948765693732762,
+      "subject_bACC": 0.6475034419003985
+    },
+    "eeg_mlp+eeg_histgb+eeg_emg_mlp": {
+      "AUC": 0.6884590401796435,
+      "bACC": 0.6380509697898837,
+      "subject_AUC": 0.6835443328360647,
+      "subject_bACC": 0.6368471478303224
+    },
+    "eeg_mlp+eeg_histgb+eeg_emg_histgb": {
+      "AUC": 0.7024763831905771,
+      "bACC": 0.6505533444092086,
+      "subject_AUC": 0.7002733722570673,
+      "subject_bACC": 0.649447280454588
+    },
+    "eeg_mlp+eeg_emg_logistic+eeg_emg_mlp": {
+      "AUC": 0.6866485265893835,
+      "bACC": 0.6414302429038008,
+      "subject_AUC": 0.6806733344627143,
+      "subject_bACC": 0.6402936207469709
+    },
+    "eeg_mlp+eeg_emg_logistic+eeg_emg_histgb": {
+      "AUC": 0.7067298880977105,
+      "bACC": 0.6556102608966748,
+      "subject_AUC": 0.7023979099065003,
+      "subject_bACC": 0.6542652965366819
+    },
+    "eeg_mlp+eeg_emg_mlp+eeg_emg_histgb": {
+      "AUC": 0.6968781697100531,
+      "bACC": 0.6473942717209102,
+      "subject_AUC": 0.6928914900837269,
+      "subject_bACC": 0.6462781646018203
+    },
+    "eeg_histgb+eeg_emg_logistic+eeg_emg_mlp": {
+      "AUC": 0.7037427486950828,
+      "bACC": 0.652438528737,
+      "subject_AUC": 0.6992451791162907,
+      "subject_bACC": 0.6511583317553556
+    },
+    "eeg_histgb+eeg_emg_logistic+eeg_emg_histgb": {
+      "AUC": 0.7146233086744805,
+      "bACC": 0.6620264590699302,
+      "subject_AUC": 0.712234412909749,
+      "subject_bACC": 0.6608135922874222
+    },
+    "eeg_histgb+eeg_emg_mlp+eeg_emg_histgb": {
+      "AUC": 0.707559540577402,
+      "bACC": 0.6531150047120504,
+      "subject_AUC": 0.7052337376894948,
+      "subject_bACC": 0.6520397843257381
+    },
+    "eeg_emg_logistic+eeg_emg_mlp+eeg_emg_histgb": {
+      "AUC": 0.7087495541293894,
+      "bACC": 0.6547385702947751,
+      "subject_AUC": 0.7042183601299612,
+      "subject_bACC": 0.6534604237592045
+    },
+    "eeg_logistic+eeg_mlp+eeg_histgb+eeg_emg_logistic": {
+      "AUC": 0.6934399843437823,
+      "bACC": 0.6457767027298903,
+      "subject_AUC": 0.688909863365806,
+      "subject_bACC": 0.6443850347322003
+    },
+    "eeg_logistic+eeg_mlp+eeg_histgb+eeg_emg_mlp": {
+      "AUC": 0.6907528837098171,
+      "bACC": 0.6405999706213492,
+      "subject_AUC": 0.6856765025828684,
+      "subject_bACC": 0.6393255377898126
+    },
+    "eeg_logistic+eeg_mlp+eeg_histgb+eeg_emg_histgb": {
+      "AUC": 0.7030703944083875,
+      "bACC": 0.6504946026026137,
+      "subject_AUC": 0.7000145142778122,
+      "subject_bACC": 0.6493988105004914
+    },
+    "eeg_logistic+eeg_mlp+eeg_emg_logistic+eeg_emg_mlp": {
+      "AUC": 0.6847705397211445,
+      "bACC": 0.6411115480720571,
+      "subject_AUC": 0.6794192378131125,
+      "subject_bACC": 0.639752488658246
+    },
+    "eeg_logistic+eeg_mlp+eeg_emg_logistic+eeg_emg_histgb": {
+      "AUC": 0.6999691803077506,
+      "bACC": 0.6493856127664493,
+      "subject_AUC": 0.6954511141544234,
+      "subject_bACC": 0.6480850665266789
+    },
+    "eeg_logistic+eeg_mlp+eeg_emg_mlp+eeg_emg_histgb": {
+      "AUC": 0.6978603633965563,
+      "bACC": 0.645644227637439,
+      "subject_AUC": 0.6930249344927569,
+      "subject_bACC": 0.6445018117145873
+    },
+    "eeg_logistic+eeg_histgb+eeg_emg_logistic+eeg_emg_mlp": {
+      "AUC": 0.6974127340956287,
+      "bACC": 0.6475874874838581,
+      "subject_AUC": 0.692753817118068,
+      "subject_bACC": 0.6464614024820069
+    },
+    "eeg_logistic+eeg_histgb+eeg_emg_logistic+eeg_emg_histgb": {
+      "AUC": 0.7077415379103908,
+      "bACC": 0.6557994789318196,
+      "subject_AUC": 0.7043787087750094,
+      "subject_bACC": 0.6545811449996214
+    },
+    "eeg_logistic+eeg_histgb+eeg_emg_mlp+eeg_emg_histgb": {
+      "AUC": 0.7074136312601241,
+      "bACC": 0.6540437714006271,
+      "subject_AUC": 0.7039997686576163,
+      "subject_bACC": 0.653018105862075
+    },
+    "eeg_logistic+eeg_emg_logistic+eeg_emg_mlp+eeg_emg_histgb": {
+      "AUC": 0.7025121380623044,
+      "bACC": 0.6501942306899675,
+      "subject_AUC": 0.6980458550879709,
+      "subject_bACC": 0.6490387536278388
+    },
+    "eeg_mlp+eeg_histgb+eeg_emg_logistic+eeg_emg_mlp": {
+      "AUC": 0.6970251714296959,
+      "bACC": 0.6480804088714849,
+      "subject_AUC": 0.6921785656656364,
+      "subject_bACC": 0.6467194835842428
+    },
+    "eeg_mlp+eeg_histgb+eeg_emg_logistic+eeg_emg_histgb": {
+      "AUC": 0.709110713197739,
+      "bACC": 0.6547339062790049,
+      "subject_AUC": 0.7058070246357772,
+      "subject_bACC": 0.6534236924499186
+    },
+    "eeg_mlp+eeg_histgb+eeg_emg_mlp+eeg_emg_histgb": {
+      "AUC": 0.7007363876593552,
+      "bACC": 0.6477530522961679,
+      "subject_AUC": 0.6974134430433149,
+      "subject_bACC": 0.6465717977700322
+    },
+    "eeg_mlp+eeg_emg_logistic+eeg_emg_mlp+eeg_emg_histgb": {
+      "AUC": 0.7023547004136873,
+      "bACC": 0.6505129255217112,
+      "subject_AUC": 0.6973123283034132,
+      "subject_bACC": 0.6492711624642866
+    },
+    "eeg_histgb+eeg_emg_logistic+eeg_emg_mlp+eeg_emg_histgb": {
+      "AUC": 0.711918396458695,
+      "bACC": 0.6580377803871473,
+      "subject_AUC": 0.708285259349078,
+      "subject_bACC": 0.6566767557343846
+    }
+  },
+  "best_combo": "eeg_histgb+eeg_emg_logistic+eeg_emg_histgb",
+  "nested": [
+    {
+      "fold": 1,
+      "combo": "eeg_histgb+eeg_emg_logistic+eeg_emg_histgb",
+      "AUC": 0.6612737649547382
+    },
+    {
+      "fold": 2,
+      "combo": "eeg_histgb+eeg_emg_logistic+eeg_emg_histgb",
+      "AUC": 0.7594862301957566
+    },
+    {
+      "fold": 3,
+      "combo": "eeg_histgb+eeg_emg_logistic+eeg_emg_histgb",
+      "AUC": 0.7427090285273146
+    },
+    {
+      "fold": 4,
+      "combo": "eeg_histgb+eeg_emg_logistic+eeg_emg_histgb",
+      "AUC": 0.6815748830962058
+    },
+    {
+      "fold": 5,
+      "combo": "eeg_histgb+eeg_emg_logistic+eeg_emg_histgb",
+      "AUC": 0.7339745692227829
+    }
+  ],
+  "nested_mean_AUC": 0.7158036951993596,
+  "_meta": {
+    "seconds": 126.22546330001205,
+    "dropped": [
+      "nan_fraction",
+      "filtered_activity_normalized"
+    ],
+    "n_features": 876
+  }
+}

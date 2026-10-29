@@ -1,0 +1,65 @@
+{
+  "v3_only_logistic": {
+    "AUC": 0.5927949401162069,
+    "bACC": 0.5704995036929398,
+    "subject_AUC": 0.6019002464946397,
+    "subject_bACC": 0.5710023340259451
+  },
+  "base": {
+    "AUC": 0.6273537164768056,
+    "bACC": 0.5947247270001268,
+    "subject_AUC": 0.636049651997665,
+    "subject_bACC": 0.5935139448301164
+  },
+  "base_v3_logistic": {
+    "AUC": 0.6318762932571967,
+    "bACC": 0.6009427122506805,
+    "subject_AUC": 0.6409423279289865,
+    "subject_bACC": 0.5996445706691703
+  },
+  "base_v3_histgb": {
+    "AUC": 0.6251234492147564,
+    "bACC": 0.5927770278164379,
+    "subject_AUC": 0.6372666231951676,
+    "subject_bACC": 0.5934126746951777
+  },
+  "_meta": {
+    "seconds": 655.251995800063,
+    "names": [
+      "iaf_freq",
+      "iaf_prom",
+      "slope_1_40",
+      "spec_entropy",
+      "log_theta_alpha",
+      "log_beta_alpha",
+      "log_engage",
+      "log_alpha_delta",
+      "log_inv_engage",
+      "burst_frac",
+      "burst_dur",
+      "burst_rate",
+      "env_cv",
+      "lz_complexity",
+      "log_alpha_power",
+      "log_beta_alpha2"
+    ],
+    "corr_y": {
+      "iaf_freq": -0.051214333735434596,
+      "iaf_prom": 0.05349358931965141,
+      "slope_1_40": -0.07930220102765648,
+      "spec_entropy": -0.0680436679877789,
+      "log_theta_alpha": 0.12002942642189865,
+      "log_beta_alpha": -0.06878620250740318,
+      "log_engage": -0.10487437374020242,
+      "log_alpha_delta": -0.08675254896038816,
+      "log_inv_engage": 0.10487437374020239,
+      "burst_frac": NaN,
+      "burst_dur": -0.0005049852633331938,
+      "burst_rate": 0.0032903571433276772,
+      "env_cv": -0.04574577381925694,
+      "lz_complexity": 0.013967382682869576,
+      "log_alpha_power": 0.07977319386307453,
+      "log_beta_alpha2": -0.06907800612715098
+    }
+  }
+}

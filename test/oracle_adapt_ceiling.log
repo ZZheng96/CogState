@@ -1,0 +1,15 @@
+﻿[base] P3 AUC=0.7420
+[result] oracle120_pca5_C0.01       AUC=0.6108 bACC=0.5832 Δ=-0.1293 [-0.1675,-0.0886] (7s)
+[result] oracle120_pca5_C0.01_s5    AUC=0.6088 bACC=0.5894 Δ=-0.1311 [-0.1709,-0.0900] (11s)
+[result] oracle120_pca5_C0.1        AUC=0.6001 bACC=0.5808 Δ=-0.1398 [-0.1788,-0.0974] (17s)
+[result] oracle120_pca5_C0.1_s5     AUC=0.5997 bACC=0.5881 Δ=-0.1401 [-0.1800,-0.0974] (22s)
+[result] oracle120_pca10_C0.01      AUC=0.6146 bACC=0.5894 Δ=-0.1250 [-0.1641,-0.0818] (28s)
+[result] oracle120_pca10_C0.01_s5   AUC=0.6107 bACC=0.5936 Δ=-0.1286 [-0.1683,-0.0839] (32s)
+[result] oracle120_pca10_C0.1       AUC=0.5983 bACC=0.5792 Δ=-0.1410 [-0.1826,-0.0958] (38s)
+[result] oracle120_pca10_C0.1_s5    AUC=0.5966 bACC=0.5879 Δ=-0.1425 [-0.1829,-0.0985] (43s)
+[result] oracle120_pca20_C0.01      AUC=0.6247 bACC=0.5994 Δ=-0.1147 [-0.1514,-0.0746] (52s)
+[result] oracle120_pca20_C0.01_s5   AUC=0.6207 bACC=0.5945 Δ=-0.1184 [-0.1556,-0.0776] (57s)
+[result] oracle120_pca20_C0.1       AUC=0.6073 bACC=0.5896 Δ=-0.1318 [-0.1715,-0.0890] (67s)
+[result] oracle120_pca20_C0.1_s5    AUC=0.6070 bACC=0.5910 Δ=-0.1319 [-0.1721,-0.0894] (72s)
+[result] oracle120_scoretop3 AUC=0.6973 bACC=0.6640
+[result] oracle120_scoretop8 AUC=0.7196 bACC=0.6738

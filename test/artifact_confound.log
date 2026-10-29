@@ -1,0 +1,19 @@
+﻿[base] P3 AUC=0.7420
+[art] emg_log_45_60      pooled=0.542 subj=0.582 方向一致=0.67
+[art] emg_log_60_80      pooled=0.553 subj=0.563 方向一致=0.68
+[art] emg_log_80_100     pooled=0.540 subj=0.554 方向一致=0.65
+[art] emg_log_100_120    pooled=0.519 subj=0.536 方向一致=0.56
+[art] emg_rel_45_60      pooled=0.476 subj=0.471 方向一致=0.46
+[art] emg_rel_60_80      pooled=0.468 subj=0.464 方向一致=0.47
+[art] emg_rel_80_100     pooled=0.461 subj=0.458 方向一致=0.46
+[art] emg_rel_100_120    pooled=0.442 subj=0.436 方向一致=0.39
+[art] raw_log_diffvar    pooled=0.544 subj=0.576 方向一致=0.67
+[art] raw_log_absdiff    pooled=0.542 subj=0.574 方向一致=0.65
+[art] raw_log_p99        pooled=0.514 subj=0.522 方向一致=0.58
+[art] blink_count        pooled=0.502 subj=0.503 方向一致=0.30
+[art] blink_amp_sd       pooled=0.500 subj=0.498 方向一致=0.47
+[art] blink_width        pooled=0.503 subj=0.492 方向一致=0.42
+[art] blink_width_sd     pooled=0.502 subj=0.503 方向一致=0.28
+[resid] 去伪迹后 AUC=0.6627 Δ=-0.0793
+[strata] raw_log_diffvar: clean AUC=0.7115 (n=5527)  dirty AUC=0.7505 (n=3700)
+[strata] blink_amp_sd: clean AUC=0.7484 (n=4592)  dirty AUC=0.7342 (n=4635)

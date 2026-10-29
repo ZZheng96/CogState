@@ -1,0 +1,65 @@
+{
+  "P1 · q120histgb+q120svc+z120histgb+zsvc": {
+    "keys": [
+      "quant120_histgb",
+      "quant120_svc",
+      "K120_histgb",
+      "base_svc"
+    ],
+    "full_smooth24": 0.7336032032026448,
+    "excl_smooth24": 0.7292442211611048,
+    "excl_bACC": 0.6749513707818395,
+    "excl_raw": 0.6979213259366807
+  },
+  "P2 · P1 + q120warm": {
+    "keys": [
+      "quant120_histgb",
+      "quant120_svc",
+      "K120_histgb",
+      "base_svc",
+      "quant120w_histgb"
+    ],
+    "full_smooth24": 0.7415740293966251,
+    "excl_smooth24": 0.7369242102318314,
+    "excl_bACC": 0.6819787620332174,
+    "excl_raw": 0.7047067111633253
+  },
+  "P3 · q120histgb+q120warm+q120svc+zsvc": {
+    "keys": [
+      "quant120_histgb",
+      "quant120w_histgb",
+      "quant120_svc",
+      "base_svc"
+    ],
+    "full_smooth24": 0.7426742490237332,
+    "excl_smooth24": 0.7401176672990555,
+    "excl_bACC": 0.6871279004360861,
+    "excl_raw": 0.7053780540689895
+  },
+  "P0 · 上一轮最优（q120+z120+svc+warm）": {
+    "keys": [
+      "quant120_histgb",
+      "K120_histgb",
+      "base_svc",
+      "warm_histgb"
+    ],
+    "full_smooth24": 0.7382821484718918,
+    "excl_smooth24": 0.7321878477501528,
+    "excl_bACC": 0.6796155850823867,
+    "excl_raw": 0.7001847291054211
+  },
+  "_best": "P3 · q120histgb+q120warm+q120svc+zsvc",
+  "_per_fold": [
+    0.7060843415183486,
+    0.7844350582076103,
+    0.7794934640522876,
+    0.6772593825601516,
+    0.7767059717023469
+  ],
+  "_vs_P0": {
+    "mean": 0.004775254134633375,
+    "p2.5": -0.0047645722845503806,
+    "p97.5": 0.013455019948598467,
+    "win_rate": 0.87
+  }
+}

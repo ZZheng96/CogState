@@ -1,0 +1,25 @@
+﻿[result] A_flat_lr          全窗 0.5428 | 剔校准 0.5382 (2s)
+[result] A_flat_svc         全窗 0.5753 | 剔校准 0.5678 (113s)
+[result] A_flat_histgb      全窗 0.5757 | 剔校准 0.5688 (116s)
+[result] B_flat_lr          全窗 0.5461 | 剔校准 0.5318 (116s)
+[result] B_flat_svc         全窗 0.5879 | 剔校准 0.5695 (224s)
+[result] B_flat_histgb      全窗 0.5871 | 剔校准 0.5721 (225s)
+[result] A_stat_lr          全窗 0.5822 | 剔校准 0.5753 (229s)
+[result] A_stat_svc         全窗 0.5802 | 剔校准 0.5733 (398s)
+[result] A_stat_histgb      全窗 0.5783 | 剔校准 0.5679 (400s)
+[result] B_stat_lr          全窗 0.5916 | 剔校准 0.5657 (402s)
+[result] B_stat_svc         全窗 0.5990 | 剔校准 0.5842 (574s)
+[result] B_stat_histgb      全窗 0.5957 | 剔校准 0.5832 (577s)
+[result] A_all_lr           全窗 0.5792 | 剔校准 0.5723 (584s)
+[result] A_all_svc          全窗 0.5733 | 剔校准 0.5675 (831s)
+[result] A_all_histgb       全窗 0.5778 | 剔校准 0.5665 (833s)
+[result] B_all_lr           全窗 0.5927 | 剔校准 0.5633 (836s)
+[result] B_all_svc          全窗 0.5950 | 剔校准 0.5779 (1079s)
+[result] B_all_histgb       全窗 0.5903 | 剔校准 0.5736 (1082s)
+[combo] P3                                       剔校准 逐窗 0.7054 | 30s 0.7420 / bACC 0.6872 | Δ +0.0000 [+0.0000,+0.0000] 胜率 0%
+[combo] P3+B_stat_svc                            剔校准 逐窗 0.6991 | 30s 0.7354 / bACC 0.6753 | Δ -0.0070 [-0.0161,+0.0012] 胜率 5%
+[combo] P3+B_stat_svc+A_stat_lr                  剔校准 逐窗 0.6917 | 30s 0.7251 / bACC 0.6624 | Δ -0.0174 [-0.0345,-0.0031] 胜率 1%
+[combo] P3+2xB_stat_svc                          剔校准 逐窗 0.6876 | 30s 0.7247 / bACC 0.6604 | Δ -0.0179 [-0.0346,-0.0039] 胜率 1%
+[A combo] A4                           逐窗 0.6629 | 30s 0.6785 / bACC 0.6388
+[A combo] A4+A_stat_lr                 逐窗 0.6578 | 30s 0.6698 / bACC 0.6252
+[done] 1101s

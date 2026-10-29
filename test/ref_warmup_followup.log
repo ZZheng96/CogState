@@ -1,0 +1,13 @@
+﻿[base_logistic] AUC=0.6309 bACC=0.5970 子均AUC=0.6446 (31s)
+[base_lda] AUC=0.6319 bACC=0.5941 子均AUC=0.6476 (76s)
+[base_histgb] AUC=0.6355 bACC=0.6016 子均AUC=0.6475 (177s)
+[warm1s_logistic] AUC=0.6439 bACC=0.6070 子均AUC=0.6563 (202s)
+[warm1s_lda] AUC=0.6405 bACC=0.6014 子均AUC=0.6500 (243s)
+[warm1s_histgb] AUC=0.6485 bACC=0.6104 子均AUC=0.6575 (305s)
+[best] base_histgb+warm1s_logistic+warm1s_histgb AUC=0.6635 bACC=0.6233
+[nested 1/5] base_histgb+warm1s_logistic+warm1s_histgb AUC=0.6010
+[nested 2/5] base_histgb+warm1s_logistic+warm1s_histgb AUC=0.6937
+[nested 3/5] base_histgb+warm1s_logistic+warm1s_histgb AUC=0.7149
+[nested 4/5] base_histgb+warm1s_logistic+warm1s_histgb AUC=0.6432
+[nested 5/5] base_histgb+warm1s_logistic+warm1s_histgb AUC=0.6837
+[done] 322s -> D:\BCIC2026\CogState\test\ref_warmup_followup_results.json

@@ -1,0 +1,98 @@
+﻿[v6] (16067, 876) + (16067, 101) elapsed=168s
+[single] seg_logpow_b2_t4         AUC=0.5901
+[single] seg_logpow_b1_t5         AUC=0.5848
+[single] seg_logpow_b2_t3         AUC=0.5845
+[single] seg_logpow_b1_t3         AUC=0.5841
+[single] seg_logpow_b1_t4         AUC=0.5834
+[single] seg_logpow_b2_t5         AUC=0.5814
+[single] seg_logpow_b3_t4         AUC=0.5802
+[single] seg_logpow_b3_t5         AUC=0.5790
+[single] seg_logpow_b1_t2         AUC=0.5786
+[single] seg_logpow_b0_t5         AUC=0.5781
+python : C:\Users\imia\AppData\Roaming\Python\Python311\site-packages\sklearn\linear_model\_logistic.py:599: Convergenc
+eWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+所在位置 行:15 字符: 584
++ ... IL = 'solo-agent@trae.ai'; python -u test\features_v6.py 2>&1 | Tee-O ...
++                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\imia\A...(s) (status=1)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[v6_only] fold=1/5 elapsed=176s
+C:\Users\imia\AppData\Roaming\Python\Python311\site-packages\sklearn\linear_model\_logistic.py:599: ConvergenceWarning:
+ lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[v6_only] fold=2/5 elapsed=184s
+C:\Users\imia\AppData\Roaming\Python\Python311\site-packages\sklearn\linear_model\_logistic.py:599: ConvergenceWarning:
+ lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[v6_only] fold=3/5 elapsed=192s
+C:\Users\imia\AppData\Roaming\Python\Python311\site-packages\sklearn\linear_model\_logistic.py:599: ConvergenceWarning:
+ lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[v6_only] fold=4/5 elapsed=200s
+C:\Users\imia\AppData\Roaming\Python\Python311\site-packages\sklearn\linear_model\_logistic.py:599: ConvergenceWarning:
+ lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[v6_only] fold=5/5 elapsed=208s
+[result] v6_only AUC=0.5969 bACC=0.5712993514074016 subjAUC=0.6088
+[base_v6_lr] fold=1/5 elapsed=213s
+[base_v6_lr] fold=2/5 elapsed=219s
+[base_v6_lr] fold=3/5 elapsed=225s
+[base_v6_lr] fold=4/5 elapsed=230s
+[base_v6_lr] fold=5/5 elapsed=236s
+[result] base_v6_lr AUC=0.6292 bACC=0.5963406302712287 subjAUC=0.6373
+[base_v6_lda] fold=1/5 elapsed=239s
+[base_v6_lda] fold=2/5 elapsed=246s
+[base_v6_lda] fold=3/5 elapsed=253s
+[base_v6_lda] fold=4/5 elapsed=261s
+[base_v6_lda] fold=5/5 elapsed=272s
+[result] base_v6_lda AUC=0.6338 bACC=None subjAUC=0.6428
+[base_v6_histgb] fold=1/5 elapsed=282s
+[base_v6_histgb] fold=2/5 elapsed=290s
+[base_v6_histgb] fold=3/5 elapsed=298s
+[base_v6_histgb] fold=4/5 elapsed=306s
+[base_v6_histgb] fold=5/5 elapsed=316s
+[result] base_v6_histgb AUC=0.6240 bACC=0.5908647503604928 subjAUC=0.6346
+[base_v6_svc] fold=1/5 elapsed=414s
+[base_v6_svc] fold=2/5 elapsed=502s
+[base_v6_svc] fold=3/5 elapsed=598s
+[base_v6_svc] fold=4/5 elapsed=661s
+[base_v6_svc] fold=5/5 elapsed=715s
+[result] base_v6_svc AUC=0.6430 bACC=None subjAUC=0.6594
+[done] elapsed=716s

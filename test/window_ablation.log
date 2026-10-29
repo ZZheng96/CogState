@@ -1,0 +1,127 @@
+﻿[extract 3.0s 1/57] windows=591 elapsed=24s
+[extract 3.0s 2/57] windows=1155 elapsed=46s
+[extract 3.0s 3/57] windows=1707 elapsed=71s
+[extract 3.0s 4/57] windows=2272 elapsed=95s
+[extract 3.0s 5/57] windows=2845 elapsed=121s
+[extract 3.0s 6/57] windows=3408 elapsed=145s
+[extract 3.0s 7/57] windows=3993 elapsed=169s
+[extract 3.0s 8/57] windows=4573 elapsed=193s
+[extract 3.0s 9/57] windows=5012 elapsed=213s
+[extract 3.0s 10/57] windows=5599 elapsed=238s
+[extract 3.0s 11/57] windows=6189 elapsed=263s
+[extract 3.0s 12/57] windows=6763 elapsed=294s
+[extract 3.0s 13/57] windows=7347 elapsed=321s
+[extract 3.0s 14/57] windows=7936 elapsed=346s
+[extract 3.0s 15/57] windows=8487 elapsed=370s
+[extract 3.0s 16/57] windows=9077 elapsed=396s
+[extract 3.0s 17/57] windows=9648 elapsed=424s
+[extract 3.0s 18/57] windows=10234 elapsed=451s
+[extract 3.0s 19/57] windows=10824 elapsed=477s
+[extract 3.0s 20/57] windows=11405 elapsed=504s
+[extract 3.0s 21/57] windows=11987 elapsed=529s
+[extract 3.0s 22/57] windows=12581 elapsed=556s
+[extract 3.0s 23/57] windows=13173 elapsed=584s
+[extract 3.0s 24/57] windows=13764 elapsed=610s
+[extract 3.0s 25/57] windows=14347 elapsed=635s
+[extract 3.0s 26/57] windows=14939 elapsed=661s
+[extract 3.0s 27/57] windows=15511 elapsed=682s
+[extract 3.0s 28/57] windows=16096 elapsed=705s
+[extract 3.0s 29/57] windows=16686 elapsed=731s
+[extract 3.0s 30/57] windows=17282 elapsed=758s
+[extract 3.0s 31/57] windows=17874 elapsed=787s
+[extract 3.0s 32/57] windows=18121 elapsed=799s
+[extract 3.0s 33/57] windows=18713 elapsed=834s
+[extract 3.0s 34/57] windows=19287 elapsed=858s
+[extract 3.0s 35/57] windows=19874 elapsed=883s
+[extract 3.0s 36/57] windows=20460 elapsed=908s
+[extract 3.0s 37/57] windows=21053 elapsed=934s
+[extract 3.0s 38/57] windows=21630 elapsed=960s
+[extract 3.0s 39/57] windows=22217 elapsed=994s
+[extract 3.0s 40/57] windows=22799 elapsed=1019s
+[extract 3.0s 41/57] windows=23379 elapsed=1045s
+[extract 3.0s 42/57] windows=23960 elapsed=1071s
+[extract 3.0s 43/57] windows=24539 elapsed=1099s
+[extract 3.0s 44/57] windows=25121 elapsed=1128s
+[extract 3.0s 45/57] windows=25707 elapsed=1158s
+[extract 3.0s 46/57] windows=26292 elapsed=1186s
+[extract 3.0s 47/57] windows=26873 elapsed=1215s
+[extract 3.0s 48/57] windows=27459 elapsed=1245s
+[extract 3.0s 49/57] windows=28049 elapsed=1272s
+[extract 3.0s 50/57] windows=28636 elapsed=1297s
+[extract 3.0s 51/57] windows=29225 elapsed=1327s
+[extract 3.0s 52/57] windows=29814 elapsed=1372s
+[extract 3.0s 53/57] windows=30400 elapsed=1433s
+[extract 3.0s 54/57] windows=30990 elapsed=1463s
+[extract 3.0s 55/57] windows=31564 elapsed=1492s
+[extract 3.0s 56/57] windows=32151 elapsed=1528s
+[extract 3.0s 57/57] windows=32739 elapsed=1566s
+[window 3s + online fold 1/5] AUC=0.6332
+[window 3s + online fold 2/5] AUC=0.6447
+[window 3s + online fold 3/5] AUC=0.6067
+[window 3s + online fold 4/5] AUC=0.6019
+[window 3s + online fold 5/5] AUC=0.5502
+[window 3s + online] n=32739 AUC=0.6061 bACC=0.5820 subjAUC=0.6066
+[extract 4.0s 1/57] windows=441 elapsed=21s
+[extract 4.0s 2/57] windows=860 elapsed=42s
+[extract 4.0s 3/57] windows=1269 elapsed=63s
+[extract 4.0s 4/57] windows=1688 elapsed=84s
+[extract 4.0s 5/57] windows=2115 elapsed=107s
+[extract 4.0s 6/57] windows=2533 elapsed=128s
+[extract 4.0s 7/57] windows=2968 elapsed=149s
+[extract 4.0s 8/57] windows=3401 elapsed=168s
+[extract 4.0s 9/57] windows=3729 elapsed=185s
+[extract 4.0s 10/57] windows=4169 elapsed=208s
+[extract 4.0s 11/57] windows=4608 elapsed=231s
+[extract 4.0s 12/57] windows=5035 elapsed=255s
+[extract 4.0s 13/57] windows=5471 elapsed=279s
+[extract 4.0s 14/57] windows=5910 elapsed=302s
+[extract 4.0s 15/57] windows=6321 elapsed=324s
+[extract 4.0s 16/57] windows=6763 elapsed=349s
+[extract 4.0s 17/57] windows=7186 elapsed=373s
+[extract 4.0s 18/57] windows=7624 elapsed=399s
+[extract 4.0s 19/57] windows=8062 elapsed=422s
+[extract 4.0s 20/57] windows=8493 elapsed=444s
+[extract 4.0s 21/57] windows=8929 elapsed=468s
+[extract 4.0s 22/57] windows=9374 elapsed=490s
+[extract 4.0s 23/57] windows=9818 elapsed=509s
+[extract 4.0s 24/57] windows=10260 elapsed=533s
+[extract 4.0s 25/57] windows=10692 elapsed=560s
+[extract 4.0s 26/57] windows=11133 elapsed=588s
+[extract 4.0s 27/57] windows=11558 elapsed=612s
+[extract 4.0s 28/57] windows=11993 elapsed=630s
+[extract 4.0s 29/57] windows=12434 elapsed=648s
+[extract 4.0s 30/57] windows=12880 elapsed=666s
+[extract 4.0s 31/57] windows=13322 elapsed=683s
+[extract 4.0s 32/57] windows=13507 elapsed=691s
+[extract 4.0s 33/57] windows=13949 elapsed=709s
+[extract 4.0s 34/57] windows=14378 elapsed=726s
+[extract 4.0s 35/57] windows=14817 elapsed=744s
+[extract 4.0s 36/57] windows=15255 elapsed=761s
+[extract 4.0s 37/57] windows=15698 elapsed=779s
+[extract 4.0s 38/57] windows=16127 elapsed=797s
+[extract 4.0s 39/57] windows=16566 elapsed=814s
+[extract 4.0s 40/57] windows=17000 elapsed=832s
+[extract 4.0s 41/57] windows=17431 elapsed=849s
+[extract 4.0s 42/57] windows=17864 elapsed=867s
+[extract 4.0s 43/57] windows=18298 elapsed=884s
+[extract 4.0s 44/57] windows=18732 elapsed=902s
+[extract 4.0s 45/57] windows=19169 elapsed=919s
+[extract 4.0s 46/57] windows=19606 elapsed=937s
+[extract 4.0s 47/57] windows=20037 elapsed=955s
+[extract 4.0s 48/57] windows=20475 elapsed=972s
+[extract 4.0s 49/57] windows=20915 elapsed=990s
+[extract 4.0s 50/57] windows=21353 elapsed=1008s
+[extract 4.0s 51/57] windows=21794 elapsed=1025s
+[extract 4.0s 52/57] windows=22232 elapsed=1043s
+[extract 4.0s 53/57] windows=22668 elapsed=1061s
+[extract 4.0s 54/57] windows=23110 elapsed=1079s
+[extract 4.0s 55/57] windows=23539 elapsed=1096s
+[extract 4.0s 56/57] windows=23978 elapsed=1113s
+[extract 4.0s 57/57] windows=24416 elapsed=1131s
+[window 4s + online fold 1/5] AUC=0.6225
+[window 4s + online fold 2/5] AUC=0.6802
+[window 4s + online fold 3/5] AUC=0.5765
+[window 4s + online fold 4/5] AUC=0.6444
+[window 4s + online fold 5/5] AUC=0.6248
+[window 4s + online] n=24416 AUC=0.6295 bACC=0.5960 subjAUC=0.6270
+[done] 2840s

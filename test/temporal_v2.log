@@ -1,0 +1,31 @@
+﻿[基准]
+  滑均   6s  AUC=0.7054 bACC=0.6548
+  滑均  24s  AUC=0.7401 bACC=0.6871
+  滑均  30s  AUC=0.7420 bACC=0.6872
+  滑均  48s  AUC=0.7407 bACC=0.6868
+  EWMA 半衰期  36s  AUC=0.7062 bACC=0.6706
+  EWMA 半衰期  72s  AUC=0.6203 bACC=0.6113
+  EWMA 半衰期 144s  AUC=0.5329 bACC=0.5507
+  EWMA 半衰期 288s  AUC=0.4876 bACC=0.4962
+
+[变点重置 网格]
+  horizon= 48s thr=0.10  AUC=0.7284 bACC=0.6793  <=
+  horizon= 48s thr=0.15  AUC=0.7276 bACC=0.6776
+  horizon= 48s thr=0.20  AUC=0.7334 bACC=0.6819  <=
+  horizon= 48s thr=0.30  AUC=0.7336 bACC=0.6812  <=
+  horizon= 96s thr=0.10  AUC=0.7284 bACC=0.6791
+  horizon= 96s thr=0.15  AUC=0.7272 bACC=0.6796
+  horizon= 96s thr=0.20  AUC=0.7306 bACC=0.6813
+  horizon= 96s thr=0.30  AUC=0.7272 bACC=0.6838
+  horizon=192s thr=0.10  AUC=0.7283 bACC=0.6791
+  horizon=192s thr=0.15  AUC=0.7262 bACC=0.6782
+  horizon=192s thr=0.20  AUC=0.7280 bACC=0.6743
+  horizon=192s thr=0.30  AUC=0.7174 bACC=0.6767
+  horizon=384s thr=0.10  AUC=0.7283 bACC=0.6791
+  horizon=384s thr=0.15  AUC=0.7262 bACC=0.6783
+  horizon=384s thr=0.20  AUC=0.7275 bACC=0.6738
+  horizon=384s thr=0.30  AUC=0.7115 bACC=0.6732
+
+[best] cusum_h8_t30 AUC=0.7336
+[vs 24s 滑均] ΔAUC=-0.0041 [-0.0093, +0.0014] 胜率=6%
+[逐折] [0.697, 0.77, 0.775, 0.676, 0.774] 均值=0.7383

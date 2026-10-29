@@ -1,0 +1,26 @@
+﻿[control] base=(16067, 876)
+[base_lr] fold=1/5 elapsed=4s
+[base_lr] fold=2/5 elapsed=7s
+[base_lr] fold=3/5 elapsed=11s
+[base_lr] fold=4/5 elapsed=15s
+[base_lr] fold=5/5 elapsed=18s
+[result] base_lr AUC=0.6274
+[base_lda] fold=1/5 elapsed=26s
+[base_lda] fold=2/5 elapsed=31s
+[base_lda] fold=3/5 elapsed=42s
+[base_lda] fold=4/5 elapsed=47s
+[base_lda] fold=5/5 elapsed=56s
+[result] base_lda AUC=0.6329
+[base_histgb] fold=1/5 elapsed=63s
+[base_histgb] fold=2/5 elapsed=69s
+[base_histgb] fold=3/5 elapsed=76s
+[base_histgb] fold=4/5 elapsed=82s
+[base_histgb] fold=5/5 elapsed=88s
+[result] base_histgb AUC=0.6278
+[base_svc] fold=1/5 elapsed=135s
+[base_svc] fold=2/5 elapsed=182s
+[base_svc] fold=3/5 elapsed=229s
+[base_svc] fold=4/5 elapsed=274s
+[base_svc] fold=5/5 elapsed=320s
+[result] base_svc AUC=0.6439
+[done]

@@ -1,0 +1,24 @@
+﻿[prep] 窗内因果滤波完成 2s
+[prep] 子段统计完成 3s
+[base] P3 AUC=0.7420 bACC=0.6877 突发子段比例=0.098
+[result] mean_5       calib=feat  AUC=0.6426 bACC=0.6011 Δ=-0.1015 [-0.1381,-0.0655] (60s)
+[result] mean_5       calib=score AUC=0.6202 bACC=0.5892 Δ=-0.1238 [-0.1719,-0.0793] (111s)
+[result] mean_5rel    calib=feat  AUC=0.6599 bACC=0.6237 Δ=-0.0846 [-0.1242,-0.0498] (171s)
+[result] mean_5rel    calib=score AUC=0.6115 bACC=0.5803 Δ=-0.1324 [-0.1766,-0.0921] (228s)
+[result] med_5        calib=feat  AUC=0.6367 bACC=0.5998 Δ=-0.1076 [-0.1515,-0.0702] (286s)
+[result] med_5        calib=score AUC=0.6211 bACC=0.6016 Δ=-0.1225 [-0.1680,-0.0796] (336s)
+[result] med_5rel     calib=feat  AUC=0.6541 bACC=0.6197 Δ=-0.0902 [-0.1342,-0.0544] (396s)
+[result] med_5rel     calib=score AUC=0.6259 bACC=0.6011 Δ=-0.1173 [-0.1621,-0.0761] (453s)
+[result] trim_5       calib=feat  AUC=0.6434 bACC=0.6056 Δ=-0.1010 [-0.1414,-0.0646] (511s)
+[result] trim_5       calib=score AUC=0.6154 bACC=0.5938 Δ=-0.1284 [-0.1738,-0.0873] (563s)
+[result] trim_5rel    calib=feat  AUC=0.6593 bACC=0.6178 Δ=-0.0851 [-0.1275,-0.0503] (621s)
+[result] trim_5rel    calib=score AUC=0.6181 bACC=0.5952 Δ=-0.1259 [-0.1734,-0.0862] (679s)
+[result] all15        calib=feat  AUC=0.6456 bACC=0.6042 Δ=-0.0987 [-0.1395,-0.0627] (751s)
+[result] all15        calib=score AUC=0.6265 bACC=0.5969 Δ=-0.1173 [-0.1611,-0.0751] (815s)
+[result] all15_art    calib=feat  AUC=0.6415 bACC=0.6007 Δ=-0.1020 [-0.1420,-0.0665] (886s)
+[result] all15_art    calib=score AUC=0.6176 bACC=0.5887 Δ=-0.1260 [-0.1686,-0.0851] (950s)
+[result] art_only     calib=feat  AUC=0.5900 bACC=0.5628 Δ=-0.1516 [-0.1885,-0.1130] (1004s)
+[result] art_only     calib=score AUC=0.5722 bACC=0.5617 Δ=-0.1688 [-0.2093,-0.1286] (1056s)
+[best] mean_5rel_feat AUC=0.6599
+[mix] w=0.25 AUC=0.7368 Δ=-0.0058 [-0.0156,+0.0024]
+[mix] w=0.5 AUC=0.7197 Δ=-0.0237 [-0.0449,-0.0072]

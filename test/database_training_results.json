@@ -1,0 +1,44 @@
+{
+  "logistic300_EEG": {
+    "AUC": 0.6214826193360486,
+    "bACC": 0.5882456808269905,
+    "subject_AUC": 0.6268350701983406,
+    "subject_bACC": 0.5864649486581365
+  },
+  "histgb300_EEG": {
+    "AUC": 0.6004439569695735,
+    "bACC": 0.5700062491613294,
+    "subject_AUC": 0.6102356888394417,
+    "subject_bACC": 0.5705192326404562
+  },
+  "histgb_all_EEG": {
+    "AUC": 0.6184745770853342,
+    "bACC": 0.58438214806902,
+    "subject_AUC": 0.6275998116798939,
+    "subject_bACC": 0.5845243266599819
+  },
+  "histgb_all_EEGEMG": {
+    "AUC": 0.6278105111110491,
+    "bACC": 0.5953416864151322,
+    "subject_AUC": 0.639336506926413,
+    "subject_bACC": 0.595942477178322
+  },
+  "logistic300_EEGEMG": {
+    "AUC": 0.6273537164768056,
+    "bACC": 0.5947247270001268,
+    "subject_AUC": 0.636049651997665,
+    "subject_bACC": 0.5935139448301164
+  },
+  "histgb_all_selfnorm": {
+    "AUC": 0.6190991988119621,
+    "bACC": 0.5892501796653251,
+    "subject_AUC": 0.6321279817914143,
+    "subject_bACC": 0.5898500204079847
+  },
+  "_meta": {
+    "seconds": 173.20016909996048,
+    "n_windows": 16067,
+    "n_features": 856,
+    "note": "no ordering, no per-subject statistics"
+  }
+}

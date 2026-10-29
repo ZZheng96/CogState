@@ -1,0 +1,29 @@
+﻿[data] 窗 (16067, 856) 原始 (16067, 1500) 肌电 (16067, 20) 受试者 57
+[基线 · 858+20 · Logistic300] AUC=0.6309 bACC=0.5970 子均AUC=0.6446 子均bACC=0.5967 
+[extract] ema1e-3 (16067, 856) 163s
+[ema1e-3 · Logistic300] AUC=0.6289 bACC=0.5902 子均AUC=0.6410 子均bACC=0.5901 
+[ema1e-3 · HistGB 全维] AUC=0.6385 bACC=0.6018 子均AUC=0.6497 子均bACC=0.6023 
+[extract] warm1s (16067, 856) 251s
+[warm1s · Logistic300] AUC=0.6439 bACC=0.6070 子均AUC=0.6563 子均bACC=0.6065 
+[extract] ema3e-4 (16067, 856) 168s
+[ema3e-4 · Logistic300] AUC=0.6198 bACC=0.5875 子均AUC=0.6335 子均bACC=0.5872 
+[基线 · HistGB 全维] AUC=0.6355 bACC=0.6016 子均AUC=0.6475 子均bACC=0.6018 
+  [整窗 6s] fold1/5 AUC=0.4797 (18s)
+  [整窗 6s] fold2/5 AUC=0.4826 (30s)
+  [整窗 6s] fold3/5 AUC=0.4776 (43s)
+  [整窗 6s] fold4/5 AUC=0.5389 (58s)
+  [整窗 6s] fold5/5 AUC=0.5000 (71s)
+[shallow · 整窗 6s（1161 参数）] AUC=0.4961 bACC=0.4954 子均AUC=0.4935 子均bACC=0.4950 
+  [cropped 4s] fold1/5 AUC=0.4856 (9s)
+  [cropped 4s] fold2/5 AUC=0.4661 (18s)
+  [cropped 4s] fold3/5 AUC=0.4895 (24s)
+  [cropped 4s] fold4/5 AUC=0.5558 (36s)
+  [cropped 4s] fold5/5 AUC=0.4722 (47s)
+[shallow · cropped 4s（1161 参数）] AUC=0.4970 bACC=0.4935 子均AUC=0.5051 子均bACC=0.4931 
+  [cropped 3s] fold1/5 AUC=0.4896 (9s)
+  [cropped 3s] fold2/5 AUC=0.5068 (21s)
+  [cropped 3s] fold3/5 AUC=0.4805 (27s)
+  [cropped 3s] fold4/5 AUC=0.5469 (40s)
+  [cropped 3s] fold5/5 AUC=0.5184 (49s)
+[shallow · cropped 3s（1161 参数）] AUC=0.5100 bACC=0.5101 子均AUC=0.5215 子均bACC=0.5096 
+[done] 1106s -> D:\BCIC2026\CogState\test\ref_braindecode_results.json

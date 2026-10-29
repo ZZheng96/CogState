@@ -1,0 +1,27 @@
+{
+  "gru": {
+    "AUC": 0.5684454625514458,
+    "bACC": 0.5365431737500052,
+    "vs_p3": {
+      "mean": -0.17058433902335668,
+      "p2.5": -0.20149514729814824,
+      "p97.5": -0.1397791852227404,
+      "win": 0.0
+    }
+  },
+  "gru_quantile120": {
+    "AUC": 0.7043251370503424,
+    "bACC": 0.6578174738382438,
+    "vs_p3": {
+      "mean": -0.03763328231489783,
+      "p2.5": -0.053678889884477804,
+      "p97.5": -0.020794610539369936,
+      "win": 0.0
+    }
+  },
+  "protocol": {
+    "history_windows": "random 1-8 during training; unlimited forward state at test",
+    "input": "P3 unsmoothed global score only",
+    "target_labels_used": false
+  }
+}

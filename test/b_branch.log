@@ -1,0 +1,25 @@
+﻿[extract] warm0.5 (16067, 858) (144s)
+[data] base=(16067, 876) warm=(16067, 876)
+[result] B base K=15 · HistGB       AUC=0.6534 bACC=0.6094953937808372 (178s)
+[result] B base K=15 · Logistic     AUC=0.6144 bACC=0.589503144414353 (193s)
+[result] B base K=30 · HistGB       AUC=0.6739 bACC=0.6217053919431219 (225s)
+[result] B base K=30 · Logistic     AUC=0.6471 bACC=0.6131043038173962 (243s)
+[result] B base K=60 · HistGB       AUC=0.6705 bACC=0.621797556613559 (275s)
+[result] B base K=60 · Logistic     AUC=0.6292 bACC=0.6028455609571366 (293s)
+[result] B base K=120 · HistGB      AUC=0.6762 bACC=0.6352184789234522 (326s)
+[result] B base K=120 · Logistic    AUC=0.6389 bACC=0.6052989494653116 (345s)
+[result] B base K=30 robust · HistGB AUC=0.6800 bACC=0.625807889655275 (377s)
+[best K] 120
+[result] B warm0.5 K=120 · HistGB   AUC=0.6772 bACC=0.6307749657326549 (410s)
+[result] B warm0.5 K=120 · Logistic AUC=0.6385 bACC=0.6070660923574291 (426s)
+[result] B warm0.5 K=120 · SVC      AUC=0.6596 bACC=None (668s)
+[result] B base K=120 · SVC         AUC=0.6666 bACC=None (905s)
+[result] B warm0.5 K=120 · LDA      AUC=0.6445 bACC=None (937s)
+[result] ensemble(4) AUC=0.6964 bACC=0.6491
+[result] ensemble + 时序积分 K=1 (6s) AUC=0.6964 bACC=0.6491
+[result] ensemble + 时序积分 K=2 (12s) AUC=0.7174 bACC=0.6696
+[result] ensemble + 时序积分 K=3 (18s) AUC=0.7259 bACC=0.6741
+[result] ensemble + 时序积分 K=4 (24s) AUC=0.7291 bACC=0.6775
+[result] ensemble + 时序积分 K=5 (30s) AUC=0.7295 bACC=0.6784
+[result] ensemble + 时序积分 K=8 (48s) AUC=0.7242 bACC=0.6740
+[done]

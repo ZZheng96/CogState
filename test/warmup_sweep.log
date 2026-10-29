@@ -1,0 +1,23 @@
+﻿[data] raw=(16067, 1500) base=(16067, 856) E=(16067, 20)
+[result] base · Logistic300     AUC=0.6311 bACC=0.5956607143908594 subjAUC=0.6446 (24s)
+[result] base · HistGB 全维       AUC=0.6293 bACC=0.595816726493128 subjAUC=0.6461 (54s)
+[extract] warm0.5 (16067, 858) 142s
+[result] warm0.5 · Logistic300  AUC=0.6450 bACC=0.6074673991495686 subjAUC=0.6585 (216s)
+[result] warm0.5 · HistGB 全维    AUC=0.6528 bACC=0.6114715109210795 subjAUC=0.6598 (245s)
+[extract] warm1 (16067, 858) 142s
+[result] warm1 · Logistic300    AUC=0.6439 bACC=0.6067395105355623 subjAUC=0.6562 (408s)
+[result] warm1 · HistGB 全维      AUC=0.6499 bACC=0.6062157152229446 subjAUC=0.6575 (436s)
+[extract] warm2 (16067, 858) 141s
+[result] warm2 · Logistic300    AUC=0.6423 bACC=0.6034920462261295 subjAUC=0.6542 (600s)
+[result] warm2 · HistGB 全维      AUC=0.6428 bACC=0.6042173781537501 subjAUC=0.6513 (631s)
+[extract] warm3 (16067, 858) 142s
+[result] warm3 · Logistic300    AUC=0.6393 bACC=0.6002148236366741 subjAUC=0.6512 (795s)
+[result] warm3 · HistGB 全维      AUC=0.6439 bACC=0.604368842453266 subjAUC=0.6534 (825s)
+[extract] robust1 (16067, 858) 142s
+[result] robust1 · Logistic300  AUC=0.6431 bACC=0.6024331364529865 subjAUC=0.6556 (988s)
+[result] robust1 · HistGB 全维    AUC=0.6488 bACC=0.6128297931749179 subjAUC=0.6571 (1017s)
+[result] warm1 · RBF SVC        AUC=0.6442 bACC=None subjAUC=0.6565 (1240s)
+[result] warm1 · 收缩 LDA         AUC=0.6405 bACC=None subjAUC=0.6500 (1277s)
+[result] warm2 · RBF SVC        AUC=0.6409 bACC=None subjAUC=0.6538 (1498s)
+[result] warm2 · 收缩 LDA         AUC=0.6385 bACC=None subjAUC=0.6463 (1533s)
+[done] 1533s

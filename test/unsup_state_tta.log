@@ -1,0 +1,6 @@
+﻿[result] causal_pca10   AUC=0.7289 bACC=0.6765 alpha=0.25 Δ=-0.0136 [-0.0247,-0.0016] sep=0.1505 (111s)
+[result] causal_pca20   AUC=0.7305 bACC=0.6764 alpha=0.25 Δ=-0.0122 [-0.0240,-0.0017] sep=0.1435 (258s)
+[result] causal_pca40   AUC=0.7253 bACC=0.6707 alpha=0.25 Δ=-0.0171 [-0.0290,-0.0058] sep=0.1373 (417s)
+[result] transd_pca10   AUC=0.7161 bACC=0.6579 alpha=0.25 Δ=-0.0255 [-0.0401,-0.0096] sep=0.0906 (449s)
+[result] transd_pca20   AUC=0.7177 bACC=0.6599 alpha=0.25 Δ=-0.0240 [-0.0376,-0.0089] sep=0.0880 (481s)
+[result] transd_pca40   AUC=0.7189 bACC=0.6620 alpha=0.25 Δ=-0.0232 [-0.0391,-0.0085] sep=0.0972 (515s)

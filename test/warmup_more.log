@@ -1,0 +1,9 @@
+﻿[extract] warm0.25 (16067, 858) 142s
+[result] warm0.25 · lr          AUC=0.6457 bACC=0.6074169859425635 (168s)
+[result] warm0.25 · histgb      AUC=0.6522 bACC=0.6094884984751303 (198s)
+[result] warm0.25 · svc         AUC=0.6478 bACC=None (427s)
+[result] warm0.25 · lda         AUC=0.6418 bACC=None (463s)
+[extract] warm0.75 (16067, 858) 143s
+[result] warm0.75 · lr          AUC=0.6414 bACC=0.6018130702766458 (626s)
+[result] warm0.75 · histgb      AUC=0.6447 bACC=0.6044916563701933 (653s)
+[done]

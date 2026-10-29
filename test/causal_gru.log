@@ -1,0 +1,22 @@
+﻿[fold 1/5] epoch 10/30 loss=0.6820 elapsed=3s
+[fold 1/5] epoch 20/30 loss=0.6321 elapsed=4s
+[fold 1/5] epoch 30/30 loss=0.8204 elapsed=5s
+[fold 1/5] test AUC=0.5986
+[fold 2/5] epoch 10/30 loss=0.6820 elapsed=7s
+[fold 2/5] epoch 20/30 loss=0.6516 elapsed=8s
+[fold 2/5] epoch 30/30 loss=0.5993 elapsed=9s
+[fold 2/5] test AUC=0.7233
+[fold 3/5] epoch 10/30 loss=0.6737 elapsed=11s
+[fold 3/5] epoch 20/30 loss=0.8057 elapsed=12s
+[fold 3/5] epoch 30/30 loss=0.7033 elapsed=13s
+[fold 3/5] test AUC=0.7506
+[fold 4/5] epoch 10/30 loss=0.6595 elapsed=15s
+[fold 4/5] epoch 20/30 loss=0.6483 elapsed=16s
+[fold 4/5] epoch 30/30 loss=0.7630 elapsed=17s
+[fold 4/5] test AUC=0.5944
+[fold 5/5] epoch 10/30 loss=0.6844 elapsed=19s
+[fold 5/5] epoch 20/30 loss=0.6768 elapsed=20s
+[fold 5/5] epoch 30/30 loss=0.7858 elapsed=21s
+[fold 5/5] test AUC=0.7463
+[result] GRU AUC=0.5684 bACC=0.5365 Δ=-0.1706
+[result] GRU+quantile120 AUC=0.7043 bACC=0.6578 Δ=-0.0376 [-0.0537,-0.0208]

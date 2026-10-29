@@ -1,0 +1,9 @@
+# 大体积实验数据、特征缓存与模型权重（不入版本库）
+*.npz
+*.npy
+*.ckpt
+*.pt
+*.joblib
+*.pkl
+__pycache__/
+*.pyc

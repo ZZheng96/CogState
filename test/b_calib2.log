@@ -1,0 +1,8 @@
+﻿[quant180] 就绪 (10s)
+[result] quant180 · HistGB                全窗 0.6833 | 剔校准 0.6773 膨胀 +0.0060 (41s)
+[result] quant180 · Logistic              全窗 0.6412 | 剔校准 0.6375 膨胀 +0.0038 (53s)
+[quant120 warm] 就绪 (62s)
+[result] quant120 warm · HistGB           全窗 0.6948 | 剔校准 0.6850 膨胀 +0.0098 (90s)
+[result] quant120 warm · Logistic         全窗 0.6455 | 剔校准 0.6486 膨胀 -0.0030 (102s)
+[result] quant120 · SVC                   全窗 0.6751 | 剔校准 0.6796 膨胀 -0.0045 (369s)
+[done]

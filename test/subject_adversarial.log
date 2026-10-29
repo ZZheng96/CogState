@@ -1,0 +1,20 @@
+﻿[data] (16067, 876) subjects=57
+[mlp_plain] fold=1/5 AUC=0.5759 (5s)
+[mlp_plain] fold=2/5 AUC=0.6563 (9s)
+[mlp_plain] fold=3/5 AUC=0.6832 (12s)
+[mlp_plain] fold=4/5 AUC=0.6259 (15s)
+[mlp_plain] fold=5/5 AUC=0.6494 (18s)
+[result] mlp_plain AUC=0.6354 bACC=0.6008 subjAUC=0.6467
+[mlp_adv] fold=1/5 AUC=0.5162 (22s)
+[mlp_adv] fold=2/5 AUC=0.5959 (26s)
+[mlp_adv] fold=3/5 AUC=0.5883 (30s)
+[mlp_adv] fold=4/5 AUC=0.5034 (34s)
+[mlp_adv] fold=5/5 AUC=0.5121 (38s)
+[result] mlp_adv AUC=0.5227 bACC=0.5110 subjAUC=0.5396
+[mlp_adv_weak] fold=1/5 AUC=0.5725 (42s)
+[mlp_adv_weak] fold=2/5 AUC=0.6475 (46s)
+[mlp_adv_weak] fold=3/5 AUC=0.6618 (50s)
+[mlp_adv_weak] fold=4/5 AUC=0.6126 (54s)
+[mlp_adv_weak] fold=5/5 AUC=0.5727 (57s)
+[result] mlp_adv_weak AUC=0.6060 bACC=0.5843 subjAUC=0.6165
+[done]

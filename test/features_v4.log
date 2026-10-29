@@ -1,0 +1,19 @@
+﻿[v4] V=(16067, 74) 84s
+[单特征区分度 top12]
+   wp_log_energy_1        AUC=0.594 corr=+0.058
+   wp_log_energy_3        AUC=0.562 corr=+0.040
+   bic_max                AUC=0.444 corr=-0.024
+   wp_log_energy_7        AUC=0.548 corr=+0.035
+   wp_log_energy_6        AUC=0.544 corr=+0.032
+   wp_log_energy_12       AUC=0.543 corr=+0.034
+   wp_log_energy_15       AUC=0.542 corr=+0.032
+   wp_log_energy_13       AUC=0.542 corr=+0.033
+   bic_theta_theta        AUC=0.458 corr=-0.070
+   wp_log_energy_5        AUC=0.541 corr=+0.033
+   wp_log_energy_4        AUC=0.541 corr=+0.031
+   wp_log_energy_2        AUC=0.541 corr=+0.027
+[仅变换域 v4] AUC=0.5852 bACC=0.5615 subjAUC=0.6102
+[基线 892 · Logistic300] AUC=0.6319 bACC=0.6009 subjAUC=0.6409
+[基线 + v4 · Logistic300] AUC=0.6349 bACC=0.6024 subjAUC=0.6439
+[基线 + v4 · HistGB 全维] AUC=0.6137 bACC=0.5856 subjAUC=0.6250
+[done] 181s

@@ -1,0 +1,12 @@
+﻿[data] (16067, 876)
+[result] robust60 · HistGB              AUC=0.6615 bACC=0.6154 subjAUC=0.6629 (33s)
+[result] robust60 · Logistic            AUC=0.6261 bACC=0.5991 subjAUC=0.6303 (48s)
+[result] robust120 · HistGB             AUC=0.6659 bACC=0.6269 subjAUC=0.6672 (80s)
+[result] robust120 · Logistic           AUC=0.6105 bACC=0.5791 subjAUC=0.6163 (93s)
+[result] quant60 · HistGB               AUC=0.6861 bACC=0.6391 subjAUC=0.6921 (130s)
+[result] quant60 · Logistic             AUC=0.6619 bACC=0.6233 subjAUC=0.6656 (140s)
+[result] quant120 · HistGB              AUC=0.7026 bACC=0.6532 subjAUC=0.7011 (178s)
+[result] quant120 · Logistic            AUC=0.6561 bACC=0.6186 subjAUC=0.6546 (189s)
+[result] quant30 · HistGB               AUC=0.6936 bACC=0.6360 subjAUC=0.6975 (224s)
+[result] quant30 · Logistic             AUC=0.6778 bACC=0.6339 subjAUC=0.6816 (234s)
+[done]

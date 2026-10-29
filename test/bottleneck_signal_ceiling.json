@@ -1,0 +1,106 @@
+{
+  "protocol": {
+    "cv": "LeaveOneGroupOut on trials, inside each subject",
+    "features": [
+      "stft_log_power_1_4_mean",
+      "stft_log_power_4_8_mean",
+      "stft_log_power_8_13_mean",
+      "stft_log_power_13_30_mean",
+      "stft_log_power_30_45_mean",
+      "stft_relative_1_4_mean",
+      "stft_relative_4_8_mean",
+      "stft_relative_8_13_mean",
+      "stft_relative_13_30_mean",
+      "stft_relative_30_45_mean"
+    ],
+    "note": "10 band-power features, Strong regularisation avoids memorising the six blocks per subject"
+  },
+  "regularisation": {
+    "0.003": {
+      "n_subjects": 56,
+      "skipped": 1,
+      "mean": 0.626193109064865,
+      "median": 0.6550195306688995,
+      "q25": 0.5408076956568336,
+      "q75": 0.770997148494746,
+      "min": 0.11720673692504678,
+      "max": 0.86490775639754,
+      "fraction_above_0.65": 0.5178571428571429,
+      "fraction_below_0.55": 0.30357142857142855
+    },
+    "0.01": {
+      "n_subjects": 56,
+      "skipped": 1,
+      "mean": 0.6247979105119137,
+      "median": 0.6564201341888553,
+      "q25": 0.5309185187417946,
+      "q75": 0.7757095275736839,
+      "min": 0.10957352506648281,
+      "max": 0.8695695298551873,
+      "fraction_above_0.65": 0.5178571428571429,
+      "fraction_below_0.55": 0.30357142857142855
+    },
+    "0.03": {
+      "n_subjects": 56,
+      "skipped": 1,
+      "mean": 0.6166319619807953,
+      "median": 0.6459673483783507,
+      "q25": 0.5238925227071779,
+      "q75": 0.7734079515185817,
+      "min": 0.10169408056731999,
+      "max": 0.8721483832572903,
+      "fraction_above_0.65": 0.48214285714285715,
+      "fraction_below_0.55": 0.32142857142857145
+    },
+    "0.1": {
+      "n_subjects": 56,
+      "skipped": 1,
+      "mean": 0.5993057353671559,
+      "median": 0.6292833389441818,
+      "q25": 0.5054135065621244,
+      "q75": 0.7513497359301571,
+      "min": 0.09721264650842115,
+      "max": 0.8721743295019158,
+      "fraction_above_0.65": 0.44642857142857145,
+      "fraction_below_0.55": 0.2857142857142857
+    },
+    "1.0": {
+      "n_subjects": 56,
+      "skipped": 1,
+      "mean": 0.5580573930955846,
+      "median": 0.5728582261833493,
+      "q25": 0.4657815328491324,
+      "q75": 0.6974024831607519,
+      "min": 0.1174529695656456,
+      "max": 0.870162835249042,
+      "fraction_above_0.65": 0.375,
+      "fraction_below_0.55": 0.42857142857142855
+    }
+  },
+  "single_feature": {
+    "stft_log_power_4_8_mean": {
+      "pooled_auc": 0.5868756455633124,
+      "subject_mean_auc": 0.6074600144522222,
+      "subject_median_auc": 0.6394984326018809,
+      "fraction_direction_positive": 0.7543859649122807
+    },
+    "stft_log_power_8_13_mean": {
+      "pooled_auc": 0.5933334170067059,
+      "subject_mean_auc": 0.6216722118722378,
+      "subject_median_auc": 0.6502267573696144,
+      "fraction_direction_positive": 0.8245614035087719
+    },
+    "stft_log_power_13_30_mean": {
+      "pooled_auc": 0.561051625541204,
+      "subject_mean_auc": 0.5785868223516255,
+      "subject_median_auc": 0.5954666023631541,
+      "fraction_direction_positive": 0.7192982456140351
+    },
+    "stft_relative_8_13_mean": {
+      "pooled_auc": 0.49337054319204,
+      "subject_mean_auc": 0.49179977698321314,
+      "subject_median_auc": 0.4887877650591106,
+      "fraction_direction_positive": 0.45614035087719296
+    }
+  }
+}

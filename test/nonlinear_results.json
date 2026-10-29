@@ -1,0 +1,594 @@
+{
+  "histgb": {
+    "AUC": 0.9199452218320563,
+    "bACC": 0.8316739973838125,
+    "subject_AUC": 0.8901839263774444,
+    "subject_bACC": 0.8259618492381828
+  },
+  "extratrees": {
+    "AUC": 0.6799511781365816,
+    "bACC": 0.6310808848800047,
+    "subject_AUC": 0.6753231161278134,
+    "subject_bACC": 0.6298305826532931
+  },
+  "combos": {
+    "histgb+extratrees": {
+      "AUC": 0.856696225060299,
+      "bACC": 0.7713766563066635,
+      "subject_AUC": 0.8414727478298668,
+      "subject_bACC": 0.7684358596834244
+    },
+    "histgb+eeg300_emg_all_mlp": {
+      "AUC": 0.8593892370630893,
+      "bACC": 0.7799597546572754,
+      "subject_AUC": 0.8480602447579471,
+      "subject_bACC": 0.7775257503732024
+    },
+    "histgb+eeg300_emg_all_logistic": {
+      "AUC": 0.8588848338293305,
+      "bACC": 0.7756810315253377,
+      "subject_AUC": 0.8475956082291387,
+      "subject_bACC": 0.7724508136099556
+    },
+    "histgb+emg_v2_mlp": {
+      "AUC": 0.8575481749442875,
+      "bACC": 0.7749301559764636,
+      "subject_AUC": 0.8440329757925091,
+      "subject_bACC": 0.7720020164433867
+    },
+    "histgb+online_mlp300": {
+      "AUC": 0.8519084114362286,
+      "bACC": 0.7681398526047056,
+      "subject_AUC": 0.8369109026332547,
+      "subject_bACC": 0.7654486957305395
+    },
+    "histgb+large_mlp300": {
+      "AUC": 0.8449923965696395,
+      "bACC": 0.7582648761184728,
+      "subject_AUC": 0.8456519717936174,
+      "subject_bACC": 0.7540790621250352
+    },
+    "extratrees+eeg300_emg_all_mlp": {
+      "AUC": 0.6903067884207208,
+      "bACC": 0.6441368130919698,
+      "subject_AUC": 0.685168879466979,
+      "subject_bACC": 0.6430471809681627
+    },
+    "extratrees+eeg300_emg_all_logistic": {
+      "AUC": 0.6984547464960226,
+      "bACC": 0.6534436938633019,
+      "subject_AUC": 0.6925431418823667,
+      "subject_bACC": 0.6519448787626274
+    },
+    "extratrees+emg_v2_mlp": {
+      "AUC": 0.6882463316198886,
+      "bACC": 0.6406603781478619,
+      "subject_AUC": 0.6819865100380822,
+      "subject_bACC": 0.6393259476542447
+    },
+    "extratrees+online_mlp300": {
+      "AUC": 0.6786081275355744,
+      "bACC": 0.6339908898291297,
+      "subject_AUC": 0.6734785904754191,
+      "subject_bACC": 0.6326474864838331
+    },
+    "extratrees+large_mlp300": {
+      "AUC": 0.6802862977414698,
+      "bACC": 0.6297735736556556,
+      "subject_AUC": 0.6811169739421021,
+      "subject_bACC": 0.6285026461473677
+    },
+    "eeg300_emg_all_mlp+eeg300_emg_all_logistic": {
+      "AUC": 0.6910784738472675,
+      "bACC": 0.6442371978965133,
+      "subject_AUC": 0.6868855202446349,
+      "subject_bACC": 0.642894041686585
+    },
+    "eeg300_emg_all_mlp+emg_v2_mlp": {
+      "AUC": 0.6815894562873256,
+      "bACC": 0.6365147963963429,
+      "subject_AUC": 0.6777859781267336,
+      "subject_bACC": 0.6354463006344021
+    },
+    "eeg300_emg_all_mlp+online_mlp300": {
+      "AUC": 0.6755504235887014,
+      "bACC": 0.633453884970186,
+      "subject_AUC": 0.6715328277561137,
+      "subject_bACC": 0.6324544211537985
+    },
+    "eeg300_emg_all_mlp+large_mlp300": {
+      "AUC": 0.6773380122243698,
+      "bACC": 0.6321874342428009,
+      "subject_AUC": 0.6751795256740901,
+      "subject_bACC": 0.6313925650700402
+    },
+    "eeg300_emg_all_logistic+emg_v2_mlp": {
+      "AUC": 0.6903743081839067,
+      "bACC": 0.6424968149885661,
+      "subject_AUC": 0.6853914763575029,
+      "subject_bACC": 0.6410029471038451
+    },
+    "eeg300_emg_all_logistic+online_mlp300": {
+      "AUC": 0.6855161314514882,
+      "bACC": 0.6421804521647076,
+      "subject_AUC": 0.6807387456939205,
+      "subject_bACC": 0.6407918269735334
+    },
+    "eeg300_emg_all_logistic+large_mlp300": {
+      "AUC": 0.6765789862691995,
+      "bACC": 0.6367517624866239,
+      "subject_AUC": 0.6776852067313051,
+      "subject_bACC": 0.635252265175021
+    },
+    "emg_v2_mlp+online_mlp300": {
+      "AUC": 0.6735642114110026,
+      "bACC": 0.6307850685176457,
+      "subject_AUC": 0.6682498997257489,
+      "subject_bACC": 0.6299252356983289
+    },
+    "emg_v2_mlp+large_mlp300": {
+      "AUC": 0.6768592843199509,
+      "bACC": 0.6271558366980876,
+      "subject_AUC": 0.6741613251449463,
+      "subject_bACC": 0.625953526057453
+    },
+    "online_mlp300+large_mlp300": {
+      "AUC": 0.6672208710522052,
+      "bACC": 0.6215599164877761,
+      "subject_AUC": 0.663730336829128,
+      "subject_bACC": 0.6202220604014373
+    },
+    "histgb+extratrees+eeg300_emg_all_mlp": {
+      "AUC": 0.8123184868879176,
+      "bACC": 0.7304746015675432,
+      "subject_AUC": 0.8043757923331593,
+      "subject_bACC": 0.728543692666169
+    },
+    "histgb+extratrees+eeg300_emg_all_logistic": {
+      "AUC": 0.822167888762759,
+      "bACC": 0.7400771902357512,
+      "subject_AUC": 0.81163756549818,
+      "subject_bACC": 0.7369872657257777
+    },
+    "histgb+extratrees+emg_v2_mlp": {
+      "AUC": 0.8101597836020643,
+      "bACC": 0.7293532854039859,
+      "subject_AUC": 0.8006129359067841,
+      "subject_bACC": 0.7270254825946253
+    },
+    "histgb+extratrees+online_mlp300": {
+      "AUC": 0.8038388026278397,
+      "bACC": 0.7234977453125091,
+      "subject_AUC": 0.7944328071523383,
+      "subject_bACC": 0.721321132121875
+    },
+    "histgb+extratrees+large_mlp300": {
+      "AUC": 0.8170309479914206,
+      "bACC": 0.7315965840190677,
+      "subject_AUC": 0.8136631084078766,
+      "subject_bACC": 0.7282084490070719
+    },
+    "histgb+eeg300_emg_all_mlp+eeg300_emg_all_logistic": {
+      "AUC": 0.81612970829293,
+      "bACC": 0.7301738965109134,
+      "subject_AUC": 0.8086269974112623,
+      "subject_bACC": 0.7276900264627765
+    },
+    "histgb+eeg300_emg_all_mlp+emg_v2_mlp": {
+      "AUC": 0.8038432264700404,
+      "bACC": 0.7217676898680533,
+      "subject_AUC": 0.7970296393398996,
+      "subject_bACC": 0.7200888336631743
+    },
+    "histgb+eeg300_emg_all_mlp+online_mlp300": {
+      "AUC": 0.8010620707672197,
+      "bACC": 0.7193335074979089,
+      "subject_AUC": 0.7939910186060946,
+      "subject_bACC": 0.717382247794997
+    },
+    "histgb+eeg300_emg_all_mlp+large_mlp300": {
+      "AUC": 0.8150562176598541,
+      "bACC": 0.731723395663798,
+      "subject_AUC": 0.8144191801388075,
+      "subject_bACC": 0.7289683397721882
+    },
+    "histgb+eeg300_emg_all_logistic+emg_v2_mlp": {
+      "AUC": 0.8154656438681518,
+      "bACC": 0.731544171948161,
+      "subject_AUC": 0.8071326114629115,
+      "subject_bACC": 0.7287602037696691
+    },
+    "histgb+eeg300_emg_all_logistic+online_mlp300": {
+      "AUC": 0.8139887778512245,
+      "bACC": 0.7311113249430634,
+      "subject_AUC": 0.8048146873309373,
+      "subject_bACC": 0.7283628390907607
+    },
+    "histgb+eeg300_emg_all_logistic+large_mlp300": {
+      "AUC": 0.8164025144778178,
+      "bACC": 0.7359676964999429,
+      "subject_AUC": 0.8142467351972729,
+      "subject_bACC": 0.7326434176823318
+    },
+    "histgb+emg_v2_mlp+online_mlp300": {
+      "AUC": 0.7987139402627902,
+      "bACC": 0.7172193525354427,
+      "subject_AUC": 0.7907259224664063,
+      "subject_bACC": 0.7150807509584136
+    },
+    "histgb+emg_v2_mlp+large_mlp300": {
+      "AUC": 0.8146839718696319,
+      "bACC": 0.7327172338946577,
+      "subject_AUC": 0.8121077251294763,
+      "subject_bACC": 0.7295481922275104
+    },
+    "histgb+online_mlp300+large_mlp300": {
+      "AUC": 0.8087314094035856,
+      "bACC": 0.731588921707445,
+      "subject_AUC": 0.8048245921103537,
+      "subject_bACC": 0.7281217818852952
+    },
+    "extratrees+eeg300_emg_all_mlp+eeg300_emg_all_logistic": {
+      "AUC": 0.6993994731056736,
+      "bACC": 0.6470204996663911,
+      "subject_AUC": 0.6933769351455721,
+      "subject_bACC": 0.6453307836292281
+    },
+    "extratrees+eeg300_emg_all_mlp+emg_v2_mlp": {
+      "AUC": 0.6890916263717397,
+      "bACC": 0.642835940068792,
+      "subject_AUC": 0.6833707271972623,
+      "subject_bACC": 0.6418355311120366
+    },
+    "extratrees+eeg300_emg_all_mlp+online_mlp300": {
+      "AUC": 0.6838101398491958,
+      "bACC": 0.6388452625221076,
+      "subject_AUC": 0.6786502014208788,
+      "subject_bACC": 0.6378860350138702
+    },
+    "extratrees+eeg300_emg_all_mlp+large_mlp300": {
+      "AUC": 0.6914673148563932,
+      "bACC": 0.6415137458306643,
+      "subject_AUC": 0.6875102712439162,
+      "subject_bACC": 0.6402033886176971
+    },
+    "extratrees+eeg300_emg_all_logistic+emg_v2_mlp": {
+      "AUC": 0.6982572928317021,
+      "bACC": 0.650004013222872,
+      "subject_AUC": 0.6913618600667066,
+      "subject_bACC": 0.6484583886948863
+    },
+    "extratrees+eeg300_emg_all_logistic+online_mlp300": {
+      "AUC": 0.6933507637364561,
+      "bACC": 0.6453385254210553,
+      "subject_AUC": 0.687243090305857,
+      "subject_bACC": 0.6437256236096335
+    },
+    "extratrees+eeg300_emg_all_logistic+large_mlp300": {
+      "AUC": 0.6970499945302406,
+      "bACC": 0.6501819043625747,
+      "subject_AUC": 0.6937436023107922,
+      "subject_bACC": 0.6484382057175372
+    },
+    "extratrees+emg_v2_mlp+online_mlp300": {
+      "AUC": 0.6822271171145207,
+      "bACC": 0.6382879358801649,
+      "subject_AUC": 0.676324312848099,
+      "subject_bACC": 0.6371281402160308
+    },
+    "extratrees+emg_v2_mlp+large_mlp300": {
+      "AUC": 0.6904249925546193,
+      "bACC": 0.6426410585859262,
+      "subject_AUC": 0.685641321719807,
+      "subject_bACC": 0.6413327674016417
+    },
+    "extratrees+online_mlp300+large_mlp300": {
+      "AUC": 0.6830563357322799,
+      "bACC": 0.6365392243726279,
+      "subject_AUC": 0.6786605893852679,
+      "subject_bACC": 0.6350157362637624
+    },
+    "eeg300_emg_all_mlp+eeg300_emg_all_logistic+emg_v2_mlp": {
+      "AUC": 0.6914265938150502,
+      "bACC": 0.6442949402711575,
+      "subject_AUC": 0.6864816429353622,
+      "subject_bACC": 0.6430076589391345
+    },
+    "eeg300_emg_all_mlp+eeg300_emg_all_logistic+online_mlp300": {
+      "AUC": 0.6883957118326235,
+      "bACC": 0.6408675859581205,
+      "subject_AUC": 0.6832555031324746,
+      "subject_bACC": 0.6395251910813932
+    },
+    "eeg300_emg_all_mlp+eeg300_emg_all_logistic+large_mlp300": {
+      "AUC": 0.6914028243791978,
+      "bACC": 0.6462022205673489,
+      "subject_AUC": 0.6870810734901075,
+      "subject_bACC": 0.6449443885754435
+    },
+    "eeg300_emg_all_mlp+emg_v2_mlp+online_mlp300": {
+      "AUC": 0.6779239272686253,
+      "bACC": 0.6340772825863625,
+      "subject_AUC": 0.6733878472703383,
+      "subject_bACC": 0.633018159001649
+    },
+    "eeg300_emg_all_mlp+emg_v2_mlp+large_mlp300": {
+      "AUC": 0.6851619374166558,
+      "bACC": 0.6399128340388238,
+      "subject_AUC": 0.679888121597073,
+      "subject_bACC": 0.6388789005381157
+    },
+    "eeg300_emg_all_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.6799224037934408,
+      "bACC": 0.6366086267866977,
+      "subject_AUC": 0.6745430848277134,
+      "subject_bACC": 0.6356669314129523
+    },
+    "eeg300_emg_all_logistic+emg_v2_mlp+online_mlp300": {
+      "AUC": 0.687225353775668,
+      "bACC": 0.6401243727208691,
+      "subject_AUC": 0.6810488003254437,
+      "subject_bACC": 0.6388710294309462
+    },
+    "eeg300_emg_all_logistic+emg_v2_mlp+large_mlp300": {
+      "AUC": 0.6910444931609414,
+      "bACC": 0.6452694561509691,
+      "subject_AUC": 0.686091235652411,
+      "subject_bACC": 0.6439234574395072
+    },
+    "eeg300_emg_all_logistic+online_mlp300+large_mlp300": {
+      "AUC": 0.6863870705425412,
+      "bACC": 0.6408465978871544,
+      "subject_AUC": 0.6814062650889813,
+      "subject_bACC": 0.6394133883556278
+    },
+    "emg_v2_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.678828730832987,
+      "bACC": 0.6367344389994772,
+      "subject_AUC": 0.6725340325868602,
+      "subject_bACC": 0.6355809900753118
+    },
+    "histgb+extratrees+eeg300_emg_all_mlp+eeg300_emg_all_logistic": {
+      "AUC": 0.7927031550749606,
+      "bACC": 0.7136117750748179,
+      "subject_AUC": 0.7848921829452443,
+      "subject_bACC": 0.7115124792685704
+    },
+    "histgb+extratrees+eeg300_emg_all_mlp+emg_v2_mlp": {
+      "AUC": 0.7809490993181241,
+      "bACC": 0.7041997370176889,
+      "subject_AUC": 0.7743842789473414,
+      "subject_bACC": 0.702416161131743
+    },
+    "histgb+extratrees+eeg300_emg_all_mlp+online_mlp300": {
+      "AUC": 0.7773186898733216,
+      "bACC": 0.7016430738746009,
+      "subject_AUC": 0.7711409155638678,
+      "subject_bACC": 0.6997988280460492
+    },
+    "histgb+extratrees+eeg300_emg_all_mlp+large_mlp300": {
+      "AUC": 0.7917228595344104,
+      "bACC": 0.7128439091827807,
+      "subject_AUC": 0.7883343839758155,
+      "subject_bACC": 0.7104051157740406
+    },
+    "histgb+extratrees+eeg300_emg_all_logistic+emg_v2_mlp": {
+      "AUC": 0.7915368102408771,
+      "bACC": 0.7124303845287314,
+      "subject_AUC": 0.7829130353065502,
+      "subject_bACC": 0.7098419042586348
+    },
+    "histgb+extratrees+eeg300_emg_all_logistic+online_mlp300": {
+      "AUC": 0.7883999109963237,
+      "bACC": 0.7095590242817029,
+      "subject_AUC": 0.7797350096442358,
+      "subject_bACC": 0.7069835769493534
+    },
+    "histgb+extratrees+eeg300_emg_all_logistic+large_mlp300": {
+      "AUC": 0.7985001857858773,
+      "bACC": 0.7230021587730137,
+      "subject_AUC": 0.7932758276278784,
+      "subject_bACC": 0.7202104367085359
+    },
+    "histgb+extratrees+emg_v2_mlp+online_mlp300": {
+      "AUC": 0.775445444496198,
+      "bACC": 0.6997842079215131,
+      "subject_AUC": 0.7682855933579659,
+      "subject_bACC": 0.697977570620651
+    },
+    "histgb+extratrees+emg_v2_mlp+large_mlp300": {
+      "AUC": 0.790638235694255,
+      "bACC": 0.7127227609857715,
+      "subject_AUC": 0.785822575167437,
+      "subject_bACC": 0.7102468704169074
+    },
+    "histgb+extratrees+online_mlp300+large_mlp300": {
+      "AUC": 0.7851234011800425,
+      "bACC": 0.7084293795185558,
+      "subject_AUC": 0.7802040834388305,
+      "subject_bACC": 0.7059790153647767
+    },
+    "histgb+eeg300_emg_all_mlp+eeg300_emg_all_logistic+emg_v2_mlp": {
+      "AUC": 0.7847213196344527,
+      "bACC": 0.7048441227048317,
+      "subject_AUC": 0.778287687831148,
+      "subject_bACC": 0.702736744520956
+    },
+    "histgb+eeg300_emg_all_mlp+eeg300_emg_all_logistic+online_mlp300": {
+      "AUC": 0.7834425658222783,
+      "bACC": 0.7072673113235175,
+      "subject_AUC": 0.7764655676959715,
+      "subject_bACC": 0.7049190382460245
+    },
+    "histgb+eeg300_emg_all_mlp+eeg300_emg_all_logistic+large_mlp300": {
+      "AUC": 0.7931734769044447,
+      "bACC": 0.7171586118649462,
+      "subject_AUC": 0.7896665780584361,
+      "subject_bACC": 0.7145694621323766
+    },
+    "histgb+eeg300_emg_all_mlp+emg_v2_mlp+online_mlp300": {
+      "AUC": 0.7707448758581557,
+      "bACC": 0.695252527788082,
+      "subject_AUC": 0.7650840550233595,
+      "subject_bACC": 0.6937430743801292
+    },
+    "histgb+eeg300_emg_all_mlp+emg_v2_mlp+large_mlp300": {
+      "AUC": 0.7850796973379162,
+      "bACC": 0.7081867499805536,
+      "subject_AUC": 0.7818825656071321,
+      "subject_bACC": 0.706067339111624
+    },
+    "histgb+eeg300_emg_all_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.7818643310639255,
+      "bACC": 0.7053807944197918,
+      "subject_AUC": 0.7781493784491492,
+      "subject_bACC": 0.7034416875373473
+    },
+    "histgb+eeg300_emg_all_logistic+emg_v2_mlp+online_mlp300": {
+      "AUC": 0.7822158212092166,
+      "bACC": 0.7037191419574549,
+      "subject_AUC": 0.7744941046801521,
+      "subject_bACC": 0.701228253329305
+    },
+    "histgb+eeg300_emg_all_logistic+emg_v2_mlp+large_mlp300": {
+      "AUC": 0.7929569798003181,
+      "bACC": 0.7158417479305561,
+      "subject_AUC": 0.7887409987285549,
+      "subject_bACC": 0.7131695327515256
+    },
+    "histgb+eeg300_emg_all_logistic+online_mlp300+large_mlp300": {
+      "AUC": 0.7904027416355295,
+      "bACC": 0.715344162527159,
+      "subject_AUC": 0.7854896662901215,
+      "subject_bACC": 0.7126930425728479
+    },
+    "histgb+emg_v2_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.7806218512082899,
+      "bACC": 0.7033911190941706,
+      "subject_AUC": 0.776080726326778,
+      "subject_bACC": 0.7010654871457952
+    },
+    "extratrees+eeg300_emg_all_mlp+eeg300_emg_all_logistic+emg_v2_mlp": {
+      "AUC": 0.6967761734183331,
+      "bACC": 0.6459572590214616,
+      "subject_AUC": 0.6903262052005792,
+      "subject_bACC": 0.644473273392543
+    },
+    "extratrees+eeg300_emg_all_mlp+eeg300_emg_all_logistic+online_mlp300": {
+      "AUC": 0.6935829883356219,
+      "bACC": 0.6447785336272438,
+      "subject_AUC": 0.6875361561622723,
+      "subject_bACC": 0.6433220343396184
+    },
+    "extratrees+eeg300_emg_all_mlp+eeg300_emg_all_logistic+large_mlp300": {
+      "AUC": 0.6997881746591782,
+      "bACC": 0.6483043823464059,
+      "subject_AUC": 0.6942719774231187,
+      "subject_bACC": 0.6467939749118836
+    },
+    "extratrees+eeg300_emg_all_mlp+emg_v2_mlp+online_mlp300": {
+      "AUC": 0.6842030095762625,
+      "bACC": 0.6384764876273423,
+      "subject_AUC": 0.6786590824179874,
+      "subject_bACC": 0.6374720891062976
+    },
+    "extratrees+eeg300_emg_all_mlp+emg_v2_mlp+large_mlp300": {
+      "AUC": 0.6923090070047009,
+      "bACC": 0.6446918077260273,
+      "subject_AUC": 0.6865106096870883,
+      "subject_bACC": 0.6433086255796352
+    },
+    "extratrees+eeg300_emg_all_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.6877220172224592,
+      "bACC": 0.6420760696323609,
+      "subject_AUC": 0.6822478441457468,
+      "subject_bACC": 0.640683802555623
+    },
+    "extratrees+eeg300_emg_all_logistic+emg_v2_mlp+online_mlp300": {
+      "AUC": 0.6924457587361974,
+      "bACC": 0.6442182086894488,
+      "subject_AUC": 0.6857438144429256,
+      "subject_bACC": 0.6428383320933585
+    },
+    "extratrees+eeg300_emg_all_logistic+emg_v2_mlp+large_mlp300": {
+      "AUC": 0.6990751380688124,
+      "bACC": 0.6487438922311752,
+      "subject_AUC": 0.6928359664257765,
+      "subject_bACC": 0.6471747378398125
+    },
+    "extratrees+eeg300_emg_all_logistic+online_mlp300+large_mlp300": {
+      "AUC": 0.6946942791895335,
+      "bACC": 0.6466854807794515,
+      "subject_AUC": 0.6890036633437502,
+      "subject_bACC": 0.6450933806957952
+    },
+    "extratrees+emg_v2_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.6866122061476376,
+      "bACC": 0.6403960942509266,
+      "subject_AUC": 0.6802854155836762,
+      "subject_bACC": 0.6390245568381967
+    },
+    "eeg300_emg_all_mlp+eeg300_emg_all_logistic+emg_v2_mlp+online_mlp300": {
+      "AUC": 0.6878114857508895,
+      "bACC": 0.6396244553095869,
+      "subject_AUC": 0.6824103032135662,
+      "subject_bACC": 0.6383086051660909
+    },
+    "eeg300_emg_all_mlp+eeg300_emg_all_logistic+emg_v2_mlp+large_mlp300": {
+      "AUC": 0.693584870986506,
+      "bACC": 0.6460143351081385,
+      "subject_AUC": 0.6876528393280901,
+      "subject_bACC": 0.6447169171249709
+    },
+    "eeg300_emg_all_mlp+eeg300_emg_all_logistic+online_mlp300+large_mlp300": {
+      "AUC": 0.6905526021954034,
+      "bACC": 0.643455673101149,
+      "subject_AUC": 0.6846608407498982,
+      "subject_bACC": 0.642170005614974
+    },
+    "eeg300_emg_all_mlp+emg_v2_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.6827914087899807,
+      "bACC": 0.6393488445172093,
+      "subject_AUC": 0.6767624886888328,
+      "subject_bACC": 0.6381672034875497
+    },
+    "eeg300_emg_all_logistic+emg_v2_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.6897661034828887,
+      "bACC": 0.6417756977197147,
+      "subject_AUC": 0.6832830163924877,
+      "subject_bACC": 0.6404484867908465
+    }
+  },
+  "best_combo": "histgb+eeg300_emg_all_mlp",
+  "nested": [
+    {
+      "fold": 1,
+      "combo": "histgb+eeg300_emg_all_logistic",
+      "AUC": 0.7839082758226263
+    },
+    {
+      "fold": 2,
+      "combo": "histgb+extratrees",
+      "AUC": 0.8699003662811108
+    },
+    {
+      "fold": 3,
+      "combo": "histgb+eeg300_emg_all_mlp",
+      "AUC": 0.9246155636413177
+    },
+    {
+      "fold": 4,
+      "combo": "histgb+eeg300_emg_all_mlp",
+      "AUC": 0.8382918455410565
+    },
+    {
+      "fold": 5,
+      "combo": "histgb+eeg300_emg_all_mlp",
+      "AUC": 0.8489730750573169
+    }
+  ],
+  "nested_mean_AUC": 0.8531378252686856,
+  "_meta": {
+    "seconds": 89.05244930018671
+  }
+}

@@ -1,0 +1,1549 @@
+{
+  "kbest300_unified_logistic": {
+    "AUC": 0.6712693219636715,
+    "bACC": 0.6312377956962756,
+    "subject_AUC": 0.6703153481205238,
+    "subject_bACC": 0.6299631957588565
+  },
+  "kbest300_unified_mlp": {
+    "AUC": 0.6785621304232354,
+    "bACC": 0.634628279492617,
+    "subject_AUC": 0.67369206298265,
+    "subject_bACC": 0.6338286994496749
+  },
+  "eeg300_emg_all_logistic": {
+    "AUC": 0.671755402278333,
+    "bACC": 0.6271566191990723,
+    "subject_AUC": 0.6713229151559215,
+    "subject_bACC": 0.6257456574305814
+  },
+  "eeg300_emg_all_mlp": {
+    "AUC": 0.6804419379620824,
+    "bACC": 0.6371217614918404,
+    "subject_AUC": 0.677552539201385,
+    "subject_bACC": 0.6360589651455782
+  },
+  "kbest600_unified_logistic": {
+    "AUC": 0.6639327864193778,
+    "bACC": 0.6216978380969824,
+    "subject_AUC": 0.6628596637180992,
+    "subject_bACC": 0.6208774109497549
+  },
+  "kbest600_unified_mlp": {
+    "AUC": 0.666394449294401,
+    "bACC": 0.6250493440472439,
+    "subject_AUC": 0.6596457459158431,
+    "subject_bACC": 0.6236274870598685
+  },
+  "combos": {
+    "kbest300_unified_logistic+kbest300_unified_mlp": {
+      "AUC": 0.6894349506156655,
+      "bACC": 0.6430514764786402,
+      "subject_AUC": 0.6846782430034132,
+      "subject_bACC": 0.6418952403562104
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic": {
+      "AUC": 0.6728457592940198,
+      "bACC": 0.6306091762418445,
+      "subject_AUC": 0.6719773426794862,
+      "subject_bACC": 0.6293463252152163
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_mlp": {
+      "AUC": 0.6907316244751432,
+      "bACC": 0.6442262041450549,
+      "subject_AUC": 0.6865841601442352,
+      "subject_bACC": 0.6430720292943551
+    },
+    "kbest300_unified_logistic+kbest600_unified_logistic": {
+      "AUC": 0.6760410594536501,
+      "bACC": 0.6302264092997686,
+      "subject_AUC": 0.6743042519950537,
+      "subject_bACC": 0.6291072276993311
+    },
+    "kbest300_unified_logistic+kbest600_unified_mlp": {
+      "AUC": 0.6853130840672572,
+      "bACC": 0.6413655045055012,
+      "subject_AUC": 0.6796874362575593,
+      "subject_bACC": 0.6399913995069183
+    },
+    "kbest300_unified_logistic+online_mlp300": {
+      "AUC": 0.685035071539184,
+      "bACC": 0.6421160469103917,
+      "subject_AUC": 0.6802252374494027,
+      "subject_bACC": 0.6408541383280559
+    },
+    "kbest300_unified_logistic+online_logistic300": {
+      "AUC": 0.6683171161941135,
+      "bACC": 0.6291130885918175,
+      "subject_AUC": 0.6676363418555566,
+      "subject_bACC": 0.6278975776401331
+    },
+    "kbest300_unified_logistic+large_mlp300": {
+      "AUC": 0.6762929395478477,
+      "bACC": 0.6343209115563154,
+      "subject_AUC": 0.6770982806248229,
+      "subject_bACC": 0.6329426443050138
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic": {
+      "AUC": 0.6903743081839067,
+      "bACC": 0.6424968149885661,
+      "subject_AUC": 0.6853914763575029,
+      "subject_bACC": 0.6410029471038451
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_mlp": {
+      "AUC": 0.6815894562873256,
+      "bACC": 0.6365147963963429,
+      "subject_AUC": 0.6777859781267336,
+      "subject_bACC": 0.6354463006344021
+    },
+    "kbest300_unified_mlp+kbest600_unified_logistic": {
+      "AUC": 0.6903116616199227,
+      "bACC": 0.6423032660816348,
+      "subject_AUC": 0.6832657653385269,
+      "subject_bACC": 0.641393127052045
+    },
+    "kbest300_unified_mlp+kbest600_unified_mlp": {
+      "AUC": 0.676896549960906,
+      "bACC": 0.6333397327968321,
+      "subject_AUC": 0.6709795837803434,
+      "subject_bACC": 0.6321065270163942
+    },
+    "kbest300_unified_mlp+online_mlp300": {
+      "AUC": 0.6735642114110026,
+      "bACC": 0.6307850685176457,
+      "subject_AUC": 0.6682498997257489,
+      "subject_bACC": 0.6299252356983289
+    },
+    "kbest300_unified_mlp+online_logistic300": {
+      "AUC": 0.6816669083897431,
+      "bACC": 0.6356287806031486,
+      "subject_AUC": 0.6765728939891971,
+      "subject_bACC": 0.6343073271530162
+    },
+    "kbest300_unified_mlp+large_mlp300": {
+      "AUC": 0.6768592843199509,
+      "bACC": 0.6271558366980876,
+      "subject_AUC": 0.6741613251449463,
+      "subject_bACC": 0.625953526057453
+    },
+    "eeg300_emg_all_logistic+eeg300_emg_all_mlp": {
+      "AUC": 0.6910784738472675,
+      "bACC": 0.6442371978965133,
+      "subject_AUC": 0.6868855202446349,
+      "subject_bACC": 0.642894041686585
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_logistic": {
+      "AUC": 0.6752366794315046,
+      "bACC": 0.6299827803298157,
+      "subject_AUC": 0.6741871128015251,
+      "subject_bACC": 0.6290468987965345
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_mlp": {
+      "AUC": 0.6857605196798223,
+      "bACC": 0.6436091362645666,
+      "subject_AUC": 0.6803269120756084,
+      "subject_bACC": 0.6422035988536451
+    },
+    "eeg300_emg_all_logistic+online_mlp300": {
+      "AUC": 0.6855161314514882,
+      "bACC": 0.6421804521647076,
+      "subject_AUC": 0.6807387456939205,
+      "subject_bACC": 0.6407918269735334
+    },
+    "eeg300_emg_all_logistic+online_logistic300": {
+      "AUC": 0.6679513163525972,
+      "bACC": 0.6276256626853636,
+      "subject_AUC": 0.6675585191170298,
+      "subject_bACC": 0.6266133685306303
+    },
+    "eeg300_emg_all_logistic+large_mlp300": {
+      "AUC": 0.6765789862691995,
+      "bACC": 0.6367517624866239,
+      "subject_AUC": 0.6776852067313051,
+      "subject_bACC": 0.635252265175021
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_logistic": {
+      "AUC": 0.6912520496102526,
+      "bACC": 0.6409386540921083,
+      "subject_AUC": 0.685362234393177,
+      "subject_bACC": 0.6399180734553818
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_mlp": {
+      "AUC": 0.6783674503762668,
+      "bACC": 0.6345151267512139,
+      "subject_AUC": 0.673972064411286,
+      "subject_bACC": 0.6334483826630044
+    },
+    "eeg300_emg_all_mlp+online_mlp300": {
+      "AUC": 0.6755504235887014,
+      "bACC": 0.633453884970186,
+      "subject_AUC": 0.6715328277561137,
+      "subject_bACC": 0.6324544211537985
+    },
+    "eeg300_emg_all_mlp+online_logistic300": {
+      "AUC": 0.6825595560724711,
+      "bACC": 0.6356921864255138,
+      "subject_AUC": 0.6787895351762433,
+      "subject_bACC": 0.6345989776305596
+    },
+    "eeg300_emg_all_mlp+large_mlp300": {
+      "AUC": 0.6773380122243698,
+      "bACC": 0.6321874342428009,
+      "subject_AUC": 0.6751795256740901,
+      "subject_bACC": 0.6313925650700402
+    },
+    "kbest600_unified_logistic+kbest600_unified_mlp": {
+      "AUC": 0.6831541251127653,
+      "bACC": 0.636450391142027,
+      "subject_AUC": 0.6752503996621033,
+      "subject_bACC": 0.635313631934477
+    },
+    "kbest600_unified_logistic+online_mlp300": {
+      "AUC": 0.6846105841238143,
+      "bACC": 0.6369489759773748,
+      "subject_AUC": 0.6784259933533984,
+      "subject_bACC": 0.6359635826814668
+    },
+    "kbest600_unified_logistic+online_logistic300": {
+      "AUC": 0.6703090305572057,
+      "bACC": 0.6296684163698586,
+      "subject_AUC": 0.6686771972305104,
+      "subject_bACC": 0.6287241204556391
+    },
+    "kbest600_unified_logistic+large_mlp300": {
+      "AUC": 0.6718322655681283,
+      "bACC": 0.6266739090619193,
+      "subject_AUC": 0.6717176228202671,
+      "subject_bACC": 0.6259181517890369
+    },
+    "kbest600_unified_mlp+online_mlp300": {
+      "AUC": 0.669603664025997,
+      "bACC": 0.6291684989585764,
+      "subject_AUC": 0.6637955499966557,
+      "subject_bACC": 0.6280221037710867
+    },
+    "kbest600_unified_mlp+online_logistic300": {
+      "AUC": 0.676255418238254,
+      "bACC": 0.6329479709671991,
+      "subject_AUC": 0.6711146737097307,
+      "subject_bACC": 0.6315705406676252
+    },
+    "kbest600_unified_mlp+large_mlp300": {
+      "AUC": 0.669805014700172,
+      "bACC": 0.6262284025854452,
+      "subject_AUC": 0.6644094236225341,
+      "subject_bACC": 0.6250730504523854
+    },
+    "online_mlp300+online_logistic300": {
+      "AUC": 0.6725350754129512,
+      "bACC": 0.6278449721445145,
+      "subject_AUC": 0.667719703652652,
+      "subject_bACC": 0.6265980847648811
+    },
+    "online_mlp300+large_mlp300": {
+      "AUC": 0.6672208710522052,
+      "bACC": 0.6215599164877761,
+      "subject_AUC": 0.663730336829128,
+      "subject_bACC": 0.6202220604014373
+    },
+    "online_logistic300+large_mlp300": {
+      "AUC": 0.6647930416603524,
+      "bACC": 0.6250620035186203,
+      "subject_AUC": 0.6642236787880069,
+      "subject_bACC": 0.624243481292819
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+eeg300_emg_all_logistic": {
+      "AUC": 0.6875130894595413,
+      "bACC": 0.6396267873174719,
+      "subject_AUC": 0.6834179203269494,
+      "subject_bACC": 0.6382349309487964
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+eeg300_emg_all_mlp": {
+      "AUC": 0.6908977006247302,
+      "bACC": 0.6446690454696602,
+      "subject_AUC": 0.6858465525271219,
+      "subject_bACC": 0.6433938364520719
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+kbest600_unified_logistic": {
+      "AUC": 0.6904268907005724,
+      "bACC": 0.6421714572771506,
+      "subject_AUC": 0.6850543986183905,
+      "subject_bACC": 0.6411011334463761
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+kbest600_unified_mlp": {
+      "AUC": 0.6880452366143522,
+      "bACC": 0.6413681696573699,
+      "subject_AUC": 0.6810420020647211,
+      "subject_bACC": 0.6398844159033005
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+online_mlp300": {
+      "AUC": 0.6866485265893835,
+      "bACC": 0.6414302429038008,
+      "subject_AUC": 0.6806741689309244,
+      "subject_bACC": 0.6402936207469709
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+online_logistic300": {
+      "AUC": 0.683911291659655,
+      "bACC": 0.6364437282623551,
+      "subject_AUC": 0.6797309858052918,
+      "subject_bACC": 0.6353536932983301
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+large_mlp300": {
+      "AUC": 0.6903970162075321,
+      "bACC": 0.6442072149379903,
+      "subject_AUC": 0.6856226941833145,
+      "subject_bACC": 0.6428494236089619
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+eeg300_emg_all_mlp": {
+      "AUC": 0.6881792224760315,
+      "bACC": 0.6423065975214708,
+      "subject_AUC": 0.6848056312007093,
+      "subject_bACC": 0.6410993822464014
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+kbest600_unified_logistic": {
+      "AUC": 0.6766630547660818,
+      "bACC": 0.6300385238405583,
+      "subject_AUC": 0.6754515397948946,
+      "subject_bACC": 0.6287560646685555
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+kbest600_unified_mlp": {
+      "AUC": 0.6850882583635409,
+      "bACC": 0.6409973958987032,
+      "subject_AUC": 0.6809710316960216,
+      "subject_bACC": 0.6396318752974295
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+online_mlp300": {
+      "AUC": 0.685273734339521,
+      "bACC": 0.643732616469461,
+      "subject_AUC": 0.6815284330476397,
+      "subject_bACC": 0.6424536155061706
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+online_logistic300": {
+      "AUC": 0.6710342927570161,
+      "bACC": 0.6305427721236271,
+      "subject_AUC": 0.6701591117453103,
+      "subject_bACC": 0.6293876563465812
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+large_mlp300": {
+      "AUC": 0.6819382115529374,
+      "bACC": 0.6386903583172727,
+      "subject_AUC": 0.6802133568699873,
+      "subject_bACC": 0.6372977105337376
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_mlp+kbest600_unified_logistic": {
+      "AUC": 0.6911730092632622,
+      "bACC": 0.6424901521088944,
+      "subject_AUC": 0.6864899610290588,
+      "subject_bACC": 0.6412913897453777
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_mlp+kbest600_unified_mlp": {
+      "AUC": 0.6891989762098008,
+      "bACC": 0.6420469776403055,
+      "subject_AUC": 0.6831901372192822,
+      "subject_bACC": 0.640690097781974
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_mlp+online_mlp300": {
+      "AUC": 0.6880940460817153,
+      "bACC": 0.642544229899719,
+      "subject_AUC": 0.683231345580213,
+      "subject_bACC": 0.641133658331645
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_mlp+online_logistic300": {
+      "AUC": 0.6846259552322664,
+      "bACC": 0.6385011402821281,
+      "subject_AUC": 0.6812107043629786,
+      "subject_bACC": 0.6373187559538324
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_mlp+large_mlp300": {
+      "AUC": 0.6910794655316838,
+      "bACC": 0.6475641674050067,
+      "subject_AUC": 0.6868238530379943,
+      "subject_bACC": 0.6463999952205556
+    },
+    "kbest300_unified_logistic+kbest600_unified_logistic+kbest600_unified_mlp": {
+      "AUC": 0.6869182337604705,
+      "bACC": 0.6404307412252199,
+      "subject_AUC": 0.6809119716353883,
+      "subject_bACC": 0.6393848180995952
+    },
+    "kbest300_unified_logistic+kbest600_unified_logistic+online_mlp300": {
+      "AUC": 0.6879679239675558,
+      "bACC": 0.6427921897414586,
+      "subject_AUC": 0.6828156243564011,
+      "subject_bACC": 0.6419114503853401
+    },
+    "kbest300_unified_logistic+kbest600_unified_logistic+online_logistic300": {
+      "AUC": 0.674533768868733,
+      "bACC": 0.6310964341817503,
+      "subject_AUC": 0.6730545083756249,
+      "subject_bACC": 0.6298864739128387
+    },
+    "kbest300_unified_logistic+kbest600_unified_logistic+large_mlp300": {
+      "AUC": 0.6833605349269702,
+      "bACC": 0.63893531986316,
+      "subject_AUC": 0.6807987150418048,
+      "subject_bACC": 0.6375300764494134
+    },
+    "kbest300_unified_logistic+kbest600_unified_mlp+online_mlp300": {
+      "AUC": 0.6844921088262083,
+      "bACC": 0.6389366524390943,
+      "subject_AUC": 0.6779937553456853,
+      "subject_bACC": 0.6375503521885038
+    },
+    "kbest300_unified_logistic+kbest600_unified_mlp+online_logistic300": {
+      "AUC": 0.6811419431994157,
+      "bACC": 0.6377505978772375,
+      "subject_AUC": 0.6773441639548772,
+      "subject_bACC": 0.6364287554699132
+    },
+    "kbest300_unified_logistic+kbest600_unified_mlp+large_mlp300": {
+      "AUC": 0.6870773758666779,
+      "bACC": 0.6428960144513212,
+      "subject_AUC": 0.6815173424833351,
+      "subject_bACC": 0.6414365372560286
+    },
+    "kbest300_unified_logistic+online_mlp300+online_logistic300": {
+      "AUC": 0.6796783177189523,
+      "bACC": 0.6358233289420308,
+      "subject_AUC": 0.6757755098369173,
+      "subject_bACC": 0.6344896877767457
+    },
+    "kbest300_unified_logistic+online_mlp300+large_mlp300": {
+      "AUC": 0.6860399267641059,
+      "bACC": 0.6401584618726782,
+      "subject_AUC": 0.6813123739214764,
+      "subject_bACC": 0.6386362188938126
+    },
+    "kbest300_unified_logistic+online_logistic300+large_mlp300": {
+      "AUC": 0.6771479187178264,
+      "bACC": 0.6343926459782703,
+      "subject_AUC": 0.67525641058739,
+      "subject_bACC": 0.633195766344853
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+eeg300_emg_all_mlp": {
+      "AUC": 0.6914266248051882,
+      "bACC": 0.6442949402711575,
+      "subject_AUC": 0.6864842374323602,
+      "subject_bACC": 0.6430076589391345
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+kbest600_unified_logistic": {
+      "AUC": 0.690371813477797,
+      "bACC": 0.6411155457998601,
+      "subject_AUC": 0.6852757218393798,
+      "subject_bACC": 0.6399054055456719
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+kbest600_unified_mlp": {
+      "AUC": 0.6886167334968992,
+      "bACC": 0.6412416911566232,
+      "subject_AUC": 0.6816687754094272,
+      "subject_bACC": 0.6398545072499853
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+online_mlp300": {
+      "AUC": 0.687225353775668,
+      "bACC": 0.6401243727208691,
+      "subject_AUC": 0.6810488003254437,
+      "subject_bACC": 0.6388710294309462
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+online_logistic300": {
+      "AUC": 0.6840931882746953,
+      "bACC": 0.6363225800653458,
+      "subject_AUC": 0.6800480530080194,
+      "subject_bACC": 0.635153453232107
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+large_mlp300": {
+      "AUC": 0.6910444931609414,
+      "bACC": 0.6452694561509691,
+      "subject_AUC": 0.686091235652411,
+      "subject_bACC": 0.6439234574395072
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_mlp+kbest600_unified_logistic": {
+      "AUC": 0.6924307595094013,
+      "bACC": 0.645348519740563,
+      "subject_AUC": 0.6857858164914356,
+      "subject_bACC": 0.6442517301502428
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_mlp+kbest600_unified_mlp": {
+      "AUC": 0.6803005687000225,
+      "bACC": 0.6360732876476719,
+      "subject_AUC": 0.675726804059049,
+      "subject_bACC": 0.635135244756164
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_mlp+online_mlp300": {
+      "AUC": 0.6779239272686253,
+      "bACC": 0.6340772825863625,
+      "subject_AUC": 0.6733878472703383,
+      "subject_bACC": 0.633018159001649
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_mlp+online_logistic300": {
+      "AUC": 0.6858363990327359,
+      "bACC": 0.6404250777774989,
+      "subject_AUC": 0.6807353796467874,
+      "subject_bACC": 0.6390582395403882
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_mlp+large_mlp300": {
+      "AUC": 0.6851619374166558,
+      "bACC": 0.6399128340388238,
+      "subject_AUC": 0.679888121597073,
+      "subject_bACC": 0.6388789005381157
+    },
+    "kbest300_unified_mlp+kbest600_unified_logistic+kbest600_unified_mlp": {
+      "AUC": 0.6884174126767639,
+      "bACC": 0.6399401518454781,
+      "subject_AUC": 0.6796159761325483,
+      "subject_bACC": 0.6388482976212078
+    },
+    "kbest300_unified_mlp+kbest600_unified_logistic+online_mlp300": {
+      "AUC": 0.6877904279521128,
+      "bACC": 0.6408065121436406,
+      "subject_AUC": 0.6804929220116126,
+      "subject_bACC": 0.6397435688176963
+    },
+    "kbest300_unified_mlp+kbest600_unified_logistic+online_logistic300": {
+      "AUC": 0.6865390461793343,
+      "bACC": 0.6399885661885818,
+      "subject_AUC": 0.6808985479775589,
+      "subject_bACC": 0.6392128270110354
+    },
+    "kbest300_unified_mlp+kbest600_unified_logistic+large_mlp300": {
+      "AUC": 0.69011673365185,
+      "bACC": 0.639987566756631,
+      "subject_AUC": 0.6837532205546636,
+      "subject_bACC": 0.6389228253387836
+    },
+    "kbest300_unified_mlp+kbest600_unified_mlp+online_mlp300": {
+      "AUC": 0.6747895072351127,
+      "bACC": 0.6333360682130126,
+      "subject_AUC": 0.6691626465911454,
+      "subject_bACC": 0.632366724608608
+    },
+    "kbest300_unified_mlp+kbest600_unified_mlp+online_logistic300": {
+      "AUC": 0.6825716809639668,
+      "bACC": 0.6348785713422418,
+      "subject_AUC": 0.6756650382042894,
+      "subject_bACC": 0.6334322430945849
+    },
+    "kbest300_unified_mlp+kbest600_unified_mlp+large_mlp300": {
+      "AUC": 0.6813177270097337,
+      "bACC": 0.6373578366156538,
+      "subject_AUC": 0.6739781202771451,
+      "subject_bACC": 0.6361313143422327
+    },
+    "kbest300_unified_mlp+online_mlp300+online_logistic300": {
+      "AUC": 0.6796469634468224,
+      "bACC": 0.6330133756534658,
+      "subject_AUC": 0.6735938680454672,
+      "subject_bACC": 0.6315799149639898
+    },
+    "kbest300_unified_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.678828730832987,
+      "bACC": 0.6367344389994772,
+      "subject_AUC": 0.6725340325868602,
+      "subject_bACC": 0.6355809900753118
+    },
+    "kbest300_unified_mlp+online_logistic300+large_mlp300": {
+      "AUC": 0.6834219806231063,
+      "bACC": 0.638600634120204,
+      "subject_AUC": 0.6777593469123401,
+      "subject_bACC": 0.6374103656860959
+    },
+    "eeg300_emg_all_logistic+eeg300_emg_all_mlp+kbest600_unified_logistic": {
+      "AUC": 0.6908189004513094,
+      "bACC": 0.6419932329934646,
+      "subject_AUC": 0.6863916797122112,
+      "subject_bACC": 0.6406991126291847
+    },
+    "eeg300_emg_all_logistic+eeg300_emg_all_mlp+kbest600_unified_mlp": {
+      "AUC": 0.689484255925237,
+      "bACC": 0.6417356119762008,
+      "subject_AUC": 0.6835790100817172,
+      "subject_bACC": 0.6403276660239237
+    },
+    "eeg300_emg_all_logistic+eeg300_emg_all_mlp+online_mlp300": {
+      "AUC": 0.6883957118326235,
+      "bACC": 0.6408675859581205,
+      "subject_AUC": 0.6832555031324746,
+      "subject_bACC": 0.6395251910813932
+    },
+    "eeg300_emg_all_logistic+eeg300_emg_all_mlp+online_logistic300": {
+      "AUC": 0.684543412999681,
+      "bACC": 0.6378807409618037,
+      "subject_AUC": 0.6815400423226486,
+      "subject_bACC": 0.636542230789364
+    },
+    "eeg300_emg_all_logistic+eeg300_emg_all_mlp+large_mlp300": {
+      "AUC": 0.6914028243791978,
+      "bACC": 0.6462022205673489,
+      "subject_AUC": 0.6870810734901075,
+      "subject_bACC": 0.6449443885754435
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_logistic+kbest600_unified_mlp": {
+      "AUC": 0.6866094635204238,
+      "bACC": 0.6411202098156303,
+      "subject_AUC": 0.681130565307097,
+      "subject_bACC": 0.6400240945496567
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_logistic+online_mlp300": {
+      "AUC": 0.6876355237472779,
+      "bACC": 0.6423573438724595,
+      "subject_AUC": 0.6826394051924275,
+      "subject_bACC": 0.6412799728597124
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_logistic+online_logistic300": {
+      "AUC": 0.6739245027554881,
+      "bACC": 0.6293627141534749,
+      "subject_AUC": 0.6728517874348295,
+      "subject_bACC": 0.6280980143560001
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_logistic+large_mlp300": {
+      "AUC": 0.682877081026505,
+      "bACC": 0.6385642129605096,
+      "subject_AUC": 0.6807346130893217,
+      "subject_bACC": 0.6370867882446514
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_mlp+online_mlp300": {
+      "AUC": 0.6848350921786159,
+      "bACC": 0.6380015560148293,
+      "subject_AUC": 0.6781315970435918,
+      "subject_bACC": 0.6365028545706646
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_mlp+online_logistic300": {
+      "AUC": 0.6810666216689862,
+      "bACC": 0.6375069689072846,
+      "subject_AUC": 0.6776020563411262,
+      "subject_bACC": 0.636155827130662
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_mlp+large_mlp300": {
+      "AUC": 0.6873525373020544,
+      "bACC": 0.6432707859377911,
+      "subject_AUC": 0.6818457652917191,
+      "subject_bACC": 0.6418146599659014
+    },
+    "eeg300_emg_all_logistic+online_mlp300+online_logistic300": {
+      "AUC": 0.6796262465395637,
+      "bACC": 0.6354522220393803,
+      "subject_AUC": 0.6758980457151293,
+      "subject_bACC": 0.6340661070816512
+    },
+    "eeg300_emg_all_logistic+online_mlp300+large_mlp300": {
+      "AUC": 0.6863870705425412,
+      "bACC": 0.6408465978871544,
+      "subject_AUC": 0.6814062650889813,
+      "subject_bACC": 0.6394133883556278
+    },
+    "eeg300_emg_all_logistic+online_logistic300+large_mlp300": {
+      "AUC": 0.6769805952151848,
+      "bACC": 0.6363192486255099,
+      "subject_AUC": 0.6751533871373117,
+      "subject_bACC": 0.6348472407953047
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_logistic+kbest600_unified_mlp": {
+      "AUC": 0.689397677227176,
+      "bACC": 0.641497646453969,
+      "subject_AUC": 0.6812942562126598,
+      "subject_bACC": 0.640381243815804
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_logistic+online_mlp300": {
+      "AUC": 0.689098049077842,
+      "bACC": 0.6432346979220802,
+      "subject_AUC": 0.682757613624518,
+      "subject_bACC": 0.642185858037437
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_logistic+online_logistic300": {
+      "AUC": 0.6870809707226869,
+      "bACC": 0.63893531986316,
+      "subject_AUC": 0.6826458973552741,
+      "subject_bACC": 0.6380457008990144
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_logistic+large_mlp300": {
+      "AUC": 0.6906023181243033,
+      "bACC": 0.6429093402106647,
+      "subject_AUC": 0.6848676628354268,
+      "subject_bACC": 0.642046575120159
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_mlp+online_mlp300": {
+      "AUC": 0.6761154745225427,
+      "bACC": 0.6330771146198146,
+      "subject_AUC": 0.6716258861817922,
+      "subject_bACC": 0.6320196595996695
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_mlp+online_logistic300": {
+      "AUC": 0.683494637001667,
+      "bACC": 0.6376738662955288,
+      "subject_AUC": 0.6778277887481747,
+      "subject_bACC": 0.6364532771054038
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_mlp+large_mlp300": {
+      "AUC": 0.6820943631108272,
+      "bACC": 0.6380393097504581,
+      "subject_AUC": 0.6756803289171074,
+      "subject_bACC": 0.6371093949626425
+    },
+    "eeg300_emg_all_mlp+online_mlp300+online_logistic300": {
+      "AUC": 0.6808473122098354,
+      "bACC": 0.6358106694706543,
+      "subject_AUC": 0.6758101289339302,
+      "subject_bACC": 0.6345438075389422
+    },
+    "eeg300_emg_all_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.6799224037934408,
+      "bACC": 0.6366086267866977,
+      "subject_AUC": 0.6745430848277134,
+      "subject_bACC": 0.6356669314129523
+    },
+    "eeg300_emg_all_mlp+online_logistic300+large_mlp300": {
+      "AUC": 0.683883051896395,
+      "bACC": 0.6407788611930025,
+      "subject_AUC": 0.6788402828148502,
+      "subject_bACC": 0.6397330750105406
+    },
+    "kbest600_unified_logistic+kbest600_unified_mlp+online_mlp300": {
+      "AUC": 0.6842790516274007,
+      "bACC": 0.6381977700736294,
+      "subject_AUC": 0.6759758931652445,
+      "subject_bACC": 0.6371560282123385
+    },
+    "kbest600_unified_logistic+kbest600_unified_mlp+online_logistic300": {
+      "AUC": 0.6823880411536637,
+      "bACC": 0.6374395653571164,
+      "subject_AUC": 0.6768925620740701,
+      "subject_bACC": 0.63618961676707
+    },
+    "kbest600_unified_logistic+kbest600_unified_mlp+large_mlp300": {
+      "AUC": 0.6851272439571555,
+      "bACC": 0.6411732881745043,
+      "subject_AUC": 0.6778333012810553,
+      "subject_bACC": 0.6403200217491207
+    },
+    "kbest600_unified_logistic+online_mlp300+online_logistic300": {
+      "AUC": 0.6816580994430144,
+      "bACC": 0.637253345617824,
+      "subject_AUC": 0.676466120094698,
+      "subject_bACC": 0.6363348671275566
+    },
+    "kbest600_unified_logistic+online_mlp300+large_mlp300": {
+      "AUC": 0.6850027333301723,
+      "bACC": 0.6365598792996106,
+      "subject_AUC": 0.6786960405093039,
+      "subject_bACC": 0.6357848406420783
+    },
+    "kbest600_unified_logistic+online_logistic300+large_mlp300": {
+      "AUC": 0.6777180830244391,
+      "bACC": 0.6339558012453697,
+      "subject_AUC": 0.6749881485475364,
+      "subject_bACC": 0.6328197884990873
+    },
+    "kbest600_unified_mlp+online_mlp300+online_logistic300": {
+      "AUC": 0.6768682637124388,
+      "bACC": 0.6293991353131694,
+      "subject_AUC": 0.6704644169016339,
+      "subject_bACC": 0.6280146224897538
+    },
+    "kbest600_unified_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.6753525748001213,
+      "bACC": 0.6343085852289226,
+      "subject_AUC": 0.6678368112825295,
+      "subject_bACC": 0.6330860586400076
+    },
+    "kbest600_unified_mlp+online_logistic300+large_mlp300": {
+      "AUC": 0.6794139563466719,
+      "bACC": 0.6377389378378119,
+      "subject_AUC": 0.6735296998980862,
+      "subject_bACC": 0.6363288288642621
+    },
+    "online_mlp300+online_logistic300+large_mlp300": {
+      "AUC": 0.6765021307269388,
+      "bACC": 0.6305788601393378,
+      "subject_AUC": 0.6708441497000994,
+      "subject_bACC": 0.6292955028344412
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+eeg300_emg_all_logistic+eeg300_emg_all_mlp": {
+      "AUC": 0.6915520728838462,
+      "bACC": 0.6442335333126938,
+      "subject_AUC": 0.6869764282526432,
+      "subject_bACC": 0.6429109380975999
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+eeg300_emg_all_logistic+kbest600_unified_logistic": {
+      "AUC": 0.6880871352809396,
+      "bACC": 0.6411112149280734,
+      "subject_AUC": 0.6839779631775023,
+      "subject_bACC": 0.6399756165484027
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+eeg300_emg_all_logistic+kbest600_unified_mlp": {
+      "AUC": 0.6895719580158006,
+      "bACC": 0.6431792875553213,
+      "subject_AUC": 0.6836745929123775,
+      "subject_bACC": 0.6417082634587846
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+eeg300_emg_all_logistic+online_mlp300": {
+      "AUC": 0.6889572531333353,
+      "bACC": 0.643797688011744,
+      "subject_AUC": 0.6838949502554262,
+      "subject_bACC": 0.6425930329402357
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+eeg300_emg_all_logistic+online_logistic300": {
+      "AUC": 0.6831762365762343,
+      "bACC": 0.638070292140932,
+      "subject_AUC": 0.6797917231080896,
+      "subject_bACC": 0.6367385586218459
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+eeg300_emg_all_logistic+large_mlp300": {
+      "AUC": 0.6914919442685754,
+      "bACC": 0.6458397754082719,
+      "subject_AUC": 0.6867402812508402,
+      "subject_bACC": 0.6443220916805584
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+eeg300_emg_all_mlp+kbest600_unified_logistic": {
+      "AUC": 0.6938846153488575,
+      "bACC": 0.6472724572359339,
+      "subject_AUC": 0.6878805792992795,
+      "subject_bACC": 0.6462016303144589
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+eeg300_emg_all_mlp+kbest600_unified_mlp": {
+      "AUC": 0.6887564602816445,
+      "bACC": 0.6411152126558766,
+      "subject_AUC": 0.6826983525880796,
+      "subject_bACC": 0.6399155451400972
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+eeg300_emg_all_mlp+online_mlp300": {
+      "AUC": 0.6874227532072469,
+      "bACC": 0.6403062615883748,
+      "subject_AUC": 0.6819784438301202,
+      "subject_bACC": 0.639147311317171
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+eeg300_emg_all_mlp+online_logistic300": {
+      "AUC": 0.6885429382307667,
+      "bACC": 0.642046644496322,
+      "subject_AUC": 0.6838311023312004,
+      "subject_bACC": 0.6408595812991451
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+eeg300_emg_all_mlp+large_mlp300": {
+      "AUC": 0.6931622739695547,
+      "bACC": 0.6443917689573647,
+      "subject_AUC": 0.6873651744531214,
+      "subject_bACC": 0.6430402316950697
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+kbest600_unified_logistic+kbest600_unified_mlp": {
+      "AUC": 0.6912079428963323,
+      "bACC": 0.6436668786392107,
+      "subject_AUC": 0.6837573898028868,
+      "subject_bACC": 0.6425106874277325
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+kbest600_unified_logistic+online_mlp300": {
+      "AUC": 0.6910697423758838,
+      "bACC": 0.6447795330591946,
+      "subject_AUC": 0.6846654328986373,
+      "subject_bACC": 0.6436230967113029
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+kbest600_unified_logistic+online_logistic300": {
+      "AUC": 0.6860931600736697,
+      "bACC": 0.6399849016047623,
+      "subject_AUC": 0.6814098607456508,
+      "subject_bACC": 0.6388446424330994
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+kbest600_unified_logistic+large_mlp300": {
+      "AUC": 0.6930978842103077,
+      "bACC": 0.646395103186313,
+      "subject_AUC": 0.6869756497442828,
+      "subject_bACC": 0.6452785883518546
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+kbest600_unified_mlp+online_mlp300": {
+      "AUC": 0.6852018449668762,
+      "bACC": 0.639493979081037,
+      "subject_AUC": 0.6783649571027988,
+      "subject_bACC": 0.6383104503806085
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+kbest600_unified_mlp+online_logistic300": {
+      "AUC": 0.6863170483257114,
+      "bACC": 0.6408632550863339,
+      "subject_AUC": 0.6804585176246659,
+      "subject_bACC": 0.6395577957913882
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+kbest600_unified_mlp+large_mlp300": {
+      "AUC": 0.6906116771459819,
+      "bACC": 0.6439569230883656,
+      "subject_AUC": 0.6829280953656278,
+      "subject_bACC": 0.6425289399641085
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+online_mlp300+online_logistic300": {
+      "AUC": 0.6847702530623679,
+      "bACC": 0.6411115480720571,
+      "subject_AUC": 0.6794200412267837,
+      "subject_bACC": 0.639752488658246
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.6893295686513681,
+      "bACC": 0.641091226289058,
+      "subject_AUC": 0.6829570667012489,
+      "subject_bACC": 0.6395569132961633
+    },
+    "kbest300_unified_logistic+kbest300_unified_mlp+online_logistic300+large_mlp300": {
+      "AUC": 0.6875880158657112,
+      "bACC": 0.6427167907356842,
+      "subject_AUC": 0.6823853864367133,
+      "subject_bACC": 0.6413982042446016
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+eeg300_emg_all_mlp+kbest600_unified_logistic": {
+      "AUC": 0.6885459907593606,
+      "bACC": 0.6402425226220261,
+      "subject_AUC": 0.6849452029762991,
+      "subject_bACC": 0.6390725729417357
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+eeg300_emg_all_mlp+kbest600_unified_mlp": {
+      "AUC": 0.6902547249888669,
+      "bACC": 0.6434893206434916,
+      "subject_AUC": 0.6850300103943597,
+      "subject_bACC": 0.6421024840984382
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+eeg300_emg_all_mlp+online_mlp300": {
+      "AUC": 0.6898482660862834,
+      "bACC": 0.645163632577205,
+      "subject_AUC": 0.6853408643356864,
+      "subject_bACC": 0.6438835844409174
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+eeg300_emg_all_mlp+online_logistic300": {
+      "AUC": 0.6836079834314326,
+      "bACC": 0.6383809915170695,
+      "subject_AUC": 0.6808427332361014,
+      "subject_bACC": 0.6370333139979906
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+eeg300_emg_all_mlp+large_mlp300": {
+      "AUC": 0.6918921586583501,
+      "bACC": 0.6459595910293467,
+      "subject_AUC": 0.6876452665648403,
+      "subject_bACC": 0.644473166518925
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+kbest600_unified_logistic+kbest600_unified_mlp": {
+      "AUC": 0.6858240029775324,
+      "bACC": 0.6399318232458885,
+      "subject_AUC": 0.6814452867114047,
+      "subject_bACC": 0.6386139692833479
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+kbest600_unified_logistic+online_mlp300": {
+      "AUC": 0.6865428269761714,
+      "bACC": 0.642046644496322,
+      "subject_AUC": 0.6824471364162652,
+      "subject_bACC": 0.6409900264379589
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+kbest600_unified_logistic+online_logistic300": {
+      "AUC": 0.6751434068636338,
+      "bACC": 0.6304757017174425,
+      "subject_AUC": 0.6739391821822456,
+      "subject_bACC": 0.6290363740639151
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+kbest600_unified_logistic+large_mlp300": {
+      "AUC": 0.684189776787333,
+      "bACC": 0.639248018103199,
+      "subject_AUC": 0.6814650784721329,
+      "subject_bACC": 0.6375374937795096
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+kbest600_unified_mlp+online_mlp300": {
+      "AUC": 0.6874473593768256,
+      "bACC": 0.6432380293619162,
+      "subject_AUC": 0.6817903229252695,
+      "subject_bACC": 0.6418015514106552
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+kbest600_unified_mlp+online_logistic300": {
+      "AUC": 0.6813078489032435,
+      "bACC": 0.637506635763301,
+      "subject_AUC": 0.6781057604735647,
+      "subject_bACC": 0.636019662954928
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+kbest600_unified_mlp+large_mlp300": {
+      "AUC": 0.689390503010227,
+      "bACC": 0.6448422725935925,
+      "subject_AUC": 0.6846119877860013,
+      "subject_bACC": 0.6429278172762734
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+online_mlp300+online_logistic300": {
+      "AUC": 0.6806339915948547,
+      "bACC": 0.6369466439694895,
+      "subject_AUC": 0.67743024490199,
+      "subject_bACC": 0.6355540121682508
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+online_mlp300+large_mlp300": {
+      "AUC": 0.6891399012592223,
+      "bACC": 0.6445312400734715,
+      "subject_AUC": 0.684516816471308,
+      "subject_bACC": 0.6428174928505865
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_logistic+online_logistic300+large_mlp300": {
+      "AUC": 0.6793431283862537,
+      "bACC": 0.6365104655245561,
+      "subject_AUC": 0.6771187974703501,
+      "subject_bACC": 0.6351051636021813
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_mlp+kbest600_unified_logistic+kbest600_unified_mlp": {
+      "AUC": 0.6919852685279965,
+      "bACC": 0.6457803673137097,
+      "subject_AUC": 0.6851090904905486,
+      "subject_bACC": 0.6445639144420023
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_mlp+kbest600_unified_logistic+online_mlp300": {
+      "AUC": 0.6920691975692576,
+      "bACC": 0.647080907192904,
+      "subject_AUC": 0.6863233328763831,
+      "subject_bACC": 0.6459653848955059
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_mlp+kbest600_unified_logistic+online_logistic300": {
+      "AUC": 0.6865964709050638,
+      "bACC": 0.6406743701951727,
+      "subject_AUC": 0.6828119683293797,
+      "subject_bACC": 0.6395774262383188
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_mlp+kbest600_unified_logistic+large_mlp300": {
+      "AUC": 0.6935695696058644,
+      "bACC": 0.6472063862616999,
+      "subject_AUC": 0.6879570529582032,
+      "subject_bACC": 0.646046955756209
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_mlp+kbest600_unified_mlp+online_mlp300": {
+      "AUC": 0.6862851672212351,
+      "bACC": 0.6401133789694106,
+      "subject_AUC": 0.6802582520057944,
+      "subject_bACC": 0.6388868258285171
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_mlp+kbest600_unified_mlp+online_logistic300": {
+      "AUC": 0.6870601376024108,
+      "bACC": 0.6417296153844962,
+      "subject_AUC": 0.6820242664196251,
+      "subject_bACC": 0.640286977767373
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_mlp+kbest600_unified_mlp+large_mlp300": {
+      "AUC": 0.6913649079453446,
+      "bACC": 0.6445155823062427,
+      "subject_AUC": 0.6847089588738899,
+      "subject_bACC": 0.6432648679754234
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_mlp+online_mlp300+online_logistic300": {
+      "AUC": 0.6857045127529067,
+      "bACC": 0.6413588416258293,
+      "subject_AUC": 0.6808601423671291,
+      "subject_bACC": 0.6400833910373845
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.6902623330677479,
+      "bACC": 0.6437009677910199,
+      "subject_AUC": 0.6845429217847562,
+      "subject_bACC": 0.6424601305393558
+    },
+    "kbest300_unified_logistic+eeg300_emg_all_mlp+online_logistic300+large_mlp300": {
+      "AUC": 0.6880817120067881,
+      "bACC": 0.6426520523373846,
+      "subject_AUC": 0.6834979881883395,
+      "subject_bACC": 0.6413419132211121
+    },
+    "kbest300_unified_logistic+kbest600_unified_logistic+kbest600_unified_mlp+online_mlp300": {
+      "AUC": 0.6889596471214965,
+      "bACC": 0.6442869448155514,
+      "subject_AUC": 0.6819702110647972,
+      "subject_bACC": 0.6432144394465993
+    },
+    "kbest300_unified_logistic+kbest600_unified_logistic+kbest600_unified_mlp+online_logistic300": {
+      "AUC": 0.6836273057824809,
+      "bACC": 0.6380015560148293,
+      "subject_AUC": 0.6793815729091872,
+      "subject_bACC": 0.636742689895716
+    },
+    "kbest300_unified_logistic+kbest600_unified_logistic+kbest600_unified_mlp+large_mlp300": {
+      "AUC": 0.6902555617225931,
+      "bACC": 0.6426630460888432,
+      "subject_AUC": 0.6837926266605465,
+      "subject_bACC": 0.641405742155865
+    },
+    "kbest300_unified_logistic+kbest600_unified_logistic+online_mlp300+online_logistic300": {
+      "AUC": 0.6833936866271046,
+      "bACC": 0.6391168755866821,
+      "subject_AUC": 0.6792962748557426,
+      "subject_bACC": 0.6379900424039541
+    },
+    "kbest300_unified_logistic+kbest600_unified_logistic+online_mlp300+large_mlp300": {
+      "AUC": 0.6904782723493902,
+      "bACC": 0.6457099654676892,
+      "subject_AUC": 0.6848116793549638,
+      "subject_bACC": 0.6445536732566118
+    },
+    "kbest300_unified_logistic+kbest600_unified_logistic+online_logistic300+large_mlp300": {
+      "AUC": 0.6816631740781132,
+      "bACC": 0.6382445186968151,
+      "subject_AUC": 0.6786377744100457,
+      "subject_bACC": 0.6367871412582774
+    },
+    "kbest300_unified_logistic+kbest600_unified_mlp+online_mlp300+online_logistic300": {
+      "AUC": 0.6830127945883782,
+      "bACC": 0.63905746749212,
+      "subject_AUC": 0.6772276189765606,
+      "subject_bACC": 0.6377614785871342
+    },
+    "kbest300_unified_logistic+kbest600_unified_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.6872159870064549,
+      "bACC": 0.6417099598894644,
+      "subject_AUC": 0.6798017817678385,
+      "subject_bACC": 0.6403353888022413
+    },
+    "kbest300_unified_logistic+kbest600_unified_mlp+online_logistic300+large_mlp300": {
+      "AUC": 0.6853082263631245,
+      "bACC": 0.6420323193050276,
+      "subject_AUC": 0.680371736070065,
+      "subject_bACC": 0.6406744479517053
+    },
+    "kbest300_unified_logistic+online_mlp300+online_logistic300+large_mlp300": {
+      "AUC": 0.6837640497664428,
+      "bACC": 0.6414713280792654,
+      "subject_AUC": 0.6786140180827743,
+      "subject_bACC": 0.6400579032750157
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+eeg300_emg_all_mlp+kbest600_unified_logistic": {
+      "AUC": 0.6939010788596744,
+      "bACC": 0.6452253726796522,
+      "subject_AUC": 0.6880578730328495,
+      "subject_bACC": 0.6440717520302918
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+eeg300_emg_all_mlp+kbest600_unified_mlp": {
+      "AUC": 0.6891387933617884,
+      "bACC": 0.6413651713615176,
+      "subject_AUC": 0.6830179892521936,
+      "subject_bACC": 0.6399794149733667
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+eeg300_emg_all_mlp+online_mlp300": {
+      "AUC": 0.687811632954045,
+      "bACC": 0.6396244553095869,
+      "subject_AUC": 0.6824090956077462,
+      "subject_bACC": 0.6383086051660909
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+eeg300_emg_all_mlp+online_logistic300": {
+      "AUC": 0.6887130508458293,
+      "bACC": 0.6419238305793947,
+      "subject_AUC": 0.6840785983051088,
+      "subject_bACC": 0.6406856741664524
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+eeg300_emg_all_mlp+large_mlp300": {
+      "AUC": 0.69358496395692,
+      "bACC": 0.6460143351081385,
+      "subject_AUC": 0.6876540942665669,
+      "subject_bACC": 0.6447169171249709
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+kbest600_unified_logistic+kbest600_unified_mlp": {
+      "AUC": 0.6912541027068956,
+      "bACC": 0.6461618016798514,
+      "subject_AUC": 0.6839281934194763,
+      "subject_bACC": 0.6450001786597236
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+kbest600_unified_logistic+online_mlp300": {
+      "AUC": 0.6910990280563016,
+      "bACC": 0.6443440209022283,
+      "subject_AUC": 0.6848561859667514,
+      "subject_bACC": 0.6433416201875919
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+kbest600_unified_logistic+online_logistic300": {
+      "AUC": 0.6859211028274472,
+      "bACC": 0.6387474344039497,
+      "subject_AUC": 0.6817255786250022,
+      "subject_bACC": 0.637626572939977
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+kbest600_unified_logistic+large_mlp300": {
+      "AUC": 0.6930935843286591,
+      "bACC": 0.6464030986419191,
+      "subject_AUC": 0.687114839609007,
+      "subject_bACC": 0.6453059067502541
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+kbest600_unified_mlp+online_mlp300": {
+      "AUC": 0.6855918558537117,
+      "bACC": 0.6395570517594186,
+      "subject_AUC": 0.6785625618497386,
+      "subject_bACC": 0.6382852596015622
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+kbest600_unified_mlp+online_logistic300": {
+      "AUC": 0.6865074052484278,
+      "bACC": 0.6420423136245352,
+      "subject_AUC": 0.6806818533476524,
+      "subject_bACC": 0.640578353185978
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+kbest600_unified_mlp+large_mlp300": {
+      "AUC": 0.6910348862181588,
+      "bACC": 0.6436472231441788,
+      "subject_AUC": 0.6833439141830512,
+      "subject_bACC": 0.6422241035230342
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+online_mlp300+online_logistic300": {
+      "AUC": 0.6849617256300526,
+      "bACC": 0.6402989324207358,
+      "subject_AUC": 0.6796556842037468,
+      "subject_bACC": 0.638897398495058
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+online_mlp300+large_mlp300": {
+      "AUC": 0.6897661034828887,
+      "bACC": 0.6417756977197147,
+      "subject_AUC": 0.6832830163924877,
+      "subject_bACC": 0.6404484867908465
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_logistic+online_logistic300+large_mlp300": {
+      "AUC": 0.6877940925359322,
+      "bACC": 0.6429714134570955,
+      "subject_AUC": 0.6827082209941812,
+      "subject_bACC": 0.6415308407636485
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_mlp+kbest600_unified_logistic+kbest600_unified_mlp": {
+      "AUC": 0.689604768824417,
+      "bACC": 0.6413074289868735,
+      "subject_AUC": 0.6820963946878853,
+      "subject_bACC": 0.6402207163440918
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_mlp+kbest600_unified_logistic+online_mlp300": {
+      "AUC": 0.6886374349090889,
+      "bACC": 0.6406813662188282,
+      "subject_AUC": 0.6821322155420614,
+      "subject_bACC": 0.6396156175759338
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_mlp+kbest600_unified_logistic+online_logistic300": {
+      "AUC": 0.6907647684277431,
+      "bACC": 0.6431639629320761,
+      "subject_AUC": 0.684976203002812,
+      "subject_bACC": 0.642000124031298
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_mlp+kbest600_unified_logistic+large_mlp300": {
+      "AUC": 0.6938368517986521,
+      "bACC": 0.6425903122349375,
+      "subject_AUC": 0.6861949883361674,
+      "subject_bACC": 0.6413676254330694
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_mlp+kbest600_unified_mlp+online_mlp300": {
+      "AUC": 0.677959519442128,
+      "bACC": 0.6355106307019918,
+      "subject_AUC": 0.6730582017259576,
+      "subject_bACC": 0.6345670168459582
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_mlp+kbest600_unified_mlp+online_logistic300": {
+      "AUC": 0.6848017622851881,
+      "bACC": 0.639175617393277,
+      "subject_AUC": 0.6786579867351998,
+      "subject_bACC": 0.6379047431632088
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_mlp+kbest600_unified_mlp+large_mlp300": {
+      "AUC": 0.684763435232006,
+      "bACC": 0.6415928094202582,
+      "subject_AUC": 0.6781901565439856,
+      "subject_bACC": 0.6404812329574003
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_mlp+online_mlp300+online_logistic300": {
+      "AUC": 0.682599998202572,
+      "bACC": 0.6369369827939655,
+      "subject_AUC": 0.6769936466072274,
+      "subject_bACC": 0.6357880599895794
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.6827914087899807,
+      "bACC": 0.6393488445172093,
+      "subject_AUC": 0.6767624886888328,
+      "subject_bACC": 0.6381672034875497
+    },
+    "kbest300_unified_mlp+eeg300_emg_all_mlp+online_logistic300+large_mlp300": {
+      "AUC": 0.6883086372923546,
+      "bACC": 0.6418968459167239,
+      "subject_AUC": 0.6821139464468469,
+      "subject_bACC": 0.6408096062580868
+    },
+    "kbest300_unified_mlp+kbest600_unified_logistic+kbest600_unified_mlp+online_mlp300": {
+      "AUC": 0.6858052074588303,
+      "bACC": 0.6394392350022453,
+      "subject_AUC": 0.6777046627778253,
+      "subject_bACC": 0.6383201517823456
+    },
+    "kbest300_unified_mlp+kbest600_unified_logistic+kbest600_unified_mlp+online_logistic300": {
+      "AUC": 0.687867244756701,
+      "bACC": 0.644033987814058,
+      "subject_AUC": 0.6804860973076166,
+      "subject_bACC": 0.6429996384130918
+    },
+    "kbest300_unified_mlp+kbest600_unified_logistic+kbest600_unified_mlp+large_mlp300": {
+      "AUC": 0.6905115325150077,
+      "bACC": 0.6425969751146092,
+      "subject_AUC": 0.6811230169838266,
+      "subject_bACC": 0.6414798667084252
+    },
+    "kbest300_unified_mlp+kbest600_unified_logistic+online_mlp300+online_logistic300": {
+      "AUC": 0.6866956083565527,
+      "bACC": 0.6409206643169945,
+      "subject_AUC": 0.6800925228155434,
+      "subject_bACC": 0.6397827713809062
+    },
+    "kbest300_unified_mlp+kbest600_unified_logistic+online_mlp300+large_mlp300": {
+      "AUC": 0.689714047798569,
+      "bACC": 0.6409714106679831,
+      "subject_AUC": 0.6816205045625809,
+      "subject_bACC": 0.6398026731045985
+    },
+    "kbest300_unified_mlp+kbest600_unified_logistic+online_logistic300+large_mlp300": {
+      "AUC": 0.6890313660483824,
+      "bACC": 0.6440316558061727,
+      "subject_AUC": 0.682594208559035,
+      "subject_bACC": 0.6427722837896366
+    },
+    "kbest300_unified_mlp+kbest600_unified_mlp+online_mlp300+online_logistic300": {
+      "AUC": 0.68014298384825,
+      "bACC": 0.6333237418856197,
+      "subject_AUC": 0.6731662626141606,
+      "subject_bACC": 0.6319128161609295
+    },
+    "kbest300_unified_mlp+kbest600_unified_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.680006177884012,
+      "bACC": 0.6385462231853958,
+      "subject_AUC": 0.6728979269349814,
+      "subject_bACC": 0.6374261298945539
+    },
+    "kbest300_unified_mlp+kbest600_unified_mlp+online_logistic300+large_mlp300": {
+      "AUC": 0.6855108863706303,
+      "bACC": 0.6407718651693471,
+      "subject_AUC": 0.6776656186011397,
+      "subject_bACC": 0.6394067973694189
+    },
+    "kbest300_unified_mlp+online_mlp300+online_logistic300+large_mlp300": {
+      "AUC": 0.6831221742804787,
+      "bACC": 0.6363486737615489,
+      "subject_AUC": 0.6764859805902902,
+      "subject_bACC": 0.6350744769761791
+    },
+    "eeg300_emg_all_logistic+eeg300_emg_all_mlp+kbest600_unified_logistic+kbest600_unified_mlp": {
+      "AUC": 0.691862330650517,
+      "bACC": 0.6459702516368215,
+      "subject_AUC": 0.6852032230698152,
+      "subject_bACC": 0.6448407687598194
+    },
+    "eeg300_emg_all_logistic+eeg300_emg_all_mlp+kbest600_unified_logistic+online_mlp300": {
+      "AUC": 0.6919407434472127,
+      "bACC": 0.6452180435120132,
+      "subject_AUC": 0.6862467704044442,
+      "subject_bACC": 0.6441100823159971
+    },
+    "eeg300_emg_all_logistic+eeg300_emg_all_mlp+kbest600_unified_logistic+online_logistic300": {
+      "AUC": 0.6862643573435625,
+      "bACC": 0.6383142542548685,
+      "subject_AUC": 0.6827553580268372,
+      "subject_bACC": 0.6371593145572874
+    },
+    "eeg300_emg_all_logistic+eeg300_emg_all_mlp+kbest600_unified_logistic+large_mlp300": {
+      "AUC": 0.6933720617088024,
+      "bACC": 0.6462792852930412,
+      "subject_AUC": 0.6878444877918192,
+      "subject_bACC": 0.6450657807393746
+    },
+    "eeg300_emg_all_logistic+eeg300_emg_all_mlp+kbest600_unified_mlp+online_mlp300": {
+      "AUC": 0.6865449033154178,
+      "bACC": 0.6409854027152939,
+      "subject_AUC": 0.6803348247572613,
+      "subject_bACC": 0.6396398627109288
+    },
+    "eeg300_emg_all_logistic+eeg300_emg_all_mlp+kbest600_unified_mlp+online_logistic300": {
+      "AUC": 0.6871040196378306,
+      "bACC": 0.6411098823521391,
+      "subject_AUC": 0.6819709825512422,
+      "subject_bACC": 0.6396040470651897
+    },
+    "eeg300_emg_all_logistic+eeg300_emg_all_mlp+kbest600_unified_mlp+large_mlp300": {
+      "AUC": 0.6916235361420935,
+      "bACC": 0.6447682061637525,
+      "subject_AUC": 0.6847489700866971,
+      "subject_bACC": 0.6432758404895883
+    },
+    "eeg300_emg_all_logistic+eeg300_emg_all_mlp+online_mlp300+online_logistic300": {
+      "AUC": 0.6857302733051261,
+      "bACC": 0.640179783087628,
+      "subject_AUC": 0.681028545756942,
+      "subject_bACC": 0.63894169326132
+    },
+    "eeg300_emg_all_logistic+eeg300_emg_all_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.6905526021954034,
+      "bACC": 0.643455673101149,
+      "subject_AUC": 0.6846608407498982,
+      "subject_bACC": 0.642170005614974
+    },
+    "eeg300_emg_all_logistic+eeg300_emg_all_mlp+online_logistic300+large_mlp300": {
+      "AUC": 0.6881021809929425,
+      "bACC": 0.6435287400990384,
+      "subject_AUC": 0.6834892051390142,
+      "subject_bACC": 0.6422611615552857
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_logistic+kbest600_unified_mlp+online_mlp300": {
+      "AUC": 0.6888248865063671,
+      "bACC": 0.6439822420311185,
+      "subject_AUC": 0.6818929452920189,
+      "subject_bACC": 0.6428533392185066
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_logistic+kbest600_unified_mlp+online_logistic300": {
+      "AUC": 0.6833015606943402,
+      "bACC": 0.6371976021070815,
+      "subject_AUC": 0.6792559742297127,
+      "subject_bACC": 0.635771604426183
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_logistic+kbest600_unified_mlp+large_mlp300": {
+      "AUC": 0.6900316889656205,
+      "bACC": 0.6424821566532882,
+      "subject_AUC": 0.683819968132341,
+      "subject_bACC": 0.6411557780352102
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_logistic+online_mlp300+online_logistic300": {
+      "AUC": 0.6830902079531231,
+      "bACC": 0.6384340698759434,
+      "subject_AUC": 0.6792437549036112,
+      "subject_bACC": 0.6372386880176066
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_logistic+online_mlp300+large_mlp300": {
+      "AUC": 0.690309027458192,
+      "bACC": 0.6441558022990344,
+      "subject_AUC": 0.6845834277626021,
+      "subject_bACC": 0.642975765682219
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_logistic+online_logistic300+large_mlp300": {
+      "AUC": 0.6812083318225641,
+      "bACC": 0.6378760769460334,
+      "subject_AUC": 0.6784542678755626,
+      "subject_bACC": 0.6363743078451164
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_mlp+online_mlp300+online_logistic300": {
+      "AUC": 0.6830711722608515,
+      "bACC": 0.6377499315892703,
+      "subject_AUC": 0.6775664670940518,
+      "subject_bACC": 0.6361538496063531
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.6874923957948862,
+      "bACC": 0.6422752819870132,
+      "subject_AUC": 0.680162379570762,
+      "subject_bACC": 0.6408217962591087
+    },
+    "eeg300_emg_all_logistic+kbest600_unified_mlp+online_logistic300+large_mlp300": {
+      "AUC": 0.6853131847852059,
+      "bACC": 0.6403593399472486,
+      "subject_AUC": 0.6805107379928084,
+      "subject_bACC": 0.6388459258017911
+    },
+    "eeg300_emg_all_logistic+online_mlp300+online_logistic300+large_mlp300": {
+      "AUC": 0.6838096827446601,
+      "bACC": 0.6402959341248835,
+      "subject_AUC": 0.678781647723894,
+      "subject_bACC": 0.6389433605643011
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_logistic+kbest600_unified_mlp+online_mlp300": {
+      "AUC": 0.6868201034884669,
+      "bACC": 0.6391916083044893,
+      "subject_AUC": 0.679596837690524,
+      "subject_bACC": 0.6381248023220302
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_logistic+kbest600_unified_mlp+online_logistic300": {
+      "AUC": 0.6885125833905876,
+      "bACC": 0.6418580927491444,
+      "subject_AUC": 0.6818639102256475,
+      "subject_bACC": 0.6405482951522196
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_logistic+kbest600_unified_mlp+large_mlp300": {
+      "AUC": 0.6911373008767421,
+      "bACC": 0.6426593815050237,
+      "subject_AUC": 0.6825910560259125,
+      "subject_bACC": 0.6415695925060844
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_logistic+online_mlp300+online_logistic300": {
+      "AUC": 0.6875819030609889,
+      "bACC": 0.6413578421938786,
+      "subject_AUC": 0.6818199336845396,
+      "subject_bACC": 0.6400935890786408
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_logistic+online_mlp300+large_mlp300": {
+      "AUC": 0.6905526021954034,
+      "bACC": 0.6422776139948985,
+      "subject_AUC": 0.6833710358336207,
+      "subject_bACC": 0.6410845427375664
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_logistic+online_logistic300+large_mlp300": {
+      "AUC": 0.6893526175665118,
+      "bACC": 0.6433401883518608,
+      "subject_AUC": 0.6835578869030448,
+      "subject_bACC": 0.6421280345898195
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_mlp+online_mlp300+online_logistic300": {
+      "AUC": 0.6810895543711124,
+      "bACC": 0.6353741578817373,
+      "subject_AUC": 0.6749955751379103,
+      "subject_bACC": 0.6342384008780163
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.6809488126593475,
+      "bACC": 0.6377940150605873,
+      "subject_AUC": 0.6743810142724731,
+      "subject_bACC": 0.6366883094127268
+    },
+    "eeg300_emg_all_mlp+kbest600_unified_mlp+online_logistic300+large_mlp300": {
+      "AUC": 0.6860892553162807,
+      "bACC": 0.6415197424223689,
+      "subject_AUC": 0.6791676653056629,
+      "subject_bACC": 0.6402718886601984
+    },
+    "eeg300_emg_all_mlp+online_mlp300+online_logistic300+large_mlp300": {
+      "AUC": 0.683910470420998,
+      "bACC": 0.6381577927955987,
+      "subject_AUC": 0.6778870758096425,
+      "subject_bACC": 0.6369523220633188
+    },
+    "kbest600_unified_logistic+kbest600_unified_mlp+online_mlp300+online_logistic300": {
+      "AUC": 0.6841802240772918,
+      "bACC": 0.6399902319084998,
+      "subject_AUC": 0.6772626771711318,
+      "subject_bACC": 0.6387557102349755
+    },
+    "kbest600_unified_logistic+kbest600_unified_mlp+online_mlp300+large_mlp300": {
+      "AUC": 0.6867195559856986,
+      "bACC": 0.6404114188741716,
+      "subject_AUC": 0.6777740327297348,
+      "subject_bACC": 0.6392802674995347
+    },
+    "kbest600_unified_logistic+kbest600_unified_mlp+online_logistic300+large_mlp300": {
+      "AUC": 0.6857806477744588,
+      "bACC": 0.6412306974051647,
+      "subject_AUC": 0.6795638107555984,
+      "subject_bACC": 0.6399372453454719
+    },
+    "kbest600_unified_logistic+online_mlp300+online_logistic300+large_mlp300": {
+      "AUC": 0.6847764510899697,
+      "bACC": 0.6407374428735544,
+      "subject_AUC": 0.6785280834400123,
+      "subject_bACC": 0.6396307922447506
+    },
+    "kbest600_unified_mlp+online_mlp300+online_logistic300+large_mlp300": {
+      "AUC": 0.6806395310820237,
+      "bACC": 0.6364824814299346,
+      "subject_AUC": 0.6731806669503121,
+      "subject_bACC": 0.634921572086838
+    }
+  },
+  "best_combo": "kbest300_unified_mlp+eeg300_emg_all_logistic+eeg300_emg_all_mlp+kbest600_unified_logistic",
+  "nested": [
+    {
+      "fold": 1,
+      "combo": "eeg300_emg_all_logistic+eeg300_emg_all_mlp+kbest600_unified_logistic+large_mlp300",
+      "AUC": 0.6104199402818529
+    },
+    {
+      "fold": 2,
+      "combo": "kbest300_unified_mlp+eeg300_emg_all_mlp+kbest600_unified_logistic+large_mlp300",
+      "AUC": 0.7404657083155762
+    },
+    {
+      "fold": 3,
+      "combo": "kbest300_unified_mlp+eeg300_emg_all_mlp+kbest600_unified_logistic+large_mlp300",
+      "AUC": 0.7259067897425251
+    },
+    {
+      "fold": 4,
+      "combo": "kbest300_unified_mlp+eeg300_emg_all_logistic+eeg300_emg_all_mlp+large_mlp300",
+      "AUC": 0.654386840377993
+    },
+    {
+      "fold": 5,
+      "combo": "kbest300_unified_logistic+kbest300_unified_mlp+eeg300_emg_all_mlp+kbest600_unified_logistic",
+      "AUC": 0.7312121852635602
+    }
+  ],
+  "nested_mean_AUC": 0.6924782927963015,
+  "_meta": {
+    "seconds": 182.68380220001563,
+    "emg_selected_in_kbest300": 8
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "online_logistic300": {
+    "AUC": 0.6547487583026455,
+    "bACC": 0.6176161037772949,
+    "subject_AUC": 0.6542990026849016,
+    "subject_bACC": 0.616847820386325
+  },
+  "online_mlp300": {
+    "AUC": 0.6631790210401344,
+    "bACC": 0.6226572462845149,
+    "subject_AUC": 0.6585208668056741,
+    "subject_bACC": 0.6219105876984697
+  },
+  "ensemble_rank": {
+    "AUC": 0.6725350754129512,
+    "bACC": 0.6278449721445145,
+    "subject_AUC": 0.667719703652652,
+    "subject_bACC": 0.6265980847648811
+  },
+  "meta": {
+    "device": "cuda",
+    "seconds": 36.357427700189874,
+    "normalisation": "causal running mean/std per subject, prior n0=5"
+  }
+}
