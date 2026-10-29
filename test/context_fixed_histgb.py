@@ -8,8 +8,9 @@ import json, sys, time
 from pathlib import Path
 import numpy as np
 from scipy.stats import norm
+from scipy.special import expit, logit
 from sklearn.ensemble import HistGradientBoostingClassifier
-from sklearn.metrics import roc_auc_score, balanced_accuracy_score
+from sklearn.metrics import roc_auc_score, balanced_accuracy_score, roc_curve
 from sklearn.model_selection import StratifiedGroupKFold
 from threadpoolctl import threadpool_limits
 
@@ -114,12 +115,13 @@ def make_model():
                                           l2_regularization=1., random_state=0)
 
 
-def fit_oof(F, y, g, mask, tag, tick):
+def fit_oof(F, y, g, mask, tag, tick, predict_all=False):
     oof = np.full(len(y), np.nan)
     for fold, (tr, te) in enumerate(StratifiedGroupKFold(5, shuffle=True, random_state=SEED).split(F, y, g), 1):
         tr = tr[mask[tr]]; te_eval = te[mask[te]]
-        oof[te_eval] = make_model().fit(F[tr], y[tr]).predict_proba(F[te_eval])[:, 1]
-        print(f'[progress] {tag} fold {fold}/5 train={len(tr)} test={len(te_eval)} '
+        pred = te if predict_all else te_eval
+        oof[pred] = make_model().fit(F[tr], y[tr]).predict_proba(F[pred])[:, 1]
+        print(f'[progress] {tag} fold {fold}/5 train={len(tr)} test={len(pred)} '
               f'elapsed={time.perf_counter()-tick:.1f}s', flush=True)
     return oof
 
@@ -191,6 +193,127 @@ def run_check(Z, y, g, tick):
     print(f'[done] check seconds={out["seconds"]:.1f}', flush=True)
 
 
+def past_score_location(v, g, k, kind):
+    """本人过去 k 个分数的位置统计，严格不含当前窗；无历史时取概率 0.5 或 logit 0。"""
+    out = np.empty_like(v)
+    empty = 0. if kind.startswith('logit') else .5
+    stat = np.median if kind.endswith('median') else np.mean
+    for s in np.unique(g):
+        ii = np.where(g == s)[0]; x = v[ii]
+        for t in range(len(ii)):
+            hist = x[max(0, t-k):t]
+            out[ii[t]] = stat(hist) if len(hist) else empty
+    return out
+
+
+def crossfit_threshold(v, y, mask, folds):
+    """每折阈值只由其余折的 OOF 标签选择，返回平移到 0.5 的分数。"""
+    adjusted = np.full_like(v, np.nan); thresholds = {}
+    for f in np.unique(folds):
+        tr = mask & (folds != f); te = mask & (folds == f)
+        fpr, tpr, thr = roc_curve(y[tr], v[tr])
+        quality = tpr-fpr; best = np.flatnonzero(quality == quality.max())
+        threshold = float(np.median(thr[best])); thresholds[str(int(f))] = threshold
+        adjusted[te] = v[te]-threshold+.5
+    return adjusted, thresholds
+
+
+def direction_metrics(v, y, g, mask):
+    out = {'R->T': [], 'T->R': []}
+    for s in np.unique(g):
+        ii = np.where(g == s)[0]; cuts = np.flatnonzero(np.r_[True, np.diff(y[ii]) != 0, True])
+        blocks = [ii[a:b] for a, b in zip(cuts[:-1], cuts[1:])]
+        for a, b in zip(blocks[:-1], blocks[1:]):
+            sel = np.r_[a, b]; sel = sel[mask[sel]]
+            if len(sel) and len(np.unique(y[sel])) == 2:
+                key = 'R->T' if y[a[0]] == 0 else 'T->R'
+                pred = v[sel] >= .5; truth = y[sel]
+                out[key].append((roc_auc_score(truth, v[sel]),
+                                 balanced_accuracy_score(truth, pred),
+                                 np.mean(pred[truth == 0] == 0), np.mean(pred[truth == 1] == 1)))
+    return {k: {'n_pairs': len(x), 'AUC': float(np.mean(x, 0)[0]),
+                'bACC_fixed05': float(np.mean(x, 0)[1]), 'recall_R': float(np.mean(x, 0)[2]),
+                'recall_T': float(np.mean(x, 0)[3])} for k, x in out.items() if x}
+
+
+def boot_calibration(a, b, y, g, mask, n=500):
+    subs = np.unique(g); pools = [np.where((g == s) & mask)[0] for s in subs]
+    rng = np.random.default_rng(0); deltas = []
+    for _ in range(n):
+        ix = np.concatenate([pools[j] for j in rng.integers(0, len(subs), len(subs))])
+        if len(np.unique(y[ix])) == 2:
+            deltas.append((roc_auc_score(y[ix], a[ix])-roc_auc_score(y[ix], b[ix]),
+                           balanced_accuracy_score(y[ix], a[ix] >= .5)-balanced_accuracy_score(y[ix], b[ix] >= .5)))
+    d = np.asarray(deltas)
+    return {name: {'mean': float(d[:, j].mean()), 'p2.5': float(np.percentile(d[:, j], 2.5)),
+                   'p97.5': float(np.percentile(d[:, j], 97.5)), 'win': float(np.mean(d[:, j] > 0))}
+            for j, name in enumerate(('dAUC', 'dbACC'))}
+
+
+def run_score_calib(Z, y, g, mask, tick):
+    cache = OUT/'context_score_calibration_oof.npz'
+    splits = list(StratifiedGroupKFold(5, shuffle=True, random_state=SEED).split(Z, y, g))
+    folds = np.full(len(y), -1, int)
+    for f, (_, te) in enumerate(splits): folds[te] = f
+    names = [f'd{k}_mean_std' for k in (100, 200, 400)]
+    if cache.exists():
+        saved = np.load(cache); oofs = {name: saved[name] for name in names}
+        assert all(x.shape == y.shape and np.isfinite(x).all() for x in oofs.values())
+        assert np.array_equal(saved['folds'], folds)
+        print('[info] loaded cached all-window OOF predictions', flush=True)
+    else:
+        oofs = {}
+        with threadpool_limits(limits=4):
+            for k, name in zip((100, 200, 400), names):
+                mu, sd = causal_mean_std(Z, g, k); F = (Z-mu)/np.maximum(sd, .1)
+                oofs[name] = fit_oof(F, y, g, mask, name, tick, predict_all=True)
+        np.savez(cache, folds=folds, **oofs)
+    prob = np.mean([oofs[name] for name in names], 0); base = smooth(prob, g, 5)
+    variants = {'fixed05': base}
+    z = logit(np.clip(base, 1e-6, 1-1e-6))
+    for k in (100, 200, 400):
+        loc = past_score_location(z, g, k, 'logit_mean')
+        variants[f'logit_mean{k}'] = expit(z-loc)
+    for scale in ('logit', 'prob'):
+        source = z if scale == 'logit' else base
+        loc = past_score_location(source, g, 200, f'{scale}_median')
+        variants[f'{scale}_median200'] = expit(z-loc) if scale == 'logit' else np.clip(base-loc+.5, 1e-6, 1-1e-6)
+    loc = past_score_location(base, g, 200, 'prob_mean')
+    variants['prob_mean200'] = np.clip(base-loc+.5, 1e-6, 1-1e-6)
+    mu, sd = past_mean_std(z[:, None], g, 200)
+    variants['logit_z200'] = expit((z-mu[:, 0])/np.maximum(sd[:, 0], .2))
+    zraw = logit(np.clip(prob, 1e-6, 1-1e-6))
+    variants['logit_mean200_pre_smooth'] = smooth(expit(zraw-past_score_location(zraw, g, 200, 'logit_mean')), g, 5)
+    out = {'meta': {
+        'base': 'd100/d200/d400 mean_std 三个 HistGB 的概率平均，随后 smooth5；与 ext/ms_ens_probmean 相同',
+        'warmup_scores': 'predict_all=True 保留前120窗的无标签 OOF 分数供历史校准和smooth5；这些窗仍不训练、不计分。'
+                              '因此 t=120..123 的平滑与 ext 不同：ext 的预热 OOF 为 NaN，平滑只用已评估窗；本实验使用完整因果过去，'
+                              '使基线 AUC 从0.894922变为0.894769，不是模型训练不一致',
+        'causal_location': '过去 k 窗，严格不含当前窗；无历史时概率位置0.5、logit位置0；校准输出固定0.5阈值',
+        'crossfit_threshold': '每个测试折的阈值只在其余4折的评估窗 OOF 分数上最大化 bACC；并列取中位数；不使用本折测试标签',
+        'selection_note': '所有变体在同一批57名受试者上探索，最佳变体存在选择偏倚；受试者bootstrap不消除该偏倚',
+        'constraint_note': '长历史和smooth5超过6秒，不声称严格6秒合规'}, 'variants': {}}
+    adjusted = {}
+    with threadpool_limits(limits=4):
+        for name, score in variants.items():
+            adj, thresholds = crossfit_threshold(score, y, mask, folds); adjusted[name] = adj
+            r = {'fixed05': metrics(score, y, g, mask),
+                 'crossfit_threshold': {'thresholds': thresholds, **metrics(adj, y, g, mask)},
+                 'direction_fixed05': direction_metrics(score, y, g, mask)}
+            out['variants'][name] = r
+            print(f'[result] {name} AUC={r["fixed05"]["AUC"]:.4f} bACC05={r["fixed05"]["bACC_fixed05"]:.4f} '
+                  f'bACC_crossfit={r["crossfit_threshold"]["bACC_fixed05"]:.4f}', flush=True)
+        for name in variants:
+            if name == 'fixed05': continue
+            out['variants'][name]['vs_fixed05'] = boot_calibration(variants[name], base, y, g, mask)
+            out['variants'][name]['vs_fixed05_crossfit'] = boot_calibration(adjusted[name], adjusted['fixed05'], y, g, mask)
+            b = out['variants'][name]['vs_fixed05_crossfit']
+            print(f'[boot] {name} crossfit ΔAUC={b["dAUC"]["mean"]:+.4f} ΔbACC={b["dbACC"]["mean"]:+.4f}', flush=True)
+    out['seconds'] = time.perf_counter()-tick
+    save_key('score_calib', out)
+    print(f'[done] score_calib seconds={out["seconds"]:.1f}', flush=True)
+
+
 def run_ext(Z, y, g, mask, tick):
     from scipy.stats import rankdata
     out = {'meta': {
@@ -244,6 +367,8 @@ def main():
         return run_check(Z, y, g, tick)
     if '--ext' in sys.argv:
         return run_ext(Z, y, g, eval_mask, tick)
+    if '--score-calib' in sys.argv:
+        return run_score_calib(Z, y, g, eval_mask, tick)
     mu, sd = causal_mean_std(Z, g, L)
     past_mu, past_sd = past_mean_std(Z, g, L)
     features = {'q': Z, 'd200_mean': Z-mu, 'd200_mean_std': (Z-mu)/np.maximum(sd, .1),
@@ -284,7 +409,7 @@ def main():
     path = OUT/'context_fixed_histgb_results.json'
     if path.exists():
         old = json.loads(path.read_text(encoding='utf-8'))
-        result.update({k: old[k] for k in ('check', 'ext') if k in old})
+        result.update({k: old[k] for k in ('check', 'ext', 'score_calib') if k in old})
     path.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf-8')
     print(f'[done] {path} seconds={result["seconds"]:.1f}', flush=True)
 
