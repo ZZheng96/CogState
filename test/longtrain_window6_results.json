@@ -1,0 +1,87 @@
+{
+  "protocol": {
+    "input": "current 6-second EEG-derived feature vector only",
+    "training": "all windows from training subjects; supervised or 20-epoch denoising reconstruction pretraining followed by supervised fine-tuning",
+    "cv": "StratifiedGroupKFold(5), subject-disjoint",
+    "test_history": "none",
+    "feature_count": 856,
+    "pretraining": "training-fold only, no test windows"
+  },
+  "models": {
+    "supervised": {
+      "AUC": 0.6133010834462149,
+      "bACC": 0.5837519791076886,
+      "fold_mean_AUC": 0.6144253106837778,
+      "folds": [
+        {
+          "AUC": 0.5690428844103708,
+          "bACC": 0.5583739333620528,
+          "best_epoch": 4,
+          "pretrain_epochs": 0
+        },
+        {
+          "AUC": 0.6468096370794385,
+          "bACC": 0.6008198614101916,
+          "best_epoch": 3,
+          "pretrain_epochs": 0
+        },
+        {
+          "AUC": 0.6115952071451684,
+          "bACC": 0.5846331686897741,
+          "best_epoch": 3,
+          "pretrain_epochs": 0
+        },
+        {
+          "AUC": 0.6287378609216605,
+          "bACC": 0.5949564511321046,
+          "best_epoch": 3,
+          "pretrain_epochs": 0
+        },
+        {
+          "AUC": 0.6159409638622517,
+          "bACC": 0.5786552591789946,
+          "best_epoch": 1,
+          "pretrain_epochs": 0
+        }
+      ]
+    },
+    "pretrained": {
+      "AUC": 0.6123001019885442,
+      "bACC": 0.5802622106567027,
+      "fold_mean_AUC": 0.6163154846645993,
+      "folds": [
+        {
+          "AUC": 0.5737725254555083,
+          "bACC": 0.5468674717137019,
+          "best_epoch": 3,
+          "pretrain_epochs": 20
+        },
+        {
+          "AUC": 0.6358790277311035,
+          "bACC": 0.5933203917762286,
+          "best_epoch": 1,
+          "pretrain_epochs": 20
+        },
+        {
+          "AUC": 0.6292977685945722,
+          "bACC": 0.5902118849889999,
+          "best_epoch": 3,
+          "pretrain_epochs": 20
+        },
+        {
+          "AUC": 0.5960124065686064,
+          "bACC": 0.5570509881059338,
+          "best_epoch": 1,
+          "pretrain_epochs": 20
+        },
+        {
+          "AUC": 0.6466156949732063,
+          "bACC": 0.6143164132254295,
+          "best_epoch": 2,
+          "pretrain_epochs": 20
+        }
+      ]
+    }
+  },
+  "runtime_seconds": 22.258308500000567
+}

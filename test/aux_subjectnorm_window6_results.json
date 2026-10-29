@@ -1,0 +1,333 @@
+{
+  "protocol": {
+    "cv": "StratifiedGroupKFold(5, shuffle=True, random_state=0)",
+    "source": "test/highdim_deep_features.npz",
+    "input": "current single 6-second window features only (858 -> 856 non-constant)",
+    "aux_targets_source": "raw 6-second waveform in the same npz (current window only)",
+    "aux_target_dim": 9,
+    "aux_subject_zscore": "per training subject, stats from that outer training fold (candidate: inner-train rows only; refit: all training rows)",
+    "lambda_selection": "inner-val BCE (StratifiedGroupKFold on training subjects); test fold never used",
+    "test_subject_isolation": true,
+    "test_history": false,
+    "window_position_schedule_r_t": false,
+    "test_subject_calibration": false,
+    "causal": true
+  },
+  "aux_targets": {
+    "names": [
+      "log_power_1_4",
+      "log_power_4_8",
+      "log_power_8_13",
+      "log_power_13_30",
+      "log_power_30_45",
+      "spectral_entropy_1_45",
+      "hjorth_activity_logvar",
+      "hjorth_mobility",
+      "hjorth_complexity"
+    ],
+    "dim": 9,
+    "selection": "physiological quantities computed directly from the current 6-s raw waveform: 5 log band powers, spectral entropy, 3 Hjorth parameters"
+  },
+  "lambda_grid": [
+    0.1,
+    0.3,
+    1.0
+  ],
+  "baseline": {
+    "OOF": {
+      "AUC": 0.6057219416065225,
+      "bACC": 0.574077431339025
+    },
+    "fold_mean": {
+      "AUC": 0.6106418442830155,
+      "bACC": 0.5744726395086167
+    }
+  },
+  "aux": {
+    "OOF": {
+      "AUC": 0.614698816145738,
+      "bACC": 0.5817563071903629
+    },
+    "fold_mean": {
+      "AUC": 0.6165860036932355,
+      "bACC": 0.5817698985664194
+    },
+    "selected_lambdas": [
+      0.3,
+      0.3,
+      0.1,
+      0.3,
+      0.1
+    ]
+  },
+  "per_lambda_candidate": {
+    "0.1": {
+      "OOF": {
+        "AUC": 0.603608383204213,
+        "bACC": 0.5701189602932659
+      },
+      "fold_mean": {
+        "AUC": 0.6116702218442697,
+        "bACC": 0.5705433718586483
+      }
+    },
+    "0.3": {
+      "OOF": {
+        "AUC": 0.6158751630468636,
+        "bACC": 0.5900747885000557
+      },
+      "fold_mean": {
+        "AUC": 0.6216929137903884,
+        "bACC": 0.590091372057183
+      }
+    },
+    "1.0": {
+      "OOF": {
+        "AUC": 0.610826094811848,
+        "bACC": 0.5765513663086996
+      },
+      "fold_mean": {
+        "AUC": 0.6170736021127228,
+        "bACC": 0.5767789597268791
+      }
+    }
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "selected_lambda": 0.3,
+      "inner_val_bce": {
+        "baseline": 0.6896947052767072,
+        "0.1": 0.6981196173758731,
+        "0.3": 0.6883191958147297,
+        "1.0": 0.6922379260755422
+      },
+      "candidates": {
+        "baseline": {
+          "best_epoch": 1,
+          "AUC": 0.5335419806559945,
+          "bACC": 0.5216366162679079
+        },
+        "0.1": {
+          "inner_val_bce": 0.6981196173758731,
+          "best_epoch": 1,
+          "AUC": 0.5542345202489943,
+          "bACC": 0.5295842236126558
+        },
+        "0.3": {
+          "inner_val_bce": 0.6883191958147297,
+          "best_epoch": 1,
+          "AUC": 0.5447022054240075,
+          "bACC": 0.5387947829528843
+        },
+        "1.0": {
+          "inner_val_bce": 0.6922379260755422,
+          "best_epoch": 1,
+          "AUC": 0.5337758911330853,
+          "bACC": 0.5228012312290442
+        }
+      },
+      "refit": {
+        "baseline": {
+          "AUC": 0.5619403995281468,
+          "bACC": 0.539863941043862,
+          "epochs": 1
+        },
+        "aux": {
+          "AUC": 0.5622417881375912,
+          "bACC": 0.5406206013206787,
+          "epochs": 1
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "selected_lambda": 0.3,
+      "inner_val_bce": {
+        "baseline": 0.666403731865659,
+        "0.1": 0.6417313366342446,
+        "0.3": 0.6408191153163031,
+        "1.0": 0.6459802111527176
+      },
+      "candidates": {
+        "baseline": {
+          "best_epoch": 2,
+          "AUC": 0.654491214697804,
+          "bACC": 0.5985649139868319
+        },
+        "0.1": {
+          "inner_val_bce": 0.6417313366342446,
+          "best_epoch": 1,
+          "AUC": 0.6519756838905775,
+          "bACC": 0.5769306731799997
+        },
+        "0.3": {
+          "inner_val_bce": 0.6408191153163031,
+          "best_epoch": 2,
+          "AUC": 0.6602991452189144,
+          "bACC": 0.5998637006219832
+        },
+        "1.0": {
+          "inner_val_bce": 0.6459802111527176,
+          "best_epoch": 2,
+          "AUC": 0.6712492795470204,
+          "bACC": 0.6022220928900912
+        }
+      },
+      "refit": {
+        "baseline": {
+          "AUC": 0.6433570949833944,
+          "bACC": 0.5909772064635193,
+          "epochs": 2
+        },
+        "aux": {
+          "AUC": 0.6591933554991919,
+          "bACC": 0.6189300311085495,
+          "epochs": 2
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "selected_lambda": 0.1,
+      "inner_val_bce": {
+        "baseline": 0.6683080008609762,
+        "0.1": 0.6578165709126514,
+        "0.3": 0.663730083492586,
+        "1.0": 0.6642296326666792
+      },
+      "candidates": {
+        "baseline": {
+          "best_epoch": 2,
+          "AUC": 0.6222987279115839,
+          "bACC": 0.5794270696068422
+        },
+        "0.1": {
+          "inner_val_bce": 0.6578165709126514,
+          "best_epoch": 3,
+          "AUC": 0.6606677592446777,
+          "bACC": 0.6154284205976635
+        },
+        "0.3": {
+          "inner_val_bce": 0.663730083492586,
+          "best_epoch": 4,
+          "AUC": 0.6573162315951829,
+          "bACC": 0.617023700725529
+        },
+        "1.0": {
+          "inner_val_bce": 0.6642296326666792,
+          "best_epoch": 6,
+          "AUC": 0.64994295185818,
+          "bACC": 0.6113699744317284
+        }
+      },
+      "refit": {
+        "baseline": {
+          "AUC": 0.6429524258232244,
+          "bACC": 0.6015815755991272,
+          "epochs": 2
+        },
+        "aux": {
+          "AUC": 0.6418801883602329,
+          "bACC": 0.599795526809383,
+          "epochs": 3
+        }
+      }
+    },
+    {
+      "fold": 4,
+      "selected_lambda": 0.3,
+      "inner_val_bce": {
+        "baseline": 0.7157417341948548,
+        "0.1": 0.6996417431760544,
+        "0.3": 0.6937997748761008,
+        "1.0": 0.7024771688684776
+      },
+      "candidates": {
+        "baseline": {
+          "best_epoch": 1,
+          "AUC": 0.5923249486287276,
+          "bACC": 0.5651642255370035
+        },
+        "0.1": {
+          "inner_val_bce": 0.6996417431760544,
+          "best_epoch": 1,
+          "AUC": 0.5864624680204753,
+          "bACC": 0.5500958953471564
+        },
+        "0.3": {
+          "inner_val_bce": 0.6937997748761008,
+          "best_epoch": 3,
+          "AUC": 0.6211416214855374,
+          "bACC": 0.5941410121541214
+        },
+        "1.0": {
+          "inner_val_bce": 0.7024771688684776,
+          "best_epoch": 1,
+          "AUC": 0.5930577370911306,
+          "bACC": 0.5565282841130493
+        }
+      },
+      "refit": {
+        "baseline": {
+          "AUC": 0.582323544607417,
+          "bACC": 0.5489439753998867,
+          "epochs": 1
+        },
+        "aux": {
+          "AUC": 0.6003825093526494,
+          "bACC": 0.5678251225752102,
+          "epochs": 3
+        }
+      }
+    },
+    {
+      "fold": 5,
+      "selected_lambda": 0.1,
+      "inner_val_bce": {
+        "baseline": 0.6811162566083467,
+        "0.1": 0.6661700001339564,
+        "0.3": 0.67195967982095,
+        "1.0": 0.6803905680614905
+      },
+      "candidates": {
+        "baseline": {
+          "best_epoch": 2,
+          "AUC": 0.6189493384774737,
+          "bACC": 0.5997211700975783
+        },
+        "0.1": {
+          "inner_val_bce": 0.6661700001339564,
+          "best_epoch": 3,
+          "AUC": 0.6050106778166233,
+          "bACC": 0.5806776465557664
+        },
+        "0.3": {
+          "inner_val_bce": 0.67195967982095,
+          "best_epoch": 2,
+          "AUC": 0.6250053652282995,
+          "bACC": 0.6006336638313966
+        },
+        "1.0": {
+          "inner_val_bce": 0.6803905680614905,
+          "best_epoch": 4,
+          "AUC": 0.6373421509341977,
+          "bACC": 0.5909732159704828
+        }
+      },
+      "refit": {
+        "baseline": {
+          "AUC": 0.6226357564728948,
+          "bACC": 0.5909964990366885,
+          "epochs": 2
+        },
+        "aux": {
+          "AUC": 0.6192321771165118,
+          "bACC": 0.5816782110182758,
+          "epochs": 3
+        }
+      }
+    }
+  ],
+  "runtime_seconds": 28.753910700001143
+}

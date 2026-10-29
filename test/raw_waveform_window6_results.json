@@ -1,0 +1,685 @@
+{
+  "protocol": {
+    "test_subject_isolation": true,
+    "test_history": false,
+    "window_position_schedule_r_t": false,
+    "test_subject_calibration": false,
+    "per_window_normalization_only": true,
+    "preprocessing": "x-mean(x); /std(x) of the same window (flat windows -> 0); clip [-10,10]",
+    "outer_cv": "StratifiedGroupKFold(5,shuffle=True,random_state=0), groups=subject",
+    "inner_val": "first split of StratifiedGroupKFold(4,shuffle=True,random_state=outer_fold) on training subjects; used for early stopping (val AUC, patience 8, max 50 epochs) and Youden threshold",
+    "training": "BCEWithLogits, AdamW lr=0.001 wd=0.01, batch 128, grad clip 1; aug: random 4 s crop (time shift), log-uniform amplitude scale [0.8,1.25], Gaussian noise sd 0.05",
+    "inference": "mean logit of 5 evenly spaced 4 s crops inside the current 6 s window",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "n_windows": 16067,
+    "n_subjects": 57,
+    "handcrafted_fold_id_matches_outer_split": true,
+    "fusion_note": "rank_avg uses ranks over pooled OOF windows (evaluation-only; not a deployable per-window rule). logit_avg is strictly window-local. Weight fixed at 0.5 because the handcrafted baseline has no inner-validation predictions to select weights inside training folds."
+  },
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+  "torch_version": "2.5.1+cu121",
+  "old_raw_cnn_diagnosis": {
+    "old_preprocessing": "raw_cnn used one global mean/std over all inner-train samples ((raw-mean)/scale).",
+    "data_facts": {
+      "global_std": 0.05323881283402443,
+      "median_window_std": 0.00012846934259869158,
+      "window_std_p1_p99": [
+        1.715503094601445e-05,
+        0.007103467360138893
+      ],
+      "mean_abs_window_offset": 0.042420003563165665,
+      "flat_windows_std0": 82,
+      "median_power_share_below_1Hz": 0.869
+    },
+    "cause": "Raw signal is unfiltered with large per-window DC offsets (~0.03-0.04 V) and heavy-tailed amplitude (window std spans ~400x). The global std (~0.053) is dominated by offsets/outlier windows, so after global normalization a typical window has std ~0.0024 around a large constant: the net mainly sees a near-constant offset (subject/session dependent) and the EEG waveform is ~400x below unit scale. Training never left chance: inner-val BCE stayed ~0.693 every epoch and best_epoch was 1 in 3/5 folds (early stopping kept an essentially untrained net); the resulting test AUC<0.5 is noise/offset-driven subject shift, not a label-inversion. No label/prediction misalignment was found (oof[te] indexing and sigmoid direction are correct).",
+    "secondary": [
+      "no BatchNorm/no per-window scaling, so the tiny-signal regime cannot be fixed by the net",
+      "early stopping on val BCE with patience 6 and min_delta, from epoch 1, selects near-initial weights",
+      "no augmentation, single 6 s view, pos_weight irrelevant (balanced classes)"
+    ],
+    "fix_here": "per-window demean + per-window std normalization + clip, BN in models, crop/scale/noise augmentation, early stopping on inner-val AUC, multi-crop TTA within the current window."
+  },
+  "quick_check_seed0_fold1": {
+    "shallow": {
+      "AUC": 0.5558293083038837,
+      "bACC": 0.5535356689819072,
+      "bACC_at_0.5": 0.5540781684789071,
+      "threshold": 0.47830724716186523,
+      "seconds": 57.52893029999905,
+      "best_epoch": 14,
+      "params": 43561,
+      "best_val_auc": 0.6107485292879227
+    },
+    "eegnet": {
+      "AUC": 0.5763831885639378,
+      "bACC": 0.5590550921919983,
+      "bACC_at_0.5": 0.5566734021363413,
+      "threshold": 0.49868762493133545,
+      "seconds": 24.602077700001246,
+      "best_epoch": 17,
+      "params": 2121,
+      "best_val_auc": 0.5985373332290702
+    },
+    "resnet1d": {
+      "AUC": 0.6027299019057224,
+      "bACC": 0.5776967491586835,
+      "bACC_at_0.5": 0.5745981039467714,
+      "threshold": 0.5061038732528687,
+      "seconds": 111.0736379000009,
+      "best_epoch": 44,
+      "params": 303393,
+      "best_val_auc": 0.6604281080447049
+    }
+  },
+  "full_run_models": [
+    "resnet1d",
+    "eegnet"
+  ],
+  "estimated_full_seconds": {
+    "shallow": 805.4050241999867,
+    "eegnet": 344.42908780001744,
+    "resnet1d": 1555.0309306000127
+  },
+  "models": {
+    "resnet1d": {
+      "params": 303393,
+      "per_seed": {
+        "0": {
+          "AUC": 0.606119483096894,
+          "bACC": 0.5692972335413702,
+          "bACC_at_0.5": 0.5704255379810483,
+          "fold_mean": {
+            "AUC": 0.612964860747461,
+            "bACC": 0.5701500536209437
+          },
+          "folds": [
+            {
+              "fold": 1,
+              "best_epoch": 44,
+              "epochs_run": 50,
+              "best_val_auc": 0.6604281080447049,
+              "seconds": 111.0736379000009,
+              "threshold": 0.5061038732528687,
+              "AUC": 0.6027299019057224,
+              "bACC": 0.5776967491586835,
+              "bACC_at_0.5": 0.5745981039467714
+            },
+            {
+              "fold": 2,
+              "best_epoch": 38,
+              "epochs_run": 46,
+              "best_val_auc": 0.6365981721998435,
+              "seconds": 106.0964673999988,
+              "threshold": 0.6050577759742737,
+              "AUC": 0.6661573901109733,
+              "bACC": 0.6235195277958738,
+              "bACC_at_0.5": 0.6053515341189635
+            },
+            {
+              "fold": 3,
+              "best_epoch": 17,
+              "epochs_run": 25,
+              "best_val_auc": 0.5995457500309082,
+              "seconds": 62.892169800001284,
+              "threshold": 0.4626370072364807,
+              "AUC": 0.627391501083793,
+              "bACC": 0.5677279432097304,
+              "bACC_at_0.5": 0.5868538699886228
+            },
+            {
+              "fold": 4,
+              "best_epoch": 9,
+              "epochs_run": 17,
+              "best_val_auc": 0.5861715933320997,
+              "seconds": 41.81285930000013,
+              "threshold": 0.5171546339988708,
+              "AUC": 0.530942589361115,
+              "bACC": 0.4995955657825482,
+              "bACC_at_0.5": 0.4918755234820835
+            },
+            {
+              "fold": 5,
+              "best_epoch": 27,
+              "epochs_run": 35,
+              "best_val_auc": 0.6468243347062993,
+              "seconds": 84.6758411999981,
+              "threshold": 0.5415229201316833,
+              "AUC": 0.6376029212757015,
+              "bACC": 0.5822104821578826,
+              "bACC_at_0.5": 0.5988339840444183
+            }
+          ]
+        },
+        "1": {
+          "AUC": 0.6023036751514566,
+          "bACC": 0.5690923654865312,
+          "bACC_at_0.5": 0.5686712869863424,
+          "fold_mean": {
+            "AUC": 0.6070224741613894,
+            "bACC": 0.5693415651047276
+          },
+          "folds": [
+            {
+              "fold": 1,
+              "best_epoch": 33,
+              "epochs_run": 41,
+              "best_val_auc": 0.6600871223969299,
+              "seconds": 90.55951420000201,
+              "threshold": 0.5744702219963074,
+              "AUC": 0.5991597326713893,
+              "bACC": 0.5618081177016125,
+              "bACC_at_0.5": 0.5480555394403511
+            },
+            {
+              "fold": 2,
+              "best_epoch": 24,
+              "epochs_run": 32,
+              "best_val_auc": 0.6354408918363366,
+              "seconds": 47.242305699997814,
+              "threshold": 0.5400056838989258,
+              "AUC": 0.6629261936990638,
+              "bACC": 0.6176348115370102,
+              "bACC_at_0.5": 0.6033934039361608
+            },
+            {
+              "fold": 3,
+              "best_epoch": 16,
+              "epochs_run": 24,
+              "best_val_auc": 0.5992609963189401,
+              "seconds": 38.59408689999691,
+              "threshold": 0.48203009366989136,
+              "AUC": 0.6144058519148632,
+              "bACC": 0.5818959120769335,
+              "bACC_at_0.5": 0.5847004749551764
+            },
+            {
+              "fold": 4,
+              "best_epoch": 18,
+              "epochs_run": 26,
+              "best_val_auc": 0.6108045173496592,
+              "seconds": 40.9294504999998,
+              "threshold": 0.4238647520542145,
+              "AUC": 0.568734796973677,
+              "bACC": 0.5350228966135421,
+              "bACC_at_0.5": 0.5544993695736824
+            },
+            {
+              "fold": 5,
+              "best_epoch": 18,
+              "epochs_run": 26,
+              "best_val_auc": 0.6370033324576752,
+              "seconds": 41.920791700002155,
+              "threshold": 0.5115585327148438,
+              "AUC": 0.5898857955479538,
+              "bACC": 0.5503460875945394,
+              "bACC_at_0.5": 0.5540952686379933
+            }
+          ]
+        },
+        "2": {
+          "AUC": 0.6054956128811129,
+          "bACC": 0.5680230120368794,
+          "bACC_at_0.5": 0.5662228801428522,
+          "fold_mean": {
+            "AUC": 0.6060722213156213,
+            "bACC": 0.56863541910291
+          },
+          "folds": [
+            {
+              "fold": 1,
+              "best_epoch": 29,
+              "epochs_run": 37,
+              "best_val_auc": 0.6619475055038919,
+              "seconds": 57.037661300000764,
+              "threshold": 0.47038769721984863,
+              "AUC": 0.5882710662408961,
+              "bACC": 0.5600287934128176,
+              "bACC_at_0.5": 0.5588804308067299
+            },
+            {
+              "fold": 2,
+              "best_epoch": 36,
+              "epochs_run": 44,
+              "best_val_auc": 0.6345343358095158,
+              "seconds": 68.54092479999963,
+              "threshold": 0.5353740453720093,
+              "AUC": 0.6866980443104397,
+              "bACC": 0.6306435170496254,
+              "bACC_at_0.5": 0.6332255078841493
+            },
+            {
+              "fold": 3,
+              "best_epoch": 5,
+              "epochs_run": 13,
+              "best_val_auc": 0.5866839752256294,
+              "seconds": 20.98706569999922,
+              "threshold": 0.5176975727081299,
+              "AUC": 0.5671578672509607,
+              "bACC": 0.5479463885323098,
+              "bACC_at_0.5": 0.5409191684189272
+            },
+            {
+              "fold": 4,
+              "best_epoch": 9,
+              "epochs_run": 17,
+              "best_val_auc": 0.5943006618474401,
+              "seconds": 26.974999400001252,
+              "threshold": 0.4977248013019562,
+              "AUC": 0.5617759002162747,
+              "bACC": 0.5185896225534237,
+              "bACC_at_0.5": 0.5174247344290233
+            },
+            {
+              "fold": 5,
+              "best_epoch": 23,
+              "epochs_run": 31,
+              "best_val_auc": 0.6584129686630021,
+              "seconds": 43.374370599998656,
+              "threshold": 0.5485702753067017,
+              "AUC": 0.6264582285595355,
+              "bACC": 0.5859687739663736,
+              "bACC_at_0.5": 0.5815557218438893
+            }
+          ]
+        }
+      },
+      "seed_summary": {
+        "AUC_mean": 0.6046395903764878,
+        "AUC_sd": 0.0020468704075818577,
+        "bACC_mean": 0.5688042036882602,
+        "bACC_sd": 0.0006842426668322532
+      },
+      "seed_mean_prediction": {
+        "AUC": 0.619087778946106,
+        "bACC": 0.5811120299687031,
+        "bACC_at_0.5": 0.5826930615870112,
+        "fold_mean": {
+          "AUC": 0.6224513550118558,
+          "bACC": 0.581885710037838
+        },
+        "folds": [
+          {
+            "AUC": 0.604287247826196,
+            "bACC": 0.5727689939627645,
+            "bACC_at_0.5": 0.574275731283973
+          },
+          {
+            "AUC": 0.6863815143499213,
+            "bACC": 0.6336342182780095,
+            "bACC_at_0.5": 0.6316205169989355
+          },
+          {
+            "AUC": 0.6284025141728344,
+            "bACC": 0.5935563170984675,
+            "bACC_at_0.5": 0.5955888852217336
+          },
+          {
+            "AUC": 0.5618151505657238,
+            "bACC": 0.5217339732350657,
+            "bACC_at_0.5": 0.5252874266779265
+          },
+          {
+            "AUC": 0.6313703481446029,
+            "bACC": 0.5877350476148827,
+            "bACC_at_0.5": 0.5902125683206147
+          }
+        ]
+      },
+      "train_seconds": 882.7121463999974
+    },
+    "eegnet": {
+      "params": 2121,
+      "per_seed": {
+        "0": {
+          "AUC": 0.5448112514654462,
+          "bACC": 0.5347712912319913,
+          "bACC_at_0.5": 0.5268101572036731,
+          "fold_mean": {
+            "AUC": 0.556510265149663,
+            "bACC": 0.5352714646691483
+          },
+          "folds": [
+            {
+              "fold": 1,
+              "best_epoch": 17,
+              "epochs_run": 25,
+              "best_val_auc": 0.5985373332290702,
+              "seconds": 24.602077700001246,
+              "threshold": 0.49868762493133545,
+              "AUC": 0.5763831885639378,
+              "bACC": 0.5590550921919983,
+              "bACC_at_0.5": 0.5566734021363413
+            },
+            {
+              "fold": 2,
+              "best_epoch": 11,
+              "epochs_run": 19,
+              "best_val_auc": 0.5935274821511911,
+              "seconds": 8.669518200000311,
+              "threshold": 0.4512763023376465,
+              "AUC": 0.6167559997071254,
+              "bACC": 0.5910879731756816,
+              "bACC_at_0.5": 0.5417295752753679
+            },
+            {
+              "fold": 3,
+              "best_epoch": 28,
+              "epochs_run": 36,
+              "best_val_auc": 0.5707445472057047,
+              "seconds": 16.128392300000996,
+              "threshold": 0.532417356967926,
+              "AUC": 0.5694033015750477,
+              "bACC": 0.5450909404955849,
+              "bACC_at_0.5": 0.539608318081301
+            },
+            {
+              "fold": 4,
+              "best_epoch": 1,
+              "epochs_run": 9,
+              "best_val_auc": 0.5544934631629914,
+              "seconds": 4.022645699998975,
+              "threshold": 0.4999229907989502,
+              "AUC": 0.5071503070518526,
+              "bACC": 0.4822761329518268,
+              "bACC_at_0.5": 0.4825714615723517
+            },
+            {
+              "fold": 5,
+              "best_epoch": 15,
+              "epochs_run": 23,
+              "best_val_auc": 0.609797623827155,
+              "seconds": 10.608617500001856,
+              "threshold": 0.4780917763710022,
+              "AUC": 0.5128585288503511,
+              "bACC": 0.49884718453064986,
+              "bACC_at_0.5": 0.5177099100018383
+            }
+          ]
+        },
+        "1": {
+          "AUC": 0.5506088012611746,
+          "bACC": 0.5308761175431143,
+          "bACC_at_0.5": 0.5375922615146181,
+          "fold_mean": {
+            "AUC": 0.5576950542115983,
+            "bACC": 0.5316809386979908
+          },
+          "folds": [
+            {
+              "fold": 1,
+              "best_epoch": 15,
+              "epochs_run": 23,
+              "best_val_auc": 0.5928952801871925,
+              "seconds": 10.498763799998414,
+              "threshold": 0.4810265302658081,
+              "AUC": 0.5933743057261367,
+              "bACC": 0.5579168101605609,
+              "bACC_at_0.5": 0.5525475669401588
+            },
+            {
+              "fold": 2,
+              "best_epoch": 3,
+              "epochs_run": 11,
+              "best_val_auc": 0.5661783925371803,
+              "seconds": 5.079818099999102,
+              "threshold": 0.5018388032913208,
+              "AUC": 0.5805643845594959,
+              "bACC": 0.5424474937623323,
+              "bACC_at_0.5": 0.5441638145802786
+            },
+            {
+              "fold": 3,
+              "best_epoch": 7,
+              "epochs_run": 15,
+              "best_val_auc": 0.5640241203144255,
+              "seconds": 6.933658200003265,
+              "threshold": 0.4906243085861206,
+              "AUC": 0.5515294335164118,
+              "bACC": 0.542998769836089,
+              "bACC_at_0.5": 0.5416573073114878
+            },
+            {
+              "fold": 4,
+              "best_epoch": 3,
+              "epochs_run": 11,
+              "best_val_auc": 0.5444476293106054,
+              "seconds": 5.01406599999973,
+              "threshold": 0.48397549986839294,
+              "AUC": 0.5430802844284355,
+              "bACC": 0.5078967553275001,
+              "bACC_at_0.5": 0.5269620506180807
+            },
+            {
+              "fold": 5,
+              "best_epoch": 12,
+              "epochs_run": 20,
+              "best_val_auc": 0.6144848734178261,
+              "seconds": 9.077100000002247,
+              "threshold": 0.47017380595207214,
+              "AUC": 0.5199268628275118,
+              "bACC": 0.5071448644034717,
+              "bACC_at_0.5": 0.5236029552892243
+            }
+          ]
+        },
+        "2": {
+          "AUC": 0.5501729482126902,
+          "bACC": 0.5353540452821699,
+          "bACC_at_0.5": 0.5327142278512709,
+          "fold_mean": {
+            "AUC": 0.556821022526641,
+            "bACC": 0.5354106124725372
+          },
+          "folds": [
+            {
+              "fold": 1,
+              "best_epoch": 17,
+              "epochs_run": 25,
+              "best_val_auc": 0.5967848474549764,
+              "seconds": 11.344344300003286,
+              "threshold": 0.4578227400779724,
+              "AUC": 0.5639859332781165,
+              "bACC": 0.5375482890384654,
+              "bACC_at_0.5": 0.5280073337209211
+            },
+            {
+              "fold": 2,
+              "best_epoch": 4,
+              "epochs_run": 12,
+              "best_val_auc": 0.5832321881087962,
+              "seconds": 5.556881100001192,
+              "threshold": 0.4701102077960968,
+              "AUC": 0.61509506224526,
+              "bACC": 0.5884988482139337,
+              "bACC_at_0.5": 0.5812072069704177
+            },
+            {
+              "fold": 3,
+              "best_epoch": 19,
+              "epochs_run": 27,
+              "best_val_auc": 0.5680238331678251,
+              "seconds": 12.460767900000064,
+              "threshold": 0.49480026960372925,
+              "AUC": 0.5654227036196986,
+              "bACC": 0.551196551324271,
+              "bACC_at_0.5": 0.5399967482153702
+            },
+            {
+              "fold": 4,
+              "best_epoch": 2,
+              "epochs_run": 10,
+              "best_val_auc": 0.5452930298599344,
+              "seconds": 4.684776399997645,
+              "threshold": 0.4981536269187927,
+              "AUC": 0.5367722172539695,
+              "bACC": 0.5064270285860122,
+              "bACC_at_0.5": 0.5070297894590506
+            },
+            {
+              "fold": 5,
+              "best_epoch": 15,
+              "epochs_run": 23,
+              "best_val_auc": 0.6080392856611798,
+              "seconds": 10.516721100000723,
+              "threshold": 0.49366310238838196,
+              "AUC": 0.5028291962361607,
+              "bACC": 0.49338234520000357,
+              "bACC_at_0.5": 0.5055790275857768
+            }
+          ]
+        }
+      },
+      "seed_summary": {
+        "AUC_mean": 0.5485310003131036,
+        "AUC_sd": 0.0032287599147668563,
+        "bACC_mean": 0.5336671513524252,
+        "bACC_sd": 0.002434605278949188
+      },
+      "seed_mean_prediction": {
+        "AUC": 0.55606741966504,
+        "bACC": 0.5421845428629247,
+        "bACC_at_0.5": 0.5357863577073868,
+        "fold_mean": {
+          "AUC": 0.5638187792978401,
+          "bACC": 0.5424224862102849
+        },
+        "folds": [
+          {
+            "AUC": 0.5819168068689446,
+            "bACC": 0.563338102062321,
+            "bACC_at_0.5": 0.5521527787206887
+          },
+          {
+            "AUC": 0.6191859209876637,
+            "bACC": 0.5947402708339983,
+            "bACC_at_0.5": 0.5568210704570159
+          },
+          {
+            "AUC": 0.5718743740720047,
+            "bACC": 0.5439096344458869,
+            "bACC_at_0.5": 0.549161347714709
+          },
+          {
+            "AUC": 0.535636377846342,
+            "bACC": 0.5096808306826379,
+            "bACC_at_0.5": 0.504193216847979
+          },
+          {
+            "AUC": 0.5104804167142452,
+            "bACC": 0.5004435930265799,
+            "bACC_at_0.5": 0.5184069847578925
+          }
+        ]
+      },
+      "train_seconds": 145.19814830000905
+    }
+  },
+  "handcrafted_baseline": {
+    "seed_mean_prediction": {
+      "AUC": 0.61834829227295,
+      "bACC_at_0.5": 0.5869579088846557
+    },
+    "per_seed_AUC": {
+      "oof_seed0": 0.6083780521024794,
+      "oof_seed1": 0.6175715864440459,
+      "oof_seed2": 0.6218781697100532,
+      "oof_seed3": 0.6030353445623,
+      "oof_seed4": 0.5951440235673802
+    },
+    "per_seed_AUC_mean_sd": [
+      0.6092014352772518,
+      0.010805883640095158
+    ]
+  },
+  "best_raw_model": "resnet1d",
+  "raw_vs_hand_bootstrap": {
+    "resnet1d_seed_mean_vs_hand": {
+      "delta_AUC": 0.0007394866731560423,
+      "CI95": [
+        -0.02872834836826651,
+        0.028472884725349566
+      ],
+      "P_delta_le_0": 0.475,
+      "n_boot": 1000,
+      "unit": "subject"
+    },
+    "eegnet_seed_mean_vs_hand": {
+      "delta_AUC": -0.06228087260790993,
+      "CI95": [
+        -0.09397503070926407,
+        -0.03085820951547449
+      ],
+      "P_delta_le_0": 1.0,
+      "n_boot": 1000,
+      "unit": "subject"
+    }
+  },
+  "fusion": {
+    "resnet1d+hand_rank_avg_w0.5": {
+      "AUC": 0.6441202876008768,
+      "bACC_at_0.5": 0.6071366026689327,
+      "fold_mean_AUC": 0.6469533959901419,
+      "delta_vs_hand": {
+        "delta_AUC": 0.025771995327926844,
+        "CI95": [
+          0.012330908296459992,
+          0.03939058729295879
+        ],
+        "P_delta_le_0": 0.001,
+        "n_boot": 1000,
+        "unit": "subject"
+      }
+    },
+    "resnet1d+hand_logit_avg_w0.5": {
+      "AUC": 0.6470194537492333,
+      "bACC_at_0.5": 0.6071704671422413,
+      "fold_mean_AUC": 0.6497534301049795,
+      "delta_vs_hand": {
+        "delta_AUC": 0.028671161476283347,
+        "CI95": [
+          0.01663458435726015,
+          0.041864151002759045
+        ],
+        "P_delta_le_0": 0.0,
+        "n_boot": 1000,
+        "unit": "subject"
+      }
+    },
+    "eegnet+hand_rank_avg_w0.5": {
+      "AUC": 0.6071743873946993,
+      "bACC_at_0.5": 0.5726319815745036,
+      "fold_mean_AUC": 0.6121781885180538,
+      "delta_vs_hand": {
+        "delta_AUC": -0.011173904878250651,
+        "CI95": [
+          -0.026103341719472626,
+          0.0031277280480983207
+        ],
+        "P_delta_le_0": 0.94,
+        "n_boot": 1000,
+        "unit": "subject"
+      }
+    },
+    "eegnet+hand_logit_avg_w0.5": {
+      "AUC": 0.6191649598848158,
+      "bACC_at_0.5": 0.5832667200316843,
+      "fold_mean_AUC": 0.6246043141020231,
+      "delta_vs_hand": {
+        "delta_AUC": 0.0008166676118658289,
+        "CI95": [
+          -0.004223519082614005,
+          0.005742638210742323
+        ],
+        "P_delta_le_0": 0.377,
+        "n_boot": 1000,
+        "unit": "subject"
+      }
+    }
+  },
+  "runtime_seconds": 1148.8786268000003
+}

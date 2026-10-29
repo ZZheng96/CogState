@@ -1,0 +1,128 @@
+﻿[    0.0s] loading data
+[    0.0s] keys=['X', 'raw', 'y', 'groups']
+[    1.0s] raw=(16067, 1500) X=(16067, 858) subjects=57
+[    1.0s] Welch PSD (每窗独立)
+[    2.7s] AUDIT: 50 Hz 峰比邻带高 16.7 dB（中位谱）；40-45→52-60 Hz 下降 -1.8 dB；100-120 Hz 相对 10-40 Hz 为 -13.8 dB。45 Hz 以上未见陡降截止，存在可用的宽带信号（含 EMG/噪声）。
+[    2.7s] 计算新特征族
+[    6.7s]   a_hf_emg: 7 维, 非有限值 0
+[    6.7s]   b_eye: 11 维, 非有限值 246
+[    6.7s]   c_shape: 17 维, 非有限值 0
+[    6.7s]   d_scaleinv: 51 维, 非有限值 0
+[    7.0s] saved broadband_shape_features.npz (86 维)
+[    7.1s] seed_noise_band_oof keys=['y', 'groups', 'fold_id', 'oof_seed_mean', 'oof_seed0', 'oof_seed1', 'oof_seed2', 'oof_seed3', 'oof_seed4']
+[    7.1s] 折划分与 seed_noise_band 一致: True
+[    7.1s] ### config logreg|a_hf_emg dim=7
+[    7.4s]   logreg|a_hf_emg fold 1/5  AUC=0.5853 bACC(0.5)=0.5518 bACC(med)=0.5633 C=1.0 dim=7
+[    7.6s]   logreg|a_hf_emg fold 2/5  AUC=0.5540 bACC(0.5)=0.5398 bACC(med)=0.5362 C=1.0 dim=7
+[    7.9s]   logreg|a_hf_emg fold 3/5  AUC=0.5597 bACC(0.5)=0.5223 bACC(med)=0.5292 C=1.0 dim=7
+[    8.1s]   logreg|a_hf_emg fold 4/5  AUC=0.5737 bACC(0.5)=0.5416 bACC(med)=0.5425 C=0.1 dim=7
+[    8.3s]   logreg|a_hf_emg fold 5/5  AUC=0.5686 bACC(0.5)=0.5368 bACC(med)=0.5435 C=0.1 dim=7
+[    8.3s] == logreg|a_hf_emg: OOF AUC=0.5636 bACC(0.5)=0.5385 bACC(med)=0.5429 foldmean AUC=0.5682 (1s)
+[    8.3s] ### config logreg|b_eye dim=11
+[    8.6s]   logreg|b_eye fold 1/5  AUC=0.5685 bACC(0.5)=0.5402 bACC(med)=0.5433 C=1.0 dim=11
+[    8.8s]   logreg|b_eye fold 2/5  AUC=0.6004 bACC(0.5)=0.5807 bACC(med)=0.5811 C=1.0 dim=11
+[    9.0s]   logreg|b_eye fold 3/5  AUC=0.6116 bACC(0.5)=0.5841 bACC(med)=0.5817 C=1.0 dim=11
+[    9.3s]   logreg|b_eye fold 4/5  AUC=0.5758 bACC(0.5)=0.5541 bACC(med)=0.5559 C=0.1 dim=11
+[    9.5s]   logreg|b_eye fold 5/5  AUC=0.5784 bACC(0.5)=0.5534 bACC(med)=0.5502 C=1.0 dim=11
+[    9.5s] == logreg|b_eye: OOF AUC=0.5847 bACC(0.5)=0.5624 bACC(med)=0.5623 foldmean AUC=0.5870 (1s)
+[    9.5s] ### config logreg|c_shape dim=17
+[    9.8s]   logreg|c_shape fold 1/5  AUC=0.5509 bACC(0.5)=0.5298 bACC(med)=0.5273 C=1.0 dim=17
+[   10.1s]   logreg|c_shape fold 2/5  AUC=0.6231 bACC(0.5)=0.5823 bACC(med)=0.5803 C=1.0 dim=17
+[   10.5s]   logreg|c_shape fold 3/5  AUC=0.6213 bACC(0.5)=0.5882 bACC(med)=0.5881 C=1.0 dim=17
+[   10.8s]   logreg|c_shape fold 4/5  AUC=0.5770 bACC(0.5)=0.5641 bACC(med)=0.5613 C=1.0 dim=17
+[   11.2s]   logreg|c_shape fold 5/5  AUC=0.6626 bACC(0.5)=0.6201 bACC(med)=0.6154 C=0.1 dim=17
+[   11.2s] == logreg|c_shape: OOF AUC=0.6048 bACC(0.5)=0.5768 bACC(med)=0.5743 foldmean AUC=0.6070 (2s)
+[   11.2s] ### config logreg|d_scaleinv dim=51
+[   12.2s]   logreg|d_scaleinv fold 1/5  AUC=0.5377 bACC(0.5)=0.5216 bACC(med)=0.5220 C=1.0 dim=51
+[   13.0s]   logreg|d_scaleinv fold 2/5  AUC=0.5967 bACC(0.5)=0.5627 bACC(med)=0.5629 C=0.001 dim=51
+[   14.0s]   logreg|d_scaleinv fold 3/5  AUC=0.5629 bACC(0.5)=0.5433 bACC(med)=0.5411 C=1.0 dim=51
+[   14.9s]   logreg|d_scaleinv fold 4/5  AUC=0.5904 bACC(0.5)=0.5721 bACC(med)=0.5602 C=0.001 dim=51
+[   15.8s]   logreg|d_scaleinv fold 5/5  AUC=0.5742 bACC(0.5)=0.5405 bACC(med)=0.5355 C=0.1 dim=51
+[   15.8s] == logreg|d_scaleinv: OOF AUC=0.5706 bACC(0.5)=0.5486 bACC(med)=0.5448 foldmean AUC=0.5724 (5s)
+[   15.8s] ### config logreg|all_new dim=86
+[   17.6s]   logreg|all_new fold 1/5  AUC=0.6097 bACC(0.5)=0.5830 bACC(med)=0.5810 C=1.0 dim=86
+[   19.2s]   logreg|all_new fold 2/5  AUC=0.6708 bACC(0.5)=0.6202 bACC(med)=0.6204 C=1.0 dim=86
+[   20.9s]   logreg|all_new fold 3/5  AUC=0.6422 bACC(0.5)=0.5982 bACC(med)=0.5990 C=0.1 dim=86
+[   22.4s]   logreg|all_new fold 4/5  AUC=0.6167 bACC(0.5)=0.5877 bACC(med)=0.5865 C=1.0 dim=86
+[   24.2s]   logreg|all_new fold 5/5  AUC=0.6714 bACC(0.5)=0.6255 bACC(med)=0.6288 C=1.0 dim=86
+[   24.2s] == logreg|all_new: OOF AUC=0.6400 bACC(0.5)=0.6028 bACC(med)=0.6030 foldmean AUC=0.6422 (8s)
+[   24.2s] ### config logreg|orig856 dim=858
+[   75.7s]   logreg|orig856 fold 1/5  AUC=0.5420 bACC(0.5)=0.5312 bACC(med)=0.5336 C=0.01 dim=858
+[  128.1s]   logreg|orig856 fold 2/5  AUC=0.6682 bACC(0.5)=0.6132 bACC(med)=0.6117 C=0.01 dim=858
+[  181.9s]   logreg|orig856 fold 3/5  AUC=0.6794 bACC(0.5)=0.6352 bACC(med)=0.6353 C=0.001 dim=858
+[  232.7s]   logreg|orig856 fold 4/5  AUC=0.5963 bACC(0.5)=0.5592 bACC(med)=0.5577 C=0.001 dim=858
+[  291.2s]   logreg|orig856 fold 5/5  AUC=0.6384 bACC(0.5)=0.5934 bACC(med)=0.5941 C=0.01 dim=858
+[  291.2s] == logreg|orig856: OOF AUC=0.6207 bACC(0.5)=0.5862 bACC(med)=0.5862 foldmean AUC=0.6249 (267s)
+[  291.2s] ### config logreg|new+orig856 dim=944
+[  358.4s]   logreg|new+orig856 fold 1/5  AUC=0.5661 bACC(0.5)=0.5555 bACC(med)=0.5554 C=0.01 dim=944
+[  435.5s]   logreg|new+orig856 fold 2/5  AUC=0.6823 bACC(0.5)=0.6239 bACC(med)=0.6191 C=0.1 dim=944
+[  503.9s]   logreg|new+orig856 fold 3/5  AUC=0.6726 bACC(0.5)=0.6249 bACC(med)=0.6244 C=0.001 dim=944
+[  571.7s]   logreg|new+orig856 fold 4/5  AUC=0.6312 bACC(0.5)=0.6028 bACC(med)=0.6028 C=0.1 dim=944
+[  639.0s]   logreg|new+orig856 fold 5/5  AUC=0.6462 bACC(0.5)=0.5979 bACC(med)=0.5972 C=0.01 dim=944
+[  639.0s] == logreg|new+orig856: OOF AUC=0.6375 bACC(0.5)=0.6012 bACC(med)=0.6000 foldmean AUC=0.6397 (348s)
+[  639.0s] ### config hgb|a_hf_emg dim=7
+[  641.4s]   hgb|a_hf_emg fold 1/5  AUC=0.5581 bACC(0.5)=0.5555 bACC(med)=0.5566  dim=7
+[  642.5s]   hgb|a_hf_emg fold 2/5  AUC=0.5600 bACC(0.5)=0.5351 bACC(med)=0.5393  dim=7
+[  643.6s]   hgb|a_hf_emg fold 3/5  AUC=0.6532 bACC(0.5)=0.6013 bACC(med)=0.6121  dim=7
+[  644.7s]   hgb|a_hf_emg fold 4/5  AUC=0.5312 bACC(0.5)=0.5366 bACC(med)=0.5314  dim=7
+[  645.8s]   hgb|a_hf_emg fold 5/5  AUC=0.5741 bACC(0.5)=0.5627 bACC(med)=0.5532  dim=7
+[  645.8s] == hgb|a_hf_emg: OOF AUC=0.5717 bACC(0.5)=0.5579 bACC(med)=0.5581 foldmean AUC=0.5753 (7s)
+[  645.8s] ### config hgb|b_eye dim=11
+[  646.9s]   hgb|b_eye fold 1/5  AUC=0.5589 bACC(0.5)=0.5379 bACC(med)=0.5410  dim=11
+[  648.1s]   hgb|b_eye fold 2/5  AUC=0.6233 bACC(0.5)=0.5939 bACC(med)=0.5930  dim=11
+[  649.2s]   hgb|b_eye fold 3/5  AUC=0.6456 bACC(0.5)=0.5958 bACC(med)=0.6011  dim=11
+[  650.4s]   hgb|b_eye fold 4/5  AUC=0.5837 bACC(0.5)=0.5606 bACC(med)=0.5624  dim=11
+[  651.5s]   hgb|b_eye fold 5/5  AUC=0.5632 bACC(0.5)=0.5372 bACC(med)=0.5347  dim=11
+[  651.5s] == hgb|b_eye: OOF AUC=0.5924 bACC(0.5)=0.5652 bACC(med)=0.5666 foldmean AUC=0.5950 (6s)
+[  651.5s] ### config hgb|c_shape dim=17
+[  652.8s]   hgb|c_shape fold 1/5  AUC=0.5653 bACC(0.5)=0.5547 bACC(med)=0.5575  dim=17
+[  654.0s]   hgb|c_shape fold 2/5  AUC=0.6368 bACC(0.5)=0.5957 bACC(med)=0.5949  dim=17
+[  655.2s]   hgb|c_shape fold 3/5  AUC=0.6338 bACC(0.5)=0.6018 bACC(med)=0.5986  dim=17
+[  656.5s]   hgb|c_shape fold 4/5  AUC=0.5692 bACC(0.5)=0.5444 bACC(med)=0.5469  dim=17
+[  657.7s]   hgb|c_shape fold 5/5  AUC=0.6458 bACC(0.5)=0.6083 bACC(med)=0.6036  dim=17
+[  657.7s] == hgb|c_shape: OOF AUC=0.6088 bACC(0.5)=0.5805 bACC(med)=0.5799 foldmean AUC=0.6102 (6s)
+[  657.7s] ### config hgb|d_scaleinv dim=51
+[  659.4s]   hgb|d_scaleinv fold 1/5  AUC=0.5726 bACC(0.5)=0.5566 bACC(med)=0.5537  dim=51
+[  661.0s]   hgb|d_scaleinv fold 2/5  AUC=0.5936 bACC(0.5)=0.5603 bACC(med)=0.5571  dim=51
+[  662.7s]   hgb|d_scaleinv fold 3/5  AUC=0.5847 bACC(0.5)=0.5634 bACC(med)=0.5610  dim=51
+[  664.3s]   hgb|d_scaleinv fold 4/5  AUC=0.5766 bACC(0.5)=0.5489 bACC(med)=0.5540  dim=51
+[  665.9s]   hgb|d_scaleinv fold 5/5  AUC=0.5915 bACC(0.5)=0.5647 bACC(med)=0.5578  dim=51
+[  666.0s] == hgb|d_scaleinv: OOF AUC=0.5829 bACC(0.5)=0.5586 bACC(med)=0.5567 foldmean AUC=0.5838 (8s)
+[  666.0s] ### config hgb|all_new dim=86
+[  668.5s]   hgb|all_new fold 1/5  AUC=0.6030 bACC(0.5)=0.5802 bACC(med)=0.5866  dim=86
+[  670.9s]   hgb|all_new fold 2/5  AUC=0.6638 bACC(0.5)=0.6113 bACC(med)=0.6100  dim=86
+[  673.1s]   hgb|all_new fold 3/5  AUC=0.6593 bACC(0.5)=0.6213 bACC(med)=0.6186  dim=86
+[  675.4s]   hgb|all_new fold 4/5  AUC=0.5879 bACC(0.5)=0.5673 bACC(med)=0.5689  dim=86
+[  677.7s]   hgb|all_new fold 5/5  AUC=0.6344 bACC(0.5)=0.5966 bACC(med)=0.5970  dim=86
+[  677.7s] == hgb|all_new: OOF AUC=0.6290 bACC(0.5)=0.5951 bACC(med)=0.5959 foldmean AUC=0.6297 (12s)
+[  677.7s] ### config hgb|orig856 dim=858
+[  708.8s]   hgb|orig856 fold 1/5  AUC=0.5414 bACC(0.5)=0.5217 bACC(med)=0.5300  dim=858
+[  739.7s]   hgb|orig856 fold 2/5  AUC=0.6759 bACC(0.5)=0.6154 bACC(med)=0.6080  dim=858
+[  770.7s]   hgb|orig856 fold 3/5  AUC=0.6669 bACC(0.5)=0.6333 bACC(med)=0.6292  dim=858
+[  801.4s]   hgb|orig856 fold 4/5  AUC=0.6065 bACC(0.5)=0.5754 bACC(med)=0.5778  dim=858
+[  831.8s]   hgb|orig856 fold 5/5  AUC=0.6379 bACC(0.5)=0.5992 bACC(med)=0.5949  dim=858
+[  831.8s] == hgb|orig856: OOF AUC=0.6210 bACC(0.5)=0.5889 bACC(med)=0.5879 foldmean AUC=0.6257 (154s)
+[  831.8s] ### config hgb|new+orig856 dim=944
+[  864.9s]   hgb|new+orig856 fold 1/5  AUC=0.5656 bACC(0.5)=0.5473 bACC(med)=0.5562  dim=944
+[  897.6s]   hgb|new+orig856 fold 2/5  AUC=0.6829 bACC(0.5)=0.6256 bACC(med)=0.6201  dim=944
+[  931.7s]   hgb|new+orig856 fold 3/5  AUC=0.6735 bACC(0.5)=0.6427 bACC(med)=0.6380  dim=944
+[  966.2s]   hgb|new+orig856 fold 4/5  AUC=0.6099 bACC(0.5)=0.5836 bACC(med)=0.5790  dim=944
+[ 1001.4s]   hgb|new+orig856 fold 5/5  AUC=0.6548 bACC(0.5)=0.6228 bACC(med)=0.6104  dim=944
+[ 1001.5s] == hgb|new+orig856: OOF AUC=0.6341 bACC(0.5)=0.6042 bACC(med)=0.6005 foldmean AUC=0.6373 (170s)
+[ 1001.5s] 方向一致率审计
+[ 1002.3s]   NEW  d_scaleinv:logratio_theta_alpha: 0.719
+[ 1002.3s]   NEW  b_eye:log_maxdiff: 0.702
+[ 1002.3s]   NEW  c_shape:theta_peak_height: 0.702
+[ 1002.3s]   NEW  c_shape:beta_peak_height: 0.702
+[ 1002.3s]   NEW  c_shape:theta_resid_mean: 0.702
+[ 1002.3s]   ORIG orig:X_227: 0.825
+[ 1002.3s]   ORIG orig:X_364: 0.825
+[ 1002.3s]   ORIG orig:X_233: 0.807
+[ 1002.3s]   ORIG orig:X_377: 0.807
+[ 1002.3s]   ORIG orig:X_246: 0.789
+[ 1002.3s] bootstrap ΔAUC
+[ 1040.6s]   best_vs_seedmean: Δ=+0.0216 CI=[-0.0054,+0.0477] P(Δ>0)=0.931
+[ 1040.6s]   best_new_only_vs_seedmean: Δ=+0.0216 CI=[-0.0054,+0.0477] P(Δ>0)=0.931
+[ 1040.6s]   logreg_new+orig_vs_logreg_orig856: Δ=+0.0168 CI=[+0.0066,+0.0272] P(Δ>0)=0.998
+[ 1040.6s]   hgb_new+orig_vs_hgb_orig856: Δ=+0.0131 CI=[+0.0058,+0.0205] P(Δ>0)=1.000
+[ 1040.6s] done, total 1041s

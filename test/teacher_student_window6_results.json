@@ -1,0 +1,76 @@
+{
+  "protocol": {
+    "cv": "StratifiedGroupKFold(5, shuffle=True, random_state=0)",
+    "source": "highdim_deep_features.npz",
+    "source_features": 858,
+    "student_input_features": 856,
+    "teacher_training": "training-fold labels plus per-training-subject long-window mean context",
+    "student_training": "BCE labels + 0.35 sigmoid MSE distillation target",
+    "student_inference": "current single 6-second 856-d feature window only",
+    "test_subject_isolation": true,
+    "test_history": false,
+    "window_position_schedule_r_t": false,
+    "test_subject_calibration": false
+  },
+  "oof": {
+    "AUC": 0.6160584232279761,
+    "bACC": 0.5827917884191713
+  },
+  "fold_mean": {
+    "AUC": 0.6195030382273752,
+    "bACC": 0.5833666866509757
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "AUC": 0.5459114629300239,
+      "bACC": 0.5300578048952094,
+      "n_test": 3118,
+      "train_subjects": 46,
+      "test_subjects": 11,
+      "teacher_best_epoch": 1,
+      "student_best_epoch": 1
+    },
+    {
+      "fold": 2,
+      "AUC": 0.6671933404799766,
+      "bACC": 0.6010892685829934,
+      "n_test": 3264,
+      "train_subjects": 45,
+      "test_subjects": 12,
+      "teacher_best_epoch": 2,
+      "student_best_epoch": 2
+    },
+    {
+      "fold": 3,
+      "AUC": 0.6736631394399308,
+      "bACC": 0.6319669080231501,
+      "n_test": 3141,
+      "train_subjects": 46,
+      "test_subjects": 11,
+      "teacher_best_epoch": 6,
+      "student_best_epoch": 8
+    },
+    {
+      "fold": 4,
+      "AUC": 0.5780461210626021,
+      "bACC": 0.5459241192187001,
+      "n_test": 3401,
+      "train_subjects": 45,
+      "test_subjects": 12,
+      "teacher_best_epoch": 2,
+      "student_best_epoch": 1
+    },
+    {
+      "fold": 5,
+      "AUC": 0.6327011272243427,
+      "bACC": 0.6077953325348253,
+      "n_test": 3143,
+      "train_subjects": 46,
+      "test_subjects": 11,
+      "teacher_best_epoch": 1,
+      "student_best_epoch": 4
+    }
+  ],
+  "runtime_seconds": 17.61766219999845
+}

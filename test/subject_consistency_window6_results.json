@@ -1,0 +1,127 @@
+{
+  "protocol": {
+    "cv": "StratifiedGroupKFold(5, shuffle=True, random_state=0)",
+    "source": "test/highdim_deep_features.npz",
+    "source_features": 858,
+    "current_window_features": 856,
+    "training": "all windows from outer training subjects only; fold-fitted standardization",
+    "consistency_training": "two feature-masked/noisy views per training window; BCE + representation consistency + logit consistency",
+    "inference": "one current 6-second window only",
+    "test_subject_isolation": true,
+    "test_history": false,
+    "window_position_schedule_r_t": false,
+    "test_subject_calibration": false
+  },
+  "models": {
+    "supervised": {
+      "fold_mean": {
+        "AUC": 0.6140324557503345,
+        "bACC": 0.5844832748524587
+      }
+    },
+    "consistency": {
+      "fold_mean": {
+        "AUC": 0.5931199851744775,
+        "bACC": 0.5658325485901005
+      }
+    }
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "n_train": 12949,
+      "n_test": 3118,
+      "train_subjects": 46,
+      "test_subjects": 11,
+      "supervised": {
+        "AUC": 0.5694742918602034,
+        "bACC": 0.5564001979907152,
+        "best_epoch": 1,
+        "inner_val_windows": 2692
+      },
+      "consistency": {
+        "AUC": 0.5293412611909808,
+        "bACC": 0.5267554909301573,
+        "best_epoch": 2,
+        "inner_val_windows": 2692
+      }
+    },
+    {
+      "fold": 2,
+      "n_train": 12803,
+      "n_test": 3264,
+      "train_subjects": 45,
+      "test_subjects": 12,
+      "supervised": {
+        "AUC": 0.6665341846725155,
+        "bACC": 0.6200052191772849,
+        "best_epoch": 1,
+        "inner_val_windows": 2607
+      },
+      "consistency": {
+        "AUC": 0.6457956523126775,
+        "bACC": 0.5935614501803245,
+        "best_epoch": 1,
+        "inner_val_windows": 2607
+      }
+    },
+    {
+      "fold": 3,
+      "n_train": 12926,
+      "n_test": 3141,
+      "train_subjects": 46,
+      "test_subjects": 11,
+      "supervised": {
+        "AUC": 0.663954007925921,
+        "bACC": 0.6227789946065787,
+        "best_epoch": 7,
+        "inner_val_windows": 2572
+      },
+      "consistency": {
+        "AUC": 0.6034985877848048,
+        "bACC": 0.5751328487822838,
+        "best_epoch": 3,
+        "inner_val_windows": 2572
+      }
+    },
+    {
+      "fold": 4,
+      "n_train": 12666,
+      "n_test": 3401,
+      "train_subjects": 45,
+      "test_subjects": 12,
+      "supervised": {
+        "AUC": 0.6081730985367054,
+        "bACC": 0.5817320228212252,
+        "best_epoch": 1,
+        "inner_val_windows": 2584
+      },
+      "consistency": {
+        "AUC": 0.5860390138098983,
+        "bACC": 0.5690985975694524,
+        "best_epoch": 1,
+        "inner_val_windows": 2584
+      }
+    },
+    {
+      "fold": 5,
+      "n_train": 12924,
+      "n_test": 3143,
+      "train_subjects": 46,
+      "test_subjects": 11,
+      "supervised": {
+        "AUC": 0.5620266957563271,
+        "bACC": 0.5414999396664892,
+        "best_epoch": 3,
+        "inner_val_windows": 2532
+      },
+      "consistency": {
+        "AUC": 0.6009254107740263,
+        "bACC": 0.5646143554882843,
+        "best_epoch": 4,
+        "inner_val_windows": 2532
+      }
+    }
+  ],
+  "runtime_seconds": 20.530099500001597
+}
