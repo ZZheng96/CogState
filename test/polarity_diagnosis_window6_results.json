@@ -1,0 +1,3991 @@
+{
+  "protocol": {
+    "outer_cv": "StratifiedGroupKFold(5, shuffle=True, random_state=0)",
+    "model": "StandardScaler + LogisticRegression(C=1, lbfgs, max_iter=3000, tol=1e-5)",
+    "scaling": "Fit only on training fold; inner diagnostic scalers fit only inner training fold.",
+    "threshold": 0.5,
+    "selection": "No hyperparameter selection or early stopping (Logistic).",
+    "input": {
+      "source": "database/windows/*/*.npz f/e, bijectively aligned to highdim_deep_features.npz by subject, label and float32 waveform SHA256; raw/X never model inputs",
+      "f_shape": [
+        16067,
+        858
+      ],
+      "e_shape": [
+        16067,
+        20
+      ],
+      "input_shape": [
+        16067,
+        878
+      ]
+    },
+    "device": "CPU",
+    "gpu_used": false,
+    "stress_seed": 20261029,
+    "stress_rng": "numpy.default_rng; sorted unique subjects; choice([-1,1])",
+    "stress_usage": "Flip evaluation labels only; never used for training, tuning, orientation or selection.",
+    "polarity_control": "DIAGNOSTIC, not deployment claim: train-subject signs estimated from 4-fold subject-disjoint inner OOF AUC; refit with aligned TRAIN labels. One global output direction fixed from original training-label AUC; never uses test labels/statistics for inference. Training sign estimation still uses labels and may overfit.",
+    "oracle_usage": "Evaluation only, per-subject max(AUC,1-AUC); never alters model predictions."
+  },
+  "stress_subject_q": {
+    "001": -1,
+    "002": -1,
+    "003": 1,
+    "004": 1,
+    "005": 1,
+    "006": 1,
+    "007": -1,
+    "008": 1,
+    "009": 1,
+    "010": 1,
+    "011": -1,
+    "012": -1,
+    "013": 1,
+    "014": -1,
+    "015": -1,
+    "016": 1,
+    "017": -1,
+    "018": -1,
+    "019": -1,
+    "020": -1,
+    "021": -1,
+    "022": 1,
+    "023": -1,
+    "024": -1,
+    "025": 1,
+    "026": 1,
+    "027": -1,
+    "028": 1,
+    "029": -1,
+    "030": 1,
+    "031": 1,
+    "034": 1,
+    "035": -1,
+    "036": -1,
+    "037": 1,
+    "038": 1,
+    "039": -1,
+    "040": -1,
+    "041": 1,
+    "042": -1,
+    "043": 1,
+    "044": -1,
+    "045": -1,
+    "046": 1,
+    "047": 1,
+    "048": 1,
+    "049": -1,
+    "050": -1,
+    "051": 1,
+    "052": 1,
+    "053": -1,
+    "054": -1,
+    "055": 1,
+    "056": -1,
+    "057": -1,
+    "058": -1,
+    "059": -1
+  },
+  "baseline": {
+    "normal": {
+      "oof_auc": 0.6342017932133457,
+      "oof_bacc": 0.6020682508205414,
+      "subject_macro_auc": 0.6456391046099289,
+      "subject_macro_bacc": 0.6020263588121656,
+      "subjects_auc_below_0_5_count": 7,
+      "subjects_auc_below_0_5_fraction": 0.12280701754385964,
+      "auc_eligible_subjects": 57,
+      "single_class_subjects": 0,
+      "oracle_only": {
+        "mean_max_auc_1_minus_auc": 0.6599539017866731,
+        "max_max_auc_1_minus_auc": 0.8217885694423754,
+        "warning": "Uses held-out labels separately for each subject; diagnostic upper bound, NOT deployable."
+      },
+      "per_subject": [
+        {
+          "subject": "001",
+          "n": 291,
+          "auc": 0.7083136513934812,
+          "bacc": 0.6260982522437412,
+          "oracle_only_orientation_invariant_auc": 0.7083136513934812
+        },
+        {
+          "subject": "002",
+          "n": 271,
+          "auc": 0.5854589056027905,
+          "bacc": 0.5635764115979943,
+          "oracle_only_orientation_invariant_auc": 0.5854589056027905
+        },
+        {
+          "subject": "003",
+          "n": 268,
+          "auc": 0.5596478520086923,
+          "bacc": 0.5374435838858862,
+          "oracle_only_orientation_invariant_auc": 0.5596478520086923
+        },
+        {
+          "subject": "004",
+          "n": 276,
+          "auc": 0.4671644145328355,
+          "bacc": 0.4619065145380935,
+          "oracle_only_orientation_invariant_auc": 0.5328355854671645
+        },
+        {
+          "subject": "005",
+          "n": 279,
+          "auc": 0.654320987654321,
+          "bacc": 0.6266203703703703,
+          "oracle_only_orientation_invariant_auc": 0.654320987654321
+        },
+        {
+          "subject": "006",
+          "n": 276,
+          "auc": 0.6205130912162162,
+          "bacc": 0.5358952702702703,
+          "oracle_only_orientation_invariant_auc": 0.6205130912162162
+        },
+        {
+          "subject": "007",
+          "n": 287,
+          "auc": 0.653035454103934,
+          "bacc": 0.6092763477416221,
+          "oracle_only_orientation_invariant_auc": 0.653035454103934
+        },
+        {
+          "subject": "008",
+          "n": 285,
+          "auc": 0.5311422095200552,
+          "bacc": 0.5745786932098157,
+          "oracle_only_orientation_invariant_auc": 0.5311422095200552
+        },
+        {
+          "subject": "009",
+          "n": 217,
+          "auc": 0.472307169554876,
+          "bacc": 0.5344886170574243,
+          "oracle_only_orientation_invariant_auc": 0.527692830445124
+        },
+        {
+          "subject": "010",
+          "n": 290,
+          "auc": 0.6814592846270929,
+          "bacc": 0.6174372146118722,
+          "oracle_only_orientation_invariant_auc": 0.6814592846270929
+        },
+        {
+          "subject": "011",
+          "n": 290,
+          "auc": 0.7563736681887367,
+          "bacc": 0.7094273211567732,
+          "oracle_only_orientation_invariant_auc": 0.7563736681887367
+        },
+        {
+          "subject": "012",
+          "n": 278,
+          "auc": 0.5901868433310905,
+          "bacc": 0.5611510791366906,
+          "oracle_only_orientation_invariant_auc": 0.5901868433310905
+        },
+        {
+          "subject": "013",
+          "n": 286,
+          "auc": 0.6663732394366197,
+          "bacc": 0.6540492957746479,
+          "oracle_only_orientation_invariant_auc": 0.6663732394366197
+        },
+        {
+          "subject": "014",
+          "n": 291,
+          "auc": 0.5616969009826153,
+          "bacc": 0.559594671201814,
+          "oracle_only_orientation_invariant_auc": 0.5616969009826153
+        },
+        {
+          "subject": "015",
+          "n": 267,
+          "auc": 0.6784509892086331,
+          "bacc": 0.6486623201438849,
+          "oracle_only_orientation_invariant_auc": 0.6784509892086331
+        },
+        {
+          "subject": "016",
+          "n": 291,
+          "auc": 0.6637377173091458,
+          "bacc": 0.622094671201814,
+          "oracle_only_orientation_invariant_auc": 0.6637377173091458
+        },
+        {
+          "subject": "017",
+          "n": 279,
+          "auc": 0.7523138626079803,
+          "bacc": 0.6909193747429041,
+          "oracle_only_orientation_invariant_auc": 0.7523138626079803
+        },
+        {
+          "subject": "018",
+          "n": 288,
+          "auc": 0.821171931516759,
+          "bacc": 0.7494574391126115,
+          "oracle_only_orientation_invariant_auc": 0.821171931516759
+        },
+        {
+          "subject": "019",
+          "n": 290,
+          "auc": 0.578654358583936,
+          "bacc": 0.5467263037685572,
+          "oracle_only_orientation_invariant_auc": 0.578654358583936
+        },
+        {
+          "subject": "020",
+          "n": 282,
+          "auc": 0.6946960547504026,
+          "bacc": 0.6464371980676329,
+          "oracle_only_orientation_invariant_auc": 0.6946960547504026
+        },
+        {
+          "subject": "021",
+          "n": 285,
+          "auc": 0.7466758593519157,
+          "bacc": 0.6807347581995469,
+          "oracle_only_orientation_invariant_auc": 0.7466758593519157
+        },
+        {
+          "subject": "022",
+          "n": 295,
+          "auc": 0.6365600294171723,
+          "bacc": 0.6161288839860268,
+          "oracle_only_orientation_invariant_auc": 0.6365600294171723
+        },
+        {
+          "subject": "023",
+          "n": 294,
+          "auc": 0.5115923920588643,
+          "bacc": 0.5068027210884354,
+          "oracle_only_orientation_invariant_auc": 0.5115923920588643
+        },
+        {
+          "subject": "024",
+          "n": 291,
+          "auc": 0.4405234315948602,
+          "bacc": 0.48079648526077096,
+          "oracle_only_orientation_invariant_auc": 0.5594765684051398
+        },
+        {
+          "subject": "025",
+          "n": 284,
+          "auc": 0.6973664633239101,
+          "bacc": 0.6265932648911372,
+          "oracle_only_orientation_invariant_auc": 0.6973664633239101
+        },
+        {
+          "subject": "026",
+          "n": 292,
+          "auc": 0.6682148721557588,
+          "bacc": 0.6125967628430682,
+          "oracle_only_orientation_invariant_auc": 0.6682148721557588
+        },
+        {
+          "subject": "027",
+          "n": 281,
+          "auc": 0.5423135464231355,
+          "bacc": 0.5111364789446982,
+          "oracle_only_orientation_invariant_auc": 0.5423135464231355
+        },
+        {
+          "subject": "028",
+          "n": 286,
+          "auc": 0.636785993740219,
+          "bacc": 0.5910113458528952,
+          "oracle_only_orientation_invariant_auc": 0.636785993740219
+        },
+        {
+          "subject": "029",
+          "n": 292,
+          "auc": 0.35414006714900453,
+          "bacc": 0.43675225800349926,
+          "oracle_only_orientation_invariant_auc": 0.6458599328509955
+        },
+        {
+          "subject": "030",
+          "n": 296,
+          "auc": 0.7066611879651189,
+          "bacc": 0.6463269871707072,
+          "oracle_only_orientation_invariant_auc": 0.7066611879651189
+        },
+        {
+          "subject": "031",
+          "n": 292,
+          "auc": 0.7813848752111092,
+          "bacc": 0.7054794520547945,
+          "oracle_only_orientation_invariant_auc": 0.7813848752111092
+        },
+        {
+          "subject": "034",
+          "n": 121,
+          "auc": 0.7046485260770976,
+          "bacc": 0.6507936507936507,
+          "oracle_only_orientation_invariant_auc": 0.7046485260770976
+        },
+        {
+          "subject": "035",
+          "n": 292,
+          "auc": 0.7414965986394557,
+          "bacc": 0.6636171710063336,
+          "oracle_only_orientation_invariant_auc": 0.7414965986394557
+        },
+        {
+          "subject": "036",
+          "n": 284,
+          "auc": 0.8217885694423754,
+          "bacc": 0.660658423953523,
+          "oracle_only_orientation_invariant_auc": 0.8217885694423754
+        },
+        {
+          "subject": "037",
+          "n": 289,
+          "auc": 0.48314176245210727,
+          "bacc": 0.4811302681992337,
+          "oracle_only_orientation_invariant_auc": 0.5168582375478927
+        },
+        {
+          "subject": "038",
+          "n": 291,
+          "auc": 0.7130636165989225,
+          "bacc": 0.6711882030437659,
+          "oracle_only_orientation_invariant_auc": 0.7130636165989225
+        },
+        {
+          "subject": "039",
+          "n": 293,
+          "auc": 0.5820054049016867,
+          "bacc": 0.5522784456248253,
+          "oracle_only_orientation_invariant_auc": 0.5820054049016867
+        },
+        {
+          "subject": "040",
+          "n": 280,
+          "auc": 0.7343877551020409,
+          "bacc": 0.6607142857142857,
+          "oracle_only_orientation_invariant_auc": 0.7343877551020409
+        },
+        {
+          "subject": "041",
+          "n": 288,
+          "auc": 0.6640945261634916,
+          "bacc": 0.5972510248372317,
+          "oracle_only_orientation_invariant_auc": 0.6640945261634916
+        },
+        {
+          "subject": "042",
+          "n": 285,
+          "auc": 0.3880133950556485,
+          "bacc": 0.4000541711809318,
+          "oracle_only_orientation_invariant_auc": 0.6119866049443514
+        },
+        {
+          "subject": "043",
+          "n": 282,
+          "auc": 0.685889694041868,
+          "bacc": 0.6346618357487923,
+          "oracle_only_orientation_invariant_auc": 0.685889694041868
+        },
+        {
+          "subject": "044",
+          "n": 284,
+          "auc": 0.7850128942670105,
+          "bacc": 0.7605633802816901,
+          "oracle_only_orientation_invariant_auc": 0.7850128942670105
+        },
+        {
+          "subject": "045",
+          "n": 284,
+          "auc": 0.6259182052809211,
+          "bacc": 0.5631824498709549,
+          "oracle_only_orientation_invariant_auc": 0.6259182052809211
+        },
+        {
+          "subject": "046",
+          "n": 284,
+          "auc": 0.681660384844277,
+          "bacc": 0.6408450704225352,
+          "oracle_only_orientation_invariant_auc": 0.681660384844277
+        },
+        {
+          "subject": "047",
+          "n": 287,
+          "auc": 0.6453917946723702,
+          "bacc": 0.5955424849309742,
+          "oracle_only_orientation_invariant_auc": 0.6453917946723702
+        },
+        {
+          "subject": "048",
+          "n": 288,
+          "auc": 0.7403906438389197,
+          "bacc": 0.6305039787798409,
+          "oracle_only_orientation_invariant_auc": 0.7403906438389197
+        },
+        {
+          "subject": "049",
+          "n": 282,
+          "auc": 0.6536217303822939,
+          "bacc": 0.5869215291750502,
+          "oracle_only_orientation_invariant_auc": 0.6536217303822939
+        },
+        {
+          "subject": "050",
+          "n": 287,
+          "auc": 0.6261291889266634,
+          "bacc": 0.555148130160272,
+          "oracle_only_orientation_invariant_auc": 0.6261291889266634
+        },
+        {
+          "subject": "051",
+          "n": 291,
+          "auc": 0.6501134001134,
+          "bacc": 0.6040446040446041,
+          "oracle_only_orientation_invariant_auc": 0.6501134001134
+        },
+        {
+          "subject": "052",
+          "n": 288,
+          "auc": 0.48673804012345673,
+          "bacc": 0.4409722222222222,
+          "oracle_only_orientation_invariant_auc": 0.5132619598765433
+        },
+        {
+          "subject": "053",
+          "n": 290,
+          "auc": 0.627425799086758,
+          "bacc": 0.5664478691019786,
+          "oracle_only_orientation_invariant_auc": 0.627425799086758
+        },
+        {
+          "subject": "054",
+          "n": 289,
+          "auc": 0.8202107279693486,
+          "bacc": 0.7443486590038315,
+          "oracle_only_orientation_invariant_auc": 0.8202107279693486
+        },
+        {
+          "subject": "055",
+          "n": 287,
+          "auc": 0.6643828960155491,
+          "bacc": 0.6168367346938776,
+          "oracle_only_orientation_invariant_auc": 0.6643828960155491
+        },
+        {
+          "subject": "056",
+          "n": 292,
+          "auc": 0.7341902796021769,
+          "bacc": 0.660958904109589,
+          "oracle_only_orientation_invariant_auc": 0.7341902796021769
+        },
+        {
+          "subject": "057",
+          "n": 281,
+          "auc": 0.7131205673758865,
+          "bacc": 0.6542046605876393,
+          "oracle_only_orientation_invariant_auc": 0.7131205673758865
+        },
+        {
+          "subject": "058",
+          "n": 289,
+          "auc": 0.7404693486590039,
+          "bacc": 0.6220306513409962,
+          "oracle_only_orientation_invariant_auc": 0.7404693486590039
+        },
+        {
+          "subject": "059",
+          "n": 289,
+          "auc": 0.6688859086119361,
+          "bacc": 0.6104032953348022,
+          "oracle_only_orientation_invariant_auc": 0.6688859086119361
+        }
+      ]
+    },
+    "random_flip_stress": {
+      "oof_auc": 0.48458548112860955,
+      "oof_bacc": 0.48379088403555726,
+      "subject_macro_auc": 0.4793838663590045,
+      "subject_macro_bacc": 0.48661999225574865,
+      "subjects_auc_below_0_5_count": 32,
+      "subjects_auc_below_0_5_fraction": 0.5614035087719298,
+      "auc_eligible_subjects": 57,
+      "single_class_subjects": 0,
+      "oracle_only": {
+        "mean_max_auc_1_minus_auc": 0.6599539017866731,
+        "max_max_auc_1_minus_auc": 0.8217885694423754,
+        "warning": "Uses held-out labels separately for each subject; diagnostic upper bound, NOT deployable."
+      },
+      "per_subject": [
+        {
+          "subject": "001",
+          "n": 291,
+          "auc": 0.29168634860651865,
+          "bacc": 0.3739017477562589,
+          "oracle_only_orientation_invariant_auc": 0.7083136513934813
+        },
+        {
+          "subject": "002",
+          "n": 271,
+          "auc": 0.4145410943972095,
+          "bacc": 0.4364235884020057,
+          "oracle_only_orientation_invariant_auc": 0.5854589056027906
+        },
+        {
+          "subject": "003",
+          "n": 268,
+          "auc": 0.5596478520086923,
+          "bacc": 0.5374435838858862,
+          "oracle_only_orientation_invariant_auc": 0.5596478520086923
+        },
+        {
+          "subject": "004",
+          "n": 276,
+          "auc": 0.4671644145328355,
+          "bacc": 0.4619065145380935,
+          "oracle_only_orientation_invariant_auc": 0.5328355854671645
+        },
+        {
+          "subject": "005",
+          "n": 279,
+          "auc": 0.654320987654321,
+          "bacc": 0.6266203703703703,
+          "oracle_only_orientation_invariant_auc": 0.654320987654321
+        },
+        {
+          "subject": "006",
+          "n": 276,
+          "auc": 0.6205130912162162,
+          "bacc": 0.5358952702702703,
+          "oracle_only_orientation_invariant_auc": 0.6205130912162162
+        },
+        {
+          "subject": "007",
+          "n": 287,
+          "auc": 0.34696454589606607,
+          "bacc": 0.39072365225837785,
+          "oracle_only_orientation_invariant_auc": 0.6530354541039339
+        },
+        {
+          "subject": "008",
+          "n": 285,
+          "auc": 0.5311422095200552,
+          "bacc": 0.5745786932098157,
+          "oracle_only_orientation_invariant_auc": 0.5311422095200552
+        },
+        {
+          "subject": "009",
+          "n": 217,
+          "auc": 0.472307169554876,
+          "bacc": 0.5344886170574243,
+          "oracle_only_orientation_invariant_auc": 0.527692830445124
+        },
+        {
+          "subject": "010",
+          "n": 290,
+          "auc": 0.6814592846270929,
+          "bacc": 0.6174372146118722,
+          "oracle_only_orientation_invariant_auc": 0.6814592846270929
+        },
+        {
+          "subject": "011",
+          "n": 290,
+          "auc": 0.24362633181126334,
+          "bacc": 0.2905726788432268,
+          "oracle_only_orientation_invariant_auc": 0.7563736681887366
+        },
+        {
+          "subject": "012",
+          "n": 278,
+          "auc": 0.4098131566689095,
+          "bacc": 0.4388489208633093,
+          "oracle_only_orientation_invariant_auc": 0.5901868433310905
+        },
+        {
+          "subject": "013",
+          "n": 286,
+          "auc": 0.6663732394366197,
+          "bacc": 0.6540492957746479,
+          "oracle_only_orientation_invariant_auc": 0.6663732394366197
+        },
+        {
+          "subject": "014",
+          "n": 291,
+          "auc": 0.4383030990173848,
+          "bacc": 0.44040532879818595,
+          "oracle_only_orientation_invariant_auc": 0.5616969009826152
+        },
+        {
+          "subject": "015",
+          "n": 267,
+          "auc": 0.3215490107913669,
+          "bacc": 0.3513376798561151,
+          "oracle_only_orientation_invariant_auc": 0.6784509892086331
+        },
+        {
+          "subject": "016",
+          "n": 291,
+          "auc": 0.6637377173091458,
+          "bacc": 0.622094671201814,
+          "oracle_only_orientation_invariant_auc": 0.6637377173091458
+        },
+        {
+          "subject": "017",
+          "n": 279,
+          "auc": 0.24768613739201972,
+          "bacc": 0.30908062525709584,
+          "oracle_only_orientation_invariant_auc": 0.7523138626079803
+        },
+        {
+          "subject": "018",
+          "n": 288,
+          "auc": 0.17882806848324093,
+          "bacc": 0.25054256088738847,
+          "oracle_only_orientation_invariant_auc": 0.821171931516759
+        },
+        {
+          "subject": "019",
+          "n": 290,
+          "auc": 0.42134564141606395,
+          "bacc": 0.4532736962314427,
+          "oracle_only_orientation_invariant_auc": 0.5786543585839361
+        },
+        {
+          "subject": "020",
+          "n": 282,
+          "auc": 0.3053039452495974,
+          "bacc": 0.35356280193236717,
+          "oracle_only_orientation_invariant_auc": 0.6946960547504026
+        },
+        {
+          "subject": "021",
+          "n": 285,
+          "auc": 0.25332414064808434,
+          "bacc": 0.319265241800453,
+          "oracle_only_orientation_invariant_auc": 0.7466758593519156
+        },
+        {
+          "subject": "022",
+          "n": 295,
+          "auc": 0.6365600294171723,
+          "bacc": 0.6161288839860268,
+          "oracle_only_orientation_invariant_auc": 0.6365600294171723
+        },
+        {
+          "subject": "023",
+          "n": 294,
+          "auc": 0.48840760794113564,
+          "bacc": 0.4931972789115646,
+          "oracle_only_orientation_invariant_auc": 0.5115923920588643
+        },
+        {
+          "subject": "024",
+          "n": 291,
+          "auc": 0.5594765684051398,
+          "bacc": 0.5192035147392291,
+          "oracle_only_orientation_invariant_auc": 0.5594765684051398
+        },
+        {
+          "subject": "025",
+          "n": 284,
+          "auc": 0.6973664633239101,
+          "bacc": 0.6265932648911372,
+          "oracle_only_orientation_invariant_auc": 0.6973664633239101
+        },
+        {
+          "subject": "026",
+          "n": 292,
+          "auc": 0.6682148721557588,
+          "bacc": 0.6125967628430682,
+          "oracle_only_orientation_invariant_auc": 0.6682148721557588
+        },
+        {
+          "subject": "027",
+          "n": 281,
+          "auc": 0.45768645357686444,
+          "bacc": 0.48886352105530184,
+          "oracle_only_orientation_invariant_auc": 0.5423135464231356
+        },
+        {
+          "subject": "028",
+          "n": 286,
+          "auc": 0.636785993740219,
+          "bacc": 0.5910113458528952,
+          "oracle_only_orientation_invariant_auc": 0.636785993740219
+        },
+        {
+          "subject": "029",
+          "n": 292,
+          "auc": 0.6458599328509954,
+          "bacc": 0.5632477419965006,
+          "oracle_only_orientation_invariant_auc": 0.6458599328509954
+        },
+        {
+          "subject": "030",
+          "n": 296,
+          "auc": 0.7066611879651189,
+          "bacc": 0.6463269871707072,
+          "oracle_only_orientation_invariant_auc": 0.7066611879651189
+        },
+        {
+          "subject": "031",
+          "n": 292,
+          "auc": 0.7813848752111092,
+          "bacc": 0.7054794520547945,
+          "oracle_only_orientation_invariant_auc": 0.7813848752111092
+        },
+        {
+          "subject": "034",
+          "n": 121,
+          "auc": 0.7046485260770976,
+          "bacc": 0.6507936507936507,
+          "oracle_only_orientation_invariant_auc": 0.7046485260770976
+        },
+        {
+          "subject": "035",
+          "n": 292,
+          "auc": 0.2585034013605442,
+          "bacc": 0.33638282899366645,
+          "oracle_only_orientation_invariant_auc": 0.7414965986394557
+        },
+        {
+          "subject": "036",
+          "n": 284,
+          "auc": 0.1782114305576245,
+          "bacc": 0.33934157604647697,
+          "oracle_only_orientation_invariant_auc": 0.8217885694423754
+        },
+        {
+          "subject": "037",
+          "n": 289,
+          "auc": 0.48314176245210727,
+          "bacc": 0.4811302681992337,
+          "oracle_only_orientation_invariant_auc": 0.5168582375478927
+        },
+        {
+          "subject": "038",
+          "n": 291,
+          "auc": 0.7130636165989225,
+          "bacc": 0.6711882030437659,
+          "oracle_only_orientation_invariant_auc": 0.7130636165989225
+        },
+        {
+          "subject": "039",
+          "n": 293,
+          "auc": 0.4179945950983133,
+          "bacc": 0.4477215543751747,
+          "oracle_only_orientation_invariant_auc": 0.5820054049016867
+        },
+        {
+          "subject": "040",
+          "n": 280,
+          "auc": 0.26561224489795915,
+          "bacc": 0.3392857142857143,
+          "oracle_only_orientation_invariant_auc": 0.7343877551020408
+        },
+        {
+          "subject": "041",
+          "n": 288,
+          "auc": 0.6640945261634916,
+          "bacc": 0.5972510248372317,
+          "oracle_only_orientation_invariant_auc": 0.6640945261634916
+        },
+        {
+          "subject": "042",
+          "n": 285,
+          "auc": 0.6119866049443514,
+          "bacc": 0.5999458288190682,
+          "oracle_only_orientation_invariant_auc": 0.6119866049443514
+        },
+        {
+          "subject": "043",
+          "n": 282,
+          "auc": 0.685889694041868,
+          "bacc": 0.6346618357487923,
+          "oracle_only_orientation_invariant_auc": 0.685889694041868
+        },
+        {
+          "subject": "044",
+          "n": 284,
+          "auc": 0.2149871057329895,
+          "bacc": 0.23943661971830985,
+          "oracle_only_orientation_invariant_auc": 0.7850128942670105
+        },
+        {
+          "subject": "045",
+          "n": 284,
+          "auc": 0.3740817947190789,
+          "bacc": 0.43681755012904505,
+          "oracle_only_orientation_invariant_auc": 0.6259182052809211
+        },
+        {
+          "subject": "046",
+          "n": 284,
+          "auc": 0.681660384844277,
+          "bacc": 0.6408450704225352,
+          "oracle_only_orientation_invariant_auc": 0.681660384844277
+        },
+        {
+          "subject": "047",
+          "n": 287,
+          "auc": 0.6453917946723702,
+          "bacc": 0.5955424849309742,
+          "oracle_only_orientation_invariant_auc": 0.6453917946723702
+        },
+        {
+          "subject": "048",
+          "n": 288,
+          "auc": 0.7403906438389197,
+          "bacc": 0.6305039787798409,
+          "oracle_only_orientation_invariant_auc": 0.7403906438389197
+        },
+        {
+          "subject": "049",
+          "n": 282,
+          "auc": 0.34637826961770624,
+          "bacc": 0.4130784708249497,
+          "oracle_only_orientation_invariant_auc": 0.6536217303822938
+        },
+        {
+          "subject": "050",
+          "n": 287,
+          "auc": 0.3738708110733366,
+          "bacc": 0.444851869839728,
+          "oracle_only_orientation_invariant_auc": 0.6261291889266634
+        },
+        {
+          "subject": "051",
+          "n": 291,
+          "auc": 0.6501134001134,
+          "bacc": 0.6040446040446041,
+          "oracle_only_orientation_invariant_auc": 0.6501134001134
+        },
+        {
+          "subject": "052",
+          "n": 288,
+          "auc": 0.48673804012345673,
+          "bacc": 0.4409722222222222,
+          "oracle_only_orientation_invariant_auc": 0.5132619598765433
+        },
+        {
+          "subject": "053",
+          "n": 290,
+          "auc": 0.372574200913242,
+          "bacc": 0.43355213089802136,
+          "oracle_only_orientation_invariant_auc": 0.627425799086758
+        },
+        {
+          "subject": "054",
+          "n": 289,
+          "auc": 0.17978927203065137,
+          "bacc": 0.2556513409961686,
+          "oracle_only_orientation_invariant_auc": 0.8202107279693487
+        },
+        {
+          "subject": "055",
+          "n": 287,
+          "auc": 0.6643828960155491,
+          "bacc": 0.6168367346938776,
+          "oracle_only_orientation_invariant_auc": 0.6643828960155491
+        },
+        {
+          "subject": "056",
+          "n": 292,
+          "auc": 0.26580972039782325,
+          "bacc": 0.339041095890411,
+          "oracle_only_orientation_invariant_auc": 0.7341902796021768
+        },
+        {
+          "subject": "057",
+          "n": 281,
+          "auc": 0.2868794326241135,
+          "bacc": 0.3457953394123607,
+          "oracle_only_orientation_invariant_auc": 0.7131205673758865
+        },
+        {
+          "subject": "058",
+          "n": 289,
+          "auc": 0.2595306513409962,
+          "bacc": 0.3779693486590039,
+          "oracle_only_orientation_invariant_auc": 0.7404693486590038
+        },
+        {
+          "subject": "059",
+          "n": 289,
+          "auc": 0.33111409138806397,
+          "bacc": 0.3895967046651978,
+          "oracle_only_orientation_invariant_auc": 0.6688859086119361
+        }
+      ]
+    }
+  },
+  "polarity_train_only": {
+    "normal": {
+      "oof_auc": 0.617527549457936,
+      "oof_bacc": 0.5904694324125234,
+      "subject_macro_auc": 0.627166150763142,
+      "subject_macro_bacc": 0.5891527196146406,
+      "subjects_auc_below_0_5_count": 9,
+      "subjects_auc_below_0_5_fraction": 0.15789473684210525,
+      "auc_eligible_subjects": 57,
+      "single_class_subjects": 0,
+      "oracle_only": {
+        "mean_max_auc_1_minus_auc": 0.6480619753922444,
+        "max_max_auc_1_minus_auc": 0.8353501289426701,
+        "warning": "Uses held-out labels separately for each subject; diagnostic upper bound, NOT deployable."
+      },
+      "per_subject": [
+        {
+          "subject": "001",
+          "n": 291,
+          "auc": 0.7262163438828529,
+          "bacc": 0.6668871043930089,
+          "oracle_only_orientation_invariant_auc": 0.7262163438828529
+        },
+        {
+          "subject": "002",
+          "n": 271,
+          "auc": 0.6267713102245477,
+          "bacc": 0.5671735339001526,
+          "oracle_only_orientation_invariant_auc": 0.6267713102245477
+        },
+        {
+          "subject": "003",
+          "n": 268,
+          "auc": 0.6721457625229844,
+          "bacc": 0.6265392544714994,
+          "oracle_only_orientation_invariant_auc": 0.6721457625229844
+        },
+        {
+          "subject": "004",
+          "n": 276,
+          "auc": 0.4336190125663809,
+          "bacc": 0.4645354645354645,
+          "oracle_only_orientation_invariant_auc": 0.5663809874336191
+        },
+        {
+          "subject": "005",
+          "n": 279,
+          "auc": 0.5686213991769546,
+          "bacc": 0.5592592592592592,
+          "oracle_only_orientation_invariant_auc": 0.5686213991769546
+        },
+        {
+          "subject": "006",
+          "n": 276,
+          "auc": 0.6508129222972973,
+          "bacc": 0.5398015202702703,
+          "oracle_only_orientation_invariant_auc": 0.6508129222972973
+        },
+        {
+          "subject": "007",
+          "n": 287,
+          "auc": 0.7000971345313259,
+          "bacc": 0.6626032054395338,
+          "oracle_only_orientation_invariant_auc": 0.7000971345313259
+        },
+        {
+          "subject": "008",
+          "n": 285,
+          "auc": 0.5070464176603922,
+          "bacc": 0.5360451364935449,
+          "oracle_only_orientation_invariant_auc": 0.5070464176603922
+        },
+        {
+          "subject": "009",
+          "n": 217,
+          "auc": 0.52353041114509,
+          "bacc": 0.5340638803941556,
+          "oracle_only_orientation_invariant_auc": 0.52353041114509
+        },
+        {
+          "subject": "010",
+          "n": 290,
+          "auc": 0.4984303652968037,
+          "bacc": 0.4856830289193303,
+          "oracle_only_orientation_invariant_auc": 0.5015696347031964
+        },
+        {
+          "subject": "011",
+          "n": 290,
+          "auc": 0.7369672754946728,
+          "bacc": 0.7096651445966515,
+          "oracle_only_orientation_invariant_auc": 0.7369672754946728
+        },
+        {
+          "subject": "012",
+          "n": 278,
+          "auc": 0.5369804875524041,
+          "bacc": 0.5287769784172662,
+          "oracle_only_orientation_invariant_auc": 0.5369804875524041
+        },
+        {
+          "subject": "013",
+          "n": 286,
+          "auc": 0.6640747261345852,
+          "bacc": 0.6400625978090767,
+          "oracle_only_orientation_invariant_auc": 0.6640747261345852
+        },
+        {
+          "subject": "014",
+          "n": 291,
+          "auc": 0.5460600907029478,
+          "bacc": 0.5079365079365079,
+          "oracle_only_orientation_invariant_auc": 0.5460600907029478
+        },
+        {
+          "subject": "015",
+          "n": 267,
+          "auc": 0.5713803956834533,
+          "bacc": 0.5336668165467626,
+          "oracle_only_orientation_invariant_auc": 0.5713803956834533
+        },
+        {
+          "subject": "016",
+          "n": 291,
+          "auc": 0.6818310657596373,
+          "bacc": 0.6523526077097506,
+          "oracle_only_orientation_invariant_auc": 0.6818310657596373
+        },
+        {
+          "subject": "017",
+          "n": 279,
+          "auc": 0.7387906211435623,
+          "bacc": 0.6641042780748663,
+          "oracle_only_orientation_invariant_auc": 0.7387906211435623
+        },
+        {
+          "subject": "018",
+          "n": 288,
+          "auc": 0.7825415963346997,
+          "bacc": 0.7223052809259706,
+          "oracle_only_orientation_invariant_auc": 0.7825415963346997
+        },
+        {
+          "subject": "019",
+          "n": 290,
+          "auc": 0.5637133612485724,
+          "bacc": 0.5147506661591168,
+          "oracle_only_orientation_invariant_auc": 0.5637133612485724
+        },
+        {
+          "subject": "020",
+          "n": 282,
+          "auc": 0.6567532206119163,
+          "bacc": 0.6455314009661836,
+          "oracle_only_orientation_invariant_auc": 0.6567532206119163
+        },
+        {
+          "subject": "021",
+          "n": 285,
+          "auc": 0.677533733871762,
+          "bacc": 0.6349354870481632,
+          "oracle_only_orientation_invariant_auc": 0.677533733871762
+        },
+        {
+          "subject": "022",
+          "n": 295,
+          "auc": 0.6335263835263836,
+          "bacc": 0.6093261628975915,
+          "oracle_only_orientation_invariant_auc": 0.6335263835263836
+        },
+        {
+          "subject": "023",
+          "n": 294,
+          "auc": 0.48567726410292006,
+          "bacc": 0.48299319727891155,
+          "oracle_only_orientation_invariant_auc": 0.5143227358970799
+        },
+        {
+          "subject": "024",
+          "n": 291,
+          "auc": 0.4477513227513228,
+          "bacc": 0.47023809523809523,
+          "oracle_only_orientation_invariant_auc": 0.5522486772486772
+        },
+        {
+          "subject": "025",
+          "n": 284,
+          "auc": 0.6290730546049695,
+          "bacc": 0.6096067053513862,
+          "oracle_only_orientation_invariant_auc": 0.6290730546049695
+        },
+        {
+          "subject": "026",
+          "n": 292,
+          "auc": 0.7609664555477363,
+          "bacc": 0.6601219798264133,
+          "oracle_only_orientation_invariant_auc": 0.7609664555477363
+        },
+        {
+          "subject": "027",
+          "n": 281,
+          "auc": 0.5596651445966514,
+          "bacc": 0.5449010654490107,
+          "oracle_only_orientation_invariant_auc": 0.5596651445966514
+        },
+        {
+          "subject": "028",
+          "n": 286,
+          "auc": 0.6375684663536777,
+          "bacc": 0.6296459311424101,
+          "oracle_only_orientation_invariant_auc": 0.6375684663536777
+        },
+        {
+          "subject": "029",
+          "n": 292,
+          "auc": 0.3327658769565423,
+          "bacc": 0.4274601598335461,
+          "oracle_only_orientation_invariant_auc": 0.6672341230434577
+        },
+        {
+          "subject": "030",
+          "n": 296,
+          "auc": 0.692188284709857,
+          "bacc": 0.6592475916541114,
+          "oracle_only_orientation_invariant_auc": 0.692188284709857
+        },
+        {
+          "subject": "031",
+          "n": 292,
+          "auc": 0.8015575154813285,
+          "bacc": 0.7294520547945205,
+          "oracle_only_orientation_invariant_auc": 0.8015575154813285
+        },
+        {
+          "subject": "034",
+          "n": 121,
+          "auc": 0.5453514739229025,
+          "bacc": 0.5246598639455783,
+          "oracle_only_orientation_invariant_auc": 0.5453514739229025
+        },
+        {
+          "subject": "035",
+          "n": 292,
+          "auc": 0.7924935491437954,
+          "bacc": 0.7498709828759089,
+          "oracle_only_orientation_invariant_auc": 0.7924935491437954
+        },
+        {
+          "subject": "036",
+          "n": 284,
+          "auc": 0.7787377724812553,
+          "bacc": 0.5835195392025423,
+          "oracle_only_orientation_invariant_auc": 0.7787377724812553
+        },
+        {
+          "subject": "037",
+          "n": 289,
+          "auc": 0.4955459770114943,
+          "bacc": 0.4882183908045977,
+          "oracle_only_orientation_invariant_auc": 0.5044540229885057
+        },
+        {
+          "subject": "038",
+          "n": 291,
+          "auc": 0.35088382644862465,
+          "bacc": 0.4171708100954722,
+          "oracle_only_orientation_invariant_auc": 0.6491161735513753
+        },
+        {
+          "subject": "039",
+          "n": 293,
+          "auc": 0.5701239399869537,
+          "bacc": 0.5422607399124033,
+          "oracle_only_orientation_invariant_auc": 0.5701239399869537
+        },
+        {
+          "subject": "040",
+          "n": 280,
+          "auc": 0.7102040816326531,
+          "bacc": 0.6571428571428571,
+          "oracle_only_orientation_invariant_auc": 0.7102040816326531
+        },
+        {
+          "subject": "041",
+          "n": 288,
+          "auc": 0.642874367012298,
+          "bacc": 0.6007957559681698,
+          "oracle_only_orientation_invariant_auc": 0.642874367012298
+        },
+        {
+          "subject": "042",
+          "n": 285,
+          "auc": 0.37841032207229386,
+          "bacc": 0.40002954791687184,
+          "oracle_only_orientation_invariant_auc": 0.6215896779277061
+        },
+        {
+          "subject": "043",
+          "n": 282,
+          "auc": 0.7025462962962963,
+          "bacc": 0.6379830917874396,
+          "oracle_only_orientation_invariant_auc": 0.7025462962962963
+        },
+        {
+          "subject": "044",
+          "n": 284,
+          "auc": 0.8353501289426701,
+          "bacc": 0.7922535211267605,
+          "oracle_only_orientation_invariant_auc": 0.8353501289426701
+        },
+        {
+          "subject": "045",
+          "n": 284,
+          "auc": 0.6481536628945801,
+          "bacc": 0.566805638276752,
+          "oracle_only_orientation_invariant_auc": 0.6481536628945801
+        },
+        {
+          "subject": "046",
+          "n": 284,
+          "auc": 0.663211664352311,
+          "bacc": 0.630281690140845,
+          "oracle_only_orientation_invariant_auc": 0.663211664352311
+        },
+        {
+          "subject": "047",
+          "n": 287,
+          "auc": 0.6407738673925724,
+          "bacc": 0.5912891308574761,
+          "oracle_only_orientation_invariant_auc": 0.6407738673925724
+        },
+        {
+          "subject": "048",
+          "n": 288,
+          "auc": 0.7061972510248371,
+          "bacc": 0.6234145165179648,
+          "oracle_only_orientation_invariant_auc": 0.7061972510248371
+        },
+        {
+          "subject": "049",
+          "n": 282,
+          "auc": 0.6682092555331992,
+          "bacc": 0.6045271629778672,
+          "oracle_only_orientation_invariant_auc": 0.6682092555331992
+        },
+        {
+          "subject": "050",
+          "n": 287,
+          "auc": 0.5463817387081107,
+          "bacc": 0.5073822243807674,
+          "oracle_only_orientation_invariant_auc": 0.5463817387081107
+        },
+        {
+          "subject": "051",
+          "n": 291,
+          "auc": 0.6411358911358911,
+          "bacc": 0.5971697221697221,
+          "oracle_only_orientation_invariant_auc": 0.6411358911358911
+        },
+        {
+          "subject": "052",
+          "n": 288,
+          "auc": 0.48138503086419754,
+          "bacc": 0.4201388888888889,
+          "oracle_only_orientation_invariant_auc": 0.5186149691358024
+        },
+        {
+          "subject": "053",
+          "n": 290,
+          "auc": 0.6479261796042619,
+          "bacc": 0.5732020547945206,
+          "oracle_only_orientation_invariant_auc": 0.6479261796042619
+        },
+        {
+          "subject": "054",
+          "n": 289,
+          "auc": 0.805507662835249,
+          "bacc": 0.6650143678160919,
+          "oracle_only_orientation_invariant_auc": 0.805507662835249
+        },
+        {
+          "subject": "055",
+          "n": 287,
+          "auc": 0.6576773566569485,
+          "bacc": 0.6052721088435374,
+          "oracle_only_orientation_invariant_auc": 0.6576773566569485
+        },
+        {
+          "subject": "056",
+          "n": 292,
+          "auc": 0.7785700881966597,
+          "bacc": 0.6986301369863014,
+          "oracle_only_orientation_invariant_auc": 0.7785700881966597
+        },
+        {
+          "subject": "057",
+          "n": 281,
+          "auc": 0.7415906788247213,
+          "bacc": 0.7256332320162107,
+          "oracle_only_orientation_invariant_auc": 0.7415906788247213
+        },
+        {
+          "subject": "058",
+          "n": 289,
+          "auc": 0.7522030651340996,
+          "bacc": 0.618462643678161,
+          "oracle_only_orientation_invariant_auc": 0.7522030651340996
+        },
+        {
+          "subject": "059",
+          "n": 289,
+          "auc": 0.522368042915988,
+          "bacc": 0.5409043011782737,
+          "oracle_only_orientation_invariant_auc": 0.522368042915988
+        }
+      ]
+    },
+    "random_flip_stress": {
+      "oof_auc": 0.4781119421058674,
+      "oof_bacc": 0.4818477152137739,
+      "subject_macro_auc": 0.4739768402860668,
+      "subject_macro_bacc": 0.4835538468958322,
+      "subjects_auc_below_0_5_count": 32,
+      "subjects_auc_below_0_5_fraction": 0.5614035087719298,
+      "auc_eligible_subjects": 57,
+      "single_class_subjects": 0,
+      "oracle_only": {
+        "mean_max_auc_1_minus_auc": 0.6480619753922444,
+        "max_max_auc_1_minus_auc": 0.8353501289426701,
+        "warning": "Uses held-out labels separately for each subject; diagnostic upper bound, NOT deployable."
+      },
+      "per_subject": [
+        {
+          "subject": "001",
+          "n": 291,
+          "auc": 0.27378365611714695,
+          "bacc": 0.333112895606991,
+          "oracle_only_orientation_invariant_auc": 0.726216343882853
+        },
+        {
+          "subject": "002",
+          "n": 271,
+          "auc": 0.37322868977545237,
+          "bacc": 0.43282646609984743,
+          "oracle_only_orientation_invariant_auc": 0.6267713102245476
+        },
+        {
+          "subject": "003",
+          "n": 268,
+          "auc": 0.6721457625229844,
+          "bacc": 0.6265392544714994,
+          "oracle_only_orientation_invariant_auc": 0.6721457625229844
+        },
+        {
+          "subject": "004",
+          "n": 276,
+          "auc": 0.4336190125663809,
+          "bacc": 0.4645354645354645,
+          "oracle_only_orientation_invariant_auc": 0.5663809874336191
+        },
+        {
+          "subject": "005",
+          "n": 279,
+          "auc": 0.5686213991769546,
+          "bacc": 0.5592592592592592,
+          "oracle_only_orientation_invariant_auc": 0.5686213991769546
+        },
+        {
+          "subject": "006",
+          "n": 276,
+          "auc": 0.6508129222972973,
+          "bacc": 0.5398015202702703,
+          "oracle_only_orientation_invariant_auc": 0.6508129222972973
+        },
+        {
+          "subject": "007",
+          "n": 287,
+          "auc": 0.2999028654686742,
+          "bacc": 0.33739679456046623,
+          "oracle_only_orientation_invariant_auc": 0.7000971345313258
+        },
+        {
+          "subject": "008",
+          "n": 285,
+          "auc": 0.5070464176603922,
+          "bacc": 0.5360451364935449,
+          "oracle_only_orientation_invariant_auc": 0.5070464176603922
+        },
+        {
+          "subject": "009",
+          "n": 217,
+          "auc": 0.52353041114509,
+          "bacc": 0.5340638803941556,
+          "oracle_only_orientation_invariant_auc": 0.52353041114509
+        },
+        {
+          "subject": "010",
+          "n": 290,
+          "auc": 0.4984303652968037,
+          "bacc": 0.4856830289193303,
+          "oracle_only_orientation_invariant_auc": 0.5015696347031964
+        },
+        {
+          "subject": "011",
+          "n": 290,
+          "auc": 0.2630327245053272,
+          "bacc": 0.2903348554033486,
+          "oracle_only_orientation_invariant_auc": 0.7369672754946728
+        },
+        {
+          "subject": "012",
+          "n": 278,
+          "auc": 0.4630195124475958,
+          "bacc": 0.4712230215827338,
+          "oracle_only_orientation_invariant_auc": 0.5369804875524042
+        },
+        {
+          "subject": "013",
+          "n": 286,
+          "auc": 0.6640747261345852,
+          "bacc": 0.6400625978090767,
+          "oracle_only_orientation_invariant_auc": 0.6640747261345852
+        },
+        {
+          "subject": "014",
+          "n": 291,
+          "auc": 0.45393990929705225,
+          "bacc": 0.4920634920634921,
+          "oracle_only_orientation_invariant_auc": 0.5460600907029478
+        },
+        {
+          "subject": "015",
+          "n": 267,
+          "auc": 0.4286196043165468,
+          "bacc": 0.46633318345323743,
+          "oracle_only_orientation_invariant_auc": 0.5713803956834532
+        },
+        {
+          "subject": "016",
+          "n": 291,
+          "auc": 0.6818310657596373,
+          "bacc": 0.6523526077097506,
+          "oracle_only_orientation_invariant_auc": 0.6818310657596373
+        },
+        {
+          "subject": "017",
+          "n": 279,
+          "auc": 0.2612093788564377,
+          "bacc": 0.33589572192513373,
+          "oracle_only_orientation_invariant_auc": 0.7387906211435623
+        },
+        {
+          "subject": "018",
+          "n": 288,
+          "auc": 0.21745840366530023,
+          "bacc": 0.27769471907402943,
+          "oracle_only_orientation_invariant_auc": 0.7825415963346998
+        },
+        {
+          "subject": "019",
+          "n": 290,
+          "auc": 0.4362866387514276,
+          "bacc": 0.4852493338408831,
+          "oracle_only_orientation_invariant_auc": 0.5637133612485724
+        },
+        {
+          "subject": "020",
+          "n": 282,
+          "auc": 0.3432467793880837,
+          "bacc": 0.35446859903381644,
+          "oracle_only_orientation_invariant_auc": 0.6567532206119163
+        },
+        {
+          "subject": "021",
+          "n": 285,
+          "auc": 0.322466266128238,
+          "bacc": 0.3650645129518369,
+          "oracle_only_orientation_invariant_auc": 0.677533733871762
+        },
+        {
+          "subject": "022",
+          "n": 295,
+          "auc": 0.6335263835263836,
+          "bacc": 0.6093261628975915,
+          "oracle_only_orientation_invariant_auc": 0.6335263835263836
+        },
+        {
+          "subject": "023",
+          "n": 294,
+          "auc": 0.5143227358970799,
+          "bacc": 0.5170068027210885,
+          "oracle_only_orientation_invariant_auc": 0.5143227358970799
+        },
+        {
+          "subject": "024",
+          "n": 291,
+          "auc": 0.5522486772486772,
+          "bacc": 0.5297619047619048,
+          "oracle_only_orientation_invariant_auc": 0.5522486772486772
+        },
+        {
+          "subject": "025",
+          "n": 284,
+          "auc": 0.6290730546049695,
+          "bacc": 0.6096067053513862,
+          "oracle_only_orientation_invariant_auc": 0.6290730546049695
+        },
+        {
+          "subject": "026",
+          "n": 292,
+          "auc": 0.7609664555477363,
+          "bacc": 0.6601219798264133,
+          "oracle_only_orientation_invariant_auc": 0.7609664555477363
+        },
+        {
+          "subject": "027",
+          "n": 281,
+          "auc": 0.4403348554033486,
+          "bacc": 0.4550989345509893,
+          "oracle_only_orientation_invariant_auc": 0.5596651445966514
+        },
+        {
+          "subject": "028",
+          "n": 286,
+          "auc": 0.6375684663536777,
+          "bacc": 0.6296459311424101,
+          "oracle_only_orientation_invariant_auc": 0.6375684663536777
+        },
+        {
+          "subject": "029",
+          "n": 292,
+          "auc": 0.6672341230434577,
+          "bacc": 0.5725398401664539,
+          "oracle_only_orientation_invariant_auc": 0.6672341230434577
+        },
+        {
+          "subject": "030",
+          "n": 296,
+          "auc": 0.692188284709857,
+          "bacc": 0.6592475916541114,
+          "oracle_only_orientation_invariant_auc": 0.692188284709857
+        },
+        {
+          "subject": "031",
+          "n": 292,
+          "auc": 0.8015575154813285,
+          "bacc": 0.7294520547945205,
+          "oracle_only_orientation_invariant_auc": 0.8015575154813285
+        },
+        {
+          "subject": "034",
+          "n": 121,
+          "auc": 0.5453514739229025,
+          "bacc": 0.5246598639455783,
+          "oracle_only_orientation_invariant_auc": 0.5453514739229025
+        },
+        {
+          "subject": "035",
+          "n": 292,
+          "auc": 0.20750645085620456,
+          "bacc": 0.250129017124091,
+          "oracle_only_orientation_invariant_auc": 0.7924935491437954
+        },
+        {
+          "subject": "036",
+          "n": 284,
+          "auc": 0.22126222751874472,
+          "bacc": 0.41648046079745765,
+          "oracle_only_orientation_invariant_auc": 0.7787377724812553
+        },
+        {
+          "subject": "037",
+          "n": 289,
+          "auc": 0.4955459770114943,
+          "bacc": 0.4882183908045977,
+          "oracle_only_orientation_invariant_auc": 0.5044540229885057
+        },
+        {
+          "subject": "038",
+          "n": 291,
+          "auc": 0.35088382644862465,
+          "bacc": 0.4171708100954722,
+          "oracle_only_orientation_invariant_auc": 0.6491161735513753
+        },
+        {
+          "subject": "039",
+          "n": 293,
+          "auc": 0.42987606001304635,
+          "bacc": 0.4577392600875967,
+          "oracle_only_orientation_invariant_auc": 0.5701239399869537
+        },
+        {
+          "subject": "040",
+          "n": 280,
+          "auc": 0.2897959183673469,
+          "bacc": 0.34285714285714286,
+          "oracle_only_orientation_invariant_auc": 0.7102040816326531
+        },
+        {
+          "subject": "041",
+          "n": 288,
+          "auc": 0.642874367012298,
+          "bacc": 0.6007957559681698,
+          "oracle_only_orientation_invariant_auc": 0.642874367012298
+        },
+        {
+          "subject": "042",
+          "n": 285,
+          "auc": 0.6215896779277061,
+          "bacc": 0.5999704520831282,
+          "oracle_only_orientation_invariant_auc": 0.6215896779277061
+        },
+        {
+          "subject": "043",
+          "n": 282,
+          "auc": 0.7025462962962963,
+          "bacc": 0.6379830917874396,
+          "oracle_only_orientation_invariant_auc": 0.7025462962962963
+        },
+        {
+          "subject": "044",
+          "n": 284,
+          "auc": 0.16464987105732987,
+          "bacc": 0.20774647887323944,
+          "oracle_only_orientation_invariant_auc": 0.8353501289426701
+        },
+        {
+          "subject": "045",
+          "n": 284,
+          "auc": 0.3518463371054199,
+          "bacc": 0.433194361723248,
+          "oracle_only_orientation_invariant_auc": 0.6481536628945801
+        },
+        {
+          "subject": "046",
+          "n": 284,
+          "auc": 0.663211664352311,
+          "bacc": 0.630281690140845,
+          "oracle_only_orientation_invariant_auc": 0.663211664352311
+        },
+        {
+          "subject": "047",
+          "n": 287,
+          "auc": 0.6407738673925724,
+          "bacc": 0.5912891308574761,
+          "oracle_only_orientation_invariant_auc": 0.6407738673925724
+        },
+        {
+          "subject": "048",
+          "n": 288,
+          "auc": 0.7061972510248371,
+          "bacc": 0.6234145165179648,
+          "oracle_only_orientation_invariant_auc": 0.7061972510248371
+        },
+        {
+          "subject": "049",
+          "n": 282,
+          "auc": 0.3317907444668008,
+          "bacc": 0.3954728370221328,
+          "oracle_only_orientation_invariant_auc": 0.6682092555331992
+        },
+        {
+          "subject": "050",
+          "n": 287,
+          "auc": 0.4536182612918893,
+          "bacc": 0.4926177756192326,
+          "oracle_only_orientation_invariant_auc": 0.5463817387081107
+        },
+        {
+          "subject": "051",
+          "n": 291,
+          "auc": 0.6411358911358911,
+          "bacc": 0.5971697221697221,
+          "oracle_only_orientation_invariant_auc": 0.6411358911358911
+        },
+        {
+          "subject": "052",
+          "n": 288,
+          "auc": 0.48138503086419754,
+          "bacc": 0.4201388888888889,
+          "oracle_only_orientation_invariant_auc": 0.5186149691358024
+        },
+        {
+          "subject": "053",
+          "n": 290,
+          "auc": 0.3520738203957382,
+          "bacc": 0.4267979452054795,
+          "oracle_only_orientation_invariant_auc": 0.6479261796042618
+        },
+        {
+          "subject": "054",
+          "n": 289,
+          "auc": 0.19449233716475098,
+          "bacc": 0.3349856321839081,
+          "oracle_only_orientation_invariant_auc": 0.805507662835249
+        },
+        {
+          "subject": "055",
+          "n": 287,
+          "auc": 0.6576773566569485,
+          "bacc": 0.6052721088435374,
+          "oracle_only_orientation_invariant_auc": 0.6576773566569485
+        },
+        {
+          "subject": "056",
+          "n": 292,
+          "auc": 0.2214299118033402,
+          "bacc": 0.3013698630136986,
+          "oracle_only_orientation_invariant_auc": 0.7785700881966597
+        },
+        {
+          "subject": "057",
+          "n": 281,
+          "auc": 0.2584093211752786,
+          "bacc": 0.2743667679837893,
+          "oracle_only_orientation_invariant_auc": 0.7415906788247214
+        },
+        {
+          "subject": "058",
+          "n": 289,
+          "auc": 0.24779693486590038,
+          "bacc": 0.3815373563218391,
+          "oracle_only_orientation_invariant_auc": 0.7522030651340996
+        },
+        {
+          "subject": "059",
+          "n": 289,
+          "auc": 0.4776319570840119,
+          "bacc": 0.4590956988217262,
+          "oracle_only_orientation_invariant_auc": 0.522368042915988
+        }
+      ]
+    }
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "train_subjects": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "010",
+        "011",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018",
+        "019",
+        "020",
+        "021",
+        "025",
+        "026",
+        "027",
+        "028",
+        "030",
+        "031",
+        "034",
+        "035",
+        "036",
+        "038",
+        "039",
+        "040",
+        "041",
+        "042",
+        "043",
+        "044",
+        "046",
+        "047",
+        "049",
+        "050",
+        "052",
+        "054",
+        "056",
+        "057",
+        "058",
+        "059"
+      ],
+      "test_subjects": [
+        "009",
+        "022",
+        "023",
+        "024",
+        "029",
+        "037",
+        "045",
+        "048",
+        "051",
+        "053",
+        "055"
+      ],
+      "training_directions": {
+        "001": {
+          "inner_oof_auc": 0.6683986773736419,
+          "direction": 1
+        },
+        "002": {
+          "inner_oof_auc": 0.6184325267059081,
+          "direction": 1
+        },
+        "003": {
+          "inner_oof_auc": 0.5793168774725581,
+          "direction": 1
+        },
+        "004": {
+          "inner_oof_auc": 0.4316735895683264,
+          "direction": -1
+        },
+        "005": {
+          "inner_oof_auc": 0.6496913580246914,
+          "direction": 1
+        },
+        "006": {
+          "inner_oof_auc": 0.5632918074324325,
+          "direction": 1
+        },
+        "007": {
+          "inner_oof_auc": 0.6938319572608062,
+          "direction": 1
+        },
+        "008": {
+          "inner_oof_auc": 0.6942938799645215,
+          "direction": 1
+        },
+        "010": {
+          "inner_oof_auc": 0.5401921613394216,
+          "direction": 1
+        },
+        "011": {
+          "inner_oof_auc": 0.728595890410959,
+          "direction": 1
+        },
+        "012": {
+          "inner_oof_auc": 0.6286941669685835,
+          "direction": 1
+        },
+        "013": {
+          "inner_oof_auc": 0.6911678403755869,
+          "direction": 1
+        },
+        "014": {
+          "inner_oof_auc": 0.5844671201814058,
+          "direction": 1
+        },
+        "015": {
+          "inner_oof_auc": 0.5089928057553956,
+          "direction": 1
+        },
+        "016": {
+          "inner_oof_auc": 0.7149470899470899,
+          "direction": 1
+        },
+        "017": {
+          "inner_oof_auc": 0.7254730563554093,
+          "direction": 1
+        },
+        "018": {
+          "inner_oof_auc": 0.8285989872196768,
+          "direction": 1
+        },
+        "019": {
+          "inner_oof_auc": 0.5570041872858774,
+          "direction": 1
+        },
+        "020": {
+          "inner_oof_auc": 0.7581018518518519,
+          "direction": 1
+        },
+        "021": {
+          "inner_oof_auc": 0.6892544075642666,
+          "direction": 1
+        },
+        "025": {
+          "inner_oof_auc": 0.681148638595447,
+          "direction": 1
+        },
+        "026": {
+          "inner_oof_auc": 0.7897724607084213,
+          "direction": 1
+        },
+        "027": {
+          "inner_oof_auc": 0.6081177067478437,
+          "direction": 1
+        },
+        "028": {
+          "inner_oof_auc": 0.6688673708920188,
+          "direction": 1
+        },
+        "030": {
+          "inner_oof_auc": 0.7745970871570105,
+          "direction": 1
+        },
+        "031": {
+          "inner_oof_auc": 0.7891724526177519,
+          "direction": 1
+        },
+        "034": {
+          "inner_oof_auc": 0.6686507936507936,
+          "direction": 1
+        },
+        "035": {
+          "inner_oof_auc": 0.6801313628899837,
+          "direction": 1
+        },
+        "036": {
+          "inner_oof_auc": 0.7554992800039724,
+          "direction": 1
+        },
+        "038": {
+          "inner_oof_auc": 0.668068815578032,
+          "direction": 1
+        },
+        "039": {
+          "inner_oof_auc": 0.6326064672444319,
+          "direction": 1
+        },
+        "040": {
+          "inner_oof_auc": 0.6793877551020409,
+          "direction": 1
+        },
+        "041": {
+          "inner_oof_auc": 0.6576320231492645,
+          "direction": 1
+        },
+        "042": {
+          "inner_oof_auc": 0.33719097803604847,
+          "direction": -1
+        },
+        "043": {
+          "inner_oof_auc": 0.7349033816425121,
+          "direction": 1
+        },
+        "044": {
+          "inner_oof_auc": 0.786252727633406,
+          "direction": 1
+        },
+        "046": {
+          "inner_oof_auc": 0.5816306288434835,
+          "direction": 1
+        },
+        "047": {
+          "inner_oof_auc": 0.6305658176161774,
+          "direction": 1
+        },
+        "049": {
+          "inner_oof_auc": 0.6492957746478873,
+          "direction": 1
+        },
+        "050": {
+          "inner_oof_auc": 0.5510927634774162,
+          "direction": 1
+        },
+        "052": {
+          "inner_oof_auc": 0.5582079475308642,
+          "direction": 1
+        },
+        "054": {
+          "inner_oof_auc": 0.8727969348659004,
+          "direction": 1
+        },
+        "056": {
+          "inner_oof_auc": 0.7458247325952336,
+          "direction": 1
+        },
+        "057": {
+          "inner_oof_auc": 0.7630699088145898,
+          "direction": 1
+        },
+        "058": {
+          "inner_oof_auc": 0.7999999999999999,
+          "direction": 1
+        },
+        "059": {
+          "inner_oof_auc": 0.5571893859565091,
+          "direction": 1
+        }
+      },
+      "fixed_global_test_direction": 1,
+      "baseline_iterations": 1351,
+      "polarity_iterations": 1318,
+      "baseline_test": {
+        "oof_auc": 0.5624248842894038,
+        "oof_bacc": 0.5517522301728469,
+        "subject_macro_auc": 0.5642268905965847,
+        "subject_macro_bacc": 0.5488286245533316,
+        "subjects_auc_below_0_5_count": 4,
+        "subjects_auc_below_0_5_fraction": 0.36363636363636365,
+        "auc_eligible_subjects": 11,
+        "single_class_subjects": 0,
+        "oracle_only": {
+          "mean_max_auc_1_minus_auc": 0.6096609940964306,
+          "max_max_auc_1_minus_auc": 0.7403906438389197,
+          "warning": "Uses held-out labels separately for each subject; diagnostic upper bound, NOT deployable."
+        },
+        "per_subject": [
+          {
+            "subject": "009",
+            "n": 217,
+            "auc": 0.472307169554876,
+            "bacc": 0.5344886170574243,
+            "oracle_only_orientation_invariant_auc": 0.527692830445124
+          },
+          {
+            "subject": "022",
+            "n": 295,
+            "auc": 0.6365600294171723,
+            "bacc": 0.6161288839860268,
+            "oracle_only_orientation_invariant_auc": 0.6365600294171723
+          },
+          {
+            "subject": "023",
+            "n": 294,
+            "auc": 0.5115923920588643,
+            "bacc": 0.5068027210884354,
+            "oracle_only_orientation_invariant_auc": 0.5115923920588643
+          },
+          {
+            "subject": "024",
+            "n": 291,
+            "auc": 0.4405234315948602,
+            "bacc": 0.48079648526077096,
+            "oracle_only_orientation_invariant_auc": 0.5594765684051398
+          },
+          {
+            "subject": "029",
+            "n": 292,
+            "auc": 0.35414006714900453,
+            "bacc": 0.43675225800349926,
+            "oracle_only_orientation_invariant_auc": 0.6458599328509955
+          },
+          {
+            "subject": "037",
+            "n": 289,
+            "auc": 0.48314176245210727,
+            "bacc": 0.4811302681992337,
+            "oracle_only_orientation_invariant_auc": 0.5168582375478927
+          },
+          {
+            "subject": "045",
+            "n": 284,
+            "auc": 0.6259182052809211,
+            "bacc": 0.5631824498709549,
+            "oracle_only_orientation_invariant_auc": 0.6259182052809211
+          },
+          {
+            "subject": "048",
+            "n": 288,
+            "auc": 0.7403906438389197,
+            "bacc": 0.6305039787798409,
+            "oracle_only_orientation_invariant_auc": 0.7403906438389197
+          },
+          {
+            "subject": "051",
+            "n": 291,
+            "auc": 0.6501134001134,
+            "bacc": 0.6040446040446041,
+            "oracle_only_orientation_invariant_auc": 0.6501134001134
+          },
+          {
+            "subject": "053",
+            "n": 290,
+            "auc": 0.627425799086758,
+            "bacc": 0.5664478691019786,
+            "oracle_only_orientation_invariant_auc": 0.627425799086758
+          },
+          {
+            "subject": "055",
+            "n": 287,
+            "auc": 0.6643828960155491,
+            "bacc": 0.6168367346938776,
+            "oracle_only_orientation_invariant_auc": 0.6643828960155491
+          }
+        ]
+      },
+      "polarity_test": {
+        "oof_auc": 0.5625779444432787,
+        "oof_bacc": 0.546998930636183,
+        "subject_macro_auc": 0.5654443251645702,
+        "subject_macro_bacc": 0.5434694479135813,
+        "subjects_auc_below_0_5_count": 4,
+        "subjects_auc_below_0_5_fraction": 0.36363636363636365,
+        "auc_eligible_subjects": 11,
+        "single_class_subjects": 0,
+        "oracle_only": {
+          "mean_max_auc_1_minus_auc": 0.6087642450150649,
+          "max_max_auc_1_minus_auc": 0.7061972510248371,
+          "warning": "Uses held-out labels separately for each subject; diagnostic upper bound, NOT deployable."
+        },
+        "per_subject": [
+          {
+            "subject": "009",
+            "n": 217,
+            "auc": 0.52353041114509,
+            "bacc": 0.5340638803941556,
+            "oracle_only_orientation_invariant_auc": 0.52353041114509
+          },
+          {
+            "subject": "022",
+            "n": 295,
+            "auc": 0.6335263835263836,
+            "bacc": 0.6093261628975915,
+            "oracle_only_orientation_invariant_auc": 0.6335263835263836
+          },
+          {
+            "subject": "023",
+            "n": 294,
+            "auc": 0.48567726410292006,
+            "bacc": 0.48299319727891155,
+            "oracle_only_orientation_invariant_auc": 0.5143227358970799
+          },
+          {
+            "subject": "024",
+            "n": 291,
+            "auc": 0.4477513227513228,
+            "bacc": 0.47023809523809523,
+            "oracle_only_orientation_invariant_auc": 0.5522486772486772
+          },
+          {
+            "subject": "029",
+            "n": 292,
+            "auc": 0.3327658769565423,
+            "bacc": 0.4274601598335461,
+            "oracle_only_orientation_invariant_auc": 0.6672341230434577
+          },
+          {
+            "subject": "037",
+            "n": 289,
+            "auc": 0.4955459770114943,
+            "bacc": 0.4882183908045977,
+            "oracle_only_orientation_invariant_auc": 0.5044540229885057
+          },
+          {
+            "subject": "045",
+            "n": 284,
+            "auc": 0.6481536628945801,
+            "bacc": 0.566805638276752,
+            "oracle_only_orientation_invariant_auc": 0.6481536628945801
+          },
+          {
+            "subject": "048",
+            "n": 288,
+            "auc": 0.7061972510248371,
+            "bacc": 0.6234145165179648,
+            "oracle_only_orientation_invariant_auc": 0.7061972510248371
+          },
+          {
+            "subject": "051",
+            "n": 291,
+            "auc": 0.6411358911358911,
+            "bacc": 0.5971697221697221,
+            "oracle_only_orientation_invariant_auc": 0.6411358911358911
+          },
+          {
+            "subject": "053",
+            "n": 290,
+            "auc": 0.6479261796042619,
+            "bacc": 0.5732020547945206,
+            "oracle_only_orientation_invariant_auc": 0.6479261796042619
+          },
+          {
+            "subject": "055",
+            "n": 287,
+            "auc": 0.6576773566569485,
+            "bacc": 0.6052721088435374,
+            "oracle_only_orientation_invariant_auc": 0.6576773566569485
+          }
+        ]
+      },
+      "seconds": 88.00786629999493
+    },
+    {
+      "fold": 2,
+      "train_subjects": [
+        "001",
+        "002",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "010",
+        "011",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018",
+        "019",
+        "020",
+        "021",
+        "022",
+        "023",
+        "024",
+        "025",
+        "026",
+        "027",
+        "028",
+        "029",
+        "030",
+        "031",
+        "037",
+        "040",
+        "042",
+        "043",
+        "044",
+        "045",
+        "047",
+        "048",
+        "049",
+        "051",
+        "052",
+        "053",
+        "054",
+        "055",
+        "056",
+        "057"
+      ],
+      "test_subjects": [
+        "003",
+        "012",
+        "034",
+        "035",
+        "036",
+        "038",
+        "039",
+        "041",
+        "046",
+        "050",
+        "058",
+        "059"
+      ],
+      "training_directions": {
+        "001": {
+          "inner_oof_auc": 0.6810108644307983,
+          "direction": 1
+        },
+        "002": {
+          "inner_oof_auc": 0.5120449095269239,
+          "direction": 1
+        },
+        "004": {
+          "inner_oof_auc": 0.4654818865345181,
+          "direction": -1
+        },
+        "005": {
+          "inner_oof_auc": 0.6481995884773663,
+          "direction": 1
+        },
+        "006": {
+          "inner_oof_auc": 0.5487753378378378,
+          "direction": 1
+        },
+        "007": {
+          "inner_oof_auc": 0.6442933462846042,
+          "direction": 1
+        },
+        "008": {
+          "inner_oof_auc": 0.45259682664827044,
+          "direction": -1
+        },
+        "009": {
+          "inner_oof_auc": 0.39237172952769284,
+          "direction": -1
+        },
+        "010": {
+          "inner_oof_auc": 0.40410958904109595,
+          "direction": -1
+        },
+        "011": {
+          "inner_oof_auc": 0.7286434550989347,
+          "direction": 1
+        },
+        "013": {
+          "inner_oof_auc": 0.7060348200312988,
+          "direction": 1
+        },
+        "014": {
+          "inner_oof_auc": 0.5244236583522298,
+          "direction": 1
+        },
+        "015": {
+          "inner_oof_auc": 0.5582846223021584,
+          "direction": 1
+        },
+        "016": {
+          "inner_oof_auc": 0.6058673469387754,
+          "direction": 1
+        },
+        "017": {
+          "inner_oof_auc": 0.7356540518305225,
+          "direction": 1
+        },
+        "018": {
+          "inner_oof_auc": 0.8038099831203279,
+          "direction": 1
+        },
+        "019": {
+          "inner_oof_auc": 0.580367339170156,
+          "direction": 1
+        },
+        "020": {
+          "inner_oof_auc": 0.7069746376811594,
+          "direction": 1
+        },
+        "021": {
+          "inner_oof_auc": 0.7333300502314588,
+          "direction": 1
+        },
+        "022": {
+          "inner_oof_auc": 0.6792608935466078,
+          "direction": 1
+        },
+        "023": {
+          "inner_oof_auc": 0.5362117636170114,
+          "direction": 1
+        },
+        "024": {
+          "inner_oof_auc": 0.5258881330309901,
+          "direction": 1
+        },
+        "025": {
+          "inner_oof_auc": 0.6750483558994198,
+          "direction": 1
+        },
+        "026": {
+          "inner_oof_auc": 0.6695285010555947,
+          "direction": 1
+        },
+        "027": {
+          "inner_oof_auc": 0.5205479452054794,
+          "direction": 1
+        },
+        "028": {
+          "inner_oof_auc": 0.6767410015649452,
+          "direction": 1
+        },
+        "029": {
+          "inner_oof_auc": 0.3933418451789852,
+          "direction": -1
+        },
+        "030": {
+          "inner_oof_auc": 0.677372962607862,
+          "direction": 1
+        },
+        "031": {
+          "inner_oof_auc": 0.7554888346781761,
+          "direction": 1
+        },
+        "037": {
+          "inner_oof_auc": 0.39037356321839084,
+          "direction": -1
+        },
+        "040": {
+          "inner_oof_auc": 0.7363775510204081,
+          "direction": 1
+        },
+        "042": {
+          "inner_oof_auc": 0.371171082438688,
+          "direction": -1
+        },
+        "043": {
+          "inner_oof_auc": 0.6502616747181964,
+          "direction": 1
+        },
+        "044": {
+          "inner_oof_auc": 0.6731303312834754,
+          "direction": 1
+        },
+        "045": {
+          "inner_oof_auc": 0.612467738733373,
+          "direction": 1
+        },
+        "047": {
+          "inner_oof_auc": 0.5680536651759673,
+          "direction": 1
+        },
+        "048": {
+          "inner_oof_auc": 0.7026766337111164,
+          "direction": 1
+        },
+        "049": {
+          "inner_oof_auc": 0.6870724346076459,
+          "direction": 1
+        },
+        "051": {
+          "inner_oof_auc": 0.5652050652050652,
+          "direction": 1
+        },
+        "052": {
+          "inner_oof_auc": 0.5222318672839507,
+          "direction": 1
+        },
+        "053": {
+          "inner_oof_auc": 0.6112062404870624,
+          "direction": 1
+        },
+        "054": {
+          "inner_oof_auc": 0.8237547892720307,
+          "direction": 1
+        },
+        "055": {
+          "inner_oof_auc": 0.534645286686103,
+          "direction": 1
+        },
+        "056": {
+          "inner_oof_auc": 0.7201632576468381,
+          "direction": 1
+        },
+        "057": {
+          "inner_oof_auc": 0.7040526849037486,
+          "direction": 1
+        }
+      },
+      "fixed_global_test_direction": 1,
+      "baseline_iterations": 1387,
+      "polarity_iterations": 1322,
+      "baseline_test": {
+        "oof_auc": 0.6591708266763792,
+        "oof_bacc": 0.6085553204631176,
+        "subject_macro_auc": 0.674506397350391,
+        "subject_macro_bacc": 0.6102340607950426,
+        "subjects_auc_below_0_5_count": 0,
+        "subjects_auc_below_0_5_fraction": 0.0,
+        "auc_eligible_subjects": 12,
+        "single_class_subjects": 0,
+        "oracle_only": {
+          "mean_max_auc_1_minus_auc": 0.674506397350391,
+          "max_max_auc_1_minus_auc": 0.8217885694423754,
+          "warning": "Uses held-out labels separately for each subject; diagnostic upper bound, NOT deployable."
+        },
+        "per_subject": [
+          {
+            "subject": "003",
+            "n": 268,
+            "auc": 0.5596478520086923,
+            "bacc": 0.5374435838858862,
+            "oracle_only_orientation_invariant_auc": 0.5596478520086923
+          },
+          {
+            "subject": "012",
+            "n": 278,
+            "auc": 0.5901868433310905,
+            "bacc": 0.5611510791366906,
+            "oracle_only_orientation_invariant_auc": 0.5901868433310905
+          },
+          {
+            "subject": "034",
+            "n": 121,
+            "auc": 0.7046485260770976,
+            "bacc": 0.6507936507936507,
+            "oracle_only_orientation_invariant_auc": 0.7046485260770976
+          },
+          {
+            "subject": "035",
+            "n": 292,
+            "auc": 0.7414965986394557,
+            "bacc": 0.6636171710063336,
+            "oracle_only_orientation_invariant_auc": 0.7414965986394557
+          },
+          {
+            "subject": "036",
+            "n": 284,
+            "auc": 0.8217885694423754,
+            "bacc": 0.660658423953523,
+            "oracle_only_orientation_invariant_auc": 0.8217885694423754
+          },
+          {
+            "subject": "038",
+            "n": 291,
+            "auc": 0.7130636165989225,
+            "bacc": 0.6711882030437659,
+            "oracle_only_orientation_invariant_auc": 0.7130636165989225
+          },
+          {
+            "subject": "039",
+            "n": 293,
+            "auc": 0.5820054049016867,
+            "bacc": 0.5522784456248253,
+            "oracle_only_orientation_invariant_auc": 0.5820054049016867
+          },
+          {
+            "subject": "041",
+            "n": 288,
+            "auc": 0.6640945261634916,
+            "bacc": 0.5972510248372317,
+            "oracle_only_orientation_invariant_auc": 0.6640945261634916
+          },
+          {
+            "subject": "046",
+            "n": 284,
+            "auc": 0.681660384844277,
+            "bacc": 0.6408450704225352,
+            "oracle_only_orientation_invariant_auc": 0.681660384844277
+          },
+          {
+            "subject": "050",
+            "n": 287,
+            "auc": 0.6261291889266634,
+            "bacc": 0.555148130160272,
+            "oracle_only_orientation_invariant_auc": 0.6261291889266634
+          },
+          {
+            "subject": "058",
+            "n": 289,
+            "auc": 0.7404693486590039,
+            "bacc": 0.6220306513409962,
+            "oracle_only_orientation_invariant_auc": 0.7404693486590039
+          },
+          {
+            "subject": "059",
+            "n": 289,
+            "auc": 0.6688859086119361,
+            "bacc": 0.6104032953348022,
+            "oracle_only_orientation_invariant_auc": 0.6688859086119361
+          }
+        ]
+      },
+      "polarity_test": {
+        "oof_auc": 0.6056675008589114,
+        "oof_bacc": 0.5755750012672463,
+        "subject_macro_auc": 0.6144796408484774,
+        "subject_macro_bacc": 0.5725520653555739,
+        "subjects_auc_below_0_5_count": 1,
+        "subjects_auc_below_0_5_fraction": 0.08333333333333333,
+        "auc_eligible_subjects": 12,
+        "single_class_subjects": 0,
+        "oracle_only": {
+          "mean_max_auc_1_minus_auc": 0.6393323364403732,
+          "max_max_auc_1_minus_auc": 0.7924935491437954,
+          "warning": "Uses held-out labels separately for each subject; diagnostic upper bound, NOT deployable."
+        },
+        "per_subject": [
+          {
+            "subject": "003",
+            "n": 268,
+            "auc": 0.6721457625229844,
+            "bacc": 0.6265392544714994,
+            "oracle_only_orientation_invariant_auc": 0.6721457625229844
+          },
+          {
+            "subject": "012",
+            "n": 278,
+            "auc": 0.5369804875524041,
+            "bacc": 0.5287769784172662,
+            "oracle_only_orientation_invariant_auc": 0.5369804875524041
+          },
+          {
+            "subject": "034",
+            "n": 121,
+            "auc": 0.5453514739229025,
+            "bacc": 0.5246598639455783,
+            "oracle_only_orientation_invariant_auc": 0.5453514739229025
+          },
+          {
+            "subject": "035",
+            "n": 292,
+            "auc": 0.7924935491437954,
+            "bacc": 0.7498709828759089,
+            "oracle_only_orientation_invariant_auc": 0.7924935491437954
+          },
+          {
+            "subject": "036",
+            "n": 284,
+            "auc": 0.7787377724812553,
+            "bacc": 0.5835195392025423,
+            "oracle_only_orientation_invariant_auc": 0.7787377724812553
+          },
+          {
+            "subject": "038",
+            "n": 291,
+            "auc": 0.35088382644862465,
+            "bacc": 0.4171708100954722,
+            "oracle_only_orientation_invariant_auc": 0.6491161735513753
+          },
+          {
+            "subject": "039",
+            "n": 293,
+            "auc": 0.5701239399869537,
+            "bacc": 0.5422607399124033,
+            "oracle_only_orientation_invariant_auc": 0.5701239399869537
+          },
+          {
+            "subject": "041",
+            "n": 288,
+            "auc": 0.642874367012298,
+            "bacc": 0.6007957559681698,
+            "oracle_only_orientation_invariant_auc": 0.642874367012298
+          },
+          {
+            "subject": "046",
+            "n": 284,
+            "auc": 0.663211664352311,
+            "bacc": 0.630281690140845,
+            "oracle_only_orientation_invariant_auc": 0.663211664352311
+          },
+          {
+            "subject": "050",
+            "n": 287,
+            "auc": 0.5463817387081107,
+            "bacc": 0.5073822243807674,
+            "oracle_only_orientation_invariant_auc": 0.5463817387081107
+          },
+          {
+            "subject": "058",
+            "n": 289,
+            "auc": 0.7522030651340996,
+            "bacc": 0.618462643678161,
+            "oracle_only_orientation_invariant_auc": 0.7522030651340996
+          },
+          {
+            "subject": "059",
+            "n": 289,
+            "auc": 0.522368042915988,
+            "bacc": 0.5409043011782737,
+            "oracle_only_orientation_invariant_auc": 0.522368042915988
+          }
+        ]
+      },
+      "seconds": 88.54969160000473
+    },
+    {
+      "fold": 3,
+      "train_subjects": [
+        "002",
+        "003",
+        "004",
+        "008",
+        "009",
+        "010",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "018",
+        "020",
+        "021",
+        "022",
+        "023",
+        "024",
+        "027",
+        "028",
+        "029",
+        "030",
+        "034",
+        "035",
+        "036",
+        "037",
+        "038",
+        "039",
+        "040",
+        "041",
+        "042",
+        "043",
+        "044",
+        "045",
+        "046",
+        "047",
+        "048",
+        "049",
+        "050",
+        "051",
+        "052",
+        "053",
+        "054",
+        "055",
+        "056",
+        "058",
+        "059"
+      ],
+      "test_subjects": [
+        "001",
+        "005",
+        "006",
+        "007",
+        "011",
+        "017",
+        "019",
+        "025",
+        "026",
+        "031",
+        "057"
+      ],
+      "training_directions": {
+        "002": {
+          "inner_oof_auc": 0.5572269457161544,
+          "direction": 1
+        },
+        "003": {
+          "inner_oof_auc": 0.4450883155959213,
+          "direction": -1
+        },
+        "004": {
+          "inner_oof_auc": 0.4614858825385141,
+          "direction": -1
+        },
+        "008": {
+          "inner_oof_auc": 0.5528727702769292,
+          "direction": 1
+        },
+        "009": {
+          "inner_oof_auc": 0.4870880054366293,
+          "direction": -1
+        },
+        "010": {
+          "inner_oof_auc": 0.4828291476407915,
+          "direction": -1
+        },
+        "012": {
+          "inner_oof_auc": 0.6424098131566689,
+          "direction": 1
+        },
+        "013": {
+          "inner_oof_auc": 0.6679381846635368,
+          "direction": 1
+        },
+        "014": {
+          "inner_oof_auc": 0.5623110355253212,
+          "direction": 1
+        },
+        "015": {
+          "inner_oof_auc": 0.6783947841726619,
+          "direction": 1
+        },
+        "016": {
+          "inner_oof_auc": 0.5924508692365835,
+          "direction": 1
+        },
+        "018": {
+          "inner_oof_auc": 0.7099590065107306,
+          "direction": 1
+        },
+        "020": {
+          "inner_oof_auc": 0.7038043478260869,
+          "direction": 1
+        },
+        "021": {
+          "inner_oof_auc": 0.7141239042647493,
+          "direction": 1
+        },
+        "022": {
+          "inner_oof_auc": 0.5844824416252987,
+          "direction": 1
+        },
+        "023": {
+          "inner_oof_auc": 0.611550742746078,
+          "direction": 1
+        },
+        "024": {
+          "inner_oof_auc": 0.432775888133031,
+          "direction": -1
+        },
+        "027": {
+          "inner_oof_auc": 0.5346017250126838,
+          "direction": 1
+        },
+        "028": {
+          "inner_oof_auc": 0.6395246478873238,
+          "direction": 1
+        },
+        "029": {
+          "inner_oof_auc": 0.3804795006383884,
+          "direction": -1
+        },
+        "030": {
+          "inner_oof_auc": 0.7655572296032507,
+          "direction": 1
+        },
+        "034": {
+          "inner_oof_auc": 0.6601473922902494,
+          "direction": 1
+        },
+        "035": {
+          "inner_oof_auc": 0.667041989209477,
+          "direction": 1
+        },
+        "036": {
+          "inner_oof_auc": 0.7689557574854761,
+          "direction": 1
+        },
+        "037": {
+          "inner_oof_auc": 0.49636015325670496,
+          "direction": -1
+        },
+        "038": {
+          "inner_oof_auc": 0.7530012288496077,
+          "direction": 1
+        },
+        "039": {
+          "inner_oof_auc": 0.5536762650265585,
+          "direction": 1
+        },
+        "040": {
+          "inner_oof_auc": 0.6831632653061224,
+          "direction": 1
+        },
+        "041": {
+          "inner_oof_auc": 0.6791897757415,
+          "direction": 1
+        },
+        "042": {
+          "inner_oof_auc": 0.3771791588692997,
+          "direction": -1
+        },
+        "043": {
+          "inner_oof_auc": 0.6417572463768115,
+          "direction": 1
+        },
+        "044": {
+          "inner_oof_auc": 0.7827811942074986,
+          "direction": 1
+        },
+        "045": {
+          "inner_oof_auc": 0.6448779035139964,
+          "direction": 1
+        },
+        "046": {
+          "inner_oof_auc": 0.589020035707201,
+          "direction": 1
+        },
+        "047": {
+          "inner_oof_auc": 0.672710480264437,
+          "direction": 1
+        },
+        "048": {
+          "inner_oof_auc": 0.6959729925247167,
+          "direction": 1
+        },
+        "049": {
+          "inner_oof_auc": 0.6903420523138833,
+          "direction": 1
+        },
+        "050": {
+          "inner_oof_auc": 0.6411850412821758,
+          "direction": 1
+        },
+        "051": {
+          "inner_oof_auc": 0.6624929124929125,
+          "direction": 1
+        },
+        "052": {
+          "inner_oof_auc": 0.4654224537037037,
+          "direction": -1
+        },
+        "053": {
+          "inner_oof_auc": 0.6094939117199392,
+          "direction": 1
+        },
+        "054": {
+          "inner_oof_auc": 0.5635536398467432,
+          "direction": 1
+        },
+        "055": {
+          "inner_oof_auc": 0.5855199222546161,
+          "direction": 1
+        },
+        "056": {
+          "inner_oof_auc": 0.7730343404015763,
+          "direction": 1
+        },
+        "058": {
+          "inner_oof_auc": 0.709051724137931,
+          "direction": 1
+        },
+        "059": {
+          "inner_oof_auc": 0.6637129993294377,
+          "direction": 1
+        }
+      },
+      "fixed_global_test_direction": 1,
+      "baseline_iterations": 1489,
+      "polarity_iterations": 1448,
+      "baseline_test": {
+        "oof_auc": 0.6812882094830474,
+        "oof_bacc": 0.6299959697332644,
+        "subject_macro_auc": 0.6894192592559336,
+        "subject_macro_bacc": 0.6312579436973526,
+        "subjects_auc_below_0_5_count": 0,
+        "subjects_auc_below_0_5_fraction": 0.0,
+        "auc_eligible_subjects": 11,
+        "single_class_subjects": 0,
+        "oracle_only": {
+          "mean_max_auc_1_minus_auc": 0.6894192592559336,
+          "max_max_auc_1_minus_auc": 0.7813848752111092,
+          "warning": "Uses held-out labels separately for each subject; diagnostic upper bound, NOT deployable."
+        },
+        "per_subject": [
+          {
+            "subject": "001",
+            "n": 291,
+            "auc": 0.7083136513934812,
+            "bacc": 0.6260982522437412,
+            "oracle_only_orientation_invariant_auc": 0.7083136513934812
+          },
+          {
+            "subject": "005",
+            "n": 279,
+            "auc": 0.654320987654321,
+            "bacc": 0.6266203703703703,
+            "oracle_only_orientation_invariant_auc": 0.654320987654321
+          },
+          {
+            "subject": "006",
+            "n": 276,
+            "auc": 0.6205130912162162,
+            "bacc": 0.5358952702702703,
+            "oracle_only_orientation_invariant_auc": 0.6205130912162162
+          },
+          {
+            "subject": "007",
+            "n": 287,
+            "auc": 0.653035454103934,
+            "bacc": 0.6092763477416221,
+            "oracle_only_orientation_invariant_auc": 0.653035454103934
+          },
+          {
+            "subject": "011",
+            "n": 290,
+            "auc": 0.7563736681887367,
+            "bacc": 0.7094273211567732,
+            "oracle_only_orientation_invariant_auc": 0.7563736681887367
+          },
+          {
+            "subject": "017",
+            "n": 279,
+            "auc": 0.7523138626079803,
+            "bacc": 0.6909193747429041,
+            "oracle_only_orientation_invariant_auc": 0.7523138626079803
+          },
+          {
+            "subject": "019",
+            "n": 290,
+            "auc": 0.578654358583936,
+            "bacc": 0.5467263037685572,
+            "oracle_only_orientation_invariant_auc": 0.578654358583936
+          },
+          {
+            "subject": "025",
+            "n": 284,
+            "auc": 0.6973664633239101,
+            "bacc": 0.6265932648911372,
+            "oracle_only_orientation_invariant_auc": 0.6973664633239101
+          },
+          {
+            "subject": "026",
+            "n": 292,
+            "auc": 0.6682148721557588,
+            "bacc": 0.6125967628430682,
+            "oracle_only_orientation_invariant_auc": 0.6682148721557588
+          },
+          {
+            "subject": "031",
+            "n": 292,
+            "auc": 0.7813848752111092,
+            "bacc": 0.7054794520547945,
+            "oracle_only_orientation_invariant_auc": 0.7813848752111092
+          },
+          {
+            "subject": "057",
+            "n": 281,
+            "auc": 0.7131205673758865,
+            "bacc": 0.6542046605876393,
+            "oracle_only_orientation_invariant_auc": 0.7131205673758865
+          }
+        ]
+      },
+      "polarity_test": {
+        "oof_auc": 0.6869739670718287,
+        "oof_bacc": 0.6391102922632664,
+        "subject_macro_auc": 0.6925824329303631,
+        "subject_macro_bacc": 0.6401713772892034,
+        "subjects_auc_below_0_5_count": 0,
+        "subjects_auc_below_0_5_fraction": 0.0,
+        "auc_eligible_subjects": 11,
+        "single_class_subjects": 0,
+        "oracle_only": {
+          "mean_max_auc_1_minus_auc": 0.6925824329303631,
+          "max_max_auc_1_minus_auc": 0.8015575154813285,
+          "warning": "Uses held-out labels separately for each subject; diagnostic upper bound, NOT deployable."
+        },
+        "per_subject": [
+          {
+            "subject": "001",
+            "n": 291,
+            "auc": 0.7262163438828529,
+            "bacc": 0.6668871043930089,
+            "oracle_only_orientation_invariant_auc": 0.7262163438828529
+          },
+          {
+            "subject": "005",
+            "n": 279,
+            "auc": 0.5686213991769546,
+            "bacc": 0.5592592592592592,
+            "oracle_only_orientation_invariant_auc": 0.5686213991769546
+          },
+          {
+            "subject": "006",
+            "n": 276,
+            "auc": 0.6508129222972973,
+            "bacc": 0.5398015202702703,
+            "oracle_only_orientation_invariant_auc": 0.6508129222972973
+          },
+          {
+            "subject": "007",
+            "n": 287,
+            "auc": 0.7000971345313259,
+            "bacc": 0.6626032054395338,
+            "oracle_only_orientation_invariant_auc": 0.7000971345313259
+          },
+          {
+            "subject": "011",
+            "n": 290,
+            "auc": 0.7369672754946728,
+            "bacc": 0.7096651445966515,
+            "oracle_only_orientation_invariant_auc": 0.7369672754946728
+          },
+          {
+            "subject": "017",
+            "n": 279,
+            "auc": 0.7387906211435623,
+            "bacc": 0.6641042780748663,
+            "oracle_only_orientation_invariant_auc": 0.7387906211435623
+          },
+          {
+            "subject": "019",
+            "n": 290,
+            "auc": 0.5637133612485724,
+            "bacc": 0.5147506661591168,
+            "oracle_only_orientation_invariant_auc": 0.5637133612485724
+          },
+          {
+            "subject": "025",
+            "n": 284,
+            "auc": 0.6290730546049695,
+            "bacc": 0.6096067053513862,
+            "oracle_only_orientation_invariant_auc": 0.6290730546049695
+          },
+          {
+            "subject": "026",
+            "n": 292,
+            "auc": 0.7609664555477363,
+            "bacc": 0.6601219798264133,
+            "oracle_only_orientation_invariant_auc": 0.7609664555477363
+          },
+          {
+            "subject": "031",
+            "n": 292,
+            "auc": 0.8015575154813285,
+            "bacc": 0.7294520547945205,
+            "oracle_only_orientation_invariant_auc": 0.8015575154813285
+          },
+          {
+            "subject": "057",
+            "n": 281,
+            "auc": 0.7415906788247213,
+            "bacc": 0.7256332320162107,
+            "oracle_only_orientation_invariant_auc": 0.7415906788247213
+          }
+        ]
+      },
+      "seconds": 92.79894359999889
+    },
+    {
+      "fold": 4,
+      "train_subjects": [
+        "001",
+        "002",
+        "003",
+        "005",
+        "006",
+        "007",
+        "009",
+        "010",
+        "011",
+        "012",
+        "014",
+        "017",
+        "018",
+        "019",
+        "020",
+        "021",
+        "022",
+        "023",
+        "024",
+        "025",
+        "026",
+        "027",
+        "029",
+        "030",
+        "031",
+        "034",
+        "035",
+        "036",
+        "037",
+        "038",
+        "039",
+        "041",
+        "044",
+        "045",
+        "046",
+        "047",
+        "048",
+        "050",
+        "051",
+        "052",
+        "053",
+        "055",
+        "057",
+        "058",
+        "059"
+      ],
+      "test_subjects": [
+        "004",
+        "008",
+        "013",
+        "015",
+        "016",
+        "028",
+        "040",
+        "042",
+        "043",
+        "049",
+        "054",
+        "056"
+      ],
+      "training_directions": {
+        "001": {
+          "inner_oof_auc": 0.6921114785073217,
+          "direction": 1
+        },
+        "002": {
+          "inner_oof_auc": 0.5564639197732724,
+          "direction": 1
+        },
+        "003": {
+          "inner_oof_auc": 0.6148659943165988,
+          "direction": 1
+        },
+        "005": {
+          "inner_oof_auc": 0.6373971193415637,
+          "direction": 1
+        },
+        "006": {
+          "inner_oof_auc": 0.572582347972973,
+          "direction": 1
+        },
+        "007": {
+          "inner_oof_auc": 0.6839242350655659,
+          "direction": 1
+        },
+        "009": {
+          "inner_oof_auc": 0.5746687054026504,
+          "direction": 1
+        },
+        "010": {
+          "inner_oof_auc": 0.6520167427701674,
+          "direction": 1
+        },
+        "011": {
+          "inner_oof_auc": 0.7530917047184171,
+          "direction": 1
+        },
+        "012": {
+          "inner_oof_auc": 0.6883184100201852,
+          "direction": 1
+        },
+        "014": {
+          "inner_oof_auc": 0.5576341647770219,
+          "direction": 1
+        },
+        "017": {
+          "inner_oof_auc": 0.7696935417523653,
+          "direction": 1
+        },
+        "018": {
+          "inner_oof_auc": 0.7487822522305281,
+          "direction": 1
+        },
+        "019": {
+          "inner_oof_auc": 0.5614293871336125,
+          "direction": 1
+        },
+        "020": {
+          "inner_oof_auc": 0.6867451690821256,
+          "direction": 1
+        },
+        "021": {
+          "inner_oof_auc": 0.7806067172264356,
+          "direction": 1
+        },
+        "022": {
+          "inner_oof_auc": 0.7220536863394005,
+          "direction": 1
+        },
+        "023": {
+          "inner_oof_auc": 0.5465778147993892,
+          "direction": 1
+        },
+        "024": {
+          "inner_oof_auc": 0.4996693121693122,
+          "direction": -1
+        },
+        "025": {
+          "inner_oof_auc": 0.6765858255219959,
+          "direction": 1
+        },
+        "026": {
+          "inner_oof_auc": 0.7512549847525217,
+          "direction": 1
+        },
+        "027": {
+          "inner_oof_auc": 0.5227803145611365,
+          "direction": 1
+        },
+        "029": {
+          "inner_oof_auc": 0.3091218612569159,
+          "direction": -1
+        },
+        "030": {
+          "inner_oof_auc": 0.6826005570013239,
+          "direction": 1
+        },
+        "031": {
+          "inner_oof_auc": 0.762901107149559,
+          "direction": 1
+        },
+        "034": {
+          "inner_oof_auc": 0.6360544217687074,
+          "direction": 1
+        },
+        "035": {
+          "inner_oof_auc": 0.6676988036593948,
+          "direction": 1
+        },
+        "036": {
+          "inner_oof_auc": 0.7562937583792642,
+          "direction": 1
+        },
+        "037": {
+          "inner_oof_auc": 0.48759578544061305,
+          "direction": -1
+        },
+        "038": {
+          "inner_oof_auc": 0.6394271670290197,
+          "direction": 1
+        },
+        "039": {
+          "inner_oof_auc": 0.5648122262603672,
+          "direction": 1
+        },
+        "041": {
+          "inner_oof_auc": 0.6993489269351338,
+          "direction": 1
+        },
+        "044": {
+          "inner_oof_auc": 0.7445447331878596,
+          "direction": 1
+        },
+        "045": {
+          "inner_oof_auc": 0.636589239626762,
+          "direction": 1
+        },
+        "046": {
+          "inner_oof_auc": 0.6493751239833367,
+          "direction": 1
+        },
+        "047": {
+          "inner_oof_auc": 0.5902197161189968,
+          "direction": 1
+        },
+        "048": {
+          "inner_oof_auc": 0.5949360983843742,
+          "direction": 1
+        },
+        "050": {
+          "inner_oof_auc": 0.5291403593977659,
+          "direction": 1
+        },
+        "051": {
+          "inner_oof_auc": 0.6090531090531089,
+          "direction": 1
+        },
+        "052": {
+          "inner_oof_auc": 0.4486882716049383,
+          "direction": -1
+        },
+        "053": {
+          "inner_oof_auc": 0.6477834855403349,
+          "direction": 1
+        },
+        "055": {
+          "inner_oof_auc": 0.7260932944606414,
+          "direction": 1
+        },
+        "057": {
+          "inner_oof_auc": 0.7162613981762918,
+          "direction": 1
+        },
+        "058": {
+          "inner_oof_auc": 0.7525383141762452,
+          "direction": 1
+        },
+        "059": {
+          "inner_oof_auc": 0.6629945397068685,
+          "direction": 1
+        }
+      },
+      "fixed_global_test_direction": 1,
+      "baseline_iterations": 1302,
+      "polarity_iterations": 1317,
+      "baseline_test": {
+        "oof_auc": 0.6318322408940918,
+        "oof_bacc": 0.6050802747455297,
+        "subject_macro_auc": 0.6383306788250737,
+        "subject_macro_bacc": 0.603330185471136,
+        "subjects_auc_below_0_5_count": 2,
+        "subjects_auc_below_0_5_fraction": 0.16666666666666666,
+        "auc_eligible_subjects": 12,
+        "single_class_subjects": 0,
+        "oracle_only": {
+          "mean_max_auc_1_minus_auc": 0.6624677105603264,
+          "max_max_auc_1_minus_auc": 0.8202107279693486,
+          "warning": "Uses held-out labels separately for each subject; diagnostic upper bound, NOT deployable."
+        },
+        "per_subject": [
+          {
+            "subject": "004",
+            "n": 276,
+            "auc": 0.4671644145328355,
+            "bacc": 0.4619065145380935,
+            "oracle_only_orientation_invariant_auc": 0.5328355854671645
+          },
+          {
+            "subject": "008",
+            "n": 285,
+            "auc": 0.5311422095200552,
+            "bacc": 0.5745786932098157,
+            "oracle_only_orientation_invariant_auc": 0.5311422095200552
+          },
+          {
+            "subject": "013",
+            "n": 286,
+            "auc": 0.6663732394366197,
+            "bacc": 0.6540492957746479,
+            "oracle_only_orientation_invariant_auc": 0.6663732394366197
+          },
+          {
+            "subject": "015",
+            "n": 267,
+            "auc": 0.6784509892086331,
+            "bacc": 0.6486623201438849,
+            "oracle_only_orientation_invariant_auc": 0.6784509892086331
+          },
+          {
+            "subject": "016",
+            "n": 291,
+            "auc": 0.6637377173091458,
+            "bacc": 0.622094671201814,
+            "oracle_only_orientation_invariant_auc": 0.6637377173091458
+          },
+          {
+            "subject": "028",
+            "n": 286,
+            "auc": 0.636785993740219,
+            "bacc": 0.5910113458528952,
+            "oracle_only_orientation_invariant_auc": 0.636785993740219
+          },
+          {
+            "subject": "040",
+            "n": 280,
+            "auc": 0.7343877551020409,
+            "bacc": 0.6607142857142857,
+            "oracle_only_orientation_invariant_auc": 0.7343877551020409
+          },
+          {
+            "subject": "042",
+            "n": 285,
+            "auc": 0.3880133950556485,
+            "bacc": 0.4000541711809318,
+            "oracle_only_orientation_invariant_auc": 0.6119866049443514
+          },
+          {
+            "subject": "043",
+            "n": 282,
+            "auc": 0.685889694041868,
+            "bacc": 0.6346618357487923,
+            "oracle_only_orientation_invariant_auc": 0.685889694041868
+          },
+          {
+            "subject": "049",
+            "n": 282,
+            "auc": 0.6536217303822939,
+            "bacc": 0.5869215291750502,
+            "oracle_only_orientation_invariant_auc": 0.6536217303822939
+          },
+          {
+            "subject": "054",
+            "n": 289,
+            "auc": 0.8202107279693486,
+            "bacc": 0.7443486590038315,
+            "oracle_only_orientation_invariant_auc": 0.8202107279693486
+          },
+          {
+            "subject": "056",
+            "n": 292,
+            "auc": 0.7341902796021769,
+            "bacc": 0.660958904109589,
+            "oracle_only_orientation_invariant_auc": 0.7341902796021769
+          }
+        ]
+      },
+      "polarity_test": {
+        "oof_auc": 0.6201712560180987,
+        "oof_bacc": 0.5948207175448024,
+        "subject_macro_auc": 0.6282473158937064,
+        "subject_macro_bacc": 0.5933029765720365,
+        "subjects_auc_below_0_5_count": 2,
+        "subjects_auc_below_0_5_fraction": 0.16666666666666666,
+        "auc_eligible_subjects": 12,
+        "single_class_subjects": 0,
+        "oracle_only": {
+          "mean_max_auc_1_minus_auc": 0.6595757601205939,
+          "max_max_auc_1_minus_auc": 0.805507662835249,
+          "warning": "Uses held-out labels separately for each subject; diagnostic upper bound, NOT deployable."
+        },
+        "per_subject": [
+          {
+            "subject": "004",
+            "n": 276,
+            "auc": 0.4336190125663809,
+            "bacc": 0.4645354645354645,
+            "oracle_only_orientation_invariant_auc": 0.5663809874336191
+          },
+          {
+            "subject": "008",
+            "n": 285,
+            "auc": 0.5070464176603922,
+            "bacc": 0.5360451364935449,
+            "oracle_only_orientation_invariant_auc": 0.5070464176603922
+          },
+          {
+            "subject": "013",
+            "n": 286,
+            "auc": 0.6640747261345852,
+            "bacc": 0.6400625978090767,
+            "oracle_only_orientation_invariant_auc": 0.6640747261345852
+          },
+          {
+            "subject": "015",
+            "n": 267,
+            "auc": 0.5713803956834533,
+            "bacc": 0.5336668165467626,
+            "oracle_only_orientation_invariant_auc": 0.5713803956834533
+          },
+          {
+            "subject": "016",
+            "n": 291,
+            "auc": 0.6818310657596373,
+            "bacc": 0.6523526077097506,
+            "oracle_only_orientation_invariant_auc": 0.6818310657596373
+          },
+          {
+            "subject": "028",
+            "n": 286,
+            "auc": 0.6375684663536777,
+            "bacc": 0.6296459311424101,
+            "oracle_only_orientation_invariant_auc": 0.6375684663536777
+          },
+          {
+            "subject": "040",
+            "n": 280,
+            "auc": 0.7102040816326531,
+            "bacc": 0.6571428571428571,
+            "oracle_only_orientation_invariant_auc": 0.7102040816326531
+          },
+          {
+            "subject": "042",
+            "n": 285,
+            "auc": 0.37841032207229386,
+            "bacc": 0.40002954791687184,
+            "oracle_only_orientation_invariant_auc": 0.6215896779277061
+          },
+          {
+            "subject": "043",
+            "n": 282,
+            "auc": 0.7025462962962963,
+            "bacc": 0.6379830917874396,
+            "oracle_only_orientation_invariant_auc": 0.7025462962962963
+          },
+          {
+            "subject": "049",
+            "n": 282,
+            "auc": 0.6682092555331992,
+            "bacc": 0.6045271629778672,
+            "oracle_only_orientation_invariant_auc": 0.6682092555331992
+          },
+          {
+            "subject": "054",
+            "n": 289,
+            "auc": 0.805507662835249,
+            "bacc": 0.6650143678160919,
+            "oracle_only_orientation_invariant_auc": 0.805507662835249
+          },
+          {
+            "subject": "056",
+            "n": 292,
+            "auc": 0.7785700881966597,
+            "bacc": 0.6986301369863014,
+            "oracle_only_orientation_invariant_auc": 0.7785700881966597
+          }
+        ]
+      },
+      "seconds": 85.22405099999742
+    },
+    {
+      "fold": 5,
+      "train_subjects": [
+        "001",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "011",
+        "012",
+        "013",
+        "015",
+        "016",
+        "017",
+        "019",
+        "022",
+        "023",
+        "024",
+        "025",
+        "026",
+        "028",
+        "029",
+        "031",
+        "034",
+        "035",
+        "036",
+        "037",
+        "038",
+        "039",
+        "040",
+        "041",
+        "042",
+        "043",
+        "045",
+        "046",
+        "048",
+        "049",
+        "050",
+        "051",
+        "053",
+        "054",
+        "055",
+        "056",
+        "057",
+        "058",
+        "059"
+      ],
+      "test_subjects": [
+        "002",
+        "010",
+        "014",
+        "018",
+        "020",
+        "021",
+        "027",
+        "030",
+        "044",
+        "047",
+        "052"
+      ],
+      "training_directions": {
+        "001": {
+          "inner_oof_auc": 0.7084553613604156,
+          "direction": 1
+        },
+        "003": {
+          "inner_oof_auc": 0.3921546776620048,
+          "direction": -1
+        },
+        "004": {
+          "inner_oof_auc": 0.4535464535464535,
+          "direction": -1
+        },
+        "005": {
+          "inner_oof_auc": 0.6337962962962963,
+          "direction": 1
+        },
+        "006": {
+          "inner_oof_auc": 0.6068940033783784,
+          "direction": 1
+        },
+        "007": {
+          "inner_oof_auc": 0.6621175327829043,
+          "direction": 1
+        },
+        "008": {
+          "inner_oof_auc": 0.4994579678722776,
+          "direction": -1
+        },
+        "009": {
+          "inner_oof_auc": 0.4966870540265036,
+          "direction": -1
+        },
+        "011": {
+          "inner_oof_auc": 0.7123763318112634,
+          "direction": 1
+        },
+        "012": {
+          "inner_oof_auc": 0.597795145178821,
+          "direction": 1
+        },
+        "013": {
+          "inner_oof_auc": 0.6618984741784038,
+          "direction": 1
+        },
+        "015": {
+          "inner_oof_auc": 0.667097571942446,
+          "direction": 1
+        },
+        "016": {
+          "inner_oof_auc": 0.6326530612244898,
+          "direction": 1
+        },
+        "017": {
+          "inner_oof_auc": 0.7339058000822707,
+          "direction": 1
+        },
+        "019": {
+          "inner_oof_auc": 0.551056338028169,
+          "direction": 1
+        },
+        "022": {
+          "inner_oof_auc": 0.5622357050928479,
+          "direction": 1
+        },
+        "023": {
+          "inner_oof_auc": 0.5270951918182238,
+          "direction": 1
+        },
+        "024": {
+          "inner_oof_auc": 0.46801776266061973,
+          "direction": -1
+        },
+        "025": {
+          "inner_oof_auc": 0.7016317016317016,
+          "direction": 1
+        },
+        "026": {
+          "inner_oof_auc": 0.5374618813042459,
+          "direction": 1
+        },
+        "028": {
+          "inner_oof_auc": 0.5906201095461658,
+          "direction": 1
+        },
+        "029": {
+          "inner_oof_auc": 0.40223199508204477,
+          "direction": -1
+        },
+        "031": {
+          "inner_oof_auc": 0.8433101895289923,
+          "direction": 1
+        },
+        "034": {
+          "inner_oof_auc": 0.6788548752834467,
+          "direction": 1
+        },
+        "035": {
+          "inner_oof_auc": 0.7062631949331457,
+          "direction": 1
+        },
+        "036": {
+          "inner_oof_auc": 0.6960127116540046,
+          "direction": 1
+        },
+        "037": {
+          "inner_oof_auc": 0.3842911877394635,
+          "direction": -1
+        },
+        "038": {
+          "inner_oof_auc": 0.49035825692409485,
+          "direction": -1
+        },
+        "039": {
+          "inner_oof_auc": 0.5375547479265679,
+          "direction": 1
+        },
+        "040": {
+          "inner_oof_auc": 0.6712244897959183,
+          "direction": 1
+        },
+        "041": {
+          "inner_oof_auc": 0.6652519893899205,
+          "direction": 1
+        },
+        "042": {
+          "inner_oof_auc": 0.3528021274500147,
+          "direction": -1
+        },
+        "043": {
+          "inner_oof_auc": 0.6472423510466989,
+          "direction": 1
+        },
+        "045": {
+          "inner_oof_auc": 0.6250744490768314,
+          "direction": 1
+        },
+        "046": {
+          "inner_oof_auc": 0.664352311049395,
+          "direction": 1
+        },
+        "048": {
+          "inner_oof_auc": 0.7093802748975163,
+          "direction": 1
+        },
+        "049": {
+          "inner_oof_auc": 0.7037726358148892,
+          "direction": 1
+        },
+        "050": {
+          "inner_oof_auc": 0.5590092277804759,
+          "direction": 1
+        },
+        "051": {
+          "inner_oof_auc": 0.6622566622566622,
+          "direction": 1
+        },
+        "053": {
+          "inner_oof_auc": 0.6506849315068494,
+          "direction": 1
+        },
+        "054": {
+          "inner_oof_auc": 0.7244252873563218,
+          "direction": 1
+        },
+        "055": {
+          "inner_oof_auc": 0.6242468415937804,
+          "direction": 1
+        },
+        "056": {
+          "inner_oof_auc": 0.7241039594670671,
+          "direction": 1
+        },
+        "057": {
+          "inner_oof_auc": 0.7044072948328268,
+          "direction": 1
+        },
+        "058": {
+          "inner_oof_auc": 0.7888409961685824,
+          "direction": 1
+        },
+        "059": {
+          "inner_oof_auc": 0.6699396493917041,
+          "direction": 1
+        }
+      },
+      "fixed_global_test_direction": 1,
+      "baseline_iterations": 1466,
+      "polarity_iterations": 1403,
+      "baseline_test": {
+        "oof_auc": 0.65046327227906,
+        "oof_bacc": 0.6144753454599641,
+        "subject_macro_auc": 0.659752400025697,
+        "subject_macro_bacc": 0.6156162951219785,
+        "subjects_auc_below_0_5_count": 1,
+        "subjects_auc_below_0_5_fraction": 0.09090909090909091,
+        "auc_eligible_subjects": 11,
+        "single_class_subjects": 0,
+        "oracle_only": {
+          "mean_max_auc_1_minus_auc": 0.6621636654577959,
+          "max_max_auc_1_minus_auc": 0.821171931516759,
+          "warning": "Uses held-out labels separately for each subject; diagnostic upper bound, NOT deployable."
+        },
+        "per_subject": [
+          {
+            "subject": "002",
+            "n": 271,
+            "auc": 0.5854589056027905,
+            "bacc": 0.5635764115979943,
+            "oracle_only_orientation_invariant_auc": 0.5854589056027905
+          },
+          {
+            "subject": "010",
+            "n": 290,
+            "auc": 0.6814592846270929,
+            "bacc": 0.6174372146118722,
+            "oracle_only_orientation_invariant_auc": 0.6814592846270929
+          },
+          {
+            "subject": "014",
+            "n": 291,
+            "auc": 0.5616969009826153,
+            "bacc": 0.559594671201814,
+            "oracle_only_orientation_invariant_auc": 0.5616969009826153
+          },
+          {
+            "subject": "018",
+            "n": 288,
+            "auc": 0.821171931516759,
+            "bacc": 0.7494574391126115,
+            "oracle_only_orientation_invariant_auc": 0.821171931516759
+          },
+          {
+            "subject": "020",
+            "n": 282,
+            "auc": 0.6946960547504026,
+            "bacc": 0.6464371980676329,
+            "oracle_only_orientation_invariant_auc": 0.6946960547504026
+          },
+          {
+            "subject": "021",
+            "n": 285,
+            "auc": 0.7466758593519157,
+            "bacc": 0.6807347581995469,
+            "oracle_only_orientation_invariant_auc": 0.7466758593519157
+          },
+          {
+            "subject": "027",
+            "n": 281,
+            "auc": 0.5423135464231355,
+            "bacc": 0.5111364789446982,
+            "oracle_only_orientation_invariant_auc": 0.5423135464231355
+          },
+          {
+            "subject": "030",
+            "n": 296,
+            "auc": 0.7066611879651189,
+            "bacc": 0.6463269871707072,
+            "oracle_only_orientation_invariant_auc": 0.7066611879651189
+          },
+          {
+            "subject": "044",
+            "n": 284,
+            "auc": 0.7850128942670105,
+            "bacc": 0.7605633802816901,
+            "oracle_only_orientation_invariant_auc": 0.7850128942670105
+          },
+          {
+            "subject": "047",
+            "n": 287,
+            "auc": 0.6453917946723702,
+            "bacc": 0.5955424849309742,
+            "oracle_only_orientation_invariant_auc": 0.6453917946723702
+          },
+          {
+            "subject": "052",
+            "n": 288,
+            "auc": 0.48673804012345673,
+            "bacc": 0.4409722222222222,
+            "oracle_only_orientation_invariant_auc": 0.5132619598765433
+          }
+        ]
+      },
+      "polarity_test": {
+        "oof_auc": 0.6226774635306199,
+        "oof_bacc": 0.5958758198676226,
+        "subject_macro_auc": 0.6361320703226023,
+        "subject_macro_bacc": 0.5973995852429596,
+        "subjects_auc_below_0_5_count": 2,
+        "subjects_auc_below_0_5_fraction": 0.18181818181818182,
+        "auc_eligible_subjects": 11,
+        "single_class_subjects": 0,
+        "oracle_only": {
+          "mean_max_auc_1_minus_auc": 0.6398019982933293,
+          "max_max_auc_1_minus_auc": 0.8353501289426701,
+          "warning": "Uses held-out labels separately for each subject; diagnostic upper bound, NOT deployable."
+        },
+        "per_subject": [
+          {
+            "subject": "002",
+            "n": 271,
+            "auc": 0.6267713102245477,
+            "bacc": 0.5671735339001526,
+            "oracle_only_orientation_invariant_auc": 0.6267713102245477
+          },
+          {
+            "subject": "010",
+            "n": 290,
+            "auc": 0.4984303652968037,
+            "bacc": 0.4856830289193303,
+            "oracle_only_orientation_invariant_auc": 0.5015696347031964
+          },
+          {
+            "subject": "014",
+            "n": 291,
+            "auc": 0.5460600907029478,
+            "bacc": 0.5079365079365079,
+            "oracle_only_orientation_invariant_auc": 0.5460600907029478
+          },
+          {
+            "subject": "018",
+            "n": 288,
+            "auc": 0.7825415963346997,
+            "bacc": 0.7223052809259706,
+            "oracle_only_orientation_invariant_auc": 0.7825415963346997
+          },
+          {
+            "subject": "020",
+            "n": 282,
+            "auc": 0.6567532206119163,
+            "bacc": 0.6455314009661836,
+            "oracle_only_orientation_invariant_auc": 0.6567532206119163
+          },
+          {
+            "subject": "021",
+            "n": 285,
+            "auc": 0.677533733871762,
+            "bacc": 0.6349354870481632,
+            "oracle_only_orientation_invariant_auc": 0.677533733871762
+          },
+          {
+            "subject": "027",
+            "n": 281,
+            "auc": 0.5596651445966514,
+            "bacc": 0.5449010654490107,
+            "oracle_only_orientation_invariant_auc": 0.5596651445966514
+          },
+          {
+            "subject": "030",
+            "n": 296,
+            "auc": 0.692188284709857,
+            "bacc": 0.6592475916541114,
+            "oracle_only_orientation_invariant_auc": 0.692188284709857
+          },
+          {
+            "subject": "044",
+            "n": 284,
+            "auc": 0.8353501289426701,
+            "bacc": 0.7922535211267605,
+            "oracle_only_orientation_invariant_auc": 0.8353501289426701
+          },
+          {
+            "subject": "047",
+            "n": 287,
+            "auc": 0.6407738673925724,
+            "bacc": 0.5912891308574761,
+            "oracle_only_orientation_invariant_auc": 0.6407738673925724
+          },
+          {
+            "subject": "052",
+            "n": 288,
+            "auc": 0.48138503086419754,
+            "bacc": 0.4201388888888889,
+            "oracle_only_orientation_invariant_auc": 0.5186149691358024
+          }
+        ]
+      },
+      "seconds": 95.20362339999701
+    }
+  ],
+  "runtime_seconds": 454.601118700004
+}
