@@ -1,0 +1,111 @@
+[    13.1s] loaded database n=16067 subjects=57 features=876 eval=9227 order=relax/task arrays per subject; raw x/highdim not used
+[    21.6s] A100 fold=1/5 train=7429 test=1798 elapsed=7.3s
+[    27.2s] A100 fold=2/5 train=7403 test=1824 elapsed=5.6s
+[    32.8s] A100 fold=3/5 train=7406 test=1821 elapsed=5.6s
+[    38.6s] A100 fold=4/5 train=7266 test=1961 elapsed=5.8s
+[    44.4s] A100 fold=5/5 train=7404 test=1823 elapsed=5.8s
+[    51.2s] A200 fold=1/5 train=7429 test=1798 elapsed=5.7s
+[    56.9s] A200 fold=2/5 train=7403 test=1824 elapsed=5.6s
+[    62.7s] A200 fold=3/5 train=7406 test=1821 elapsed=5.8s
+[    68.1s] A200 fold=4/5 train=7266 test=1961 elapsed=5.5s
+[    74.0s] A200 fold=5/5 train=7404 test=1823 elapsed=5.9s
+[    80.7s] A400 fold=1/5 train=7429 test=1798 elapsed=5.5s
+[    86.4s] A400 fold=2/5 train=7403 test=1824 elapsed=5.7s
+[    92.0s] A400 fold=3/5 train=7406 test=1821 elapsed=5.6s
+[    97.4s] A400 fold=4/5 train=7266 test=1961 elapsed=5.4s
+[   103.0s] A400 fold=5/5 train=7404 test=1823 elapsed=5.6s
+[   103.0s] A averaged probabilities
+[   109.8s] D50 fold=1/5 train=7429 test=1798 elapsed=5.7s
+[   115.4s] D50 fold=2/5 train=7403 test=1824 elapsed=5.5s
+[   120.6s] D50 fold=3/5 train=7406 test=1821 elapsed=5.3s
+[   126.3s] D50 fold=4/5 train=7266 test=1961 elapsed=5.7s
+[   132.0s] D50 fold=5/5 train=7404 test=1823 elapsed=5.6s
+[   138.5s] D100 fold=1/5 train=7429 test=1798 elapsed=5.4s
+[   144.3s] D100 fold=2/5 train=7403 test=1824 elapsed=5.8s
+[   150.3s] D100 fold=3/5 train=7406 test=1821 elapsed=6.0s
+[   156.2s] D100 fold=4/5 train=7266 test=1961 elapsed=6.0s
+[   162.1s] D100 fold=5/5 train=7404 test=1823 elapsed=5.8s
+[   169.2s] D200 fold=1/5 train=7429 test=1798 elapsed=5.9s
+[   175.0s] D200 fold=2/5 train=7403 test=1824 elapsed=5.8s
+[   180.9s] D200 fold=3/5 train=7406 test=1821 elapsed=5.9s
+[   186.9s] D200 fold=4/5 train=7266 test=1961 elapsed=6.0s
+[   192.6s] D200 fold=5/5 train=7404 test=1823 elapsed=5.7s
+[   199.4s] D400 fold=1/5 train=7429 test=1798 elapsed=5.7s
+[   205.1s] D400 fold=2/5 train=7403 test=1824 elapsed=5.6s
+[   210.7s] D400 fold=3/5 train=7406 test=1821 elapsed=5.6s
+[   216.6s] D400 fold=4/5 train=7266 test=1961 elapsed=5.9s
+[   222.6s] D400 fold=5/5 train=7404 test=1823 elapsed=6.0s
+[   229.4s] D800 fold=1/5 train=7429 test=1798 elapsed=5.6s
+[   235.3s] D800 fold=2/5 train=7403 test=1824 elapsed=5.9s
+[   240.9s] D800 fold=3/5 train=7406 test=1821 elapsed=5.6s
+[   246.8s] D800 fold=4/5 train=7266 test=1961 elapsed=6.0s
+[   252.7s] D800 fold=5/5 train=7404 test=1823 elapsed=5.8s
+[   252.7s] D averaged probabilities
+[   253.1s] A window AUC=0.9597 bACC=0.8743; smooth5 AUC=0.9697 bACC=0.9266 R->T=0.9745531981798005 T->R=None
+[   253.4s] D window AUC=0.9620 bACC=0.8792; smooth5 AUC=0.9707 bACC=0.9282 R->T=0.9718927807547335 T->R=None
+[   255.3s] bootstrap 200/2000
+[   257.2s] bootstrap 400/2000
+[   259.2s] bootstrap 600/2000
+[   261.0s] bootstrap 800/2000
+[   262.9s] bootstrap 1000/2000
+[   264.8s] bootstrap 1200/2000
+[   266.8s] bootstrap 1400/2000
+[   268.6s] bootstrap 1600/2000
+[   270.5s] bootstrap 1800/2000
+[   272.5s] bootstrap 2000/2000
+[   276.8s] baseline_q fold=1/5 train=7429 test=1798 elapsed=4.4s
+[   281.4s] baseline_q fold=2/5 train=7403 test=1824 elapsed=4.6s
+[   285.8s] baseline_q fold=3/5 train=7406 test=1821 elapsed=4.3s
+[   289.9s] baseline_q fold=4/5 train=7266 test=1961 elapsed=4.1s
+[   294.4s] baseline_q fold=5/5 train=7404 test=1823 elapsed=4.5s
+[   301.8s] audit/same_label_block_swap/D50 fold=1/5 train=7517 test=1710 elapsed=5.0s
+[   306.4s] audit/same_label_block_swap/D50 fold=2/5 train=7295 test=1932 elapsed=4.6s
+[   311.4s] audit/same_label_block_swap/D50 fold=3/5 train=7673 test=1554 elapsed=5.0s
+[   316.1s] audit/same_label_block_swap/D50 fold=4/5 train=7113 test=2114 elapsed=4.7s
+[   320.7s] audit/same_label_block_swap/D50 fold=5/5 train=7310 test=1917 elapsed=4.6s
+[   327.0s] audit/same_label_block_swap/D100 fold=1/5 train=7517 test=1710 elapsed=5.2s
+[   331.8s] audit/same_label_block_swap/D100 fold=2/5 train=7295 test=1932 elapsed=4.8s
+[   337.0s] audit/same_label_block_swap/D100 fold=3/5 train=7673 test=1554 elapsed=5.2s
+[   341.9s] audit/same_label_block_swap/D100 fold=4/5 train=7113 test=2114 elapsed=4.9s
+[   346.9s] audit/same_label_block_swap/D100 fold=5/5 train=7310 test=1917 elapsed=5.1s
+[   353.0s] audit/same_label_block_swap/D200 fold=1/5 train=7517 test=1710 elapsed=5.0s
+[   357.9s] audit/same_label_block_swap/D200 fold=2/5 train=7295 test=1932 elapsed=4.8s
+[   362.8s] audit/same_label_block_swap/D200 fold=3/5 train=7673 test=1554 elapsed=4.9s
+[   367.4s] audit/same_label_block_swap/D200 fold=4/5 train=7113 test=2114 elapsed=4.6s
+[   372.7s] audit/same_label_block_swap/D200 fold=5/5 train=7310 test=1917 elapsed=5.3s
+[   378.7s] audit/same_label_block_swap/D400 fold=1/5 train=7517 test=1710 elapsed=4.9s
+[   383.6s] audit/same_label_block_swap/D400 fold=2/5 train=7295 test=1932 elapsed=4.9s
+[   388.6s] audit/same_label_block_swap/D400 fold=3/5 train=7673 test=1554 elapsed=5.1s
+[   394.2s] audit/same_label_block_swap/D400 fold=4/5 train=7113 test=2114 elapsed=5.6s
+[   399.2s] audit/same_label_block_swap/D400 fold=5/5 train=7310 test=1917 elapsed=4.9s
+[   405.3s] audit/same_label_block_swap/D800 fold=1/5 train=7517 test=1710 elapsed=5.1s
+[   410.1s] audit/same_label_block_swap/D800 fold=2/5 train=7295 test=1932 elapsed=4.8s
+[   415.2s] audit/same_label_block_swap/D800 fold=3/5 train=7673 test=1554 elapsed=5.0s
+[   419.9s] audit/same_label_block_swap/D800 fold=4/5 train=7113 test=2114 elapsed=4.7s
+[   424.6s] audit/same_label_block_swap/D800 fold=5/5 train=7310 test=1917 elapsed=4.7s
+[   431.4s] audit/whole_block_random_reorder/D50 fold=1/5 train=7517 test=1710 elapsed=4.3s
+[   435.6s] audit/whole_block_random_reorder/D50 fold=2/5 train=7295 test=1932 elapsed=4.3s
+[   440.2s] audit/whole_block_random_reorder/D50 fold=3/5 train=7673 test=1554 elapsed=4.6s
+[   444.3s] audit/whole_block_random_reorder/D50 fold=4/5 train=7113 test=2114 elapsed=4.1s
+[   448.4s] audit/whole_block_random_reorder/D50 fold=5/5 train=7310 test=1917 elapsed=4.2s
+[   454.0s] audit/whole_block_random_reorder/D100 fold=1/5 train=7517 test=1710 elapsed=4.6s
+[   458.4s] audit/whole_block_random_reorder/D100 fold=2/5 train=7295 test=1932 elapsed=4.3s
+[   463.1s] audit/whole_block_random_reorder/D100 fold=3/5 train=7673 test=1554 elapsed=4.8s
+[   467.5s] audit/whole_block_random_reorder/D100 fold=4/5 train=7113 test=2114 elapsed=4.3s
+[   472.0s] audit/whole_block_random_reorder/D100 fold=5/5 train=7310 test=1917 elapsed=4.6s
+[   477.6s] audit/whole_block_random_reorder/D200 fold=1/5 train=7517 test=1710 elapsed=4.4s
+[   481.9s] audit/whole_block_random_reorder/D200 fold=2/5 train=7295 test=1932 elapsed=4.3s
+[   486.2s] audit/whole_block_random_reorder/D200 fold=3/5 train=7673 test=1554 elapsed=4.4s
+[   490.5s] audit/whole_block_random_reorder/D200 fold=4/5 train=7113 test=2114 elapsed=4.3s
+[   494.9s] audit/whole_block_random_reorder/D200 fold=5/5 train=7310 test=1917 elapsed=4.3s
+[   500.4s] audit/whole_block_random_reorder/D400 fold=1/5 train=7517 test=1710 elapsed=4.4s
+[   504.6s] audit/whole_block_random_reorder/D400 fold=2/5 train=7295 test=1932 elapsed=4.3s
+[   509.1s] audit/whole_block_random_reorder/D400 fold=3/5 train=7673 test=1554 elapsed=4.4s
+[   513.4s] audit/whole_block_random_reorder/D400 fold=4/5 train=7113 test=2114 elapsed=4.4s
+[   517.8s] audit/whole_block_random_reorder/D400 fold=5/5 train=7310 test=1917 elapsed=4.4s
+[   523.1s] audit/whole_block_random_reorder/D800 fold=1/5 train=7517 test=1710 elapsed=4.3s
+[   527.3s] audit/whole_block_random_reorder/D800 fold=2/5 train=7295 test=1932 elapsed=4.2s
+[   531.7s] audit/whole_block_random_reorder/D800 fold=3/5 train=7673 test=1554 elapsed=4.4s
+[   536.1s] audit/whole_block_random_reorder/D800 fold=4/5 train=7113 test=2114 elapsed=4.4s
+[   540.3s] audit/whole_block_random_reorder/D800 fold=5/5 train=7310 test=1917 elapsed=4.2s
+[   540.7s] done elapsed=540.7s reaches_0.9=True
