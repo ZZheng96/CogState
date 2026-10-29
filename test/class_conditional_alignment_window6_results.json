@@ -1,0 +1,209 @@
+{
+  "protocol": {
+    "cv": "StratifiedGroupKFold(5, shuffle=True, random_state=0)",
+    "input": "highdim_deep_features.npz X (858) + emg_features_v2.npz E (20)",
+    "window": "strict current 6-second feature window; all available training-subject windows",
+    "standardization": "per-fold training-window mean/std; constant columns removed per fold",
+    "model": "MLP encoder 878->128->32 + binary state head",
+    "loss": "BCE + lambda * mean same-class subject-mean squared distance to same-class training-subject grand mean",
+    "lambdas": [
+      0.0,
+      0.05,
+      0.2
+    ],
+    "epochs": 18,
+    "batch_size": 256,
+    "optimizer": "AdamW(lr=1e-3, weight_decay=1e-3)",
+    "seed": 0,
+    "test_history": false,
+    "test_subject_statistics": false,
+    "alignment_uses": "training-fold labels and training-fold subjects only; no R/T mixing"
+  },
+  "models": {
+    "0.0": {
+      "AUC": 0.6237383449964717,
+      "bACC": 0.5926914098126553,
+      "fold_mean_AUC": 0.6300385545160383,
+      "fold_mean_bACC": 0.5925004978906827,
+      "folds": [
+        {
+          "fold": 1,
+          "AUC": 0.5897638141932022,
+          "bACC": 0.5621405709390611,
+          "n_test": 3118,
+          "train_subjects": 46,
+          "test_subjects": 11
+        },
+        {
+          "fold": 2,
+          "AUC": 0.6714912766520668,
+          "bACC": 0.6137065357992382,
+          "n_test": 3264,
+          "train_subjects": 45,
+          "test_subjects": 12
+        },
+        {
+          "fold": 3,
+          "AUC": 0.6447830751502837,
+          "bACC": 0.5953620306705731,
+          "n_test": 3141,
+          "train_subjects": 46,
+          "test_subjects": 11
+        },
+        {
+          "fold": 4,
+          "AUC": 0.6196120682202197,
+          "bACC": 0.5981934810529744,
+          "n_test": 3401,
+          "train_subjects": 45,
+          "test_subjects": 12
+        },
+        {
+          "fold": 5,
+          "AUC": 0.6245425383644192,
+          "bACC": 0.5930998709915671,
+          "n_test": 3143,
+          "train_subjects": 46,
+          "test_subjects": 11
+        }
+      ]
+    },
+    "0.05": {
+      "AUC": 0.6209022592740312,
+      "bACC": 0.5930040073347459,
+      "fold_mean_AUC": 0.6239049282250732,
+      "fold_mean_bACC": 0.5929461079852111,
+      "folds": [
+        {
+          "fold": 1,
+          "AUC": 0.5904894098420148,
+          "bACC": 0.5658609201630831,
+          "n_test": 3118,
+          "train_subjects": 46,
+          "test_subjects": 11
+        },
+        {
+          "fold": 2,
+          "AUC": 0.6612348423264013,
+          "bACC": 0.6171036945392011,
+          "n_test": 3264,
+          "train_subjects": 45,
+          "test_subjects": 12
+        },
+        {
+          "fold": 3,
+          "AUC": 0.6246049811501911,
+          "bACC": 0.5941148374634783,
+          "n_test": 3141,
+          "train_subjects": 46,
+          "test_subjects": 11
+        },
+        {
+          "fold": 4,
+          "AUC": 0.6238300110592614,
+          "bACC": 0.5902424322905535,
+          "n_test": 3401,
+          "train_subjects": 45,
+          "test_subjects": 12
+        },
+        {
+          "fold": 5,
+          "AUC": 0.6193653967474974,
+          "bACC": 0.5974086554697389,
+          "n_test": 3143,
+          "train_subjects": 46,
+          "test_subjects": 11
+        }
+      ]
+    },
+    "0.2": {
+      "AUC": 0.6258287615132236,
+      "bACC": 0.5885890360610543,
+      "fold_mean_AUC": 0.6284043841113978,
+      "fold_mean_bACC": 0.5884735706433731,
+      "folds": [
+        {
+          "fold": 1,
+          "AUC": 0.5915404640438247,
+          "bACC": 0.5677554510193106,
+          "n_test": 3118,
+          "train_subjects": 46,
+          "test_subjects": 11
+        },
+        {
+          "fold": 2,
+          "AUC": 0.6681463096849531,
+          "bACC": 0.6057146236466279,
+          "n_test": 3264,
+          "train_subjects": 45,
+          "test_subjects": 12
+        },
+        {
+          "fold": 3,
+          "AUC": 0.6521598012924426,
+          "bACC": 0.6040337942325829,
+          "n_test": 3141,
+          "train_subjects": 46,
+          "test_subjects": 11
+        },
+        {
+          "fold": 4,
+          "AUC": 0.6361542749682366,
+          "bACC": 0.5891008868849885,
+          "n_test": 3401,
+          "train_subjects": 45,
+          "test_subjects": 12
+        },
+        {
+          "fold": 5,
+          "AUC": 0.5940210705675317,
+          "bACC": 0.5757630974333557,
+          "n_test": 3143,
+          "train_subjects": 46,
+          "test_subjects": 11
+        }
+      ]
+    }
+  },
+  "paired_subject_bootstrap_vs_lambda0": {
+    "0.05": {
+      "n_bootstrap": 2000,
+      "delta_AUC": {
+        "estimate": -0.002612637400716576,
+        "ci95": [
+          -0.017124932517592985,
+          0.010894717790406312
+        ],
+        "p_positive": 0.3615
+      },
+      "delta_bACC": {
+        "estimate": 0.0004935089454037434,
+        "ci95": [
+          -0.012281388313304251,
+          0.013504765840355055
+        ],
+        "p_positive": 0.5355
+      }
+    },
+    "0.2": {
+      "n_bootstrap": 2000,
+      "delta_AUC": {
+        "estimate": 0.0020590097010226237,
+        "ci95": [
+          -0.01394795568245516,
+          0.018549088233708613
+        ],
+        "p_positive": 0.596
+      },
+      "delta_bACC": {
+        "estimate": -0.0041865559320274515,
+        "ci95": [
+          -0.01656454046370063,
+          0.008800846122804856
+        ],
+        "p_positive": 0.2595
+      }
+    }
+  },
+  "runtime_seconds": 185.33106769999722
+}
