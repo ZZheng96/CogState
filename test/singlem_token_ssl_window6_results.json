@@ -1,0 +1,157 @@
+{
+  "seed": 0,
+  "folds": 5,
+  "subjects": 57,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+  "elapsed_sec": 28.444050699996296,
+  "parameter_counts": {
+    "pooling_logistic": 49,
+    "attention_gated": 2818,
+    "attention_gated_ssl": 2818
+  },
+  "methods": {
+    "pooling_logistic": {
+      "auc": 0.5840572784522782,
+      "bACC": 0.5625012744694255,
+      "subject_macro_auc": 0.5884121713545287,
+      "subject_macro_bACC": 0.5626724824990025
+    },
+    "attention_gated": {
+      "auc": 0.5489292132564654,
+      "bACC": 0.5386704626486714,
+      "subject_macro_auc": 0.5522525374042548,
+      "subject_macro_bACC": 0.5390245650294507
+    },
+    "attention_gated_ssl": {
+      "auc": 0.5581025420280504,
+      "bACC": 0.5427539789012943,
+      "subject_macro_auc": 0.5613648953507722,
+      "subject_macro_bACC": 0.5425496090210731
+    }
+  },
+  "fold_info": [
+    {
+      "fold": 1,
+      "test_subjects": [
+        "009",
+        "022",
+        "023",
+        "024",
+        "029",
+        "037",
+        "045",
+        "048",
+        "051",
+        "053",
+        "055"
+      ],
+      "attention_gated": {
+        "epochs": 17,
+        "val_auc": 0.5495634113539547
+      },
+      "attention_gated_ssl": {
+        "epochs": 8,
+        "val_auc": 0.5533970880840229
+      }
+    },
+    {
+      "fold": 2,
+      "test_subjects": [
+        "003",
+        "012",
+        "034",
+        "035",
+        "036",
+        "038",
+        "039",
+        "041",
+        "046",
+        "050",
+        "058",
+        "059"
+      ],
+      "attention_gated": {
+        "epochs": 9,
+        "val_auc": 0.5751701020612368
+      },
+      "attention_gated_ssl": {
+        "epochs": 13,
+        "val_auc": 0.5844918715935443
+      }
+    },
+    {
+      "fold": 3,
+      "test_subjects": [
+        "001",
+        "005",
+        "006",
+        "007",
+        "011",
+        "017",
+        "019",
+        "025",
+        "026",
+        "031",
+        "057"
+      ],
+      "attention_gated": {
+        "epochs": 8,
+        "val_auc": 0.5182759413137874
+      },
+      "attention_gated_ssl": {
+        "epochs": 8,
+        "val_auc": 0.5138983635110128
+      }
+    },
+    {
+      "fold": 4,
+      "test_subjects": [
+        "004",
+        "008",
+        "013",
+        "015",
+        "016",
+        "028",
+        "040",
+        "042",
+        "043",
+        "049",
+        "054",
+        "056"
+      ],
+      "attention_gated": {
+        "epochs": 8,
+        "val_auc": 0.5192125191717791
+      },
+      "attention_gated_ssl": {
+        "epochs": 9,
+        "val_auc": 0.5205428609087424
+      }
+    },
+    {
+      "fold": 5,
+      "test_subjects": [
+        "002",
+        "010",
+        "014",
+        "018",
+        "020",
+        "021",
+        "027",
+        "030",
+        "044",
+        "047",
+        "052"
+      ],
+      "attention_gated": {
+        "epochs": 8,
+        "val_auc": 0.5260492970577004
+      },
+      "attention_gated_ssl": {
+        "epochs": 28,
+        "val_auc": 0.5098209762075309
+      }
+    }
+  ]
+}
