@@ -1,0 +1,19 @@
+[16:32:41 +    0.6s] [data] windows=1106 subjects=4 blocks=24 tasks(two-class train)=24 device=cuda
+[16:32:44 +    4.1s] [lr] done 24 block-folds
+[16:32:45 +    4.3s] [hgb] done 24 block-folds
+[16:32:56 +   15.9s] [cnn] done
+[16:32:56 +   16.1s] [summary] lr    bACC median=0.6354 IQR=[0.4541,0.7576] mean=0.5763 >=0.9=0.000 AUC median=0.6476 micro=0.5769
+[16:32:56 +   16.1s] [summary] hgb   bACC median=0.5676 IQR=[0.4045,0.6926] mean=0.5294 >=0.9=0.000 AUC median=0.5674 micro=0.5308
+[16:32:56 +   16.1s] [summary] cnn   bACC median=0.4166 IQR=[0.3406,0.5058] mean=0.4299 >=0.9=0.000 AUC median=0.4281 micro=0.4378
+[16:32:56 +   16.1s] [summary] mean3 bACC median=0.5710 IQR=[0.3789,0.7173] mean=0.5251 >=0.9=0.000 AUC median=0.5604 micro=0.5276
+[16:32:56 +   16.1s] [spearman] lr    amp_std_median=+0.40(p=0.600) hf_noise_ratio_median=-0.20(p=0.800) flat_or_bad_frac=+0.40(p=0.600) max_abs_cohen_d=+0.80(p=0.200) direction_flip=-0.77(p=0.225) merge_best_auc=+0.80(p=0.200) n_blocks=+nan(p=nan) n_windows=-0.40(p=0.600)
+[16:32:56 +   16.1s] [spearman] hgb   amp_std_median=+0.40(p=0.600) hf_noise_ratio_median=-0.20(p=0.800) flat_or_bad_frac=+0.40(p=0.600) max_abs_cohen_d=+0.80(p=0.200) direction_flip=-0.77(p=0.225) merge_best_auc=+0.80(p=0.200) n_blocks=+nan(p=nan) n_windows=-0.40(p=0.600)
+[16:32:56 +   16.1s] [spearman] cnn   amp_std_median=+0.40(p=0.600) hf_noise_ratio_median=+0.20(p=0.800) flat_or_bad_frac=+0.40(p=0.600) max_abs_cohen_d=+0.80(p=0.200) direction_flip=-0.26(p=0.742) merge_best_auc=+0.80(p=0.200) n_blocks=+nan(p=nan) n_windows=+0.40(p=0.600)
+[16:32:56 +   16.1s] [spearman] mean3 amp_std_median=+0.40(p=0.600) hf_noise_ratio_median=-0.20(p=0.800) flat_or_bad_frac=+0.40(p=0.600) max_abs_cohen_d=+0.80(p=0.200) direction_flip=-0.77(p=0.225) merge_best_auc=+0.80(p=0.200) n_blocks=+nan(p=nan) n_windows=-0.40(p=0.600)
+[16:32:56 +   16.1s] [table] subject  bACC(lr/hgb/cnn/mean3)  AUC_mean3  blocks  amp  hf  bad  maxd  mbAUC
+[16:32:56 +   16.1s]   003 0.762/0.708/0.486/0.726 0.761 6 0.000411 0.004 0.086 1.20 0.628
+[16:32:56 +   16.1s]   001 0.756/0.687/0.566/0.714 0.804 6 0.000125 0.012 0.107 1.55 0.830
+[16:32:56 +   16.1s]   002 0.515/0.448/0.321/0.428 0.360 6 8.04e-05 0.010 0.089 0.55 0.598
+[16:32:56 +   16.1s]   004 0.272/0.274/0.347/0.233 0.153 6 0.00036 0.010 0.083 0.44 0.494
+[16:32:56 +   16.1s] [groups] {"top_quartile": {"subjects": ["003"], "amp_std_median": 0.00041128126905940675, "hf_noise_ratio_median": 0.004017460964993025, "flat_or_bad_frac": 0.08582089552238806, "max_abs_cohen_d": 1.1960724068243755, "direction_flip": 0.0, "merge_best_auc": 0.6275700674207388, "n_blocks": 6.0, "n_windows": 268.0}, "bottom_quartile": {"subjects": ["004"], "amp_std_median": 0.0003600429848680105, "hf_noise_ratio_median": 0.009582699611939013, "flat_or_bad_frac": 0.08333333333333333, "max_abs_cohen_d": 0.43502575869505794, "direction_flip": 1.0, "merge_best_auc": 0.49445291550554704, "n_blocks": 6.0, "n_windows": 276.0}}
+[16:32:56 +   16.1s] [done] -> per_subject_ceiling_smoke_results.json, per_subject_ceiling_smoke_oof.npz

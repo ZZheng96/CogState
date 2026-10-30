@@ -1,0 +1,385 @@
+{
+  "protocol": {
+    "deployable": true,
+    "window_points": 1500,
+    "test_subject_isolation": true,
+    "window_variant": "strict single window: features depend only on current 1500-sample window and train-fold templates",
+    "causal_variant": "subtract own past unlabeled mean (prior 32 windows at train grand mean G), predict-then-update",
+    "templates": "outer/inner train only: per-subject unlabeled mean-centering, class means per subject averaged over subjects; train-window features use leave-one-subject-out templates; sigma = pooled within-subject std (unlabeled)",
+    "features": 24,
+    "vector": "54 = 45 log-PSD bins 1-45 Hz (self-referenced) + 52-100 Hz rel + 8 sub-window stats",
+    "classifiers": {
+      "lr": "StandardScaler+LR(C=1,balanced)",
+      "hgb": "HistGB(150,depth3,lr0.06,balanced)"
+    },
+    "threshold": "inner SGKF(4,shuffle,rs=fold) first split, maximize subject-macro bACC over 97 quantile candidates; refit on outer train",
+    "outer_cv": "StratifiedGroupKFold(5, shuffle=True, random_state=0) == seed_noise_band fold_id",
+    "fusion": "0.5*logit(B) + 0.5*merge_best combo__C4_bb_resnet_eq; fixed threshold 0 (same as baseline bACC@0); no weight search",
+    "bootstrap": "paired subject bootstrap 1000, seed 20261029; macro = mean of per-subject bACC over drawn subjects",
+    "hyperparameter_search": false
+  },
+  "methods": {
+    "window_lr": {
+      "AUC": 0.5218066182913066,
+      "macro_bACC_inner_thr": 0.4897949452878579,
+      "micro_bACC_inner_thr": 0.4901346565089548,
+      "macro_bACC_at_0.5": 0.5107285932412683,
+      "micro_bACC_at_0.5": 0.5111991000623719,
+      "thresholds": [
+        0.09386403773397835,
+        0.3504756477962417,
+        0.5030311618569923,
+        0.40227276239137466,
+        0.4687132131608937
+      ]
+    },
+    "window_hgb": {
+      "AUC": 0.5233590710297306,
+      "macro_bACC_inner_thr": 0.4983094848794108,
+      "micro_bACC_inner_thr": 0.49717655707030206,
+      "macro_bACC_at_0.5": 0.5148107958619698,
+      "micro_bACC_at_0.5": 0.5130201372182126,
+      "thresholds": [
+        0.25427598925664135,
+        0.2860073509679369,
+        0.5761918066200199,
+        0.26002125779840624,
+        0.4117357388210126
+      ]
+    },
+    "causal_lr": {
+      "AUC": 0.5247594226142742,
+      "macro_bACC_inner_thr": 0.5170672780314206,
+      "micro_bACC_inner_thr": 0.5177704268021028,
+      "macro_bACC_at_0.5": 0.5117422674637078,
+      "micro_bACC_at_0.5": 0.5111545486946449,
+      "thresholds": [
+        0.18597741281179633,
+        0.46869374081831994,
+        0.41212175591572564,
+        0.3939814077928726,
+        0.4589047982492415
+      ]
+    },
+    "causal_hgb": {
+      "AUC": 0.5270708728726722,
+      "macro_bACC_inner_thr": 0.5268389783137021,
+      "micro_bACC_inner_thr": 0.5278251136059877,
+      "macro_bACC_at_0.5": 0.5082562734317924,
+      "micro_bACC_at_0.5": 0.508194667201283,
+      "thresholds": [
+        0.17434241105208506,
+        0.3795000032622628,
+        0.2758051779872143,
+        0.3480235483057988,
+        0.43816596170115596
+      ]
+    }
+  },
+  "fusion_at0": {
+    "merge_best": {
+      "AUC": 0.6436812934375835,
+      "macro_bACC": 0.6130519922112119,
+      "micro_bACC": 0.6105932014612849
+    },
+    "fuse_window_lr": {
+      "AUC": 0.6216176926475394,
+      "macro_bACC": 0.5887949873072933,
+      "micro_bACC": 0.5869948988683953
+    },
+    "B_window_lr": {
+      "AUC": 0.5218066182913066,
+      "macro_bACC": 0.5107285932412683,
+      "micro_bACC": 0.5111991000623719
+    },
+    "fuse_window_hgb": {
+      "AUC": 0.6110293175844248,
+      "macro_bACC": 0.5847426459287731,
+      "micro_bACC": 0.5819104740265526
+    },
+    "B_window_hgb": {
+      "AUC": 0.5233590710297306,
+      "macro_bACC": 0.5148107958619698,
+      "micro_bACC": 0.5130201372182126
+    },
+    "fuse_causal_lr": {
+      "AUC": 0.6278396856158485,
+      "macro_bACC": 0.5964239483839017,
+      "micro_bACC": 0.5937165864742048
+    },
+    "B_causal_lr": {
+      "AUC": 0.5247594226142742,
+      "macro_bACC": 0.5117422674637078,
+      "micro_bACC": 0.5111545486946449
+    },
+    "fuse_causal_hgb": {
+      "AUC": 0.6102331939246785,
+      "macro_bACC": 0.5807906880435909,
+      "micro_bACC": 0.5787501113784193
+    },
+    "B_causal_hgb": {
+      "AUC": 0.5270708728726722,
+      "macro_bACC": 0.5082562734317924,
+      "micro_bACC": 0.508194667201283
+    }
+  },
+  "bootstrap_vs_merge_best": {
+    "fuse_window_lr": {
+      "AUC": {
+        "delta": -0.022063600790044102,
+        "ci95": [
+          -0.04434831260780301,
+          0.0004163668357621732
+        ],
+        "p_gt0": 0.027
+      },
+      "macro_bACC": {
+        "delta": -0.024257004903918578,
+        "ci95": [
+          -0.04520971199944925,
+          -0.004955851580805223
+        ],
+        "p_gt0": 0.008
+      },
+      "micro_bACC": {
+        "delta": -0.02359830259288964,
+        "ci95": [
+          -0.04441950315002979,
+          -0.0035279567180103257
+        ],
+        "p_gt0": 0.012
+      }
+    },
+    "B_window_lr": {
+      "AUC": {
+        "delta": -0.12187467514627692,
+        "ci95": [
+          -0.18218161308919117,
+          -0.0646364857164169
+        ],
+        "p_gt0": 0.0
+      },
+      "macro_bACC": {
+        "delta": -0.10232339896994358,
+        "ci95": [
+          -0.1482241611730811,
+          -0.057574584198936817
+        ],
+        "p_gt0": 0.0
+      },
+      "micro_bACC": {
+        "delta": -0.09939410139891303,
+        "ci95": [
+          -0.14539771553791928,
+          -0.05250454916123699
+        ],
+        "p_gt0": 0.0
+      }
+    },
+    "fuse_window_hgb": {
+      "AUC": {
+        "delta": -0.03265197585315871,
+        "ci95": [
+          -0.0559977012459296,
+          -0.010789385602510538
+        ],
+        "p_gt0": 0.003
+      },
+      "macro_bACC": {
+        "delta": -0.028309346282438752,
+        "ci95": [
+          -0.05021114130909585,
+          -0.005877091619808218
+        ],
+        "p_gt0": 0.006
+      },
+      "micro_bACC": {
+        "delta": -0.028682727434732325,
+        "ci95": [
+          -0.05085552088635646,
+          -0.006457160811613494
+        ],
+        "p_gt0": 0.007
+      }
+    },
+    "B_window_hgb": {
+      "AUC": {
+        "delta": -0.12032222240785295,
+        "ci95": [
+          -0.17533059522002178,
+          -0.07268303940156327
+        ],
+        "p_gt0": 0.0
+      },
+      "macro_bACC": {
+        "delta": -0.09824119634924211,
+        "ci95": [
+          -0.13877250601067356,
+          -0.059439837071789
+        ],
+        "p_gt0": 0.0
+      },
+      "micro_bACC": {
+        "delta": -0.09757306424307233,
+        "ci95": [
+          -0.1398947680290111,
+          -0.05759423581632114
+        ],
+        "p_gt0": 0.0
+      }
+    },
+    "fuse_causal_lr": {
+      "AUC": {
+        "delta": -0.01584160782173505,
+        "ci95": [
+          -0.037204569699254494,
+          0.009173607439722061
+        ],
+        "p_gt0": 0.092
+      },
+      "macro_bACC": {
+        "delta": -0.0166280438273102,
+        "ci95": [
+          -0.037924501199183384,
+          0.001791731972884404
+        ],
+        "p_gt0": 0.047
+      },
+      "micro_bACC": {
+        "delta": -0.016876614987080152,
+        "ci95": [
+          -0.03839214843700927,
+          0.0025595380214725595
+        ],
+        "p_gt0": 0.052
+      }
+    },
+    "B_causal_lr": {
+      "AUC": {
+        "delta": -0.1189218708233093,
+        "ci95": [
+          -0.18446269365503962,
+          -0.059390553668353455
+        ],
+        "p_gt0": 0.0
+      },
+      "macro_bACC": {
+        "delta": -0.1013097247475041,
+        "ci95": [
+          -0.1492499128822376,
+          -0.05583951304687188
+        ],
+        "p_gt0": 0.0
+      },
+      "micro_bACC": {
+        "delta": -0.09943865276663999,
+        "ci95": [
+          -0.14994484932801302,
+          -0.052485275502694696
+        ],
+        "p_gt0": 0.0
+      }
+    },
+    "fuse_causal_hgb": {
+      "AUC": {
+        "delta": -0.03344809951290506,
+        "ci95": [
+          -0.052865178551098214,
+          -0.009035618901234891
+        ],
+        "p_gt0": 0.007
+      },
+      "macro_bACC": {
+        "delta": -0.03226130416762096,
+        "ci95": [
+          -0.053383369616861145,
+          -0.008177476968884557
+        ],
+        "p_gt0": 0.005
+      },
+      "micro_bACC": {
+        "delta": -0.03184309008286568,
+        "ci95": [
+          -0.05257825196154037,
+          -0.007375226848541699
+        ],
+        "p_gt0": 0.006
+      }
+    },
+    "B_causal_hgb": {
+      "AUC": {
+        "delta": -0.11661042056491133,
+        "ci95": [
+          -0.1680604166817659,
+          -0.06767294955600078
+        ],
+        "p_gt0": 0.0
+      },
+      "macro_bACC": {
+        "delta": -0.10479571877941951,
+        "ci95": [
+          -0.13968868422932113,
+          -0.0677264320928582
+        ],
+        "p_gt0": 0.0
+      },
+      "micro_bACC": {
+        "delta": -0.1023985342600019,
+        "ci95": [
+          -0.13805756271411984,
+          -0.06434426174940631
+        ],
+        "p_gt0": 0.0
+      }
+    }
+  },
+  "checks": [
+    {
+      "fold": 1,
+      "single_window_independence": true
+    },
+    {
+      "fold": 1,
+      "subject": "006",
+      "prefix_invariant_under_future_perturbation": true
+    },
+    {
+      "fold": 2,
+      "single_window_independence": true
+    },
+    {
+      "fold": 2,
+      "subject": "008",
+      "prefix_invariant_under_future_perturbation": true
+    },
+    {
+      "fold": 3,
+      "single_window_independence": true
+    },
+    {
+      "fold": 3,
+      "subject": "001",
+      "prefix_invariant_under_future_perturbation": true
+    },
+    {
+      "fold": 4,
+      "single_window_independence": true
+    },
+    {
+      "fold": 4,
+      "subject": "005",
+      "prefix_invariant_under_future_perturbation": true
+    },
+    {
+      "fold": 5,
+      "single_window_independence": true
+    },
+    {
+      "fold": 5,
+      "subject": "002",
+      "prefix_invariant_under_future_perturbation": true
+    }
+  ],
+  "smoke": true,
+  "seconds": 86.32006670000555
+}

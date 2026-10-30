@@ -1,0 +1,47 @@
+[16:35:11 +    1.2s] [data] windows=4152 subjects=15 vec_dim=54 raw_len=1500 smoke=True
+[16:35:11 +    1.6s] [fold 1/5] window_lr   innerAUC=0.4022 thr=0.094 testAUC=0.5844
+[16:35:17 +    7.4s] [fold 1/5] window_hgb  innerAUC=0.4068 thr=0.254 testAUC=0.5921
+[16:35:18 +    7.9s] [fold 1/5] causal_lr   innerAUC=0.4091 thr=0.186 testAUC=0.5601
+[16:35:22 +   12.3s] [fold 1/5] causal_hgb  innerAUC=0.4430 thr=0.174 testAUC=0.5204
+[16:35:22 +   12.8s] [fold 2/5] window_lr   innerAUC=0.5329 thr=0.350 testAUC=0.5472
+[16:35:27 +   17.1s] [fold 2/5] window_hgb  innerAUC=0.5402 thr=0.286 testAUC=0.5362
+[16:35:27 +   17.6s] [fold 2/5] causal_lr   innerAUC=0.5202 thr=0.469 testAUC=0.5782
+[16:35:32 +   22.1s] [fold 2/5] causal_hgb  innerAUC=0.5194 thr=0.380 testAUC=0.5601
+[16:35:32 +   22.6s] [fold 3/5] window_lr   innerAUC=0.5769 thr=0.503 testAUC=0.4591
+[16:35:37 +   26.9s] [fold 3/5] window_hgb  innerAUC=0.4746 thr=0.576 testAUC=0.4824
+[16:35:37 +   27.4s] [fold 3/5] causal_lr   innerAUC=0.5584 thr=0.412 testAUC=0.4548
+[16:35:42 +   31.8s] [fold 3/5] causal_hgb  innerAUC=0.4224 thr=0.276 testAUC=0.4936
+[16:35:42 +   32.3s] [fold 4/5] window_lr   innerAUC=0.5918 thr=0.402 testAUC=0.5129
+[16:35:46 +   36.7s] [fold 4/5] window_hgb  innerAUC=0.5490 thr=0.260 testAUC=0.5064
+[16:35:47 +   37.2s] [fold 4/5] causal_lr   innerAUC=0.5472 thr=0.394 testAUC=0.5327
+[16:35:51 +   41.6s] [fold 4/5] causal_hgb  innerAUC=0.5454 thr=0.348 testAUC=0.5683
+[16:35:52 +   42.1s] [fold 5/5] window_lr   innerAUC=0.5615 thr=0.469 testAUC=0.5071
+[16:35:56 +   46.4s] [fold 5/5] window_hgb  innerAUC=0.5427 thr=0.412 testAUC=0.5021
+[16:35:57 +   46.9s] [fold 5/5] causal_lr   innerAUC=0.5603 thr=0.459 testAUC=0.4939
+[16:36:01 +   51.3s] [fold 5/5] causal_hgb  innerAUC=0.5440 thr=0.438 testAUC=0.4960
+[16:36:01 +   51.4s] [result] window_lr   AUC=0.5218 macro@thr=0.4898 micro@thr=0.4901 macro@0.5=0.5107
+[16:36:01 +   51.5s] [result] window_hgb  AUC=0.5234 macro@thr=0.4983 micro@thr=0.4972 macro@0.5=0.5148
+[16:36:01 +   51.5s] [result] causal_lr   AUC=0.5248 macro@thr=0.5171 micro@thr=0.5178 macro@0.5=0.5117
+[16:36:01 +   51.6s] [result] causal_hgb  AUC=0.5271 macro@thr=0.5268 micro@thr=0.5278 macro@0.5=0.5083
+[16:36:02 +   51.8s] [fusion@0] merge_best           AUC=0.6437 macro=0.6131 micro=0.6106
+[16:36:02 +   51.8s] [fusion@0] fuse_window_lr       AUC=0.6216 macro=0.5888 micro=0.5870
+[16:36:02 +   51.8s] [fusion@0] B_window_lr          AUC=0.5218 macro=0.5107 micro=0.5112
+[16:36:02 +   51.8s] [fusion@0] fuse_window_hgb      AUC=0.6110 macro=0.5847 micro=0.5819
+[16:36:02 +   51.8s] [fusion@0] B_window_hgb         AUC=0.5234 macro=0.5148 micro=0.5130
+[16:36:02 +   51.8s] [fusion@0] fuse_causal_lr       AUC=0.6278 macro=0.5964 micro=0.5937
+[16:36:02 +   51.8s] [fusion@0] B_causal_lr          AUC=0.5248 macro=0.5117 micro=0.5112
+[16:36:02 +   51.8s] [fusion@0] fuse_causal_hgb      AUC=0.6102 macro=0.5808 micro=0.5788
+[16:36:02 +   51.8s] [fusion@0] B_causal_hgb         AUC=0.5271 macro=0.5083 micro=0.5082
+[16:36:10 +   60.3s] [boot] 250/1000
+[16:36:18 +   68.6s] [boot] 500/1000
+[16:36:27 +   77.0s] [boot] 750/1000
+[16:36:35 +   85.3s] [boot] 1000/1000
+[16:36:36 +   86.3s] [delta vs merge_best] fuse_window_lr       AUC=-0.0221[-0.0443,+0.0004] macro_bACC=-0.0243[-0.0452,-0.0050] micro_bACC=-0.0236[-0.0444,-0.0035]
+[16:36:36 +   86.3s] [delta vs merge_best] B_window_lr          AUC=-0.1219[-0.1822,-0.0646] macro_bACC=-0.1023[-0.1482,-0.0576] micro_bACC=-0.0994[-0.1454,-0.0525]
+[16:36:36 +   86.3s] [delta vs merge_best] fuse_window_hgb      AUC=-0.0327[-0.0560,-0.0108] macro_bACC=-0.0283[-0.0502,-0.0059] micro_bACC=-0.0287[-0.0509,-0.0065]
+[16:36:36 +   86.3s] [delta vs merge_best] B_window_hgb         AUC=-0.1203[-0.1753,-0.0727] macro_bACC=-0.0982[-0.1388,-0.0594] micro_bACC=-0.0976[-0.1399,-0.0576]
+[16:36:36 +   86.3s] [delta vs merge_best] fuse_causal_lr       AUC=-0.0158[-0.0372,+0.0092] macro_bACC=-0.0166[-0.0379,+0.0018] micro_bACC=-0.0169[-0.0384,+0.0026]
+[16:36:36 +   86.3s] [delta vs merge_best] B_causal_lr          AUC=-0.1189[-0.1845,-0.0594] macro_bACC=-0.1013[-0.1492,-0.0558] micro_bACC=-0.0994[-0.1499,-0.0525]
+[16:36:36 +   86.3s] [delta vs merge_best] fuse_causal_hgb      AUC=-0.0334[-0.0529,-0.0090] macro_bACC=-0.0323[-0.0534,-0.0082] micro_bACC=-0.0318[-0.0526,-0.0074]
+[16:36:36 +   86.3s] [delta vs merge_best] B_causal_hgb         AUC=-0.1166[-0.1681,-0.0677] macro_bACC=-0.1048[-0.1397,-0.0677] micro_bACC=-0.1024[-0.1381,-0.0643]
+[16:36:36 +   86.3s] [done] -> template_contrast_features_smoke_results.json, template_contrast_features_smoke_oof.npz

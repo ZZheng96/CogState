@@ -1,0 +1,385 @@
+{
+  "protocol": {
+    "deployable": true,
+    "window_points": 1500,
+    "test_subject_isolation": true,
+    "window_variant": "strict single window: features depend only on current 1500-sample window and train-fold templates",
+    "causal_variant": "subtract own past unlabeled mean (prior 32 windows at train grand mean G), predict-then-update",
+    "templates": "outer/inner train only: per-subject unlabeled mean-centering, class means per subject averaged over subjects; train-window features use leave-one-subject-out templates; sigma = pooled within-subject std (unlabeled)",
+    "features": 24,
+    "vector": "54 = 45 log-PSD bins 1-45 Hz (self-referenced) + 52-100 Hz rel + 8 sub-window stats",
+    "classifiers": {
+      "lr": "StandardScaler+LR(C=1,balanced)",
+      "hgb": "HistGB(150,depth3,lr0.06,balanced)"
+    },
+    "threshold": "inner SGKF(4,shuffle,rs=fold) first split, maximize subject-macro bACC over 97 quantile candidates; refit on outer train",
+    "outer_cv": "StratifiedGroupKFold(5, shuffle=True, random_state=0) == seed_noise_band fold_id",
+    "fusion": "0.5*logit(B) + 0.5*merge_best combo__C4_bb_resnet_eq; fixed threshold 0 (same as baseline bACC@0); no weight search",
+    "bootstrap": "paired subject bootstrap 1000, seed 20261029; macro = mean of per-subject bACC over drawn subjects",
+    "hyperparameter_search": false
+  },
+  "methods": {
+    "window_lr": {
+      "AUC": 0.5794483553998611,
+      "macro_bACC_inner_thr": 0.5533653389589329,
+      "micro_bACC_inner_thr": 0.5519995611796458,
+      "macro_bACC_at_0.5": 0.5552799686822306,
+      "micro_bACC_at_0.5": 0.5539666911798659,
+      "thresholds": [
+        0.47773424736306236,
+        0.5555802383144426,
+        0.5106323482609448,
+        0.5006429086847245,
+        0.48981999170949037
+      ]
+    },
+    "window_hgb": {
+      "AUC": 0.5848234088965869,
+      "macro_bACC_inner_thr": 0.55158804085473,
+      "micro_bACC_inner_thr": 0.5495024223441374,
+      "macro_bACC_at_0.5": 0.5602054359347549,
+      "micro_bACC_at_0.5": 0.5584017673055903,
+      "thresholds": [
+        0.4649828269100378,
+        0.4959271785741829,
+        0.5104178635092012,
+        0.6194698250934544,
+        0.47405330385822403
+      ]
+    },
+    "causal_lr": {
+      "AUC": 0.5934276890065275,
+      "macro_bACC_inner_thr": 0.5663809948278496,
+      "micro_bACC_inner_thr": 0.5668388401259067,
+      "macro_bACC_at_0.5": 0.5641117865279217,
+      "micro_bACC_at_0.5": 0.5646903790806652,
+      "thresholds": [
+        0.469235711292841,
+        0.5049670279540046,
+        0.48460690618363306,
+        0.4767639167716193,
+        0.4825968509985411
+      ]
+    },
+    "causal_hgb": {
+      "AUC": 0.5898326780468651,
+      "macro_bACC_inner_thr": 0.5587091602194513,
+      "micro_bACC_inner_thr": 0.5577560490425133,
+      "macro_bACC_at_0.5": 0.5613043968535683,
+      "micro_bACC_at_0.5": 0.5611001173596526,
+      "thresholds": [
+        0.5436619138878624,
+        0.5208074092744016,
+        0.4884901400147852,
+        0.4497555146166608,
+        0.5165674712947033
+      ]
+    }
+  },
+  "fusion_at0": {
+    "merge_best": {
+      "AUC": 0.6742945095082392,
+      "macro_bACC": 0.6302441135237077,
+      "micro_bACC": 0.6300280801640494
+    },
+    "fuse_window_lr": {
+      "AUC": 0.6565824990013429,
+      "macro_bACC": 0.6098167104376987,
+      "micro_bACC": 0.6088372252298151
+    },
+    "B_window_lr": {
+      "AUC": 0.5794483553998611,
+      "macro_bACC": 0.5552799686822306,
+      "micro_bACC": 0.5539666911798659
+    },
+    "fuse_window_hgb": {
+      "AUC": 0.6630988882907791,
+      "macro_bACC": 0.618066326510657,
+      "micro_bACC": 0.6169837035260268
+    },
+    "B_window_hgb": {
+      "AUC": 0.5848234088965869,
+      "macro_bACC": 0.5602054359347549,
+      "micro_bACC": 0.5584017673055903
+    },
+    "fuse_causal_lr": {
+      "AUC": 0.6671792280542563,
+      "macro_bACC": 0.6210461051578124,
+      "micro_bACC": 0.6209139735461984
+    },
+    "B_causal_lr": {
+      "AUC": 0.5934276890065275,
+      "macro_bACC": 0.5641117865279217,
+      "micro_bACC": 0.5646903790806652
+    },
+    "fuse_causal_hgb": {
+      "AUC": 0.6679184513112393,
+      "macro_bACC": 0.6230906067535755,
+      "micro_bACC": 0.6226130466001805
+    },
+    "B_causal_hgb": {
+      "AUC": 0.5898326780468651,
+      "macro_bACC": 0.5613043968535683,
+      "micro_bACC": 0.5611001173596526
+    }
+  },
+  "bootstrap_vs_merge_best": {
+    "fuse_window_lr": {
+      "AUC": {
+        "delta": -0.017712010506896303,
+        "ci95": [
+          -0.02824546379494351,
+          -0.007724639060906773
+        ],
+        "p_gt0": 0.0
+      },
+      "macro_bACC": {
+        "delta": -0.02042740308600899,
+        "ci95": [
+          -0.0300929025631651,
+          -0.011985121747287877
+        ],
+        "p_gt0": 0.0
+      },
+      "micro_bACC": {
+        "delta": -0.021190854934234338,
+        "ci95": [
+          -0.030474102245684413,
+          -0.012760144973151205
+        ],
+        "p_gt0": 0.0
+      }
+    },
+    "B_window_lr": {
+      "AUC": {
+        "delta": -0.09484615410837816,
+        "ci95": [
+          -0.12105913211219183,
+          -0.07110810861436116
+        ],
+        "p_gt0": 0.0
+      },
+      "macro_bACC": {
+        "delta": -0.07496414484147707,
+        "ci95": [
+          -0.09654700924901277,
+          -0.05243058463599812
+        ],
+        "p_gt0": 0.0
+      },
+      "micro_bACC": {
+        "delta": -0.07606138898418358,
+        "ci95": [
+          -0.09741708666359859,
+          -0.053509313055434195
+        ],
+        "p_gt0": 0.0
+      }
+    },
+    "fuse_window_hgb": {
+      "AUC": {
+        "delta": -0.011195621217460094,
+        "ci95": [
+          -0.02040460250219271,
+          -0.0027944642049038794
+        ],
+        "p_gt0": 0.006
+      },
+      "macro_bACC": {
+        "delta": -0.012177787013050723,
+        "ci95": [
+          -0.021723732479853444,
+          -0.0038195831947155433
+        ],
+        "p_gt0": 0.001
+      },
+      "micro_bACC": {
+        "delta": -0.013044376638022603,
+        "ci95": [
+          -0.022275912809476828,
+          -0.005006353632504834
+        ],
+        "p_gt0": 0.0
+      }
+    },
+    "B_window_hgb": {
+      "AUC": {
+        "delta": -0.08947110061165231,
+        "ci95": [
+          -0.11294095117353856,
+          -0.0678657423068572
+        ],
+        "p_gt0": 0.0
+      },
+      "macro_bACC": {
+        "delta": -0.07003867758895277,
+        "ci95": [
+          -0.09070867095283003,
+          -0.049451573102171346
+        ],
+        "p_gt0": 0.0
+      },
+      "micro_bACC": {
+        "delta": -0.0716263128584591,
+        "ci95": [
+          -0.09206647032609158,
+          -0.05129951097674604
+        ],
+        "p_gt0": 0.0
+      }
+    },
+    "fuse_causal_lr": {
+      "AUC": {
+        "delta": -0.00711528145398288,
+        "ci95": [
+          -0.01975956828341279,
+          0.0038487529352025504
+        ],
+        "p_gt0": 0.111
+      },
+      "macro_bACC": {
+        "delta": -0.009198008365895238,
+        "ci95": [
+          -0.01939513166236133,
+          -0.00010665749363630857
+        ],
+        "p_gt0": 0.023
+      },
+      "micro_bACC": {
+        "delta": -0.009114106617851059,
+        "ci95": [
+          -0.019468155875373403,
+          6.717662821745647e-05
+        ],
+        "p_gt0": 0.027
+      }
+    },
+    "B_causal_lr": {
+      "AUC": {
+        "delta": -0.08086682050171168,
+        "ci95": [
+          -0.10809667732374473,
+          -0.05483083370302332
+        ],
+        "p_gt0": 0.0
+      },
+      "macro_bACC": {
+        "delta": -0.06613232699578597,
+        "ci95": [
+          -0.08819893487190314,
+          -0.04440780598085532
+        ],
+        "p_gt0": 0.0
+      },
+      "micro_bACC": {
+        "delta": -0.06533770108338421,
+        "ci95": [
+          -0.08739558409673079,
+          -0.043869848604410115
+        ],
+        "p_gt0": 0.0
+      }
+    },
+    "fuse_causal_hgb": {
+      "AUC": {
+        "delta": -0.006376058196999934,
+        "ci95": [
+          -0.016701863019363352,
+          0.003365351269325061
+        ],
+        "p_gt0": 0.088
+      },
+      "macro_bACC": {
+        "delta": -0.007153506770132156,
+        "ci95": [
+          -0.016605042380322906,
+          0.001718792383313124
+        ],
+        "p_gt0": 0.067
+      },
+      "micro_bACC": {
+        "delta": -0.007415033563868967,
+        "ci95": [
+          -0.016743058581063987,
+          0.001323208659358832
+        ],
+        "p_gt0": 0.053
+      }
+    },
+    "B_causal_hgb": {
+      "AUC": {
+        "delta": -0.08446183146137409,
+        "ci95": [
+          -0.11271672574980078,
+          -0.05954258178407341
+        ],
+        "p_gt0": 0.0
+      },
+      "macro_bACC": {
+        "delta": -0.06893971667013943,
+        "ci95": [
+          -0.09227627618511064,
+          -0.04660180818545114
+        ],
+        "p_gt0": 0.0
+      },
+      "micro_bACC": {
+        "delta": -0.06892796280439684,
+        "ci95": [
+          -0.09295040531974484,
+          -0.047069429942947986
+        ],
+        "p_gt0": 0.0
+      }
+    }
+  },
+  "checks": [
+    {
+      "fold": 1,
+      "single_window_independence": true
+    },
+    {
+      "fold": 1,
+      "subject": "009",
+      "prefix_invariant_under_future_perturbation": true
+    },
+    {
+      "fold": 2,
+      "single_window_independence": true
+    },
+    {
+      "fold": 2,
+      "subject": "003",
+      "prefix_invariant_under_future_perturbation": true
+    },
+    {
+      "fold": 3,
+      "single_window_independence": true
+    },
+    {
+      "fold": 3,
+      "subject": "001",
+      "prefix_invariant_under_future_perturbation": true
+    },
+    {
+      "fold": 4,
+      "single_window_independence": true
+    },
+    {
+      "fold": 4,
+      "subject": "004",
+      "prefix_invariant_under_future_perturbation": true
+    },
+    {
+      "fold": 5,
+      "single_window_independence": true
+    },
+    {
+      "fold": 5,
+      "subject": "002",
+      "prefix_invariant_under_future_perturbation": true
+    }
+  ],
+  "smoke": false,
+  "seconds": 152.83342880000419
+}
