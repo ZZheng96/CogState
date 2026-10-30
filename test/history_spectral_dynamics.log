@@ -1,0 +1,88 @@
+[elapsed     0.5s] canonical aligned n=16067 subjects=57 raw=(96091, 1500)
+[elapsed     0.7s] Welch subwindow 1/6 dim=16
+[elapsed     0.9s] Welch subwindow 2/6 dim=16
+[elapsed     1.1s] Welch subwindow 3/6 dim=16
+[elapsed     1.3s] Welch subwindow 4/6 dim=16
+[elapsed     1.5s] Welch subwindow 5/6 dim=16
+[elapsed     1.7s] Welch subwindow 6/6 dim=16
+[elapsed     1.9s] preregistered aggregations mean_std=32, mean_std_p10_p90_slope_diff=112
+[elapsed     3.4s] baseline old_best s1:AUC=0.7661/macro05=0.6985/micro05=0.7011/macroMed=0.6833/microMed=0.6858 s5:AUC=0.8247/macro05=0.7498/micro05=0.7511/macroMed=0.7281/microMed=0.7304 s10:AUC=0.8221/macro05=0.7454/micro05=0.7486/macroMed=0.7366/microMed=0.7392 s20:AUC=0.7785/macro05=0.7116/micro05=0.7134/macroMed=0.7300/microMed=0.7325
+[elapsed     4.9s] baseline old_D_hgb s1:AUC=0.7812/macro05=0.7015/micro05=0.7015/macroMed=0.7172/microMed=0.7175 s5:AUC=0.8174/macro05=0.7300/micro05=0.7301/macroMed=0.7631/microMed=0.7631 s10:AUC=0.8121/macro05=0.7291/micro05=0.7289/macroMed=0.7693/microMed=0.7697 s20:AUC=0.7655/macro05=0.6920/micro05=0.6924/macroMed=0.7589/microMed=0.7602
+[elapsed     6.4s] baseline split6_best s1:AUC=0.7819/macro05=0.7014/micro05=0.7012/macroMed=0.7216/microMed=0.7217 s5:AUC=0.8164/macro05=0.7325/micro05=0.7326/macroMed=0.7676/microMed=0.7680 s10:AUC=0.8086/macro05=0.7301/micro05=0.7298/macroMed=0.7852/microMed=0.7857 s20:AUC=0.7582/macro05=0.6861/micro05=0.6859/macroMed=0.7664/microMed=0.7677
+[elapsed     6.5s] calibrating mean_std dim=32
+[elapsed     8.3s] mean_std d50 fold 1/5 ntr=7429 nte=1798
+[elapsed     8.6s] mean_std d50 fold 2/5 ntr=7403 nte=1824
+[elapsed     8.9s] mean_std d50 fold 3/5 ntr=7406 nte=1821
+[elapsed     9.2s] mean_std d50 fold 4/5 ntr=7266 nte=1961
+[elapsed     9.5s] mean_std d50 fold 5/5 ntr=7404 nte=1823
+[elapsed    11.1s] mean_std__d50_hgb s1:AUC=0.7194/macro05=0.6609/micro05=0.6606/macroMed=0.6604/microMed=0.6599 s5:AUC=0.7777/macro05=0.7023/micro05=0.7029/macroMed=0.7156/microMed=0.7155 s10:AUC=0.7881/macro05=0.7079/micro05=0.7089/macroMed=0.7331/microMed=0.7330 s20:AUC=0.7628/macro05=0.6841/micro05=0.6852/macroMed=0.7302/microMed=0.7306
+[elapsed    11.4s] mean_std d100 fold 1/5 ntr=7429 nte=1798
+[elapsed    11.7s] mean_std d100 fold 2/5 ntr=7403 nte=1824
+[elapsed    12.0s] mean_std d100 fold 3/5 ntr=7406 nte=1821
+[elapsed    12.3s] mean_std d100 fold 4/5 ntr=7266 nte=1961
+[elapsed    12.6s] mean_std d100 fold 5/5 ntr=7404 nte=1823
+[elapsed    14.1s] mean_std__d100_hgb s1:AUC=0.6769/macro05=0.6270/micro05=0.6264/macroMed=0.6361/microMed=0.6362 s5:AUC=0.7223/macro05=0.6531/micro05=0.6528/macroMed=0.6782/microMed=0.6777 s10:AUC=0.7194/macro05=0.6420/micro05=0.6411/macroMed=0.6874/microMed=0.6862 s20:AUC=0.6752/macro05=0.6058/micro05=0.6059/macroMed=0.6699/microMed=0.6692
+[elapsed    14.5s] mean_std d200 fold 1/5 ntr=7429 nte=1798
+[elapsed    14.8s] mean_std d200 fold 2/5 ntr=7403 nte=1824
+[elapsed    15.1s] mean_std d200 fold 3/5 ntr=7406 nte=1821
+[elapsed    15.4s] mean_std d200 fold 4/5 ntr=7266 nte=1961
+[elapsed    15.7s] mean_std d200 fold 5/5 ntr=7404 nte=1823
+[elapsed    17.2s] mean_std__d200_hgb s1:AUC=0.6838/macro05=0.6331/micro05=0.6323/macroMed=0.6464/microMed=0.6466 s5:AUC=0.7280/macro05=0.6550/micro05=0.6545/macroMed=0.6884/microMed=0.6880 s10:AUC=0.7252/macro05=0.6529/micro05=0.6518/macroMed=0.6958/microMed=0.6950 s20:AUC=0.6809/macro05=0.6196/micro05=0.6198/macroMed=0.6745/microMed=0.6744
+[elapsed    17.6s] mean_std d400 fold 1/5 ntr=7429 nte=1798
+[elapsed    17.8s] mean_std d400 fold 2/5 ntr=7403 nte=1824
+[elapsed    18.2s] mean_std d400 fold 3/5 ntr=7406 nte=1821
+[elapsed    18.5s] mean_std d400 fold 4/5 ntr=7266 nte=1961
+[elapsed    18.8s] mean_std d400 fold 5/5 ntr=7404 nte=1823
+[elapsed    20.3s] mean_std__d400_hgb s1:AUC=0.6823/macro05=0.6361/micro05=0.6353/macroMed=0.6477/microMed=0.6481 s5:AUC=0.7291/macro05=0.6622/micro05=0.6619/macroMed=0.6968/microMed=0.6959 s10:AUC=0.7264/macro05=0.6532/micro05=0.6524/macroMed=0.7007/microMed=0.6995 s20:AUC=0.6795/macro05=0.6194/micro05=0.6188/macroMed=0.6863/microMed=0.6858
+[elapsed    20.7s] mean_std d800 fold 1/5 ntr=7429 nte=1798
+[elapsed    21.0s] mean_std d800 fold 2/5 ntr=7403 nte=1824
+[elapsed    21.3s] mean_std d800 fold 3/5 ntr=7406 nte=1821
+[elapsed    21.6s] mean_std d800 fold 4/5 ntr=7266 nte=1961
+[elapsed    21.9s] mean_std d800 fold 5/5 ntr=7404 nte=1823
+[elapsed    23.5s] mean_std__d800_hgb s1:AUC=0.6823/macro05=0.6361/micro05=0.6353/macroMed=0.6477/microMed=0.6481 s5:AUC=0.7291/macro05=0.6622/micro05=0.6619/macroMed=0.6968/microMed=0.6959 s10:AUC=0.7264/macro05=0.6532/micro05=0.6524/macroMed=0.7007/microMed=0.6995 s20:AUC=0.6795/macro05=0.6194/micro05=0.6188/macroMed=0.6863/microMed=0.6858
+[elapsed    25.0s] mean_std__D_hgb s1:AUC=0.7041/macro05=0.6480/micro05=0.6475/macroMed=0.6581/microMed=0.6581 s5:AUC=0.7519/macro05=0.6737/micro05=0.6735/macroMed=0.7075/microMed=0.7063 s10:AUC=0.7510/macro05=0.6713/micro05=0.6702/macroMed=0.7158/microMed=0.7147 s20:AUC=0.7073/macro05=0.6368/micro05=0.6365/macroMed=0.7027/microMed=0.7018
+[elapsed    26.4s] mean_std__D_hgb+old_best_score s1:AUC=0.7679/macro05=0.7005/micro05=0.7031/macroMed=0.6865/microMed=0.6889 s5:AUC=0.8239/macro05=0.7497/micro05=0.7513/macroMed=0.7334/microMed=0.7347 s10:AUC=0.8198/macro05=0.7447/micro05=0.7483/macroMed=0.7383/microMed=0.7416 s20:AUC=0.7749/macro05=0.7089/micro05=0.7116/macroMed=0.7286/microMed=0.7317
+[elapsed    27.8s] mean_std__D_hgb+old_best_logit s1:AUC=0.7513/macro05=0.7005/micro05=0.7031/macroMed=0.6898/microMed=0.6919 s5:AUC=0.8141/macro05=0.7401/micro05=0.7434/macroMed=0.7302/microMed=0.7322 s10:AUC=0.8115/macro05=0.7420/micro05=0.7448/macroMed=0.7412/microMed=0.7433 s20:AUC=0.7689/macro05=0.7109/micro05=0.7133/macroMed=0.7396/microMed=0.7417
+[elapsed    29.3s] mean_std__D_hgb+old_D_hgb_score s1:AUC=0.7708/macro05=0.6893/micro05=0.6890/macroMed=0.7084/microMed=0.7087 s5:AUC=0.8090/macro05=0.7151/micro05=0.7146/macroMed=0.7579/microMed=0.7582 s10:AUC=0.8034/macro05=0.7098/micro05=0.7094/macroMed=0.7699/microMed=0.7700 s20:AUC=0.7544/macro05=0.6707/micro05=0.6708/macroMed=0.7584/microMed=0.7590
+[elapsed    30.9s] mean_std__D_hgb+old_D_hgb_logit s1:AUC=0.7714/macro05=0.6893/micro05=0.6890/macroMed=0.7078/microMed=0.7082 s5:AUC=0.8093/macro05=0.7172/micro05=0.7167/macroMed=0.7596/microMed=0.7599 s10:AUC=0.8036/macro05=0.7095/micro05=0.7091/macroMed=0.7695/microMed=0.7697 s20:AUC=0.7547/macro05=0.6702/micro05=0.6704/macroMed=0.7585/microMed=0.7591
+[elapsed    32.4s] mean_std__D_hgb+split6_best_score s1:AUC=0.7588/macro05=0.6843/micro05=0.6837/macroMed=0.7007/microMed=0.7008 s5:AUC=0.7978/macro05=0.7088/micro05=0.7079/macroMed=0.7487/microMed=0.7486 s10:AUC=0.7919/macro05=0.7046/micro05=0.7033/macroMed=0.7588/microMed=0.7586 s20:AUC=0.7422/macro05=0.6673/micro05=0.6666/macroMed=0.7401/microMed=0.7403
+[elapsed    33.9s] mean_std__D_hgb+split6_best_logit s1:AUC=0.7579/macro05=0.6843/micro05=0.6837/macroMed=0.7002/microMed=0.7003 s5:AUC=0.7971/macro05=0.7073/micro05=0.7066/macroMed=0.7480/microMed=0.7478 s10:AUC=0.7913/macro05=0.7047/micro05=0.7033/macroMed=0.7579/microMed=0.7576 s20:AUC=0.7418/macro05=0.6671/micro05=0.6665/macroMed=0.7396/microMed=0.7399
+[elapsed    33.9s] calibrating mean_std_p10_p90_slope_diff dim=112
+[elapsed    35.3s] mean_std_p10_p90_slope_diff d50 fold 1/5 ntr=7429 nte=1798
+[elapsed    35.8s] mean_std_p10_p90_slope_diff d50 fold 2/5 ntr=7403 nte=1824
+[elapsed    36.4s] mean_std_p10_p90_slope_diff d50 fold 3/5 ntr=7406 nte=1821
+[elapsed    36.9s] mean_std_p10_p90_slope_diff d50 fold 4/5 ntr=7266 nte=1961
+[elapsed    37.5s] mean_std_p10_p90_slope_diff d50 fold 5/5 ntr=7404 nte=1823
+[elapsed    39.0s] mean_std_p10_p90_slope_diff__d50_hgb s1:AUC=0.7297/macro05=0.6667/micro05=0.6666/macroMed=0.6630/microMed=0.6625 s5:AUC=0.7889/macro05=0.7099/micro05=0.7103/macroMed=0.7201/microMed=0.7202 s10:AUC=0.7981/macro05=0.7150/micro05=0.7157/macroMed=0.7454/microMed=0.7459 s20:AUC=0.7717/macro05=0.6881/micro05=0.6894/macroMed=0.7383/microMed=0.7392
+[elapsed    39.7s] mean_std_p10_p90_slope_diff d100 fold 1/5 ntr=7429 nte=1798
+[elapsed    40.2s] mean_std_p10_p90_slope_diff d100 fold 2/5 ntr=7403 nte=1824
+[elapsed    40.8s] mean_std_p10_p90_slope_diff d100 fold 3/5 ntr=7406 nte=1821
+[elapsed    41.3s] mean_std_p10_p90_slope_diff d100 fold 4/5 ntr=7266 nte=1961
+[elapsed    41.8s] mean_std_p10_p90_slope_diff d100 fold 5/5 ntr=7404 nte=1823
+[elapsed    43.3s] mean_std_p10_p90_slope_diff__d100_hgb s1:AUC=0.6845/macro05=0.6357/micro05=0.6350/macroMed=0.6381/microMed=0.6377 s5:AUC=0.7320/macro05=0.6628/micro05=0.6628/macroMed=0.6862/microMed=0.6861 s10:AUC=0.7284/macro05=0.6526/micro05=0.6522/macroMed=0.6963/microMed=0.6954 s20:AUC=0.6843/macro05=0.6203/micro05=0.6200/macroMed=0.6765/microMed=0.6760
+[elapsed    43.9s] mean_std_p10_p90_slope_diff d200 fold 1/5 ntr=7429 nte=1798
+[elapsed    44.4s] mean_std_p10_p90_slope_diff d200 fold 2/5 ntr=7403 nte=1824
+[elapsed    45.0s] mean_std_p10_p90_slope_diff d200 fold 3/5 ntr=7406 nte=1821
+[elapsed    45.5s] mean_std_p10_p90_slope_diff d200 fold 4/5 ntr=7266 nte=1961
+[elapsed    46.1s] mean_std_p10_p90_slope_diff d200 fold 5/5 ntr=7404 nte=1823
+[elapsed    47.6s] mean_std_p10_p90_slope_diff__d200_hgb s1:AUC=0.6946/macro05=0.6419/micro05=0.6410/macroMed=0.6476/microMed=0.6473 s5:AUC=0.7417/macro05=0.6691/micro05=0.6685/macroMed=0.6988/microMed=0.6982 s10:AUC=0.7385/macro05=0.6673/micro05=0.6665/macroMed=0.7044/microMed=0.7040 s20:AUC=0.6920/macro05=0.6348/micro05=0.6350/macroMed=0.6822/microMed=0.6827
+[elapsed    48.2s] mean_std_p10_p90_slope_diff d400 fold 1/5 ntr=7429 nte=1798
+[elapsed    48.7s] mean_std_p10_p90_slope_diff d400 fold 2/5 ntr=7403 nte=1824
+[elapsed    49.2s] mean_std_p10_p90_slope_diff d400 fold 3/5 ntr=7406 nte=1821
+[elapsed    49.8s] mean_std_p10_p90_slope_diff d400 fold 4/5 ntr=7266 nte=1961
+[elapsed    50.3s] mean_std_p10_p90_slope_diff d400 fold 5/5 ntr=7404 nte=1823
+[elapsed    51.9s] mean_std_p10_p90_slope_diff__d400_hgb s1:AUC=0.6903/macro05=0.6432/micro05=0.6426/macroMed=0.6481/microMed=0.6481 s5:AUC=0.7372/macro05=0.6655/micro05=0.6653/macroMed=0.6948/microMed=0.6947 s10:AUC=0.7331/macro05=0.6599/micro05=0.6595/macroMed=0.6981/microMed=0.6977 s20:AUC=0.6859/macro05=0.6262/micro05=0.6261/macroMed=0.6805/microMed=0.6808
+[elapsed    52.5s] mean_std_p10_p90_slope_diff d800 fold 1/5 ntr=7429 nte=1798
+[elapsed    53.0s] mean_std_p10_p90_slope_diff d800 fold 2/5 ntr=7403 nte=1824
+[elapsed    53.6s] mean_std_p10_p90_slope_diff d800 fold 3/5 ntr=7406 nte=1821
+[elapsed    54.1s] mean_std_p10_p90_slope_diff d800 fold 4/5 ntr=7266 nte=1961
+[elapsed    54.7s] mean_std_p10_p90_slope_diff d800 fold 5/5 ntr=7404 nte=1823
+[elapsed    56.3s] mean_std_p10_p90_slope_diff__d800_hgb s1:AUC=0.6903/macro05=0.6432/micro05=0.6426/macroMed=0.6481/microMed=0.6481 s5:AUC=0.7372/macro05=0.6655/micro05=0.6653/macroMed=0.6948/microMed=0.6947 s10:AUC=0.7331/macro05=0.6599/micro05=0.6595/macroMed=0.6981/microMed=0.6977 s20:AUC=0.6859/macro05=0.6262/micro05=0.6261/macroMed=0.6805/microMed=0.6808
+[elapsed    57.8s] mean_std_p10_p90_slope_diff__D_hgb s1:AUC=0.7133/macro05=0.6547/micro05=0.6543/macroMed=0.6606/microMed=0.6602 s5:AUC=0.7623/macro05=0.6811/micro05=0.6810/macroMed=0.7116/microMed=0.7111 s10:AUC=0.7602/macro05=0.6732/micro05=0.6727/macroMed=0.7234/microMed=0.7230 s20:AUC=0.7158/macro05=0.6448/micro05=0.6448/macroMed=0.7005/microMed=0.7003
+[elapsed    59.2s] mean_std_p10_p90_slope_diff__D_hgb+old_best_score s1:AUC=0.7688/macro05=0.7014/micro05=0.7039/macroMed=0.6865/microMed=0.6889 s5:AUC=0.8246/macro05=0.7497/micro05=0.7514/macroMed=0.7330/microMed=0.7343 s10:AUC=0.8203/macro05=0.7457/micro05=0.7493/macroMed=0.7377/microMed=0.7409 s20:AUC=0.7752/macro05=0.7097/micro05=0.7125/macroMed=0.7280/microMed=0.7312
+[elapsed    60.6s] mean_std_p10_p90_slope_diff__D_hgb+old_best_logit s1:AUC=0.7544/macro05=0.7014/micro05=0.7039/macroMed=0.6894/microMed=0.6914 s5:AUC=0.8147/macro05=0.7424/micro05=0.7455/macroMed=0.7289/microMed=0.7309 s10:AUC=0.8116/macro05=0.7412/micro05=0.7441/macroMed=0.7404/microMed=0.7426 s20:AUC=0.7690/macro05=0.7108/micro05=0.7131/macroMed=0.7399/microMed=0.7418
+[elapsed    62.1s] mean_std_p10_p90_slope_diff__D_hgb+old_D_hgb_score s1:AUC=0.7744/macro05=0.6915/micro05=0.6912/macroMed=0.7118/microMed=0.7121 s5:AUC=0.8125/macro05=0.7195/micro05=0.7192/macroMed=0.7607/microMed=0.7611 s10:AUC=0.8064/macro05=0.7133/micro05=0.7130/macroMed=0.7718/microMed=0.7723 s20:AUC=0.7571/macro05=0.6753/micro05=0.6757/macroMed=0.7578/microMed=0.7586
+[elapsed    63.7s] mean_std_p10_p90_slope_diff__D_hgb+old_D_hgb_logit s1:AUC=0.7749/macro05=0.6915/micro05=0.6912/macroMed=0.7108/microMed=0.7111 s5:AUC=0.8127/macro05=0.7203/micro05=0.7200/macroMed=0.7602/microMed=0.7605 s10:AUC=0.8065/macro05=0.7139/micro05=0.7137/macroMed=0.7722/microMed=0.7726 s20:AUC=0.7572/macro05=0.6749/micro05=0.6753/macroMed=0.7586/microMed=0.7594
+[elapsed    65.2s] mean_std_p10_p90_slope_diff__D_hgb+split6_best_score s1:AUC=0.7628/macro05=0.6868/micro05=0.6862/macroMed=0.7043/microMed=0.7040 s5:AUC=0.8016/macro05=0.7120/micro05=0.7113/macroMed=0.7500/microMed=0.7499 s10:AUC=0.7949/macro05=0.7051/micro05=0.7041/macroMed=0.7614/microMed=0.7615 s20:AUC=0.7451/macro05=0.6693/micro05=0.6688/macroMed=0.7392/microMed=0.7397
+[elapsed    66.7s] mean_std_p10_p90_slope_diff__D_hgb+split6_best_logit s1:AUC=0.7619/macro05=0.6868/micro05=0.6862/macroMed=0.7034/microMed=0.7031 s5:AUC=0.8009/macro05=0.7109/micro05=0.7102/macroMed=0.7498/microMed=0.7497 s10:AUC=0.7943/macro05=0.7051/micro05=0.7042/macroMed=0.7598/microMed=0.7600 s20:AUC=0.7446/macro05=0.6686/micro05=0.6682/macroMed=0.7382/microMed=0.7388
+[elapsed    66.8s] done seconds=66.8
