@@ -1,0 +1,75 @@
+{
+  "protocol": {
+    "input": "current 6 s / 1500 points only",
+    "feature_dim": 112,
+    "bands": [
+      [
+        1,
+        4
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        8,
+        13
+      ],
+      [
+        13,
+        20
+      ],
+      [
+        20,
+        30
+      ],
+      [
+        30,
+        45
+      ]
+    ],
+    "outer": "StratifiedGroupKFold(5, shuffle=True, random_state=0)",
+    "inner": "first StratifiedGroupKFold(4, shuffle=True, random_state=fold)",
+    "seeds": [
+      0,
+      1
+    ],
+    "amp": true,
+    "test_labels_used": false
+  },
+  "overall": {
+    "AUC": 0.5682094254645345,
+    "subject_macro_bACC": 0.551301331595046,
+    "window_micro_bACC": 0.5490515778163915,
+    "n_eval": 16067,
+    "n_subjects": 57
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "threshold": 0.443115234375,
+      "val_subject_macro_bACC": 0.5721481736367241
+    },
+    {
+      "fold": 2,
+      "threshold": 0.4786376953125,
+      "val_subject_macro_bACC": 0.5714920624023382
+    },
+    {
+      "fold": 3,
+      "threshold": 0.4891357421875,
+      "val_subject_macro_bACC": 0.5646437361136196
+    },
+    {
+      "fold": 4,
+      "threshold": 0.4654541015625,
+      "val_subject_macro_bACC": 0.5386639120189348
+    },
+    {
+      "fold": 5,
+      "threshold": 0.50640869140625,
+      "val_subject_macro_bACC": 0.5812592979966769
+    }
+  ],
+  "parameters": 62177
+}
