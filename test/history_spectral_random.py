@@ -39,8 +39,8 @@ def spectral_random(raw):
     flat = np.exp(np.log(q).mean(1)) / q.mean(1)
     ff = f[(f >= 1) & (f < 100)]
     centroid = (q * ff).sum(1)
-    svar = (q * (ff[:, None] - centroid[:, None]) ** 2).sum(1)
-    sskew = (q * (ff[:, None] - centroid[:, None]) ** 3).sum(1) / np.maximum(svar, 1e-12) ** 1.5
+    svar = (q * (ff[None, :] - centroid[:, None]) ** 2).sum(1)
+    sskew = (q * (ff[None, :] - centroid[:, None]) ** 3).sum(1) / np.maximum(svar, 1e-12) ** 1.5
     slx = np.log(ff); sly = np.log(P[:, (f >= 1) & (f < 100)] + 1e-30)
     slx0 = slx - slx.mean(); slope = (sly * slx0).sum(1) / (slx0 * slx0).sum()
     ratios = np.stack([bp[:, i] / bp[:, j] for i, j in ((0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 6))], 1)
