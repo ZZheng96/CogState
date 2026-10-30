@@ -1,0 +1,124 @@
+[    2.4s] extracting dense 6x1s features
+[    8.2s] feature part 1/6
+[   14.0s] feature part 2/6
+[   20.0s] feature part 3/6
+[   25.6s] feature part 4/6
+[   31.2s] feature part 5/6
+[   36.6s] feature part 6/6
+[   40.7s] calibrating mean_std dim=186
+[   45.8s] mean_std d50 fold 1/5 ntr=12019
+[   46.9s] mean_std d50 fold 2/5 ntr=11896
+[   48.0s] mean_std d50 fold 3/5 ntr=11996
+[   49.0s] mean_std d50 fold 4/5 ntr=11758
+[   50.1s] mean_std d50 fold 5/5 ntr=11995
+[   51.4s] mean_std d100 fold 1/5 ntr=12019
+[   52.4s] mean_std d100 fold 2/5 ntr=11896
+[   53.4s] mean_std d100 fold 3/5 ntr=11996
+[   54.5s] mean_std d100 fold 4/5 ntr=11758
+[   55.7s] mean_std d100 fold 5/5 ntr=11995
+[   56.9s] mean_std d200 fold 1/5 ntr=12019
+[   58.0s] mean_std d200 fold 2/5 ntr=11896
+[   59.1s] mean_std d200 fold 3/5 ntr=11996
+[   60.0s] mean_std d200 fold 4/5 ntr=11758
+[   61.1s] mean_std d200 fold 5/5 ntr=11995
+[   62.3s] mean_std d400 fold 1/5 ntr=12019
+[   63.5s] mean_std d400 fold 2/5 ntr=11896
+[   64.3s] mean_std d400 fold 3/5 ntr=11996
+[   65.3s] mean_std d400 fold 4/5 ntr=11758
+[   66.4s] mean_std d400 fold 5/5 ntr=11995
+[   67.6s] mean_std d800 fold 1/5 ntr=12019
+[   68.7s] mean_std d800 fold 2/5 ntr=11896
+[   69.6s] mean_std d800 fold 3/5 ntr=11996
+[   70.7s] mean_std d800 fold 4/5 ntr=11758
+[   71.8s] mean_std d800 fold 5/5 ntr=11995
+[   73.6s] mean_std newD {'s1': {'AUC': 0.7123627699105306, 'bACC_med': 0.6552341085695298}, 's5': {'AUC': 0.7515667212660636, 'bACC_med': 0.6949677037368863}, 's10': {'AUC': 0.7455713862697889, 'bACC_med': 0.6981620071973971}, 's20': {'AUC': 0.6988371927300834, 'bACC_med': 0.6759311830561439}}
+[   74.6s] mean_std__fusion_score {'s1': {'AUC': 0.7790712287358477, 'bACC_med': 0.7211650169550625}, 's5': {'AUC': 0.8137850164692744, 'bACC_med': 0.7660719314005685}, 's10': {'AUC': 0.8061160920397659, 'bACC_med': 0.7785848165472886}, 's20': {'AUC': 0.755606940933441, 'bACC_med': 0.7615562857098694}}
+[   75.6s] mean_std__fusion_logit {'s1': {'AUC': 0.7802808988386496, 'bACC_med': 0.721070427473413}, 's5': {'AUC': 0.8147293751967514, 'bACC_med': 0.7687317175404949}, 's10': {'AUC': 0.8070973649064911, 'bACC_med': 0.7793483007927275}, 's20': {'AUC': 0.7564503498106722, 'bACC_med': 0.7619068740271636}}
+[   75.6s] calibrating mean_std_min_max dim=372
+[   83.8s] mean_std_min_max d50 fold 1/5 ntr=12019
+[   86.4s] mean_std_min_max d50 fold 2/5 ntr=11896
+[   89.0s] mean_std_min_max d50 fold 3/5 ntr=11996
+[   91.5s] mean_std_min_max d50 fold 4/5 ntr=11758
+[   94.0s] mean_std_min_max d50 fold 5/5 ntr=11995
+[   96.7s] mean_std_min_max d100 fold 1/5 ntr=12019
+[   99.0s] mean_std_min_max d100 fold 2/5 ntr=11896
+[  101.5s] mean_std_min_max d100 fold 3/5 ntr=11996
+[  104.0s] mean_std_min_max d100 fold 4/5 ntr=11758
+[  106.5s] mean_std_min_max d100 fold 5/5 ntr=11995
+[  109.1s] mean_std_min_max d200 fold 1/5 ntr=12019
+[  111.7s] mean_std_min_max d200 fold 2/5 ntr=11896
+[  114.3s] mean_std_min_max d200 fold 3/5 ntr=11996
+[  116.7s] mean_std_min_max d200 fold 4/5 ntr=11758
+[  119.3s] mean_std_min_max d200 fold 5/5 ntr=11995
+[  122.1s] mean_std_min_max d400 fold 1/5 ntr=12019
+[  124.6s] mean_std_min_max d400 fold 2/5 ntr=11896
+[  127.2s] mean_std_min_max d400 fold 3/5 ntr=11996
+[  129.8s] mean_std_min_max d400 fold 4/5 ntr=11758
+[  132.3s] mean_std_min_max d400 fold 5/5 ntr=11995
+[  135.2s] mean_std_min_max d800 fold 1/5 ntr=12019
+[  137.9s] mean_std_min_max d800 fold 2/5 ntr=11896
+[  140.6s] mean_std_min_max d800 fold 3/5 ntr=11996
+[  143.1s] mean_std_min_max d800 fold 4/5 ntr=11758
+[  145.6s] mean_std_min_max d800 fold 5/5 ntr=11995
+[  147.3s] mean_std_min_max newD {'s1': {'AUC': 0.7134186753666867, 'bACC_med': 0.6688412194989082}, 's5': {'AUC': 0.7484108876999576, 'bACC_med': 0.7086803491438631}, 's10': {'AUC': 0.7401266392027432, 'bACC_med': 0.707483387408223}, 's20': {'AUC': 0.6934823896145537, 'bACC_med': 0.6821731268959581}}
+[  148.3s] mean_std_min_max__fusion_score {'s1': {'AUC': 0.7803819926972407, 'bACC_med': 0.7250154160933935}, 's5': {'AUC': 0.8149735653480592, 'bACC_med': 0.7632184540358482}, 's10': {'AUC': 0.8068652714562115, 'bACC_med': 0.7829749829662128}, 's20': {'AUC': 0.7557543574765244, 'bACC_med': 0.7664794510171453}}
+[  149.3s] mean_std_min_max__fusion_logit {'s1': {'AUC': 0.7817838659385988, 'bACC_med': 0.7244779049435472}, 's5': {'AUC': 0.8160434033473108, 'bACC_med': 0.7642011429846383}, 's10': {'AUC': 0.8078899868405174, 'bACC_med': 0.7833233151527597}, 's20': {'AUC': 0.7565925340505333, 'bACC_med': 0.7677459084108842}}
+[  149.3s] calibrating mean_std_p10_p90 dim=372
+[  157.2s] mean_std_p10_p90 d50 fold 1/5 ntr=12019
+[  159.7s] mean_std_p10_p90 d50 fold 2/5 ntr=11896
+[  162.1s] mean_std_p10_p90 d50 fold 3/5 ntr=11996
+[  164.9s] mean_std_p10_p90 d50 fold 4/5 ntr=11758
+[  167.8s] mean_std_p10_p90 d50 fold 5/5 ntr=11995
+[  170.8s] mean_std_p10_p90 d100 fold 1/5 ntr=12019
+[  173.2s] mean_std_p10_p90 d100 fold 2/5 ntr=11896
+[  175.5s] mean_std_p10_p90 d100 fold 3/5 ntr=11996
+[  178.0s] mean_std_p10_p90 d100 fold 4/5 ntr=11758
+[  180.7s] mean_std_p10_p90 d100 fold 5/5 ntr=11995
+[  183.3s] mean_std_p10_p90 d200 fold 1/5 ntr=12019
+[  186.0s] mean_std_p10_p90 d200 fold 2/5 ntr=11896
+[  188.4s] mean_std_p10_p90 d200 fold 3/5 ntr=11996
+[  191.0s] mean_std_p10_p90 d200 fold 4/5 ntr=11758
+[  193.5s] mean_std_p10_p90 d200 fold 5/5 ntr=11995
+[  196.2s] mean_std_p10_p90 d400 fold 1/5 ntr=12019
+[  198.9s] mean_std_p10_p90 d400 fold 2/5 ntr=11896
+[  201.2s] mean_std_p10_p90 d400 fold 3/5 ntr=11996
+[  203.7s] mean_std_p10_p90 d400 fold 4/5 ntr=11758
+[  206.0s] mean_std_p10_p90 d400 fold 5/5 ntr=11995
+[  209.0s] mean_std_p10_p90 d800 fold 1/5 ntr=12019
+[  211.7s] mean_std_p10_p90 d800 fold 2/5 ntr=11896
+[  214.3s] mean_std_p10_p90 d800 fold 3/5 ntr=11996
+[  216.8s] mean_std_p10_p90 d800 fold 4/5 ntr=11758
+[  219.3s] mean_std_p10_p90 d800 fold 5/5 ntr=11995
+[  221.0s] mean_std_p10_p90 newD {'s1': {'AUC': 0.7196007349468043, 'bACC_med': 0.6687416535521766}, 's5': {'AUC': 0.758934637497118, 'bACC_med': 0.7057782866583368}, 's10': {'AUC': 0.7521885517500926, 'bACC_med': 0.7166310833708265}, 's20': {'AUC': 0.705832365165281, 'bACC_med': 0.6856629268937443}}
+[  222.0s] mean_std_p10_p90__fusion_score {'s1': {'AUC': 0.7818939843201793, 'bACC_med': 0.7216980158434141}, 's5': {'AUC': 0.8164384662419957, 'bACC_med': 0.7679569526413195}, 's10': {'AUC': 0.8085795468018964, 'bACC_med': 0.7857248463262942}, 's20': {'AUC': 0.7582079716683742, 'bACC_med': 0.7677249071938217}}
+[  223.0s] mean_std_p10_p90__fusion_logit {'s1': {'AUC': 0.7828664726778246, 'bACC_med': 0.7224569878273586}, 's5': {'AUC': 0.8170964883756944, 'bACC_med': 0.7686581292759078}, 's10': {'AUC': 0.8093691445606656, 'bACC_med': 0.7850604638239995}, 's20': {'AUC': 0.758804790255205, 'bACC_med': 0.7680732393803686}}
+[  223.0s] calibrating mean_std_slope_diff dim=465
+[  233.2s] mean_std_slope_diff d50 fold 1/5 ntr=12019
+[  236.5s] mean_std_slope_diff d50 fold 2/5 ntr=11896
+[  239.6s] mean_std_slope_diff d50 fold 3/5 ntr=11996
+[  242.8s] mean_std_slope_diff d50 fold 4/5 ntr=11758
+[  245.2s] mean_std_slope_diff d50 fold 5/5 ntr=11995
+[  249.4s] mean_std_slope_diff d100 fold 1/5 ntr=12019
+[  252.6s] mean_std_slope_diff d100 fold 2/5 ntr=11896
+[  256.0s] mean_std_slope_diff d100 fold 3/5 ntr=11996
+[  259.0s] mean_std_slope_diff d100 fold 4/5 ntr=11758
+[  262.3s] mean_std_slope_diff d100 fold 5/5 ntr=11995
+[  266.2s] mean_std_slope_diff d200 fold 1/5 ntr=12019
+[  268.5s] mean_std_slope_diff d200 fold 2/5 ntr=11896
+[  271.5s] mean_std_slope_diff d200 fold 3/5 ntr=11996
+[  274.7s] mean_std_slope_diff d200 fold 4/5 ntr=11758
+[  277.7s] mean_std_slope_diff d200 fold 5/5 ntr=11995
+[  281.3s] mean_std_slope_diff d400 fold 1/5 ntr=12019
+[  284.3s] mean_std_slope_diff d400 fold 2/5 ntr=11896
+[  287.6s] mean_std_slope_diff d400 fold 3/5 ntr=11996
+[  290.3s] mean_std_slope_diff d400 fold 4/5 ntr=11758
+[  293.0s] mean_std_slope_diff d400 fold 5/5 ntr=11995
+[  297.1s] mean_std_slope_diff d800 fold 1/5 ntr=12019
+[  300.2s] mean_std_slope_diff d800 fold 2/5 ntr=11896
+[  303.1s] mean_std_slope_diff d800 fold 3/5 ntr=11996
+[  305.5s] mean_std_slope_diff d800 fold 4/5 ntr=11758
+[  308.0s] mean_std_slope_diff d800 fold 5/5 ntr=11995
+[  309.6s] mean_std_slope_diff newD {'s1': {'AUC': 0.7147534378195199, 'bACC_med': 0.6599130026940863}, 's5': {'AUC': 0.7561614591053989, 'bACC_med': 0.6975399235029677}, 's10': {'AUC': 0.749731054381853, 'bACC_med': 0.7044891925098627}, 's20': {'AUC': 0.7028207891815784, 'bACC_med': 0.6832971640362808}}
+[  310.7s] mean_std_slope_diff__fusion_score {'s1': {'AUC': 0.7796667992503501, 'bACC_med': 0.7181568986285893}, 's5': {'AUC': 0.8153176972911935, 'bACC_med': 0.7657513688233261}, 's10': {'AUC': 0.8072116595300931, 'bACC_med': 0.780294195609224}, 's20': {'AUC': 0.7561073219315206, 'bACC_med': 0.7639968671464449}}
+[  311.7s] mean_std_slope_diff__fusion_logit {'s1': {'AUC': 0.7807346691355457, 'bACC_med': 0.7180300272761407}, 's5': {'AUC': 0.8160870858788009, 'bACC_med': 0.7660051115282234}, 's10': {'AUC': 0.8080835820597475, 'bACC_med': 0.7801372985167236}, 's20': {'AUC': 0.7570195667979351, 'bACC_med': 0.7634015606472426}}
+[  311.8s] done 312s
