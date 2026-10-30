@@ -1,0 +1,608 @@
+[start] rows=16067 subjects=57 device=cuda smoke=False rseeds=(0, 1, 2) sseeds=(0, 1, 2)
+[check] stream_order == depositioned_history_delta.arrange(independent) for all stream seeds
+[raw-delta evidence] {'rms_ratio_pastmean_over_x': 0.2883971103678306, 'mean_corr_x_vs_delta': 0.9747945224097627} flat_windows=82
+    [resnet rs0 fold1/5] ep01/50 loss=0.7030 valAUC=0.5042 best=0.5042@1 t=4s elapsed=7.1s
+    [resnet rs0 fold1/5] ep02/50 loss=0.6866 valAUC=0.5640 best=0.5640@2 t=6s elapsed=9.3s
+    [resnet rs0 fold1/5] ep03/50 loss=0.6854 valAUC=0.5788 best=0.5788@3 t=8s elapsed=11.6s
+    [resnet rs0 fold1/5] ep04/50 loss=0.6859 valAUC=0.5541 best=0.5788@3 t=11s elapsed=13.8s
+    [resnet rs0 fold1/5] ep05/50 loss=0.6814 valAUC=0.5791 best=0.5791@5 t=13s elapsed=16.0s
+    [resnet rs0 fold1/5] ep06/50 loss=0.6834 valAUC=0.5780 best=0.5791@5 t=15s elapsed=18.3s
+    [resnet rs0 fold1/5] ep07/50 loss=0.6812 valAUC=0.5719 best=0.5791@5 t=17s elapsed=20.6s
+    [resnet rs0 fold1/5] ep08/50 loss=0.6803 valAUC=0.5877 best=0.5877@8 t=20s elapsed=22.9s
+    [resnet rs0 fold1/5] ep09/50 loss=0.6813 valAUC=0.5944 best=0.5944@9 t=22s elapsed=25.2s
+    [resnet rs0 fold1/5] ep10/50 loss=0.6756 valAUC=0.5746 best=0.5944@9 t=24s elapsed=27.6s
+    [resnet rs0 fold1/5] ep11/50 loss=0.6711 valAUC=0.5965 best=0.5965@11 t=27s elapsed=29.9s
+    [resnet rs0 fold1/5] ep12/50 loss=0.6700 valAUC=0.6065 best=0.6065@12 t=29s elapsed=32.2s
+    [resnet rs0 fold1/5] ep13/50 loss=0.6672 valAUC=0.5961 best=0.6065@12 t=31s elapsed=34.6s
+    [resnet rs0 fold1/5] ep14/50 loss=0.6634 valAUC=0.6033 best=0.6065@12 t=34s elapsed=36.9s
+    [resnet rs0 fold1/5] ep15/50 loss=0.6598 valAUC=0.6063 best=0.6065@12 t=36s elapsed=39.2s
+    [resnet rs0 fold1/5] ep16/50 loss=0.6567 valAUC=0.6127 best=0.6127@16 t=38s elapsed=41.5s
+    [resnet rs0 fold1/5] ep17/50 loss=0.6595 valAUC=0.6133 best=0.6133@17 t=41s elapsed=43.9s
+    [resnet rs0 fold1/5] ep18/50 loss=0.6564 valAUC=0.6277 best=0.6277@18 t=43s elapsed=46.2s
+    [resnet rs0 fold1/5] ep19/50 loss=0.6554 valAUC=0.5884 best=0.6277@18 t=45s elapsed=48.6s
+    [resnet rs0 fold1/5] ep20/50 loss=0.6574 valAUC=0.6049 best=0.6277@18 t=48s elapsed=50.9s
+    [resnet rs0 fold1/5] ep21/50 loss=0.6511 valAUC=0.5997 best=0.6277@18 t=50s elapsed=53.2s
+    [resnet rs0 fold1/5] ep22/50 loss=0.6534 valAUC=0.6346 best=0.6346@22 t=52s elapsed=55.6s
+    [resnet rs0 fold1/5] ep23/50 loss=0.6500 valAUC=0.6388 best=0.6388@23 t=55s elapsed=57.9s
+    [resnet rs0 fold1/5] ep24/50 loss=0.6503 valAUC=0.6186 best=0.6388@23 t=57s elapsed=60.3s
+    [resnet rs0 fold1/5] ep25/50 loss=0.6473 valAUC=0.5764 best=0.6388@23 t=59s elapsed=62.6s
+    [resnet rs0 fold1/5] ep26/50 loss=0.6476 valAUC=0.6073 best=0.6388@23 t=62s elapsed=64.9s
+    [resnet rs0 fold1/5] ep27/50 loss=0.6452 valAUC=0.6438 best=0.6438@27 t=64s elapsed=67.3s
+    [resnet rs0 fold1/5] ep28/50 loss=0.6470 valAUC=0.6152 best=0.6438@27 t=66s elapsed=69.6s
+    [resnet rs0 fold1/5] ep29/50 loss=0.6429 valAUC=0.6173 best=0.6438@27 t=69s elapsed=72.0s
+    [resnet rs0 fold1/5] ep30/50 loss=0.6445 valAUC=0.5914 best=0.6438@27 t=71s elapsed=74.3s
+    [resnet rs0 fold1/5] ep31/50 loss=0.6395 valAUC=0.6337 best=0.6438@27 t=73s elapsed=76.6s
+    [resnet rs0 fold1/5] ep32/50 loss=0.6424 valAUC=0.6503 best=0.6503@32 t=76s elapsed=79.0s
+    [resnet rs0 fold1/5] ep33/50 loss=0.6394 valAUC=0.6003 best=0.6503@32 t=78s elapsed=81.4s
+    [resnet rs0 fold1/5] ep34/50 loss=0.6409 valAUC=0.6490 best=0.6503@32 t=80s elapsed=83.7s
+    [resnet rs0 fold1/5] ep35/50 loss=0.6369 valAUC=0.6395 best=0.6503@32 t=83s elapsed=86.1s
+    [resnet rs0 fold1/5] ep36/50 loss=0.6364 valAUC=0.6216 best=0.6503@32 t=85s elapsed=88.4s
+    [resnet rs0 fold1/5] ep37/50 loss=0.6344 valAUC=0.6241 best=0.6503@32 t=88s elapsed=90.8s
+    [resnet rs0 fold1/5] ep38/50 loss=0.6354 valAUC=0.6397 best=0.6503@32 t=90s elapsed=93.1s
+    [resnet rs0 fold1/5] ep39/50 loss=0.6302 valAUC=0.6484 best=0.6503@32 t=92s elapsed=95.5s
+    [resnet rs0 fold1/5] ep40/50 loss=0.6306 valAUC=0.6136 best=0.6503@32 t=95s elapsed=97.8s
+[resnet] resnet rs0 fold1/5 best_ep=32/40 valAUC=0.6503 testAUC=0.5829 95s elapsed=99.4s
+    [resnet rs1 fold1/5] ep01/50 loss=0.7020 valAUC=0.5164 best=0.5164@1 t=2s elapsed=101.8s
+    [resnet rs1 fold1/5] ep02/50 loss=0.6925 valAUC=0.5804 best=0.5804@2 t=5s elapsed=104.1s
+    [resnet rs1 fold1/5] ep03/50 loss=0.6917 valAUC=0.5374 best=0.5804@2 t=7s elapsed=106.5s
+    [resnet rs1 fold1/5] ep04/50 loss=0.6867 valAUC=0.5823 best=0.5823@4 t=9s elapsed=108.8s
+    [resnet rs1 fold1/5] ep05/50 loss=0.6852 valAUC=0.5669 best=0.5823@4 t=12s elapsed=111.2s
+    [resnet rs1 fold1/5] ep06/50 loss=0.6820 valAUC=0.5863 best=0.5863@6 t=14s elapsed=113.5s
+    [resnet rs1 fold1/5] ep07/50 loss=0.6786 valAUC=0.5651 best=0.5863@6 t=16s elapsed=115.9s
+    [resnet rs1 fold1/5] ep08/50 loss=0.6756 valAUC=0.5510 best=0.5863@6 t=19s elapsed=118.2s
+    [resnet rs1 fold1/5] ep09/50 loss=0.6730 valAUC=0.5768 best=0.5863@6 t=21s elapsed=120.6s
+    [resnet rs1 fold1/5] ep10/50 loss=0.6690 valAUC=0.6257 best=0.6257@10 t=24s elapsed=122.9s
+    [resnet rs1 fold1/5] ep11/50 loss=0.6639 valAUC=0.6054 best=0.6257@10 t=26s elapsed=125.3s
+    [resnet rs1 fold1/5] ep12/50 loss=0.6630 valAUC=0.5932 best=0.6257@10 t=28s elapsed=127.7s
+    [resnet rs1 fold1/5] ep13/50 loss=0.6571 valAUC=0.6331 best=0.6331@13 t=31s elapsed=130.0s
+    [resnet rs1 fold1/5] ep14/50 loss=0.6605 valAUC=0.6007 best=0.6331@13 t=33s elapsed=132.4s
+    [resnet rs1 fold1/5] ep15/50 loss=0.6591 valAUC=0.5991 best=0.6331@13 t=35s elapsed=134.7s
+    [resnet rs1 fold1/5] ep16/50 loss=0.6529 valAUC=0.5971 best=0.6331@13 t=38s elapsed=137.1s
+    [resnet rs1 fold1/5] ep17/50 loss=0.6505 valAUC=0.6071 best=0.6331@13 t=40s elapsed=139.4s
+    [resnet rs1 fold1/5] ep18/50 loss=0.6538 valAUC=0.6284 best=0.6331@13 t=42s elapsed=141.8s
+    [resnet rs1 fold1/5] ep19/50 loss=0.6474 valAUC=0.5984 best=0.6331@13 t=45s elapsed=144.1s
+    [resnet rs1 fold1/5] ep20/50 loss=0.6470 valAUC=0.6020 best=0.6331@13 t=47s elapsed=146.5s
+    [resnet rs1 fold1/5] ep21/50 loss=0.6435 valAUC=0.6179 best=0.6331@13 t=49s elapsed=148.8s
+[resnet] resnet rs1 fold1/5 best_ep=13/21 valAUC=0.6331 testAUC=0.5903 49s elapsed=150.4s
+    [resnet rs2 fold1/5] ep01/50 loss=0.6971 valAUC=0.5572 best=0.5572@1 t=2s elapsed=152.8s
+    [resnet rs2 fold1/5] ep02/50 loss=0.6909 valAUC=0.5803 best=0.5803@2 t=5s elapsed=155.1s
+    [resnet rs2 fold1/5] ep03/50 loss=0.6889 valAUC=0.5879 best=0.5879@3 t=7s elapsed=157.5s
+    [resnet rs2 fold1/5] ep04/50 loss=0.6884 valAUC=0.5840 best=0.5879@3 t=9s elapsed=159.9s
+    [resnet rs2 fold1/5] ep05/50 loss=0.6877 valAUC=0.5832 best=0.5879@3 t=12s elapsed=162.3s
+    [resnet rs2 fold1/5] ep06/50 loss=0.6834 valAUC=0.5723 best=0.5879@3 t=14s elapsed=164.6s
+    [resnet rs2 fold1/5] ep07/50 loss=0.6801 valAUC=0.5562 best=0.5879@3 t=17s elapsed=167.0s
+    [resnet rs2 fold1/5] ep08/50 loss=0.6809 valAUC=0.5926 best=0.5926@8 t=19s elapsed=169.4s
+    [resnet rs2 fold1/5] ep09/50 loss=0.6809 valAUC=0.6029 best=0.6029@9 t=21s elapsed=171.7s
+    [resnet rs2 fold1/5] ep10/50 loss=0.6750 valAUC=0.5771 best=0.6029@9 t=24s elapsed=174.1s
+    [resnet rs2 fold1/5] ep11/50 loss=0.6770 valAUC=0.5767 best=0.6029@9 t=26s elapsed=176.5s
+    [resnet rs2 fold1/5] ep12/50 loss=0.6730 valAUC=0.5963 best=0.6029@9 t=28s elapsed=178.8s
+    [resnet rs2 fold1/5] ep13/50 loss=0.6704 valAUC=0.5937 best=0.6029@9 t=31s elapsed=181.2s
+    [resnet rs2 fold1/5] ep14/50 loss=0.6707 valAUC=0.6045 best=0.6045@14 t=33s elapsed=183.6s
+    [resnet rs2 fold1/5] ep15/50 loss=0.6673 valAUC=0.6110 best=0.6110@15 t=36s elapsed=185.9s
+    [resnet rs2 fold1/5] ep16/50 loss=0.6645 valAUC=0.6017 best=0.6110@15 t=38s elapsed=188.3s
+    [resnet rs2 fold1/5] ep17/50 loss=0.6653 valAUC=0.6221 best=0.6221@17 t=40s elapsed=190.7s
+    [resnet rs2 fold1/5] ep18/50 loss=0.6621 valAUC=0.6213 best=0.6221@17 t=43s elapsed=193.0s
+    [resnet rs2 fold1/5] ep19/50 loss=0.6572 valAUC=0.5862 best=0.6221@17 t=45s elapsed=195.4s
+    [resnet rs2 fold1/5] ep20/50 loss=0.6582 valAUC=0.6051 best=0.6221@17 t=47s elapsed=197.8s
+    [resnet rs2 fold1/5] ep21/50 loss=0.6560 valAUC=0.6229 best=0.6229@21 t=50s elapsed=200.1s
+    [resnet rs2 fold1/5] ep22/50 loss=0.6575 valAUC=0.5933 best=0.6229@21 t=52s elapsed=202.5s
+    [resnet rs2 fold1/5] ep23/50 loss=0.6532 valAUC=0.6297 best=0.6297@23 t=54s elapsed=204.9s
+    [resnet rs2 fold1/5] ep24/50 loss=0.6532 valAUC=0.5866 best=0.6297@23 t=57s elapsed=207.3s
+    [resnet rs2 fold1/5] ep25/50 loss=0.6506 valAUC=0.5741 best=0.6297@23 t=59s elapsed=209.6s
+    [resnet rs2 fold1/5] ep26/50 loss=0.6492 valAUC=0.6056 best=0.6297@23 t=62s elapsed=212.0s
+    [resnet rs2 fold1/5] ep27/50 loss=0.6472 valAUC=0.5795 best=0.6297@23 t=64s elapsed=214.4s
+    [resnet rs2 fold1/5] ep28/50 loss=0.6472 valAUC=0.6117 best=0.6297@23 t=66s elapsed=216.7s
+    [resnet rs2 fold1/5] ep29/50 loss=0.6455 valAUC=0.6267 best=0.6297@23 t=69s elapsed=218.9s
+    [resnet rs2 fold1/5] ep30/50 loss=0.6444 valAUC=0.6173 best=0.6297@23 t=71s elapsed=221.2s
+    [resnet rs2 fold1/5] ep31/50 loss=0.6438 valAUC=0.6381 best=0.6381@31 t=73s elapsed=223.5s
+    [resnet rs2 fold1/5] ep32/50 loss=0.6418 valAUC=0.5956 best=0.6381@31 t=75s elapsed=225.8s
+    [resnet rs2 fold1/5] ep33/50 loss=0.6433 valAUC=0.6288 best=0.6381@31 t=78s elapsed=228.1s
+    [resnet rs2 fold1/5] ep34/50 loss=0.6405 valAUC=0.6092 best=0.6381@31 t=80s elapsed=230.4s
+    [resnet rs2 fold1/5] ep35/50 loss=0.6380 valAUC=0.6261 best=0.6381@31 t=82s elapsed=232.7s
+    [resnet rs2 fold1/5] ep36/50 loss=0.6413 valAUC=0.5808 best=0.6381@31 t=85s elapsed=234.9s
+    [resnet rs2 fold1/5] ep37/50 loss=0.6373 valAUC=0.6149 best=0.6381@31 t=87s elapsed=237.2s
+    [resnet rs2 fold1/5] ep38/50 loss=0.6358 valAUC=0.5681 best=0.6381@31 t=89s elapsed=239.5s
+    [resnet rs2 fold1/5] ep39/50 loss=0.6363 valAUC=0.6198 best=0.6381@31 t=91s elapsed=241.8s
+[resnet] resnet rs2 fold1/5 best_ep=31/39 valAUC=0.6381 testAUC=0.5716 91s elapsed=243.3s
+    [resnet rs0 fold2/5] ep01/50 loss=0.7009 valAUC=0.4796 best=0.4796@1 t=2s elapsed=245.6s
+    [resnet rs0 fold2/5] ep02/50 loss=0.6953 valAUC=0.5331 best=0.5331@2 t=5s elapsed=247.9s
+    [resnet rs0 fold2/5] ep03/50 loss=0.6920 valAUC=0.4763 best=0.5331@2 t=7s elapsed=250.1s
+    [resnet rs0 fold2/5] ep04/50 loss=0.6913 valAUC=0.4800 best=0.5331@2 t=9s elapsed=252.4s
+    [resnet rs0 fold2/5] ep05/50 loss=0.6890 valAUC=0.5346 best=0.5346@5 t=11s elapsed=254.7s
+    [resnet rs0 fold2/5] ep06/50 loss=0.6903 valAUC=0.5138 best=0.5346@5 t=14s elapsed=257.0s
+    [resnet rs0 fold2/5] ep07/50 loss=0.6890 valAUC=0.5285 best=0.5346@5 t=16s elapsed=259.2s
+    [resnet rs0 fold2/5] ep08/50 loss=0.6886 valAUC=0.5281 best=0.5346@5 t=18s elapsed=261.5s
+    [resnet rs0 fold2/5] ep09/50 loss=0.6886 valAUC=0.5288 best=0.5346@5 t=20s elapsed=263.8s
+    [resnet rs0 fold2/5] ep10/50 loss=0.6845 valAUC=0.5557 best=0.5557@10 t=23s elapsed=266.0s
+    [resnet rs0 fold2/5] ep11/50 loss=0.6863 valAUC=0.5487 best=0.5557@10 t=25s elapsed=268.3s
+    [resnet rs0 fold2/5] ep12/50 loss=0.6860 valAUC=0.5474 best=0.5557@10 t=27s elapsed=270.6s
+    [resnet rs0 fold2/5] ep13/50 loss=0.6836 valAUC=0.5574 best=0.5574@13 t=30s elapsed=272.8s
+    [resnet rs0 fold2/5] ep14/50 loss=0.6805 valAUC=0.5581 best=0.5581@14 t=32s elapsed=275.1s
+    [resnet rs0 fold2/5] ep15/50 loss=0.6807 valAUC=0.5587 best=0.5587@15 t=34s elapsed=277.4s
+    [resnet rs0 fold2/5] ep16/50 loss=0.6784 valAUC=0.5555 best=0.5587@15 t=36s elapsed=279.7s
+    [resnet rs0 fold2/5] ep17/50 loss=0.6780 valAUC=0.5354 best=0.5587@15 t=39s elapsed=281.9s
+    [resnet rs0 fold2/5] ep18/50 loss=0.6780 valAUC=0.5704 best=0.5704@18 t=41s elapsed=284.2s
+    [resnet rs0 fold2/5] ep19/50 loss=0.6769 valAUC=0.5703 best=0.5704@18 t=43s elapsed=286.5s
+    [resnet rs0 fold2/5] ep20/50 loss=0.6720 valAUC=0.5907 best=0.5907@20 t=45s elapsed=288.7s
+    [resnet rs0 fold2/5] ep21/50 loss=0.6735 valAUC=0.5899 best=0.5907@20 t=48s elapsed=291.0s
+    [resnet rs0 fold2/5] ep22/50 loss=0.6705 valAUC=0.5832 best=0.5907@20 t=50s elapsed=293.3s
+    [resnet rs0 fold2/5] ep23/50 loss=0.6715 valAUC=0.5903 best=0.5907@20 t=52s elapsed=295.6s
+    [resnet rs0 fold2/5] ep24/50 loss=0.6660 valAUC=0.5636 best=0.5907@20 t=55s elapsed=297.8s
+    [resnet rs0 fold2/5] ep25/50 loss=0.6669 valAUC=0.5485 best=0.5907@20 t=57s elapsed=300.1s
+    [resnet rs0 fold2/5] ep26/50 loss=0.6632 valAUC=0.5869 best=0.5907@20 t=59s elapsed=302.4s
+    [resnet rs0 fold2/5] ep27/50 loss=0.6626 valAUC=0.5816 best=0.5907@20 t=61s elapsed=304.6s
+    [resnet rs0 fold2/5] ep28/50 loss=0.6611 valAUC=0.5610 best=0.5907@20 t=64s elapsed=306.9s
+[resnet] resnet rs0 fold2/5 best_ep=20/28 valAUC=0.5907 testAUC=0.6165 64s elapsed=308.4s
+    [resnet rs1 fold2/5] ep01/50 loss=0.7009 valAUC=0.5021 best=0.5021@1 t=2s elapsed=310.7s
+    [resnet rs1 fold2/5] ep02/50 loss=0.6939 valAUC=0.5071 best=0.5071@2 t=5s elapsed=313.0s
+    [resnet rs1 fold2/5] ep03/50 loss=0.6919 valAUC=0.5285 best=0.5285@3 t=7s elapsed=315.2s
+    [resnet rs1 fold2/5] ep04/50 loss=0.6911 valAUC=0.5490 best=0.5490@4 t=9s elapsed=317.5s
+    [resnet rs1 fold2/5] ep05/50 loss=0.6880 valAUC=0.5377 best=0.5490@4 t=11s elapsed=319.8s
+    [resnet rs1 fold2/5] ep06/50 loss=0.6882 valAUC=0.5395 best=0.5490@4 t=14s elapsed=322.0s
+    [resnet rs1 fold2/5] ep07/50 loss=0.6845 valAUC=0.5312 best=0.5490@4 t=16s elapsed=324.3s
+    [resnet rs1 fold2/5] ep08/50 loss=0.6837 valAUC=0.5440 best=0.5490@4 t=18s elapsed=326.6s
+    [resnet rs1 fold2/5] ep09/50 loss=0.6811 valAUC=0.5394 best=0.5490@4 t=20s elapsed=328.9s
+    [resnet rs1 fold2/5] ep10/50 loss=0.6829 valAUC=0.5472 best=0.5490@4 t=23s elapsed=331.1s
+    [resnet rs1 fold2/5] ep11/50 loss=0.6810 valAUC=0.5396 best=0.5490@4 t=25s elapsed=333.4s
+    [resnet rs1 fold2/5] ep12/50 loss=0.6805 valAUC=0.5816 best=0.5816@12 t=27s elapsed=335.7s
+    [resnet rs1 fold2/5] ep13/50 loss=0.6785 valAUC=0.5751 best=0.5816@12 t=30s elapsed=338.0s
+    [resnet rs1 fold2/5] ep14/50 loss=0.6766 valAUC=0.6025 best=0.6025@14 t=32s elapsed=340.2s
+    [resnet rs1 fold2/5] ep15/50 loss=0.6758 valAUC=0.5545 best=0.6025@14 t=34s elapsed=342.5s
+    [resnet rs1 fold2/5] ep16/50 loss=0.6711 valAUC=0.6079 best=0.6079@16 t=36s elapsed=344.8s
+    [resnet rs1 fold2/5] ep17/50 loss=0.6728 valAUC=0.6056 best=0.6079@16 t=39s elapsed=347.0s
+    [resnet rs1 fold2/5] ep18/50 loss=0.6694 valAUC=0.6025 best=0.6079@16 t=41s elapsed=349.3s
+    [resnet rs1 fold2/5] ep19/50 loss=0.6699 valAUC=0.5833 best=0.6079@16 t=43s elapsed=351.6s
+    [resnet rs1 fold2/5] ep20/50 loss=0.6685 valAUC=0.6204 best=0.6204@20 t=45s elapsed=353.9s
+    [resnet rs1 fold2/5] ep21/50 loss=0.6666 valAUC=0.6000 best=0.6204@20 t=48s elapsed=356.1s
+    [resnet rs1 fold2/5] ep22/50 loss=0.6607 valAUC=0.6115 best=0.6204@20 t=50s elapsed=358.4s
+    [resnet rs1 fold2/5] ep23/50 loss=0.6637 valAUC=0.5813 best=0.6204@20 t=52s elapsed=360.7s
+    [resnet rs1 fold2/5] ep24/50 loss=0.6604 valAUC=0.6212 best=0.6212@24 t=55s elapsed=362.9s
+    [resnet rs1 fold2/5] ep25/50 loss=0.6574 valAUC=0.6092 best=0.6212@24 t=57s elapsed=365.2s
+    [resnet rs1 fold2/5] ep26/50 loss=0.6529 valAUC=0.5418 best=0.6212@24 t=59s elapsed=367.5s
+    [resnet rs1 fold2/5] ep27/50 loss=0.6507 valAUC=0.5320 best=0.6212@24 t=61s elapsed=369.7s
+    [resnet rs1 fold2/5] ep28/50 loss=0.6487 valAUC=0.5822 best=0.6212@24 t=64s elapsed=372.0s
+    [resnet rs1 fold2/5] ep29/50 loss=0.6464 valAUC=0.5945 best=0.6212@24 t=66s elapsed=374.3s
+    [resnet rs1 fold2/5] ep30/50 loss=0.6481 valAUC=0.5888 best=0.6212@24 t=68s elapsed=376.6s
+    [resnet rs1 fold2/5] ep31/50 loss=0.6452 valAUC=0.5634 best=0.6212@24 t=70s elapsed=378.8s
+    [resnet rs1 fold2/5] ep32/50 loss=0.6429 valAUC=0.6163 best=0.6212@24 t=73s elapsed=381.1s
+[resnet] resnet rs1 fold2/5 best_ep=24/32 valAUC=0.6212 testAUC=0.6435 73s elapsed=382.6s
+    [resnet rs2 fold2/5] ep01/50 loss=0.7022 valAUC=0.4927 best=0.4927@1 t=2s elapsed=384.9s
+    [resnet rs2 fold2/5] ep02/50 loss=0.6928 valAUC=0.5547 best=0.5547@2 t=5s elapsed=387.2s
+    [resnet rs2 fold2/5] ep03/50 loss=0.6894 valAUC=0.5267 best=0.5547@2 t=7s elapsed=389.4s
+    [resnet rs2 fold2/5] ep04/50 loss=0.6887 valAUC=0.5665 best=0.5665@4 t=9s elapsed=391.7s
+    [resnet rs2 fold2/5] ep05/50 loss=0.6864 valAUC=0.5464 best=0.5665@4 t=11s elapsed=394.0s
+    [resnet rs2 fold2/5] ep06/50 loss=0.6860 valAUC=0.5694 best=0.5694@6 t=14s elapsed=396.2s
+    [resnet rs2 fold2/5] ep07/50 loss=0.6851 valAUC=0.5373 best=0.5694@6 t=16s elapsed=398.5s
+    [resnet rs2 fold2/5] ep08/50 loss=0.6852 valAUC=0.5341 best=0.5694@6 t=18s elapsed=400.8s
+    [resnet rs2 fold2/5] ep09/50 loss=0.6844 valAUC=0.5449 best=0.5694@6 t=20s elapsed=403.0s
+    [resnet rs2 fold2/5] ep10/50 loss=0.6807 valAUC=0.5419 best=0.5694@6 t=23s elapsed=405.3s
+    [resnet rs2 fold2/5] ep11/50 loss=0.6835 valAUC=0.5492 best=0.5694@6 t=25s elapsed=407.6s
+    [resnet rs2 fold2/5] ep12/50 loss=0.6795 valAUC=0.5415 best=0.5694@6 t=27s elapsed=409.9s
+    [resnet rs2 fold2/5] ep13/50 loss=0.6787 valAUC=0.5727 best=0.5727@13 t=30s elapsed=412.1s
+    [resnet rs2 fold2/5] ep14/50 loss=0.6787 valAUC=0.5681 best=0.5727@13 t=32s elapsed=414.4s
+    [resnet rs2 fold2/5] ep15/50 loss=0.6758 valAUC=0.5362 best=0.5727@13 t=34s elapsed=416.7s
+    [resnet rs2 fold2/5] ep16/50 loss=0.6759 valAUC=0.5737 best=0.5737@16 t=36s elapsed=418.9s
+    [resnet rs2 fold2/5] ep17/50 loss=0.6745 valAUC=0.5054 best=0.5737@16 t=39s elapsed=421.2s
+    [resnet rs2 fold2/5] ep18/50 loss=0.6722 valAUC=0.5877 best=0.5877@18 t=41s elapsed=423.5s
+    [resnet rs2 fold2/5] ep19/50 loss=0.6721 valAUC=0.5952 best=0.5952@19 t=43s elapsed=425.7s
+    [resnet rs2 fold2/5] ep20/50 loss=0.6695 valAUC=0.5673 best=0.5952@19 t=45s elapsed=428.0s
+    [resnet rs2 fold2/5] ep21/50 loss=0.6674 valAUC=0.6057 best=0.6057@21 t=48s elapsed=430.3s
+    [resnet rs2 fold2/5] ep22/50 loss=0.6649 valAUC=0.6022 best=0.6057@21 t=50s elapsed=432.6s
+    [resnet rs2 fold2/5] ep23/50 loss=0.6612 valAUC=0.6249 best=0.6249@23 t=52s elapsed=434.8s
+    [resnet rs2 fold2/5] ep24/50 loss=0.6591 valAUC=0.6148 best=0.6249@23 t=54s elapsed=437.1s
+    [resnet rs2 fold2/5] ep25/50 loss=0.6581 valAUC=0.5914 best=0.6249@23 t=57s elapsed=439.4s
+    [resnet rs2 fold2/5] ep26/50 loss=0.6545 valAUC=0.5937 best=0.6249@23 t=59s elapsed=441.6s
+    [resnet rs2 fold2/5] ep27/50 loss=0.6537 valAUC=0.5997 best=0.6249@23 t=61s elapsed=443.9s
+    [resnet rs2 fold2/5] ep28/50 loss=0.6520 valAUC=0.5823 best=0.6249@23 t=64s elapsed=446.2s
+    [resnet rs2 fold2/5] ep29/50 loss=0.6487 valAUC=0.5479 best=0.6249@23 t=66s elapsed=448.4s
+    [resnet rs2 fold2/5] ep30/50 loss=0.6457 valAUC=0.6254 best=0.6254@30 t=68s elapsed=450.7s
+    [resnet rs2 fold2/5] ep31/50 loss=0.6452 valAUC=0.5843 best=0.6254@30 t=70s elapsed=453.0s
+    [resnet rs2 fold2/5] ep32/50 loss=0.6416 valAUC=0.6070 best=0.6254@30 t=73s elapsed=455.3s
+    [resnet rs2 fold2/5] ep33/50 loss=0.6419 valAUC=0.5733 best=0.6254@30 t=75s elapsed=457.5s
+    [resnet rs2 fold2/5] ep34/50 loss=0.6403 valAUC=0.6129 best=0.6254@30 t=77s elapsed=459.8s
+    [resnet rs2 fold2/5] ep35/50 loss=0.6367 valAUC=0.6325 best=0.6325@35 t=79s elapsed=462.1s
+    [resnet rs2 fold2/5] ep36/50 loss=0.6333 valAUC=0.5689 best=0.6325@35 t=82s elapsed=464.3s
+    [resnet rs2 fold2/5] ep37/50 loss=0.6344 valAUC=0.6078 best=0.6325@35 t=84s elapsed=466.6s
+    [resnet rs2 fold2/5] ep38/50 loss=0.6306 valAUC=0.6096 best=0.6325@35 t=86s elapsed=468.9s
+    [resnet rs2 fold2/5] ep39/50 loss=0.6261 valAUC=0.6190 best=0.6325@35 t=89s elapsed=471.2s
+    [resnet rs2 fold2/5] ep40/50 loss=0.6257 valAUC=0.6185 best=0.6325@35 t=91s elapsed=473.4s
+    [resnet rs2 fold2/5] ep41/50 loss=0.6268 valAUC=0.6163 best=0.6325@35 t=93s elapsed=475.7s
+    [resnet rs2 fold2/5] ep42/50 loss=0.6228 valAUC=0.6265 best=0.6325@35 t=95s elapsed=478.0s
+    [resnet rs2 fold2/5] ep43/50 loss=0.6192 valAUC=0.6290 best=0.6325@35 t=98s elapsed=480.2s
+[resnet] resnet rs2 fold2/5 best_ep=35/43 valAUC=0.6325 testAUC=0.6804 98s elapsed=481.7s
+    [resnet rs0 fold3/5] ep01/50 loss=0.6984 valAUC=0.5650 best=0.5650@1 t=2s elapsed=484.1s
+    [resnet rs0 fold3/5] ep02/50 loss=0.6860 valAUC=0.5400 best=0.5650@1 t=5s elapsed=486.4s
+    [resnet rs0 fold3/5] ep03/50 loss=0.6826 valAUC=0.5564 best=0.5650@1 t=7s elapsed=488.7s
+    [resnet rs0 fold3/5] ep04/50 loss=0.6785 valAUC=0.5599 best=0.5650@1 t=9s elapsed=491.0s
+    [resnet rs0 fold3/5] ep05/50 loss=0.6752 valAUC=0.5577 best=0.5650@1 t=12s elapsed=493.3s
+    [resnet rs0 fold3/5] ep06/50 loss=0.6757 valAUC=0.5519 best=0.5650@1 t=14s elapsed=495.6s
+    [resnet rs0 fold3/5] ep07/50 loss=0.6696 valAUC=0.5788 best=0.5788@7 t=16s elapsed=497.9s
+    [resnet rs0 fold3/5] ep08/50 loss=0.6699 valAUC=0.5594 best=0.5788@7 t=18s elapsed=500.2s
+    [resnet rs0 fold3/5] ep09/50 loss=0.6647 valAUC=0.5756 best=0.5788@7 t=21s elapsed=502.4s
+    [resnet rs0 fold3/5] ep10/50 loss=0.6664 valAUC=0.5760 best=0.5788@7 t=23s elapsed=504.7s
+    [resnet rs0 fold3/5] ep11/50 loss=0.6601 valAUC=0.5772 best=0.5788@7 t=25s elapsed=507.0s
+    [resnet rs0 fold3/5] ep12/50 loss=0.6603 valAUC=0.5654 best=0.5788@7 t=28s elapsed=509.3s
+    [resnet rs0 fold3/5] ep13/50 loss=0.6607 valAUC=0.5563 best=0.5788@7 t=30s elapsed=511.6s
+    [resnet rs0 fold3/5] ep14/50 loss=0.6526 valAUC=0.5750 best=0.5788@7 t=32s elapsed=513.9s
+    [resnet rs0 fold3/5] ep15/50 loss=0.6516 valAUC=0.5952 best=0.5952@15 t=34s elapsed=516.2s
+    [resnet rs0 fold3/5] ep16/50 loss=0.6488 valAUC=0.6026 best=0.6026@16 t=37s elapsed=518.5s
+    [resnet rs0 fold3/5] ep17/50 loss=0.6464 valAUC=0.5964 best=0.6026@16 t=39s elapsed=520.8s
+    [resnet rs0 fold3/5] ep18/50 loss=0.6409 valAUC=0.5836 best=0.6026@16 t=41s elapsed=523.1s
+    [resnet rs0 fold3/5] ep19/50 loss=0.6419 valAUC=0.5919 best=0.6026@16 t=44s elapsed=525.4s
+    [resnet rs0 fold3/5] ep20/50 loss=0.6398 valAUC=0.5963 best=0.6026@16 t=46s elapsed=527.7s
+    [resnet rs0 fold3/5] ep21/50 loss=0.6343 valAUC=0.6128 best=0.6128@21 t=48s elapsed=530.0s
+    [resnet rs0 fold3/5] ep22/50 loss=0.6370 valAUC=0.5875 best=0.6128@21 t=51s elapsed=532.3s
+    [resnet rs0 fold3/5] ep23/50 loss=0.6272 valAUC=0.5980 best=0.6128@21 t=53s elapsed=534.6s
+    [resnet rs0 fold3/5] ep24/50 loss=0.6307 valAUC=0.6112 best=0.6128@21 t=55s elapsed=536.9s
+    [resnet rs0 fold3/5] ep25/50 loss=0.6221 valAUC=0.6022 best=0.6128@21 t=57s elapsed=539.2s
+    [resnet rs0 fold3/5] ep26/50 loss=0.6210 valAUC=0.5948 best=0.6128@21 t=60s elapsed=541.5s
+    [resnet rs0 fold3/5] ep27/50 loss=0.6208 valAUC=0.6015 best=0.6128@21 t=62s elapsed=543.8s
+    [resnet rs0 fold3/5] ep28/50 loss=0.6203 valAUC=0.6063 best=0.6128@21 t=64s elapsed=546.1s
+    [resnet rs0 fold3/5] ep29/50 loss=0.6166 valAUC=0.6034 best=0.6128@21 t=67s elapsed=548.4s
+[resnet] resnet rs0 fold3/5 best_ep=21/29 valAUC=0.6128 testAUC=0.6223 67s elapsed=549.9s
+    [resnet rs1 fold3/5] ep01/50 loss=0.6946 valAUC=0.5586 best=0.5586@1 t=2s elapsed=552.2s
+    [resnet rs1 fold3/5] ep02/50 loss=0.6865 valAUC=0.5629 best=0.5629@2 t=5s elapsed=554.5s
+    [resnet rs1 fold3/5] ep03/50 loss=0.6815 valAUC=0.5377 best=0.5629@2 t=7s elapsed=556.8s
+    [resnet rs1 fold3/5] ep04/50 loss=0.6799 valAUC=0.5579 best=0.5629@2 t=9s elapsed=559.1s
+    [resnet rs1 fold3/5] ep05/50 loss=0.6772 valAUC=0.5715 best=0.5715@5 t=11s elapsed=561.3s
+    [resnet rs1 fold3/5] ep06/50 loss=0.6734 valAUC=0.5516 best=0.5715@5 t=14s elapsed=563.6s
+    [resnet rs1 fold3/5] ep07/50 loss=0.6674 valAUC=0.5687 best=0.5715@5 t=16s elapsed=565.9s
+    [resnet rs1 fold3/5] ep08/50 loss=0.6708 valAUC=0.5598 best=0.5715@5 t=18s elapsed=568.3s
+    [resnet rs1 fold3/5] ep09/50 loss=0.6688 valAUC=0.5557 best=0.5715@5 t=21s elapsed=570.7s
+    [resnet rs1 fold3/5] ep10/50 loss=0.6635 valAUC=0.5645 best=0.5715@5 t=23s elapsed=573.1s
+    [resnet rs1 fold3/5] ep11/50 loss=0.6593 valAUC=0.5769 best=0.5769@11 t=26s elapsed=575.4s
+    [resnet rs1 fold3/5] ep12/50 loss=0.6567 valAUC=0.5804 best=0.5804@12 t=28s elapsed=577.8s
+    [resnet rs1 fold3/5] ep13/50 loss=0.6554 valAUC=0.5947 best=0.5947@13 t=30s elapsed=580.2s
+    [resnet rs1 fold3/5] ep14/50 loss=0.6524 valAUC=0.5877 best=0.5947@13 t=33s elapsed=582.6s
+    [resnet rs1 fold3/5] ep15/50 loss=0.6463 valAUC=0.5757 best=0.5947@13 t=35s elapsed=585.0s
+    [resnet rs1 fold3/5] ep16/50 loss=0.6480 valAUC=0.5660 best=0.5947@13 t=37s elapsed=587.3s
+    [resnet rs1 fold3/5] ep17/50 loss=0.6435 valAUC=0.5888 best=0.5947@13 t=40s elapsed=589.7s
+    [resnet rs1 fold3/5] ep18/50 loss=0.6401 valAUC=0.5971 best=0.5971@18 t=42s elapsed=592.1s
+    [resnet rs1 fold3/5] ep19/50 loss=0.6369 valAUC=0.5847 best=0.5971@18 t=45s elapsed=594.5s
+    [resnet rs1 fold3/5] ep20/50 loss=0.6372 valAUC=0.5935 best=0.5971@18 t=47s elapsed=596.8s
+    [resnet rs1 fold3/5] ep21/50 loss=0.6320 valAUC=0.5705 best=0.5971@18 t=49s elapsed=599.2s
+    [resnet rs1 fold3/5] ep22/50 loss=0.6330 valAUC=0.5871 best=0.5971@18 t=52s elapsed=601.6s
+    [resnet rs1 fold3/5] ep23/50 loss=0.6249 valAUC=0.6036 best=0.6036@23 t=54s elapsed=604.0s
+    [resnet rs1 fold3/5] ep24/50 loss=0.6260 valAUC=0.6225 best=0.6225@24 t=56s elapsed=606.3s
+    [resnet rs1 fold3/5] ep25/50 loss=0.6217 valAUC=0.5882 best=0.6225@24 t=59s elapsed=608.7s
+    [resnet rs1 fold3/5] ep26/50 loss=0.6221 valAUC=0.6134 best=0.6225@24 t=61s elapsed=611.1s
+    [resnet rs1 fold3/5] ep27/50 loss=0.6197 valAUC=0.5713 best=0.6225@24 t=64s elapsed=613.5s
+    [resnet rs1 fold3/5] ep28/50 loss=0.6175 valAUC=0.5996 best=0.6225@24 t=66s elapsed=615.8s
+    [resnet rs1 fold3/5] ep29/50 loss=0.6197 valAUC=0.6021 best=0.6225@24 t=68s elapsed=618.2s
+    [resnet rs1 fold3/5] ep30/50 loss=0.6148 valAUC=0.5911 best=0.6225@24 t=71s elapsed=620.6s
+    [resnet rs1 fold3/5] ep31/50 loss=0.6084 valAUC=0.5805 best=0.6225@24 t=73s elapsed=623.0s
+    [resnet rs1 fold3/5] ep32/50 loss=0.6102 valAUC=0.6027 best=0.6225@24 t=76s elapsed=625.4s
+[resnet] resnet rs1 fold3/5 best_ep=24/32 valAUC=0.6225 testAUC=0.6490 76s elapsed=626.9s
+    [resnet rs2 fold3/5] ep01/50 loss=0.6986 valAUC=0.5628 best=0.5628@1 t=2s elapsed=629.3s
+    [resnet rs2 fold3/5] ep02/50 loss=0.6876 valAUC=0.5801 best=0.5801@2 t=5s elapsed=631.7s
+    [resnet rs2 fold3/5] ep03/50 loss=0.6849 valAUC=0.5748 best=0.5801@2 t=7s elapsed=634.1s
+    [resnet rs2 fold3/5] ep04/50 loss=0.6799 valAUC=0.5750 best=0.5801@2 t=10s elapsed=636.5s
+    [resnet rs2 fold3/5] ep05/50 loss=0.6746 valAUC=0.5697 best=0.5801@2 t=12s elapsed=638.8s
+    [resnet rs2 fold3/5] ep06/50 loss=0.6716 valAUC=0.5658 best=0.5801@2 t=14s elapsed=641.2s
+    [resnet rs2 fold3/5] ep07/50 loss=0.6743 valAUC=0.5603 best=0.5801@2 t=17s elapsed=643.6s
+    [resnet rs2 fold3/5] ep08/50 loss=0.6682 valAUC=0.5812 best=0.5812@8 t=19s elapsed=646.0s
+    [resnet rs2 fold3/5] ep09/50 loss=0.6679 valAUC=0.5602 best=0.5812@8 t=21s elapsed=648.4s
+    [resnet rs2 fold3/5] ep10/50 loss=0.6637 valAUC=0.5807 best=0.5812@8 t=24s elapsed=650.7s
+    [resnet rs2 fold3/5] ep11/50 loss=0.6586 valAUC=0.5555 best=0.5812@8 t=26s elapsed=653.1s
+    [resnet rs2 fold3/5] ep12/50 loss=0.6555 valAUC=0.5842 best=0.5842@12 t=29s elapsed=655.5s
+    [resnet rs2 fold3/5] ep13/50 loss=0.6562 valAUC=0.5652 best=0.5842@12 t=31s elapsed=657.9s
+    [resnet rs2 fold3/5] ep14/50 loss=0.6537 valAUC=0.5990 best=0.5990@14 t=33s elapsed=660.3s
+    [resnet rs2 fold3/5] ep15/50 loss=0.6523 valAUC=0.5849 best=0.5990@14 t=36s elapsed=662.6s
+    [resnet rs2 fold3/5] ep16/50 loss=0.6496 valAUC=0.5964 best=0.5990@14 t=38s elapsed=665.0s
+    [resnet rs2 fold3/5] ep17/50 loss=0.6474 valAUC=0.6072 best=0.6072@17 t=40s elapsed=667.4s
+    [resnet rs2 fold3/5] ep18/50 loss=0.6450 valAUC=0.5914 best=0.6072@17 t=43s elapsed=669.8s
+    [resnet rs2 fold3/5] ep19/50 loss=0.6399 valAUC=0.6012 best=0.6072@17 t=45s elapsed=672.1s
+    [resnet rs2 fold3/5] ep20/50 loss=0.6375 valAUC=0.5707 best=0.6072@17 t=48s elapsed=674.5s
+    [resnet rs2 fold3/5] ep21/50 loss=0.6363 valAUC=0.5985 best=0.6072@17 t=50s elapsed=676.9s
+    [resnet rs2 fold3/5] ep22/50 loss=0.6362 valAUC=0.6089 best=0.6089@22 t=52s elapsed=679.3s
+    [resnet rs2 fold3/5] ep23/50 loss=0.6307 valAUC=0.6069 best=0.6089@22 t=55s elapsed=681.6s
+    [resnet rs2 fold3/5] ep24/50 loss=0.6278 valAUC=0.6037 best=0.6089@22 t=57s elapsed=684.0s
+    [resnet rs2 fold3/5] ep25/50 loss=0.6246 valAUC=0.6026 best=0.6089@22 t=59s elapsed=686.4s
+    [resnet rs2 fold3/5] ep26/50 loss=0.6235 valAUC=0.5960 best=0.6089@22 t=62s elapsed=688.8s
+    [resnet rs2 fold3/5] ep27/50 loss=0.6218 valAUC=0.6191 best=0.6191@27 t=64s elapsed=691.1s
+    [resnet rs2 fold3/5] ep28/50 loss=0.6177 valAUC=0.6193 best=0.6193@28 t=67s elapsed=693.5s
+    [resnet rs2 fold3/5] ep29/50 loss=0.6200 valAUC=0.6220 best=0.6220@29 t=69s elapsed=695.9s
+    [resnet rs2 fold3/5] ep30/50 loss=0.6150 valAUC=0.5796 best=0.6220@29 t=71s elapsed=698.3s
+    [resnet rs2 fold3/5] ep31/50 loss=0.6114 valAUC=0.6193 best=0.6220@29 t=74s elapsed=700.7s
+    [resnet rs2 fold3/5] ep32/50 loss=0.6096 valAUC=0.6141 best=0.6220@29 t=76s elapsed=703.0s
+    [resnet rs2 fold3/5] ep33/50 loss=0.6075 valAUC=0.6055 best=0.6220@29 t=78s elapsed=705.4s
+    [resnet rs2 fold3/5] ep34/50 loss=0.6055 valAUC=0.6149 best=0.6220@29 t=81s elapsed=707.8s
+    [resnet rs2 fold3/5] ep35/50 loss=0.6031 valAUC=0.6060 best=0.6220@29 t=83s elapsed=710.2s
+    [resnet rs2 fold3/5] ep36/50 loss=0.6023 valAUC=0.6021 best=0.6220@29 t=86s elapsed=712.5s
+    [resnet rs2 fold3/5] ep37/50 loss=0.5981 valAUC=0.6290 best=0.6290@37 t=88s elapsed=714.9s
+    [resnet rs2 fold3/5] ep38/50 loss=0.5977 valAUC=0.6158 best=0.6290@37 t=90s elapsed=717.3s
+    [resnet rs2 fold3/5] ep39/50 loss=0.5868 valAUC=0.6188 best=0.6290@37 t=93s elapsed=719.7s
+    [resnet rs2 fold3/5] ep40/50 loss=0.5932 valAUC=0.6211 best=0.6290@37 t=95s elapsed=722.1s
+    [resnet rs2 fold3/5] ep41/50 loss=0.5863 valAUC=0.6158 best=0.6290@37 t=97s elapsed=724.4s
+    [resnet rs2 fold3/5] ep42/50 loss=0.5889 valAUC=0.6278 best=0.6290@37 t=100s elapsed=726.8s
+    [resnet rs2 fold3/5] ep43/50 loss=0.5845 valAUC=0.6009 best=0.6290@37 t=102s elapsed=729.2s
+    [resnet rs2 fold3/5] ep44/50 loss=0.5791 valAUC=0.6194 best=0.6290@37 t=105s elapsed=731.6s
+    [resnet rs2 fold3/5] ep45/50 loss=0.5858 valAUC=0.6177 best=0.6290@37 t=107s elapsed=733.9s
+[resnet] resnet rs2 fold3/5 best_ep=37/45 valAUC=0.6290 testAUC=0.6444 107s elapsed=735.5s
+    [resnet rs0 fold4/5] ep01/50 loss=0.6987 valAUC=0.5479 best=0.5479@1 t=2s elapsed=737.8s
+    [resnet rs0 fold4/5] ep02/50 loss=0.6837 valAUC=0.4975 best=0.5479@1 t=5s elapsed=740.2s
+    [resnet rs0 fold4/5] ep03/50 loss=0.6804 valAUC=0.5541 best=0.5541@3 t=7s elapsed=742.5s
+    [resnet rs0 fold4/5] ep04/50 loss=0.6766 valAUC=0.5392 best=0.5541@3 t=9s elapsed=744.8s
+    [resnet rs0 fold4/5] ep05/50 loss=0.6735 valAUC=0.5448 best=0.5541@3 t=12s elapsed=747.1s
+    [resnet rs0 fold4/5] ep06/50 loss=0.6667 valAUC=0.5392 best=0.5541@3 t=14s elapsed=749.5s
+    [resnet rs0 fold4/5] ep07/50 loss=0.6645 valAUC=0.5551 best=0.5551@7 t=16s elapsed=751.8s
+    [resnet rs0 fold4/5] ep08/50 loss=0.6585 valAUC=0.5569 best=0.5569@8 t=19s elapsed=754.1s
+    [resnet rs0 fold4/5] ep09/50 loss=0.6551 valAUC=0.5946 best=0.5946@9 t=21s elapsed=756.4s
+    [resnet rs0 fold4/5] ep10/50 loss=0.6490 valAUC=0.5811 best=0.5946@9 t=23s elapsed=758.8s
+    [resnet rs0 fold4/5] ep11/50 loss=0.6470 valAUC=0.5764 best=0.5946@9 t=26s elapsed=761.1s
+    [resnet rs0 fold4/5] ep12/50 loss=0.6459 valAUC=0.5633 best=0.5946@9 t=28s elapsed=763.4s
+    [resnet rs0 fold4/5] ep13/50 loss=0.6433 valAUC=0.6054 best=0.6054@13 t=30s elapsed=765.7s
+    [resnet rs0 fold4/5] ep14/50 loss=0.6422 valAUC=0.5548 best=0.6054@13 t=33s elapsed=768.1s
+    [resnet rs0 fold4/5] ep15/50 loss=0.6372 valAUC=0.5911 best=0.6054@13 t=35s elapsed=770.4s
+    [resnet rs0 fold4/5] ep16/50 loss=0.6337 valAUC=0.5981 best=0.6054@13 t=37s elapsed=772.7s
+    [resnet rs0 fold4/5] ep17/50 loss=0.6295 valAUC=0.5676 best=0.6054@13 t=40s elapsed=775.0s
+    [resnet rs0 fold4/5] ep18/50 loss=0.6308 valAUC=0.5829 best=0.6054@13 t=42s elapsed=777.4s
+    [resnet rs0 fold4/5] ep19/50 loss=0.6281 valAUC=0.5879 best=0.6054@13 t=44s elapsed=779.7s
+    [resnet rs0 fold4/5] ep20/50 loss=0.6259 valAUC=0.5595 best=0.6054@13 t=47s elapsed=782.0s
+    [resnet rs0 fold4/5] ep21/50 loss=0.6215 valAUC=0.6062 best=0.6062@21 t=49s elapsed=784.3s
+    [resnet rs0 fold4/5] ep22/50 loss=0.6189 valAUC=0.5951 best=0.6062@21 t=51s elapsed=786.7s
+    [resnet rs0 fold4/5] ep23/50 loss=0.6213 valAUC=0.5850 best=0.6062@21 t=54s elapsed=789.0s
+    [resnet rs0 fold4/5] ep24/50 loss=0.6154 valAUC=0.5927 best=0.6062@21 t=56s elapsed=791.3s
+    [resnet rs0 fold4/5] ep25/50 loss=0.6096 valAUC=0.5721 best=0.6062@21 t=58s elapsed=793.6s
+    [resnet rs0 fold4/5] ep26/50 loss=0.6123 valAUC=0.5621 best=0.6062@21 t=60s elapsed=796.0s
+    [resnet rs0 fold4/5] ep27/50 loss=0.6133 valAUC=0.5853 best=0.6062@21 t=63s elapsed=798.3s
+    [resnet rs0 fold4/5] ep28/50 loss=0.6038 valAUC=0.5682 best=0.6062@21 t=65s elapsed=800.6s
+    [resnet rs0 fold4/5] ep29/50 loss=0.6037 valAUC=0.6004 best=0.6062@21 t=67s elapsed=802.9s
+[resnet] resnet rs0 fold4/5 best_ep=21/29 valAUC=0.6062 testAUC=0.5843 67s elapsed=804.5s
+    [resnet rs1 fold4/5] ep01/50 loss=0.6952 valAUC=0.5538 best=0.5538@1 t=2s elapsed=806.8s
+    [resnet rs1 fold4/5] ep02/50 loss=0.6820 valAUC=0.5390 best=0.5538@1 t=5s elapsed=809.2s
+    [resnet rs1 fold4/5] ep03/50 loss=0.6813 valAUC=0.5636 best=0.5636@3 t=7s elapsed=811.5s
+    [resnet rs1 fold4/5] ep04/50 loss=0.6791 valAUC=0.5581 best=0.5636@3 t=9s elapsed=813.8s
+    [resnet rs1 fold4/5] ep05/50 loss=0.6764 valAUC=0.5482 best=0.5636@3 t=12s elapsed=816.1s
+    [resnet rs1 fold4/5] ep06/50 loss=0.6768 valAUC=0.5273 best=0.5636@3 t=14s elapsed=818.5s
+    [resnet rs1 fold4/5] ep07/50 loss=0.6723 valAUC=0.5257 best=0.5636@3 t=16s elapsed=820.8s
+    [resnet rs1 fold4/5] ep08/50 loss=0.6731 valAUC=0.5524 best=0.5636@3 t=19s elapsed=823.1s
+    [resnet rs1 fold4/5] ep09/50 loss=0.6659 valAUC=0.5425 best=0.5636@3 t=21s elapsed=825.4s
+    [resnet rs1 fold4/5] ep10/50 loss=0.6624 valAUC=0.5569 best=0.5636@3 t=23s elapsed=827.7s
+    [resnet rs1 fold4/5] ep11/50 loss=0.6580 valAUC=0.5439 best=0.5636@3 t=26s elapsed=830.1s
+[resnet] resnet rs1 fold4/5 best_ep=3/11 valAUC=0.5636 testAUC=0.5358 26s elapsed=831.6s
+    [resnet rs2 fold4/5] ep01/50 loss=0.6942 valAUC=0.5048 best=0.5048@1 t=2s elapsed=834.0s
+    [resnet rs2 fold4/5] ep02/50 loss=0.6843 valAUC=0.5180 best=0.5180@2 t=5s elapsed=836.3s
+    [resnet rs2 fold4/5] ep03/50 loss=0.6824 valAUC=0.5509 best=0.5509@3 t=7s elapsed=838.6s
+    [resnet rs2 fold4/5] ep04/50 loss=0.6785 valAUC=0.5501 best=0.5509@3 t=9s elapsed=840.9s
+    [resnet rs2 fold4/5] ep05/50 loss=0.6704 valAUC=0.5712 best=0.5712@5 t=12s elapsed=843.3s
+    [resnet rs2 fold4/5] ep06/50 loss=0.6666 valAUC=0.5730 best=0.5730@6 t=14s elapsed=845.6s
+    [resnet rs2 fold4/5] ep07/50 loss=0.6621 valAUC=0.5848 best=0.5848@7 t=16s elapsed=847.9s
+    [resnet rs2 fold4/5] ep08/50 loss=0.6579 valAUC=0.5595 best=0.5848@7 t=19s elapsed=850.2s
+    [resnet rs2 fold4/5] ep09/50 loss=0.6534 valAUC=0.5714 best=0.5848@7 t=21s elapsed=852.6s
+    [resnet rs2 fold4/5] ep10/50 loss=0.6463 valAUC=0.5694 best=0.5848@7 t=23s elapsed=854.9s
+    [resnet rs2 fold4/5] ep11/50 loss=0.6492 valAUC=0.5608 best=0.5848@7 t=26s elapsed=857.2s
+    [resnet rs2 fold4/5] ep12/50 loss=0.6436 valAUC=0.6081 best=0.6081@12 t=28s elapsed=859.5s
+    [resnet rs2 fold4/5] ep13/50 loss=0.6399 valAUC=0.5904 best=0.6081@12 t=30s elapsed=861.9s
+    [resnet rs2 fold4/5] ep14/50 loss=0.6357 valAUC=0.5775 best=0.6081@12 t=33s elapsed=864.2s
+    [resnet rs2 fold4/5] ep15/50 loss=0.6335 valAUC=0.6022 best=0.6081@12 t=35s elapsed=866.5s
+    [resnet rs2 fold4/5] ep16/50 loss=0.6326 valAUC=0.5743 best=0.6081@12 t=37s elapsed=868.8s
+    [resnet rs2 fold4/5] ep17/50 loss=0.6324 valAUC=0.5818 best=0.6081@12 t=40s elapsed=871.1s
+    [resnet rs2 fold4/5] ep18/50 loss=0.6270 valAUC=0.5970 best=0.6081@12 t=42s elapsed=873.5s
+    [resnet rs2 fold4/5] ep19/50 loss=0.6289 valAUC=0.5772 best=0.6081@12 t=44s elapsed=875.8s
+    [resnet rs2 fold4/5] ep20/50 loss=0.6223 valAUC=0.5723 best=0.6081@12 t=46s elapsed=878.1s
+[resnet] resnet rs2 fold4/5 best_ep=12/20 valAUC=0.6081 testAUC=0.5713 46s elapsed=879.7s
+    [resnet rs0 fold5/5] ep01/50 loss=0.7032 valAUC=0.5611 best=0.5611@1 t=2s elapsed=882.1s
+    [resnet rs0 fold5/5] ep02/50 loss=0.6869 valAUC=0.5869 best=0.5869@2 t=5s elapsed=884.5s
+    [resnet rs0 fold5/5] ep03/50 loss=0.6875 valAUC=0.5782 best=0.5869@2 t=7s elapsed=886.8s
+    [resnet rs0 fold5/5] ep04/50 loss=0.6836 valAUC=0.6053 best=0.6053@4 t=10s elapsed=889.2s
+    [resnet rs0 fold5/5] ep05/50 loss=0.6828 valAUC=0.5722 best=0.6053@4 t=12s elapsed=891.6s
+    [resnet rs0 fold5/5] ep06/50 loss=0.6802 valAUC=0.6101 best=0.6101@6 t=14s elapsed=894.0s
+    [resnet rs0 fold5/5] ep07/50 loss=0.6779 valAUC=0.5935 best=0.6101@6 t=17s elapsed=896.4s
+    [resnet rs0 fold5/5] ep08/50 loss=0.6743 valAUC=0.5746 best=0.6101@6 t=19s elapsed=898.8s
+    [resnet rs0 fold5/5] ep09/50 loss=0.6727 valAUC=0.6072 best=0.6101@6 t=21s elapsed=901.1s
+    [resnet rs0 fold5/5] ep10/50 loss=0.6691 valAUC=0.5710 best=0.6101@6 t=24s elapsed=903.5s
+    [resnet rs0 fold5/5] ep11/50 loss=0.6648 valAUC=0.5794 best=0.6101@6 t=26s elapsed=905.9s
+    [resnet rs0 fold5/5] ep12/50 loss=0.6625 valAUC=0.6182 best=0.6182@12 t=29s elapsed=908.3s
+    [resnet rs0 fold5/5] ep13/50 loss=0.6614 valAUC=0.6144 best=0.6182@12 t=31s elapsed=910.7s
+    [resnet rs0 fold5/5] ep14/50 loss=0.6574 valAUC=0.5940 best=0.6182@12 t=33s elapsed=913.1s
+    [resnet rs0 fold5/5] ep15/50 loss=0.6540 valAUC=0.5974 best=0.6182@12 t=36s elapsed=915.4s
+    [resnet rs0 fold5/5] ep16/50 loss=0.6523 valAUC=0.6119 best=0.6182@12 t=38s elapsed=917.8s
+    [resnet rs0 fold5/5] ep17/50 loss=0.6489 valAUC=0.5286 best=0.6182@12 t=41s elapsed=920.2s
+    [resnet rs0 fold5/5] ep18/50 loss=0.6463 valAUC=0.5916 best=0.6182@12 t=43s elapsed=922.6s
+    [resnet rs0 fold5/5] ep19/50 loss=0.6451 valAUC=0.6202 best=0.6202@19 t=45s elapsed=925.0s
+    [resnet rs0 fold5/5] ep20/50 loss=0.6460 valAUC=0.6152 best=0.6202@19 t=48s elapsed=927.4s
+    [resnet rs0 fold5/5] ep21/50 loss=0.6409 valAUC=0.6090 best=0.6202@19 t=50s elapsed=929.8s
+    [resnet rs0 fold5/5] ep22/50 loss=0.6376 valAUC=0.6237 best=0.6237@22 t=52s elapsed=932.1s
+    [resnet rs0 fold5/5] ep23/50 loss=0.6372 valAUC=0.6327 best=0.6327@23 t=55s elapsed=934.5s
+    [resnet rs0 fold5/5] ep24/50 loss=0.6330 valAUC=0.6041 best=0.6327@23 t=57s elapsed=936.9s
+    [resnet rs0 fold5/5] ep25/50 loss=0.6336 valAUC=0.5986 best=0.6327@23 t=60s elapsed=939.3s
+    [resnet rs0 fold5/5] ep26/50 loss=0.6311 valAUC=0.6236 best=0.6327@23 t=62s elapsed=941.7s
+    [resnet rs0 fold5/5] ep27/50 loss=0.6285 valAUC=0.5836 best=0.6327@23 t=64s elapsed=944.1s
+    [resnet rs0 fold5/5] ep28/50 loss=0.6252 valAUC=0.6519 best=0.6519@28 t=67s elapsed=946.5s
+    [resnet rs0 fold5/5] ep29/50 loss=0.6193 valAUC=0.6118 best=0.6519@28 t=69s elapsed=948.8s
+    [resnet rs0 fold5/5] ep30/50 loss=0.6290 valAUC=0.6627 best=0.6627@30 t=72s elapsed=951.2s
+    [resnet rs0 fold5/5] ep31/50 loss=0.6190 valAUC=0.6501 best=0.6627@30 t=74s elapsed=953.6s
+    [resnet rs0 fold5/5] ep32/50 loss=0.6191 valAUC=0.6387 best=0.6627@30 t=76s elapsed=956.0s
+    [resnet rs0 fold5/5] ep33/50 loss=0.6187 valAUC=0.6297 best=0.6627@30 t=79s elapsed=958.4s
+    [resnet rs0 fold5/5] ep34/50 loss=0.6116 valAUC=0.6724 best=0.6724@34 t=81s elapsed=960.7s
+    [resnet rs0 fold5/5] ep35/50 loss=0.6089 valAUC=0.6435 best=0.6724@34 t=83s elapsed=963.1s
+    [resnet rs0 fold5/5] ep36/50 loss=0.6123 valAUC=0.6213 best=0.6724@34 t=86s elapsed=965.5s
+    [resnet rs0 fold5/5] ep37/50 loss=0.6041 valAUC=0.6458 best=0.6724@34 t=88s elapsed=967.9s
+    [resnet rs0 fold5/5] ep38/50 loss=0.6057 valAUC=0.6589 best=0.6724@34 t=91s elapsed=970.3s
+    [resnet rs0 fold5/5] ep39/50 loss=0.6037 valAUC=0.5959 best=0.6724@34 t=93s elapsed=972.7s
+    [resnet rs0 fold5/5] ep40/50 loss=0.5949 valAUC=0.5817 best=0.6724@34 t=95s elapsed=975.1s
+    [resnet rs0 fold5/5] ep41/50 loss=0.6019 valAUC=0.5948 best=0.6724@34 t=98s elapsed=977.4s
+    [resnet rs0 fold5/5] ep42/50 loss=0.5942 valAUC=0.6539 best=0.6724@34 t=100s elapsed=979.8s
+[resnet] resnet rs0 fold5/5 best_ep=34/42 valAUC=0.6724 testAUC=0.6540 100s elapsed=981.4s
+    [resnet rs1 fold5/5] ep01/50 loss=0.7011 valAUC=0.5644 best=0.5644@1 t=2s elapsed=983.8s
+    [resnet rs1 fold5/5] ep02/50 loss=0.6913 valAUC=0.5850 best=0.5850@2 t=5s elapsed=986.2s
+    [resnet rs1 fold5/5] ep03/50 loss=0.6870 valAUC=0.5840 best=0.5850@2 t=7s elapsed=988.5s
+    [resnet rs1 fold5/5] ep04/50 loss=0.6837 valAUC=0.5709 best=0.5850@2 t=10s elapsed=990.9s
+    [resnet rs1 fold5/5] ep05/50 loss=0.6857 valAUC=0.5970 best=0.5970@5 t=12s elapsed=993.3s
+    [resnet rs1 fold5/5] ep06/50 loss=0.6816 valAUC=0.5682 best=0.5970@5 t=14s elapsed=995.7s
+    [resnet rs1 fold5/5] ep07/50 loss=0.6774 valAUC=0.6000 best=0.6000@7 t=17s elapsed=998.1s
+    [resnet rs1 fold5/5] ep08/50 loss=0.6771 valAUC=0.5753 best=0.6000@7 t=19s elapsed=1000.4s
+    [resnet rs1 fold5/5] ep09/50 loss=0.6741 valAUC=0.5754 best=0.6000@7 t=21s elapsed=1002.8s
+    [resnet rs1 fold5/5] ep10/50 loss=0.6733 valAUC=0.6058 best=0.6058@10 t=24s elapsed=1005.2s
+    [resnet rs1 fold5/5] ep11/50 loss=0.6737 valAUC=0.6227 best=0.6227@11 t=26s elapsed=1007.6s
+    [resnet rs1 fold5/5] ep12/50 loss=0.6691 valAUC=0.6194 best=0.6227@11 t=29s elapsed=1010.0s
+    [resnet rs1 fold5/5] ep13/50 loss=0.6670 valAUC=0.5575 best=0.6227@11 t=31s elapsed=1012.4s
+    [resnet rs1 fold5/5] ep14/50 loss=0.6645 valAUC=0.6268 best=0.6268@14 t=33s elapsed=1014.7s
+    [resnet rs1 fold5/5] ep15/50 loss=0.6630 valAUC=0.6235 best=0.6268@14 t=36s elapsed=1017.1s
+    [resnet rs1 fold5/5] ep16/50 loss=0.6614 valAUC=0.6006 best=0.6268@14 t=38s elapsed=1019.5s
+    [resnet rs1 fold5/5] ep17/50 loss=0.6586 valAUC=0.5750 best=0.6268@14 t=40s elapsed=1021.9s
+    [resnet rs1 fold5/5] ep18/50 loss=0.6544 valAUC=0.5452 best=0.6268@14 t=43s elapsed=1024.3s
+    [resnet rs1 fold5/5] ep19/50 loss=0.6504 valAUC=0.5812 best=0.6268@14 t=45s elapsed=1026.6s
+    [resnet rs1 fold5/5] ep20/50 loss=0.6509 valAUC=0.5749 best=0.6268@14 t=48s elapsed=1029.0s
+    [resnet rs1 fold5/5] ep21/50 loss=0.6446 valAUC=0.5857 best=0.6268@14 t=50s elapsed=1031.4s
+    [resnet rs1 fold5/5] ep22/50 loss=0.6406 valAUC=0.6246 best=0.6268@14 t=52s elapsed=1033.8s
+[resnet] resnet rs1 fold5/5 best_ep=14/22 valAUC=0.6268 testAUC=0.5840 52s elapsed=1035.3s
+    [resnet rs2 fold5/5] ep01/50 loss=0.7007 valAUC=0.5889 best=0.5889@1 t=2s elapsed=1037.7s
+    [resnet rs2 fold5/5] ep02/50 loss=0.6903 valAUC=0.5945 best=0.5945@2 t=5s elapsed=1040.1s
+    [resnet rs2 fold5/5] ep03/50 loss=0.6882 valAUC=0.5750 best=0.5945@2 t=7s elapsed=1042.5s
+    [resnet rs2 fold5/5] ep04/50 loss=0.6821 valAUC=0.5840 best=0.5945@2 t=10s elapsed=1044.9s
+    [resnet rs2 fold5/5] ep05/50 loss=0.6812 valAUC=0.5790 best=0.5945@2 t=12s elapsed=1047.3s
+    [resnet rs2 fold5/5] ep06/50 loss=0.6823 valAUC=0.6124 best=0.6124@6 t=14s elapsed=1049.7s
+    [resnet rs2 fold5/5] ep07/50 loss=0.6784 valAUC=0.6012 best=0.6124@6 t=17s elapsed=1052.0s
+    [resnet rs2 fold5/5] ep08/50 loss=0.6804 valAUC=0.5984 best=0.6124@6 t=19s elapsed=1054.4s
+    [resnet rs2 fold5/5] ep09/50 loss=0.6759 valAUC=0.5844 best=0.6124@6 t=21s elapsed=1056.8s
+    [resnet rs2 fold5/5] ep10/50 loss=0.6728 valAUC=0.6153 best=0.6153@10 t=24s elapsed=1059.2s
+    [resnet rs2 fold5/5] ep11/50 loss=0.6697 valAUC=0.5782 best=0.6153@10 t=26s elapsed=1061.6s
+    [resnet rs2 fold5/5] ep12/50 loss=0.6692 valAUC=0.6243 best=0.6243@12 t=29s elapsed=1064.0s
+    [resnet rs2 fold5/5] ep13/50 loss=0.6646 valAUC=0.5359 best=0.6243@12 t=31s elapsed=1066.4s
+    [resnet rs2 fold5/5] ep14/50 loss=0.6670 valAUC=0.5681 best=0.6243@12 t=33s elapsed=1068.7s
+    [resnet rs2 fold5/5] ep15/50 loss=0.6670 valAUC=0.6438 best=0.6438@15 t=36s elapsed=1071.1s
+    [resnet rs2 fold5/5] ep16/50 loss=0.6577 valAUC=0.6262 best=0.6438@15 t=38s elapsed=1073.5s
+    [resnet rs2 fold5/5] ep17/50 loss=0.6617 valAUC=0.6131 best=0.6438@15 t=41s elapsed=1075.9s
+    [resnet rs2 fold5/5] ep18/50 loss=0.6583 valAUC=0.5945 best=0.6438@15 t=43s elapsed=1078.3s
+    [resnet rs2 fold5/5] ep19/50 loss=0.6588 valAUC=0.6326 best=0.6438@15 t=45s elapsed=1080.7s
+    [resnet rs2 fold5/5] ep20/50 loss=0.6553 valAUC=0.6025 best=0.6438@15 t=48s elapsed=1083.0s
+    [resnet rs2 fold5/5] ep21/50 loss=0.6574 valAUC=0.6261 best=0.6438@15 t=50s elapsed=1085.4s
+    [resnet rs2 fold5/5] ep22/50 loss=0.6540 valAUC=0.6069 best=0.6438@15 t=52s elapsed=1087.8s
+    [resnet rs2 fold5/5] ep23/50 loss=0.6512 valAUC=0.6159 best=0.6438@15 t=55s elapsed=1090.2s
+[resnet] resnet rs2 fold5/5 best_ep=15/23 valAUC=0.6438 testAUC=0.5595 55s elapsed=1091.8s
+[check] embedding subject isolation + per-window locality ok {'emb_fold0': {'subject': 'sub-009', 'max_abs_alone_vs_pooled': 0.0, 'max_abs_past_after_future_change': 0.0, 'max_abs_future_changed': 3.482585445046425}, 'emb_fold1': {'subject': 'sub-003', 'max_abs_alone_vs_pooled': 0.0, 'max_abs_past_after_future_change': 0.0, 'max_abs_future_changed': 22.5659499168396}, 'emb_fold2': {'subject': 'sub-001', 'max_abs_alone_vs_pooled': 0.0, 'max_abs_past_after_future_change': 0.0, 'max_abs_future_changed': 4.711228609085083}, 'emb_fold3': {'subject': 'sub-004', 'max_abs_alone_vs_pooled': 0.0, 'max_abs_past_after_future_change': 0.0, 'max_abs_future_changed': 6.043814539909363}, 'emb_fold4': {'subject': 'sub-002', 'max_abs_alone_vs_pooled': 0.0, 'max_abs_past_after_future_change': 0.0, 'max_abs_future_changed': 4.369563817977905}} elapsed=1092.1s
+[stream 0 fold 1/5] hgb current/delta32 fit_s=11.2 elapsed=1105.8s
+[stream 0 fold 1/5] resnet heads + prefix/isolation checks ok elapsed=1111.7s
+[stream 0 fold 2/5] hgb current/delta32 fit_s=11.1 elapsed=1124.0s
+[stream 0 fold 2/5] resnet heads + prefix/isolation checks ok elapsed=1129.9s
+[stream 0 fold 3/5] hgb current/delta32 fit_s=11.0 elapsed=1142.1s
+[stream 0 fold 3/5] resnet heads + prefix/isolation checks ok elapsed=1148.0s
+[stream 0 fold 4/5] hgb current/delta32 fit_s=11.1 elapsed=1160.3s
+[stream 0 fold 4/5] resnet heads + prefix/isolation checks ok elapsed=1166.1s
+[stream 0 fold 5/5] hgb current/delta32 fit_s=10.9 elapsed=1178.3s
+[stream 0 fold 5/5] resnet heads + prefix/isolation checks ok elapsed=1184.1s
+[result stream 0] position_only__lr          all: AUC=0.4935 mac=0.4985 mic=0.4982 | mature: AUC=0.4925 mac=0.5004 mic=0.4966 | subj>=.9=0 max=0.543
+[result stream 0] position_only__hgb         all: AUC=0.4959 mac=0.4992 mic=0.4991 | mature: AUC=0.4971 mac=0.4988 mic=0.4985 | subj>=.9=0 max=0.578
+[result stream 0] hgb_current                all: AUC=0.6177 mac=0.5878 mic=0.5879 | mature: AUC=0.6141 mac=0.5841 mic=0.5831 | subj>=.9=0 max=0.790
+[result stream 0] hgb_delta32                all: AUC=0.6519 mac=0.6118 mic=0.6131 | mature: AUC=0.6528 mac=0.6158 mic=0.6154 | subj>=.9=0 max=0.831
+[result stream 0] resnet_current             all: AUC=0.6233 mac=0.5819 mic=0.5808 | mature: AUC=0.6259 mac=0.5826 mic=0.5828 | subj>=.9=0 max=0.750
+[result stream 0] resnet_logit_delta         all: AUC=0.6321 mac=0.5886 mic=0.5876 | mature: AUC=0.6361 mac=0.5910 mic=0.5911 | subj>=.9=0 max=0.757
+[result stream 0] resnet_emb_current__lr     all: AUC=0.6038 mac=0.5729 mic=0.5727 | mature: AUC=0.6113 mac=0.5786 mic=0.5790 | subj>=.9=0 max=0.752
+[result stream 0] resnet_emb_delta__lr       all: AUC=0.6066 mac=0.5748 mic=0.5746 | mature: AUC=0.6133 mac=0.5786 mic=0.5791 | subj>=.9=0 max=0.748
+[result stream 0] resnet_emb_current__hgb    all: AUC=0.6037 mac=0.5741 mic=0.5737 | mature: AUC=0.6094 mac=0.5750 mic=0.5764 | subj>=.9=0 max=0.764
+[result stream 0] resnet_emb_delta__hgb      all: AUC=0.6169 mac=0.5801 mic=0.5792 | mature: AUC=0.6251 mac=0.5826 mic=0.5833 | subj>=.9=0 max=0.723
+[result stream 0] fusion_current             all: AUC=0.6335 mac=0.5949 mic=0.5950 | mature: AUC=0.6331 mac=0.5971 mic=0.5967 | subj>=.9=0 max=0.817
+[result stream 0] fusion_delta               all: AUC=0.6661 mac=0.6240 mic=0.6241 | mature: AUC=0.6684 mac=0.6263 mic=0.6257 | subj>=.9=0 max=0.797
+[result stream 0] fusionR_current            all: AUC=0.6444 mac=0.6017 mic=0.6010 | mature: AUC=0.6430 mac=0.5996 mic=0.5992 | subj>=.9=0 max=0.780
+[result stream 0] fusionR_delta              all: AUC=0.6716 mac=0.6242 mic=0.6244 | mature: AUC=0.6734 mac=0.6262 mic=0.6260 | subj>=.9=0 max=0.803
+[sanity stream 0] position_only__lr AUC=0.4935 -> OK
+[sanity stream 0] position_only__hgb AUC=0.4959 -> OK
+[boot stream 0] resnet_logit_delta       vs resnet_current           all    dAUC=+0.0085[+0.0002,+0.0169] dmac=+0.0064[-0.0053,+0.0180] elapsed=1190.4s
+[boot stream 0] resnet_logit_delta       vs resnet_current           mature dAUC=+0.0100[+0.0004,+0.0204] dmac=+0.0082[-0.0037,+0.0196] elapsed=1191.1s
+[boot stream 0] resnet_emb_delta__lr     vs resnet_emb_current__lr   all    dAUC=+0.0024[-0.0073,+0.0126] dmac=+0.0019[-0.0067,+0.0104] elapsed=1192.0s
+[boot stream 0] resnet_emb_delta__lr     vs resnet_emb_current__lr   mature dAUC=+0.0017[-0.0083,+0.0123] dmac=-0.0001[-0.0094,+0.0084] elapsed=1192.6s
+[boot stream 0] resnet_emb_delta__hgb    vs resnet_emb_current__hgb  all    dAUC=+0.0129[+0.0057,+0.0201] dmac=+0.0058[-0.0014,+0.0132] elapsed=1193.6s
+[boot stream 0] resnet_emb_delta__hgb    vs resnet_emb_current__hgb  mature dAUC=+0.0154[+0.0064,+0.0239] dmac=+0.0074[-0.0012,+0.0162] elapsed=1194.2s
+[boot stream 0] hgb_delta32              vs hgb_current              all    dAUC=+0.0333[+0.0099,+0.0548] dmac=+0.0234[+0.0034,+0.0438] elapsed=1195.2s
+[boot stream 0] hgb_delta32              vs hgb_current              mature dAUC=+0.0377[+0.0159,+0.0578] dmac=+0.0311[+0.0109,+0.0503] elapsed=1195.8s
+[boot stream 0] fusion_delta             vs fusion_current           all    dAUC=+0.0317[+0.0151,+0.0474] dmac=+0.0286[+0.0150,+0.0419] elapsed=1196.8s
+[boot stream 0] fusion_delta             vs fusion_current           mature dAUC=+0.0344[+0.0172,+0.0512] dmac=+0.0286[+0.0140,+0.0429] elapsed=1197.3s
+[boot stream 0] fusionR_delta            vs fusionR_current          all    dAUC=+0.0266[+0.0064,+0.0447] dmac=+0.0223[+0.0052,+0.0391] elapsed=1198.3s
+[boot stream 0] fusionR_delta            vs fusionR_current          mature dAUC=+0.0298[+0.0100,+0.0483] dmac=+0.0263[+0.0102,+0.0437] elapsed=1198.9s
+[boot stream 0] fusion_current           vs hgb_current              all    dAUC=+0.0157[+0.0049,+0.0258] dmac=+0.0071[-0.0034,+0.0175] elapsed=1199.9s
+[boot stream 0] fusion_current           vs hgb_current              mature dAUC=+0.0188[+0.0063,+0.0306] dmac=+0.0130[+0.0003,+0.0247] elapsed=1200.4s
+[boot stream 0] fusion_delta             vs hgb_delta32              all    dAUC=+0.0141[+0.0007,+0.0270] dmac=+0.0123[+0.0009,+0.0238] elapsed=1201.4s
+[boot stream 0] fusion_delta             vs hgb_delta32              mature dAUC=+0.0155[+0.0012,+0.0290] dmac=+0.0105[-0.0011,+0.0228] elapsed=1202.1s
+[boot stream 0] resnet_emb_current__lr   vs resnet_current           all    dAUC=-0.0191[-0.0378,-0.0011] dmac=-0.0090[-0.0233,+0.0041] elapsed=1203.0s
+[boot stream 0] resnet_emb_current__lr   vs resnet_current           mature dAUC=-0.0142[-0.0341,+0.0058] dmac=-0.0039[-0.0186,+0.0109] elapsed=1203.6s
+[stream 1 fold 1/5] hgb current/delta32 fit_s=11.2 elapsed=1216.0s
+[stream 1 fold 1/5] resnet heads + prefix/isolation checks ok elapsed=1221.8s
+[stream 1 fold 2/5] hgb current/delta32 fit_s=11.1 elapsed=1234.1s
+[stream 1 fold 2/5] resnet heads + prefix/isolation checks ok elapsed=1240.0s
+[stream 1 fold 3/5] hgb current/delta32 fit_s=11.0 elapsed=1252.1s
+[stream 1 fold 3/5] resnet heads + prefix/isolation checks ok elapsed=1257.9s
+[stream 1 fold 4/5] hgb current/delta32 fit_s=10.9 elapsed=1270.0s
+[stream 1 fold 4/5] resnet heads + prefix/isolation checks ok elapsed=1275.8s
+[stream 1 fold 5/5] hgb current/delta32 fit_s=11.0 elapsed=1288.1s
+[stream 1 fold 5/5] resnet heads + prefix/isolation checks ok elapsed=1294.0s
+[result stream 1] position_only__lr          all: AUC=0.4971 mac=0.5002 mic=0.4987 | mature: AUC=0.4940 mac=0.4977 mic=0.4978 | subj>=.9=0 max=0.548
+[result stream 1] position_only__hgb         all: AUC=0.4983 mac=0.5024 mic=0.5027 | mature: AUC=0.5015 mac=0.5090 mic=0.5094 | subj>=.9=0 max=0.543
+[result stream 1] hgb_current                all: AUC=0.6177 mac=0.5878 mic=0.5879 | mature: AUC=0.6199 mac=0.5894 mic=0.5877 | subj>=.9=0 max=0.790
+[result stream 1] hgb_delta32                all: AUC=0.6572 mac=0.6176 mic=0.6186 | mature: AUC=0.6592 mac=0.6185 mic=0.6178 | subj>=.9=0 max=0.827
+[result stream 1] resnet_current             all: AUC=0.6233 mac=0.5819 mic=0.5808 | mature: AUC=0.6169 mac=0.5743 mic=0.5750 | subj>=.9=0 max=0.750
+[result stream 1] resnet_logit_delta         all: AUC=0.6313 mac=0.5880 mic=0.5870 | mature: AUC=0.6279 mac=0.5825 mic=0.5837 | subj>=.9=0 max=0.736
+[result stream 1] resnet_emb_current__lr     all: AUC=0.6038 mac=0.5729 mic=0.5727 | mature: AUC=0.5984 mac=0.5656 mic=0.5673 | subj>=.9=0 max=0.752
+[result stream 1] resnet_emb_delta__lr       all: AUC=0.6088 mac=0.5742 mic=0.5736 | mature: AUC=0.6035 mac=0.5647 mic=0.5656 | subj>=.9=0 max=0.758
+[result stream 1] resnet_emb_current__hgb    all: AUC=0.6037 mac=0.5741 mic=0.5737 | mature: AUC=0.5982 mac=0.5649 mic=0.5673 | subj>=.9=0 max=0.764
+[result stream 1] resnet_emb_delta__hgb      all: AUC=0.6138 mac=0.5796 mic=0.5782 | mature: AUC=0.6087 mac=0.5712 mic=0.5722 | subj>=.9=0 max=0.737
+[result stream 1] fusion_current             all: AUC=0.6335 mac=0.5949 mic=0.5950 | mature: AUC=0.6321 mac=0.5959 mic=0.5951 | subj>=.9=0 max=0.817
+[result stream 1] fusion_delta               all: AUC=0.6714 mac=0.6245 mic=0.6241 | mature: AUC=0.6700 mac=0.6211 mic=0.6209 | subj>=.9=0 max=0.806
+[result stream 1] fusionR_current            all: AUC=0.6444 mac=0.6017 mic=0.6010 | mature: AUC=0.6417 mac=0.5988 mic=0.5976 | subj>=.9=0 max=0.780
+[result stream 1] fusionR_delta              all: AUC=0.6768 mac=0.6287 mic=0.6287 | mature: AUC=0.6764 mac=0.6283 mic=0.6279 | subj>=.9=0 max=0.803
+[sanity stream 1] position_only__lr AUC=0.4971 -> OK
+[sanity stream 1] position_only__hgb AUC=0.4983 -> OK
+[boot stream 1] resnet_logit_delta       vs resnet_current           all    dAUC=+0.0077[-0.0003,+0.0164] dmac=+0.0059[-0.0041,+0.0165] elapsed=1300.3s
+[boot stream 1] resnet_logit_delta       vs resnet_current           mature dAUC=+0.0107[+0.0019,+0.0198] dmac=+0.0081[-0.0048,+0.0216] elapsed=1301.0s
+[boot stream 1] resnet_emb_delta__lr     vs resnet_emb_current__lr   all    dAUC=+0.0046[-0.0045,+0.0141] dmac=+0.0013[-0.0075,+0.0099] elapsed=1302.0s
+[boot stream 1] resnet_emb_delta__lr     vs resnet_emb_current__lr   mature dAUC=+0.0047[-0.0040,+0.0145] dmac=-0.0011[-0.0103,+0.0083] elapsed=1302.5s
+[boot stream 1] resnet_emb_delta__hgb    vs resnet_emb_current__hgb  all    dAUC=+0.0098[+0.0007,+0.0185] dmac=+0.0052[-0.0045,+0.0142] elapsed=1303.5s
+[boot stream 1] resnet_emb_delta__hgb    vs resnet_emb_current__hgb  mature dAUC=+0.0101[+0.0014,+0.0189] dmac=+0.0061[-0.0042,+0.0165] elapsed=1304.1s
+[boot stream 1] hgb_delta32              vs hgb_current              all    dAUC=+0.0385[+0.0171,+0.0576] dmac=+0.0292[+0.0111,+0.0463] elapsed=1305.1s
+[boot stream 1] hgb_delta32              vs hgb_current              mature dAUC=+0.0385[+0.0160,+0.0593] dmac=+0.0286[+0.0083,+0.0475] elapsed=1305.7s
+[boot stream 1] fusion_delta             vs fusion_current           all    dAUC=+0.0370[+0.0209,+0.0531] dmac=+0.0291[+0.0160,+0.0417] elapsed=1306.6s
+[boot stream 1] fusion_delta             vs fusion_current           mature dAUC=+0.0370[+0.0204,+0.0532] dmac=+0.0247[+0.0116,+0.0374] elapsed=1307.2s
+[boot stream 1] fusionR_delta            vs fusionR_current          all    dAUC=+0.0318[+0.0128,+0.0499] dmac=+0.0268[+0.0109,+0.0439] elapsed=1308.2s
+[boot stream 1] fusionR_delta            vs fusionR_current          mature dAUC=+0.0341[+0.0150,+0.0544] dmac=+0.0294[+0.0133,+0.0466] elapsed=1308.7s
+[boot stream 1] fusion_current           vs hgb_current              all    dAUC=+0.0157[+0.0049,+0.0258] dmac=+0.0071[-0.0034,+0.0175] elapsed=1309.8s
+[boot stream 1] fusion_current           vs hgb_current              mature dAUC=+0.0120[+0.0003,+0.0236] dmac=+0.0062[-0.0064,+0.0184] elapsed=1310.3s
+[boot stream 1] fusion_delta             vs hgb_delta32              all    dAUC=+0.0142[+0.0016,+0.0266] dmac=+0.0069[-0.0047,+0.0189] elapsed=1311.3s
+[boot stream 1] fusion_delta             vs hgb_delta32              mature dAUC=+0.0105[-0.0031,+0.0245] dmac=+0.0023[-0.0105,+0.0145] elapsed=1311.9s
+[boot stream 1] resnet_emb_current__lr   vs resnet_current           all    dAUC=-0.0191[-0.0378,-0.0011] dmac=-0.0090[-0.0233,+0.0041] elapsed=1312.9s
+[boot stream 1] resnet_emb_current__lr   vs resnet_current           mature dAUC=-0.0182[-0.0406,+0.0018] dmac=-0.0085[-0.0255,+0.0062] elapsed=1313.4s
+[stream 2 fold 1/5] hgb current/delta32 fit_s=11.3 elapsed=1326.0s
+[stream 2 fold 1/5] resnet heads + prefix/isolation checks ok elapsed=1331.9s
+[stream 2 fold 2/5] hgb current/delta32 fit_s=11.0 elapsed=1344.0s
+[stream 2 fold 2/5] resnet heads + prefix/isolation checks ok elapsed=1349.8s
+[stream 2 fold 3/5] hgb current/delta32 fit_s=11.0 elapsed=1362.1s
+[stream 2 fold 3/5] resnet heads + prefix/isolation checks ok elapsed=1368.0s
+[stream 2 fold 4/5] hgb current/delta32 fit_s=10.9 elapsed=1380.3s
+[stream 2 fold 4/5] resnet heads + prefix/isolation checks ok elapsed=1385.9s
+[stream 2 fold 5/5] hgb current/delta32 fit_s=11.0 elapsed=1398.1s
+[stream 2 fold 5/5] resnet heads + prefix/isolation checks ok elapsed=1404.1s
+[result stream 2] position_only__lr          all: AUC=0.5047 mac=0.5064 mic=0.5056 | mature: AUC=0.4947 mac=0.4999 mic=0.4998 | subj>=.9=0 max=0.566
+[result stream 2] position_only__hgb         all: AUC=0.5022 mac=0.5025 mic=0.5034 | mature: AUC=0.4951 mac=0.4988 mic=0.4983 | subj>=.9=0 max=0.573
+[result stream 2] hgb_current                all: AUC=0.6177 mac=0.5878 mic=0.5879 | mature: AUC=0.6128 mac=0.5823 mic=0.5818 | subj>=.9=0 max=0.790
+[result stream 2] hgb_delta32                all: AUC=0.6563 mac=0.6131 mic=0.6145 | mature: AUC=0.6532 mac=0.6110 mic=0.6108 | subj>=.9=0 max=0.817
+[result stream 2] resnet_current             all: AUC=0.6233 mac=0.5819 mic=0.5808 | mature: AUC=0.6204 mac=0.5795 mic=0.5779 | subj>=.9=0 max=0.750
+[result stream 2] resnet_logit_delta         all: AUC=0.6309 mac=0.5863 mic=0.5856 | mature: AUC=0.6297 mac=0.5839 mic=0.5839 | subj>=.9=0 max=0.726
+[result stream 2] resnet_emb_current__lr     all: AUC=0.6038 mac=0.5729 mic=0.5727 | mature: AUC=0.6044 mac=0.5748 mic=0.5760 | subj>=.9=0 max=0.752
+[result stream 2] resnet_emb_delta__lr       all: AUC=0.6050 mac=0.5686 mic=0.5680 | mature: AUC=0.6071 mac=0.5688 mic=0.5705 | subj>=.9=0 max=0.751
+[result stream 2] resnet_emb_current__hgb    all: AUC=0.6037 mac=0.5741 mic=0.5737 | mature: AUC=0.6017 mac=0.5694 mic=0.5712 | subj>=.9=0 max=0.764
+[result stream 2] resnet_emb_delta__hgb      all: AUC=0.6125 mac=0.5781 mic=0.5772 | mature: AUC=0.6122 mac=0.5770 mic=0.5779 | subj>=.9=0 max=0.761
+[result stream 2] fusion_current             all: AUC=0.6335 mac=0.5949 mic=0.5950 | mature: AUC=0.6314 mac=0.5936 mic=0.5935 | subj>=.9=0 max=0.817
+[result stream 2] fusion_delta               all: AUC=0.6680 mac=0.6183 mic=0.6182 | mature: AUC=0.6673 mac=0.6206 mic=0.6213 | subj>=.9=0 max=0.814
+[result stream 2] fusionR_current            all: AUC=0.6444 mac=0.6017 mic=0.6010 | mature: AUC=0.6408 mac=0.5995 mic=0.5986 | subj>=.9=0 max=0.780
+[result stream 2] fusionR_delta              all: AUC=0.6756 mac=0.6262 mic=0.6266 | mature: AUC=0.6726 mac=0.6257 mic=0.6253 | subj>=.9=0 max=0.814
+[sanity stream 2] position_only__lr AUC=0.5047 -> OK
+[sanity stream 2] position_only__hgb AUC=0.5022 -> OK
+[boot stream 2] resnet_logit_delta       vs resnet_current           all    dAUC=+0.0074[-0.0007,+0.0155] dmac=+0.0041[-0.0071,+0.0149] elapsed=1410.7s
+[boot stream 2] resnet_logit_delta       vs resnet_current           mature dAUC=+0.0088[+0.0007,+0.0169] dmac=+0.0042[-0.0074,+0.0156] elapsed=1411.3s
+[boot stream 2] resnet_emb_delta__lr     vs resnet_emb_current__lr   all    dAUC=+0.0008[-0.0081,+0.0096] dmac=-0.0045[-0.0129,+0.0038] elapsed=1412.3s
+[boot stream 2] resnet_emb_delta__lr     vs resnet_emb_current__lr   mature dAUC=+0.0023[-0.0072,+0.0124] dmac=-0.0062[-0.0147,+0.0024] elapsed=1412.9s
+[boot stream 2] resnet_emb_delta__hgb    vs resnet_emb_current__hgb  all    dAUC=+0.0084[+0.0007,+0.0160] dmac=+0.0037[-0.0041,+0.0112] elapsed=1413.9s
+[boot stream 2] resnet_emb_delta__hgb    vs resnet_emb_current__hgb  mature dAUC=+0.0101[+0.0012,+0.0188] dmac=+0.0074[-0.0012,+0.0154] elapsed=1414.4s
+[boot stream 2] hgb_delta32              vs hgb_current              all    dAUC=+0.0377[+0.0158,+0.0586] dmac=+0.0246[+0.0048,+0.0435] elapsed=1415.4s
+[boot stream 2] hgb_delta32              vs hgb_current              mature dAUC=+0.0395[+0.0170,+0.0619] dmac=+0.0280[+0.0062,+0.0489] elapsed=1416.0s
+[boot stream 2] fusion_delta             vs fusion_current           all    dAUC=+0.0336[+0.0183,+0.0484] dmac=+0.0228[+0.0094,+0.0359] elapsed=1417.0s
+[boot stream 2] fusion_delta             vs fusion_current           mature dAUC=+0.0350[+0.0187,+0.0505] dmac=+0.0265[+0.0132,+0.0398] elapsed=1417.5s
+[boot stream 2] fusionR_delta            vs fusionR_current          all    dAUC=+0.0306[+0.0119,+0.0481] dmac=+0.0243[+0.0072,+0.0413] elapsed=1418.6s
+[boot stream 2] fusionR_delta            vs fusionR_current          mature dAUC=+0.0310[+0.0126,+0.0496] dmac=+0.0259[+0.0091,+0.0419] elapsed=1419.2s
+[boot stream 2] fusion_current           vs hgb_current              all    dAUC=+0.0157[+0.0049,+0.0258] dmac=+0.0071[-0.0034,+0.0175] elapsed=1420.2s
+[boot stream 2] fusion_current           vs hgb_current              mature dAUC=+0.0186[+0.0069,+0.0300] dmac=+0.0113[-0.0002,+0.0230] elapsed=1420.7s
+[boot stream 2] fusion_delta             vs hgb_delta32              all    dAUC=+0.0117[-0.0011,+0.0241] dmac=+0.0053[-0.0067,+0.0181] elapsed=1421.6s
+[boot stream 2] fusion_delta             vs hgb_delta32              mature dAUC=+0.0141[-0.0004,+0.0279] dmac=+0.0098[-0.0037,+0.0226] elapsed=1422.3s
+[boot stream 2] resnet_emb_current__lr   vs resnet_current           all    dAUC=-0.0191[-0.0378,-0.0011] dmac=-0.0090[-0.0233,+0.0041] elapsed=1423.2s
+[boot stream 2] resnet_emb_current__lr   vs resnet_current           mature dAUC=-0.0156[-0.0346,+0.0023] dmac=-0.0044[-0.0192,+0.0099] elapsed=1423.7s
+[done] elapsed=1423.9s -> depositioned_resnet_history_delta_results.json
