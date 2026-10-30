@@ -1,0 +1,147 @@
+[start] db rows=16067 subjects=57 note="windows are grouped by label; no timestamp, trial id or stream position is stored; order within each shard is shuffled with a fixed seed" smoke=False
+[check] mean cross-subject label-sequence corr (first 121) = -0.0004
+[seed 0] rows=16067 subjects=57 dim=858 spearman(t,y)=-0.0012 variants=('current_only', 'delta_k32', 'delta_all', 'delta_multi', 'position_only', 'position_plus_current') clfs=('hgb', 'lr')
+[seed 0 fold 1/5] features + checks ok ntr=12949 nte=3118 build_s=3.4 elapsed=4.5s
+[seed 0 fold 1/5] current_only__hgb              dim=858 fit_s=5.7 elapsed=10.2s
+[seed 0 fold 1/5] current_only__lr               dim=858 fit_s=4.2 elapsed=14.4s
+[seed 0 fold 1/5] delta_k32__hgb                 dim=1716 fit_s=8.7 elapsed=23.1s
+[seed 0 fold 1/5] delta_k32__lr                  dim=1716 fit_s=8.4 elapsed=31.5s
+[seed 0 fold 1/5] delta_all__hgb                 dim=1716 fit_s=8.8 elapsed=40.4s
+[seed 0 fold 1/5] delta_all__lr                  dim=1716 fit_s=8.0 elapsed=48.4s
+[seed 0 fold 1/5] delta_multi__hgb               dim=2574 fit_s=13.5 elapsed=61.8s
+[seed 0 fold 1/5] delta_multi__lr                dim=2574 fit_s=14.3 elapsed=76.2s
+[seed 0 fold 1/5] position_only__hgb             dim=1 fit_s=0.0 elapsed=76.2s
+[seed 0 fold 1/5] position_only__lr              dim=1 fit_s=0.0 elapsed=76.2s
+[seed 0 fold 1/5] position_plus_current__hgb     dim=859 fit_s=4.5 elapsed=80.7s
+[seed 0 fold 1/5] position_plus_current__lr      dim=859 fit_s=23.6 elapsed=104.4s
+[seed 0 fold 2/5] features + checks ok ntr=12803 nte=3264 build_s=3.1 elapsed=108.0s
+[seed 0 fold 2/5] current_only__hgb              dim=858 fit_s=4.6 elapsed=112.6s
+[seed 0 fold 2/5] current_only__lr               dim=858 fit_s=4.3 elapsed=116.9s
+[seed 0 fold 2/5] delta_k32__hgb                 dim=1716 fit_s=9.0 elapsed=126.0s
+[seed 0 fold 2/5] delta_k32__lr                  dim=1716 fit_s=9.2 elapsed=135.2s
+[seed 0 fold 2/5] delta_all__hgb                 dim=1716 fit_s=9.1 elapsed=144.3s
+[seed 0 fold 2/5] delta_all__lr                  dim=1716 fit_s=8.7 elapsed=153.0s
+[seed 0 fold 2/5] delta_multi__hgb               dim=2574 fit_s=13.0 elapsed=165.9s
+[seed 0 fold 2/5] delta_multi__lr                dim=2574 fit_s=15.2 elapsed=181.1s
+[seed 0 fold 2/5] position_only__hgb             dim=1 fit_s=0.0 elapsed=181.1s
+[seed 0 fold 2/5] position_only__lr              dim=1 fit_s=0.0 elapsed=181.1s
+[seed 0 fold 2/5] position_plus_current__hgb     dim=859 fit_s=4.3 elapsed=185.4s
+[seed 0 fold 2/5] position_plus_current__lr      dim=859 fit_s=24.1 elapsed=209.5s
+[seed 0 fold 3/5] features + checks ok ntr=12926 nte=3141 build_s=3.0 elapsed=213.1s
+[seed 0 fold 3/5] current_only__hgb              dim=858 fit_s=4.6 elapsed=217.6s
+[seed 0 fold 3/5] current_only__lr               dim=858 fit_s=4.5 elapsed=222.2s
+[seed 0 fold 3/5] delta_k32__hgb                 dim=1716 fit_s=8.1 elapsed=230.3s
+[seed 0 fold 3/5] delta_k32__lr                  dim=1716 fit_s=9.0 elapsed=239.3s
+[seed 0 fold 3/5] delta_all__hgb                 dim=1716 fit_s=8.2 elapsed=247.5s
+[seed 0 fold 3/5] delta_all__lr                  dim=1716 fit_s=8.9 elapsed=256.4s
+[seed 0 fold 3/5] delta_multi__hgb               dim=2574 fit_s=13.7 elapsed=270.1s
+[seed 0 fold 3/5] delta_multi__lr                dim=2574 fit_s=16.1 elapsed=286.1s
+[seed 0 fold 3/5] position_only__hgb             dim=1 fit_s=0.0 elapsed=286.2s
+[seed 0 fold 3/5] position_only__lr              dim=1 fit_s=0.0 elapsed=286.2s
+[seed 0 fold 3/5] position_plus_current__hgb     dim=859 fit_s=4.2 elapsed=290.4s
+[seed 0 fold 3/5] position_plus_current__lr      dim=859 fit_s=26.5 elapsed=316.9s
+[seed 0 fold 4/5] features + checks ok ntr=12666 nte=3401 build_s=3.1 elapsed=320.6s
+[seed 0 fold 4/5] current_only__hgb              dim=858 fit_s=4.7 elapsed=325.3s
+[seed 0 fold 4/5] current_only__lr               dim=858 fit_s=4.1 elapsed=329.4s
+[seed 0 fold 4/5] delta_k32__hgb                 dim=1716 fit_s=8.9 elapsed=338.4s
+[seed 0 fold 4/5] delta_k32__lr                  dim=1716 fit_s=7.9 elapsed=346.2s
+[seed 0 fold 4/5] delta_all__hgb                 dim=1716 fit_s=8.8 elapsed=355.1s
+[seed 0 fold 4/5] delta_all__lr                  dim=1716 fit_s=8.0 elapsed=363.1s
+[seed 0 fold 4/5] delta_multi__hgb               dim=2574 fit_s=13.1 elapsed=376.2s
+[seed 0 fold 4/5] delta_multi__lr                dim=2574 fit_s=13.1 elapsed=389.3s
+[seed 0 fold 4/5] position_only__hgb             dim=1 fit_s=0.0 elapsed=389.3s
+[seed 0 fold 4/5] position_only__lr              dim=1 fit_s=0.0 elapsed=389.3s
+[seed 0 fold 4/5] position_plus_current__hgb     dim=859 fit_s=4.6 elapsed=393.9s
+[seed 0 fold 4/5] position_plus_current__lr      dim=859 fit_s=21.8 elapsed=415.6s
+[seed 0 fold 5/5] features + checks ok ntr=12924 nte=3143 build_s=3.1 elapsed=419.3s
+[seed 0 fold 5/5] current_only__hgb              dim=858 fit_s=4.5 elapsed=423.8s
+[seed 0 fold 5/5] current_only__lr               dim=858 fit_s=4.4 elapsed=428.1s
+[seed 0 fold 5/5] delta_k32__hgb                 dim=1716 fit_s=8.4 elapsed=436.5s
+[seed 0 fold 5/5] delta_k32__lr                  dim=1716 fit_s=9.2 elapsed=445.8s
+[seed 0 fold 5/5] delta_all__hgb                 dim=1716 fit_s=8.5 elapsed=454.3s
+[seed 0 fold 5/5] delta_all__lr                  dim=1716 fit_s=9.5 elapsed=463.8s
+[seed 0 fold 5/5] delta_multi__hgb               dim=2574 fit_s=13.6 elapsed=477.4s
+[seed 0 fold 5/5] delta_multi__lr                dim=2574 fit_s=15.8 elapsed=493.2s
+[seed 0 fold 5/5] position_only__hgb             dim=1 fit_s=0.1 elapsed=493.3s
+[seed 0 fold 5/5] position_only__lr              dim=1 fit_s=0.0 elapsed=493.3s
+[seed 0 fold 5/5] position_plus_current__hgb     dim=859 fit_s=4.4 elapsed=497.7s
+[seed 0 fold 5/5] position_plus_current__lr      dim=859 fit_s=25.5 elapsed=523.2s
+[result seed 0] current_only__hgb              all: n=16067 AUC=0.6199 mac=0.5882 mic=0.5892 | mature: n=9227 AUC=0.6165 mac=0.5861 mic=0.5855
+[result seed 0] current_only__lr               all: n=16067 AUC=0.6236 mac=0.5876 mic=0.5881 | mature: n=9227 AUC=0.6208 mac=0.5835 mic=0.5853
+[result seed 0] delta_k32__hgb                 all: n=16067 AUC=0.6513 mac=0.6126 mic=0.6143 | mature: n=9227 AUC=0.6489 mac=0.6123 mic=0.6122
+[result seed 0] delta_k32__lr                  all: n=16067 AUC=0.6465 mac=0.6066 mic=0.6076 | mature: n=9227 AUC=0.6430 mac=0.6038 mic=0.6054
+[result seed 0] delta_all__hgb                 all: n=16067 AUC=0.6516 mac=0.6100 mic=0.6118 | mature: n=9227 AUC=0.6541 mac=0.6152 mic=0.6163
+[result seed 0] delta_all__lr                  all: n=16067 AUC=0.6453 mac=0.6085 mic=0.6089 | mature: n=9227 AUC=0.6432 mac=0.6061 mic=0.6072
+[result seed 0] delta_multi__hgb               all: n=16067 AUC=0.6527 mac=0.6114 mic=0.6134 | mature: n=9227 AUC=0.6532 mac=0.6132 mic=0.6139
+[result seed 0] delta_multi__lr                all: n=16067 AUC=0.6370 mac=0.6010 mic=0.6020 | mature: n=9227 AUC=0.6335 mac=0.5971 mic=0.5989
+[result seed 0] position_only__hgb             all: n=16067 AUC=0.5005 mac=0.5031 mic=0.5032 | mature: n=9227 AUC=0.5011 mac=0.5057 mic=0.5070
+[result seed 0] position_only__lr              all: n=16067 AUC=0.4935 mac=0.4985 mic=0.4982 | mature: n=9227 AUC=0.4925 mac=0.5004 mic=0.4966
+[result seed 0] position_plus_current__hgb     all: n=16067 AUC=0.6200 mac=0.5878 mic=0.5888 | mature: n=9227 AUC=0.6167 mac=0.5859 mic=0.5852
+[result seed 0] position_plus_current__lr      all: n=16067 AUC=0.6236 mac=0.5870 mic=0.5875 | mature: n=9227 AUC=0.6207 mac=0.5825 mic=0.5842
+[sanity seed 0] position_only__hgb AUC=0.5005 -> OK
+[sanity seed 0] position_only__lr AUC=0.4935 -> OK
+[boot seed 0] delta_k32__hgb                 vs current_only__hgb  all    dAUC=+0.0306[+0.0084,+0.0535] dmac=+0.0239[+0.0064,+0.0412] elapsed=526.0s
+[boot seed 0] delta_k32__hgb                 vs current_only__hgb  mature dAUC=+0.0316[+0.0104,+0.0529] dmac=+0.0258[+0.0089,+0.0420] elapsed=526.5s
+[boot seed 0] delta_k32__lr                  vs current_only__lr   all    dAUC=+0.0224[+0.0115,+0.0331] dmac=+0.0187[+0.0073,+0.0309] elapsed=527.6s
+[boot seed 0] delta_k32__lr                  vs current_only__lr   mature dAUC=+0.0217[+0.0100,+0.0343] dmac=+0.0200[+0.0058,+0.0347] elapsed=528.1s
+[boot seed 0] delta_all__hgb                 vs current_only__hgb  all    dAUC=+0.0310[+0.0113,+0.0508] dmac=+0.0213[+0.0065,+0.0360] elapsed=529.2s
+[boot seed 0] delta_all__hgb                 vs current_only__hgb  mature dAUC=+0.0367[+0.0158,+0.0578] dmac=+0.0287[+0.0124,+0.0458] elapsed=529.8s
+[boot seed 0] delta_all__lr                  vs current_only__lr   all    dAUC=+0.0213[+0.0130,+0.0300] dmac=+0.0206[+0.0109,+0.0305] elapsed=530.8s
+[boot seed 0] delta_all__lr                  vs current_only__lr   mature dAUC=+0.0220[+0.0123,+0.0322] dmac=+0.0222[+0.0083,+0.0356] elapsed=531.3s
+[boot seed 0] delta_multi__hgb               vs current_only__hgb  all    dAUC=+0.0319[+0.0082,+0.0550] dmac=+0.0226[+0.0042,+0.0403] elapsed=532.4s
+[boot seed 0] delta_multi__hgb               vs current_only__hgb  mature dAUC=+0.0357[+0.0120,+0.0608] dmac=+0.0266[+0.0068,+0.0464] elapsed=533.0s
+[boot seed 0] delta_multi__lr                vs current_only__lr   all    dAUC=+0.0131[+0.0038,+0.0231] dmac=+0.0132[+0.0028,+0.0238] elapsed=534.0s
+[boot seed 0] delta_multi__lr                vs current_only__lr   mature dAUC=+0.0124[+0.0022,+0.0233] dmac=+0.0134[+0.0004,+0.0263] elapsed=534.6s
+[boot seed 0] position_only__hgb             vs current_only__hgb  all    dAUC=-0.1203[-0.1536,-0.0874] dmac=-0.0856[-0.1109,-0.0612] elapsed=535.1s
+[boot seed 0] position_only__hgb             vs current_only__hgb  mature dAUC=-0.1164[-0.1525,-0.0808] dmac=-0.0809[-0.1083,-0.0538] elapsed=535.4s
+[boot seed 0] position_only__lr              vs current_only__lr   all    dAUC=-0.1307[-0.1580,-0.1011] dmac=-0.0897[-0.1098,-0.0676] elapsed=536.0s
+[boot seed 0] position_only__lr              vs current_only__lr   mature dAUC=-0.1285[-0.1573,-0.0980] dmac=-0.0838[-0.1043,-0.0617] elapsed=536.3s
+[boot seed 0] position_plus_current__hgb     vs current_only__hgb  all    dAUC=+0.0001[-0.0014,+0.0016] dmac=-0.0004[-0.0028,+0.0019] elapsed=537.3s
+[boot seed 0] position_plus_current__hgb     vs current_only__hgb  mature dAUC=+0.0002[-0.0015,+0.0019] dmac=-0.0002[-0.0027,+0.0024] elapsed=537.9s
+[boot seed 0] position_plus_current__lr      vs current_only__lr   all    dAUC=-0.0000[-0.0002,+0.0001] dmac=-0.0007[-0.0019,+0.0005] elapsed=538.9s
+[boot seed 0] position_plus_current__lr      vs current_only__lr   mature dAUC=-0.0001[-0.0002,+0.0001] dmac=-0.0011[-0.0025,+0.0002] elapsed=539.5s
+[best] seed0 best delta=delta_k32__hgb; best HGB delta=delta_k32
+[subject] delta_k32__hgb: n_subj=57 >=0.9: 0 mean=0.6126
+[subject] current_only__hgb: n_subj=57 >=0.9: 0 mean=0.5882
+[subject] current_only__lr: n_subj=57 >=0.9: 0 mean=0.5876
+[seed 1] rows=16067 subjects=57 dim=858 spearman(t,y)=+0.0062 variants=('current_only', 'delta_k32') clfs=('hgb',)
+[seed 1 fold 1/5] features + checks ok ntr=12949 nte=3118 build_s=1.5 elapsed=542.5s
+[seed 1 fold 1/5] current_only__hgb              dim=858 fit_s=4.3 elapsed=546.8s
+[seed 1 fold 1/5] delta_k32__hgb                 dim=1716 fit_s=8.6 elapsed=555.4s
+[seed 1 fold 2/5] features + checks ok ntr=12803 nte=3264 build_s=1.6 elapsed=557.6s
+[seed 1 fold 2/5] current_only__hgb              dim=858 fit_s=4.1 elapsed=561.7s
+[seed 1 fold 2/5] delta_k32__hgb                 dim=1716 fit_s=8.4 elapsed=570.1s
+[seed 1 fold 3/5] features + checks ok ntr=12926 nte=3141 build_s=1.5 elapsed=572.3s
+[seed 1 fold 3/5] current_only__hgb              dim=858 fit_s=4.2 elapsed=576.5s
+[seed 1 fold 3/5] delta_k32__hgb                 dim=1716 fit_s=8.6 elapsed=585.0s
+[seed 1 fold 4/5] features + checks ok ntr=12666 nte=3401 build_s=1.6 elapsed=587.3s
+[seed 1 fold 4/5] current_only__hgb              dim=858 fit_s=4.3 elapsed=591.6s
+[seed 1 fold 4/5] delta_k32__hgb                 dim=1716 fit_s=8.7 elapsed=600.3s
+[seed 1 fold 5/5] features + checks ok ntr=12924 nte=3143 build_s=1.5 elapsed=602.5s
+[seed 1 fold 5/5] current_only__hgb              dim=858 fit_s=4.4 elapsed=606.8s
+[seed 1 fold 5/5] delta_k32__hgb                 dim=1716 fit_s=8.4 elapsed=615.2s
+[result seed 1] current_only__hgb              all: n=16067 AUC=0.6184 mac=0.5845 mic=0.5846 | mature: n=9227 AUC=0.6200 mac=0.5883 mic=0.5866
+[result seed 1] delta_k32__hgb                 all: n=16067 AUC=0.6581 mac=0.6172 mic=0.6181 | mature: n=9227 AUC=0.6608 mac=0.6186 mic=0.6186
+[boot seed 1] delta_k32__hgb                 vs current_only__hgb  all    dAUC=+0.0389[+0.0183,+0.0576] dmac=+0.0321[+0.0154,+0.0483] elapsed=616.4s
+[boot seed 1] delta_k32__hgb                 vs current_only__hgb  mature dAUC=+0.0401[+0.0189,+0.0601] dmac=+0.0298[+0.0117,+0.0475] elapsed=617.1s
+[seed 2] rows=16067 subjects=57 dim=858 spearman(t,y)=+0.0128 variants=('current_only', 'delta_k32') clfs=('hgb',)
+[seed 2 fold 1/5] features + checks ok ntr=12949 nte=3118 build_s=1.5 elapsed=619.4s
+[seed 2 fold 1/5] current_only__hgb              dim=858 fit_s=4.4 elapsed=623.8s
+[seed 2 fold 1/5] delta_k32__hgb                 dim=1716 fit_s=8.7 elapsed=632.4s
+[seed 2 fold 2/5] features + checks ok ntr=12803 nte=3264 build_s=1.6 elapsed=634.7s
+[seed 2 fold 2/5] current_only__hgb              dim=858 fit_s=4.3 elapsed=639.0s
+[seed 2 fold 2/5] delta_k32__hgb                 dim=1716 fit_s=8.6 elapsed=647.5s
+[seed 2 fold 3/5] features + checks ok ntr=12926 nte=3141 build_s=1.6 elapsed=649.7s
+[seed 2 fold 3/5] current_only__hgb              dim=858 fit_s=4.1 elapsed=653.8s
+[seed 2 fold 3/5] delta_k32__hgb                 dim=1716 fit_s=8.5 elapsed=662.3s
+[seed 2 fold 4/5] features + checks ok ntr=12666 nte=3401 build_s=1.6 elapsed=664.5s
+[seed 2 fold 4/5] current_only__hgb              dim=858 fit_s=4.4 elapsed=669.0s
+[seed 2 fold 4/5] delta_k32__hgb                 dim=1716 fit_s=8.6 elapsed=677.6s
+[seed 2 fold 5/5] features + checks ok ntr=12924 nte=3143 build_s=1.5 elapsed=679.7s
+[seed 2 fold 5/5] current_only__hgb              dim=858 fit_s=4.4 elapsed=684.1s
+[seed 2 fold 5/5] delta_k32__hgb                 dim=1716 fit_s=8.7 elapsed=692.8s
+[result seed 2] current_only__hgb              all: n=16067 AUC=0.6213 mac=0.5898 mic=0.5903 | mature: n=9227 AUC=0.6148 mac=0.5831 mic=0.5831
+[result seed 2] delta_k32__hgb                 all: n=16067 AUC=0.6594 mac=0.6158 mic=0.6175 | mature: n=9227 AUC=0.6551 mac=0.6163 mic=0.6156
+[boot seed 2] delta_k32__hgb                 vs current_only__hgb  all    dAUC=+0.0371[+0.0131,+0.0598] dmac=+0.0254[+0.0058,+0.0434] elapsed=694.0s
+[boot seed 2] delta_k32__hgb                 vs current_only__hgb  mature dAUC=+0.0394[+0.0161,+0.0613] dmac=+0.0325[+0.0137,+0.0506] elapsed=694.6s
+[done] elapsed=694.7s
