@@ -1,0 +1,17 @@
+[elapsed   0.21s] s10 fold 1/5 threshold=0.526444 train_macro=0.806622
+[elapsed   0.22s] s10 fold 2/5 threshold=0.523810 train_macro=0.808427
+[elapsed   0.23s] s10 fold 3/5 threshold=0.509823 train_macro=0.797135
+[elapsed   0.24s] s10 fold 4/5 threshold=0.511213 train_macro=0.820900
+[elapsed   0.26s] s10 fold 5/5 threshold=0.513194 train_macro=0.807246
+[elapsed   0.96s] s10 fixed>=0.5 macro=0.669273 micro=0.671017
+[elapsed   0.96s] s10 fixed>0.5 macro=0.806969 micro=0.807242
+[elapsed   0.96s] s10 crossfit macro=0.806722 micro=0.807151 AUC=0.821749
+[elapsed   1.08s] s5 fold 1/5 threshold=0.513274 train_macro=0.799575
+[elapsed   1.10s] s5 fold 2/5 threshold=0.541274 train_macro=0.800874
+[elapsed   1.11s] s5 fold 3/5 threshold=0.540984 train_macro=0.788498
+[elapsed   1.13s] s5 fold 4/5 threshold=0.508921 train_macro=0.807588
+[elapsed   1.15s] s5 fold 5/5 threshold=0.509497 train_macro=0.799497
+[elapsed   1.85s] s5 fixed>=0.5 macro=0.661653 micro=0.662795
+[elapsed   1.85s] s5 fixed>0.5 macro=0.797776 micro=0.797345
+[elapsed   1.85s] s5 crossfit macro=0.798407 micro=0.798089 AUC=0.816137
+[elapsed   1.87s] done seconds=1.85
