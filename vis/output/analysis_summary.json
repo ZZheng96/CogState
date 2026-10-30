@@ -1,0 +1,91 @@
+{
+  "data": {
+    "windows": 16067,
+    "subjects": 57,
+    "features": 858,
+    "waveform_subject": "001",
+    "waveform_indices": {
+      "0": 126,
+      "1": 264
+    }
+  },
+  "relative_bandpower_subject_macro": {
+    "relax": {
+      "delta": 0.8723229290430922,
+      "theta": 0.04367336179285495,
+      "alpha": 0.01082364225473546,
+      "beta": 0.029952733201335464,
+      "gamma": 0.021609925170892146
+    },
+    "task": {
+      "delta": 0.8560921420349018,
+      "theta": 0.0525513856843035,
+      "alpha": 0.013010804538457186,
+      "beta": 0.030855409255105645,
+      "gamma": 0.021922240826155782
+    }
+  },
+  "top_features_descriptive": [
+    {
+      "feature": "stft_2.0_log_2_mean",
+      "within_auc_mean": 0.6235193014144897,
+      "within_auc_median": 0.6412671208381653,
+      "direction_consistency": 0.8245614035087719
+    },
+    {
+      "feature": "stft_log_power_8_13_mean",
+      "within_auc_mean": 0.6216722726821899,
+      "within_auc_median": 0.6502267718315125,
+      "direction_consistency": 0.8245614035087719
+    },
+    {
+      "feature": "stft_1.0_log_2_mean",
+      "within_auc_mean": 0.6216722726821899,
+      "within_auc_median": 0.6502267718315125,
+      "direction_consistency": 0.8245614035087719
+    },
+    {
+      "feature": "dwt_sym5_2_q10",
+      "within_auc_mean": 0.383743554353714,
+      "within_auc_median": 0.37041762471199036,
+      "direction_consistency": 0.8070175438596492
+    },
+    {
+      "feature": "dwt_db4_2_q25",
+      "within_auc_mean": 0.39419811964035034,
+      "within_auc_median": 0.39511412382125854,
+      "direction_consistency": 0.7719298245614035
+    },
+    {
+      "feature": "stft_2.0_log_2_q50",
+      "within_auc_mean": 0.6141086220741272,
+      "within_auc_median": 0.6231449842453003,
+      "direction_consistency": 0.7894736842105263
+    },
+    {
+      "feature": "hilbert_envelope_2_q50",
+      "within_auc_mean": 0.6164110898971558,
+      "within_auc_median": 0.6403633952140808,
+      "direction_consistency": 0.8070175438596491
+    },
+    {
+      "feature": "hilbert_envelope_2_q25",
+      "within_auc_mean": 0.6111199855804443,
+      "within_auc_median": 0.6369298696517944,
+      "direction_consistency": 0.8070175438596491
+    },
+    {
+      "feature": "stft_0.5_log_4_q90",
+      "within_auc_mean": 0.5760265588760376,
+      "within_auc_median": 0.6088739037513733,
+      "direction_consistency": 0.7017543859649122
+    },
+    {
+      "feature": "stft_2.0_log_3_q90",
+      "within_auc_mean": 0.5826192498207092,
+      "within_auc_median": 0.5989872217178345,
+      "direction_consistency": 0.7368421052631579
+    }
+  ],
+  "caveat": "描述性诊断使用全部窗口标签，不是交叉验证、独立测试或部署性能。"
+}
