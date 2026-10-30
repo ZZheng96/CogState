@@ -1,0 +1,19 @@
+[elapsed  31.75s] s10 fold 1/5 nested HMM complete
+[elapsed  63.17s] s10 fold 2/5 nested HMM complete
+[elapsed  94.79s] s10 fold 3/5 nested HMM complete
+[elapsed 125.93s] s10 fold 4/5 nested HMM complete
+[elapsed 157.34s] s10 fold 5/5 nested HMM complete
+[elapsed 157.79s] s10 gaussian  hmm   macro=0.733442 micro=0.734902 AUC=0.807677 delta=-0.058130 CI=[-0.07390584069320774, -0.04127264612124547]
+[elapsed 158.10s] s10 gaussian  blend macro=0.754661 micro=0.755809 AUC=0.824846 delta=-0.036911 CI=[-0.04932798801027617, -0.024084793740467802]
+[elapsed 158.42s] s10 student_t hmm   macro=0.778288 micro=0.779051 AUC=0.848599 delta=-0.013284 CI=[-0.02281891031723497, -0.0024527460011102304]
+[elapsed 158.74s] s10 student_t blend macro=0.779388 micro=0.780170 AUC=0.847271 delta=-0.012184 CI=[-0.021441003372140027, -0.002238259162325363]
+[elapsed 190.24s] s5 fold 1/5 nested HMM complete
+[elapsed 221.54s] s5 fold 2/5 nested HMM complete
+[elapsed 252.97s] s5 fold 3/5 nested HMM complete
+[elapsed 283.93s] s5 fold 4/5 nested HMM complete
+[elapsed 315.42s] s5 fold 5/5 nested HMM complete
+[elapsed 315.87s] s5 gaussian  hmm   macro=0.769504 micro=0.769948 AUC=0.839437 delta=-0.007433 CI=[-0.021384012029233963, 0.007289837040451188]
+[elapsed 316.18s] s5 gaussian  blend macro=0.780295 micro=0.780584 AUC=0.846587 delta=+0.003358 CI=[-0.011315533300414765, 0.018268235417310822]
+[elapsed 316.50s] s5 student_t hmm   macro=0.789977 micro=0.790076 AUC=0.854601 delta=+0.013040 CI=[0.001572963765753976, 0.024832851834959813]
+[elapsed 316.82s] s5 student_t blend macro=0.790821 micro=0.790591 AUC=0.856442 delta=+0.013884 CI=[0.003185013107494828, 0.02453807986880583]
+[elapsed 316.91s] done seconds=316.88
