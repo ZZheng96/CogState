@@ -1,0 +1,112 @@
+[start] rows=16067 subjects=57 smoke=False sseeds=(0, 1, 2) variants=('tta_pseudo', 'tta_pseudo_full', 'tta_cotrain')
+[fold 1/5] z + PCA(z) ready evr=0.852 elapsed=3.2s
+[fold 2/5] z + PCA(z) ready evr=0.854 elapsed=5.0s
+[fold 3/5] z + PCA(z) ready evr=0.854 elapsed=7.6s
+[fold 4/5] z + PCA(z) ready evr=0.852 elapsed=10.2s
+[fold 5/5] z + PCA(z) ready evr=0.855 elapsed=12.8s
+[s0 fold 1/5] prank feats 2574 + PCA evr=0.798 32.8s elapsed=45.7s
+[s0 fold 1/5] tta_pseudo       subjects=11 fit_s=19.5 checks ok (isolation 7.1e-15, prefix) elapsed=65.2s
+[s0 fold 1/5] tta_pseudo_full  subjects=11 fit_s=22.2 checks ok (isolation 1.4e-14, prefix) elapsed=87.4s
+[s0 fold 1/5] tta_cotrain      subjects=11 fit_s=16.8 checks ok (isolation 1.4e-14, prefix) elapsed=104.2s
+[s0 fold 2/5] prank feats 2574 + PCA evr=0.800 17.6s elapsed=121.8s
+[s0 fold 2/5] tta_pseudo       subjects=12 fit_s=12.8 checks ok (isolation 3.6e-15, prefix) elapsed=134.7s
+[s0 fold 2/5] tta_pseudo_full  subjects=12 fit_s=17.0 checks ok (isolation 3.6e-15, prefix) elapsed=151.7s
+[s0 fold 2/5] tta_cotrain      subjects=12 fit_s=12.3 checks ok (isolation 3.6e-15, prefix) elapsed=164.0s
+[s0 fold 3/5] prank feats 2574 + PCA evr=0.801 18.4s elapsed=182.4s
+[s0 fold 3/5] tta_pseudo       subjects=11 fit_s=12.0 checks ok (isolation 3.6e-15, prefix) elapsed=194.5s
+[s0 fold 3/5] tta_pseudo_full  subjects=11 fit_s=18.6 checks ok (isolation 3.6e-15, prefix) elapsed=213.1s
+[s0 fold 3/5] tta_cotrain      subjects=11 fit_s=12.6 checks ok (isolation 3.6e-15, prefix) elapsed=225.7s
+[s0 fold 4/5] prank feats 2574 + PCA evr=0.798 18.3s elapsed=244.0s
+[s0 fold 4/5] tta_pseudo       subjects=12 fit_s=14.7 checks ok (isolation 7.1e-15, prefix) elapsed=258.7s
+[s0 fold 4/5] tta_pseudo_full  subjects=12 fit_s=17.9 checks ok (isolation 1.4e-14, prefix) elapsed=276.7s
+[s0 fold 4/5] tta_cotrain      subjects=12 fit_s=14.5 checks ok (isolation 1.4e-14, prefix) elapsed=291.2s
+[s0 fold 5/5] prank feats 2574 + PCA evr=0.802 18.7s elapsed=309.9s
+[s0 fold 5/5] tta_pseudo       subjects=11 fit_s=14.1 checks ok (isolation 3.6e-15, prefix) elapsed=324.1s
+[s0 fold 5/5] tta_pseudo_full  subjects=11 fit_s=19.9 checks ok (isolation 1.2e-14, prefix) elapsed=343.9s
+[s0 fold 5/5] tta_cotrain      subjects=11 fit_s=16.0 checks ok (isolation 7.1e-15, prefix) elapsed=359.9s
+[sanity s0] position_only__lr AUC=0.4935
+[sanity s0] position_only__hgb AUC=0.4959
+[sanity s0] raw t AUC=0.4993
+[result s0] fusionM_prank              all: AUC=0.7043 mac=0.6463 mic=0.6470 | mature: AUC=0.7057 mac=0.6458 mic=0.6461 | subj>=.9=0 max=0.867
+[result s0] hgb_prank                  all: AUC=0.6608 mac=0.6150 mic=0.6167 | mature: AUC=0.6607 mac=0.6172 mic=0.6180 | subj>=.9=0 max=0.858
+[result s0] resnet_whiten_logit_delta  all: AUC=0.6838 mac=0.6248 mic=0.6261 | mature: AUC=0.6867 mac=0.6274 mic=0.6284 | subj>=.9=0 max=0.861
+[result s0] tta_pseudo                 all: AUC=0.6888 mac=0.6429 mic=0.6439 | mature: AUC=0.6922 mac=0.6449 mic=0.6456 | subj>=.9=0 max=0.865
+[result s0] tta_pseudo_full            all: AUC=0.6870 mac=0.6404 mic=0.6414 | mature: AUC=0.6921 mac=0.6426 mic=0.6430 | subj>=.9=0 max=0.865
+[result s0] tta_cotrain                all: AUC=0.6956 mac=0.6378 mic=0.6389 | mature: AUC=0.6959 mac=0.6368 mic=0.6373 | subj>=.9=0 max=0.861
+[boot s0] tta_pseudo       vs fusionM_prank all    dAUC=-0.0160[-0.0293,-0.0029] dmac=-0.0037[-0.0148,+0.0069] dmic=-0.0034[-0.0146,+0.0074]
+[boot s0] tta_pseudo       vs fusionM_prank mature dAUC=-0.0139[-0.0286,+0.0012] dmac=-0.0012[-0.0151,+0.0116] dmic=-0.0008[-0.0150,+0.0127]
+[boot s0] tta_pseudo_full  vs fusionM_prank all    dAUC=-0.0178[-0.0300,-0.0053] dmac=-0.0061[-0.0162,+0.0037] dmic=-0.0058[-0.0161,+0.0047]
+[boot s0] tta_pseudo_full  vs fusionM_prank mature dAUC=-0.0140[-0.0280,+0.0002] dmac=-0.0034[-0.0164,+0.0094] dmic=-0.0033[-0.0164,+0.0093]
+[boot s0] tta_cotrain      vs fusionM_prank all    dAUC=-0.0092[-0.0205,+0.0013] dmac=-0.0088[-0.0194,+0.0014] dmic=-0.0084[-0.0192,+0.0020]
+[boot s0] tta_cotrain      vs fusionM_prank mature dAUC=-0.0103[-0.0229,+0.0020] dmac=-0.0093[-0.0234,+0.0043] dmic=-0.0092[-0.0235,+0.0050]
+[s1 fold 1/5] prank feats 2574 + PCA evr=0.801 15.8s elapsed=383.9s
+[s1 fold 1/5] tta_pseudo       subjects=11 fit_s=14.7 checks ok (isolation 1.4e-14, prefix) elapsed=398.7s
+[s1 fold 1/5] tta_pseudo_full  subjects=11 fit_s=19.3 checks ok (isolation 2.1e-14, prefix) elapsed=418.0s
+[s1 fold 1/5] tta_cotrain      subjects=11 fit_s=15.7 checks ok (isolation 1.4e-14, prefix) elapsed=433.7s
+[s1 fold 2/5] prank feats 2574 + PCA evr=0.802 32.1s elapsed=465.7s
+[s1 fold 2/5] tta_pseudo       subjects=12 fit_s=15.1 checks ok (isolation 5.3e-15, prefix) elapsed=480.9s
+[s1 fold 2/5] tta_pseudo_full  subjects=12 fit_s=20.2 checks ok (isolation 3.6e-15, prefix) elapsed=501.1s
+[s1 fold 2/5] tta_cotrain      subjects=12 fit_s=14.5 checks ok (isolation 7.1e-15, prefix) elapsed=515.6s
+[s1 fold 3/5] prank feats 2574 + PCA evr=0.801 38.1s elapsed=553.7s
+[s1 fold 3/5] tta_pseudo       subjects=11 fit_s=14.3 checks ok (isolation 1.8e-15, prefix) elapsed=568.1s
+[s1 fold 3/5] tta_pseudo_full  subjects=11 fit_s=18.5 checks ok (isolation 3.6e-15, prefix) elapsed=586.6s
+[s1 fold 3/5] tta_cotrain      subjects=11 fit_s=12.3 checks ok (isolation 3.6e-15, prefix) elapsed=598.9s
+[s1 fold 4/5] prank feats 2574 + PCA evr=0.800 19.8s elapsed=618.6s
+[s1 fold 4/5] tta_pseudo       subjects=12 fit_s=14.8 checks ok (isolation 7.1e-15, prefix) elapsed=633.5s
+[s1 fold 4/5] tta_pseudo_full  subjects=12 fit_s=17.7 checks ok (isolation 1.4e-14, prefix) elapsed=651.2s
+[s1 fold 4/5] tta_cotrain      subjects=12 fit_s=13.5 checks ok (isolation 7.1e-15, prefix) elapsed=664.7s
+[s1 fold 5/5] prank feats 2574 + PCA evr=0.805 19.6s elapsed=684.3s
+[s1 fold 5/5] tta_pseudo       subjects=11 fit_s=14.0 checks ok (isolation 7.1e-15, prefix) elapsed=698.3s
+[s1 fold 5/5] tta_pseudo_full  subjects=11 fit_s=19.2 checks ok (isolation 3.6e-15, prefix) elapsed=717.5s
+[s1 fold 5/5] tta_cotrain      subjects=11 fit_s=13.8 checks ok (isolation 3.6e-15, prefix) elapsed=731.4s
+[sanity s1] position_only__lr AUC=0.4971
+[sanity s1] position_only__hgb AUC=0.4983
+[sanity s1] raw t AUC=0.5036
+[result s1] fusionM_prank              all: AUC=0.6990 mac=0.6415 mic=0.6438 | mature: AUC=0.7051 mac=0.6475 mic=0.6481 | subj>=.9=0 max=0.870
+[result s1] hgb_prank                  all: AUC=0.6667 mac=0.6171 mic=0.6190 | mature: AUC=0.6734 mac=0.6237 mic=0.6243 | subj>=.9=0 max=0.858
+[result s1] resnet_whiten_logit_delta  all: AUC=0.6582 mac=0.6098 mic=0.6108 | mature: AUC=0.6622 mac=0.6128 mic=0.6129 | subj>=.9=0 max=0.874
+[result s1] tta_pseudo                 all: AUC=0.6873 mac=0.6421 mic=0.6438 | mature: AUC=0.6942 mac=0.6464 mic=0.6482 | subj>=.9=0 max=0.830
+[result s1] tta_pseudo_full            all: AUC=0.6836 mac=0.6395 mic=0.6412 | mature: AUC=0.6905 mac=0.6398 mic=0.6414 | subj>=.9=0 max=0.823
+[result s1] tta_cotrain                all: AUC=0.6917 mac=0.6399 mic=0.6424 | mature: AUC=0.6984 mac=0.6416 mic=0.6436 | subj>=.9=0 max=0.868
+[boot s1] tta_pseudo       vs fusionM_prank all    dAUC=-0.0121[-0.0252,+0.0008] dmac=+0.0004[-0.0101,+0.0113] dmic=-0.0002[-0.0104,+0.0102]
+[boot s1] tta_pseudo       vs fusionM_prank mature dAUC=-0.0113[-0.0250,+0.0017] dmac=-0.0014[-0.0132,+0.0103] dmic=-0.0002[-0.0118,+0.0118]
+[boot s1] tta_pseudo_full  vs fusionM_prank all    dAUC=-0.0158[-0.0275,-0.0026] dmac=-0.0022[-0.0115,+0.0086] dmic=-0.0028[-0.0120,+0.0076]
+[boot s1] tta_pseudo_full  vs fusionM_prank mature dAUC=-0.0149[-0.0271,-0.0029] dmac=-0.0079[-0.0187,+0.0038] dmic=-0.0070[-0.0178,+0.0047]
+[boot s1] tta_cotrain      vs fusionM_prank all    dAUC=-0.0077[-0.0187,+0.0034] dmac=-0.0019[-0.0110,+0.0075] dmic=-0.0016[-0.0110,+0.0078]
+[boot s1] tta_cotrain      vs fusionM_prank mature dAUC=-0.0072[-0.0193,+0.0052] dmac=-0.0062[-0.0173,+0.0059] dmic=-0.0048[-0.0160,+0.0075]
+[s2 fold 1/5] prank feats 2574 + PCA evr=0.798 19.3s elapsed=759.2s
+[s2 fold 1/5] tta_pseudo       subjects=11 fit_s=17.0 checks ok (isolation 1.1e-14, prefix) elapsed=776.3s
+[s2 fold 1/5] tta_pseudo_full  subjects=11 fit_s=19.8 checks ok (isolation 1.4e-14, prefix) elapsed=796.1s
+[s2 fold 1/5] tta_cotrain      subjects=11 fit_s=16.9 checks ok (isolation 7.1e-15, prefix) elapsed=813.0s
+[s2 fold 2/5] prank feats 2574 + PCA evr=0.800 28.4s elapsed=841.4s
+[s2 fold 2/5] tta_pseudo       subjects=12 fit_s=13.9 checks ok (isolation 2.7e-15, prefix) elapsed=855.3s
+[s2 fold 2/5] tta_pseudo_full  subjects=12 fit_s=20.4 checks ok (isolation 1.8e-15, prefix) elapsed=875.7s
+[s2 fold 2/5] tta_cotrain      subjects=12 fit_s=14.4 checks ok (isolation 3.6e-15, prefix) elapsed=890.0s
+[s2 fold 3/5] prank feats 2574 + PCA evr=0.801 30.8s elapsed=920.8s
+[s2 fold 3/5] tta_pseudo       subjects=11 fit_s=12.2 checks ok (isolation 3.6e-15, prefix) elapsed=933.1s
+[s2 fold 3/5] tta_pseudo_full  subjects=11 fit_s=17.2 checks ok (isolation 3.6e-15, prefix) elapsed=950.3s
+[s2 fold 3/5] tta_cotrain      subjects=11 fit_s=12.7 checks ok (isolation 3.6e-15, prefix) elapsed=963.0s
+[s2 fold 4/5] prank feats 2574 + PCA evr=0.798 19.2s elapsed=982.2s
+[s2 fold 4/5] tta_pseudo       subjects=12 fit_s=14.8 checks ok (isolation 7.1e-15, prefix) elapsed=997.1s
+[s2 fold 4/5] tta_pseudo_full  subjects=12 fit_s=19.4 checks ok (isolation 1.1e-14, prefix) elapsed=1016.6s
+[s2 fold 4/5] tta_cotrain      subjects=12 fit_s=13.8 checks ok (isolation 1.4e-14, prefix) elapsed=1030.4s
+[s2 fold 5/5] prank feats 2574 + PCA evr=0.802 19.2s elapsed=1049.5s
+[s2 fold 5/5] tta_pseudo       subjects=11 fit_s=14.5 checks ok (isolation 5.3e-15, prefix) elapsed=1064.0s
+[s2 fold 5/5] tta_pseudo_full  subjects=11 fit_s=19.8 checks ok (isolation 3.6e-15, prefix) elapsed=1083.8s
+[s2 fold 5/5] tta_cotrain      subjects=11 fit_s=13.7 checks ok (isolation 3.6e-15, prefix) elapsed=1097.6s
+[sanity s2] position_only__lr AUC=0.5047
+[sanity s2] position_only__hgb AUC=0.5022
+[sanity s2] raw t AUC=0.5074
+[result s2] fusionM_prank              all: AUC=0.6974 mac=0.6407 mic=0.6420 | mature: AUC=0.6987 mac=0.6466 mic=0.6468 | subj>=.9=0 max=0.877
+[result s2] hgb_prank                  all: AUC=0.6683 mac=0.6228 mic=0.6238 | mature: AUC=0.6684 mac=0.6237 mic=0.6242 | subj>=.9=0 max=0.834
+[result s2] resnet_whiten_logit_delta  all: AUC=0.6597 mac=0.6069 mic=0.6077 | mature: AUC=0.6623 mac=0.6103 mic=0.6105 | subj>=.9=0 max=0.874
+[result s2] tta_pseudo                 all: AUC=0.6859 mac=0.6382 mic=0.6393 | mature: AUC=0.6873 mac=0.6389 mic=0.6392 | subj>=.9=0 max=0.865
+[result s2] tta_pseudo_full            all: AUC=0.6825 mac=0.6387 mic=0.6400 | mature: AUC=0.6850 mac=0.6389 mic=0.6390 | subj>=.9=0 max=0.861
+[result s2] tta_cotrain                all: AUC=0.6913 mac=0.6403 mic=0.6417 | mature: AUC=0.6916 mac=0.6425 mic=0.6428 | subj>=.9=0 max=0.861
+[boot s2] tta_pseudo       vs fusionM_prank all    dAUC=-0.0119[-0.0247,+0.0017] dmac=-0.0028[-0.0127,+0.0079] dmic=-0.0029[-0.0129,+0.0078]
+[boot s2] tta_pseudo       vs fusionM_prank mature dAUC=-0.0119[-0.0262,+0.0030] dmac=-0.0080[-0.0202,+0.0053] dmic=-0.0079[-0.0207,+0.0056]
+[boot s2] tta_pseudo_full  vs fusionM_prank all    dAUC=-0.0153[-0.0277,-0.0030] dmac=-0.0022[-0.0121,+0.0082] dmic=-0.0022[-0.0121,+0.0082]
+[boot s2] tta_pseudo_full  vs fusionM_prank mature dAUC=-0.0141[-0.0274,+0.0004] dmac=-0.0079[-0.0202,+0.0047] dmic=-0.0080[-0.0205,+0.0049]
+[boot s2] tta_cotrain      vs fusionM_prank all    dAUC=-0.0065[-0.0162,+0.0037] dmac=-0.0005[-0.0099,+0.0088] dmic=-0.0004[-0.0100,+0.0092]
+[boot s2] tta_cotrain      vs fusionM_prank mature dAUC=-0.0075[-0.0193,+0.0048] dmac=-0.0042[-0.0162,+0.0085] dmic=-0.0042[-0.0161,+0.0084]
+[done] elapsed=1106.1s -> depositioned_tta_selftrain.json
