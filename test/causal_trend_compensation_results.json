@@ -1,0 +1,1419 @@
+{
+  "meta": {
+    "source": "split6 fusion; existing causal s5 and s10 smoothed probabilities",
+    "formula": "q=1.8*s5-0.8*s10; logit(clip(q,1e-6,1-1e-6)); past-only expanding median/MAD",
+    "derivation": "for a linear ramp, s5 and s10 lag the current value by 2 and 4.5 evaluated steps; 0.8=2/(4.5-2)",
+    "selection": "single fixed extrapolation weight; no weight search or test-OOF model/threshold selection; original training-fold threshold grid unchanged",
+    "decision": "same five-fold crossfit threshold protocol as s10 direct; primary overall comparison applies identical negative warmup to both methods",
+    "steady": "exclude the first 20 evaluated positions for every method",
+    "strict_subject_disjoint": true,
+    "strict_causal_history": true,
+    "test_labels_used_for_fit_or_selection": false
+  },
+  "score_diagnostics": {
+    "valid_min": -0.1750715601743887,
+    "valid_max": 0.9789657790254125,
+    "n_below_zero": 17,
+    "n_above_one": 0,
+    "clipped_fraction": 0.0018424189877533326
+  },
+  "results": {
+    "s10_direct": {
+      "overall": {
+        "subject_macro_bACC": 0.791572213801211,
+        "window_micro_bACC": 0.7919762486075593,
+        "AUC": 0.8429400340608538,
+        "n_eval": 9227,
+        "n_subjects": 57,
+        "n_macro_subjects": 56
+      },
+      "steady": {
+        "subject_macro_bACC": 0.7685936815320739,
+        "window_micro_bACC": 0.7713649383267646,
+        "AUC": 0.8238360814500272,
+        "n_eval": 8106,
+        "n_subjects": 56,
+        "n_macro_subjects": 56
+      },
+      "transition_errors_overall": {
+        "near_switch_le_5": {
+          "n": 1847,
+          "n_errors": 797,
+          "error_rate": 0.431510557661072
+        },
+        "away_from_switch_gt_5": {
+          "n": 7380,
+          "n_errors": 1092,
+          "error_rate": 0.14796747967479676
+        }
+      },
+      "transition_errors_steady": {
+        "near_switch_le_5": {
+          "n": 1648,
+          "n_errors": 734,
+          "error_rate": 0.44538834951456313
+        },
+        "away_from_switch_gt_5": {
+          "n": 6458,
+          "n_errors": 1006,
+          "error_rate": 0.1557757819758439
+        }
+      }
+    },
+    "s10_direct_warmup_matched": {
+      "overall": {
+        "subject_macro_bACC": 0.8065234048156447,
+        "window_micro_bACC": 0.8068870167163927,
+        "AUC": 0.8429400340608538,
+        "n_eval": 9227,
+        "n_subjects": 57,
+        "n_macro_subjects": 56
+      },
+      "steady": {
+        "subject_macro_bACC": 0.7685936815320739,
+        "window_micro_bACC": 0.7713649383267646,
+        "AUC": 0.8238360814500272,
+        "n_eval": 8106,
+        "n_subjects": 56,
+        "n_macro_subjects": 56
+      },
+      "transition_errors_overall": {
+        "near_switch_le_5": {
+          "n": 1847,
+          "n_errors": 783,
+          "error_rate": 0.4239306984298863
+        },
+        "away_from_switch_gt_5": {
+          "n": 7380,
+          "n_errors": 990,
+          "error_rate": 0.13414634146341464
+        }
+      },
+      "transition_errors_steady": {
+        "near_switch_le_5": {
+          "n": 1648,
+          "n_errors": 734,
+          "error_rate": 0.44538834951456313
+        },
+        "away_from_switch_gt_5": {
+          "n": 6458,
+          "n_errors": 1006,
+          "error_rate": 0.1557757819758439
+        }
+      }
+    },
+    "trend_compensated": {
+      "overall": {
+        "subject_macro_bACC": 0.7489604726787066,
+        "window_micro_bACC": 0.748796762269967,
+        "AUC": 0.8081176160320843,
+        "n_eval": 9227,
+        "n_subjects": 57,
+        "n_macro_subjects": 56
+      },
+      "steady": {
+        "subject_macro_bACC": 0.7385314518345295,
+        "window_micro_bACC": 0.7391687249767445,
+        "AUC": 0.7981564988250667,
+        "n_eval": 8106,
+        "n_subjects": 56,
+        "n_macro_subjects": 56
+      },
+      "transition_errors_overall": {
+        "near_switch_le_5": {
+          "n": 1847,
+          "n_errors": 787,
+          "error_rate": 0.42609637249593935
+        },
+        "away_from_switch_gt_5": {
+          "n": 7380,
+          "n_errors": 1523,
+          "error_rate": 0.20636856368563686
+        }
+      },
+      "transition_errors_steady": {
+        "near_switch_le_5": {
+          "n": 1648,
+          "n_errors": 712,
+          "error_rate": 0.4320388349514563
+        },
+        "away_from_switch_gt_5": {
+          "n": 6458,
+          "n_errors": 1357,
+          "error_rate": 0.2101269742954475
+        }
+      }
+    },
+    "trend_compensated_warmup_matched": {
+      "overall": {
+        "subject_macro_bACC": 0.7760726473474723,
+        "window_micro_bACC": 0.7754119766748723,
+        "AUC": 0.8081176160320843,
+        "n_eval": 9227,
+        "n_subjects": 57,
+        "n_macro_subjects": 56
+      },
+      "steady": {
+        "subject_macro_bACC": 0.7385314518345295,
+        "window_micro_bACC": 0.7391687249767445,
+        "AUC": 0.7981564988250667,
+        "n_eval": 8106,
+        "n_subjects": 56,
+        "n_macro_subjects": 56
+      },
+      "transition_errors_overall": {
+        "near_switch_le_5": {
+          "n": 1847,
+          "n_errors": 760,
+          "error_rate": 0.41147807255008123
+        },
+        "away_from_switch_gt_5": {
+          "n": 7380,
+          "n_errors": 1342,
+          "error_rate": 0.18184281842818428
+        }
+      },
+      "transition_errors_steady": {
+        "near_switch_le_5": {
+          "n": 1648,
+          "n_errors": 712,
+          "error_rate": 0.4320388349514563
+        },
+        "away_from_switch_gt_5": {
+          "n": 6458,
+          "n_errors": 1357,
+          "error_rate": 0.2101269742954475
+        }
+      }
+    }
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "threshold": 0.12945057640905036,
+      "train_subject_macro_bACC": 0.7496342230462247,
+      "n_train": 7429,
+      "n_test": 1798,
+      "train_subjects": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "010",
+        "011",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018",
+        "019",
+        "020",
+        "021",
+        "025",
+        "026",
+        "027",
+        "028",
+        "030",
+        "031",
+        "034",
+        "035",
+        "036",
+        "038",
+        "039",
+        "040",
+        "041",
+        "042",
+        "043",
+        "044",
+        "046",
+        "047",
+        "049",
+        "050",
+        "052",
+        "054",
+        "056",
+        "057",
+        "058",
+        "059"
+      ],
+      "test_subjects": [
+        "009",
+        "022",
+        "023",
+        "024",
+        "029",
+        "037",
+        "045",
+        "048",
+        "051",
+        "053",
+        "055"
+      ]
+    },
+    {
+      "fold": 1,
+      "threshold": 0.11135274608873975,
+      "train_subject_macro_bACC": 0.7557145141715812,
+      "n_train": 7403,
+      "n_test": 1824,
+      "train_subjects": [
+        "001",
+        "002",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "010",
+        "011",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018",
+        "019",
+        "020",
+        "021",
+        "022",
+        "023",
+        "024",
+        "025",
+        "026",
+        "027",
+        "028",
+        "029",
+        "030",
+        "031",
+        "037",
+        "040",
+        "042",
+        "043",
+        "044",
+        "045",
+        "047",
+        "048",
+        "049",
+        "051",
+        "052",
+        "053",
+        "054",
+        "055",
+        "056",
+        "057"
+      ],
+      "test_subjects": [
+        "003",
+        "012",
+        "034",
+        "035",
+        "036",
+        "038",
+        "039",
+        "041",
+        "046",
+        "050",
+        "058",
+        "059"
+      ]
+    },
+    {
+      "fold": 2,
+      "threshold": 0.11478667413302006,
+      "train_subject_macro_bACC": 0.7406421314419215,
+      "n_train": 7406,
+      "n_test": 1821,
+      "train_subjects": [
+        "002",
+        "003",
+        "004",
+        "008",
+        "009",
+        "010",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "018",
+        "020",
+        "021",
+        "022",
+        "023",
+        "024",
+        "027",
+        "028",
+        "029",
+        "030",
+        "034",
+        "035",
+        "036",
+        "037",
+        "038",
+        "039",
+        "040",
+        "041",
+        "042",
+        "043",
+        "044",
+        "045",
+        "046",
+        "047",
+        "048",
+        "049",
+        "050",
+        "051",
+        "052",
+        "053",
+        "054",
+        "055",
+        "056",
+        "058",
+        "059"
+      ],
+      "test_subjects": [
+        "001",
+        "005",
+        "006",
+        "007",
+        "011",
+        "017",
+        "019",
+        "025",
+        "026",
+        "031",
+        "057"
+      ]
+    },
+    {
+      "fold": 3,
+      "threshold": 0.12275854764491893,
+      "train_subject_macro_bACC": 0.7517948475266599,
+      "n_train": 7266,
+      "n_test": 1961,
+      "train_subjects": [
+        "001",
+        "002",
+        "003",
+        "005",
+        "006",
+        "007",
+        "009",
+        "010",
+        "011",
+        "012",
+        "014",
+        "017",
+        "018",
+        "019",
+        "020",
+        "021",
+        "022",
+        "023",
+        "024",
+        "025",
+        "026",
+        "027",
+        "029",
+        "030",
+        "031",
+        "034",
+        "035",
+        "036",
+        "037",
+        "038",
+        "039",
+        "041",
+        "044",
+        "045",
+        "046",
+        "047",
+        "048",
+        "050",
+        "051",
+        "052",
+        "053",
+        "055",
+        "057",
+        "058",
+        "059"
+      ],
+      "test_subjects": [
+        "004",
+        "008",
+        "013",
+        "015",
+        "016",
+        "028",
+        "040",
+        "042",
+        "043",
+        "049",
+        "054",
+        "056"
+      ]
+    },
+    {
+      "fold": 4,
+      "threshold": 0.13058707495617658,
+      "train_subject_macro_bACC": 0.7454762455537863,
+      "n_train": 7404,
+      "n_test": 1823,
+      "train_subjects": [
+        "001",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "011",
+        "012",
+        "013",
+        "015",
+        "016",
+        "017",
+        "019",
+        "022",
+        "023",
+        "024",
+        "025",
+        "026",
+        "028",
+        "029",
+        "031",
+        "034",
+        "035",
+        "036",
+        "037",
+        "038",
+        "039",
+        "040",
+        "041",
+        "042",
+        "043",
+        "045",
+        "046",
+        "048",
+        "049",
+        "050",
+        "051",
+        "053",
+        "054",
+        "055",
+        "056",
+        "057",
+        "058",
+        "059"
+      ],
+      "test_subjects": [
+        "002",
+        "010",
+        "014",
+        "018",
+        "020",
+        "021",
+        "027",
+        "030",
+        "044",
+        "047",
+        "052"
+      ]
+    }
+  ],
+  "causality_checks": [
+    {
+      "subject": "001",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "001",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "001",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "002",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "002",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "002",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "003",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "003",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "003",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "004",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "004",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "004",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "005",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "005",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "005",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "006",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "006",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "006",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "007",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "007",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "007",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "008",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "008",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "008",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "009",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "009",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "009",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "010",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "010",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "010",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "011",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "011",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "011",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "012",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "012",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "012",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "013",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "013",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "013",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "014",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "014",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "014",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "015",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "015",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "015",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "016",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "016",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "016",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "017",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "017",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "017",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "018",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "018",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "018",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "019",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "019",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "019",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "020",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "020",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "020",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "021",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "021",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "021",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "022",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "022",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "022",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "023",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "023",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "023",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "024",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "024",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "024",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "025",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "025",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "025",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "026",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "026",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "026",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "027",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "027",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "027",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "028",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "028",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "028",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "029",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "029",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "029",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "030",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "030",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "030",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "031",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "031",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "031",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "034",
+      "cut_within_evaluated_subject": 0,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "034",
+      "cut_within_evaluated_subject": 0,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "034",
+      "cut_within_evaluated_subject": 0,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "035",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "035",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "035",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "036",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "036",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "036",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "037",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "037",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "037",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "038",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "038",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "038",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "039",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "039",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "039",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "040",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "040",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "040",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "041",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "041",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "041",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "042",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "042",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "042",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "043",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "043",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "043",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "044",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "044",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "044",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "045",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "045",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "045",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "046",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "046",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "046",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "047",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "047",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "047",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "048",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "048",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "048",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "049",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "049",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "049",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "050",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "050",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "050",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "051",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "051",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "051",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "052",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "052",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "052",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "053",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "053",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "053",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "054",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "054",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "054",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "055",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "055",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "055",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "056",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "056",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "056",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "057",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "057",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "057",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "058",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "058",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "058",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "059",
+      "cut_within_evaluated_subject": 10,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "059",
+      "cut_within_evaluated_subject": 30,
+      "past_outputs_bitwise_identical": true
+    },
+    {
+      "subject": "059",
+      "cut_within_evaluated_subject": 60,
+      "past_outputs_bitwise_identical": true
+    }
+  ],
+  "paired_comparisons": {
+    "trend_minus_s10_original_overall": {
+      "mean_delta": -0.042611741122504376,
+      "ci95": [
+        -0.0585543259802814,
+        -0.026427487786962394
+      ],
+      "n_subjects": 56,
+      "n_bootstrap": 2000
+    },
+    "trend_minus_s10_warmup_matched_overall": {
+      "mean_delta": -0.03045075746817246,
+      "ci95": [
+        -0.045208877424685774,
+        -0.015561922539942414
+      ],
+      "n_subjects": 56,
+      "n_bootstrap": 2000
+    },
+    "trend_minus_s10_steady": {
+      "mean_delta": -0.03006222969754448,
+      "ci95": [
+        -0.04872979431315198,
+        -0.011037973187379636
+      ],
+      "n_subjects": 56,
+      "n_bootstrap": 2000
+    }
+  },
+  "seconds": 2.866559200003394
+}

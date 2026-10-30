@@ -1,0 +1,13 @@
+[elapsed   0.58s] fold 1/5 threshold=0.129451 train_macro=0.749634
+[elapsed   0.60s] fold 2/5 threshold=0.111353 train_macro=0.755715
+[elapsed   0.61s] fold 3/5 threshold=0.114787 train_macro=0.740642
+[elapsed   0.62s] fold 4/5 threshold=0.122759 train_macro=0.751795
+[elapsed   0.63s] fold 5/5 threshold=0.130587 train_macro=0.745476
+[elapsed   1.87s] s10_direct                             overall=0.791572 steady=0.768594 AUC=0.842940
+[elapsed   2.06s] s10_direct_warmup_matched              overall=0.806523 steady=0.768594 AUC=0.842940
+[elapsed   2.26s] trend_compensated                      overall=0.748960 steady=0.738531 AUC=0.808118
+[elapsed   2.46s] trend_compensated_warmup_matched       overall=0.776073 steady=0.738531 AUC=0.808118
+[elapsed   2.87s] trend_minus_s10_original_overall             delta=-0.042612 CI=[-0.0585543259802814, -0.026427487786962394]
+[elapsed   2.87s] trend_minus_s10_warmup_matched_overall       delta=-0.030451 CI=[-0.045208877424685774, -0.015561922539942414]
+[elapsed   2.87s] trend_minus_s10_steady                       delta=-0.030062 CI=[-0.04872979431315198, -0.011037973187379636]
+[elapsed   2.89s] done seconds=2.87
