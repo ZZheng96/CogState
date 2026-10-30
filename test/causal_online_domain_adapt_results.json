@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "protocol": "train-fold label-anchored two-mode Gaussian prototypes; test predict-before-update EMA",
+    "alpha_mean": 0.02,
+    "alpha_var": 0.02,
+    "var_floor": 0.0025000000000000005,
+    "features": "current existing 6-second fusion score only",
+    "seed": 0,
+    "smoke": false
+  },
+  "baseline_fixed05": {
+    "subject_macro_bACC": 0.6302441135237077,
+    "window_micro_bACC": 0.6300280801640494,
+    "AUC": 0.6742945095082392,
+    "n": 16067
+  },
+  "adapt_fixed05": {
+    "subject_macro_bACC": 0.6497670230801315,
+    "window_micro_bACC": 0.6496635478191775,
+    "AUC": 0.701112824865743,
+    "n": 16067,
+    "switching": {
+      "subject_macro_bACC": 0.3479532163742689,
+      "window_micro_bACC": 0.3449008005569092,
+      "AUC": 0.3044204664114166,
+      "n": 339
+    },
+    "steady": {
+      "subject_macro_bACC": 0.6562857048142627,
+      "window_micro_bACC": 0.6562323001717844,
+      "AUC": 0.709015426476368,
+      "n": 15728
+    }
+  },
+  "folds": {
+    "1": {
+      "subject_macro_bACC": 0.602687137374868,
+      "window_micro_bACC": 0.602315363988978,
+      "AUC": 0.6393668247053901,
+      "n": 3118
+    },
+    "2": {
+      "subject_macro_bACC": 0.6752873584736158,
+      "window_micro_bACC": 0.674837557800511,
+      "AUC": 0.726558290512925,
+      "n": 3264
+    },
+    "3": {
+      "subject_macro_bACC": 0.675765936186051,
+      "window_micro_bACC": 0.6764178308082671,
+      "AUC": 0.7517785477902866,
+      "n": 3141
+    },
+    "4": {
+      "subject_macro_bACC": 0.6313721583126247,
+      "window_micro_bACC": 0.6322916601825781,
+      "AUC": 0.6823080173766657,
+      "n": 3401
+    },
+    "5": {
+      "subject_macro_bACC": 0.6630747549965915,
+      "window_micro_bACC": 0.6624382593822659,
+      "AUC": 0.7084919618757001,
+      "n": 3143
+    }
+  },
+  "seconds": 0.6505892999994103
+}
