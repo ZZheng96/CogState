@@ -1,0 +1,23 @@
+[elapsed   0.33s] s10 direct_crossfit                    overall=0.791572 steady=0.768594
+[elapsed   0.50s] s10 direct_crossfit_warmup_matched     overall=0.806523 steady=0.768594
+[elapsed   0.66s] s10 expanding_rank                     overall=0.806969 steady=0.763600
+[elapsed   0.83s] s10 rolling20_rank                     overall=0.700221 steady=0.649584
+[elapsed   1.73s] s10 expanding_minus_original_direct_overall          delta=+0.015397 CI=[0.005595152743688188, 0.02619765236228429]
+[elapsed   1.73s] s10 expanding_minus_warmup_matched_direct_overall    delta=+0.000446 CI=[-0.005263354582829559, 0.006199486841996744]
+[elapsed   1.73s] s10 expanding_minus_direct_steady                    delta=-0.004994 CI=[-0.012378799362373849, 0.002070813860041978]
+[elapsed   1.73s] s10 rolling_minus_expanding_overall                  delta=-0.106748 CI=[-0.13387447192513435, -0.07782978689545672]
+[elapsed   1.73s] s10 rolling_minus_expanding_steady                   delta=-0.114016 CI=[-0.14684763284529986, -0.07945765299949702]
+[elapsed   1.73s] s10 rolling_minus_warmup_matched_direct_overall      delta=-0.106302 CI=[-0.13407262348457363, -0.07658880282465202]
+[elapsed   1.73s] s10 rolling_minus_direct_steady                      delta=-0.119010 CI=[-0.153081422349352, -0.08099269634749676]
+[elapsed   2.09s] s5 direct_crossfit                    overall=0.776937 steady=0.762041
+[elapsed   2.26s] s5 direct_crossfit_warmup_matched     overall=0.795635 steady=0.762041
+[elapsed   2.42s] s5 expanding_rank                     overall=0.797776 steady=0.755568
+[elapsed   2.59s] s5 rolling20_rank                     overall=0.680208 steady=0.628343
+[elapsed   3.51s] s5 expanding_minus_original_direct_overall          delta=+0.020839 CI=[0.010624389427483154, 0.03159499504676443]
+[elapsed   3.51s] s5 expanding_minus_warmup_matched_direct_overall    delta=+0.002140 CI=[-0.00389816465945703, 0.00830526230708506]
+[elapsed   3.51s] s5 expanding_minus_direct_steady                    delta=-0.006473 CI=[-0.013804082845679647, 0.0008536747085084084]
+[elapsed   3.51s] s5 rolling_minus_expanding_overall                  delta=-0.117568 CI=[-0.14256294213734677, -0.09155462380643037]
+[elapsed   3.51s] s5 rolling_minus_expanding_steady                   delta=-0.127225 CI=[-0.15715211819938033, -0.09558478406111737]
+[elapsed   3.51s] s5 rolling_minus_warmup_matched_direct_overall      delta=-0.115428 CI=[-0.14025430562180885, -0.08850903413449049]
+[elapsed   3.51s] s5 rolling_minus_direct_steady                      delta=-0.133699 CI=[-0.16332419364991516, -0.10184125637907672]
+[elapsed   3.64s] done seconds=3.62
