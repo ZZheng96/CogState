@@ -1,0 +1,9 @@
+[elapsed    0.01s] audit: rich saved eval_mask is a superset; using canonical position>=120 mask (9227 rows), identical to leakfree and s10 baseline
+[elapsed    1.56s] fold 1/5 train=7429 transitions=7383 test_subjects=11
+[elapsed    2.83s] fold 2/5 train=7403 transitions=7358 test_subjects=12
+[elapsed    4.09s] fold 3/5 train=7406 transitions=7360 test_subjects=11
+[elapsed    5.43s] fold 4/5 train=7266 transitions=7221 test_subjects=12
+[elapsed    6.72s] fold 5/5 train=7404 transitions=7358 test_subjects=11
+[elapsed    6.87s] gaussian: macro=0.727695 micro=0.727784 AUC=0.807534 n_eval=9227
+[elapsed    7.02s] student_t: macro=0.729103 micro=0.729385 AUC=0.807147 n_eval=9227
+[elapsed    7.04s] done; outputs saved, seconds=7.03
