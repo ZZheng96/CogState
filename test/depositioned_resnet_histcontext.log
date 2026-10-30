@@ -1,0 +1,1712 @@
+[start] rows=16067 subjects=57 device=cuda smoke=False sseeds=(0, 1, 2)
+[stream 0] baselines reproduced (hgb_delta32/position); fusionR_delta loaded elapsed=47.9s
+[stream 0 fold 1/5] inputs built (3.5s) spec d std(raw)=1.578 elapsed=51.4s
+    [s0 whiten rs0 fold1/5] ep01/50 loss=0.6951 valAUC=0.5179 best=0.5179@1 t=4s elapsed=55.4s
+    [s0 whiten rs0 fold1/5] ep02/50 loss=0.6750 valAUC=0.6244 best=0.6244@2 t=6s elapsed=57.7s
+    [s0 whiten rs0 fold1/5] ep03/50 loss=0.6650 valAUC=0.6209 best=0.6244@2 t=9s elapsed=60.0s
+    [s0 whiten rs0 fold1/5] ep04/50 loss=0.6625 valAUC=0.5969 best=0.6244@2 t=11s elapsed=62.4s
+    [s0 whiten rs0 fold1/5] ep05/50 loss=0.6551 valAUC=0.5601 best=0.6244@2 t=13s elapsed=64.7s
+    [s0 whiten rs0 fold1/5] ep06/50 loss=0.6513 valAUC=0.6154 best=0.6244@2 t=16s elapsed=67.0s
+    [s0 whiten rs0 fold1/5] ep07/50 loss=0.6453 valAUC=0.5743 best=0.6244@2 t=18s elapsed=69.3s
+    [s0 whiten rs0 fold1/5] ep08/50 loss=0.6465 valAUC=0.5439 best=0.6244@2 t=20s elapsed=71.6s
+    [s0 whiten rs0 fold1/5] ep09/50 loss=0.6383 valAUC=0.6762 best=0.6762@9 t=23s elapsed=73.9s
+    [s0 whiten rs0 fold1/5] ep10/50 loss=0.6365 valAUC=0.6731 best=0.6762@9 t=25s elapsed=76.2s
+    [s0 whiten rs0 fold1/5] ep11/50 loss=0.6314 valAUC=0.6763 best=0.6762@9 t=27s elapsed=78.5s
+    [s0 whiten rs0 fold1/5] ep12/50 loss=0.6260 valAUC=0.6375 best=0.6762@9 t=29s elapsed=80.9s
+    [s0 whiten rs0 fold1/5] ep13/50 loss=0.6212 valAUC=0.6790 best=0.6790@13 t=32s elapsed=83.2s
+    [s0 whiten rs0 fold1/5] ep14/50 loss=0.6207 valAUC=0.6481 best=0.6790@13 t=34s elapsed=85.5s
+    [s0 whiten rs0 fold1/5] ep15/50 loss=0.6155 valAUC=0.6590 best=0.6790@13 t=36s elapsed=87.8s
+    [s0 whiten rs0 fold1/5] ep16/50 loss=0.6107 valAUC=0.6424 best=0.6790@13 t=39s elapsed=90.1s
+    [s0 whiten rs0 fold1/5] ep17/50 loss=0.6073 valAUC=0.6613 best=0.6790@13 t=41s elapsed=92.4s
+    [s0 whiten rs0 fold1/5] ep18/50 loss=0.6079 valAUC=0.6747 best=0.6790@13 t=43s elapsed=94.8s
+    [s0 whiten rs0 fold1/5] ep19/50 loss=0.6084 valAUC=0.6222 best=0.6790@13 t=46s elapsed=97.1s
+    [s0 whiten rs0 fold1/5] ep20/50 loss=0.6016 valAUC=0.6810 best=0.6810@20 t=48s elapsed=99.4s
+    [s0 whiten rs0 fold1/5] ep21/50 loss=0.5954 valAUC=0.6119 best=0.6810@20 t=50s elapsed=101.7s
+    [s0 whiten rs0 fold1/5] ep22/50 loss=0.5935 valAUC=0.6739 best=0.6810@20 t=53s elapsed=104.1s
+    [s0 whiten rs0 fold1/5] ep23/50 loss=0.5891 valAUC=0.6683 best=0.6810@20 t=55s elapsed=106.4s
+    [s0 whiten rs0 fold1/5] ep24/50 loss=0.5860 valAUC=0.6767 best=0.6810@20 t=57s elapsed=108.7s
+    [s0 whiten rs0 fold1/5] ep25/50 loss=0.5845 valAUC=0.6577 best=0.6810@20 t=60s elapsed=111.0s
+    [s0 whiten rs0 fold1/5] ep26/50 loss=0.5778 valAUC=0.6392 best=0.6810@20 t=62s elapsed=113.4s
+    [s0 whiten rs0 fold1/5] ep27/50 loss=0.5778 valAUC=0.6543 best=0.6810@20 t=64s elapsed=115.7s
+    [s0 whiten rs0 fold1/5] ep28/50 loss=0.5791 valAUC=0.6819 best=0.6819@28 t=67s elapsed=118.0s
+    [s0 whiten rs0 fold1/5] ep29/50 loss=0.5767 valAUC=0.6375 best=0.6819@28 t=69s elapsed=120.4s
+    [s0 whiten rs0 fold1/5] ep30/50 loss=0.5722 valAUC=0.6718 best=0.6819@28 t=71s elapsed=122.7s
+    [s0 whiten rs0 fold1/5] ep31/50 loss=0.5605 valAUC=0.6865 best=0.6865@31 t=74s elapsed=125.0s
+    [s0 whiten rs0 fold1/5] ep32/50 loss=0.5650 valAUC=0.6816 best=0.6865@31 t=76s elapsed=127.4s
+    [s0 whiten rs0 fold1/5] ep33/50 loss=0.5575 valAUC=0.6832 best=0.6865@31 t=78s elapsed=129.7s
+    [s0 whiten rs0 fold1/5] ep34/50 loss=0.5546 valAUC=0.6757 best=0.6865@31 t=81s elapsed=132.1s
+    [s0 whiten rs0 fold1/5] ep35/50 loss=0.5542 valAUC=0.6558 best=0.6865@31 t=83s elapsed=134.4s
+    [s0 whiten rs0 fold1/5] ep36/50 loss=0.5458 valAUC=0.6533 best=0.6865@31 t=85s elapsed=136.8s
+    [s0 whiten rs0 fold1/5] ep37/50 loss=0.5467 valAUC=0.6843 best=0.6865@31 t=88s elapsed=139.1s
+    [s0 whiten rs0 fold1/5] ep38/50 loss=0.5396 valAUC=0.6682 best=0.6865@31 t=90s elapsed=141.5s
+    [s0 whiten rs0 fold1/5] ep39/50 loss=0.5385 valAUC=0.7005 best=0.7005@39 t=92s elapsed=143.8s
+    [s0 whiten rs0 fold1/5] ep40/50 loss=0.5355 valAUC=0.6345 best=0.7005@39 t=95s elapsed=146.2s
+    [s0 whiten rs0 fold1/5] ep41/50 loss=0.5277 valAUC=0.6544 best=0.7005@39 t=97s elapsed=148.5s
+    [s0 whiten rs0 fold1/5] ep42/50 loss=0.5334 valAUC=0.6813 best=0.7005@39 t=99s elapsed=150.9s
+    [s0 whiten rs0 fold1/5] ep43/50 loss=0.5286 valAUC=0.6659 best=0.7005@39 t=102s elapsed=153.2s
+    [s0 whiten rs0 fold1/5] ep44/50 loss=0.5245 valAUC=0.6475 best=0.7005@39 t=104s elapsed=155.5s
+    [s0 whiten rs0 fold1/5] ep45/50 loss=0.5177 valAUC=0.6875 best=0.7005@39 t=106s elapsed=157.9s
+    [s0 whiten rs0 fold1/5] ep46/50 loss=0.5106 valAUC=0.6786 best=0.7005@39 t=109s elapsed=160.2s
+    [s0 whiten rs0 fold1/5] ep47/50 loss=0.5083 valAUC=0.6850 best=0.7005@39 t=111s elapsed=162.6s
+[resnet] s0 whiten rs0 fold1/5 best_ep=39/47 testAUC=0.6548 (histnorm 0.6548) elapsed=165.7s
+[ctxemb] s0 rs0 fold1/5 B-oofAUC=0.6736 testAUC=0.6813 heads_val=[0.673, 0.642, 0.755, 0.684] elapsed=167.2s
+    [s0 ctxspec rs0 fold1/5] ep01/50 loss=0.6859 valAUC=0.5207 best=0.5207@1 t=2s elapsed=169.6s
+    [s0 ctxspec rs0 fold1/5] ep02/50 loss=0.6669 valAUC=0.5930 best=0.5930@2 t=5s elapsed=172.0s
+    [s0 ctxspec rs0 fold1/5] ep03/50 loss=0.6546 valAUC=0.6229 best=0.6229@3 t=7s elapsed=174.3s
+    [s0 ctxspec rs0 fold1/5] ep04/50 loss=0.6529 valAUC=0.5828 best=0.6229@3 t=10s elapsed=176.7s
+    [s0 ctxspec rs0 fold1/5] ep05/50 loss=0.6463 valAUC=0.5596 best=0.6229@3 t=12s elapsed=179.1s
+    [s0 ctxspec rs0 fold1/5] ep06/50 loss=0.6437 valAUC=0.6298 best=0.6298@6 t=14s elapsed=181.5s
+    [s0 ctxspec rs0 fold1/5] ep07/50 loss=0.6333 valAUC=0.6046 best=0.6298@6 t=17s elapsed=183.9s
+    [s0 ctxspec rs0 fold1/5] ep08/50 loss=0.6353 valAUC=0.6162 best=0.6298@6 t=19s elapsed=186.3s
+    [s0 ctxspec rs0 fold1/5] ep09/50 loss=0.6283 valAUC=0.6556 best=0.6556@9 t=21s elapsed=188.6s
+    [s0 ctxspec rs0 fold1/5] ep10/50 loss=0.6254 valAUC=0.6368 best=0.6556@9 t=24s elapsed=191.0s
+    [s0 ctxspec rs0 fold1/5] ep11/50 loss=0.6187 valAUC=0.6688 best=0.6688@11 t=26s elapsed=193.4s
+    [s0 ctxspec rs0 fold1/5] ep12/50 loss=0.6196 valAUC=0.6174 best=0.6688@11 t=29s elapsed=195.9s
+    [s0 ctxspec rs0 fold1/5] ep13/50 loss=0.6107 valAUC=0.6684 best=0.6688@11 t=31s elapsed=198.3s
+    [s0 ctxspec rs0 fold1/5] ep14/50 loss=0.6078 valAUC=0.6424 best=0.6688@11 t=33s elapsed=200.6s
+    [s0 ctxspec rs0 fold1/5] ep15/50 loss=0.6067 valAUC=0.6741 best=0.6741@15 t=36s elapsed=203.0s
+    [s0 ctxspec rs0 fold1/5] ep16/50 loss=0.6034 valAUC=0.6454 best=0.6741@15 t=38s elapsed=205.4s
+    [s0 ctxspec rs0 fold1/5] ep17/50 loss=0.5984 valAUC=0.6572 best=0.6741@15 t=41s elapsed=207.8s
+    [s0 ctxspec rs0 fold1/5] ep18/50 loss=0.5980 valAUC=0.6423 best=0.6741@15 t=43s elapsed=210.1s
+    [s0 ctxspec rs0 fold1/5] ep19/50 loss=0.5964 valAUC=0.6183 best=0.6741@15 t=45s elapsed=212.5s
+    [s0 ctxspec rs0 fold1/5] ep20/50 loss=0.5874 valAUC=0.6788 best=0.6788@20 t=48s elapsed=214.9s
+    [s0 ctxspec rs0 fold1/5] ep21/50 loss=0.5846 valAUC=0.5853 best=0.6788@20 t=50s elapsed=217.3s
+    [s0 ctxspec rs0 fold1/5] ep22/50 loss=0.5849 valAUC=0.6740 best=0.6788@20 t=52s elapsed=219.7s
+    [s0 ctxspec rs0 fold1/5] ep23/50 loss=0.5786 valAUC=0.6504 best=0.6788@20 t=55s elapsed=222.1s
+    [s0 ctxspec rs0 fold1/5] ep24/50 loss=0.5750 valAUC=0.6699 best=0.6788@20 t=57s elapsed=224.4s
+    [s0 ctxspec rs0 fold1/5] ep25/50 loss=0.5704 valAUC=0.6675 best=0.6788@20 t=60s elapsed=226.8s
+    [s0 ctxspec rs0 fold1/5] ep26/50 loss=0.5668 valAUC=0.6590 best=0.6788@20 t=62s elapsed=229.2s
+    [s0 ctxspec rs0 fold1/5] ep27/50 loss=0.5668 valAUC=0.6493 best=0.6788@20 t=64s elapsed=231.6s
+    [s0 ctxspec rs0 fold1/5] ep28/50 loss=0.5683 valAUC=0.6956 best=0.6956@28 t=67s elapsed=234.0s
+    [s0 ctxspec rs0 fold1/5] ep29/50 loss=0.5643 valAUC=0.6125 best=0.6956@28 t=69s elapsed=236.3s
+    [s0 ctxspec rs0 fold1/5] ep30/50 loss=0.5618 valAUC=0.6490 best=0.6956@28 t=72s elapsed=238.7s
+    [s0 ctxspec rs0 fold1/5] ep31/50 loss=0.5522 valAUC=0.6530 best=0.6956@28 t=74s elapsed=241.1s
+    [s0 ctxspec rs0 fold1/5] ep32/50 loss=0.5531 valAUC=0.6765 best=0.6956@28 t=76s elapsed=243.5s
+    [s0 ctxspec rs0 fold1/5] ep33/50 loss=0.5433 valAUC=0.6785 best=0.6956@28 t=79s elapsed=245.8s
+    [s0 ctxspec rs0 fold1/5] ep34/50 loss=0.5475 valAUC=0.6784 best=0.6956@28 t=81s elapsed=248.2s
+    [s0 ctxspec rs0 fold1/5] ep35/50 loss=0.5420 valAUC=0.6589 best=0.6956@28 t=83s elapsed=250.6s
+    [s0 ctxspec rs0 fold1/5] ep36/50 loss=0.5364 valAUC=0.6464 best=0.6956@28 t=86s elapsed=253.0s
+[resnet] s0 ctxspec rs0 fold1/5 best_ep=28/36 testAUC=0.6205 elapsed=254.5s
+[check] s0 fold1: ctxspec/ctxemb isolation + prefix invariance ok elapsed=255.2s
+    [s0 whiten rs1 fold1/5] ep01/50 loss=0.6926 valAUC=0.5684 best=0.5684@1 t=2s elapsed=257.5s
+    [s0 whiten rs1 fold1/5] ep02/50 loss=0.6779 valAUC=0.6158 best=0.6158@2 t=5s elapsed=259.9s
+    [s0 whiten rs1 fold1/5] ep03/50 loss=0.6703 valAUC=0.6231 best=0.6231@3 t=7s elapsed=262.2s
+    [s0 whiten rs1 fold1/5] ep04/50 loss=0.6634 valAUC=0.5684 best=0.6231@3 t=9s elapsed=264.6s
+    [s0 whiten rs1 fold1/5] ep05/50 loss=0.6536 valAUC=0.6535 best=0.6535@5 t=12s elapsed=266.9s
+    [s0 whiten rs1 fold1/5] ep06/50 loss=0.6496 valAUC=0.6219 best=0.6535@5 t=14s elapsed=269.3s
+    [s0 whiten rs1 fold1/5] ep07/50 loss=0.6442 valAUC=0.6187 best=0.6535@5 t=16s elapsed=271.6s
+    [s0 whiten rs1 fold1/5] ep08/50 loss=0.6422 valAUC=0.6430 best=0.6535@5 t=19s elapsed=274.0s
+    [s0 whiten rs1 fold1/5] ep09/50 loss=0.6355 valAUC=0.6160 best=0.6535@5 t=21s elapsed=276.4s
+    [s0 whiten rs1 fold1/5] ep10/50 loss=0.6329 valAUC=0.6660 best=0.6660@10 t=24s elapsed=278.7s
+    [s0 whiten rs1 fold1/5] ep11/50 loss=0.6291 valAUC=0.6111 best=0.6660@10 t=26s elapsed=281.1s
+    [s0 whiten rs1 fold1/5] ep12/50 loss=0.6262 valAUC=0.6689 best=0.6689@12 t=28s elapsed=283.4s
+    [s0 whiten rs1 fold1/5] ep13/50 loss=0.6215 valAUC=0.6732 best=0.6732@13 t=31s elapsed=285.8s
+    [s0 whiten rs1 fold1/5] ep14/50 loss=0.6181 valAUC=0.6266 best=0.6732@13 t=33s elapsed=288.1s
+    [s0 whiten rs1 fold1/5] ep15/50 loss=0.6159 valAUC=0.6210 best=0.6732@13 t=35s elapsed=290.5s
+    [s0 whiten rs1 fold1/5] ep16/50 loss=0.6111 valAUC=0.6483 best=0.6732@13 t=38s elapsed=292.8s
+    [s0 whiten rs1 fold1/5] ep17/50 loss=0.6096 valAUC=0.5757 best=0.6732@13 t=40s elapsed=295.2s
+    [s0 whiten rs1 fold1/5] ep18/50 loss=0.6093 valAUC=0.6597 best=0.6732@13 t=42s elapsed=297.5s
+    [s0 whiten rs1 fold1/5] ep19/50 loss=0.6049 valAUC=0.6176 best=0.6732@13 t=45s elapsed=299.9s
+    [s0 whiten rs1 fold1/5] ep20/50 loss=0.6023 valAUC=0.6517 best=0.6732@13 t=47s elapsed=302.2s
+    [s0 whiten rs1 fold1/5] ep21/50 loss=0.5970 valAUC=0.6643 best=0.6732@13 t=49s elapsed=304.6s
+[resnet] s0 whiten rs1 fold1/5 best_ep=13/21 testAUC=0.6203 (histnorm 0.6203) elapsed=307.7s
+[ctxemb] s0 rs1 fold1/5 B-oofAUC=0.6661 testAUC=0.6340 heads_val=[0.673, 0.65, 0.739, 0.655] elapsed=309.1s
+    [s0 ctxspec rs1 fold1/5] ep01/50 loss=0.6898 valAUC=0.5590 best=0.5590@1 t=2s elapsed=311.5s
+    [s0 ctxspec rs1 fold1/5] ep02/50 loss=0.6724 valAUC=0.6069 best=0.6069@2 t=5s elapsed=313.9s
+    [s0 ctxspec rs1 fold1/5] ep03/50 loss=0.6611 valAUC=0.5837 best=0.6069@2 t=7s elapsed=316.3s
+    [s0 ctxspec rs1 fold1/5] ep04/50 loss=0.6568 valAUC=0.5789 best=0.6069@2 t=10s elapsed=318.7s
+    [s0 ctxspec rs1 fold1/5] ep05/50 loss=0.6474 valAUC=0.6274 best=0.6274@5 t=12s elapsed=321.0s
+    [s0 ctxspec rs1 fold1/5] ep06/50 loss=0.6427 valAUC=0.6137 best=0.6274@5 t=14s elapsed=323.4s
+    [s0 ctxspec rs1 fold1/5] ep07/50 loss=0.6353 valAUC=0.5773 best=0.6274@5 t=17s elapsed=325.8s
+    [s0 ctxspec rs1 fold1/5] ep08/50 loss=0.6325 valAUC=0.6081 best=0.6274@5 t=19s elapsed=328.2s
+    [s0 ctxspec rs1 fold1/5] ep09/50 loss=0.6261 valAUC=0.6505 best=0.6505@9 t=21s elapsed=330.5s
+    [s0 ctxspec rs1 fold1/5] ep10/50 loss=0.6238 valAUC=0.6530 best=0.6530@10 t=24s elapsed=332.9s
+    [s0 ctxspec rs1 fold1/5] ep11/50 loss=0.6220 valAUC=0.6099 best=0.6530@10 t=26s elapsed=335.3s
+    [s0 ctxspec rs1 fold1/5] ep12/50 loss=0.6132 valAUC=0.6487 best=0.6530@10 t=29s elapsed=337.7s
+    [s0 ctxspec rs1 fold1/5] ep13/50 loss=0.6107 valAUC=0.6517 best=0.6530@10 t=31s elapsed=340.1s
+    [s0 ctxspec rs1 fold1/5] ep14/50 loss=0.6119 valAUC=0.6679 best=0.6679@14 t=33s elapsed=342.4s
+    [s0 ctxspec rs1 fold1/5] ep15/50 loss=0.6044 valAUC=0.6165 best=0.6679@14 t=36s elapsed=344.8s
+    [s0 ctxspec rs1 fold1/5] ep16/50 loss=0.6012 valAUC=0.6639 best=0.6679@14 t=38s elapsed=347.2s
+    [s0 ctxspec rs1 fold1/5] ep17/50 loss=0.5990 valAUC=0.6036 best=0.6679@14 t=40s elapsed=349.6s
+    [s0 ctxspec rs1 fold1/5] ep18/50 loss=0.5985 valAUC=0.6638 best=0.6679@14 t=43s elapsed=352.0s
+    [s0 ctxspec rs1 fold1/5] ep19/50 loss=0.5956 valAUC=0.6375 best=0.6679@14 t=45s elapsed=354.3s
+    [s0 ctxspec rs1 fold1/5] ep20/50 loss=0.5901 valAUC=0.6448 best=0.6679@14 t=48s elapsed=356.7s
+    [s0 ctxspec rs1 fold1/5] ep21/50 loss=0.5880 valAUC=0.6371 best=0.6679@14 t=50s elapsed=359.1s
+    [s0 ctxspec rs1 fold1/5] ep22/50 loss=0.5839 valAUC=0.6733 best=0.6733@22 t=52s elapsed=361.5s
+    [s0 ctxspec rs1 fold1/5] ep23/50 loss=0.5788 valAUC=0.6277 best=0.6733@22 t=55s elapsed=363.9s
+    [s0 ctxspec rs1 fold1/5] ep24/50 loss=0.5759 valAUC=0.6615 best=0.6733@22 t=57s elapsed=366.2s
+    [s0 ctxspec rs1 fold1/5] ep25/50 loss=0.5697 valAUC=0.6603 best=0.6733@22 t=59s elapsed=368.6s
+    [s0 ctxspec rs1 fold1/5] ep26/50 loss=0.5697 valAUC=0.6717 best=0.6733@22 t=62s elapsed=371.0s
+    [s0 ctxspec rs1 fold1/5] ep27/50 loss=0.5687 valAUC=0.6856 best=0.6856@27 t=64s elapsed=373.4s
+    [s0 ctxspec rs1 fold1/5] ep28/50 loss=0.5625 valAUC=0.6583 best=0.6856@27 t=67s elapsed=375.7s
+    [s0 ctxspec rs1 fold1/5] ep29/50 loss=0.5619 valAUC=0.6562 best=0.6856@27 t=69s elapsed=378.1s
+    [s0 ctxspec rs1 fold1/5] ep30/50 loss=0.5544 valAUC=0.6822 best=0.6856@27 t=71s elapsed=380.5s
+    [s0 ctxspec rs1 fold1/5] ep31/50 loss=0.5570 valAUC=0.6847 best=0.6856@27 t=74s elapsed=382.9s
+    [s0 ctxspec rs1 fold1/5] ep32/50 loss=0.5493 valAUC=0.6626 best=0.6856@27 t=76s elapsed=385.3s
+    [s0 ctxspec rs1 fold1/5] ep33/50 loss=0.5416 valAUC=0.6336 best=0.6856@27 t=79s elapsed=387.7s
+    [s0 ctxspec rs1 fold1/5] ep34/50 loss=0.5510 valAUC=0.6645 best=0.6856@27 t=81s elapsed=390.0s
+    [s0 ctxspec rs1 fold1/5] ep35/50 loss=0.5418 valAUC=0.6639 best=0.6856@27 t=83s elapsed=392.4s
+[resnet] s0 ctxspec rs1 fold1/5 best_ep=27/35 testAUC=0.6219 elapsed=394.0s
+    [s0 whiten rs2 fold1/5] ep01/50 loss=0.6911 valAUC=0.6021 best=0.6021@1 t=2s elapsed=396.5s
+    [s0 whiten rs2 fold1/5] ep02/50 loss=0.6738 valAUC=0.6379 best=0.6379@2 t=5s elapsed=398.9s
+    [s0 whiten rs2 fold1/5] ep03/50 loss=0.6640 valAUC=0.5665 best=0.6379@2 t=7s elapsed=401.2s
+    [s0 whiten rs2 fold1/5] ep04/50 loss=0.6594 valAUC=0.6469 best=0.6469@4 t=9s elapsed=403.6s
+    [s0 whiten rs2 fold1/5] ep05/50 loss=0.6532 valAUC=0.6132 best=0.6469@4 t=12s elapsed=405.9s
+    [s0 whiten rs2 fold1/5] ep06/50 loss=0.6528 valAUC=0.6471 best=0.6471@6 t=14s elapsed=408.3s
+    [s0 whiten rs2 fold1/5] ep07/50 loss=0.6443 valAUC=0.6057 best=0.6471@6 t=16s elapsed=410.6s
+    [s0 whiten rs2 fold1/5] ep08/50 loss=0.6379 valAUC=0.6389 best=0.6471@6 t=19s elapsed=413.0s
+    [s0 whiten rs2 fold1/5] ep09/50 loss=0.6379 valAUC=0.6472 best=0.6471@6 t=21s elapsed=415.3s
+    [s0 whiten rs2 fold1/5] ep10/50 loss=0.6305 valAUC=0.6521 best=0.6521@10 t=23s elapsed=417.6s
+    [s0 whiten rs2 fold1/5] ep11/50 loss=0.6303 valAUC=0.6001 best=0.6521@10 t=26s elapsed=420.0s
+    [s0 whiten rs2 fold1/5] ep12/50 loss=0.6269 valAUC=0.6305 best=0.6521@10 t=28s elapsed=422.3s
+    [s0 whiten rs2 fold1/5] ep13/50 loss=0.6234 valAUC=0.6273 best=0.6521@10 t=31s elapsed=424.7s
+    [s0 whiten rs2 fold1/5] ep14/50 loss=0.6184 valAUC=0.6710 best=0.6710@14 t=33s elapsed=427.0s
+    [s0 whiten rs2 fold1/5] ep15/50 loss=0.6164 valAUC=0.6125 best=0.6710@14 t=35s elapsed=429.4s
+    [s0 whiten rs2 fold1/5] ep16/50 loss=0.6131 valAUC=0.6661 best=0.6710@14 t=38s elapsed=431.7s
+    [s0 whiten rs2 fold1/5] ep17/50 loss=0.6085 valAUC=0.6923 best=0.6923@17 t=40s elapsed=434.1s
+    [s0 whiten rs2 fold1/5] ep18/50 loss=0.6079 valAUC=0.6541 best=0.6923@17 t=42s elapsed=436.4s
+    [s0 whiten rs2 fold1/5] ep19/50 loss=0.6056 valAUC=0.6420 best=0.6923@17 t=45s elapsed=438.8s
+    [s0 whiten rs2 fold1/5] ep20/50 loss=0.5971 valAUC=0.6318 best=0.6923@17 t=47s elapsed=441.1s
+    [s0 whiten rs2 fold1/5] ep21/50 loss=0.5971 valAUC=0.6317 best=0.6923@17 t=49s elapsed=443.5s
+    [s0 whiten rs2 fold1/5] ep22/50 loss=0.5952 valAUC=0.6964 best=0.6964@22 t=52s elapsed=445.8s
+    [s0 whiten rs2 fold1/5] ep23/50 loss=0.5919 valAUC=0.6724 best=0.6964@22 t=54s elapsed=448.2s
+    [s0 whiten rs2 fold1/5] ep24/50 loss=0.5881 valAUC=0.6541 best=0.6964@22 t=56s elapsed=450.5s
+    [s0 whiten rs2 fold1/5] ep25/50 loss=0.5849 valAUC=0.6424 best=0.6964@22 t=59s elapsed=452.9s
+    [s0 whiten rs2 fold1/5] ep26/50 loss=0.5833 valAUC=0.6480 best=0.6964@22 t=61s elapsed=455.2s
+    [s0 whiten rs2 fold1/5] ep27/50 loss=0.5833 valAUC=0.6261 best=0.6964@22 t=63s elapsed=457.6s
+    [s0 whiten rs2 fold1/5] ep28/50 loss=0.5782 valAUC=0.6408 best=0.6964@22 t=66s elapsed=459.9s
+    [s0 whiten rs2 fold1/5] ep29/50 loss=0.5754 valAUC=0.6779 best=0.6964@22 t=68s elapsed=462.3s
+    [s0 whiten rs2 fold1/5] ep30/50 loss=0.5710 valAUC=0.6898 best=0.6964@22 t=70s elapsed=464.6s
+[resnet] s0 whiten rs2 fold1/5 best_ep=22/30 testAUC=0.6262 (histnorm 0.6262) elapsed=467.7s
+[ctxemb] s0 rs2 fold1/5 B-oofAUC=0.7000 testAUC=0.6497 heads_val=[0.683, 0.673, 0.766, 0.691] elapsed=469.3s
+    [s0 ctxspec rs2 fold1/5] ep01/50 loss=0.6896 valAUC=0.5817 best=0.5817@1 t=2s elapsed=471.7s
+    [s0 ctxspec rs2 fold1/5] ep02/50 loss=0.6670 valAUC=0.5676 best=0.5817@1 t=5s elapsed=474.1s
+    [s0 ctxspec rs2 fold1/5] ep03/50 loss=0.6567 valAUC=0.5783 best=0.5817@1 t=7s elapsed=476.5s
+    [s0 ctxspec rs2 fold1/5] ep04/50 loss=0.6541 valAUC=0.6082 best=0.6082@4 t=10s elapsed=478.9s
+    [s0 ctxspec rs2 fold1/5] ep05/50 loss=0.6440 valAUC=0.6210 best=0.6210@5 t=12s elapsed=481.3s
+    [s0 ctxspec rs2 fold1/5] ep06/50 loss=0.6423 valAUC=0.5879 best=0.6210@5 t=14s elapsed=483.6s
+    [s0 ctxspec rs2 fold1/5] ep07/50 loss=0.6411 valAUC=0.5626 best=0.6210@5 t=17s elapsed=486.0s
+    [s0 ctxspec rs2 fold1/5] ep08/50 loss=0.6327 valAUC=0.6406 best=0.6406@8 t=19s elapsed=488.4s
+    [s0 ctxspec rs2 fold1/5] ep09/50 loss=0.6256 valAUC=0.6762 best=0.6762@9 t=21s elapsed=490.8s
+    [s0 ctxspec rs2 fold1/5] ep10/50 loss=0.6290 valAUC=0.6480 best=0.6762@9 t=24s elapsed=493.2s
+    [s0 ctxspec rs2 fold1/5] ep11/50 loss=0.6262 valAUC=0.6056 best=0.6762@9 t=26s elapsed=495.5s
+    [s0 ctxspec rs2 fold1/5] ep12/50 loss=0.6202 valAUC=0.6533 best=0.6762@9 t=29s elapsed=497.9s
+    [s0 ctxspec rs2 fold1/5] ep13/50 loss=0.6146 valAUC=0.6259 best=0.6762@9 t=31s elapsed=500.3s
+    [s0 ctxspec rs2 fold1/5] ep14/50 loss=0.6112 valAUC=0.6538 best=0.6762@9 t=33s elapsed=502.7s
+    [s0 ctxspec rs2 fold1/5] ep15/50 loss=0.6092 valAUC=0.6476 best=0.6762@9 t=36s elapsed=505.1s
+    [s0 ctxspec rs2 fold1/5] ep16/50 loss=0.6077 valAUC=0.6268 best=0.6762@9 t=38s elapsed=507.5s
+    [s0 ctxspec rs2 fold1/5] ep17/50 loss=0.6002 valAUC=0.6796 best=0.6796@17 t=41s elapsed=509.8s
+    [s0 ctxspec rs2 fold1/5] ep18/50 loss=0.6025 valAUC=0.6420 best=0.6796@17 t=43s elapsed=512.2s
+    [s0 ctxspec rs2 fold1/5] ep19/50 loss=0.5941 valAUC=0.6370 best=0.6796@17 t=45s elapsed=514.6s
+    [s0 ctxspec rs2 fold1/5] ep20/50 loss=0.5913 valAUC=0.6272 best=0.6796@17 t=48s elapsed=517.0s
+    [s0 ctxspec rs2 fold1/5] ep21/50 loss=0.5887 valAUC=0.6356 best=0.6796@17 t=50s elapsed=519.3s
+    [s0 ctxspec rs2 fold1/5] ep22/50 loss=0.5902 valAUC=0.6681 best=0.6796@17 t=52s elapsed=521.7s
+    [s0 ctxspec rs2 fold1/5] ep23/50 loss=0.5846 valAUC=0.6513 best=0.6796@17 t=55s elapsed=524.1s
+    [s0 ctxspec rs2 fold1/5] ep24/50 loss=0.5821 valAUC=0.6431 best=0.6796@17 t=57s elapsed=526.5s
+    [s0 ctxspec rs2 fold1/5] ep25/50 loss=0.5778 valAUC=0.6085 best=0.6796@17 t=60s elapsed=528.9s
+[resnet] s0 ctxspec rs2 fold1/5 best_ep=17/25 testAUC=0.6046 elapsed=530.4s
+[stream 0 fold 2/5] inputs built (3.5s) spec d std(raw)=1.637 elapsed=534.2s
+    [s0 whiten rs0 fold2/5] ep01/50 loss=0.7012 valAUC=0.4857 best=0.4857@1 t=3s elapsed=536.8s
+    [s0 whiten rs0 fold2/5] ep02/50 loss=0.6904 valAUC=0.5858 best=0.5858@2 t=5s elapsed=539.1s
+    [s0 whiten rs0 fold2/5] ep03/50 loss=0.6867 valAUC=0.5803 best=0.5858@2 t=7s elapsed=541.4s
+    [s0 whiten rs0 fold2/5] ep04/50 loss=0.6823 valAUC=0.6104 best=0.6104@4 t=10s elapsed=543.8s
+    [s0 whiten rs0 fold2/5] ep05/50 loss=0.6761 valAUC=0.6018 best=0.6104@4 t=12s elapsed=546.1s
+    [s0 whiten rs0 fold2/5] ep06/50 loss=0.6727 valAUC=0.6094 best=0.6104@4 t=14s elapsed=548.4s
+    [s0 whiten rs0 fold2/5] ep07/50 loss=0.6694 valAUC=0.5998 best=0.6104@4 t=17s elapsed=550.8s
+    [s0 whiten rs0 fold2/5] ep08/50 loss=0.6656 valAUC=0.6186 best=0.6186@8 t=19s elapsed=553.1s
+    [s0 whiten rs0 fold2/5] ep09/50 loss=0.6659 valAUC=0.6049 best=0.6186@8 t=21s elapsed=555.4s
+    [s0 whiten rs0 fold2/5] ep10/50 loss=0.6581 valAUC=0.6361 best=0.6361@10 t=24s elapsed=557.8s
+    [s0 whiten rs0 fold2/5] ep11/50 loss=0.6557 valAUC=0.6206 best=0.6361@10 t=26s elapsed=560.1s
+    [s0 whiten rs0 fold2/5] ep12/50 loss=0.6512 valAUC=0.6363 best=0.6363@12 t=28s elapsed=562.5s
+    [s0 whiten rs0 fold2/5] ep13/50 loss=0.6483 valAUC=0.6282 best=0.6363@12 t=31s elapsed=564.8s
+    [s0 whiten rs0 fold2/5] ep14/50 loss=0.6424 valAUC=0.6559 best=0.6559@14 t=33s elapsed=567.1s
+    [s0 whiten rs0 fold2/5] ep15/50 loss=0.6422 valAUC=0.6534 best=0.6559@14 t=35s elapsed=569.5s
+    [s0 whiten rs0 fold2/5] ep16/50 loss=0.6419 valAUC=0.6606 best=0.6606@16 t=38s elapsed=571.8s
+    [s0 whiten rs0 fold2/5] ep17/50 loss=0.6386 valAUC=0.6432 best=0.6606@16 t=40s elapsed=574.1s
+    [s0 whiten rs0 fold2/5] ep18/50 loss=0.6386 valAUC=0.6417 best=0.6606@16 t=42s elapsed=576.5s
+    [s0 whiten rs0 fold2/5] ep19/50 loss=0.6336 valAUC=0.6394 best=0.6606@16 t=45s elapsed=578.8s
+    [s0 whiten rs0 fold2/5] ep20/50 loss=0.6311 valAUC=0.6497 best=0.6606@16 t=47s elapsed=581.1s
+    [s0 whiten rs0 fold2/5] ep21/50 loss=0.6314 valAUC=0.6597 best=0.6606@16 t=49s elapsed=583.4s
+    [s0 whiten rs0 fold2/5] ep22/50 loss=0.6244 valAUC=0.6682 best=0.6682@22 t=52s elapsed=585.8s
+    [s0 whiten rs0 fold2/5] ep23/50 loss=0.6215 valAUC=0.6899 best=0.6899@23 t=54s elapsed=588.1s
+    [s0 whiten rs0 fold2/5] ep24/50 loss=0.6194 valAUC=0.6738 best=0.6899@23 t=56s elapsed=590.4s
+    [s0 whiten rs0 fold2/5] ep25/50 loss=0.6157 valAUC=0.6463 best=0.6899@23 t=59s elapsed=592.8s
+    [s0 whiten rs0 fold2/5] ep26/50 loss=0.6156 valAUC=0.6842 best=0.6899@23 t=61s elapsed=595.1s
+    [s0 whiten rs0 fold2/5] ep27/50 loss=0.6137 valAUC=0.6884 best=0.6899@23 t=63s elapsed=597.4s
+    [s0 whiten rs0 fold2/5] ep28/50 loss=0.6133 valAUC=0.6717 best=0.6899@23 t=66s elapsed=599.8s
+    [s0 whiten rs0 fold2/5] ep29/50 loss=0.6073 valAUC=0.6790 best=0.6899@23 t=68s elapsed=602.1s
+    [s0 whiten rs0 fold2/5] ep30/50 loss=0.6035 valAUC=0.6683 best=0.6899@23 t=70s elapsed=604.4s
+    [s0 whiten rs0 fold2/5] ep31/50 loss=0.6052 valAUC=0.6732 best=0.6899@23 t=73s elapsed=606.8s
+[resnet] s0 whiten rs0 fold2/5 best_ep=23/31 testAUC=0.7164 (histnorm 0.7164) elapsed=609.8s
+[ctxemb] s0 rs0 fold2/5 B-oofAUC=0.6607 testAUC=0.7304 heads_val=[0.662, 0.725, 0.649, 0.6] elapsed=611.1s
+    [s0 ctxspec rs0 fold2/5] ep01/50 loss=0.6949 valAUC=0.5629 best=0.5629@1 t=2s elapsed=613.4s
+    [s0 ctxspec rs0 fold2/5] ep02/50 loss=0.6855 valAUC=0.5908 best=0.5908@2 t=4s elapsed=615.6s
+    [s0 ctxspec rs0 fold2/5] ep03/50 loss=0.6825 valAUC=0.5841 best=0.5908@2 t=7s elapsed=618.0s
+    [s0 ctxspec rs0 fold2/5] ep04/50 loss=0.6752 valAUC=0.5930 best=0.5930@4 t=9s elapsed=620.4s
+    [s0 ctxspec rs0 fold2/5] ep05/50 loss=0.6717 valAUC=0.5869 best=0.5930@4 t=12s elapsed=622.8s
+    [s0 ctxspec rs0 fold2/5] ep06/50 loss=0.6685 valAUC=0.5925 best=0.5930@4 t=14s elapsed=625.1s
+    [s0 ctxspec rs0 fold2/5] ep07/50 loss=0.6668 valAUC=0.5941 best=0.5941@7 t=16s elapsed=627.5s
+    [s0 ctxspec rs0 fold2/5] ep08/50 loss=0.6618 valAUC=0.6039 best=0.6039@8 t=19s elapsed=629.8s
+    [s0 ctxspec rs0 fold2/5] ep09/50 loss=0.6634 valAUC=0.6043 best=0.6043@9 t=21s elapsed=632.2s
+    [s0 ctxspec rs0 fold2/5] ep10/50 loss=0.6559 valAUC=0.6033 best=0.6043@9 t=23s elapsed=634.6s
+    [s0 ctxspec rs0 fold2/5] ep11/50 loss=0.6544 valAUC=0.5971 best=0.6043@9 t=26s elapsed=636.9s
+    [s0 ctxspec rs0 fold2/5] ep12/50 loss=0.6483 valAUC=0.6210 best=0.6210@12 t=28s elapsed=639.3s
+    [s0 ctxspec rs0 fold2/5] ep13/50 loss=0.6438 valAUC=0.6002 best=0.6210@12 t=31s elapsed=641.7s
+    [s0 ctxspec rs0 fold2/5] ep14/50 loss=0.6418 valAUC=0.6291 best=0.6291@14 t=33s elapsed=644.0s
+    [s0 ctxspec rs0 fold2/5] ep15/50 loss=0.6404 valAUC=0.6397 best=0.6397@15 t=35s elapsed=646.4s
+    [s0 ctxspec rs0 fold2/5] ep16/50 loss=0.6395 valAUC=0.6304 best=0.6397@15 t=38s elapsed=648.8s
+    [s0 ctxspec rs0 fold2/5] ep17/50 loss=0.6330 valAUC=0.6239 best=0.6397@15 t=40s elapsed=651.1s
+    [s0 ctxspec rs0 fold2/5] ep18/50 loss=0.6336 valAUC=0.6612 best=0.6612@18 t=42s elapsed=653.5s
+    [s0 ctxspec rs0 fold2/5] ep19/50 loss=0.6236 valAUC=0.6391 best=0.6612@18 t=45s elapsed=655.8s
+    [s0 ctxspec rs0 fold2/5] ep20/50 loss=0.6290 valAUC=0.6422 best=0.6612@18 t=47s elapsed=658.2s
+    [s0 ctxspec rs0 fold2/5] ep21/50 loss=0.6234 valAUC=0.6612 best=0.6612@18 t=49s elapsed=660.6s
+    [s0 ctxspec rs0 fold2/5] ep22/50 loss=0.6224 valAUC=0.6526 best=0.6612@18 t=52s elapsed=662.9s
+    [s0 ctxspec rs0 fold2/5] ep23/50 loss=0.6191 valAUC=0.6575 best=0.6612@18 t=54s elapsed=665.3s
+    [s0 ctxspec rs0 fold2/5] ep24/50 loss=0.6132 valAUC=0.6605 best=0.6612@18 t=57s elapsed=667.7s
+    [s0 ctxspec rs0 fold2/5] ep25/50 loss=0.6092 valAUC=0.6436 best=0.6612@18 t=59s elapsed=670.0s
+    [s0 ctxspec rs0 fold2/5] ep26/50 loss=0.6114 valAUC=0.6757 best=0.6757@26 t=61s elapsed=672.4s
+    [s0 ctxspec rs0 fold2/5] ep27/50 loss=0.6091 valAUC=0.6719 best=0.6757@26 t=64s elapsed=674.8s
+    [s0 ctxspec rs0 fold2/5] ep28/50 loss=0.6053 valAUC=0.6593 best=0.6757@26 t=66s elapsed=677.1s
+    [s0 ctxspec rs0 fold2/5] ep29/50 loss=0.5995 valAUC=0.6799 best=0.6799@29 t=68s elapsed=679.5s
+    [s0 ctxspec rs0 fold2/5] ep30/50 loss=0.5973 valAUC=0.6598 best=0.6799@29 t=71s elapsed=681.9s
+    [s0 ctxspec rs0 fold2/5] ep31/50 loss=0.5959 valAUC=0.6573 best=0.6799@29 t=73s elapsed=684.2s
+    [s0 ctxspec rs0 fold2/5] ep32/50 loss=0.5930 valAUC=0.6705 best=0.6799@29 t=75s elapsed=686.6s
+    [s0 ctxspec rs0 fold2/5] ep33/50 loss=0.5893 valAUC=0.6774 best=0.6799@29 t=78s elapsed=688.9s
+    [s0 ctxspec rs0 fold2/5] ep34/50 loss=0.5869 valAUC=0.6722 best=0.6799@29 t=80s elapsed=691.3s
+    [s0 ctxspec rs0 fold2/5] ep35/50 loss=0.5849 valAUC=0.6859 best=0.6859@35 t=83s elapsed=693.7s
+    [s0 ctxspec rs0 fold2/5] ep36/50 loss=0.5844 valAUC=0.6887 best=0.6887@36 t=85s elapsed=696.0s
+    [s0 ctxspec rs0 fold2/5] ep37/50 loss=0.5724 valAUC=0.6806 best=0.6887@36 t=87s elapsed=698.4s
+    [s0 ctxspec rs0 fold2/5] ep38/50 loss=0.5809 valAUC=0.6755 best=0.6887@36 t=90s elapsed=700.8s
+    [s0 ctxspec rs0 fold2/5] ep39/50 loss=0.5709 valAUC=0.6807 best=0.6887@36 t=92s elapsed=703.1s
+    [s0 ctxspec rs0 fold2/5] ep40/50 loss=0.5712 valAUC=0.6669 best=0.6887@36 t=94s elapsed=705.5s
+    [s0 ctxspec rs0 fold2/5] ep41/50 loss=0.5605 valAUC=0.6822 best=0.6887@36 t=97s elapsed=707.9s
+    [s0 ctxspec rs0 fold2/5] ep42/50 loss=0.5606 valAUC=0.6795 best=0.6887@36 t=99s elapsed=710.2s
+    [s0 ctxspec rs0 fold2/5] ep43/50 loss=0.5594 valAUC=0.6702 best=0.6887@36 t=101s elapsed=712.6s
+    [s0 ctxspec rs0 fold2/5] ep44/50 loss=0.5604 valAUC=0.6839 best=0.6887@36 t=104s elapsed=714.9s
+[resnet] s0 ctxspec rs0 fold2/5 best_ep=36/44 testAUC=0.7386 elapsed=716.5s
+[check] s0 fold2: ctxspec/ctxemb isolation + prefix invariance ok elapsed=717.2s
+    [s0 whiten rs1 fold2/5] ep01/50 loss=0.6998 valAUC=0.5149 best=0.5149@1 t=2s elapsed=719.5s
+    [s0 whiten rs1 fold2/5] ep02/50 loss=0.6884 valAUC=0.5308 best=0.5308@2 t=5s elapsed=721.9s
+    [s0 whiten rs1 fold2/5] ep03/50 loss=0.6818 valAUC=0.6105 best=0.6105@3 t=7s elapsed=724.2s
+    [s0 whiten rs1 fold2/5] ep04/50 loss=0.6826 valAUC=0.5838 best=0.6105@3 t=9s elapsed=726.5s
+    [s0 whiten rs1 fold2/5] ep05/50 loss=0.6758 valAUC=0.5963 best=0.6105@3 t=12s elapsed=728.9s
+    [s0 whiten rs1 fold2/5] ep06/50 loss=0.6704 valAUC=0.5616 best=0.6105@3 t=14s elapsed=731.2s
+    [s0 whiten rs1 fold2/5] ep07/50 loss=0.6670 valAUC=0.6000 best=0.6105@3 t=16s elapsed=733.5s
+    [s0 whiten rs1 fold2/5] ep08/50 loss=0.6625 valAUC=0.6043 best=0.6105@3 t=19s elapsed=735.9s
+    [s0 whiten rs1 fold2/5] ep09/50 loss=0.6576 valAUC=0.5995 best=0.6105@3 t=21s elapsed=738.2s
+    [s0 whiten rs1 fold2/5] ep10/50 loss=0.6530 valAUC=0.5881 best=0.6105@3 t=23s elapsed=740.6s
+    [s0 whiten rs1 fold2/5] ep11/50 loss=0.6558 valAUC=0.6344 best=0.6344@11 t=26s elapsed=742.9s
+    [s0 whiten rs1 fold2/5] ep12/50 loss=0.6532 valAUC=0.6235 best=0.6344@11 t=28s elapsed=745.2s
+    [s0 whiten rs1 fold2/5] ep13/50 loss=0.6471 valAUC=0.6326 best=0.6344@11 t=30s elapsed=747.5s
+    [s0 whiten rs1 fold2/5] ep14/50 loss=0.6428 valAUC=0.6533 best=0.6533@14 t=33s elapsed=749.9s
+    [s0 whiten rs1 fold2/5] ep15/50 loss=0.6423 valAUC=0.6387 best=0.6533@14 t=35s elapsed=752.2s
+    [s0 whiten rs1 fold2/5] ep16/50 loss=0.6387 valAUC=0.6132 best=0.6533@14 t=37s elapsed=754.5s
+    [s0 whiten rs1 fold2/5] ep17/50 loss=0.6345 valAUC=0.6634 best=0.6634@17 t=40s elapsed=756.9s
+    [s0 whiten rs1 fold2/5] ep18/50 loss=0.6320 valAUC=0.6520 best=0.6634@17 t=42s elapsed=759.2s
+    [s0 whiten rs1 fold2/5] ep19/50 loss=0.6309 valAUC=0.6381 best=0.6634@17 t=44s elapsed=761.5s
+    [s0 whiten rs1 fold2/5] ep20/50 loss=0.6332 valAUC=0.6633 best=0.6634@17 t=47s elapsed=763.9s
+    [s0 whiten rs1 fold2/5] ep21/50 loss=0.6228 valAUC=0.6585 best=0.6634@17 t=49s elapsed=766.2s
+    [s0 whiten rs1 fold2/5] ep22/50 loss=0.6208 valAUC=0.6753 best=0.6753@22 t=51s elapsed=768.5s
+    [s0 whiten rs1 fold2/5] ep23/50 loss=0.6223 valAUC=0.6727 best=0.6753@22 t=54s elapsed=770.9s
+    [s0 whiten rs1 fold2/5] ep24/50 loss=0.6207 valAUC=0.6722 best=0.6753@22 t=56s elapsed=773.2s
+    [s0 whiten rs1 fold2/5] ep25/50 loss=0.6125 valAUC=0.6843 best=0.6843@25 t=58s elapsed=775.6s
+    [s0 whiten rs1 fold2/5] ep26/50 loss=0.6187 valAUC=0.6769 best=0.6843@25 t=61s elapsed=777.9s
+    [s0 whiten rs1 fold2/5] ep27/50 loss=0.6121 valAUC=0.6649 best=0.6843@25 t=63s elapsed=780.2s
+    [s0 whiten rs1 fold2/5] ep28/50 loss=0.6117 valAUC=0.6879 best=0.6879@28 t=65s elapsed=782.6s
+    [s0 whiten rs1 fold2/5] ep29/50 loss=0.6070 valAUC=0.6746 best=0.6879@28 t=68s elapsed=784.9s
+    [s0 whiten rs1 fold2/5] ep30/50 loss=0.6071 valAUC=0.6843 best=0.6879@28 t=70s elapsed=787.2s
+    [s0 whiten rs1 fold2/5] ep31/50 loss=0.6060 valAUC=0.6893 best=0.6893@31 t=72s elapsed=789.6s
+    [s0 whiten rs1 fold2/5] ep32/50 loss=0.6029 valAUC=0.6658 best=0.6893@31 t=75s elapsed=791.9s
+    [s0 whiten rs1 fold2/5] ep33/50 loss=0.5979 valAUC=0.6875 best=0.6893@31 t=77s elapsed=794.2s
+    [s0 whiten rs1 fold2/5] ep34/50 loss=0.6022 valAUC=0.6847 best=0.6893@31 t=79s elapsed=796.6s
+    [s0 whiten rs1 fold2/5] ep35/50 loss=0.5989 valAUC=0.6954 best=0.6954@35 t=82s elapsed=798.9s
+    [s0 whiten rs1 fold2/5] ep36/50 loss=0.5919 valAUC=0.6884 best=0.6954@35 t=84s elapsed=801.2s
+    [s0 whiten rs1 fold2/5] ep37/50 loss=0.5925 valAUC=0.6742 best=0.6954@35 t=86s elapsed=803.6s
+    [s0 whiten rs1 fold2/5] ep38/50 loss=0.5856 valAUC=0.6906 best=0.6954@35 t=89s elapsed=805.9s
+    [s0 whiten rs1 fold2/5] ep39/50 loss=0.5911 valAUC=0.6910 best=0.6954@35 t=91s elapsed=808.2s
+    [s0 whiten rs1 fold2/5] ep40/50 loss=0.5751 valAUC=0.6938 best=0.6954@35 t=93s elapsed=810.5s
+    [s0 whiten rs1 fold2/5] ep41/50 loss=0.5771 valAUC=0.6501 best=0.6954@35 t=96s elapsed=812.9s
+    [s0 whiten rs1 fold2/5] ep42/50 loss=0.5721 valAUC=0.6800 best=0.6954@35 t=98s elapsed=815.2s
+    [s0 whiten rs1 fold2/5] ep43/50 loss=0.5737 valAUC=0.6827 best=0.6954@35 t=100s elapsed=817.5s
+[resnet] s0 whiten rs1 fold2/5 best_ep=35/43 testAUC=0.7080 (histnorm 0.708) elapsed=820.6s
+[ctxemb] s0 rs1 fold2/5 B-oofAUC=0.6689 testAUC=0.7339 heads_val=[0.699, 0.733, 0.665, 0.557] elapsed=822.1s
+    [s0 ctxspec rs1 fold2/5] ep01/50 loss=0.6948 valAUC=0.5794 best=0.5794@1 t=2s elapsed=824.5s
+    [s0 ctxspec rs1 fold2/5] ep02/50 loss=0.6815 valAUC=0.5579 best=0.5794@1 t=5s elapsed=826.8s
+    [s0 ctxspec rs1 fold2/5] ep03/50 loss=0.6761 valAUC=0.6092 best=0.6092@3 t=7s elapsed=829.2s
+    [s0 ctxspec rs1 fold2/5] ep04/50 loss=0.6778 valAUC=0.5959 best=0.6092@3 t=9s elapsed=831.6s
+    [s0 ctxspec rs1 fold2/5] ep05/50 loss=0.6701 valAUC=0.5650 best=0.6092@3 t=12s elapsed=833.9s
+    [s0 ctxspec rs1 fold2/5] ep06/50 loss=0.6655 valAUC=0.6013 best=0.6092@3 t=14s elapsed=836.3s
+    [s0 ctxspec rs1 fold2/5] ep07/50 loss=0.6638 valAUC=0.6077 best=0.6092@3 t=17s elapsed=838.7s
+    [s0 ctxspec rs1 fold2/5] ep08/50 loss=0.6596 valAUC=0.6136 best=0.6136@8 t=19s elapsed=841.0s
+    [s0 ctxspec rs1 fold2/5] ep09/50 loss=0.6571 valAUC=0.6060 best=0.6136@8 t=21s elapsed=843.4s
+    [s0 ctxspec rs1 fold2/5] ep10/50 loss=0.6543 valAUC=0.6078 best=0.6136@8 t=24s elapsed=845.8s
+    [s0 ctxspec rs1 fold2/5] ep11/50 loss=0.6504 valAUC=0.6151 best=0.6151@11 t=26s elapsed=848.2s
+    [s0 ctxspec rs1 fold2/5] ep12/50 loss=0.6489 valAUC=0.6214 best=0.6214@12 t=28s elapsed=850.5s
+    [s0 ctxspec rs1 fold2/5] ep13/50 loss=0.6429 valAUC=0.6383 best=0.6383@13 t=31s elapsed=852.9s
+    [s0 ctxspec rs1 fold2/5] ep14/50 loss=0.6375 valAUC=0.6605 best=0.6605@14 t=33s elapsed=855.3s
+    [s0 ctxspec rs1 fold2/5] ep15/50 loss=0.6362 valAUC=0.6379 best=0.6605@14 t=36s elapsed=857.6s
+    [s0 ctxspec rs1 fold2/5] ep16/50 loss=0.6337 valAUC=0.6440 best=0.6605@14 t=38s elapsed=860.0s
+    [s0 ctxspec rs1 fold2/5] ep17/50 loss=0.6307 valAUC=0.6394 best=0.6605@14 t=40s elapsed=862.4s
+    [s0 ctxspec rs1 fold2/5] ep18/50 loss=0.6252 valAUC=0.6730 best=0.6730@18 t=43s elapsed=864.8s
+    [s0 ctxspec rs1 fold2/5] ep19/50 loss=0.6242 valAUC=0.6551 best=0.6730@18 t=45s elapsed=867.1s
+    [s0 ctxspec rs1 fold2/5] ep20/50 loss=0.6253 valAUC=0.6648 best=0.6730@18 t=47s elapsed=869.5s
+    [s0 ctxspec rs1 fold2/5] ep21/50 loss=0.6141 valAUC=0.6627 best=0.6730@18 t=50s elapsed=871.9s
+    [s0 ctxspec rs1 fold2/5] ep22/50 loss=0.6164 valAUC=0.6712 best=0.6730@18 t=52s elapsed=874.2s
+    [s0 ctxspec rs1 fold2/5] ep23/50 loss=0.6150 valAUC=0.6665 best=0.6730@18 t=54s elapsed=876.6s
+    [s0 ctxspec rs1 fold2/5] ep24/50 loss=0.6116 valAUC=0.6755 best=0.6755@24 t=57s elapsed=879.0s
+    [s0 ctxspec rs1 fold2/5] ep25/50 loss=0.6036 valAUC=0.6779 best=0.6779@25 t=59s elapsed=881.3s
+    [s0 ctxspec rs1 fold2/5] ep26/50 loss=0.6071 valAUC=0.6706 best=0.6779@25 t=62s elapsed=883.7s
+    [s0 ctxspec rs1 fold2/5] ep27/50 loss=0.6025 valAUC=0.6787 best=0.6787@27 t=64s elapsed=886.1s
+    [s0 ctxspec rs1 fold2/5] ep28/50 loss=0.6041 valAUC=0.6955 best=0.6955@28 t=66s elapsed=888.5s
+    [s0 ctxspec rs1 fold2/5] ep29/50 loss=0.5956 valAUC=0.6643 best=0.6955@28 t=69s elapsed=890.8s
+    [s0 ctxspec rs1 fold2/5] ep30/50 loss=0.5992 valAUC=0.6824 best=0.6955@28 t=71s elapsed=893.2s
+    [s0 ctxspec rs1 fold2/5] ep31/50 loss=0.5931 valAUC=0.6575 best=0.6955@28 t=73s elapsed=895.6s
+    [s0 ctxspec rs1 fold2/5] ep32/50 loss=0.5895 valAUC=0.6854 best=0.6955@28 t=76s elapsed=897.9s
+    [s0 ctxspec rs1 fold2/5] ep33/50 loss=0.5826 valAUC=0.6860 best=0.6955@28 t=78s elapsed=900.3s
+    [s0 ctxspec rs1 fold2/5] ep34/50 loss=0.5875 valAUC=0.6799 best=0.6955@28 t=81s elapsed=902.7s
+    [s0 ctxspec rs1 fold2/5] ep35/50 loss=0.5796 valAUC=0.6691 best=0.6955@28 t=83s elapsed=905.0s
+    [s0 ctxspec rs1 fold2/5] ep36/50 loss=0.5810 valAUC=0.6684 best=0.6955@28 t=85s elapsed=907.4s
+[resnet] s0 ctxspec rs1 fold2/5 best_ep=28/36 testAUC=0.7349 elapsed=909.0s
+    [s0 whiten rs2 fold2/5] ep01/50 loss=0.6981 valAUC=0.5672 best=0.5672@1 t=2s elapsed=911.5s
+    [s0 whiten rs2 fold2/5] ep02/50 loss=0.6857 valAUC=0.5853 best=0.5853@2 t=5s elapsed=913.9s
+    [s0 whiten rs2 fold2/5] ep03/50 loss=0.6810 valAUC=0.5431 best=0.5853@2 t=7s elapsed=916.2s
+    [s0 whiten rs2 fold2/5] ep04/50 loss=0.6763 valAUC=0.5348 best=0.5853@2 t=9s elapsed=918.5s
+    [s0 whiten rs2 fold2/5] ep05/50 loss=0.6716 valAUC=0.5650 best=0.5853@2 t=12s elapsed=920.9s
+    [s0 whiten rs2 fold2/5] ep06/50 loss=0.6690 valAUC=0.5974 best=0.5974@6 t=14s elapsed=923.2s
+    [s0 whiten rs2 fold2/5] ep07/50 loss=0.6626 valAUC=0.5735 best=0.5974@6 t=16s elapsed=925.6s
+    [s0 whiten rs2 fold2/5] ep08/50 loss=0.6601 valAUC=0.5949 best=0.5974@6 t=19s elapsed=927.9s
+    [s0 whiten rs2 fold2/5] ep09/50 loss=0.6575 valAUC=0.5808 best=0.5974@6 t=21s elapsed=930.2s
+    [s0 whiten rs2 fold2/5] ep10/50 loss=0.6549 valAUC=0.6067 best=0.6067@10 t=23s elapsed=932.6s
+    [s0 whiten rs2 fold2/5] ep11/50 loss=0.6509 valAUC=0.6187 best=0.6187@11 t=26s elapsed=934.9s
+    [s0 whiten rs2 fold2/5] ep12/50 loss=0.6473 valAUC=0.6045 best=0.6187@11 t=28s elapsed=937.3s
+    [s0 whiten rs2 fold2/5] ep13/50 loss=0.6447 valAUC=0.6153 best=0.6187@11 t=30s elapsed=939.6s
+    [s0 whiten rs2 fold2/5] ep14/50 loss=0.6462 valAUC=0.6503 best=0.6503@14 t=33s elapsed=941.9s
+    [s0 whiten rs2 fold2/5] ep15/50 loss=0.6414 valAUC=0.6339 best=0.6503@14 t=35s elapsed=944.3s
+    [s0 whiten rs2 fold2/5] ep16/50 loss=0.6411 valAUC=0.6623 best=0.6623@16 t=37s elapsed=946.6s
+    [s0 whiten rs2 fold2/5] ep17/50 loss=0.6348 valAUC=0.6279 best=0.6623@16 t=40s elapsed=949.0s
+    [s0 whiten rs2 fold2/5] ep18/50 loss=0.6352 valAUC=0.6424 best=0.6623@16 t=42s elapsed=951.3s
+    [s0 whiten rs2 fold2/5] ep19/50 loss=0.6307 valAUC=0.6629 best=0.6629@19 t=44s elapsed=953.6s
+    [s0 whiten rs2 fold2/5] ep20/50 loss=0.6289 valAUC=0.6588 best=0.6629@19 t=47s elapsed=956.0s
+    [s0 whiten rs2 fold2/5] ep21/50 loss=0.6269 valAUC=0.6832 best=0.6832@21 t=49s elapsed=958.3s
+    [s0 whiten rs2 fold2/5] ep22/50 loss=0.6244 valAUC=0.6611 best=0.6832@21 t=52s elapsed=960.7s
+    [s0 whiten rs2 fold2/5] ep23/50 loss=0.6215 valAUC=0.6416 best=0.6832@21 t=54s elapsed=963.0s
+    [s0 whiten rs2 fold2/5] ep24/50 loss=0.6188 valAUC=0.6793 best=0.6832@21 t=56s elapsed=965.3s
+    [s0 whiten rs2 fold2/5] ep25/50 loss=0.6158 valAUC=0.6734 best=0.6832@21 t=59s elapsed=967.7s
+    [s0 whiten rs2 fold2/5] ep26/50 loss=0.6148 valAUC=0.6648 best=0.6832@21 t=61s elapsed=970.0s
+    [s0 whiten rs2 fold2/5] ep27/50 loss=0.6153 valAUC=0.6649 best=0.6832@21 t=63s elapsed=972.4s
+    [s0 whiten rs2 fold2/5] ep28/50 loss=0.6085 valAUC=0.6788 best=0.6832@21 t=66s elapsed=974.7s
+    [s0 whiten rs2 fold2/5] ep29/50 loss=0.6082 valAUC=0.6675 best=0.6832@21 t=68s elapsed=977.0s
+[resnet] s0 whiten rs2 fold2/5 best_ep=21/29 testAUC=0.7228 (histnorm 0.7228) elapsed=980.1s
+[ctxemb] s0 rs2 fold2/5 B-oofAUC=0.6517 testAUC=0.7318 heads_val=[0.702, 0.743, 0.656, 0.632] elapsed=981.6s
+    [s0 ctxspec rs2 fold2/5] ep01/50 loss=0.6914 valAUC=0.5801 best=0.5801@1 t=2s elapsed=984.0s
+    [s0 ctxspec rs2 fold2/5] ep02/50 loss=0.6838 valAUC=0.5856 best=0.5856@2 t=5s elapsed=986.3s
+    [s0 ctxspec rs2 fold2/5] ep03/50 loss=0.6760 valAUC=0.5607 best=0.5856@2 t=7s elapsed=988.7s
+    [s0 ctxspec rs2 fold2/5] ep04/50 loss=0.6733 valAUC=0.5570 best=0.5856@2 t=9s elapsed=991.1s
+    [s0 ctxspec rs2 fold2/5] ep05/50 loss=0.6661 valAUC=0.5537 best=0.5856@2 t=12s elapsed=993.5s
+    [s0 ctxspec rs2 fold2/5] ep06/50 loss=0.6664 valAUC=0.5999 best=0.5999@6 t=14s elapsed=995.8s
+    [s0 ctxspec rs2 fold2/5] ep07/50 loss=0.6601 valAUC=0.5913 best=0.5999@6 t=17s elapsed=998.2s
+    [s0 ctxspec rs2 fold2/5] ep08/50 loss=0.6599 valAUC=0.5903 best=0.5999@6 t=19s elapsed=1000.6s
+    [s0 ctxspec rs2 fold2/5] ep09/50 loss=0.6548 valAUC=0.6043 best=0.6043@9 t=21s elapsed=1002.9s
+    [s0 ctxspec rs2 fold2/5] ep10/50 loss=0.6522 valAUC=0.5950 best=0.6043@9 t=24s elapsed=1005.3s
+    [s0 ctxspec rs2 fold2/5] ep11/50 loss=0.6528 valAUC=0.6297 best=0.6297@11 t=26s elapsed=1007.7s
+    [s0 ctxspec rs2 fold2/5] ep12/50 loss=0.6432 valAUC=0.6095 best=0.6297@11 t=28s elapsed=1010.1s
+    [s0 ctxspec rs2 fold2/5] ep13/50 loss=0.6421 valAUC=0.6315 best=0.6315@13 t=31s elapsed=1012.4s
+    [s0 ctxspec rs2 fold2/5] ep14/50 loss=0.6377 valAUC=0.6337 best=0.6337@14 t=33s elapsed=1014.8s
+    [s0 ctxspec rs2 fold2/5] ep15/50 loss=0.6386 valAUC=0.6338 best=0.6337@14 t=36s elapsed=1017.2s
+    [s0 ctxspec rs2 fold2/5] ep16/50 loss=0.6343 valAUC=0.6282 best=0.6337@14 t=38s elapsed=1019.6s
+    [s0 ctxspec rs2 fold2/5] ep17/50 loss=0.6304 valAUC=0.6418 best=0.6418@17 t=40s elapsed=1021.9s
+    [s0 ctxspec rs2 fold2/5] ep18/50 loss=0.6308 valAUC=0.6378 best=0.6418@17 t=43s elapsed=1024.3s
+    [s0 ctxspec rs2 fold2/5] ep19/50 loss=0.6212 valAUC=0.6577 best=0.6577@19 t=45s elapsed=1026.7s
+    [s0 ctxspec rs2 fold2/5] ep20/50 loss=0.6220 valAUC=0.6453 best=0.6577@19 t=47s elapsed=1029.0s
+    [s0 ctxspec rs2 fold2/5] ep21/50 loss=0.6187 valAUC=0.6579 best=0.6579@21 t=50s elapsed=1031.4s
+    [s0 ctxspec rs2 fold2/5] ep22/50 loss=0.6176 valAUC=0.6488 best=0.6579@21 t=52s elapsed=1033.8s
+    [s0 ctxspec rs2 fold2/5] ep23/50 loss=0.6133 valAUC=0.6507 best=0.6579@21 t=55s elapsed=1036.2s
+    [s0 ctxspec rs2 fold2/5] ep24/50 loss=0.6093 valAUC=0.6636 best=0.6636@24 t=57s elapsed=1038.5s
+    [s0 ctxspec rs2 fold2/5] ep25/50 loss=0.6083 valAUC=0.6482 best=0.6636@24 t=59s elapsed=1040.9s
+    [s0 ctxspec rs2 fold2/5] ep26/50 loss=0.6069 valAUC=0.6430 best=0.6636@24 t=62s elapsed=1043.3s
+    [s0 ctxspec rs2 fold2/5] ep27/50 loss=0.6030 valAUC=0.6712 best=0.6712@27 t=64s elapsed=1045.7s
+    [s0 ctxspec rs2 fold2/5] ep28/50 loss=0.5990 valAUC=0.6672 best=0.6712@27 t=66s elapsed=1048.0s
+    [s0 ctxspec rs2 fold2/5] ep29/50 loss=0.5973 valAUC=0.6573 best=0.6712@27 t=69s elapsed=1050.4s
+    [s0 ctxspec rs2 fold2/5] ep30/50 loss=0.5922 valAUC=0.6499 best=0.6712@27 t=71s elapsed=1052.8s
+    [s0 ctxspec rs2 fold2/5] ep31/50 loss=0.5898 valAUC=0.6620 best=0.6712@27 t=74s elapsed=1055.2s
+    [s0 ctxspec rs2 fold2/5] ep32/50 loss=0.5899 valAUC=0.6706 best=0.6712@27 t=76s elapsed=1057.5s
+    [s0 ctxspec rs2 fold2/5] ep33/50 loss=0.5859 valAUC=0.6589 best=0.6712@27 t=78s elapsed=1059.9s
+    [s0 ctxspec rs2 fold2/5] ep34/50 loss=0.5761 valAUC=0.6559 best=0.6712@27 t=81s elapsed=1062.3s
+    [s0 ctxspec rs2 fold2/5] ep35/50 loss=0.5811 valAUC=0.6778 best=0.6778@35 t=83s elapsed=1064.7s
+    [s0 ctxspec rs2 fold2/5] ep36/50 loss=0.5738 valAUC=0.6547 best=0.6778@35 t=85s elapsed=1067.0s
+    [s0 ctxspec rs2 fold2/5] ep37/50 loss=0.5706 valAUC=0.6677 best=0.6778@35 t=88s elapsed=1069.4s
+    [s0 ctxspec rs2 fold2/5] ep38/50 loss=0.5654 valAUC=0.6824 best=0.6824@38 t=90s elapsed=1071.8s
+    [s0 ctxspec rs2 fold2/5] ep39/50 loss=0.5596 valAUC=0.6704 best=0.6824@38 t=93s elapsed=1074.1s
+    [s0 ctxspec rs2 fold2/5] ep40/50 loss=0.5591 valAUC=0.6440 best=0.6824@38 t=95s elapsed=1076.5s
+    [s0 ctxspec rs2 fold2/5] ep41/50 loss=0.5552 valAUC=0.6746 best=0.6824@38 t=97s elapsed=1078.9s
+    [s0 ctxspec rs2 fold2/5] ep42/50 loss=0.5493 valAUC=0.6683 best=0.6824@38 t=100s elapsed=1081.3s
+    [s0 ctxspec rs2 fold2/5] ep43/50 loss=0.5491 valAUC=0.6634 best=0.6824@38 t=102s elapsed=1083.6s
+    [s0 ctxspec rs2 fold2/5] ep44/50 loss=0.5439 valAUC=0.6603 best=0.6824@38 t=104s elapsed=1086.0s
+    [s0 ctxspec rs2 fold2/5] ep45/50 loss=0.5404 valAUC=0.6652 best=0.6824@38 t=107s elapsed=1088.4s
+    [s0 ctxspec rs2 fold2/5] ep46/50 loss=0.5345 valAUC=0.6744 best=0.6824@38 t=109s elapsed=1090.7s
+[resnet] s0 ctxspec rs2 fold2/5 best_ep=38/46 testAUC=0.7290 elapsed=1092.3s
+[stream 0 fold 3/5] inputs built (3.5s) spec d std(raw)=1.596 elapsed=1096.0s
+    [s0 whiten rs0 fold3/5] ep01/50 loss=0.6956 valAUC=0.5405 best=0.5405@1 t=3s elapsed=1098.6s
+    [s0 whiten rs0 fold3/5] ep02/50 loss=0.6832 valAUC=0.5820 best=0.5820@2 t=5s elapsed=1101.0s
+    [s0 whiten rs0 fold3/5] ep03/50 loss=0.6789 valAUC=0.6048 best=0.6048@3 t=7s elapsed=1103.3s
+    [s0 whiten rs0 fold3/5] ep04/50 loss=0.6722 valAUC=0.6036 best=0.6048@3 t=10s elapsed=1105.7s
+    [s0 whiten rs0 fold3/5] ep05/50 loss=0.6656 valAUC=0.5777 best=0.6048@3 t=12s elapsed=1108.1s
+    [s0 whiten rs0 fold3/5] ep06/50 loss=0.6639 valAUC=0.6162 best=0.6162@6 t=14s elapsed=1110.4s
+    [s0 whiten rs0 fold3/5] ep07/50 loss=0.6574 valAUC=0.6143 best=0.6162@6 t=17s elapsed=1112.8s
+    [s0 whiten rs0 fold3/5] ep08/50 loss=0.6512 valAUC=0.6270 best=0.6270@8 t=19s elapsed=1115.2s
+    [s0 whiten rs0 fold3/5] ep09/50 loss=0.6479 valAUC=0.6359 best=0.6359@9 t=22s elapsed=1117.5s
+    [s0 whiten rs0 fold3/5] ep10/50 loss=0.6468 valAUC=0.6470 best=0.6470@10 t=24s elapsed=1119.9s
+    [s0 whiten rs0 fold3/5] ep11/50 loss=0.6430 valAUC=0.6501 best=0.6501@11 t=26s elapsed=1122.3s
+    [s0 whiten rs0 fold3/5] ep12/50 loss=0.6366 valAUC=0.6177 best=0.6501@11 t=29s elapsed=1124.7s
+    [s0 whiten rs0 fold3/5] ep13/50 loss=0.6375 valAUC=0.6576 best=0.6576@13 t=31s elapsed=1127.0s
+    [s0 whiten rs0 fold3/5] ep14/50 loss=0.6329 valAUC=0.6156 best=0.6576@13 t=33s elapsed=1129.4s
+    [s0 whiten rs0 fold3/5] ep15/50 loss=0.6267 valAUC=0.6636 best=0.6636@15 t=36s elapsed=1131.8s
+    [s0 whiten rs0 fold3/5] ep16/50 loss=0.6250 valAUC=0.6277 best=0.6636@15 t=38s elapsed=1134.1s
+    [s0 whiten rs0 fold3/5] ep17/50 loss=0.6193 valAUC=0.6482 best=0.6636@15 t=41s elapsed=1136.5s
+    [s0 whiten rs0 fold3/5] ep18/50 loss=0.6151 valAUC=0.6389 best=0.6636@15 t=43s elapsed=1138.9s
+    [s0 whiten rs0 fold3/5] ep19/50 loss=0.6154 valAUC=0.6549 best=0.6636@15 t=45s elapsed=1141.2s
+    [s0 whiten rs0 fold3/5] ep20/50 loss=0.6079 valAUC=0.6594 best=0.6636@15 t=48s elapsed=1143.6s
+    [s0 whiten rs0 fold3/5] ep21/50 loss=0.6108 valAUC=0.6620 best=0.6636@15 t=50s elapsed=1146.0s
+    [s0 whiten rs0 fold3/5] ep22/50 loss=0.6039 valAUC=0.6626 best=0.6636@15 t=52s elapsed=1148.4s
+    [s0 whiten rs0 fold3/5] ep23/50 loss=0.6015 valAUC=0.6608 best=0.6636@15 t=55s elapsed=1150.8s
+[resnet] s0 whiten rs0 fold3/5 best_ep=15/23 testAUC=0.6720 (histnorm 0.672) elapsed=1153.8s
+[ctxemb] s0 rs0 fold3/5 B-oofAUC=0.6435 testAUC=0.6882 heads_val=[0.728, 0.636, 0.601, 0.656] elapsed=1155.7s
+    [s0 ctxspec rs0 fold3/5] ep01/50 loss=0.6936 valAUC=0.5703 best=0.5703@1 t=3s elapsed=1158.2s
+    [s0 ctxspec rs0 fold3/5] ep02/50 loss=0.6796 valAUC=0.6149 best=0.6149@2 t=5s elapsed=1160.6s
+    [s0 ctxspec rs0 fold3/5] ep03/50 loss=0.6739 valAUC=0.6122 best=0.6149@2 t=7s elapsed=1163.0s
+    [s0 ctxspec rs0 fold3/5] ep04/50 loss=0.6659 valAUC=0.6138 best=0.6149@2 t=10s elapsed=1165.4s
+    [s0 ctxspec rs0 fold3/5] ep05/50 loss=0.6594 valAUC=0.5994 best=0.6149@2 t=12s elapsed=1167.8s
+    [s0 ctxspec rs0 fold3/5] ep06/50 loss=0.6561 valAUC=0.6312 best=0.6312@6 t=15s elapsed=1170.2s
+    [s0 ctxspec rs0 fold3/5] ep07/50 loss=0.6488 valAUC=0.6432 best=0.6432@7 t=17s elapsed=1172.6s
+    [s0 ctxspec rs0 fold3/5] ep08/50 loss=0.6435 valAUC=0.6325 best=0.6432@7 t=19s elapsed=1175.1s
+    [s0 ctxspec rs0 fold3/5] ep09/50 loss=0.6394 valAUC=0.6413 best=0.6432@7 t=22s elapsed=1177.5s
+    [s0 ctxspec rs0 fold3/5] ep10/50 loss=0.6417 valAUC=0.6407 best=0.6432@7 t=24s elapsed=1179.9s
+    [s0 ctxspec rs0 fold3/5] ep11/50 loss=0.6368 valAUC=0.6541 best=0.6541@11 t=27s elapsed=1182.3s
+    [s0 ctxspec rs0 fold3/5] ep12/50 loss=0.6343 valAUC=0.6558 best=0.6558@12 t=29s elapsed=1184.7s
+    [s0 ctxspec rs0 fold3/5] ep13/50 loss=0.6327 valAUC=0.6628 best=0.6628@13 t=31s elapsed=1187.1s
+    [s0 ctxspec rs0 fold3/5] ep14/50 loss=0.6288 valAUC=0.6445 best=0.6628@13 t=34s elapsed=1189.5s
+    [s0 ctxspec rs0 fold3/5] ep15/50 loss=0.6214 valAUC=0.6597 best=0.6628@13 t=36s elapsed=1191.9s
+    [s0 ctxspec rs0 fold3/5] ep16/50 loss=0.6180 valAUC=0.6541 best=0.6628@13 t=39s elapsed=1194.2s
+    [s0 ctxspec rs0 fold3/5] ep17/50 loss=0.6163 valAUC=0.6677 best=0.6677@17 t=41s elapsed=1196.6s
+    [s0 ctxspec rs0 fold3/5] ep18/50 loss=0.6132 valAUC=0.6514 best=0.6677@17 t=43s elapsed=1199.0s
+    [s0 ctxspec rs0 fold3/5] ep19/50 loss=0.6099 valAUC=0.6559 best=0.6677@17 t=46s elapsed=1201.4s
+    [s0 ctxspec rs0 fold3/5] ep20/50 loss=0.6049 valAUC=0.6666 best=0.6677@17 t=48s elapsed=1203.9s
+    [s0 ctxspec rs0 fold3/5] ep21/50 loss=0.6037 valAUC=0.6329 best=0.6677@17 t=51s elapsed=1206.3s
+    [s0 ctxspec rs0 fold3/5] ep22/50 loss=0.5959 valAUC=0.6863 best=0.6863@22 t=53s elapsed=1208.7s
+    [s0 ctxspec rs0 fold3/5] ep23/50 loss=0.5934 valAUC=0.6675 best=0.6863@22 t=55s elapsed=1211.0s
+    [s0 ctxspec rs0 fold3/5] ep24/50 loss=0.5885 valAUC=0.6765 best=0.6863@22 t=58s elapsed=1213.3s
+    [s0 ctxspec rs0 fold3/5] ep25/50 loss=0.5879 valAUC=0.6612 best=0.6863@22 t=60s elapsed=1215.5s
+    [s0 ctxspec rs0 fold3/5] ep26/50 loss=0.5835 valAUC=0.6807 best=0.6863@22 t=62s elapsed=1217.9s
+    [s0 ctxspec rs0 fold3/5] ep27/50 loss=0.5848 valAUC=0.6619 best=0.6863@22 t=65s elapsed=1220.2s
+    [s0 ctxspec rs0 fold3/5] ep28/50 loss=0.5762 valAUC=0.6857 best=0.6863@22 t=67s elapsed=1222.5s
+    [s0 ctxspec rs0 fold3/5] ep29/50 loss=0.5734 valAUC=0.6622 best=0.6863@22 t=69s elapsed=1224.8s
+    [s0 ctxspec rs0 fold3/5] ep30/50 loss=0.5707 valAUC=0.6681 best=0.6863@22 t=71s elapsed=1227.2s
+[resnet] s0 ctxspec rs0 fold3/5 best_ep=22/30 testAUC=0.6867 elapsed=1228.7s
+[check] s0 fold3: ctxspec/ctxemb isolation + prefix invariance ok elapsed=1229.4s
+    [s0 whiten rs1 fold3/5] ep01/50 loss=0.6976 valAUC=0.5659 best=0.5659@1 t=2s elapsed=1231.8s
+    [s0 whiten rs1 fold3/5] ep02/50 loss=0.6834 valAUC=0.5779 best=0.5779@2 t=5s elapsed=1234.2s
+    [s0 whiten rs1 fold3/5] ep03/50 loss=0.6735 valAUC=0.5676 best=0.5779@2 t=7s elapsed=1236.5s
+    [s0 whiten rs1 fold3/5] ep04/50 loss=0.6692 valAUC=0.6305 best=0.6305@4 t=9s elapsed=1238.9s
+    [s0 whiten rs1 fold3/5] ep05/50 loss=0.6678 valAUC=0.5981 best=0.6305@4 t=12s elapsed=1241.2s
+    [s0 whiten rs1 fold3/5] ep06/50 loss=0.6620 valAUC=0.6143 best=0.6305@4 t=14s elapsed=1243.6s
+    [s0 whiten rs1 fold3/5] ep07/50 loss=0.6587 valAUC=0.6297 best=0.6305@4 t=17s elapsed=1246.0s
+    [s0 whiten rs1 fold3/5] ep08/50 loss=0.6536 valAUC=0.6275 best=0.6305@4 t=19s elapsed=1248.3s
+    [s0 whiten rs1 fold3/5] ep09/50 loss=0.6567 valAUC=0.6253 best=0.6305@4 t=21s elapsed=1250.7s
+    [s0 whiten rs1 fold3/5] ep10/50 loss=0.6506 valAUC=0.6186 best=0.6305@4 t=24s elapsed=1253.0s
+    [s0 whiten rs1 fold3/5] ep11/50 loss=0.6447 valAUC=0.6237 best=0.6305@4 t=26s elapsed=1255.4s
+    [s0 whiten rs1 fold3/5] ep12/50 loss=0.6435 valAUC=0.6267 best=0.6305@4 t=28s elapsed=1257.7s
+[resnet] s0 whiten rs1 fold3/5 best_ep=4/12 testAUC=0.6025 (histnorm 0.6025) elapsed=1260.7s
+[ctxemb] s0 rs1 fold3/5 B-oofAUC=0.6157 testAUC=0.6470 heads_val=[0.673, 0.633, 0.634, 0.668] elapsed=1262.8s
+    [s0 ctxspec rs1 fold3/5] ep01/50 loss=0.6922 valAUC=0.5871 best=0.5871@1 t=3s elapsed=1265.3s
+    [s0 ctxspec rs1 fold3/5] ep02/50 loss=0.6784 valAUC=0.6026 best=0.6026@2 t=5s elapsed=1267.7s
+    [s0 ctxspec rs1 fold3/5] ep03/50 loss=0.6702 valAUC=0.5852 best=0.6026@2 t=7s elapsed=1270.1s
+    [s0 ctxspec rs1 fold3/5] ep04/50 loss=0.6633 valAUC=0.6078 best=0.6078@4 t=10s elapsed=1272.5s
+    [s0 ctxspec rs1 fold3/5] ep05/50 loss=0.6606 valAUC=0.6414 best=0.6414@5 t=12s elapsed=1274.9s
+    [s0 ctxspec rs1 fold3/5] ep06/50 loss=0.6528 valAUC=0.6079 best=0.6414@5 t=15s elapsed=1277.3s
+    [s0 ctxspec rs1 fold3/5] ep07/50 loss=0.6500 valAUC=0.6175 best=0.6414@5 t=17s elapsed=1279.7s
+    [s0 ctxspec rs1 fold3/5] ep08/50 loss=0.6497 valAUC=0.6483 best=0.6483@8 t=19s elapsed=1282.1s
+    [s0 ctxspec rs1 fold3/5] ep09/50 loss=0.6464 valAUC=0.6301 best=0.6483@8 t=22s elapsed=1284.5s
+    [s0 ctxspec rs1 fold3/5] ep10/50 loss=0.6397 valAUC=0.6442 best=0.6483@8 t=24s elapsed=1286.9s
+    [s0 ctxspec rs1 fold3/5] ep11/50 loss=0.6332 valAUC=0.6444 best=0.6483@8 t=26s elapsed=1289.3s
+    [s0 ctxspec rs1 fold3/5] ep12/50 loss=0.6326 valAUC=0.6420 best=0.6483@8 t=29s elapsed=1291.7s
+    [s0 ctxspec rs1 fold3/5] ep13/50 loss=0.6308 valAUC=0.6355 best=0.6483@8 t=31s elapsed=1294.1s
+    [s0 ctxspec rs1 fold3/5] ep14/50 loss=0.6278 valAUC=0.6622 best=0.6622@14 t=34s elapsed=1296.5s
+    [s0 ctxspec rs1 fold3/5] ep15/50 loss=0.6216 valAUC=0.6543 best=0.6622@14 t=36s elapsed=1298.9s
+    [s0 ctxspec rs1 fold3/5] ep16/50 loss=0.6217 valAUC=0.6655 best=0.6655@16 t=38s elapsed=1301.3s
+    [s0 ctxspec rs1 fold3/5] ep17/50 loss=0.6191 valAUC=0.6531 best=0.6655@16 t=41s elapsed=1303.7s
+    [s0 ctxspec rs1 fold3/5] ep18/50 loss=0.6143 valAUC=0.6527 best=0.6655@16 t=43s elapsed=1306.1s
+    [s0 ctxspec rs1 fold3/5] ep19/50 loss=0.6107 valAUC=0.6782 best=0.6782@19 t=46s elapsed=1308.5s
+    [s0 ctxspec rs1 fold3/5] ep20/50 loss=0.6053 valAUC=0.6615 best=0.6782@19 t=48s elapsed=1310.8s
+    [s0 ctxspec rs1 fold3/5] ep21/50 loss=0.6096 valAUC=0.6569 best=0.6782@19 t=50s elapsed=1313.2s
+    [s0 ctxspec rs1 fold3/5] ep22/50 loss=0.6004 valAUC=0.6419 best=0.6782@19 t=53s elapsed=1315.6s
+    [s0 ctxspec rs1 fold3/5] ep23/50 loss=0.5983 valAUC=0.6546 best=0.6782@19 t=55s elapsed=1318.0s
+    [s0 ctxspec rs1 fold3/5] ep24/50 loss=0.5940 valAUC=0.6738 best=0.6782@19 t=58s elapsed=1320.4s
+    [s0 ctxspec rs1 fold3/5] ep25/50 loss=0.5914 valAUC=0.6851 best=0.6851@25 t=60s elapsed=1322.8s
+    [s0 ctxspec rs1 fold3/5] ep26/50 loss=0.5855 valAUC=0.6512 best=0.6851@25 t=62s elapsed=1325.2s
+    [s0 ctxspec rs1 fold3/5] ep27/50 loss=0.5815 valAUC=0.6267 best=0.6851@25 t=65s elapsed=1327.6s
+    [s0 ctxspec rs1 fold3/5] ep28/50 loss=0.5832 valAUC=0.6667 best=0.6851@25 t=67s elapsed=1329.9s
+    [s0 ctxspec rs1 fold3/5] ep29/50 loss=0.5786 valAUC=0.6887 best=0.6887@29 t=70s elapsed=1332.3s
+    [s0 ctxspec rs1 fold3/5] ep30/50 loss=0.5795 valAUC=0.6923 best=0.6923@30 t=72s elapsed=1334.7s
+    [s0 ctxspec rs1 fold3/5] ep31/50 loss=0.5680 valAUC=0.6770 best=0.6923@30 t=74s elapsed=1337.1s
+    [s0 ctxspec rs1 fold3/5] ep32/50 loss=0.5749 valAUC=0.7011 best=0.7011@32 t=77s elapsed=1339.5s
+    [s0 ctxspec rs1 fold3/5] ep33/50 loss=0.5666 valAUC=0.6846 best=0.7011@32 t=79s elapsed=1341.9s
+    [s0 ctxspec rs1 fold3/5] ep34/50 loss=0.5557 valAUC=0.6889 best=0.7011@32 t=81s elapsed=1344.3s
+    [s0 ctxspec rs1 fold3/5] ep35/50 loss=0.5541 valAUC=0.6927 best=0.7011@32 t=84s elapsed=1346.7s
+    [s0 ctxspec rs1 fold3/5] ep36/50 loss=0.5579 valAUC=0.6928 best=0.7011@32 t=86s elapsed=1349.1s
+    [s0 ctxspec rs1 fold3/5] ep37/50 loss=0.5496 valAUC=0.6925 best=0.7011@32 t=89s elapsed=1351.5s
+    [s0 ctxspec rs1 fold3/5] ep38/50 loss=0.5417 valAUC=0.6853 best=0.7011@32 t=91s elapsed=1353.9s
+    [s0 ctxspec rs1 fold3/5] ep39/50 loss=0.5444 valAUC=0.6964 best=0.7011@32 t=93s elapsed=1356.3s
+    [s0 ctxspec rs1 fold3/5] ep40/50 loss=0.5396 valAUC=0.6503 best=0.7011@32 t=96s elapsed=1358.7s
+[resnet] s0 ctxspec rs1 fold3/5 best_ep=32/40 testAUC=0.6883 elapsed=1360.2s
+    [s0 whiten rs2 fold3/5] ep01/50 loss=0.7001 valAUC=0.5673 best=0.5673@1 t=2s elapsed=1362.8s
+    [s0 whiten rs2 fold3/5] ep02/50 loss=0.6818 valAUC=0.6009 best=0.6009@2 t=5s elapsed=1365.2s
+    [s0 whiten rs2 fold3/5] ep03/50 loss=0.6766 valAUC=0.6026 best=0.6026@3 t=7s elapsed=1367.6s
+    [s0 whiten rs2 fold3/5] ep04/50 loss=0.6714 valAUC=0.6041 best=0.6041@4 t=9s elapsed=1369.9s
+    [s0 whiten rs2 fold3/5] ep05/50 loss=0.6662 valAUC=0.6249 best=0.6249@5 t=12s elapsed=1372.3s
+    [s0 whiten rs2 fold3/5] ep06/50 loss=0.6599 valAUC=0.6152 best=0.6249@5 t=14s elapsed=1374.7s
+    [s0 whiten rs2 fold3/5] ep07/50 loss=0.6589 valAUC=0.6341 best=0.6341@7 t=17s elapsed=1377.1s
+    [s0 whiten rs2 fold3/5] ep08/50 loss=0.6541 valAUC=0.6111 best=0.6341@7 t=19s elapsed=1379.4s
+    [s0 whiten rs2 fold3/5] ep09/50 loss=0.6481 valAUC=0.6561 best=0.6561@9 t=21s elapsed=1381.8s
+    [s0 whiten rs2 fold3/5] ep10/50 loss=0.6435 valAUC=0.6370 best=0.6561@9 t=24s elapsed=1384.2s
+    [s0 whiten rs2 fold3/5] ep11/50 loss=0.6406 valAUC=0.6458 best=0.6561@9 t=26s elapsed=1386.5s
+    [s0 whiten rs2 fold3/5] ep12/50 loss=0.6364 valAUC=0.6304 best=0.6561@9 t=28s elapsed=1388.9s
+    [s0 whiten rs2 fold3/5] ep13/50 loss=0.6330 valAUC=0.6174 best=0.6561@9 t=31s elapsed=1391.3s
+    [s0 whiten rs2 fold3/5] ep14/50 loss=0.6308 valAUC=0.6360 best=0.6561@9 t=33s elapsed=1393.6s
+    [s0 whiten rs2 fold3/5] ep15/50 loss=0.6289 valAUC=0.6560 best=0.6561@9 t=36s elapsed=1396.0s
+    [s0 whiten rs2 fold3/5] ep16/50 loss=0.6206 valAUC=0.6451 best=0.6561@9 t=38s elapsed=1398.4s
+    [s0 whiten rs2 fold3/5] ep17/50 loss=0.6224 valAUC=0.6467 best=0.6561@9 t=40s elapsed=1400.8s
+[resnet] s0 whiten rs2 fold3/5 best_ep=9/17 testAUC=0.6402 (histnorm 0.6402) elapsed=1403.8s
+[ctxemb] s0 rs2 fold3/5 B-oofAUC=0.6372 testAUC=0.6693 heads_val=[0.699, 0.636, 0.61, 0.642] elapsed=1405.7s
+    [s0 ctxspec rs2 fold3/5] ep01/50 loss=0.6929 valAUC=0.5849 best=0.5849@1 t=3s elapsed=1408.3s
+    [s0 ctxspec rs2 fold3/5] ep02/50 loss=0.6763 valAUC=0.6103 best=0.6103@2 t=5s elapsed=1410.7s
+    [s0 ctxspec rs2 fold3/5] ep03/50 loss=0.6731 valAUC=0.6046 best=0.6103@2 t=7s elapsed=1413.1s
+    [s0 ctxspec rs2 fold3/5] ep04/50 loss=0.6651 valAUC=0.6220 best=0.6220@4 t=10s elapsed=1415.5s
+    [s0 ctxspec rs2 fold3/5] ep05/50 loss=0.6590 valAUC=0.6463 best=0.6463@5 t=12s elapsed=1417.9s
+    [s0 ctxspec rs2 fold3/5] ep06/50 loss=0.6565 valAUC=0.6337 best=0.6463@5 t=15s elapsed=1420.3s
+    [s0 ctxspec rs2 fold3/5] ep07/50 loss=0.6517 valAUC=0.6516 best=0.6516@7 t=17s elapsed=1422.8s
+    [s0 ctxspec rs2 fold3/5] ep08/50 loss=0.6473 valAUC=0.6330 best=0.6516@7 t=19s elapsed=1425.2s
+    [s0 ctxspec rs2 fold3/5] ep09/50 loss=0.6420 valAUC=0.6680 best=0.6680@9 t=22s elapsed=1427.6s
+    [s0 ctxspec rs2 fold3/5] ep10/50 loss=0.6360 valAUC=0.6727 best=0.6727@10 t=24s elapsed=1430.0s
+    [s0 ctxspec rs2 fold3/5] ep11/50 loss=0.6338 valAUC=0.6058 best=0.6727@10 t=27s elapsed=1432.4s
+    [s0 ctxspec rs2 fold3/5] ep12/50 loss=0.6313 valAUC=0.6402 best=0.6727@10 t=29s elapsed=1434.8s
+    [s0 ctxspec rs2 fold3/5] ep13/50 loss=0.6290 valAUC=0.5993 best=0.6727@10 t=31s elapsed=1437.2s
+    [s0 ctxspec rs2 fold3/5] ep14/50 loss=0.6290 valAUC=0.6488 best=0.6727@10 t=34s elapsed=1439.6s
+    [s0 ctxspec rs2 fold3/5] ep15/50 loss=0.6199 valAUC=0.6634 best=0.6727@10 t=36s elapsed=1442.1s
+    [s0 ctxspec rs2 fold3/5] ep16/50 loss=0.6167 valAUC=0.6676 best=0.6727@10 t=39s elapsed=1444.5s
+    [s0 ctxspec rs2 fold3/5] ep17/50 loss=0.6147 valAUC=0.6811 best=0.6811@17 t=41s elapsed=1446.9s
+    [s0 ctxspec rs2 fold3/5] ep18/50 loss=0.6117 valAUC=0.6690 best=0.6811@17 t=44s elapsed=1449.3s
+    [s0 ctxspec rs2 fold3/5] ep19/50 loss=0.6079 valAUC=0.6906 best=0.6906@19 t=46s elapsed=1451.7s
+    [s0 ctxspec rs2 fold3/5] ep20/50 loss=0.6021 valAUC=0.6782 best=0.6906@19 t=48s elapsed=1454.1s
+    [s0 ctxspec rs2 fold3/5] ep21/50 loss=0.6004 valAUC=0.6857 best=0.6906@19 t=51s elapsed=1456.5s
+    [s0 ctxspec rs2 fold3/5] ep22/50 loss=0.5965 valAUC=0.6744 best=0.6906@19 t=53s elapsed=1458.9s
+    [s0 ctxspec rs2 fold3/5] ep23/50 loss=0.5953 valAUC=0.6798 best=0.6906@19 t=56s elapsed=1461.3s
+    [s0 ctxspec rs2 fold3/5] ep24/50 loss=0.5895 valAUC=0.6850 best=0.6906@19 t=58s elapsed=1463.8s
+    [s0 ctxspec rs2 fold3/5] ep25/50 loss=0.5861 valAUC=0.6731 best=0.6906@19 t=60s elapsed=1466.2s
+    [s0 ctxspec rs2 fold3/5] ep26/50 loss=0.5863 valAUC=0.6765 best=0.6906@19 t=63s elapsed=1468.6s
+    [s0 ctxspec rs2 fold3/5] ep27/50 loss=0.5793 valAUC=0.6840 best=0.6906@19 t=65s elapsed=1471.0s
+[resnet] s0 ctxspec rs2 fold3/5 best_ep=19/27 testAUC=0.6831 elapsed=1472.5s
+[stream 0 fold 4/5] inputs built (3.4s) spec d std(raw)=1.610 elapsed=1476.2s
+    [s0 whiten rs0 fold4/5] ep01/50 loss=0.6947 valAUC=0.5839 best=0.5839@1 t=3s elapsed=1478.8s
+    [s0 whiten rs0 fold4/5] ep02/50 loss=0.6699 valAUC=0.5280 best=0.5839@1 t=5s elapsed=1481.1s
+    [s0 whiten rs0 fold4/5] ep03/50 loss=0.6594 valAUC=0.5665 best=0.5839@1 t=7s elapsed=1483.4s
+    [s0 whiten rs0 fold4/5] ep04/50 loss=0.6543 valAUC=0.5854 best=0.5854@4 t=9s elapsed=1485.7s
+    [s0 whiten rs0 fold4/5] ep05/50 loss=0.6499 valAUC=0.5672 best=0.5854@4 t=12s elapsed=1488.0s
+    [s0 whiten rs0 fold4/5] ep06/50 loss=0.6434 valAUC=0.6171 best=0.6171@6 t=14s elapsed=1490.3s
+    [s0 whiten rs0 fold4/5] ep07/50 loss=0.6402 valAUC=0.6003 best=0.6171@6 t=16s elapsed=1492.6s
+    [s0 whiten rs0 fold4/5] ep08/50 loss=0.6331 valAUC=0.5929 best=0.6171@6 t=19s elapsed=1495.0s
+    [s0 whiten rs0 fold4/5] ep09/50 loss=0.6335 valAUC=0.6247 best=0.6247@9 t=21s elapsed=1497.3s
+    [s0 whiten rs0 fold4/5] ep10/50 loss=0.6235 valAUC=0.6316 best=0.6316@10 t=23s elapsed=1499.6s
+    [s0 whiten rs0 fold4/5] ep11/50 loss=0.6217 valAUC=0.6355 best=0.6355@11 t=26s elapsed=1501.9s
+    [s0 whiten rs0 fold4/5] ep12/50 loss=0.6192 valAUC=0.6406 best=0.6406@12 t=28s elapsed=1504.2s
+    [s0 whiten rs0 fold4/5] ep13/50 loss=0.6142 valAUC=0.6489 best=0.6489@13 t=30s elapsed=1506.5s
+    [s0 whiten rs0 fold4/5] ep14/50 loss=0.6119 valAUC=0.6365 best=0.6489@13 t=33s elapsed=1508.9s
+    [s0 whiten rs0 fold4/5] ep15/50 loss=0.6050 valAUC=0.6247 best=0.6489@13 t=35s elapsed=1511.2s
+    [s0 whiten rs0 fold4/5] ep16/50 loss=0.5989 valAUC=0.6505 best=0.6505@16 t=37s elapsed=1513.5s
+    [s0 whiten rs0 fold4/5] ep17/50 loss=0.5967 valAUC=0.6525 best=0.6525@17 t=40s elapsed=1515.8s
+    [s0 whiten rs0 fold4/5] ep18/50 loss=0.5959 valAUC=0.6458 best=0.6525@17 t=42s elapsed=1518.1s
+    [s0 whiten rs0 fold4/5] ep19/50 loss=0.5851 valAUC=0.6219 best=0.6525@17 t=44s elapsed=1520.4s
+    [s0 whiten rs0 fold4/5] ep20/50 loss=0.5878 valAUC=0.6298 best=0.6525@17 t=47s elapsed=1522.7s
+    [s0 whiten rs0 fold4/5] ep21/50 loss=0.5841 valAUC=0.6603 best=0.6603@21 t=49s elapsed=1525.1s
+    [s0 whiten rs0 fold4/5] ep22/50 loss=0.5747 valAUC=0.6473 best=0.6603@21 t=51s elapsed=1527.4s
+    [s0 whiten rs0 fold4/5] ep23/50 loss=0.5761 valAUC=0.6650 best=0.6650@23 t=53s elapsed=1529.7s
+    [s0 whiten rs0 fold4/5] ep24/50 loss=0.5713 valAUC=0.6620 best=0.6650@23 t=56s elapsed=1532.0s
+    [s0 whiten rs0 fold4/5] ep25/50 loss=0.5686 valAUC=0.6278 best=0.6650@23 t=58s elapsed=1534.3s
+    [s0 whiten rs0 fold4/5] ep26/50 loss=0.5657 valAUC=0.6359 best=0.6650@23 t=60s elapsed=1536.6s
+    [s0 whiten rs0 fold4/5] ep27/50 loss=0.5712 valAUC=0.6694 best=0.6694@27 t=63s elapsed=1538.9s
+    [s0 whiten rs0 fold4/5] ep28/50 loss=0.5570 valAUC=0.6547 best=0.6694@27 t=65s elapsed=1541.3s
+    [s0 whiten rs0 fold4/5] ep29/50 loss=0.5600 valAUC=0.6677 best=0.6694@27 t=67s elapsed=1543.6s
+    [s0 whiten rs0 fold4/5] ep30/50 loss=0.5539 valAUC=0.6440 best=0.6694@27 t=70s elapsed=1545.9s
+    [s0 whiten rs0 fold4/5] ep31/50 loss=0.5477 valAUC=0.6556 best=0.6694@27 t=72s elapsed=1548.2s
+    [s0 whiten rs0 fold4/5] ep32/50 loss=0.5516 valAUC=0.6684 best=0.6694@27 t=74s elapsed=1550.5s
+    [s0 whiten rs0 fold4/5] ep33/50 loss=0.5497 valAUC=0.6480 best=0.6694@27 t=77s elapsed=1552.8s
+    [s0 whiten rs0 fold4/5] ep34/50 loss=0.5433 valAUC=0.6516 best=0.6694@27 t=79s elapsed=1555.1s
+    [s0 whiten rs0 fold4/5] ep35/50 loss=0.5388 valAUC=0.6464 best=0.6694@27 t=81s elapsed=1557.5s
+[resnet] s0 whiten rs0 fold4/5 best_ep=27/35 testAUC=0.6236 (histnorm 0.6236) elapsed=1560.5s
+[ctxemb] s0 rs0 fold4/5 B-oofAUC=0.6633 testAUC=0.6229 heads_val=[0.747, 0.628, 0.636, 0.593] elapsed=1562.0s
+    [s0 ctxspec rs0 fold4/5] ep01/50 loss=0.6859 valAUC=0.5853 best=0.5853@1 t=2s elapsed=1564.3s
+    [s0 ctxspec rs0 fold4/5] ep02/50 loss=0.6583 valAUC=0.5736 best=0.5853@1 t=5s elapsed=1566.7s
+    [s0 ctxspec rs0 fold4/5] ep03/50 loss=0.6449 valAUC=0.5808 best=0.5853@1 t=7s elapsed=1569.0s
+    [s0 ctxspec rs0 fold4/5] ep04/50 loss=0.6415 valAUC=0.6283 best=0.6283@4 t=9s elapsed=1571.4s
+    [s0 ctxspec rs0 fold4/5] ep05/50 loss=0.6364 valAUC=0.6003 best=0.6283@4 t=12s elapsed=1573.7s
+    [s0 ctxspec rs0 fold4/5] ep06/50 loss=0.6265 valAUC=0.6306 best=0.6306@6 t=14s elapsed=1576.0s
+    [s0 ctxspec rs0 fold4/5] ep07/50 loss=0.6268 valAUC=0.5935 best=0.6306@6 t=16s elapsed=1578.4s
+    [s0 ctxspec rs0 fold4/5] ep08/50 loss=0.6169 valAUC=0.6188 best=0.6306@6 t=19s elapsed=1580.7s
+    [s0 ctxspec rs0 fold4/5] ep09/50 loss=0.6147 valAUC=0.6489 best=0.6489@9 t=21s elapsed=1583.1s
+    [s0 ctxspec rs0 fold4/5] ep10/50 loss=0.6095 valAUC=0.6473 best=0.6489@9 t=23s elapsed=1585.4s
+    [s0 ctxspec rs0 fold4/5] ep11/50 loss=0.6066 valAUC=0.6356 best=0.6489@9 t=26s elapsed=1587.8s
+    [s0 ctxspec rs0 fold4/5] ep12/50 loss=0.6035 valAUC=0.6496 best=0.6496@12 t=28s elapsed=1590.1s
+    [s0 ctxspec rs0 fold4/5] ep13/50 loss=0.5969 valAUC=0.6473 best=0.6496@12 t=31s elapsed=1592.5s
+    [s0 ctxspec rs0 fold4/5] ep14/50 loss=0.5922 valAUC=0.6374 best=0.6496@12 t=33s elapsed=1594.8s
+    [s0 ctxspec rs0 fold4/5] ep15/50 loss=0.5898 valAUC=0.6421 best=0.6496@12 t=35s elapsed=1597.2s
+    [s0 ctxspec rs0 fold4/5] ep16/50 loss=0.5835 valAUC=0.6505 best=0.6505@16 t=38s elapsed=1599.5s
+    [s0 ctxspec rs0 fold4/5] ep17/50 loss=0.5840 valAUC=0.6391 best=0.6505@16 t=40s elapsed=1601.9s
+    [s0 ctxspec rs0 fold4/5] ep18/50 loss=0.5785 valAUC=0.6463 best=0.6505@16 t=42s elapsed=1604.2s
+    [s0 ctxspec rs0 fold4/5] ep19/50 loss=0.5716 valAUC=0.6483 best=0.6505@16 t=45s elapsed=1606.5s
+    [s0 ctxspec rs0 fold4/5] ep20/50 loss=0.5742 valAUC=0.6365 best=0.6505@16 t=47s elapsed=1608.9s
+    [s0 ctxspec rs0 fold4/5] ep21/50 loss=0.5739 valAUC=0.6561 best=0.6561@21 t=49s elapsed=1611.2s
+    [s0 ctxspec rs0 fold4/5] ep22/50 loss=0.5615 valAUC=0.6540 best=0.6561@21 t=52s elapsed=1613.6s
+    [s0 ctxspec rs0 fold4/5] ep23/50 loss=0.5609 valAUC=0.6585 best=0.6585@23 t=54s elapsed=1615.9s
+    [s0 ctxspec rs0 fold4/5] ep24/50 loss=0.5560 valAUC=0.6594 best=0.6594@24 t=56s elapsed=1618.3s
+    [s0 ctxspec rs0 fold4/5] ep25/50 loss=0.5589 valAUC=0.6482 best=0.6594@24 t=59s elapsed=1620.6s
+    [s0 ctxspec rs0 fold4/5] ep26/50 loss=0.5513 valAUC=0.6449 best=0.6594@24 t=61s elapsed=1623.0s
+    [s0 ctxspec rs0 fold4/5] ep27/50 loss=0.5506 valAUC=0.6573 best=0.6594@24 t=63s elapsed=1625.3s
+    [s0 ctxspec rs0 fold4/5] ep28/50 loss=0.5414 valAUC=0.6564 best=0.6594@24 t=66s elapsed=1627.6s
+    [s0 ctxspec rs0 fold4/5] ep29/50 loss=0.5407 valAUC=0.6460 best=0.6594@24 t=68s elapsed=1630.0s
+    [s0 ctxspec rs0 fold4/5] ep30/50 loss=0.5407 valAUC=0.6493 best=0.6594@24 t=70s elapsed=1632.3s
+    [s0 ctxspec rs0 fold4/5] ep31/50 loss=0.5278 valAUC=0.6440 best=0.6594@24 t=73s elapsed=1634.7s
+    [s0 ctxspec rs0 fold4/5] ep32/50 loss=0.5319 valAUC=0.6486 best=0.6594@24 t=75s elapsed=1637.0s
+[resnet] s0 ctxspec rs0 fold4/5 best_ep=24/32 testAUC=0.6321 elapsed=1638.6s
+[check] s0 fold4: ctxspec/ctxemb isolation + prefix invariance ok elapsed=1639.3s
+    [s0 whiten rs1 fold4/5] ep01/50 loss=0.6889 valAUC=0.5737 best=0.5737@1 t=2s elapsed=1641.6s
+    [s0 whiten rs1 fold4/5] ep02/50 loss=0.6657 valAUC=0.6006 best=0.6006@2 t=5s elapsed=1643.9s
+    [s0 whiten rs1 fold4/5] ep03/50 loss=0.6582 valAUC=0.5600 best=0.6006@2 t=7s elapsed=1646.2s
+    [s0 whiten rs1 fold4/5] ep04/50 loss=0.6478 valAUC=0.6103 best=0.6103@4 t=9s elapsed=1648.6s
+    [s0 whiten rs1 fold4/5] ep05/50 loss=0.6406 valAUC=0.6068 best=0.6103@4 t=12s elapsed=1650.9s
+    [s0 whiten rs1 fold4/5] ep06/50 loss=0.6372 valAUC=0.6210 best=0.6210@6 t=14s elapsed=1653.2s
+    [s0 whiten rs1 fold4/5] ep07/50 loss=0.6294 valAUC=0.5762 best=0.6210@6 t=16s elapsed=1655.5s
+    [s0 whiten rs1 fold4/5] ep08/50 loss=0.6261 valAUC=0.6122 best=0.6210@6 t=19s elapsed=1657.8s
+    [s0 whiten rs1 fold4/5] ep09/50 loss=0.6214 valAUC=0.6245 best=0.6245@9 t=21s elapsed=1660.1s
+    [s0 whiten rs1 fold4/5] ep10/50 loss=0.6229 valAUC=0.6046 best=0.6245@9 t=23s elapsed=1662.4s
+    [s0 whiten rs1 fold4/5] ep11/50 loss=0.6160 valAUC=0.6195 best=0.6245@9 t=25s elapsed=1664.7s
+    [s0 whiten rs1 fold4/5] ep12/50 loss=0.6077 valAUC=0.6211 best=0.6245@9 t=28s elapsed=1667.0s
+    [s0 whiten rs1 fold4/5] ep13/50 loss=0.6042 valAUC=0.6190 best=0.6245@9 t=30s elapsed=1669.4s
+    [s0 whiten rs1 fold4/5] ep14/50 loss=0.5996 valAUC=0.6334 best=0.6334@14 t=32s elapsed=1671.7s
+    [s0 whiten rs1 fold4/5] ep15/50 loss=0.6001 valAUC=0.6493 best=0.6493@15 t=35s elapsed=1674.0s
+    [s0 whiten rs1 fold4/5] ep16/50 loss=0.5945 valAUC=0.6221 best=0.6493@15 t=37s elapsed=1676.3s
+    [s0 whiten rs1 fold4/5] ep17/50 loss=0.5954 valAUC=0.6187 best=0.6493@15 t=39s elapsed=1678.6s
+    [s0 whiten rs1 fold4/5] ep18/50 loss=0.5865 valAUC=0.6430 best=0.6493@15 t=42s elapsed=1680.9s
+    [s0 whiten rs1 fold4/5] ep19/50 loss=0.5868 valAUC=0.6407 best=0.6493@15 t=44s elapsed=1683.2s
+    [s0 whiten rs1 fold4/5] ep20/50 loss=0.5776 valAUC=0.6310 best=0.6493@15 t=46s elapsed=1685.5s
+    [s0 whiten rs1 fold4/5] ep21/50 loss=0.5834 valAUC=0.6198 best=0.6493@15 t=49s elapsed=1687.8s
+    [s0 whiten rs1 fold4/5] ep22/50 loss=0.5791 valAUC=0.6513 best=0.6513@22 t=51s elapsed=1690.2s
+    [s0 whiten rs1 fold4/5] ep23/50 loss=0.5752 valAUC=0.6583 best=0.6583@23 t=53s elapsed=1692.5s
+    [s0 whiten rs1 fold4/5] ep24/50 loss=0.5741 valAUC=0.6262 best=0.6583@23 t=55s elapsed=1694.8s
+    [s0 whiten rs1 fold4/5] ep25/50 loss=0.5717 valAUC=0.6364 best=0.6583@23 t=58s elapsed=1697.1s
+    [s0 whiten rs1 fold4/5] ep26/50 loss=0.5636 valAUC=0.6499 best=0.6583@23 t=60s elapsed=1699.4s
+    [s0 whiten rs1 fold4/5] ep27/50 loss=0.5633 valAUC=0.6380 best=0.6583@23 t=62s elapsed=1701.7s
+    [s0 whiten rs1 fold4/5] ep28/50 loss=0.5545 valAUC=0.6569 best=0.6583@23 t=65s elapsed=1704.0s
+    [s0 whiten rs1 fold4/5] ep29/50 loss=0.5568 valAUC=0.6662 best=0.6662@29 t=67s elapsed=1706.3s
+    [s0 whiten rs1 fold4/5] ep30/50 loss=0.5546 valAUC=0.6226 best=0.6662@29 t=69s elapsed=1708.7s
+    [s0 whiten rs1 fold4/5] ep31/50 loss=0.5494 valAUC=0.6442 best=0.6662@29 t=72s elapsed=1711.0s
+    [s0 whiten rs1 fold4/5] ep32/50 loss=0.5517 valAUC=0.6146 best=0.6662@29 t=74s elapsed=1713.3s
+    [s0 whiten rs1 fold4/5] ep33/50 loss=0.5423 valAUC=0.6451 best=0.6662@29 t=76s elapsed=1715.6s
+    [s0 whiten rs1 fold4/5] ep34/50 loss=0.5415 valAUC=0.6320 best=0.6662@29 t=79s elapsed=1717.9s
+    [s0 whiten rs1 fold4/5] ep35/50 loss=0.5424 valAUC=0.6581 best=0.6662@29 t=81s elapsed=1720.2s
+    [s0 whiten rs1 fold4/5] ep36/50 loss=0.5372 valAUC=0.6297 best=0.6662@29 t=83s elapsed=1722.5s
+    [s0 whiten rs1 fold4/5] ep37/50 loss=0.5318 valAUC=0.6418 best=0.6662@29 t=86s elapsed=1724.8s
+[resnet] s0 whiten rs1 fold4/5 best_ep=29/37 testAUC=0.6191 (histnorm 0.6191) elapsed=1727.9s
+[ctxemb] s0 rs1 fold4/5 B-oofAUC=0.6718 testAUC=0.6376 heads_val=[0.788, 0.675, 0.679, 0.55] elapsed=1729.4s
+    [s0 ctxspec rs1 fold4/5] ep01/50 loss=0.6845 valAUC=0.6122 best=0.6122@1 t=2s elapsed=1731.7s
+    [s0 ctxspec rs1 fold4/5] ep02/50 loss=0.6568 valAUC=0.6129 best=0.6129@2 t=5s elapsed=1734.1s
+    [s0 ctxspec rs1 fold4/5] ep03/50 loss=0.6458 valAUC=0.5915 best=0.6129@2 t=7s elapsed=1736.4s
+    [s0 ctxspec rs1 fold4/5] ep04/50 loss=0.6407 valAUC=0.6179 best=0.6179@4 t=9s elapsed=1738.7s
+    [s0 ctxspec rs1 fold4/5] ep05/50 loss=0.6322 valAUC=0.6016 best=0.6179@4 t=12s elapsed=1741.1s
+    [s0 ctxspec rs1 fold4/5] ep06/50 loss=0.6284 valAUC=0.6164 best=0.6179@4 t=14s elapsed=1743.4s
+    [s0 ctxspec rs1 fold4/5] ep07/50 loss=0.6166 valAUC=0.5892 best=0.6179@4 t=16s elapsed=1745.8s
+    [s0 ctxspec rs1 fold4/5] ep08/50 loss=0.6159 valAUC=0.6045 best=0.6179@4 t=19s elapsed=1748.1s
+    [s0 ctxspec rs1 fold4/5] ep09/50 loss=0.6137 valAUC=0.6220 best=0.6220@9 t=21s elapsed=1750.5s
+    [s0 ctxspec rs1 fold4/5] ep10/50 loss=0.6090 valAUC=0.6159 best=0.6220@9 t=23s elapsed=1752.8s
+    [s0 ctxspec rs1 fold4/5] ep11/50 loss=0.6046 valAUC=0.6058 best=0.6220@9 t=26s elapsed=1755.2s
+    [s0 ctxspec rs1 fold4/5] ep12/50 loss=0.5984 valAUC=0.6325 best=0.6325@12 t=28s elapsed=1757.5s
+    [s0 ctxspec rs1 fold4/5] ep13/50 loss=0.5907 valAUC=0.6471 best=0.6471@13 t=30s elapsed=1759.8s
+    [s0 ctxspec rs1 fold4/5] ep14/50 loss=0.5844 valAUC=0.6486 best=0.6486@14 t=33s elapsed=1762.2s
+    [s0 ctxspec rs1 fold4/5] ep15/50 loss=0.5885 valAUC=0.6396 best=0.6486@14 t=35s elapsed=1764.5s
+    [s0 ctxspec rs1 fold4/5] ep16/50 loss=0.5832 valAUC=0.6460 best=0.6486@14 t=38s elapsed=1766.9s
+    [s0 ctxspec rs1 fold4/5] ep17/50 loss=0.5829 valAUC=0.6350 best=0.6486@14 t=40s elapsed=1769.2s
+    [s0 ctxspec rs1 fold4/5] ep18/50 loss=0.5766 valAUC=0.6556 best=0.6556@18 t=42s elapsed=1771.6s
+    [s0 ctxspec rs1 fold4/5] ep19/50 loss=0.5740 valAUC=0.6390 best=0.6556@18 t=45s elapsed=1773.9s
+    [s0 ctxspec rs1 fold4/5] ep20/50 loss=0.5677 valAUC=0.6542 best=0.6556@18 t=47s elapsed=1776.3s
+    [s0 ctxspec rs1 fold4/5] ep21/50 loss=0.5687 valAUC=0.6494 best=0.6556@18 t=49s elapsed=1778.6s
+    [s0 ctxspec rs1 fold4/5] ep22/50 loss=0.5668 valAUC=0.6460 best=0.6556@18 t=52s elapsed=1780.9s
+    [s0 ctxspec rs1 fold4/5] ep23/50 loss=0.5605 valAUC=0.6520 best=0.6556@18 t=54s elapsed=1783.3s
+    [s0 ctxspec rs1 fold4/5] ep24/50 loss=0.5552 valAUC=0.6410 best=0.6556@18 t=56s elapsed=1785.6s
+    [s0 ctxspec rs1 fold4/5] ep25/50 loss=0.5575 valAUC=0.6425 best=0.6556@18 t=59s elapsed=1787.9s
+    [s0 ctxspec rs1 fold4/5] ep26/50 loss=0.5488 valAUC=0.6442 best=0.6556@18 t=61s elapsed=1790.3s
+[resnet] s0 ctxspec rs1 fold4/5 best_ep=18/26 testAUC=0.5875 elapsed=1791.8s
+    [s0 whiten rs2 fold4/5] ep01/50 loss=0.6884 valAUC=0.5089 best=0.5089@1 t=2s elapsed=1794.4s
+    [s0 whiten rs2 fold4/5] ep02/50 loss=0.6670 valAUC=0.5750 best=0.5750@2 t=5s elapsed=1796.7s
+    [s0 whiten rs2 fold4/5] ep03/50 loss=0.6617 valAUC=0.5427 best=0.5750@2 t=7s elapsed=1799.0s
+    [s0 whiten rs2 fold4/5] ep04/50 loss=0.6522 valAUC=0.6003 best=0.6003@4 t=9s elapsed=1801.3s
+    [s0 whiten rs2 fold4/5] ep05/50 loss=0.6449 valAUC=0.5993 best=0.6003@4 t=12s elapsed=1803.6s
+    [s0 whiten rs2 fold4/5] ep06/50 loss=0.6377 valAUC=0.5897 best=0.6003@4 t=14s elapsed=1805.9s
+    [s0 whiten rs2 fold4/5] ep07/50 loss=0.6337 valAUC=0.6032 best=0.6032@7 t=16s elapsed=1808.2s
+    [s0 whiten rs2 fold4/5] ep08/50 loss=0.6339 valAUC=0.6179 best=0.6179@8 t=19s elapsed=1810.5s
+    [s0 whiten rs2 fold4/5] ep09/50 loss=0.6248 valAUC=0.6077 best=0.6179@8 t=21s elapsed=1812.9s
+    [s0 whiten rs2 fold4/5] ep10/50 loss=0.6167 valAUC=0.6225 best=0.6225@10 t=23s elapsed=1815.2s
+    [s0 whiten rs2 fold4/5] ep11/50 loss=0.6138 valAUC=0.6119 best=0.6225@10 t=25s elapsed=1817.5s
+    [s0 whiten rs2 fold4/5] ep12/50 loss=0.6146 valAUC=0.6298 best=0.6298@12 t=28s elapsed=1819.8s
+    [s0 whiten rs2 fold4/5] ep13/50 loss=0.6061 valAUC=0.6270 best=0.6298@12 t=30s elapsed=1822.1s
+    [s0 whiten rs2 fold4/5] ep14/50 loss=0.6016 valAUC=0.6578 best=0.6578@14 t=32s elapsed=1824.4s
+    [s0 whiten rs2 fold4/5] ep15/50 loss=0.5912 valAUC=0.6281 best=0.6578@14 t=35s elapsed=1826.7s
+    [s0 whiten rs2 fold4/5] ep16/50 loss=0.5916 valAUC=0.6372 best=0.6578@14 t=37s elapsed=1829.0s
+    [s0 whiten rs2 fold4/5] ep17/50 loss=0.5898 valAUC=0.6419 best=0.6578@14 t=39s elapsed=1831.3s
+    [s0 whiten rs2 fold4/5] ep18/50 loss=0.5844 valAUC=0.6297 best=0.6578@14 t=42s elapsed=1833.7s
+    [s0 whiten rs2 fold4/5] ep19/50 loss=0.5851 valAUC=0.6457 best=0.6578@14 t=44s elapsed=1836.0s
+    [s0 whiten rs2 fold4/5] ep20/50 loss=0.5751 valAUC=0.6387 best=0.6578@14 t=46s elapsed=1838.3s
+    [s0 whiten rs2 fold4/5] ep21/50 loss=0.5713 valAUC=0.6462 best=0.6578@14 t=49s elapsed=1840.6s
+    [s0 whiten rs2 fold4/5] ep22/50 loss=0.5736 valAUC=0.6363 best=0.6578@14 t=51s elapsed=1842.9s
+[resnet] s0 whiten rs2 fold4/5 best_ep=14/22 testAUC=0.5790 (histnorm 0.579) elapsed=1846.0s
+[ctxemb] s0 rs2 fold4/5 B-oofAUC=0.6569 testAUC=0.5855 heads_val=[0.768, 0.652, 0.614, 0.592] elapsed=1847.4s
+    [s0 ctxspec rs2 fold4/5] ep01/50 loss=0.6810 valAUC=0.5269 best=0.5269@1 t=2s elapsed=1849.8s
+    [s0 ctxspec rs2 fold4/5] ep02/50 loss=0.6570 valAUC=0.5710 best=0.5710@2 t=5s elapsed=1852.1s
+    [s0 ctxspec rs2 fold4/5] ep03/50 loss=0.6518 valAUC=0.5925 best=0.5925@3 t=7s elapsed=1854.5s
+    [s0 ctxspec rs2 fold4/5] ep04/50 loss=0.6407 valAUC=0.6126 best=0.6126@4 t=9s elapsed=1856.8s
+    [s0 ctxspec rs2 fold4/5] ep05/50 loss=0.6356 valAUC=0.6115 best=0.6126@4 t=12s elapsed=1859.0s
+    [s0 ctxspec rs2 fold4/5] ep06/50 loss=0.6268 valAUC=0.5948 best=0.6126@4 t=14s elapsed=1861.2s
+    [s0 ctxspec rs2 fold4/5] ep07/50 loss=0.6219 valAUC=0.6169 best=0.6169@7 t=16s elapsed=1863.6s
+    [s0 ctxspec rs2 fold4/5] ep08/50 loss=0.6195 valAUC=0.6307 best=0.6307@8 t=19s elapsed=1865.9s
+    [s0 ctxspec rs2 fold4/5] ep09/50 loss=0.6130 valAUC=0.6267 best=0.6307@8 t=21s elapsed=1868.3s
+    [s0 ctxspec rs2 fold4/5] ep10/50 loss=0.6068 valAUC=0.6453 best=0.6453@10 t=23s elapsed=1870.6s
+    [s0 ctxspec rs2 fold4/5] ep11/50 loss=0.6018 valAUC=0.6471 best=0.6471@11 t=26s elapsed=1873.0s
+    [s0 ctxspec rs2 fold4/5] ep12/50 loss=0.6036 valAUC=0.6424 best=0.6471@11 t=28s elapsed=1875.3s
+    [s0 ctxspec rs2 fold4/5] ep13/50 loss=0.5959 valAUC=0.6553 best=0.6553@13 t=30s elapsed=1877.6s
+    [s0 ctxspec rs2 fold4/5] ep14/50 loss=0.5897 valAUC=0.6560 best=0.6560@14 t=33s elapsed=1880.0s
+    [s0 ctxspec rs2 fold4/5] ep15/50 loss=0.5839 valAUC=0.6347 best=0.6560@14 t=35s elapsed=1882.3s
+    [s0 ctxspec rs2 fold4/5] ep16/50 loss=0.5822 valAUC=0.6587 best=0.6587@16 t=37s elapsed=1884.7s
+    [s0 ctxspec rs2 fold4/5] ep17/50 loss=0.5789 valAUC=0.6464 best=0.6587@16 t=40s elapsed=1887.0s
+    [s0 ctxspec rs2 fold4/5] ep18/50 loss=0.5737 valAUC=0.6334 best=0.6587@16 t=42s elapsed=1889.4s
+    [s0 ctxspec rs2 fold4/5] ep19/50 loss=0.5720 valAUC=0.6439 best=0.6587@16 t=44s elapsed=1891.7s
+    [s0 ctxspec rs2 fold4/5] ep20/50 loss=0.5645 valAUC=0.6446 best=0.6587@16 t=47s elapsed=1894.0s
+    [s0 ctxspec rs2 fold4/5] ep21/50 loss=0.5588 valAUC=0.6479 best=0.6587@16 t=49s elapsed=1896.4s
+    [s0 ctxspec rs2 fold4/5] ep22/50 loss=0.5563 valAUC=0.6345 best=0.6587@16 t=51s elapsed=1898.7s
+    [s0 ctxspec rs2 fold4/5] ep23/50 loss=0.5582 valAUC=0.6456 best=0.6587@16 t=54s elapsed=1901.1s
+    [s0 ctxspec rs2 fold4/5] ep24/50 loss=0.5539 valAUC=0.6619 best=0.6619@24 t=56s elapsed=1903.4s
+    [s0 ctxspec rs2 fold4/5] ep25/50 loss=0.5504 valAUC=0.6440 best=0.6619@24 t=58s elapsed=1905.7s
+    [s0 ctxspec rs2 fold4/5] ep26/50 loss=0.5472 valAUC=0.6552 best=0.6619@24 t=61s elapsed=1908.1s
+    [s0 ctxspec rs2 fold4/5] ep27/50 loss=0.5371 valAUC=0.6499 best=0.6619@24 t=63s elapsed=1910.4s
+    [s0 ctxspec rs2 fold4/5] ep28/50 loss=0.5391 valAUC=0.6332 best=0.6619@24 t=65s elapsed=1912.8s
+    [s0 ctxspec rs2 fold4/5] ep29/50 loss=0.5389 valAUC=0.6600 best=0.6619@24 t=68s elapsed=1915.1s
+    [s0 ctxspec rs2 fold4/5] ep30/50 loss=0.5329 valAUC=0.6371 best=0.6619@24 t=70s elapsed=1917.5s
+    [s0 ctxspec rs2 fold4/5] ep31/50 loss=0.5262 valAUC=0.6545 best=0.6619@24 t=72s elapsed=1919.8s
+    [s0 ctxspec rs2 fold4/5] ep32/50 loss=0.5259 valAUC=0.6503 best=0.6619@24 t=75s elapsed=1922.2s
+[resnet] s0 ctxspec rs2 fold4/5 best_ep=24/32 testAUC=0.6173 elapsed=1923.7s
+[stream 0 fold 5/5] inputs built (3.4s) spec d std(raw)=1.608 elapsed=1927.3s
+    [s0 whiten rs0 fold5/5] ep01/50 loss=0.6952 valAUC=0.5911 best=0.5911@1 t=3s elapsed=1930.0s
+    [s0 whiten rs0 fold5/5] ep02/50 loss=0.6743 valAUC=0.6284 best=0.6284@2 t=5s elapsed=1932.3s
+    [s0 whiten rs0 fold5/5] ep03/50 loss=0.6716 valAUC=0.6275 best=0.6284@2 t=7s elapsed=1934.7s
+    [s0 whiten rs0 fold5/5] ep04/50 loss=0.6669 valAUC=0.6472 best=0.6472@4 t=10s elapsed=1937.0s
+    [s0 whiten rs0 fold5/5] ep05/50 loss=0.6626 valAUC=0.5303 best=0.6472@4 t=12s elapsed=1939.4s
+    [s0 whiten rs0 fold5/5] ep06/50 loss=0.6538 valAUC=0.6451 best=0.6472@4 t=14s elapsed=1941.8s
+    [s0 whiten rs0 fold5/5] ep07/50 loss=0.6508 valAUC=0.6500 best=0.6500@7 t=17s elapsed=1944.1s
+    [s0 whiten rs0 fold5/5] ep08/50 loss=0.6468 valAUC=0.6546 best=0.6546@8 t=19s elapsed=1946.5s
+    [s0 whiten rs0 fold5/5] ep09/50 loss=0.6434 valAUC=0.6463 best=0.6546@8 t=22s elapsed=1948.9s
+    [s0 whiten rs0 fold5/5] ep10/50 loss=0.6377 valAUC=0.5515 best=0.6546@8 t=24s elapsed=1951.2s
+    [s0 whiten rs0 fold5/5] ep11/50 loss=0.6323 valAUC=0.6466 best=0.6546@8 t=26s elapsed=1953.6s
+    [s0 whiten rs0 fold5/5] ep12/50 loss=0.6319 valAUC=0.6355 best=0.6546@8 t=29s elapsed=1956.0s
+    [s0 whiten rs0 fold5/5] ep13/50 loss=0.6216 valAUC=0.6613 best=0.6613@13 t=31s elapsed=1958.3s
+    [s0 whiten rs0 fold5/5] ep14/50 loss=0.6211 valAUC=0.6498 best=0.6613@13 t=33s elapsed=1960.7s
+    [s0 whiten rs0 fold5/5] ep15/50 loss=0.6160 valAUC=0.6698 best=0.6698@15 t=36s elapsed=1963.1s
+    [s0 whiten rs0 fold5/5] ep16/50 loss=0.6122 valAUC=0.6544 best=0.6698@15 t=38s elapsed=1965.4s
+    [s0 whiten rs0 fold5/5] ep17/50 loss=0.6066 valAUC=0.6303 best=0.6698@15 t=40s elapsed=1967.8s
+    [s0 whiten rs0 fold5/5] ep18/50 loss=0.6047 valAUC=0.6442 best=0.6698@15 t=43s elapsed=1970.2s
+    [s0 whiten rs0 fold5/5] ep19/50 loss=0.6019 valAUC=0.6844 best=0.6844@19 t=45s elapsed=1972.5s
+    [s0 whiten rs0 fold5/5] ep20/50 loss=0.6003 valAUC=0.6537 best=0.6844@19 t=48s elapsed=1974.9s
+    [s0 whiten rs0 fold5/5] ep21/50 loss=0.5963 valAUC=0.6451 best=0.6844@19 t=50s elapsed=1977.3s
+    [s0 whiten rs0 fold5/5] ep22/50 loss=0.5875 valAUC=0.6410 best=0.6844@19 t=52s elapsed=1979.6s
+    [s0 whiten rs0 fold5/5] ep23/50 loss=0.5869 valAUC=0.6717 best=0.6844@19 t=55s elapsed=1982.0s
+    [s0 whiten rs0 fold5/5] ep24/50 loss=0.5854 valAUC=0.6813 best=0.6844@19 t=57s elapsed=1984.3s
+    [s0 whiten rs0 fold5/5] ep25/50 loss=0.5847 valAUC=0.6127 best=0.6844@19 t=59s elapsed=1986.7s
+    [s0 whiten rs0 fold5/5] ep26/50 loss=0.5813 valAUC=0.6474 best=0.6844@19 t=62s elapsed=1989.1s
+    [s0 whiten rs0 fold5/5] ep27/50 loss=0.5784 valAUC=0.6402 best=0.6844@19 t=64s elapsed=1991.4s
+[resnet] s0 whiten rs0 fold5/5 best_ep=19/27 testAUC=0.6792 (histnorm 0.6792) elapsed=1994.5s
+[ctxemb] s0 rs0 fold5/5 B-oofAUC=0.6963 testAUC=0.6805 heads_val=[0.731, 0.647, 0.804, 0.545] elapsed=1995.9s
+    [s0 ctxspec rs0 fold5/5] ep01/50 loss=0.6898 valAUC=0.6417 best=0.6417@1 t=2s elapsed=1998.3s
+    [s0 ctxspec rs0 fold5/5] ep02/50 loss=0.6721 valAUC=0.6427 best=0.6427@2 t=5s elapsed=2000.7s
+    [s0 ctxspec rs0 fold5/5] ep03/50 loss=0.6656 valAUC=0.6395 best=0.6427@2 t=7s elapsed=2003.1s
+    [s0 ctxspec rs0 fold5/5] ep04/50 loss=0.6606 valAUC=0.6778 best=0.6778@4 t=10s elapsed=2005.5s
+    [s0 ctxspec rs0 fold5/5] ep05/50 loss=0.6573 valAUC=0.4966 best=0.6778@4 t=12s elapsed=2007.9s
+    [s0 ctxspec rs0 fold5/5] ep06/50 loss=0.6474 valAUC=0.6336 best=0.6778@4 t=14s elapsed=2010.3s
+    [s0 ctxspec rs0 fold5/5] ep07/50 loss=0.6445 valAUC=0.6811 best=0.6811@7 t=17s elapsed=2012.8s
+    [s0 ctxspec rs0 fold5/5] ep08/50 loss=0.6420 valAUC=0.6369 best=0.6811@7 t=19s elapsed=2015.2s
+    [s0 ctxspec rs0 fold5/5] ep09/50 loss=0.6358 valAUC=0.6717 best=0.6811@7 t=22s elapsed=2017.6s
+    [s0 ctxspec rs0 fold5/5] ep10/50 loss=0.6295 valAUC=0.5447 best=0.6811@7 t=24s elapsed=2020.0s
+    [s0 ctxspec rs0 fold5/5] ep11/50 loss=0.6294 valAUC=0.6700 best=0.6811@7 t=27s elapsed=2022.4s
+    [s0 ctxspec rs0 fold5/5] ep12/50 loss=0.6215 valAUC=0.6755 best=0.6811@7 t=29s elapsed=2024.8s
+    [s0 ctxspec rs0 fold5/5] ep13/50 loss=0.6141 valAUC=0.6662 best=0.6811@7 t=31s elapsed=2027.2s
+    [s0 ctxspec rs0 fold5/5] ep14/50 loss=0.6144 valAUC=0.6304 best=0.6811@7 t=34s elapsed=2029.7s
+    [s0 ctxspec rs0 fold5/5] ep15/50 loss=0.6106 valAUC=0.6574 best=0.6811@7 t=36s elapsed=2032.1s
+[resnet] s0 ctxspec rs0 fold5/5 best_ep=7/15 testAUC=0.6449 elapsed=2033.6s
+[check] s0 fold5: ctxspec/ctxemb isolation + prefix invariance ok elapsed=2034.3s
+    [s0 whiten rs1 fold5/5] ep01/50 loss=0.6983 valAUC=0.6348 best=0.6348@1 t=2s elapsed=2036.7s
+    [s0 whiten rs1 fold5/5] ep02/50 loss=0.6855 valAUC=0.6531 best=0.6531@2 t=5s elapsed=2039.1s
+    [s0 whiten rs1 fold5/5] ep03/50 loss=0.6743 valAUC=0.6674 best=0.6674@3 t=7s elapsed=2041.5s
+    [s0 whiten rs1 fold5/5] ep04/50 loss=0.6700 valAUC=0.6480 best=0.6674@3 t=10s elapsed=2043.9s
+    [s0 whiten rs1 fold5/5] ep05/50 loss=0.6664 valAUC=0.6225 best=0.6674@3 t=12s elapsed=2046.2s
+    [s0 whiten rs1 fold5/5] ep06/50 loss=0.6631 valAUC=0.6222 best=0.6674@3 t=14s elapsed=2048.6s
+    [s0 whiten rs1 fold5/5] ep07/50 loss=0.6566 valAUC=0.6628 best=0.6674@3 t=17s elapsed=2051.0s
+    [s0 whiten rs1 fold5/5] ep08/50 loss=0.6506 valAUC=0.6128 best=0.6674@3 t=19s elapsed=2053.4s
+    [s0 whiten rs1 fold5/5] ep09/50 loss=0.6465 valAUC=0.6745 best=0.6745@9 t=21s elapsed=2055.7s
+    [s0 whiten rs1 fold5/5] ep10/50 loss=0.6486 valAUC=0.6640 best=0.6745@9 t=24s elapsed=2058.1s
+    [s0 whiten rs1 fold5/5] ep11/50 loss=0.6405 valAUC=0.6503 best=0.6745@9 t=26s elapsed=2060.5s
+    [s0 whiten rs1 fold5/5] ep12/50 loss=0.6377 valAUC=0.6144 best=0.6745@9 t=29s elapsed=2062.9s
+    [s0 whiten rs1 fold5/5] ep13/50 loss=0.6349 valAUC=0.6797 best=0.6797@13 t=31s elapsed=2065.3s
+    [s0 whiten rs1 fold5/5] ep14/50 loss=0.6291 valAUC=0.6836 best=0.6836@14 t=33s elapsed=2067.6s
+    [s0 whiten rs1 fold5/5] ep15/50 loss=0.6298 valAUC=0.6652 best=0.6836@14 t=36s elapsed=2070.0s
+    [s0 whiten rs1 fold5/5] ep16/50 loss=0.6250 valAUC=0.6673 best=0.6836@14 t=38s elapsed=2072.4s
+    [s0 whiten rs1 fold5/5] ep17/50 loss=0.6216 valAUC=0.6889 best=0.6889@17 t=40s elapsed=2074.8s
+    [s0 whiten rs1 fold5/5] ep18/50 loss=0.6106 valAUC=0.6189 best=0.6889@17 t=43s elapsed=2077.2s
+    [s0 whiten rs1 fold5/5] ep19/50 loss=0.6122 valAUC=0.6870 best=0.6889@17 t=45s elapsed=2079.6s
+    [s0 whiten rs1 fold5/5] ep20/50 loss=0.6082 valAUC=0.6580 best=0.6889@17 t=48s elapsed=2081.9s
+    [s0 whiten rs1 fold5/5] ep21/50 loss=0.6087 valAUC=0.6318 best=0.6889@17 t=50s elapsed=2084.3s
+    [s0 whiten rs1 fold5/5] ep22/50 loss=0.6005 valAUC=0.6566 best=0.6889@17 t=52s elapsed=2086.7s
+    [s0 whiten rs1 fold5/5] ep23/50 loss=0.5980 valAUC=0.6404 best=0.6889@17 t=55s elapsed=2089.1s
+    [s0 whiten rs1 fold5/5] ep24/50 loss=0.5981 valAUC=0.6601 best=0.6889@17 t=57s elapsed=2091.4s
+    [s0 whiten rs1 fold5/5] ep25/50 loss=0.5941 valAUC=0.6804 best=0.6889@17 t=60s elapsed=2093.8s
+[resnet] s0 whiten rs1 fold5/5 best_ep=17/25 testAUC=0.6835 (histnorm 0.6835) elapsed=2096.9s
+[ctxemb] s0 rs1 fold5/5 B-oofAUC=0.7069 testAUC=0.6774 heads_val=[0.797, 0.654, 0.797, 0.556] elapsed=2098.3s
+    [s0 ctxspec rs1 fold5/5] ep01/50 loss=0.6956 valAUC=0.6210 best=0.6210@1 t=2s elapsed=2100.7s
+    [s0 ctxspec rs1 fold5/5] ep02/50 loss=0.6778 valAUC=0.6382 best=0.6382@2 t=5s elapsed=2103.1s
+    [s0 ctxspec rs1 fold5/5] ep03/50 loss=0.6696 valAUC=0.6697 best=0.6697@3 t=7s elapsed=2105.5s
+    [s0 ctxspec rs1 fold5/5] ep04/50 loss=0.6655 valAUC=0.5569 best=0.6697@3 t=10s elapsed=2107.9s
+    [s0 ctxspec rs1 fold5/5] ep05/50 loss=0.6604 valAUC=0.5618 best=0.6697@3 t=12s elapsed=2110.3s
+    [s0 ctxspec rs1 fold5/5] ep06/50 loss=0.6574 valAUC=0.6330 best=0.6697@3 t=14s elapsed=2112.7s
+    [s0 ctxspec rs1 fold5/5] ep07/50 loss=0.6494 valAUC=0.6926 best=0.6926@7 t=17s elapsed=2115.1s
+    [s0 ctxspec rs1 fold5/5] ep08/50 loss=0.6444 valAUC=0.6795 best=0.6926@7 t=19s elapsed=2117.5s
+    [s0 ctxspec rs1 fold5/5] ep09/50 loss=0.6421 valAUC=0.6281 best=0.6926@7 t=22s elapsed=2120.0s
+    [s0 ctxspec rs1 fold5/5] ep10/50 loss=0.6435 valAUC=0.6515 best=0.6926@7 t=24s elapsed=2122.4s
+    [s0 ctxspec rs1 fold5/5] ep11/50 loss=0.6343 valAUC=0.6442 best=0.6926@7 t=26s elapsed=2124.8s
+    [s0 ctxspec rs1 fold5/5] ep12/50 loss=0.6325 valAUC=0.6552 best=0.6926@7 t=29s elapsed=2127.2s
+    [s0 ctxspec rs1 fold5/5] ep13/50 loss=0.6285 valAUC=0.6748 best=0.6926@7 t=31s elapsed=2129.6s
+    [s0 ctxspec rs1 fold5/5] ep14/50 loss=0.6237 valAUC=0.6813 best=0.6926@7 t=34s elapsed=2132.0s
+    [s0 ctxspec rs1 fold5/5] ep15/50 loss=0.6231 valAUC=0.6835 best=0.6926@7 t=36s elapsed=2134.4s
+[resnet] s0 ctxspec rs1 fold5/5 best_ep=7/15 testAUC=0.6397 elapsed=2135.9s
+    [s0 whiten rs2 fold5/5] ep01/50 loss=0.6984 valAUC=0.5445 best=0.5445@1 t=2s elapsed=2138.5s
+    [s0 whiten rs2 fold5/5] ep02/50 loss=0.6845 valAUC=0.6088 best=0.6088@2 t=5s elapsed=2140.9s
+    [s0 whiten rs2 fold5/5] ep03/50 loss=0.6733 valAUC=0.5287 best=0.6088@2 t=7s elapsed=2143.2s
+    [s0 whiten rs2 fold5/5] ep04/50 loss=0.6650 valAUC=0.5850 best=0.6088@2 t=9s elapsed=2145.6s
+    [s0 whiten rs2 fold5/5] ep05/50 loss=0.6628 valAUC=0.5942 best=0.6088@2 t=12s elapsed=2148.0s
+    [s0 whiten rs2 fold5/5] ep06/50 loss=0.6590 valAUC=0.6542 best=0.6542@6 t=14s elapsed=2150.3s
+    [s0 whiten rs2 fold5/5] ep07/50 loss=0.6533 valAUC=0.5631 best=0.6542@6 t=17s elapsed=2152.7s
+    [s0 whiten rs2 fold5/5] ep08/50 loss=0.6476 valAUC=0.6414 best=0.6542@6 t=19s elapsed=2155.1s
+    [s0 whiten rs2 fold5/5] ep09/50 loss=0.6455 valAUC=0.6444 best=0.6542@6 t=21s elapsed=2157.4s
+    [s0 whiten rs2 fold5/5] ep10/50 loss=0.6400 valAUC=0.6664 best=0.6664@10 t=24s elapsed=2159.8s
+    [s0 whiten rs2 fold5/5] ep11/50 loss=0.6298 valAUC=0.5830 best=0.6664@10 t=26s elapsed=2162.2s
+    [s0 whiten rs2 fold5/5] ep12/50 loss=0.6322 valAUC=0.6021 best=0.6664@10 t=28s elapsed=2164.5s
+    [s0 whiten rs2 fold5/5] ep13/50 loss=0.6241 valAUC=0.5795 best=0.6664@10 t=31s elapsed=2166.9s
+    [s0 whiten rs2 fold5/5] ep14/50 loss=0.6218 valAUC=0.6138 best=0.6664@10 t=33s elapsed=2169.3s
+    [s0 whiten rs2 fold5/5] ep15/50 loss=0.6205 valAUC=0.6642 best=0.6664@10 t=36s elapsed=2171.6s
+    [s0 whiten rs2 fold5/5] ep16/50 loss=0.6161 valAUC=0.6464 best=0.6664@10 t=38s elapsed=2174.0s
+    [s0 whiten rs2 fold5/5] ep17/50 loss=0.6146 valAUC=0.6268 best=0.6664@10 t=40s elapsed=2176.4s
+    [s0 whiten rs2 fold5/5] ep18/50 loss=0.6078 valAUC=0.6778 best=0.6778@18 t=43s elapsed=2178.8s
+    [s0 whiten rs2 fold5/5] ep19/50 loss=0.6065 valAUC=0.6213 best=0.6778@18 t=45s elapsed=2181.1s
+    [s0 whiten rs2 fold5/5] ep20/50 loss=0.6037 valAUC=0.6243 best=0.6778@18 t=47s elapsed=2183.5s
+    [s0 whiten rs2 fold5/5] ep21/50 loss=0.6020 valAUC=0.6482 best=0.6778@18 t=50s elapsed=2185.9s
+    [s0 whiten rs2 fold5/5] ep22/50 loss=0.5966 valAUC=0.6510 best=0.6778@18 t=52s elapsed=2188.2s
+    [s0 whiten rs2 fold5/5] ep23/50 loss=0.5865 valAUC=0.6626 best=0.6778@18 t=54s elapsed=2190.6s
+    [s0 whiten rs2 fold5/5] ep24/50 loss=0.5899 valAUC=0.6306 best=0.6778@18 t=57s elapsed=2193.0s
+    [s0 whiten rs2 fold5/5] ep25/50 loss=0.5820 valAUC=0.6787 best=0.6787@25 t=59s elapsed=2195.3s
+    [s0 whiten rs2 fold5/5] ep26/50 loss=0.5780 valAUC=0.6258 best=0.6787@25 t=62s elapsed=2197.7s
+    [s0 whiten rs2 fold5/5] ep27/50 loss=0.5770 valAUC=0.6383 best=0.6787@25 t=64s elapsed=2200.1s
+    [s0 whiten rs2 fold5/5] ep28/50 loss=0.5716 valAUC=0.6579 best=0.6787@25 t=66s elapsed=2202.4s
+    [s0 whiten rs2 fold5/5] ep29/50 loss=0.5716 valAUC=0.6290 best=0.6787@25 t=69s elapsed=2204.8s
+    [s0 whiten rs2 fold5/5] ep30/50 loss=0.5663 valAUC=0.6744 best=0.6787@25 t=71s elapsed=2207.2s
+    [s0 whiten rs2 fold5/5] ep31/50 loss=0.5648 valAUC=0.6729 best=0.6787@25 t=73s elapsed=2209.5s
+    [s0 whiten rs2 fold5/5] ep32/50 loss=0.5593 valAUC=0.6782 best=0.6787@25 t=76s elapsed=2211.9s
+    [s0 whiten rs2 fold5/5] ep33/50 loss=0.5590 valAUC=0.6505 best=0.6787@25 t=78s elapsed=2214.3s
+[resnet] s0 whiten rs2 fold5/5 best_ep=25/33 testAUC=0.6876 (histnorm 0.6876) elapsed=2217.3s
+[ctxemb] s0 rs2 fold5/5 B-oofAUC=0.6860 testAUC=0.6792 heads_val=[0.776, 0.656, 0.758, 0.524] elapsed=2218.9s
+    [s0 ctxspec rs2 fold5/5] ep01/50 loss=0.6927 valAUC=0.5861 best=0.5861@1 t=2s elapsed=2221.3s
+    [s0 ctxspec rs2 fold5/5] ep02/50 loss=0.6807 valAUC=0.6729 best=0.6729@2 t=5s elapsed=2223.7s
+    [s0 ctxspec rs2 fold5/5] ep03/50 loss=0.6713 valAUC=0.5310 best=0.6729@2 t=7s elapsed=2226.1s
+    [s0 ctxspec rs2 fold5/5] ep04/50 loss=0.6635 valAUC=0.5777 best=0.6729@2 t=10s elapsed=2228.5s
+    [s0 ctxspec rs2 fold5/5] ep05/50 loss=0.6586 valAUC=0.6648 best=0.6729@2 t=12s elapsed=2231.0s
+    [s0 ctxspec rs2 fold5/5] ep06/50 loss=0.6530 valAUC=0.6342 best=0.6729@2 t=14s elapsed=2233.4s
+    [s0 ctxspec rs2 fold5/5] ep07/50 loss=0.6482 valAUC=0.6451 best=0.6729@2 t=17s elapsed=2235.8s
+    [s0 ctxspec rs2 fold5/5] ep08/50 loss=0.6437 valAUC=0.6707 best=0.6729@2 t=19s elapsed=2238.2s
+    [s0 ctxspec rs2 fold5/5] ep09/50 loss=0.6393 valAUC=0.5953 best=0.6729@2 t=22s elapsed=2240.6s
+    [s0 ctxspec rs2 fold5/5] ep10/50 loss=0.6365 valAUC=0.6658 best=0.6729@2 t=24s elapsed=2243.0s
+[resnet] s0 ctxspec rs2 fold5/5 best_ep=2/10 testAUC=0.5925 elapsed=2244.6s
+[result stream 0] position_only__lr            all: AUC=0.4935 mac=0.4985 mic=0.4982 | mature: AUC=0.4925 mac=0.5004 mic=0.4966 | subj>=.9=0 max=0.543
+[result stream 0] position_only__hgb           all: AUC=0.4959 mac=0.4992 mic=0.4991 | mature: AUC=0.4971 mac=0.4988 mic=0.4985 | subj>=.9=0 max=0.578
+[result stream 0] hgb_delta32                  all: AUC=0.6519 mac=0.6118 mic=0.6131 | mature: AUC=0.6528 mac=0.6158 mic=0.6154 | subj>=.9=0 max=0.831
+[result stream 0] resnet_whiten                all: AUC=0.6588 mac=0.6098 mic=0.6102 | mature: AUC=0.6607 mac=0.6116 mic=0.6122 | subj>=.9=0 max=0.793
+[result stream 0] resnet_whiten_logit_delta    all: AUC=0.6838 mac=0.6248 mic=0.6261 | mature: AUC=0.6867 mac=0.6274 mic=0.6284 | subj>=.9=0 max=0.861
+[result stream 0] resnet_ctxspec               all: AUC=0.6598 mac=0.6105 mic=0.6115 | mature: AUC=0.6614 mac=0.6100 mic=0.6109 | subj>=.9=0 max=0.801
+[result stream 0] resnet_ctxspec_logit_delta   all: AUC=0.6793 mac=0.6241 mic=0.6254 | mature: AUC=0.6828 mac=0.6248 mic=0.6254 | subj>=.9=0 max=0.843
+[result stream 0] resnet_ctxemb                all: AUC=0.6820 mac=0.6252 mic=0.6257 | mature: AUC=0.6859 mac=0.6279 mic=0.6277 | subj>=.9=0 max=0.868
+[result stream 0] resnet_ctxemb_logit_delta    all: AUC=0.6797 mac=0.6261 mic=0.6266 | mature: AUC=0.6838 mac=0.6297 mic=0.6302 | subj>=.9=0 max=0.854
+[result stream 0] fusionR_delta                all: AUC=0.6716 mac=0.6242 mic=0.6244 | mature: AUC=0.6734 mac=0.6262 mic=0.6260 | subj>=.9=0 max=0.803
+[result stream 0] fusionH_whiten               all: AUC=0.6986 mac=0.6423 mic=0.6429 | mature: AUC=0.6999 mac=0.6441 mic=0.6434 | subj>=.9=0 max=0.867
+[result stream 0] fusionC_ctxspec              all: AUC=0.6921 mac=0.6357 mic=0.6367 | mature: AUC=0.6939 mac=0.6383 mic=0.6378 | subj>=.9=0 max=0.838
+[result stream 0] fusionC_ctxemb               all: AUC=0.6944 mac=0.6392 mic=0.6399 | mature: AUC=0.6959 mac=0.6414 mic=0.6410 | subj>=.9=0 max=0.868
+[repro stream 0] {'resnet_whiten': {'AUC_here': 0.6588043059557157, 'AUC_histnorm': 0.6588043214507847}, 'fusionH_whiten': {'AUC_here': 0.6986148338014395, 'AUC_histnorm': 0.6986148338014395}}
+[sanity stream 0] position_only__lr AUC=0.4935 -> OK
+[sanity stream 0] position_only__hgb AUC=0.4959 -> OK
+[boot stream 0] resnet_ctxspec              vs resnet_whiten  all    dAUC=+0.0010[-0.0161,+0.0174] dmac=+0.0006[-0.0138,+0.0162] dmic=+0.0012[-0.0133,+0.0166]
+[boot stream 0] resnet_ctxspec              vs resnet_whiten  mature dAUC=+0.0007[-0.0164,+0.0179] dmac=-0.0017[-0.0171,+0.0135] dmic=-0.0014[-0.0167,+0.0138]
+[boot stream 0] resnet_ctxspec              vs fusionH_whiten all    dAUC=-0.0384[-0.0631,-0.0152] dmac=-0.0315[-0.0562,-0.0100] dmic=-0.0311[-0.0559,-0.0091]
+[boot stream 0] resnet_ctxspec              vs fusionH_whiten mature dAUC=-0.0381[-0.0628,-0.0145] dmac=-0.0340[-0.0593,-0.0106] dmic=-0.0324[-0.0573,-0.0097]
+[boot stream 0] resnet_ctxspec              vs fusionR_delta  all    dAUC=-0.0113[-0.0372,+0.0153] dmac=-0.0135[-0.0372,+0.0082] dmic=-0.0127[-0.0366,+0.0097]
+[boot stream 0] resnet_ctxspec              vs fusionR_delta  mature dAUC=-0.0114[-0.0366,+0.0142] dmac=-0.0159[-0.0404,+0.0065] dmic=-0.0147[-0.0395,+0.0080]
+[boot stream 0] resnet_ctxspec_logit_delta  vs resnet_whiten  all    dAUC=+0.0199[+0.0020,+0.0360] dmac=+0.0141[-0.0021,+0.0301] dmic=+0.0148[-0.0013,+0.0307]
+[boot stream 0] resnet_ctxspec_logit_delta  vs resnet_whiten  mature dAUC=+0.0215[+0.0022,+0.0396] dmac=+0.0130[-0.0048,+0.0291] dmic=+0.0130[-0.0048,+0.0298]
+[boot stream 0] resnet_ctxspec_logit_delta  vs fusionH_whiten all    dAUC=-0.0195[-0.0414,+0.0005] dmac=-0.0181[-0.0392,+0.0014] dmic=-0.0175[-0.0392,+0.0021]
+[boot stream 0] resnet_ctxspec_logit_delta  vs fusionH_whiten mature dAUC=-0.0174[-0.0389,+0.0023] dmac=-0.0193[-0.0415,+0.0002] dmic=-0.0181[-0.0399,+0.0014]
+[boot stream 0] resnet_ctxspec_logit_delta  vs fusionR_delta  all    dAUC=+0.0076[-0.0186,+0.0318] dmac=-0.0001[-0.0226,+0.0211] dmic=+0.0010[-0.0216,+0.0229]
+[boot stream 0] resnet_ctxspec_logit_delta  vs fusionR_delta  mature dAUC=+0.0093[-0.0152,+0.0312] dmac=-0.0012[-0.0255,+0.0209] dmic=-0.0004[-0.0241,+0.0210]
+[boot stream 0] fusionC_ctxspec             vs resnet_whiten  all    dAUC=+0.0328[+0.0070,+0.0579] dmac=+0.0255[+0.0045,+0.0473] dmic=+0.0261[+0.0050,+0.0480]
+[boot stream 0] fusionC_ctxspec             vs resnet_whiten  mature dAUC=+0.0328[+0.0074,+0.0574] dmac=+0.0263[+0.0037,+0.0492] dmic=+0.0253[+0.0023,+0.0481]
+[boot stream 0] fusionC_ctxspec             vs fusionH_whiten all    dAUC=-0.0065[-0.0144,+0.0006] dmac=-0.0066[-0.0138,+0.0004] dmic=-0.0062[-0.0134,+0.0008]
+[boot stream 0] fusionC_ctxspec             vs fusionH_whiten mature dAUC=-0.0061[-0.0143,+0.0015] dmac=-0.0060[-0.0149,+0.0027] dmic=-0.0058[-0.0148,+0.0030]
+[boot stream 0] fusionC_ctxspec             vs fusionR_delta  all    dAUC=+0.0205[+0.0098,+0.0307] dmac=+0.0114[+0.0026,+0.0205] dmic=+0.0123[+0.0034,+0.0213]
+[boot stream 0] fusionC_ctxspec             vs fusionR_delta  mature dAUC=+0.0206[+0.0104,+0.0305] dmac=+0.0121[+0.0022,+0.0211] dmic=+0.0119[+0.0017,+0.0211]
+[boot stream 0] resnet_ctxemb               vs resnet_whiten  all    dAUC=+0.0225[+0.0110,+0.0343] dmac=+0.0150[+0.0030,+0.0279] dmic=+0.0151[+0.0031,+0.0273]
+[boot stream 0] resnet_ctxemb               vs resnet_whiten  mature dAUC=+0.0246[+0.0120,+0.0380] dmac=+0.0160[+0.0039,+0.0294] dmic=+0.0152[+0.0028,+0.0294]
+[boot stream 0] resnet_ctxemb               vs fusionH_whiten all    dAUC=-0.0168[-0.0386,+0.0028] dmac=-0.0171[-0.0373,+0.0019] dmic=-0.0172[-0.0379,+0.0024]
+[boot stream 0] resnet_ctxemb               vs fusionH_whiten mature dAUC=-0.0142[-0.0352,+0.0043] dmac=-0.0164[-0.0373,+0.0033] dmic=-0.0158[-0.0369,+0.0043]
+[boot stream 0] resnet_ctxemb               vs fusionR_delta  all    dAUC=+0.0102[-0.0160,+0.0349] dmac=+0.0009[-0.0213,+0.0221] dmic=+0.0012[-0.0211,+0.0232]
+[boot stream 0] resnet_ctxemb               vs fusionR_delta  mature dAUC=+0.0125[-0.0126,+0.0349] dmac=+0.0017[-0.0201,+0.0223] dmic=+0.0018[-0.0203,+0.0231]
+[boot stream 0] resnet_ctxemb_logit_delta   vs resnet_whiten  all    dAUC=+0.0202[+0.0085,+0.0323] dmac=+0.0159[+0.0044,+0.0281] dmic=+0.0159[+0.0044,+0.0282]
+[boot stream 0] resnet_ctxemb_logit_delta   vs resnet_whiten  mature dAUC=+0.0225[+0.0100,+0.0363] dmac=+0.0178[+0.0051,+0.0316] dmic=+0.0176[+0.0051,+0.0318]
+[boot stream 0] resnet_ctxemb_logit_delta   vs fusionH_whiten all    dAUC=-0.0191[-0.0401,+0.0002] dmac=-0.0163[-0.0361,+0.0030] dmic=-0.0164[-0.0366,+0.0032]
+[boot stream 0] resnet_ctxemb_logit_delta   vs fusionH_whiten mature dAUC=-0.0163[-0.0370,+0.0025] dmac=-0.0145[-0.0346,+0.0045] dmic=-0.0134[-0.0342,+0.0064]
+[boot stream 0] resnet_ctxemb_logit_delta   vs fusionR_delta  all    dAUC=+0.0079[-0.0188,+0.0325] dmac=+0.0018[-0.0205,+0.0230] dmic=+0.0021[-0.0206,+0.0243]
+[boot stream 0] resnet_ctxemb_logit_delta   vs fusionR_delta  mature dAUC=+0.0103[-0.0146,+0.0337] dmac=+0.0036[-0.0171,+0.0243] dmic=+0.0043[-0.0169,+0.0255]
+[boot stream 0] fusionC_ctxemb              vs resnet_whiten  all    dAUC=+0.0351[+0.0099,+0.0602] dmac=+0.0290[+0.0068,+0.0517] dmic=+0.0293[+0.0069,+0.0525]
+[boot stream 0] fusionC_ctxemb              vs resnet_whiten  mature dAUC=+0.0347[+0.0103,+0.0590] dmac=+0.0294[+0.0078,+0.0534] dmic=+0.0285[+0.0067,+0.0510]
+[boot stream 0] fusionC_ctxemb              vs fusionH_whiten all    dAUC=-0.0043[-0.0081,-0.0005] dmac=-0.0032[-0.0071,+0.0006] dmic=-0.0030[-0.0070,+0.0008]
+[boot stream 0] fusionC_ctxemb              vs fusionH_whiten mature dAUC=-0.0042[-0.0078,-0.0004] dmac=-0.0029[-0.0084,+0.0023] dmic=-0.0025[-0.0082,+0.0026]
+[boot stream 0] fusionC_ctxemb              vs fusionR_delta  all    dAUC=+0.0228[+0.0134,+0.0318] dmac=+0.0149[+0.0059,+0.0237] dmic=+0.0154[+0.0063,+0.0241]
+[boot stream 0] fusionC_ctxemb              vs fusionR_delta  mature dAUC=+0.0225[+0.0132,+0.0314] dmac=+0.0152[+0.0056,+0.0247] dmic=+0.0151[+0.0057,+0.0245]
+[stream 1] baselines reproduced (hgb_delta32/position); fusionR_delta loaded elapsed=2324.6s
+[stream 1 fold 1/5] inputs built (3.5s) spec d std(raw)=1.585 elapsed=2328.1s
+    [s1 whiten rs0 fold1/5] ep01/50 loss=0.6947 valAUC=0.5306 best=0.5306@1 t=2s elapsed=2330.6s
+    [s1 whiten rs0 fold1/5] ep02/50 loss=0.6768 valAUC=0.5986 best=0.5986@2 t=5s elapsed=2332.9s
+    [s1 whiten rs0 fold1/5] ep03/50 loss=0.6663 valAUC=0.6309 best=0.6309@3 t=7s elapsed=2335.3s
+    [s1 whiten rs0 fold1/5] ep04/50 loss=0.6616 valAUC=0.6090 best=0.6309@3 t=9s elapsed=2337.6s
+    [s1 whiten rs0 fold1/5] ep05/50 loss=0.6569 valAUC=0.5614 best=0.6309@3 t=12s elapsed=2339.9s
+    [s1 whiten rs0 fold1/5] ep06/50 loss=0.6558 valAUC=0.6217 best=0.6309@3 t=14s elapsed=2342.2s
+    [s1 whiten rs0 fold1/5] ep07/50 loss=0.6434 valAUC=0.6019 best=0.6309@3 t=16s elapsed=2344.6s
+    [s1 whiten rs0 fold1/5] ep08/50 loss=0.6436 valAUC=0.5678 best=0.6309@3 t=19s elapsed=2346.9s
+    [s1 whiten rs0 fold1/5] ep09/50 loss=0.6403 valAUC=0.6468 best=0.6468@9 t=21s elapsed=2349.2s
+    [s1 whiten rs0 fold1/5] ep10/50 loss=0.6346 valAUC=0.6610 best=0.6610@10 t=23s elapsed=2351.5s
+    [s1 whiten rs0 fold1/5] ep11/50 loss=0.6291 valAUC=0.6353 best=0.6610@10 t=26s elapsed=2353.9s
+    [s1 whiten rs0 fold1/5] ep12/50 loss=0.6289 valAUC=0.6485 best=0.6610@10 t=28s elapsed=2356.2s
+    [s1 whiten rs0 fold1/5] ep13/50 loss=0.6190 valAUC=0.6784 best=0.6784@13 t=30s elapsed=2358.6s
+    [s1 whiten rs0 fold1/5] ep14/50 loss=0.6187 valAUC=0.6388 best=0.6784@13 t=33s elapsed=2360.9s
+    [s1 whiten rs0 fold1/5] ep15/50 loss=0.6162 valAUC=0.6710 best=0.6784@13 t=35s elapsed=2363.2s
+    [s1 whiten rs0 fold1/5] ep16/50 loss=0.6117 valAUC=0.6286 best=0.6784@13 t=37s elapsed=2365.6s
+    [s1 whiten rs0 fold1/5] ep17/50 loss=0.6022 valAUC=0.6735 best=0.6784@13 t=40s elapsed=2367.9s
+    [s1 whiten rs0 fold1/5] ep18/50 loss=0.6104 valAUC=0.6804 best=0.6804@18 t=42s elapsed=2370.2s
+    [s1 whiten rs0 fold1/5] ep19/50 loss=0.6012 valAUC=0.6413 best=0.6804@18 t=44s elapsed=2372.6s
+    [s1 whiten rs0 fold1/5] ep20/50 loss=0.5995 valAUC=0.6757 best=0.6804@18 t=47s elapsed=2374.9s
+    [s1 whiten rs0 fold1/5] ep21/50 loss=0.5909 valAUC=0.6013 best=0.6804@18 t=49s elapsed=2377.3s
+    [s1 whiten rs0 fold1/5] ep22/50 loss=0.5927 valAUC=0.6811 best=0.6811@22 t=51s elapsed=2379.6s
+    [s1 whiten rs0 fold1/5] ep23/50 loss=0.5897 valAUC=0.6692 best=0.6811@22 t=54s elapsed=2382.0s
+    [s1 whiten rs0 fold1/5] ep24/50 loss=0.5830 valAUC=0.6574 best=0.6811@22 t=56s elapsed=2384.3s
+    [s1 whiten rs0 fold1/5] ep25/50 loss=0.5789 valAUC=0.6578 best=0.6811@22 t=59s elapsed=2386.7s
+    [s1 whiten rs0 fold1/5] ep26/50 loss=0.5778 valAUC=0.6427 best=0.6811@22 t=61s elapsed=2389.0s
+    [s1 whiten rs0 fold1/5] ep27/50 loss=0.5722 valAUC=0.6560 best=0.6811@22 t=63s elapsed=2391.4s
+    [s1 whiten rs0 fold1/5] ep28/50 loss=0.5775 valAUC=0.6698 best=0.6811@22 t=66s elapsed=2393.7s
+    [s1 whiten rs0 fold1/5] ep29/50 loss=0.5795 valAUC=0.6377 best=0.6811@22 t=68s elapsed=2396.1s
+    [s1 whiten rs0 fold1/5] ep30/50 loss=0.5723 valAUC=0.6646 best=0.6811@22 t=70s elapsed=2398.4s
+[resnet] s1 whiten rs0 fold1/5 best_ep=22/30 testAUC=0.6492 (histnorm 0.6492) elapsed=2401.5s
+[ctxemb] s1 rs0 fold1/5 B-oofAUC=0.6545 testAUC=0.6691 heads_val=[0.628, 0.678, 0.732, 0.682] elapsed=2403.3s
+    [s1 ctxspec rs0 fold1/5] ep01/50 loss=0.6877 valAUC=0.5168 best=0.5168@1 t=3s elapsed=2405.8s
+    [s1 ctxspec rs0 fold1/5] ep02/50 loss=0.6711 valAUC=0.6197 best=0.6197@2 t=5s elapsed=2408.2s
+    [s1 ctxspec rs0 fold1/5] ep03/50 loss=0.6574 valAUC=0.6149 best=0.6197@2 t=7s elapsed=2410.6s
+    [s1 ctxspec rs0 fold1/5] ep04/50 loss=0.6566 valAUC=0.5622 best=0.6197@2 t=10s elapsed=2413.0s
+    [s1 ctxspec rs0 fold1/5] ep05/50 loss=0.6496 valAUC=0.6088 best=0.6197@2 t=12s elapsed=2415.4s
+    [s1 ctxspec rs0 fold1/5] ep06/50 loss=0.6476 valAUC=0.5668 best=0.6197@2 t=14s elapsed=2417.8s
+    [s1 ctxspec rs0 fold1/5] ep07/50 loss=0.6359 valAUC=0.5803 best=0.6197@2 t=17s elapsed=2420.2s
+    [s1 ctxspec rs0 fold1/5] ep08/50 loss=0.6372 valAUC=0.5914 best=0.6197@2 t=19s elapsed=2422.5s
+    [s1 ctxspec rs0 fold1/5] ep09/50 loss=0.6307 valAUC=0.6404 best=0.6404@9 t=22s elapsed=2424.9s
+    [s1 ctxspec rs0 fold1/5] ep10/50 loss=0.6241 valAUC=0.6526 best=0.6526@10 t=24s elapsed=2427.3s
+    [s1 ctxspec rs0 fold1/5] ep11/50 loss=0.6209 valAUC=0.6582 best=0.6582@11 t=26s elapsed=2429.7s
+    [s1 ctxspec rs0 fold1/5] ep12/50 loss=0.6197 valAUC=0.6221 best=0.6582@11 t=29s elapsed=2432.1s
+    [s1 ctxspec rs0 fold1/5] ep13/50 loss=0.6104 valAUC=0.6669 best=0.6669@13 t=31s elapsed=2434.5s
+    [s1 ctxspec rs0 fold1/5] ep14/50 loss=0.6087 valAUC=0.6411 best=0.6669@13 t=34s elapsed=2436.9s
+    [s1 ctxspec rs0 fold1/5] ep15/50 loss=0.6031 valAUC=0.6396 best=0.6669@13 t=36s elapsed=2439.3s
+    [s1 ctxspec rs0 fold1/5] ep16/50 loss=0.5990 valAUC=0.6175 best=0.6669@13 t=38s elapsed=2441.6s
+    [s1 ctxspec rs0 fold1/5] ep17/50 loss=0.5949 valAUC=0.6626 best=0.6669@13 t=41s elapsed=2444.0s
+    [s1 ctxspec rs0 fold1/5] ep18/50 loss=0.5936 valAUC=0.6528 best=0.6669@13 t=43s elapsed=2446.4s
+    [s1 ctxspec rs0 fold1/5] ep19/50 loss=0.5914 valAUC=0.6608 best=0.6669@13 t=45s elapsed=2448.8s
+    [s1 ctxspec rs0 fold1/5] ep20/50 loss=0.5832 valAUC=0.6875 best=0.6875@20 t=48s elapsed=2451.2s
+    [s1 ctxspec rs0 fold1/5] ep21/50 loss=0.5795 valAUC=0.6007 best=0.6875@20 t=50s elapsed=2453.6s
+    [s1 ctxspec rs0 fold1/5] ep22/50 loss=0.5840 valAUC=0.6641 best=0.6875@20 t=53s elapsed=2456.0s
+    [s1 ctxspec rs0 fold1/5] ep23/50 loss=0.5780 valAUC=0.6661 best=0.6875@20 t=55s elapsed=2458.3s
+    [s1 ctxspec rs0 fold1/5] ep24/50 loss=0.5680 valAUC=0.6503 best=0.6875@20 t=57s elapsed=2460.6s
+    [s1 ctxspec rs0 fold1/5] ep25/50 loss=0.5702 valAUC=0.6449 best=0.6875@20 t=60s elapsed=2462.9s
+    [s1 ctxspec rs0 fold1/5] ep26/50 loss=0.5615 valAUC=0.6417 best=0.6875@20 t=62s elapsed=2465.1s
+    [s1 ctxspec rs0 fold1/5] ep27/50 loss=0.5621 valAUC=0.6522 best=0.6875@20 t=64s elapsed=2467.5s
+    [s1 ctxspec rs0 fold1/5] ep28/50 loss=0.5635 valAUC=0.6508 best=0.6875@20 t=66s elapsed=2469.8s
+[resnet] s1 ctxspec rs0 fold1/5 best_ep=20/28 testAUC=0.6289 elapsed=2471.2s
+[check] s1 fold1: ctxspec/ctxemb isolation + prefix invariance ok elapsed=2471.9s
+[stream 1 fold 2/5] inputs built (3.7s) spec d std(raw)=1.642 elapsed=2475.6s
+    [s1 whiten rs0 fold2/5] ep01/50 loss=0.7001 valAUC=0.5420 best=0.5420@1 t=3s elapsed=2478.1s
+    [s1 whiten rs0 fold2/5] ep02/50 loss=0.6916 valAUC=0.5869 best=0.5869@2 t=5s elapsed=2480.5s
+    [s1 whiten rs0 fold2/5] ep03/50 loss=0.6864 valAUC=0.5885 best=0.5885@3 t=7s elapsed=2482.8s
+    [s1 whiten rs0 fold2/5] ep04/50 loss=0.6806 valAUC=0.6118 best=0.6118@4 t=10s elapsed=2485.1s
+    [s1 whiten rs0 fold2/5] ep05/50 loss=0.6768 valAUC=0.5910 best=0.6118@4 t=12s elapsed=2487.5s
+    [s1 whiten rs0 fold2/5] ep06/50 loss=0.6738 valAUC=0.5947 best=0.6118@4 t=14s elapsed=2489.8s
+    [s1 whiten rs0 fold2/5] ep07/50 loss=0.6722 valAUC=0.5908 best=0.6118@4 t=17s elapsed=2492.2s
+    [s1 whiten rs0 fold2/5] ep08/50 loss=0.6675 valAUC=0.6101 best=0.6118@4 t=19s elapsed=2494.5s
+    [s1 whiten rs0 fold2/5] ep09/50 loss=0.6700 valAUC=0.6129 best=0.6129@9 t=21s elapsed=2496.8s
+    [s1 whiten rs0 fold2/5] ep10/50 loss=0.6617 valAUC=0.6197 best=0.6197@10 t=24s elapsed=2499.2s
+    [s1 whiten rs0 fold2/5] ep11/50 loss=0.6559 valAUC=0.6267 best=0.6267@11 t=26s elapsed=2501.5s
+    [s1 whiten rs0 fold2/5] ep12/50 loss=0.6539 valAUC=0.6308 best=0.6308@12 t=28s elapsed=2503.9s
+    [s1 whiten rs0 fold2/5] ep13/50 loss=0.6437 valAUC=0.6315 best=0.6315@13 t=31s elapsed=2506.2s
+    [s1 whiten rs0 fold2/5] ep14/50 loss=0.6433 valAUC=0.6437 best=0.6437@14 t=33s elapsed=2508.6s
+    [s1 whiten rs0 fold2/5] ep15/50 loss=0.6396 valAUC=0.6557 best=0.6557@15 t=35s elapsed=2510.9s
+    [s1 whiten rs0 fold2/5] ep16/50 loss=0.6383 valAUC=0.6481 best=0.6557@15 t=38s elapsed=2513.3s
+    [s1 whiten rs0 fold2/5] ep17/50 loss=0.6366 valAUC=0.5949 best=0.6557@15 t=40s elapsed=2515.6s
+    [s1 whiten rs0 fold2/5] ep18/50 loss=0.6328 valAUC=0.6599 best=0.6599@18 t=42s elapsed=2518.0s
+    [s1 whiten rs0 fold2/5] ep19/50 loss=0.6287 valAUC=0.6567 best=0.6599@18 t=45s elapsed=2520.3s
+    [s1 whiten rs0 fold2/5] ep20/50 loss=0.6241 valAUC=0.6370 best=0.6599@18 t=47s elapsed=2522.7s
+    [s1 whiten rs0 fold2/5] ep21/50 loss=0.6224 valAUC=0.6409 best=0.6599@18 t=49s elapsed=2525.0s
+    [s1 whiten rs0 fold2/5] ep22/50 loss=0.6165 valAUC=0.6664 best=0.6664@22 t=52s elapsed=2527.4s
+    [s1 whiten rs0 fold2/5] ep23/50 loss=0.6156 valAUC=0.6544 best=0.6664@22 t=54s elapsed=2529.7s
+    [s1 whiten rs0 fold2/5] ep24/50 loss=0.6113 valAUC=0.6763 best=0.6763@24 t=56s elapsed=2532.1s
+    [s1 whiten rs0 fold2/5] ep25/50 loss=0.6063 valAUC=0.6336 best=0.6763@24 t=59s elapsed=2534.4s
+    [s1 whiten rs0 fold2/5] ep26/50 loss=0.6030 valAUC=0.6475 best=0.6763@24 t=61s elapsed=2536.8s
+    [s1 whiten rs0 fold2/5] ep27/50 loss=0.6024 valAUC=0.6801 best=0.6801@27 t=63s elapsed=2539.1s
+    [s1 whiten rs0 fold2/5] ep28/50 loss=0.6032 valAUC=0.6623 best=0.6801@27 t=66s elapsed=2541.5s
+    [s1 whiten rs0 fold2/5] ep29/50 loss=0.5985 valAUC=0.6705 best=0.6801@27 t=68s elapsed=2543.8s
+    [s1 whiten rs0 fold2/5] ep30/50 loss=0.5937 valAUC=0.6519 best=0.6801@27 t=71s elapsed=2546.2s
+    [s1 whiten rs0 fold2/5] ep31/50 loss=0.5929 valAUC=0.6676 best=0.6801@27 t=73s elapsed=2548.5s
+    [s1 whiten rs0 fold2/5] ep32/50 loss=0.5862 valAUC=0.6585 best=0.6801@27 t=75s elapsed=2550.9s
+    [s1 whiten rs0 fold2/5] ep33/50 loss=0.5846 valAUC=0.6492 best=0.6801@27 t=78s elapsed=2553.2s
+    [s1 whiten rs0 fold2/5] ep34/50 loss=0.5829 valAUC=0.6667 best=0.6801@27 t=80s elapsed=2555.6s
+    [s1 whiten rs0 fold2/5] ep35/50 loss=0.5763 valAUC=0.6639 best=0.6801@27 t=82s elapsed=2557.9s
+[resnet] s1 whiten rs0 fold2/5 best_ep=27/35 testAUC=0.7075 (histnorm 0.7075) elapsed=2561.0s
+[ctxemb] s1 rs0 fold2/5 B-oofAUC=0.6399 testAUC=0.7208 heads_val=[0.657, 0.729, 0.626, 0.588] elapsed=2562.5s
+    [s1 ctxspec rs0 fold2/5] ep01/50 loss=0.6926 valAUC=0.5833 best=0.5833@1 t=2s elapsed=2564.8s
+    [s1 ctxspec rs0 fold2/5] ep02/50 loss=0.6835 valAUC=0.5986 best=0.5986@2 t=5s elapsed=2567.2s
+    [s1 ctxspec rs0 fold2/5] ep03/50 loss=0.6816 valAUC=0.5802 best=0.5986@2 t=7s elapsed=2569.6s
+    [s1 ctxspec rs0 fold2/5] ep04/50 loss=0.6743 valAUC=0.5990 best=0.5990@4 t=10s elapsed=2572.0s
+    [s1 ctxspec rs0 fold2/5] ep05/50 loss=0.6718 valAUC=0.5982 best=0.5990@4 t=12s elapsed=2574.3s
+    [s1 ctxspec rs0 fold2/5] ep06/50 loss=0.6672 valAUC=0.5823 best=0.5990@4 t=14s elapsed=2576.7s
+    [s1 ctxspec rs0 fold2/5] ep07/50 loss=0.6664 valAUC=0.6085 best=0.6085@7 t=17s elapsed=2579.1s
+    [s1 ctxspec rs0 fold2/5] ep08/50 loss=0.6599 valAUC=0.6090 best=0.6090@8 t=19s elapsed=2581.5s
+    [s1 ctxspec rs0 fold2/5] ep09/50 loss=0.6602 valAUC=0.6029 best=0.6090@8 t=21s elapsed=2583.9s
+    [s1 ctxspec rs0 fold2/5] ep10/50 loss=0.6557 valAUC=0.6183 best=0.6183@10 t=24s elapsed=2586.2s
+    [s1 ctxspec rs0 fold2/5] ep11/50 loss=0.6507 valAUC=0.6135 best=0.6183@10 t=26s elapsed=2588.6s
+    [s1 ctxspec rs0 fold2/5] ep12/50 loss=0.6494 valAUC=0.6184 best=0.6183@10 t=29s elapsed=2591.0s
+    [s1 ctxspec rs0 fold2/5] ep13/50 loss=0.6399 valAUC=0.5981 best=0.6183@10 t=31s elapsed=2593.4s
+    [s1 ctxspec rs0 fold2/5] ep14/50 loss=0.6406 valAUC=0.6357 best=0.6357@14 t=33s elapsed=2595.8s
+    [s1 ctxspec rs0 fold2/5] ep15/50 loss=0.6354 valAUC=0.6407 best=0.6407@15 t=36s elapsed=2598.1s
+    [s1 ctxspec rs0 fold2/5] ep16/50 loss=0.6358 valAUC=0.6484 best=0.6484@16 t=38s elapsed=2600.5s
+    [s1 ctxspec rs0 fold2/5] ep17/50 loss=0.6330 valAUC=0.6018 best=0.6484@16 t=40s elapsed=2602.9s
+    [s1 ctxspec rs0 fold2/5] ep18/50 loss=0.6326 valAUC=0.6518 best=0.6518@18 t=43s elapsed=2605.3s
+    [s1 ctxspec rs0 fold2/5] ep19/50 loss=0.6234 valAUC=0.6438 best=0.6518@18 t=45s elapsed=2607.7s
+    [s1 ctxspec rs0 fold2/5] ep20/50 loss=0.6231 valAUC=0.6405 best=0.6518@18 t=48s elapsed=2610.1s
+    [s1 ctxspec rs0 fold2/5] ep21/50 loss=0.6194 valAUC=0.6295 best=0.6518@18 t=50s elapsed=2612.4s
+    [s1 ctxspec rs0 fold2/5] ep22/50 loss=0.6167 valAUC=0.6617 best=0.6617@22 t=52s elapsed=2614.8s
+    [s1 ctxspec rs0 fold2/5] ep23/50 loss=0.6133 valAUC=0.6411 best=0.6617@22 t=55s elapsed=2617.2s
+    [s1 ctxspec rs0 fold2/5] ep24/50 loss=0.6088 valAUC=0.6535 best=0.6617@22 t=57s elapsed=2619.6s
+    [s1 ctxspec rs0 fold2/5] ep25/50 loss=0.6037 valAUC=0.6445 best=0.6617@22 t=60s elapsed=2622.0s
+    [s1 ctxspec rs0 fold2/5] ep26/50 loss=0.5991 valAUC=0.6395 best=0.6617@22 t=62s elapsed=2624.3s
+    [s1 ctxspec rs0 fold2/5] ep27/50 loss=0.6025 valAUC=0.6655 best=0.6655@27 t=64s elapsed=2626.7s
+    [s1 ctxspec rs0 fold2/5] ep28/50 loss=0.6011 valAUC=0.6392 best=0.6655@27 t=67s elapsed=2629.1s
+    [s1 ctxspec rs0 fold2/5] ep29/50 loss=0.5935 valAUC=0.6538 best=0.6655@27 t=69s elapsed=2631.5s
+    [s1 ctxspec rs0 fold2/5] ep30/50 loss=0.5881 valAUC=0.6390 best=0.6655@27 t=71s elapsed=2633.9s
+    [s1 ctxspec rs0 fold2/5] ep31/50 loss=0.5876 valAUC=0.6663 best=0.6663@31 t=74s elapsed=2636.2s
+    [s1 ctxspec rs0 fold2/5] ep32/50 loss=0.5848 valAUC=0.6676 best=0.6676@32 t=76s elapsed=2638.6s
+    [s1 ctxspec rs0 fold2/5] ep33/50 loss=0.5827 valAUC=0.6578 best=0.6676@32 t=79s elapsed=2641.0s
+    [s1 ctxspec rs0 fold2/5] ep34/50 loss=0.5808 valAUC=0.6563 best=0.6676@32 t=81s elapsed=2643.4s
+    [s1 ctxspec rs0 fold2/5] ep35/50 loss=0.5733 valAUC=0.6642 best=0.6676@32 t=83s elapsed=2645.8s
+    [s1 ctxspec rs0 fold2/5] ep36/50 loss=0.5711 valAUC=0.6513 best=0.6676@32 t=86s elapsed=2648.2s
+    [s1 ctxspec rs0 fold2/5] ep37/50 loss=0.5697 valAUC=0.6424 best=0.6676@32 t=88s elapsed=2650.5s
+    [s1 ctxspec rs0 fold2/5] ep38/50 loss=0.5722 valAUC=0.6567 best=0.6676@32 t=90s elapsed=2652.9s
+    [s1 ctxspec rs0 fold2/5] ep39/50 loss=0.5637 valAUC=0.6537 best=0.6676@32 t=93s elapsed=2655.3s
+    [s1 ctxspec rs0 fold2/5] ep40/50 loss=0.5579 valAUC=0.6413 best=0.6676@32 t=95s elapsed=2657.7s
+[resnet] s1 ctxspec rs0 fold2/5 best_ep=32/40 testAUC=0.7211 elapsed=2659.2s
+[check] s1 fold2: ctxspec/ctxemb isolation + prefix invariance ok elapsed=2659.9s
+[stream 1 fold 3/5] inputs built (3.4s) spec d std(raw)=1.598 elapsed=2663.3s
+    [s1 whiten rs0 fold3/5] ep01/50 loss=0.6984 valAUC=0.5516 best=0.5516@1 t=3s elapsed=2665.9s
+    [s1 whiten rs0 fold3/5] ep02/50 loss=0.6847 valAUC=0.5880 best=0.5880@2 t=5s elapsed=2668.3s
+    [s1 whiten rs0 fold3/5] ep03/50 loss=0.6810 valAUC=0.6038 best=0.6038@3 t=7s elapsed=2670.7s
+    [s1 whiten rs0 fold3/5] ep04/50 loss=0.6734 valAUC=0.6013 best=0.6038@3 t=10s elapsed=2673.0s
+    [s1 whiten rs0 fold3/5] ep05/50 loss=0.6690 valAUC=0.6037 best=0.6038@3 t=12s elapsed=2675.4s
+    [s1 whiten rs0 fold3/5] ep06/50 loss=0.6649 valAUC=0.6151 best=0.6151@6 t=14s elapsed=2677.7s
+    [s1 whiten rs0 fold3/5] ep07/50 loss=0.6573 valAUC=0.5932 best=0.6151@6 t=17s elapsed=2680.1s
+    [s1 whiten rs0 fold3/5] ep08/50 loss=0.6566 valAUC=0.6236 best=0.6236@8 t=19s elapsed=2682.5s
+    [s1 whiten rs0 fold3/5] ep09/50 loss=0.6503 valAUC=0.6172 best=0.6236@8 t=22s elapsed=2684.8s
+    [s1 whiten rs0 fold3/5] ep10/50 loss=0.6489 valAUC=0.6312 best=0.6312@10 t=24s elapsed=2687.2s
+    [s1 whiten rs0 fold3/5] ep11/50 loss=0.6468 valAUC=0.6335 best=0.6335@11 t=26s elapsed=2689.6s
+    [s1 whiten rs0 fold3/5] ep12/50 loss=0.6371 valAUC=0.6617 best=0.6617@12 t=29s elapsed=2691.9s
+    [s1 whiten rs0 fold3/5] ep13/50 loss=0.6410 valAUC=0.6365 best=0.6617@12 t=31s elapsed=2694.3s
+    [s1 whiten rs0 fold3/5] ep14/50 loss=0.6356 valAUC=0.6528 best=0.6617@12 t=33s elapsed=2696.7s
+    [s1 whiten rs0 fold3/5] ep15/50 loss=0.6283 valAUC=0.6738 best=0.6738@15 t=36s elapsed=2699.0s
+    [s1 whiten rs0 fold3/5] ep16/50 loss=0.6292 valAUC=0.6623 best=0.6738@15 t=38s elapsed=2701.4s
+    [s1 whiten rs0 fold3/5] ep17/50 loss=0.6217 valAUC=0.6744 best=0.6744@17 t=40s elapsed=2703.8s
+    [s1 whiten rs0 fold3/5] ep18/50 loss=0.6208 valAUC=0.6425 best=0.6744@17 t=43s elapsed=2706.2s
+    [s1 whiten rs0 fold3/5] ep19/50 loss=0.6184 valAUC=0.6222 best=0.6744@17 t=45s elapsed=2708.5s
+    [s1 whiten rs0 fold3/5] ep20/50 loss=0.6122 valAUC=0.6697 best=0.6744@17 t=48s elapsed=2710.9s
+    [s1 whiten rs0 fold3/5] ep21/50 loss=0.6147 valAUC=0.6531 best=0.6744@17 t=50s elapsed=2713.3s
+    [s1 whiten rs0 fold3/5] ep22/50 loss=0.6088 valAUC=0.6657 best=0.6744@17 t=52s elapsed=2715.7s
+    [s1 whiten rs0 fold3/5] ep23/50 loss=0.6050 valAUC=0.6616 best=0.6744@17 t=55s elapsed=2718.1s
+    [s1 whiten rs0 fold3/5] ep24/50 loss=0.6008 valAUC=0.6489 best=0.6744@17 t=57s elapsed=2720.4s
+    [s1 whiten rs0 fold3/5] ep25/50 loss=0.5999 valAUC=0.6690 best=0.6744@17 t=59s elapsed=2722.8s
+[resnet] s1 whiten rs0 fold3/5 best_ep=17/25 testAUC=0.6602 (histnorm 0.6602) elapsed=2725.9s
+[ctxemb] s1 rs0 fold3/5 B-oofAUC=0.6450 testAUC=0.7018 heads_val=[0.74, 0.647, 0.63, 0.668] elapsed=2727.9s
+    [s1 ctxspec rs0 fold3/5] ep01/50 loss=0.6923 valAUC=0.5670 best=0.5670@1 t=3s elapsed=2730.4s
+    [s1 ctxspec rs0 fold3/5] ep02/50 loss=0.6786 valAUC=0.6012 best=0.6012@2 t=5s elapsed=2732.8s
+    [s1 ctxspec rs0 fold3/5] ep03/50 loss=0.6747 valAUC=0.5927 best=0.6012@2 t=7s elapsed=2735.2s
+    [s1 ctxspec rs0 fold3/5] ep04/50 loss=0.6653 valAUC=0.6105 best=0.6105@4 t=10s elapsed=2737.6s
+    [s1 ctxspec rs0 fold3/5] ep05/50 loss=0.6589 valAUC=0.5947 best=0.6105@4 t=12s elapsed=2740.0s
+    [s1 ctxspec rs0 fold3/5] ep06/50 loss=0.6563 valAUC=0.6374 best=0.6374@6 t=15s elapsed=2742.4s
+    [s1 ctxspec rs0 fold3/5] ep07/50 loss=0.6474 valAUC=0.6306 best=0.6374@6 t=17s elapsed=2744.8s
+    [s1 ctxspec rs0 fold3/5] ep08/50 loss=0.6421 valAUC=0.6320 best=0.6374@6 t=19s elapsed=2747.2s
+    [s1 ctxspec rs0 fold3/5] ep09/50 loss=0.6403 valAUC=0.6415 best=0.6415@9 t=22s elapsed=2749.6s
+    [s1 ctxspec rs0 fold3/5] ep10/50 loss=0.6390 valAUC=0.6523 best=0.6523@10 t=24s elapsed=2752.1s
+    [s1 ctxspec rs0 fold3/5] ep11/50 loss=0.6353 valAUC=0.6437 best=0.6523@10 t=27s elapsed=2754.5s
+    [s1 ctxspec rs0 fold3/5] ep12/50 loss=0.6274 valAUC=0.6414 best=0.6523@10 t=29s elapsed=2756.9s
+    [s1 ctxspec rs0 fold3/5] ep13/50 loss=0.6311 valAUC=0.6594 best=0.6594@13 t=31s elapsed=2759.3s
+    [s1 ctxspec rs0 fold3/5] ep14/50 loss=0.6224 valAUC=0.6504 best=0.6594@13 t=34s elapsed=2761.7s
+    [s1 ctxspec rs0 fold3/5] ep15/50 loss=0.6176 valAUC=0.6646 best=0.6646@15 t=36s elapsed=2764.1s
+    [s1 ctxspec rs0 fold3/5] ep16/50 loss=0.6156 valAUC=0.6847 best=0.6847@16 t=39s elapsed=2766.5s
+    [s1 ctxspec rs0 fold3/5] ep17/50 loss=0.6134 valAUC=0.6713 best=0.6847@16 t=41s elapsed=2768.9s
+    [s1 ctxspec rs0 fold3/5] ep18/50 loss=0.6078 valAUC=0.6716 best=0.6847@16 t=43s elapsed=2771.3s
+    [s1 ctxspec rs0 fold3/5] ep19/50 loss=0.6041 valAUC=0.6615 best=0.6847@16 t=46s elapsed=2773.7s
+    [s1 ctxspec rs0 fold3/5] ep20/50 loss=0.5997 valAUC=0.6891 best=0.6891@20 t=48s elapsed=2776.2s
+    [s1 ctxspec rs0 fold3/5] ep21/50 loss=0.5992 valAUC=0.6740 best=0.6891@20 t=51s elapsed=2778.6s
+    [s1 ctxspec rs0 fold3/5] ep22/50 loss=0.5911 valAUC=0.6637 best=0.6891@20 t=53s elapsed=2781.0s
+    [s1 ctxspec rs0 fold3/5] ep23/50 loss=0.5926 valAUC=0.6755 best=0.6891@20 t=56s elapsed=2783.4s
+    [s1 ctxspec rs0 fold3/5] ep24/50 loss=0.5834 valAUC=0.6610 best=0.6891@20 t=58s elapsed=2785.8s
+    [s1 ctxspec rs0 fold3/5] ep25/50 loss=0.5859 valAUC=0.6544 best=0.6891@20 t=60s elapsed=2788.2s
+    [s1 ctxspec rs0 fold3/5] ep26/50 loss=0.5793 valAUC=0.6842 best=0.6891@20 t=63s elapsed=2790.6s
+    [s1 ctxspec rs0 fold3/5] ep27/50 loss=0.5812 valAUC=0.6686 best=0.6891@20 t=65s elapsed=2793.0s
+    [s1 ctxspec rs0 fold3/5] ep28/50 loss=0.5686 valAUC=0.6594 best=0.6891@20 t=68s elapsed=2795.4s
+[resnet] s1 ctxspec rs0 fold3/5 best_ep=20/28 testAUC=0.6973 elapsed=2797.0s
+[check] s1 fold3: ctxspec/ctxemb isolation + prefix invariance ok elapsed=2797.7s
+[stream 1 fold 4/5] inputs built (3.5s) spec d std(raw)=1.615 elapsed=2801.2s
+    [s1 whiten rs0 fold4/5] ep01/50 loss=0.6978 valAUC=0.5842 best=0.5842@1 t=2s elapsed=2803.6s
+    [s1 whiten rs0 fold4/5] ep02/50 loss=0.6711 valAUC=0.5402 best=0.5842@1 t=5s elapsed=2805.9s
+    [s1 whiten rs0 fold4/5] ep03/50 loss=0.6605 valAUC=0.5918 best=0.5918@3 t=7s elapsed=2808.3s
+    [s1 whiten rs0 fold4/5] ep04/50 loss=0.6561 valAUC=0.5852 best=0.5918@3 t=9s elapsed=2810.6s
+    [s1 whiten rs0 fold4/5] ep05/50 loss=0.6503 valAUC=0.5855 best=0.5918@3 t=12s elapsed=2812.9s
+    [s1 whiten rs0 fold4/5] ep06/50 loss=0.6425 valAUC=0.6097 best=0.6097@6 t=14s elapsed=2815.2s
+    [s1 whiten rs0 fold4/5] ep07/50 loss=0.6403 valAUC=0.5909 best=0.6097@6 t=16s elapsed=2817.5s
+    [s1 whiten rs0 fold4/5] ep08/50 loss=0.6308 valAUC=0.6026 best=0.6097@6 t=19s elapsed=2819.8s
+    [s1 whiten rs0 fold4/5] ep09/50 loss=0.6266 valAUC=0.6201 best=0.6201@9 t=21s elapsed=2822.1s
+    [s1 whiten rs0 fold4/5] ep10/50 loss=0.6230 valAUC=0.6316 best=0.6316@10 t=23s elapsed=2824.4s
+    [s1 whiten rs0 fold4/5] ep11/50 loss=0.6166 valAUC=0.6235 best=0.6316@10 t=26s elapsed=2826.7s
+    [s1 whiten rs0 fold4/5] ep12/50 loss=0.6178 valAUC=0.6322 best=0.6322@12 t=28s elapsed=2829.1s
+    [s1 whiten rs0 fold4/5] ep13/50 loss=0.6099 valAUC=0.6234 best=0.6322@12 t=30s elapsed=2831.4s
+    [s1 whiten rs0 fold4/5] ep14/50 loss=0.6082 valAUC=0.6465 best=0.6465@14 t=32s elapsed=2833.7s
+    [s1 whiten rs0 fold4/5] ep15/50 loss=0.6039 valAUC=0.6331 best=0.6465@14 t=35s elapsed=2836.0s
+    [s1 whiten rs0 fold4/5] ep16/50 loss=0.5990 valAUC=0.6504 best=0.6504@16 t=37s elapsed=2838.3s
+    [s1 whiten rs0 fold4/5] ep17/50 loss=0.5950 valAUC=0.6184 best=0.6504@16 t=39s elapsed=2840.7s
+    [s1 whiten rs0 fold4/5] ep18/50 loss=0.5950 valAUC=0.6447 best=0.6504@16 t=42s elapsed=2843.0s
+    [s1 whiten rs0 fold4/5] ep19/50 loss=0.5869 valAUC=0.6383 best=0.6504@16 t=44s elapsed=2845.3s
+    [s1 whiten rs0 fold4/5] ep20/50 loss=0.5895 valAUC=0.6490 best=0.6504@16 t=46s elapsed=2847.6s
+    [s1 whiten rs0 fold4/5] ep21/50 loss=0.5806 valAUC=0.6630 best=0.6630@21 t=49s elapsed=2850.0s
+    [s1 whiten rs0 fold4/5] ep22/50 loss=0.5818 valAUC=0.6485 best=0.6630@21 t=51s elapsed=2852.3s
+    [s1 whiten rs0 fold4/5] ep23/50 loss=0.5769 valAUC=0.6730 best=0.6730@23 t=53s elapsed=2854.6s
+    [s1 whiten rs0 fold4/5] ep24/50 loss=0.5743 valAUC=0.6736 best=0.6736@24 t=56s elapsed=2856.9s
+    [s1 whiten rs0 fold4/5] ep25/50 loss=0.5706 valAUC=0.6559 best=0.6736@24 t=58s elapsed=2859.3s
+    [s1 whiten rs0 fold4/5] ep26/50 loss=0.5695 valAUC=0.6529 best=0.6736@24 t=60s elapsed=2861.6s
+    [s1 whiten rs0 fold4/5] ep27/50 loss=0.5711 valAUC=0.6554 best=0.6736@24 t=63s elapsed=2863.9s
+    [s1 whiten rs0 fold4/5] ep28/50 loss=0.5580 valAUC=0.6719 best=0.6736@24 t=65s elapsed=2866.2s
+    [s1 whiten rs0 fold4/5] ep29/50 loss=0.5603 valAUC=0.6670 best=0.6736@24 t=67s elapsed=2868.6s
+    [s1 whiten rs0 fold4/5] ep30/50 loss=0.5547 valAUC=0.6482 best=0.6736@24 t=70s elapsed=2870.9s
+    [s1 whiten rs0 fold4/5] ep31/50 loss=0.5502 valAUC=0.6413 best=0.6736@24 t=72s elapsed=2873.2s
+    [s1 whiten rs0 fold4/5] ep32/50 loss=0.5546 valAUC=0.6657 best=0.6736@24 t=74s elapsed=2875.5s
+[resnet] s1 whiten rs0 fold4/5 best_ep=24/32 testAUC=0.6275 (histnorm 0.6275) elapsed=2878.6s
+[ctxemb] s1 rs0 fold4/5 B-oofAUC=0.6735 testAUC=0.6334 heads_val=[0.754, 0.678, 0.646, 0.577] elapsed=2880.0s
+    [s1 ctxspec rs0 fold4/5] ep01/50 loss=0.6861 valAUC=0.6032 best=0.6032@1 t=2s elapsed=2882.4s
+    [s1 ctxspec rs0 fold4/5] ep02/50 loss=0.6605 valAUC=0.5607 best=0.6032@1 t=5s elapsed=2884.7s
+    [s1 ctxspec rs0 fold4/5] ep03/50 loss=0.6518 valAUC=0.5881 best=0.6032@1 t=7s elapsed=2887.1s
+    [s1 ctxspec rs0 fold4/5] ep04/50 loss=0.6476 valAUC=0.5878 best=0.6032@1 t=9s elapsed=2889.4s
+    [s1 ctxspec rs0 fold4/5] ep05/50 loss=0.6396 valAUC=0.5852 best=0.6032@1 t=12s elapsed=2891.8s
+    [s1 ctxspec rs0 fold4/5] ep06/50 loss=0.6315 valAUC=0.5984 best=0.6032@1 t=14s elapsed=2894.2s
+    [s1 ctxspec rs0 fold4/5] ep07/50 loss=0.6288 valAUC=0.5910 best=0.6032@1 t=16s elapsed=2896.5s
+    [s1 ctxspec rs0 fold4/5] ep08/50 loss=0.6197 valAUC=0.6227 best=0.6227@8 t=19s elapsed=2898.9s
+    [s1 ctxspec rs0 fold4/5] ep09/50 loss=0.6150 valAUC=0.6345 best=0.6345@9 t=21s elapsed=2901.2s
+    [s1 ctxspec rs0 fold4/5] ep10/50 loss=0.6122 valAUC=0.6305 best=0.6345@9 t=24s elapsed=2903.6s
+    [s1 ctxspec rs0 fold4/5] ep11/50 loss=0.6073 valAUC=0.6243 best=0.6345@9 t=26s elapsed=2906.0s
+    [s1 ctxspec rs0 fold4/5] ep12/50 loss=0.6055 valAUC=0.6298 best=0.6345@9 t=28s elapsed=2908.3s
+    [s1 ctxspec rs0 fold4/5] ep13/50 loss=0.5991 valAUC=0.6473 best=0.6473@13 t=31s elapsed=2910.7s
+    [s1 ctxspec rs0 fold4/5] ep14/50 loss=0.5954 valAUC=0.6457 best=0.6473@13 t=33s elapsed=2913.0s
+    [s1 ctxspec rs0 fold4/5] ep15/50 loss=0.5909 valAUC=0.6423 best=0.6473@13 t=35s elapsed=2915.4s
+    [s1 ctxspec rs0 fold4/5] ep16/50 loss=0.5859 valAUC=0.6482 best=0.6482@16 t=38s elapsed=2917.7s
+    [s1 ctxspec rs0 fold4/5] ep17/50 loss=0.5834 valAUC=0.6364 best=0.6482@16 t=40s elapsed=2920.1s
+    [s1 ctxspec rs0 fold4/5] ep18/50 loss=0.5808 valAUC=0.6422 best=0.6482@16 t=42s elapsed=2922.5s
+    [s1 ctxspec rs0 fold4/5] ep19/50 loss=0.5738 valAUC=0.6535 best=0.6535@19 t=45s elapsed=2924.8s
+    [s1 ctxspec rs0 fold4/5] ep20/50 loss=0.5733 valAUC=0.6517 best=0.6535@19 t=47s elapsed=2927.2s
+    [s1 ctxspec rs0 fold4/5] ep21/50 loss=0.5729 valAUC=0.6713 best=0.6713@21 t=49s elapsed=2929.5s
+    [s1 ctxspec rs0 fold4/5] ep22/50 loss=0.5676 valAUC=0.6471 best=0.6713@21 t=52s elapsed=2931.9s
+    [s1 ctxspec rs0 fold4/5] ep23/50 loss=0.5606 valAUC=0.6523 best=0.6713@21 t=54s elapsed=2934.2s
+    [s1 ctxspec rs0 fold4/5] ep24/50 loss=0.5569 valAUC=0.6669 best=0.6713@21 t=57s elapsed=2936.6s
+    [s1 ctxspec rs0 fold4/5] ep25/50 loss=0.5567 valAUC=0.6540 best=0.6713@21 t=59s elapsed=2938.9s
+    [s1 ctxspec rs0 fold4/5] ep26/50 loss=0.5555 valAUC=0.6558 best=0.6713@21 t=61s elapsed=2941.3s
+    [s1 ctxspec rs0 fold4/5] ep27/50 loss=0.5491 valAUC=0.6575 best=0.6713@21 t=64s elapsed=2943.7s
+    [s1 ctxspec rs0 fold4/5] ep28/50 loss=0.5439 valAUC=0.6654 best=0.6713@21 t=66s elapsed=2946.0s
+    [s1 ctxspec rs0 fold4/5] ep29/50 loss=0.5423 valAUC=0.6549 best=0.6713@21 t=68s elapsed=2948.4s
+[resnet] s1 ctxspec rs0 fold4/5 best_ep=21/29 testAUC=0.6271 elapsed=2949.9s
+[check] s1 fold4: ctxspec/ctxemb isolation + prefix invariance ok elapsed=2950.6s
+[stream 1 fold 5/5] inputs built (3.5s) spec d std(raw)=1.615 elapsed=2954.1s
+    [s1 whiten rs0 fold5/5] ep01/50 loss=0.6951 valAUC=0.6279 best=0.6279@1 t=3s elapsed=2956.6s
+    [s1 whiten rs0 fold5/5] ep02/50 loss=0.6764 valAUC=0.6565 best=0.6565@2 t=5s elapsed=2959.0s
+    [s1 whiten rs0 fold5/5] ep03/50 loss=0.6725 valAUC=0.6325 best=0.6565@2 t=7s elapsed=2961.3s
+    [s1 whiten rs0 fold5/5] ep04/50 loss=0.6672 valAUC=0.6516 best=0.6565@2 t=10s elapsed=2963.7s
+    [s1 whiten rs0 fold5/5] ep05/50 loss=0.6625 valAUC=0.5909 best=0.6565@2 t=12s elapsed=2966.1s
+    [s1 whiten rs0 fold5/5] ep06/50 loss=0.6567 valAUC=0.6310 best=0.6565@2 t=14s elapsed=2968.4s
+    [s1 whiten rs0 fold5/5] ep07/50 loss=0.6550 valAUC=0.6125 best=0.6565@2 t=17s elapsed=2970.8s
+    [s1 whiten rs0 fold5/5] ep08/50 loss=0.6451 valAUC=0.6399 best=0.6565@2 t=19s elapsed=2973.2s
+    [s1 whiten rs0 fold5/5] ep09/50 loss=0.6448 valAUC=0.6527 best=0.6565@2 t=21s elapsed=2975.5s
+    [s1 whiten rs0 fold5/5] ep10/50 loss=0.6383 valAUC=0.5730 best=0.6565@2 t=24s elapsed=2977.9s
+[resnet] s1 whiten rs0 fold5/5 best_ep=2/10 testAUC=0.5569 (histnorm 0.5569) elapsed=2981.0s
+[ctxemb] s1 rs0 fold5/5 B-oofAUC=0.6292 testAUC=0.5965 heads_val=[0.671, 0.623, 0.694, 0.613] elapsed=2982.6s
+    [s1 ctxspec rs0 fold5/5] ep01/50 loss=0.6904 valAUC=0.5567 best=0.5567@1 t=2s elapsed=2985.0s
+    [s1 ctxspec rs0 fold5/5] ep02/50 loss=0.6733 valAUC=0.5904 best=0.5904@2 t=5s elapsed=2987.4s
+    [s1 ctxspec rs0 fold5/5] ep03/50 loss=0.6664 valAUC=0.6348 best=0.6348@3 t=7s elapsed=2989.8s
+    [s1 ctxspec rs0 fold5/5] ep04/50 loss=0.6638 valAUC=0.6471 best=0.6471@4 t=10s elapsed=2992.2s
+    [s1 ctxspec rs0 fold5/5] ep05/50 loss=0.6603 valAUC=0.6525 best=0.6525@5 t=12s elapsed=2994.6s
+    [s1 ctxspec rs0 fold5/5] ep06/50 loss=0.6523 valAUC=0.6686 best=0.6686@6 t=14s elapsed=2997.0s
+    [s1 ctxspec rs0 fold5/5] ep07/50 loss=0.6492 valAUC=0.6731 best=0.6731@7 t=17s elapsed=2999.4s
+    [s1 ctxspec rs0 fold5/5] ep08/50 loss=0.6422 valAUC=0.6031 best=0.6731@7 t=19s elapsed=3001.8s
+    [s1 ctxspec rs0 fold5/5] ep09/50 loss=0.6405 valAUC=0.6552 best=0.6731@7 t=22s elapsed=3004.2s
+    [s1 ctxspec rs0 fold5/5] ep10/50 loss=0.6319 valAUC=0.5748 best=0.6731@7 t=24s elapsed=3006.6s
+    [s1 ctxspec rs0 fold5/5] ep11/50 loss=0.6291 valAUC=0.6637 best=0.6731@7 t=26s elapsed=3009.0s
+    [s1 ctxspec rs0 fold5/5] ep12/50 loss=0.6247 valAUC=0.6640 best=0.6731@7 t=29s elapsed=3011.4s
+    [s1 ctxspec rs0 fold5/5] ep13/50 loss=0.6255 valAUC=0.6542 best=0.6731@7 t=31s elapsed=3013.8s
+    [s1 ctxspec rs0 fold5/5] ep14/50 loss=0.6175 valAUC=0.6627 best=0.6731@7 t=34s elapsed=3016.2s
+    [s1 ctxspec rs0 fold5/5] ep15/50 loss=0.6107 valAUC=0.5629 best=0.6731@7 t=36s elapsed=3018.6s
+[resnet] s1 ctxspec rs0 fold5/5 best_ep=7/15 testAUC=0.6192 elapsed=3020.2s
+[check] s1 fold5: ctxspec/ctxemb isolation + prefix invariance ok elapsed=3020.9s
+[result stream 1] position_only__lr            all: AUC=0.4971 mac=0.5002 mic=0.4987 | mature: AUC=0.4940 mac=0.4977 mic=0.4978 | subj>=.9=0 max=0.548
+[result stream 1] position_only__hgb           all: AUC=0.4983 mac=0.5024 mic=0.5027 | mature: AUC=0.5015 mac=0.5090 mic=0.5094 | subj>=.9=0 max=0.543
+[result stream 1] hgb_delta32                  all: AUC=0.6572 mac=0.6176 mic=0.6186 | mature: AUC=0.6592 mac=0.6185 mic=0.6178 | subj>=.9=0 max=0.827
+[result stream 1] resnet_whiten                all: AUC=0.6306 mac=0.5887 mic=0.5890 | mature: AUC=0.6306 mac=0.5858 mic=0.5857 | subj>=.9=0 max=0.764
+[result stream 1] resnet_whiten_logit_delta    all: AUC=0.6582 mac=0.6098 mic=0.6108 | mature: AUC=0.6622 mac=0.6128 mic=0.6129 | subj>=.9=0 max=0.874
+[result stream 1] resnet_ctxspec               all: AUC=0.6463 mac=0.5965 mic=0.5971 | mature: AUC=0.6490 mac=0.5959 mic=0.5960 | subj>=.9=0 max=0.780
+[result stream 1] resnet_ctxspec_logit_delta   all: AUC=0.6715 mac=0.6215 mic=0.6224 | mature: AUC=0.6748 mac=0.6261 mic=0.6260 | subj>=.9=0 max=0.857
+[result stream 1] resnet_ctxemb                all: AUC=0.6634 mac=0.6132 mic=0.6140 | mature: AUC=0.6660 mac=0.6144 mic=0.6154 | subj>=.9=0 max=0.859
+[result stream 1] resnet_ctxemb_logit_delta    all: AUC=0.6630 mac=0.6119 mic=0.6125 | mature: AUC=0.6665 mac=0.6134 mic=0.6142 | subj>=.9=0 max=0.848
+[result stream 1] fusionR_delta                all: AUC=0.6768 mac=0.6287 mic=0.6287 | mature: AUC=0.6764 mac=0.6283 mic=0.6279 | subj>=.9=0 max=0.803
+[result stream 1] fusionH_whiten               all: AUC=0.6921 mac=0.6357 mic=0.6367 | mature: AUC=0.6956 mac=0.6367 mic=0.6364 | subj>=.9=0 max=0.874
+[result stream 1] fusionC_ctxspec              all: AUC=0.6943 mac=0.6405 mic=0.6417 | mature: AUC=0.6977 mac=0.6430 mic=0.6425 | subj>=.9=0 max=0.835
+[result stream 1] fusionC_ctxemb               all: AUC=0.6913 mac=0.6383 mic=0.6395 | mature: AUC=0.6946 mac=0.6410 mic=0.6406 | subj>=.9=0 max=0.878
+[repro stream 1] {'resnet_whiten': {'AUC_here': 0.6306130422615611, 'AUC_histnorm': 0.6306130422615611}, 'fusionH_whiten': {'AUC_here': 0.6921410869419025, 'AUC_histnorm': 0.6921410869419025}}
+[sanity stream 1] position_only__lr AUC=0.4971 -> OK
+[sanity stream 1] position_only__hgb AUC=0.4983 -> OK
+[boot stream 1] resnet_ctxspec              vs resnet_whiten  all    dAUC=+0.0158[-0.0015,+0.0321] dmac=+0.0078[-0.0077,+0.0215] dmic=+0.0081[-0.0073,+0.0217]
+[boot stream 1] resnet_ctxspec              vs resnet_whiten  mature dAUC=+0.0182[+0.0003,+0.0364] dmac=+0.0101[-0.0071,+0.0267] dmic=+0.0102[-0.0067,+0.0271]
+[boot stream 1] resnet_ctxspec              vs fusionH_whiten all    dAUC=-0.0451[-0.0670,-0.0232] dmac=-0.0390[-0.0587,-0.0205] dmic=-0.0393[-0.0589,-0.0204]
+[boot stream 1] resnet_ctxspec              vs fusionH_whiten mature dAUC=-0.0459[-0.0687,-0.0230] dmac=-0.0405[-0.0620,-0.0184] dmic=-0.0400[-0.0619,-0.0177]
+[boot stream 1] resnet_ctxspec              vs fusionR_delta  all    dAUC=-0.0297[-0.0549,-0.0050] dmac=-0.0319[-0.0557,-0.0104] dmic=-0.0313[-0.0552,-0.0094]
+[boot stream 1] resnet_ctxspec              vs fusionR_delta  mature dAUC=-0.0268[-0.0531,-0.0019] dmac=-0.0322[-0.0577,-0.0093] dmic=-0.0316[-0.0575,-0.0089]
+[boot stream 1] resnet_ctxspec_logit_delta  vs resnet_whiten  all    dAUC=+0.0401[+0.0209,+0.0582] dmac=+0.0325[+0.0183,+0.0479] dmic=+0.0330[+0.0186,+0.0485]
+[boot stream 1] resnet_ctxspec_logit_delta  vs resnet_whiten  mature dAUC=+0.0432[+0.0220,+0.0643] dmac=+0.0398[+0.0217,+0.0591] dmic=+0.0398[+0.0222,+0.0591]
+[boot stream 1] resnet_ctxspec_logit_delta  vs fusionH_whiten all    dAUC=-0.0207[-0.0394,-0.0028] dmac=-0.0143[-0.0305,+0.0009] dmic=-0.0144[-0.0308,+0.0009]
+[boot stream 1] resnet_ctxspec_logit_delta  vs fusionH_whiten mature dAUC=-0.0209[-0.0415,-0.0020] dmac=-0.0107[-0.0284,+0.0073] dmic=-0.0104[-0.0281,+0.0071]
+[boot stream 1] resnet_ctxspec_logit_delta  vs fusionR_delta  all    dAUC=-0.0053[-0.0302,+0.0176] dmac=-0.0072[-0.0281,+0.0139] dmic=-0.0063[-0.0279,+0.0153]
+[boot stream 1] resnet_ctxspec_logit_delta  vs fusionR_delta  mature dAUC=-0.0018[-0.0269,+0.0235] dmac=-0.0024[-0.0245,+0.0192] dmic=-0.0020[-0.0243,+0.0200]
+[boot stream 1] fusionC_ctxspec             vs resnet_whiten  all    dAUC=+0.0630[+0.0365,+0.0906] dmac=+0.0515[+0.0271,+0.0769] dmic=+0.0524[+0.0288,+0.0786]
+[boot stream 1] fusionC_ctxspec             vs resnet_whiten  mature dAUC=+0.0663[+0.0372,+0.0967] dmac=+0.0569[+0.0281,+0.0867] dmic=+0.0565[+0.0284,+0.0853]
+[boot stream 1] fusionC_ctxspec             vs fusionH_whiten all    dAUC=+0.0022[-0.0060,+0.0109] dmac=+0.0048[-0.0033,+0.0134] dmic=+0.0049[-0.0032,+0.0136]
+[boot stream 1] fusionC_ctxspec             vs fusionH_whiten mature dAUC=+0.0021[-0.0063,+0.0114] dmac=+0.0064[-0.0033,+0.0165] dmic=+0.0062[-0.0036,+0.0166]
+[boot stream 1] fusionC_ctxspec             vs fusionR_delta  all    dAUC=+0.0176[+0.0070,+0.0286] dmac=+0.0118[+0.0014,+0.0221] dmic=+0.0130[+0.0036,+0.0233]
+[boot stream 1] fusionC_ctxspec             vs fusionR_delta  mature dAUC=+0.0213[+0.0101,+0.0324] dmac=+0.0147[+0.0050,+0.0254] dmic=+0.0146[+0.0051,+0.0254]
+[boot stream 1] resnet_ctxemb               vs resnet_whiten  all    dAUC=+0.0320[+0.0162,+0.0481] dmac=+0.0241[+0.0115,+0.0386] dmic=+0.0246[+0.0112,+0.0395]
+[boot stream 1] resnet_ctxemb               vs resnet_whiten  mature dAUC=+0.0343[+0.0156,+0.0541] dmac=+0.0282[+0.0129,+0.0459] dmic=+0.0291[+0.0130,+0.0475]
+[boot stream 1] resnet_ctxemb               vs fusionH_whiten all    dAUC=-0.0288[-0.0524,-0.0050] dmac=-0.0226[-0.0414,-0.0041] dmic=-0.0228[-0.0416,-0.0042]
+[boot stream 1] resnet_ctxemb               vs fusionH_whiten mature dAUC=-0.0298[-0.0556,-0.0042] dmac=-0.0224[-0.0428,-0.0019] dmic=-0.0211[-0.0418,-0.0006]
+[boot stream 1] resnet_ctxemb               vs fusionR_delta  all    dAUC=-0.0134[-0.0438,+0.0197] dmac=-0.0156[-0.0399,+0.0088] dmic=-0.0147[-0.0395,+0.0100]
+[boot stream 1] resnet_ctxemb               vs fusionR_delta  mature dAUC=-0.0107[-0.0442,+0.0260] dmac=-0.0141[-0.0404,+0.0148] dmic=-0.0128[-0.0391,+0.0156]
+[boot stream 1] resnet_ctxemb_logit_delta   vs resnet_whiten  all    dAUC=+0.0316[+0.0164,+0.0474] dmac=+0.0228[+0.0097,+0.0371] dmic=+0.0232[+0.0099,+0.0380]
+[boot stream 1] resnet_ctxemb_logit_delta   vs resnet_whiten  mature dAUC=+0.0348[+0.0169,+0.0543] dmac=+0.0272[+0.0113,+0.0450] dmic=+0.0279[+0.0112,+0.0466]
+[boot stream 1] resnet_ctxemb_logit_delta   vs fusionH_whiten all    dAUC=-0.0292[-0.0523,-0.0059] dmac=-0.0239[-0.0431,-0.0046] dmic=-0.0243[-0.0433,-0.0049]
+[boot stream 1] resnet_ctxemb_logit_delta   vs fusionH_whiten mature dAUC=-0.0293[-0.0559,-0.0034] dmac=-0.0233[-0.0441,-0.0015] dmic=-0.0223[-0.0434,-0.0003]
+[boot stream 1] resnet_ctxemb_logit_delta   vs fusionR_delta  all    dAUC=-0.0139[-0.0435,+0.0178] dmac=-0.0169[-0.0416,+0.0086] dmic=-0.0162[-0.0412,+0.0097]
+[boot stream 1] resnet_ctxemb_logit_delta   vs fusionR_delta  mature dAUC=-0.0102[-0.0438,+0.0256] dmac=-0.0151[-0.0438,+0.0143] dmic=-0.0139[-0.0426,+0.0160]
+[boot stream 1] fusionC_ctxemb              vs resnet_whiten  all    dAUC=+0.0599[+0.0352,+0.0871] dmac=+0.0493[+0.0266,+0.0742] dmic=+0.0502[+0.0279,+0.0743]
+[boot stream 1] fusionC_ctxemb              vs resnet_whiten  mature dAUC=+0.0632[+0.0348,+0.0957] dmac=+0.0549[+0.0283,+0.0840] dmic=+0.0544[+0.0282,+0.0838]
+[boot stream 1] fusionC_ctxemb              vs fusionH_whiten all    dAUC=-0.0009[-0.0060,+0.0048] dmac=+0.0026[-0.0033,+0.0089] dmic=+0.0027[-0.0033,+0.0092]
+[boot stream 1] fusionC_ctxemb              vs fusionH_whiten mature dAUC=-0.0009[-0.0063,+0.0050] dmac=+0.0043[-0.0014,+0.0104] dmic=+0.0042[-0.0016,+0.0106]
+[boot stream 1] fusionC_ctxemb              vs fusionR_delta  all    dAUC=+0.0145[+0.0035,+0.0252] dmac=+0.0096[-0.0000,+0.0187] dmic=+0.0108[+0.0018,+0.0197]
+[boot stream 1] fusionC_ctxemb              vs fusionR_delta  mature dAUC=+0.0182[+0.0054,+0.0306] dmac=+0.0126[+0.0012,+0.0238] dmic=+0.0126[+0.0013,+0.0237]
+[stream 2] baselines reproduced (hgb_delta32/position); fusionR_delta loaded elapsed=3100.3s
+[stream 2 fold 1/5] inputs built (3.5s) spec d std(raw)=1.581 elapsed=3103.8s
+    [s2 whiten rs0 fold1/5] ep01/50 loss=0.6940 valAUC=0.5322 best=0.5322@1 t=2s elapsed=3106.3s
+    [s2 whiten rs0 fold1/5] ep02/50 loss=0.6730 valAUC=0.6206 best=0.6206@2 t=5s elapsed=3108.6s
+    [s2 whiten rs0 fold1/5] ep03/50 loss=0.6653 valAUC=0.5838 best=0.6206@2 t=7s elapsed=3110.9s
+    [s2 whiten rs0 fold1/5] ep04/50 loss=0.6603 valAUC=0.5810 best=0.6206@2 t=9s elapsed=3113.3s
+    [s2 whiten rs0 fold1/5] ep05/50 loss=0.6568 valAUC=0.6044 best=0.6206@2 t=12s elapsed=3115.6s
+    [s2 whiten rs0 fold1/5] ep06/50 loss=0.6526 valAUC=0.6332 best=0.6332@6 t=14s elapsed=3117.9s
+    [s2 whiten rs0 fold1/5] ep07/50 loss=0.6464 valAUC=0.5603 best=0.6332@6 t=16s elapsed=3120.2s
+    [s2 whiten rs0 fold1/5] ep08/50 loss=0.6451 valAUC=0.5454 best=0.6332@6 t=19s elapsed=3122.6s
+    [s2 whiten rs0 fold1/5] ep09/50 loss=0.6388 valAUC=0.6622 best=0.6622@9 t=21s elapsed=3124.9s
+    [s2 whiten rs0 fold1/5] ep10/50 loss=0.6378 valAUC=0.6691 best=0.6691@10 t=23s elapsed=3127.2s
+    [s2 whiten rs0 fold1/5] ep11/50 loss=0.6332 valAUC=0.6697 best=0.6697@11 t=26s elapsed=3129.6s
+    [s2 whiten rs0 fold1/5] ep12/50 loss=0.6327 valAUC=0.6547 best=0.6697@11 t=28s elapsed=3131.9s
+    [s2 whiten rs0 fold1/5] ep13/50 loss=0.6246 valAUC=0.6829 best=0.6829@13 t=30s elapsed=3134.3s
+    [s2 whiten rs0 fold1/5] ep14/50 loss=0.6223 valAUC=0.6071 best=0.6829@13 t=33s elapsed=3136.6s
+    [s2 whiten rs0 fold1/5] ep15/50 loss=0.6183 valAUC=0.6606 best=0.6829@13 t=35s elapsed=3138.9s
+    [s2 whiten rs0 fold1/5] ep16/50 loss=0.6158 valAUC=0.6534 best=0.6829@13 t=37s elapsed=3141.3s
+    [s2 whiten rs0 fold1/5] ep17/50 loss=0.6116 valAUC=0.6462 best=0.6829@13 t=40s elapsed=3143.6s
+    [s2 whiten rs0 fold1/5] ep18/50 loss=0.6109 valAUC=0.6736 best=0.6829@13 t=42s elapsed=3145.9s
+    [s2 whiten rs0 fold1/5] ep19/50 loss=0.6057 valAUC=0.6622 best=0.6829@13 t=44s elapsed=3148.3s
+    [s2 whiten rs0 fold1/5] ep20/50 loss=0.6028 valAUC=0.6992 best=0.6992@20 t=47s elapsed=3150.7s
+    [s2 whiten rs0 fold1/5] ep21/50 loss=0.5972 valAUC=0.6437 best=0.6992@20 t=49s elapsed=3153.0s
+    [s2 whiten rs0 fold1/5] ep22/50 loss=0.5942 valAUC=0.6947 best=0.6992@20 t=52s elapsed=3155.4s
+    [s2 whiten rs0 fold1/5] ep23/50 loss=0.5881 valAUC=0.6603 best=0.6992@20 t=54s elapsed=3157.7s
+    [s2 whiten rs0 fold1/5] ep24/50 loss=0.5877 valAUC=0.6882 best=0.6992@20 t=56s elapsed=3160.1s
+    [s2 whiten rs0 fold1/5] ep25/50 loss=0.5801 valAUC=0.6585 best=0.6992@20 t=59s elapsed=3162.4s
+    [s2 whiten rs0 fold1/5] ep26/50 loss=0.5795 valAUC=0.6571 best=0.6992@20 t=61s elapsed=3164.8s
+    [s2 whiten rs0 fold1/5] ep27/50 loss=0.5775 valAUC=0.6707 best=0.6992@20 t=63s elapsed=3167.1s
+    [s2 whiten rs0 fold1/5] ep28/50 loss=0.5840 valAUC=0.6936 best=0.6992@20 t=66s elapsed=3169.5s
+[resnet] s2 whiten rs0 fold1/5 best_ep=20/28 testAUC=0.6321 (histnorm 0.6321) elapsed=3172.6s
+[ctxemb] s2 rs0 fold1/5 B-oofAUC=0.6849 testAUC=0.6494 heads_val=[0.652, 0.706, 0.761, 0.695] elapsed=3174.3s
+    [s2 ctxspec rs0 fold1/5] ep01/50 loss=0.6891 valAUC=0.5221 best=0.5221@1 t=2s elapsed=3176.7s
+    [s2 ctxspec rs0 fold1/5] ep02/50 loss=0.6706 valAUC=0.6408 best=0.6408@2 t=5s elapsed=3179.0s
+    [s2 ctxspec rs0 fold1/5] ep03/50 loss=0.6585 valAUC=0.5954 best=0.6408@2 t=7s elapsed=3181.4s
+    [s2 ctxspec rs0 fold1/5] ep04/50 loss=0.6557 valAUC=0.6246 best=0.6408@2 t=10s elapsed=3183.8s
+    [s2 ctxspec rs0 fold1/5] ep05/50 loss=0.6472 valAUC=0.5903 best=0.6408@2 t=12s elapsed=3186.2s
+    [s2 ctxspec rs0 fold1/5] ep06/50 loss=0.6464 valAUC=0.5936 best=0.6408@2 t=14s elapsed=3188.6s
+    [s2 ctxspec rs0 fold1/5] ep07/50 loss=0.6378 valAUC=0.5723 best=0.6408@2 t=17s elapsed=3190.9s
+    [s2 ctxspec rs0 fold1/5] ep08/50 loss=0.6383 valAUC=0.5895 best=0.6408@2 t=19s elapsed=3193.3s
+    [s2 ctxspec rs0 fold1/5] ep09/50 loss=0.6321 valAUC=0.6402 best=0.6408@2 t=21s elapsed=3195.7s
+    [s2 ctxspec rs0 fold1/5] ep10/50 loss=0.6285 valAUC=0.6647 best=0.6647@10 t=24s elapsed=3198.1s
+    [s2 ctxspec rs0 fold1/5] ep11/50 loss=0.6228 valAUC=0.6665 best=0.6665@11 t=26s elapsed=3200.5s
+    [s2 ctxspec rs0 fold1/5] ep12/50 loss=0.6260 valAUC=0.6090 best=0.6665@11 t=29s elapsed=3202.9s
+    [s2 ctxspec rs0 fold1/5] ep13/50 loss=0.6161 valAUC=0.6529 best=0.6665@11 t=31s elapsed=3205.3s
+    [s2 ctxspec rs0 fold1/5] ep14/50 loss=0.6130 valAUC=0.6307 best=0.6665@11 t=33s elapsed=3207.6s
+    [s2 ctxspec rs0 fold1/5] ep15/50 loss=0.6056 valAUC=0.6396 best=0.6665@11 t=36s elapsed=3210.0s
+    [s2 ctxspec rs0 fold1/5] ep16/50 loss=0.6032 valAUC=0.5866 best=0.6665@11 t=38s elapsed=3212.4s
+    [s2 ctxspec rs0 fold1/5] ep17/50 loss=0.6004 valAUC=0.6620 best=0.6665@11 t=41s elapsed=3214.8s
+    [s2 ctxspec rs0 fold1/5] ep18/50 loss=0.5967 valAUC=0.6556 best=0.6665@11 t=43s elapsed=3217.2s
+    [s2 ctxspec rs0 fold1/5] ep19/50 loss=0.5934 valAUC=0.6223 best=0.6665@11 t=45s elapsed=3219.6s
+[resnet] s2 ctxspec rs0 fold1/5 best_ep=11/19 testAUC=0.6130 elapsed=3221.1s
+[check] s2 fold1: ctxspec/ctxemb isolation + prefix invariance ok elapsed=3221.8s
+[stream 2 fold 2/5] inputs built (3.4s) spec d std(raw)=1.637 elapsed=3225.2s
+    [s2 whiten rs0 fold2/5] ep01/50 loss=0.7029 valAUC=0.5427 best=0.5427@1 t=3s elapsed=3227.7s
+    [s2 whiten rs0 fold2/5] ep02/50 loss=0.6910 valAUC=0.5691 best=0.5691@2 t=5s elapsed=3230.0s
+    [s2 whiten rs0 fold2/5] ep03/50 loss=0.6860 valAUC=0.5505 best=0.5691@2 t=7s elapsed=3232.4s
+    [s2 whiten rs0 fold2/5] ep04/50 loss=0.6827 valAUC=0.6077 best=0.6077@4 t=10s elapsed=3234.7s
+    [s2 whiten rs0 fold2/5] ep05/50 loss=0.6776 valAUC=0.6026 best=0.6077@4 t=12s elapsed=3237.0s
+    [s2 whiten rs0 fold2/5] ep06/50 loss=0.6733 valAUC=0.6146 best=0.6146@6 t=14s elapsed=3239.4s
+    [s2 whiten rs0 fold2/5] ep07/50 loss=0.6693 valAUC=0.6023 best=0.6146@6 t=17s elapsed=3241.7s
+    [s2 whiten rs0 fold2/5] ep08/50 loss=0.6652 valAUC=0.6239 best=0.6239@8 t=19s elapsed=3244.0s
+    [s2 whiten rs0 fold2/5] ep09/50 loss=0.6677 valAUC=0.6184 best=0.6239@8 t=21s elapsed=3246.4s
+    [s2 whiten rs0 fold2/5] ep10/50 loss=0.6603 valAUC=0.5925 best=0.6239@8 t=24s elapsed=3248.7s
+    [s2 whiten rs0 fold2/5] ep11/50 loss=0.6608 valAUC=0.6162 best=0.6239@8 t=26s elapsed=3251.1s
+    [s2 whiten rs0 fold2/5] ep12/50 loss=0.6524 valAUC=0.6125 best=0.6239@8 t=28s elapsed=3253.4s
+    [s2 whiten rs0 fold2/5] ep13/50 loss=0.6491 valAUC=0.6204 best=0.6239@8 t=31s elapsed=3255.8s
+    [s2 whiten rs0 fold2/5] ep14/50 loss=0.6476 valAUC=0.6510 best=0.6510@14 t=33s elapsed=3258.1s
+    [s2 whiten rs0 fold2/5] ep15/50 loss=0.6429 valAUC=0.6582 best=0.6582@15 t=35s elapsed=3260.4s
+    [s2 whiten rs0 fold2/5] ep16/50 loss=0.6425 valAUC=0.6672 best=0.6672@16 t=38s elapsed=3262.8s
+    [s2 whiten rs0 fold2/5] ep17/50 loss=0.6391 valAUC=0.6304 best=0.6672@16 t=40s elapsed=3265.1s
+    [s2 whiten rs0 fold2/5] ep18/50 loss=0.6349 valAUC=0.6612 best=0.6672@16 t=42s elapsed=3267.5s
+    [s2 whiten rs0 fold2/5] ep19/50 loss=0.6302 valAUC=0.6587 best=0.6672@16 t=45s elapsed=3269.8s
+    [s2 whiten rs0 fold2/5] ep20/50 loss=0.6262 valAUC=0.6441 best=0.6672@16 t=47s elapsed=3272.2s
+    [s2 whiten rs0 fold2/5] ep21/50 loss=0.6291 valAUC=0.6432 best=0.6672@16 t=49s elapsed=3274.5s
+    [s2 whiten rs0 fold2/5] ep22/50 loss=0.6259 valAUC=0.6456 best=0.6672@16 t=52s elapsed=3276.9s
+    [s2 whiten rs0 fold2/5] ep23/50 loss=0.6214 valAUC=0.6632 best=0.6672@16 t=54s elapsed=3279.2s
+    [s2 whiten rs0 fold2/5] ep24/50 loss=0.6169 valAUC=0.6700 best=0.6700@24 t=56s elapsed=3281.6s
+    [s2 whiten rs0 fold2/5] ep25/50 loss=0.6153 valAUC=0.6230 best=0.6700@24 t=59s elapsed=3284.0s
+    [s2 whiten rs0 fold2/5] ep26/50 loss=0.6123 valAUC=0.6576 best=0.6700@24 t=61s elapsed=3286.3s
+    [s2 whiten rs0 fold2/5] ep27/50 loss=0.6089 valAUC=0.6752 best=0.6752@27 t=63s elapsed=3288.7s
+    [s2 whiten rs0 fold2/5] ep28/50 loss=0.6056 valAUC=0.6709 best=0.6752@27 t=66s elapsed=3291.0s
+    [s2 whiten rs0 fold2/5] ep29/50 loss=0.6042 valAUC=0.6671 best=0.6752@27 t=68s elapsed=3293.4s
+    [s2 whiten rs0 fold2/5] ep30/50 loss=0.6027 valAUC=0.6540 best=0.6752@27 t=71s elapsed=3295.7s
+    [s2 whiten rs0 fold2/5] ep31/50 loss=0.5943 valAUC=0.6664 best=0.6752@27 t=73s elapsed=3298.1s
+    [s2 whiten rs0 fold2/5] ep32/50 loss=0.5933 valAUC=0.6719 best=0.6752@27 t=75s elapsed=3300.4s
+    [s2 whiten rs0 fold2/5] ep33/50 loss=0.5942 valAUC=0.6399 best=0.6752@27 t=78s elapsed=3302.8s
+    [s2 whiten rs0 fold2/5] ep34/50 loss=0.5889 valAUC=0.6515 best=0.6752@27 t=80s elapsed=3305.1s
+    [s2 whiten rs0 fold2/5] ep35/50 loss=0.5818 valAUC=0.6711 best=0.6752@27 t=82s elapsed=3307.5s
+[resnet] s2 whiten rs0 fold2/5 best_ep=27/35 testAUC=0.7206 (histnorm 0.7206) elapsed=3310.6s
+[ctxemb] s2 rs0 fold2/5 B-oofAUC=0.6484 testAUC=0.7395 heads_val=[0.7, 0.709, 0.648, 0.576] elapsed=3312.0s
+    [s2 ctxspec rs0 fold2/5] ep01/50 loss=0.6918 valAUC=0.5483 best=0.5483@1 t=2s elapsed=3314.3s
+    [s2 ctxspec rs0 fold2/5] ep02/50 loss=0.6839 valAUC=0.5910 best=0.5910@2 t=5s elapsed=3316.7s
+    [s2 ctxspec rs0 fold2/5] ep03/50 loss=0.6800 valAUC=0.5883 best=0.5910@2 t=7s elapsed=3319.1s
+    [s2 ctxspec rs0 fold2/5] ep04/50 loss=0.6731 valAUC=0.5799 best=0.5910@2 t=10s elapsed=3321.5s
+    [s2 ctxspec rs0 fold2/5] ep05/50 loss=0.6710 valAUC=0.5950 best=0.5950@5 t=12s elapsed=3323.9s
+    [s2 ctxspec rs0 fold2/5] ep06/50 loss=0.6662 valAUC=0.5960 best=0.5960@6 t=14s elapsed=3326.3s
+    [s2 ctxspec rs0 fold2/5] ep07/50 loss=0.6680 valAUC=0.5939 best=0.5960@6 t=17s elapsed=3328.6s
+    [s2 ctxspec rs0 fold2/5] ep08/50 loss=0.6589 valAUC=0.6125 best=0.6125@8 t=19s elapsed=3331.0s
+    [s2 ctxspec rs0 fold2/5] ep09/50 loss=0.6605 valAUC=0.6024 best=0.6125@8 t=21s elapsed=3333.4s
+    [s2 ctxspec rs0 fold2/5] ep10/50 loss=0.6542 valAUC=0.6088 best=0.6125@8 t=24s elapsed=3335.8s
+    [s2 ctxspec rs0 fold2/5] ep11/50 loss=0.6519 valAUC=0.6074 best=0.6125@8 t=26s elapsed=3338.2s
+    [s2 ctxspec rs0 fold2/5] ep12/50 loss=0.6465 valAUC=0.6150 best=0.6150@12 t=29s elapsed=3340.6s
+    [s2 ctxspec rs0 fold2/5] ep13/50 loss=0.6430 valAUC=0.6184 best=0.6184@13 t=31s elapsed=3343.0s
+    [s2 ctxspec rs0 fold2/5] ep14/50 loss=0.6424 valAUC=0.6418 best=0.6418@14 t=33s elapsed=3345.3s
+    [s2 ctxspec rs0 fold2/5] ep15/50 loss=0.6380 valAUC=0.6413 best=0.6418@14 t=36s elapsed=3347.7s
+    [s2 ctxspec rs0 fold2/5] ep16/50 loss=0.6363 valAUC=0.6314 best=0.6418@14 t=38s elapsed=3350.1s
+    [s2 ctxspec rs0 fold2/5] ep17/50 loss=0.6314 valAUC=0.6292 best=0.6418@14 t=41s elapsed=3352.5s
+    [s2 ctxspec rs0 fold2/5] ep18/50 loss=0.6309 valAUC=0.6550 best=0.6550@18 t=43s elapsed=3354.9s
+    [s2 ctxspec rs0 fold2/5] ep19/50 loss=0.6207 valAUC=0.6402 best=0.6550@18 t=45s elapsed=3357.3s
+    [s2 ctxspec rs0 fold2/5] ep20/50 loss=0.6217 valAUC=0.6329 best=0.6550@18 t=48s elapsed=3359.6s
+    [s2 ctxspec rs0 fold2/5] ep21/50 loss=0.6227 valAUC=0.6507 best=0.6550@18 t=50s elapsed=3362.0s
+    [s2 ctxspec rs0 fold2/5] ep22/50 loss=0.6156 valAUC=0.6441 best=0.6550@18 t=52s elapsed=3364.4s
+    [s2 ctxspec rs0 fold2/5] ep23/50 loss=0.6137 valAUC=0.6577 best=0.6577@23 t=55s elapsed=3366.8s
+    [s2 ctxspec rs0 fold2/5] ep24/50 loss=0.6112 valAUC=0.6520 best=0.6577@23 t=57s elapsed=3369.2s
+    [s2 ctxspec rs0 fold2/5] ep25/50 loss=0.6062 valAUC=0.6512 best=0.6577@23 t=60s elapsed=3371.5s
+    [s2 ctxspec rs0 fold2/5] ep26/50 loss=0.6012 valAUC=0.6504 best=0.6577@23 t=62s elapsed=3373.9s
+    [s2 ctxspec rs0 fold2/5] ep27/50 loss=0.6032 valAUC=0.6630 best=0.6630@27 t=64s elapsed=3376.3s
+    [s2 ctxspec rs0 fold2/5] ep28/50 loss=0.5971 valAUC=0.6577 best=0.6630@27 t=67s elapsed=3378.7s
+    [s2 ctxspec rs0 fold2/5] ep29/50 loss=0.5949 valAUC=0.6593 best=0.6630@27 t=69s elapsed=3381.1s
+    [s2 ctxspec rs0 fold2/5] ep30/50 loss=0.5905 valAUC=0.6383 best=0.6630@27 t=71s elapsed=3383.5s
+    [s2 ctxspec rs0 fold2/5] ep31/50 loss=0.5844 valAUC=0.6662 best=0.6662@31 t=74s elapsed=3385.8s
+    [s2 ctxspec rs0 fold2/5] ep32/50 loss=0.5888 valAUC=0.6760 best=0.6760@32 t=76s elapsed=3388.2s
+    [s2 ctxspec rs0 fold2/5] ep33/50 loss=0.5842 valAUC=0.6482 best=0.6760@32 t=79s elapsed=3390.6s
+    [s2 ctxspec rs0 fold2/5] ep34/50 loss=0.5814 valAUC=0.6531 best=0.6760@32 t=81s elapsed=3393.0s
+    [s2 ctxspec rs0 fold2/5] ep35/50 loss=0.5758 valAUC=0.6643 best=0.6760@32 t=83s elapsed=3395.4s
+    [s2 ctxspec rs0 fold2/5] ep36/50 loss=0.5742 valAUC=0.6565 best=0.6760@32 t=86s elapsed=3397.8s
+    [s2 ctxspec rs0 fold2/5] ep37/50 loss=0.5709 valAUC=0.6370 best=0.6760@32 t=88s elapsed=3400.1s
+    [s2 ctxspec rs0 fold2/5] ep38/50 loss=0.5714 valAUC=0.6699 best=0.6760@32 t=91s elapsed=3402.5s
+    [s2 ctxspec rs0 fold2/5] ep39/50 loss=0.5639 valAUC=0.6420 best=0.6760@32 t=93s elapsed=3404.9s
+    [s2 ctxspec rs0 fold2/5] ep40/50 loss=0.5584 valAUC=0.6565 best=0.6760@32 t=95s elapsed=3407.3s
+[resnet] s2 ctxspec rs0 fold2/5 best_ep=32/40 testAUC=0.7170 elapsed=3408.8s
+[check] s2 fold2: ctxspec/ctxemb isolation + prefix invariance ok elapsed=3409.5s
+[stream 2 fold 3/5] inputs built (3.5s) spec d std(raw)=1.596 elapsed=3413.1s
+    [s2 whiten rs0 fold3/5] ep01/50 loss=0.6947 valAUC=0.5815 best=0.5815@1 t=3s elapsed=3415.6s
+    [s2 whiten rs0 fold3/5] ep02/50 loss=0.6820 valAUC=0.6074 best=0.6074@2 t=5s elapsed=3418.0s
+    [s2 whiten rs0 fold3/5] ep03/50 loss=0.6777 valAUC=0.6193 best=0.6193@3 t=7s elapsed=3420.3s
+    [s2 whiten rs0 fold3/5] ep04/50 loss=0.6719 valAUC=0.6016 best=0.6193@3 t=10s elapsed=3422.7s
+    [s2 whiten rs0 fold3/5] ep05/50 loss=0.6627 valAUC=0.5887 best=0.6193@3 t=12s elapsed=3425.0s
+    [s2 whiten rs0 fold3/5] ep06/50 loss=0.6601 valAUC=0.6309 best=0.6309@6 t=14s elapsed=3427.4s
+    [s2 whiten rs0 fold3/5] ep07/50 loss=0.6565 valAUC=0.6412 best=0.6412@7 t=17s elapsed=3429.8s
+    [s2 whiten rs0 fold3/5] ep08/50 loss=0.6527 valAUC=0.6298 best=0.6412@7 t=19s elapsed=3432.1s
+    [s2 whiten rs0 fold3/5] ep09/50 loss=0.6500 valAUC=0.6472 best=0.6472@9 t=21s elapsed=3434.5s
+    [s2 whiten rs0 fold3/5] ep10/50 loss=0.6476 valAUC=0.6466 best=0.6472@9 t=24s elapsed=3436.9s
+    [s2 whiten rs0 fold3/5] ep11/50 loss=0.6447 valAUC=0.6532 best=0.6532@11 t=26s elapsed=3439.2s
+    [s2 whiten rs0 fold3/5] ep12/50 loss=0.6376 valAUC=0.6281 best=0.6532@11 t=29s elapsed=3441.6s
+    [s2 whiten rs0 fold3/5] ep13/50 loss=0.6427 valAUC=0.6469 best=0.6532@11 t=31s elapsed=3443.9s
+    [s2 whiten rs0 fold3/5] ep14/50 loss=0.6369 valAUC=0.6467 best=0.6532@11 t=33s elapsed=3446.3s
+    [s2 whiten rs0 fold3/5] ep15/50 loss=0.6288 valAUC=0.6339 best=0.6532@11 t=36s elapsed=3448.7s
+    [s2 whiten rs0 fold3/5] ep16/50 loss=0.6286 valAUC=0.6743 best=0.6743@16 t=38s elapsed=3451.0s
+    [s2 whiten rs0 fold3/5] ep17/50 loss=0.6237 valAUC=0.6640 best=0.6743@16 t=40s elapsed=3453.4s
+    [s2 whiten rs0 fold3/5] ep18/50 loss=0.6230 valAUC=0.6456 best=0.6743@16 t=43s elapsed=3455.8s
+    [s2 whiten rs0 fold3/5] ep19/50 loss=0.6192 valAUC=0.6719 best=0.6743@16 t=45s elapsed=3458.2s
+    [s2 whiten rs0 fold3/5] ep20/50 loss=0.6133 valAUC=0.6650 best=0.6743@16 t=47s elapsed=3460.5s
+    [s2 whiten rs0 fold3/5] ep21/50 loss=0.6144 valAUC=0.6722 best=0.6743@16 t=50s elapsed=3462.9s
+    [s2 whiten rs0 fold3/5] ep22/50 loss=0.6076 valAUC=0.6762 best=0.6762@22 t=52s elapsed=3465.3s
+    [s2 whiten rs0 fold3/5] ep23/50 loss=0.6042 valAUC=0.6647 best=0.6762@22 t=55s elapsed=3467.7s
+    [s2 whiten rs0 fold3/5] ep24/50 loss=0.6036 valAUC=0.6703 best=0.6762@22 t=57s elapsed=3470.0s
+    [s2 whiten rs0 fold3/5] ep25/50 loss=0.5987 valAUC=0.6736 best=0.6762@22 t=59s elapsed=3472.4s
+    [s2 whiten rs0 fold3/5] ep26/50 loss=0.6001 valAUC=0.6678 best=0.6762@22 t=62s elapsed=3474.8s
+    [s2 whiten rs0 fold3/5] ep27/50 loss=0.6001 valAUC=0.6740 best=0.6762@22 t=64s elapsed=3477.2s
+    [s2 whiten rs0 fold3/5] ep28/50 loss=0.5886 valAUC=0.6683 best=0.6762@22 t=66s elapsed=3479.5s
+    [s2 whiten rs0 fold3/5] ep29/50 loss=0.5868 valAUC=0.6581 best=0.6762@22 t=69s elapsed=3481.9s
+    [s2 whiten rs0 fold3/5] ep30/50 loss=0.5864 valAUC=0.6852 best=0.6852@30 t=71s elapsed=3484.3s
+    [s2 whiten rs0 fold3/5] ep31/50 loss=0.5821 valAUC=0.6834 best=0.6852@30 t=74s elapsed=3486.7s
+    [s2 whiten rs0 fold3/5] ep32/50 loss=0.5780 valAUC=0.6871 best=0.6871@32 t=76s elapsed=3489.1s
+    [s2 whiten rs0 fold3/5] ep33/50 loss=0.5797 valAUC=0.6777 best=0.6871@32 t=78s elapsed=3491.4s
+    [s2 whiten rs0 fold3/5] ep34/50 loss=0.5699 valAUC=0.6776 best=0.6871@32 t=81s elapsed=3493.8s
+    [s2 whiten rs0 fold3/5] ep35/50 loss=0.5659 valAUC=0.6710 best=0.6871@32 t=83s elapsed=3496.2s
+    [s2 whiten rs0 fold3/5] ep36/50 loss=0.5649 valAUC=0.6615 best=0.6871@32 t=86s elapsed=3498.6s
+    [s2 whiten rs0 fold3/5] ep37/50 loss=0.5637 valAUC=0.6445 best=0.6871@32 t=88s elapsed=3501.0s
+    [s2 whiten rs0 fold3/5] ep38/50 loss=0.5560 valAUC=0.6815 best=0.6871@32 t=90s elapsed=3503.3s
+    [s2 whiten rs0 fold3/5] ep39/50 loss=0.5521 valAUC=0.6807 best=0.6871@32 t=93s elapsed=3505.7s
+    [s2 whiten rs0 fold3/5] ep40/50 loss=0.5447 valAUC=0.6814 best=0.6871@32 t=95s elapsed=3508.1s
+[resnet] s2 whiten rs0 fold3/5 best_ep=32/40 testAUC=0.6689 (histnorm 0.6689) elapsed=3511.2s
+[ctxemb] s2 rs0 fold3/5 B-oofAUC=0.6634 testAUC=0.6919 heads_val=[0.707, 0.665, 0.6, 0.686] elapsed=3512.6s
+    [s2 ctxspec rs0 fold3/5] ep01/50 loss=0.6917 valAUC=0.5537 best=0.5537@1 t=2s elapsed=3515.0s
+    [s2 ctxspec rs0 fold3/5] ep02/50 loss=0.6776 valAUC=0.5961 best=0.5961@2 t=5s elapsed=3517.4s
+    [s2 ctxspec rs0 fold3/5] ep03/50 loss=0.6721 valAUC=0.5868 best=0.5961@2 t=7s elapsed=3519.8s
+    [s2 ctxspec rs0 fold3/5] ep04/50 loss=0.6630 valAUC=0.6152 best=0.6152@4 t=10s elapsed=3522.2s
+    [s2 ctxspec rs0 fold3/5] ep05/50 loss=0.6588 valAUC=0.6010 best=0.6152@4 t=12s elapsed=3524.6s
+    [s2 ctxspec rs0 fold3/5] ep06/50 loss=0.6560 valAUC=0.6314 best=0.6314@6 t=14s elapsed=3527.1s
+    [s2 ctxspec rs0 fold3/5] ep07/50 loss=0.6494 valAUC=0.6356 best=0.6356@7 t=17s elapsed=3529.5s
+    [s2 ctxspec rs0 fold3/5] ep08/50 loss=0.6472 valAUC=0.6348 best=0.6356@7 t=19s elapsed=3531.9s
+    [s2 ctxspec rs0 fold3/5] ep09/50 loss=0.6437 valAUC=0.6195 best=0.6356@7 t=22s elapsed=3534.3s
+    [s2 ctxspec rs0 fold3/5] ep10/50 loss=0.6411 valAUC=0.6505 best=0.6505@10 t=24s elapsed=3536.7s
+    [s2 ctxspec rs0 fold3/5] ep11/50 loss=0.6382 valAUC=0.6452 best=0.6505@10 t=27s elapsed=3539.1s
+    [s2 ctxspec rs0 fold3/5] ep12/50 loss=0.6306 valAUC=0.6475 best=0.6505@10 t=29s elapsed=3541.5s
+    [s2 ctxspec rs0 fold3/5] ep13/50 loss=0.6381 valAUC=0.6495 best=0.6505@10 t=31s elapsed=3543.9s
+    [s2 ctxspec rs0 fold3/5] ep14/50 loss=0.6320 valAUC=0.6597 best=0.6597@14 t=34s elapsed=3546.3s
+    [s2 ctxspec rs0 fold3/5] ep15/50 loss=0.6256 valAUC=0.6450 best=0.6597@14 t=36s elapsed=3548.7s
+    [s2 ctxspec rs0 fold3/5] ep16/50 loss=0.6211 valAUC=0.6662 best=0.6662@16 t=39s elapsed=3551.1s
+    [s2 ctxspec rs0 fold3/5] ep17/50 loss=0.6165 valAUC=0.6514 best=0.6662@16 t=41s elapsed=3553.6s
+    [s2 ctxspec rs0 fold3/5] ep18/50 loss=0.6165 valAUC=0.6368 best=0.6662@16 t=43s elapsed=3556.0s
+    [s2 ctxspec rs0 fold3/5] ep19/50 loss=0.6129 valAUC=0.6807 best=0.6807@19 t=46s elapsed=3558.4s
+    [s2 ctxspec rs0 fold3/5] ep20/50 loss=0.6043 valAUC=0.6741 best=0.6807@19 t=48s elapsed=3560.8s
+    [s2 ctxspec rs0 fold3/5] ep21/50 loss=0.6017 valAUC=0.6688 best=0.6807@19 t=51s elapsed=3563.2s
+    [s2 ctxspec rs0 fold3/5] ep22/50 loss=0.5968 valAUC=0.6649 best=0.6807@19 t=53s elapsed=3565.6s
+    [s2 ctxspec rs0 fold3/5] ep23/50 loss=0.5968 valAUC=0.6670 best=0.6807@19 t=55s elapsed=3568.0s
+    [s2 ctxspec rs0 fold3/5] ep24/50 loss=0.5883 valAUC=0.6486 best=0.6807@19 t=58s elapsed=3570.4s
+    [s2 ctxspec rs0 fold3/5] ep25/50 loss=0.5923 valAUC=0.6834 best=0.6834@25 t=60s elapsed=3572.8s
+    [s2 ctxspec rs0 fold3/5] ep26/50 loss=0.5848 valAUC=0.6771 best=0.6834@25 t=63s elapsed=3575.2s
+    [s2 ctxspec rs0 fold3/5] ep27/50 loss=0.5886 valAUC=0.6682 best=0.6834@25 t=65s elapsed=3577.6s
+    [s2 ctxspec rs0 fold3/5] ep28/50 loss=0.5751 valAUC=0.6610 best=0.6834@25 t=67s elapsed=3580.1s
+    [s2 ctxspec rs0 fold3/5] ep29/50 loss=0.5754 valAUC=0.6516 best=0.6834@25 t=70s elapsed=3582.5s
+    [s2 ctxspec rs0 fold3/5] ep30/50 loss=0.5680 valAUC=0.6787 best=0.6834@25 t=72s elapsed=3584.9s
+    [s2 ctxspec rs0 fold3/5] ep31/50 loss=0.5661 valAUC=0.6698 best=0.6834@25 t=75s elapsed=3587.3s
+    [s2 ctxspec rs0 fold3/5] ep32/50 loss=0.5630 valAUC=0.6759 best=0.6834@25 t=77s elapsed=3589.7s
+    [s2 ctxspec rs0 fold3/5] ep33/50 loss=0.5622 valAUC=0.6529 best=0.6834@25 t=80s elapsed=3592.1s
+[resnet] s2 ctxspec rs0 fold3/5 best_ep=25/33 testAUC=0.6487 elapsed=3593.6s
+[check] s2 fold3: ctxspec/ctxemb isolation + prefix invariance ok elapsed=3594.4s
+[stream 2 fold 4/5] inputs built (3.4s) spec d std(raw)=1.608 elapsed=3597.8s
+    [s2 whiten rs0 fold4/5] ep01/50 loss=0.6950 valAUC=0.5751 best=0.5751@1 t=3s elapsed=3600.3s
+    [s2 whiten rs0 fold4/5] ep02/50 loss=0.6698 valAUC=0.5326 best=0.5751@1 t=5s elapsed=3602.6s
+    [s2 whiten rs0 fold4/5] ep03/50 loss=0.6601 valAUC=0.5579 best=0.5751@1 t=7s elapsed=3604.9s
+    [s2 whiten rs0 fold4/5] ep04/50 loss=0.6563 valAUC=0.5814 best=0.5814@4 t=9s elapsed=3607.2s
+    [s2 whiten rs0 fold4/5] ep05/50 loss=0.6511 valAUC=0.5826 best=0.5826@5 t=12s elapsed=3609.5s
+    [s2 whiten rs0 fold4/5] ep06/50 loss=0.6427 valAUC=0.5955 best=0.5955@6 t=14s elapsed=3611.8s
+    [s2 whiten rs0 fold4/5] ep07/50 loss=0.6431 valAUC=0.6010 best=0.6010@7 t=16s elapsed=3614.1s
+    [s2 whiten rs0 fold4/5] ep08/50 loss=0.6315 valAUC=0.5871 best=0.6010@7 t=19s elapsed=3616.5s
+    [s2 whiten rs0 fold4/5] ep09/50 loss=0.6333 valAUC=0.6026 best=0.6026@9 t=21s elapsed=3618.8s
+    [s2 whiten rs0 fold4/5] ep10/50 loss=0.6237 valAUC=0.6121 best=0.6121@10 t=23s elapsed=3621.1s
+    [s2 whiten rs0 fold4/5] ep11/50 loss=0.6239 valAUC=0.6157 best=0.6157@11 t=26s elapsed=3623.4s
+    [s2 whiten rs0 fold4/5] ep12/50 loss=0.6162 valAUC=0.6352 best=0.6352@12 t=28s elapsed=3625.7s
+    [s2 whiten rs0 fold4/5] ep13/50 loss=0.6096 valAUC=0.6335 best=0.6352@12 t=30s elapsed=3628.0s
+    [s2 whiten rs0 fold4/5] ep14/50 loss=0.6091 valAUC=0.6547 best=0.6547@14 t=33s elapsed=3630.3s
+    [s2 whiten rs0 fold4/5] ep15/50 loss=0.6043 valAUC=0.6294 best=0.6547@14 t=35s elapsed=3632.6s
+    [s2 whiten rs0 fold4/5] ep16/50 loss=0.5985 valAUC=0.6338 best=0.6547@14 t=37s elapsed=3634.9s
+    [s2 whiten rs0 fold4/5] ep17/50 loss=0.5962 valAUC=0.6215 best=0.6547@14 t=39s elapsed=3637.2s
+    [s2 whiten rs0 fold4/5] ep18/50 loss=0.5933 valAUC=0.6321 best=0.6547@14 t=42s elapsed=3639.4s
+    [s2 whiten rs0 fold4/5] ep19/50 loss=0.5862 valAUC=0.6507 best=0.6547@14 t=44s elapsed=3641.6s
+    [s2 whiten rs0 fold4/5] ep20/50 loss=0.5872 valAUC=0.6564 best=0.6564@20 t=46s elapsed=3643.9s
+    [s2 whiten rs0 fold4/5] ep21/50 loss=0.5792 valAUC=0.6614 best=0.6614@21 t=48s elapsed=3646.2s
+    [s2 whiten rs0 fold4/5] ep22/50 loss=0.5765 valAUC=0.6152 best=0.6614@21 t=51s elapsed=3648.5s
+    [s2 whiten rs0 fold4/5] ep23/50 loss=0.5790 valAUC=0.6584 best=0.6614@21 t=53s elapsed=3650.8s
+    [s2 whiten rs0 fold4/5] ep24/50 loss=0.5748 valAUC=0.6665 best=0.6665@24 t=55s elapsed=3653.2s
+    [s2 whiten rs0 fold4/5] ep25/50 loss=0.5662 valAUC=0.6194 best=0.6665@24 t=58s elapsed=3655.5s
+    [s2 whiten rs0 fold4/5] ep26/50 loss=0.5683 valAUC=0.6364 best=0.6665@24 t=60s elapsed=3657.8s
+    [s2 whiten rs0 fold4/5] ep27/50 loss=0.5707 valAUC=0.6472 best=0.6665@24 t=62s elapsed=3660.1s
+    [s2 whiten rs0 fold4/5] ep28/50 loss=0.5563 valAUC=0.6589 best=0.6665@24 t=65s elapsed=3662.4s
+    [s2 whiten rs0 fold4/5] ep29/50 loss=0.5589 valAUC=0.6559 best=0.6665@24 t=67s elapsed=3664.7s
+    [s2 whiten rs0 fold4/5] ep30/50 loss=0.5539 valAUC=0.6523 best=0.6665@24 t=69s elapsed=3667.0s
+    [s2 whiten rs0 fold4/5] ep31/50 loss=0.5485 valAUC=0.6433 best=0.6665@24 t=72s elapsed=3669.3s
+    [s2 whiten rs0 fold4/5] ep32/50 loss=0.5540 valAUC=0.6475 best=0.6665@24 t=74s elapsed=3671.6s
+[resnet] s2 whiten rs0 fold4/5 best_ep=24/32 testAUC=0.6129 (histnorm 0.6129) elapsed=3674.7s
+[ctxemb] s2 rs0 fold4/5 B-oofAUC=0.6754 testAUC=0.6232 heads_val=[0.755, 0.664, 0.664, 0.587] elapsed=3676.2s
+    [s2 ctxspec rs0 fold4/5] ep01/50 loss=0.6851 valAUC=0.5941 best=0.5941@1 t=2s elapsed=3678.5s
+    [s2 ctxspec rs0 fold4/5] ep02/50 loss=0.6561 valAUC=0.5282 best=0.5941@1 t=5s elapsed=3680.9s
+    [s2 ctxspec rs0 fold4/5] ep03/50 loss=0.6449 valAUC=0.6207 best=0.6207@3 t=7s elapsed=3683.2s
+    [s2 ctxspec rs0 fold4/5] ep04/50 loss=0.6428 valAUC=0.6066 best=0.6207@3 t=9s elapsed=3685.6s
+    [s2 ctxspec rs0 fold4/5] ep05/50 loss=0.6332 valAUC=0.6231 best=0.6231@5 t=12s elapsed=3687.9s
+    [s2 ctxspec rs0 fold4/5] ep06/50 loss=0.6256 valAUC=0.6040 best=0.6231@5 t=14s elapsed=3690.3s
+    [s2 ctxspec rs0 fold4/5] ep07/50 loss=0.6252 valAUC=0.5818 best=0.6231@5 t=16s elapsed=3692.6s
+    [s2 ctxspec rs0 fold4/5] ep08/50 loss=0.6169 valAUC=0.5886 best=0.6231@5 t=19s elapsed=3694.9s
+    [s2 ctxspec rs0 fold4/5] ep09/50 loss=0.6108 valAUC=0.6352 best=0.6352@9 t=21s elapsed=3697.3s
+    [s2 ctxspec rs0 fold4/5] ep10/50 loss=0.6078 valAUC=0.6162 best=0.6352@9 t=23s elapsed=3699.6s
+    [s2 ctxspec rs0 fold4/5] ep11/50 loss=0.6023 valAUC=0.6236 best=0.6352@9 t=26s elapsed=3702.0s
+    [s2 ctxspec rs0 fold4/5] ep12/50 loss=0.6000 valAUC=0.6317 best=0.6352@9 t=28s elapsed=3704.3s
+    [s2 ctxspec rs0 fold4/5] ep13/50 loss=0.5949 valAUC=0.6242 best=0.6352@9 t=31s elapsed=3706.7s
+    [s2 ctxspec rs0 fold4/5] ep14/50 loss=0.5877 valAUC=0.6391 best=0.6391@14 t=33s elapsed=3709.0s
+    [s2 ctxspec rs0 fold4/5] ep15/50 loss=0.5838 valAUC=0.6334 best=0.6391@14 t=35s elapsed=3711.4s
+    [s2 ctxspec rs0 fold4/5] ep16/50 loss=0.5803 valAUC=0.6507 best=0.6507@16 t=38s elapsed=3713.7s
+    [s2 ctxspec rs0 fold4/5] ep17/50 loss=0.5770 valAUC=0.6405 best=0.6507@16 t=40s elapsed=3716.1s
+    [s2 ctxspec rs0 fold4/5] ep18/50 loss=0.5733 valAUC=0.6414 best=0.6507@16 t=42s elapsed=3718.4s
+    [s2 ctxspec rs0 fold4/5] ep19/50 loss=0.5675 valAUC=0.6476 best=0.6507@16 t=45s elapsed=3720.8s
+    [s2 ctxspec rs0 fold4/5] ep20/50 loss=0.5710 valAUC=0.6384 best=0.6507@16 t=47s elapsed=3723.1s
+    [s2 ctxspec rs0 fold4/5] ep21/50 loss=0.5690 valAUC=0.6375 best=0.6507@16 t=49s elapsed=3725.5s
+    [s2 ctxspec rs0 fold4/5] ep22/50 loss=0.5585 valAUC=0.6399 best=0.6507@16 t=52s elapsed=3727.8s
+    [s2 ctxspec rs0 fold4/5] ep23/50 loss=0.5596 valAUC=0.6459 best=0.6507@16 t=54s elapsed=3730.2s
+    [s2 ctxspec rs0 fold4/5] ep24/50 loss=0.5532 valAUC=0.6512 best=0.6512@24 t=56s elapsed=3732.5s
+    [s2 ctxspec rs0 fold4/5] ep25/50 loss=0.5527 valAUC=0.6260 best=0.6512@24 t=59s elapsed=3734.9s
+    [s2 ctxspec rs0 fold4/5] ep26/50 loss=0.5467 valAUC=0.6336 best=0.6512@24 t=61s elapsed=3737.2s
+    [s2 ctxspec rs0 fold4/5] ep27/50 loss=0.5488 valAUC=0.6447 best=0.6512@24 t=63s elapsed=3739.6s
+    [s2 ctxspec rs0 fold4/5] ep28/50 loss=0.5364 valAUC=0.6507 best=0.6512@24 t=66s elapsed=3741.9s
+    [s2 ctxspec rs0 fold4/5] ep29/50 loss=0.5404 valAUC=0.6543 best=0.6543@29 t=68s elapsed=3744.3s
+    [s2 ctxspec rs0 fold4/5] ep30/50 loss=0.5349 valAUC=0.6483 best=0.6543@29 t=70s elapsed=3746.6s
+    [s2 ctxspec rs0 fold4/5] ep31/50 loss=0.5252 valAUC=0.6498 best=0.6543@29 t=73s elapsed=3749.0s
+    [s2 ctxspec rs0 fold4/5] ep32/50 loss=0.5273 valAUC=0.6524 best=0.6543@29 t=75s elapsed=3751.3s
+    [s2 ctxspec rs0 fold4/5] ep33/50 loss=0.5272 valAUC=0.6668 best=0.6668@33 t=77s elapsed=3753.6s
+    [s2 ctxspec rs0 fold4/5] ep34/50 loss=0.5183 valAUC=0.6473 best=0.6668@33 t=80s elapsed=3756.0s
+    [s2 ctxspec rs0 fold4/5] ep35/50 loss=0.5139 valAUC=0.6420 best=0.6668@33 t=82s elapsed=3758.4s
+    [s2 ctxspec rs0 fold4/5] ep36/50 loss=0.5093 valAUC=0.6394 best=0.6668@33 t=85s elapsed=3760.7s
+    [s2 ctxspec rs0 fold4/5] ep37/50 loss=0.5060 valAUC=0.6343 best=0.6668@33 t=87s elapsed=3763.0s
+    [s2 ctxspec rs0 fold4/5] ep38/50 loss=0.5065 valAUC=0.6412 best=0.6668@33 t=89s elapsed=3765.4s
+    [s2 ctxspec rs0 fold4/5] ep39/50 loss=0.4994 valAUC=0.6474 best=0.6668@33 t=92s elapsed=3767.7s
+    [s2 ctxspec rs0 fold4/5] ep40/50 loss=0.4958 valAUC=0.6375 best=0.6668@33 t=94s elapsed=3770.1s
+    [s2 ctxspec rs0 fold4/5] ep41/50 loss=0.4887 valAUC=0.6399 best=0.6668@33 t=96s elapsed=3772.5s
+[resnet] s2 ctxspec rs0 fold4/5 best_ep=33/41 testAUC=0.6371 elapsed=3774.0s
+[check] s2 fold4: ctxspec/ctxemb isolation + prefix invariance ok elapsed=3774.7s
+[stream 2 fold 5/5] inputs built (3.4s) spec d std(raw)=1.608 elapsed=3778.2s
+    [s2 whiten rs0 fold5/5] ep01/50 loss=0.6960 valAUC=0.5697 best=0.5697@1 t=2s elapsed=3780.7s
+    [s2 whiten rs0 fold5/5] ep02/50 loss=0.6758 valAUC=0.6643 best=0.6643@2 t=5s elapsed=3783.0s
+    [s2 whiten rs0 fold5/5] ep03/50 loss=0.6715 valAUC=0.6518 best=0.6643@2 t=7s elapsed=3785.4s
+    [s2 whiten rs0 fold5/5] ep04/50 loss=0.6654 valAUC=0.6534 best=0.6643@2 t=10s elapsed=3787.8s
+    [s2 whiten rs0 fold5/5] ep05/50 loss=0.6618 valAUC=0.5537 best=0.6643@2 t=12s elapsed=3790.1s
+    [s2 whiten rs0 fold5/5] ep06/50 loss=0.6543 valAUC=0.6480 best=0.6643@2 t=14s elapsed=3792.5s
+    [s2 whiten rs0 fold5/5] ep07/50 loss=0.6517 valAUC=0.5246 best=0.6643@2 t=17s elapsed=3794.9s
+    [s2 whiten rs0 fold5/5] ep08/50 loss=0.6467 valAUC=0.6337 best=0.6643@2 t=19s elapsed=3797.3s
+    [s2 whiten rs0 fold5/5] ep09/50 loss=0.6422 valAUC=0.6453 best=0.6643@2 t=21s elapsed=3799.6s
+    [s2 whiten rs0 fold5/5] ep10/50 loss=0.6382 valAUC=0.5665 best=0.6643@2 t=24s elapsed=3802.0s
+[resnet] s2 whiten rs0 fold5/5 best_ep=2/10 testAUC=0.5853 (histnorm 0.5853) elapsed=3805.1s
+[ctxemb] s2 rs0 fold5/5 B-oofAUC=0.6133 testAUC=0.6039 heads_val=[0.655, 0.637, 0.68, 0.564] elapsed=3806.8s
+    [s2 ctxspec rs0 fold5/5] ep01/50 loss=0.6921 valAUC=0.6339 best=0.6339@1 t=2s elapsed=3809.2s
+    [s2 ctxspec rs0 fold5/5] ep02/50 loss=0.6752 valAUC=0.6167 best=0.6339@1 t=5s elapsed=3811.6s
+    [s2 ctxspec rs0 fold5/5] ep03/50 loss=0.6670 valAUC=0.6574 best=0.6574@3 t=7s elapsed=3814.0s
+    [s2 ctxspec rs0 fold5/5] ep04/50 loss=0.6633 valAUC=0.6427 best=0.6574@3 t=10s elapsed=3816.4s
+    [s2 ctxspec rs0 fold5/5] ep05/50 loss=0.6596 valAUC=0.5609 best=0.6574@3 t=12s elapsed=3818.8s
+    [s2 ctxspec rs0 fold5/5] ep06/50 loss=0.6525 valAUC=0.6288 best=0.6574@3 t=14s elapsed=3821.2s
+    [s2 ctxspec rs0 fold5/5] ep07/50 loss=0.6474 valAUC=0.6761 best=0.6761@7 t=17s elapsed=3823.7s
+    [s2 ctxspec rs0 fold5/5] ep08/50 loss=0.6420 valAUC=0.6296 best=0.6761@7 t=19s elapsed=3826.1s
+    [s2 ctxspec rs0 fold5/5] ep09/50 loss=0.6388 valAUC=0.6516 best=0.6761@7 t=22s elapsed=3828.5s
+    [s2 ctxspec rs0 fold5/5] ep10/50 loss=0.6340 valAUC=0.5895 best=0.6761@7 t=24s elapsed=3830.9s
+    [s2 ctxspec rs0 fold5/5] ep11/50 loss=0.6329 valAUC=0.6482 best=0.6761@7 t=27s elapsed=3833.3s
+    [s2 ctxspec rs0 fold5/5] ep12/50 loss=0.6266 valAUC=0.6478 best=0.6761@7 t=29s elapsed=3835.7s
+    [s2 ctxspec rs0 fold5/5] ep13/50 loss=0.6190 valAUC=0.6652 best=0.6761@7 t=31s elapsed=3838.1s
+    [s2 ctxspec rs0 fold5/5] ep14/50 loss=0.6154 valAUC=0.6697 best=0.6761@7 t=34s elapsed=3840.6s
+    [s2 ctxspec rs0 fold5/5] ep15/50 loss=0.6110 valAUC=0.6624 best=0.6761@7 t=36s elapsed=3843.0s
+[resnet] s2 ctxspec rs0 fold5/5 best_ep=7/15 testAUC=0.6150 elapsed=3844.5s
+[check] s2 fold5: ctxspec/ctxemb isolation + prefix invariance ok elapsed=3845.2s
+[result stream 2] position_only__lr            all: AUC=0.5047 mac=0.5064 mic=0.5056 | mature: AUC=0.4947 mac=0.4999 mic=0.4998 | subj>=.9=0 max=0.566
+[result stream 2] position_only__hgb           all: AUC=0.5022 mac=0.5025 mic=0.5034 | mature: AUC=0.4951 mac=0.4988 mic=0.4983 | subj>=.9=0 max=0.573
+[result stream 2] hgb_delta32                  all: AUC=0.6563 mac=0.6131 mic=0.6145 | mature: AUC=0.6532 mac=0.6110 mic=0.6108 | subj>=.9=0 max=0.817
+[result stream 2] resnet_whiten                all: AUC=0.6254 mac=0.5849 mic=0.5856 | mature: AUC=0.6238 mac=0.5889 mic=0.5875 | subj>=.9=0 max=0.792
+[result stream 2] resnet_whiten_logit_delta    all: AUC=0.6597 mac=0.6069 mic=0.6077 | mature: AUC=0.6623 mac=0.6103 mic=0.6105 | subj>=.9=0 max=0.874
+[result stream 2] resnet_ctxspec               all: AUC=0.6302 mac=0.5866 mic=0.5871 | mature: AUC=0.6297 mac=0.5875 mic=0.5868 | subj>=.9=0 max=0.794
+[result stream 2] resnet_ctxspec_logit_delta   all: AUC=0.6527 mac=0.6110 mic=0.6114 | mature: AUC=0.6553 mac=0.6121 mic=0.6128 | subj>=.9=0 max=0.795
+[result stream 2] resnet_ctxemb                all: AUC=0.6621 mac=0.6093 mic=0.6101 | mature: AUC=0.6644 mac=0.6135 mic=0.6142 | subj>=.9=0 max=0.872
+[result stream 2] resnet_ctxemb_logit_delta    all: AUC=0.6584 mac=0.6102 mic=0.6111 | mature: AUC=0.6608 mac=0.6168 mic=0.6179 | subj>=.9=0 max=0.869
+[result stream 2] fusionR_delta                all: AUC=0.6756 mac=0.6262 mic=0.6266 | mature: AUC=0.6726 mac=0.6257 mic=0.6253 | subj>=.9=0 max=0.814
+[result stream 2] fusionH_whiten               all: AUC=0.6892 mac=0.6311 mic=0.6323 | mature: AUC=0.6888 mac=0.6334 mic=0.6334 | subj>=.9=0 max=0.874
+[result stream 2] fusionC_ctxspec              all: AUC=0.6852 mac=0.6341 mic=0.6348 | mature: AUC=0.6850 mac=0.6376 mic=0.6383 | subj>=.9=0 max=0.830
+[result stream 2] fusionC_ctxemb               all: AUC=0.6881 mac=0.6306 mic=0.6319 | mature: AUC=0.6865 mac=0.6300 mic=0.6303 | subj>=.9=0 max=0.871
+[repro stream 2] {'resnet_whiten': {'AUC_here': 0.6253538996285213, 'AUC_histnorm': 0.6253538996285213}, 'fusionH_whiten': {'AUC_here': 0.6891952264031016, 'AUC_histnorm': 0.6891952264031016}}
+[sanity stream 2] position_only__lr AUC=0.5047 -> OK
+[sanity stream 2] position_only__hgb AUC=0.5022 -> OK
+[boot stream 2] resnet_ctxspec              vs resnet_whiten  all    dAUC=+0.0041[-0.0175,+0.0268] dmac=+0.0015[-0.0174,+0.0206] dmic=+0.0013[-0.0182,+0.0217]
+[boot stream 2] resnet_ctxspec              vs resnet_whiten  mature dAUC=+0.0050[-0.0186,+0.0300] dmac=-0.0017[-0.0224,+0.0191] dmic=-0.0012[-0.0247,+0.0235]
+[boot stream 2] resnet_ctxspec              vs fusionH_whiten all    dAUC=-0.0588[-0.0829,-0.0351] dmac=-0.0445[-0.0688,-0.0243] dmic=-0.0451[-0.0690,-0.0245]
+[boot stream 2] resnet_ctxspec              vs fusionH_whiten mature dAUC=-0.0589[-0.0865,-0.0331] dmac=-0.0459[-0.0698,-0.0245] dmic=-0.0466[-0.0732,-0.0234]
+[boot stream 2] resnet_ctxspec              vs fusionR_delta  all    dAUC=-0.0452[-0.0690,-0.0230] dmac=-0.0397[-0.0625,-0.0182] dmic=-0.0394[-0.0632,-0.0177]
+[boot stream 2] resnet_ctxspec              vs fusionR_delta  mature dAUC=-0.0426[-0.0701,-0.0165] dmac=-0.0382[-0.0622,-0.0150] dmic=-0.0385[-0.0652,-0.0146]
+[boot stream 2] resnet_ctxspec_logit_delta  vs resnet_whiten  all    dAUC=+0.0261[+0.0060,+0.0462] dmac=+0.0259[+0.0089,+0.0433] dmic=+0.0255[+0.0078,+0.0430]
+[boot stream 2] resnet_ctxspec_logit_delta  vs resnet_whiten  mature dAUC=+0.0301[+0.0084,+0.0518] dmac=+0.0229[+0.0049,+0.0412] dmic=+0.0248[+0.0055,+0.0433]
+[boot stream 2] resnet_ctxspec_logit_delta  vs fusionH_whiten all    dAUC=-0.0368[-0.0558,-0.0175] dmac=-0.0201[-0.0358,-0.0040] dmic=-0.0209[-0.0366,-0.0039]
+[boot stream 2] resnet_ctxspec_logit_delta  vs fusionH_whiten mature dAUC=-0.0338[-0.0533,-0.0132] dmac=-0.0213[-0.0381,-0.0038] dmic=-0.0207[-0.0373,-0.0028]
+[boot stream 2] resnet_ctxspec_logit_delta  vs fusionR_delta  all    dAUC=-0.0232[-0.0447,-0.0036] dmac=-0.0152[-0.0351,+0.0036] dmic=-0.0152[-0.0351,+0.0040]
+[boot stream 2] resnet_ctxspec_logit_delta  vs fusionR_delta  mature dAUC=-0.0175[-0.0401,+0.0032] dmac=-0.0136[-0.0349,+0.0081] dmic=-0.0125[-0.0339,+0.0083]
+[boot stream 2] fusionC_ctxspec             vs resnet_whiten  all    dAUC=+0.0588[+0.0348,+0.0840] dmac=+0.0489[+0.0278,+0.0705] dmic=+0.0488[+0.0282,+0.0702]
+[boot stream 2] fusionC_ctxspec             vs resnet_whiten  mature dAUC=+0.0599[+0.0350,+0.0848] dmac=+0.0482[+0.0262,+0.0715] dmic=+0.0502[+0.0285,+0.0723]
+[boot stream 2] fusionC_ctxspec             vs fusionH_whiten all    dAUC=-0.0041[-0.0132,+0.0050] dmac=+0.0029[-0.0052,+0.0117] dmic=+0.0024[-0.0056,+0.0111]
+[boot stream 2] fusionC_ctxspec             vs fusionH_whiten mature dAUC=-0.0039[-0.0133,+0.0058] dmac=+0.0040[-0.0045,+0.0130] dmic=+0.0047[-0.0037,+0.0141]
+[boot stream 2] fusionC_ctxspec             vs fusionR_delta  all    dAUC=+0.0095[+0.0001,+0.0191] dmac=+0.0078[-0.0009,+0.0170] dmic=+0.0081[-0.0005,+0.0173]
+[boot stream 2] fusionC_ctxspec             vs fusionR_delta  mature dAUC=+0.0124[+0.0028,+0.0227] dmac=+0.0117[+0.0013,+0.0227] dmic=+0.0129[+0.0027,+0.0236]
+[boot stream 2] resnet_ctxemb               vs resnet_whiten  all    dAUC=+0.0359[+0.0195,+0.0522] dmac=+0.0243[+0.0101,+0.0390] dmic=+0.0244[+0.0099,+0.0392]
+[boot stream 2] resnet_ctxemb               vs resnet_whiten  mature dAUC=+0.0396[+0.0237,+0.0558] dmac=+0.0245[+0.0093,+0.0394] dmic=+0.0263[+0.0107,+0.0422]
+[boot stream 2] resnet_ctxemb               vs fusionH_whiten all    dAUC=-0.0270[-0.0490,-0.0057] dmac=-0.0217[-0.0418,-0.0037] dmic=-0.0220[-0.0418,-0.0039]
+[boot stream 2] resnet_ctxemb               vs fusionH_whiten mature dAUC=-0.0243[-0.0460,-0.0037] dmac=-0.0197[-0.0390,-0.0016] dmic=-0.0191[-0.0384,-0.0010]
+[boot stream 2] resnet_ctxemb               vs fusionR_delta  all    dAUC=-0.0134[-0.0399,+0.0125] dmac=-0.0168[-0.0415,+0.0073] dmic=-0.0163[-0.0416,+0.0080]
+[boot stream 2] resnet_ctxemb               vs fusionR_delta  mature dAUC=-0.0080[-0.0350,+0.0189] dmac=-0.0120[-0.0378,+0.0123] dmic=-0.0110[-0.0361,+0.0130]
+[boot stream 2] resnet_ctxemb_logit_delta   vs resnet_whiten  all    dAUC=+0.0322[+0.0161,+0.0481] dmac=+0.0252[+0.0110,+0.0400] dmic=+0.0254[+0.0110,+0.0398]
+[boot stream 2] resnet_ctxemb_logit_delta   vs resnet_whiten  mature dAUC=+0.0360[+0.0202,+0.0523] dmac=+0.0278[+0.0131,+0.0425] dmic=+0.0300[+0.0144,+0.0459]
+[boot stream 2] resnet_ctxemb_logit_delta   vs fusionH_whiten all    dAUC=-0.0308[-0.0524,-0.0094] dmac=-0.0208[-0.0409,-0.0023] dmic=-0.0210[-0.0413,-0.0023]
+[boot stream 2] resnet_ctxemb_logit_delta   vs fusionH_whiten mature dAUC=-0.0279[-0.0497,-0.0071] dmac=-0.0164[-0.0366,+0.0031] dmic=-0.0154[-0.0354,+0.0038]
+[boot stream 2] resnet_ctxemb_logit_delta   vs fusionR_delta  all    dAUC=-0.0171[-0.0431,+0.0095] dmac=-0.0159[-0.0407,+0.0087] dmic=-0.0153[-0.0404,+0.0091]
+[boot stream 2] resnet_ctxemb_logit_delta   vs fusionR_delta  mature dAUC=-0.0116[-0.0382,+0.0157] dmac=-0.0087[-0.0343,+0.0170] dmic=-0.0073[-0.0325,+0.0171]
+[boot stream 2] fusionC_ctxemb              vs resnet_whiten  all    dAUC=+0.0618[+0.0392,+0.0845] dmac=+0.0455[+0.0251,+0.0680] dmic=+0.0460[+0.0260,+0.0681]
+[boot stream 2] fusionC_ctxemb              vs resnet_whiten  mature dAUC=+0.0616[+0.0383,+0.0851] dmac=+0.0408[+0.0191,+0.0650] dmic=+0.0424[+0.0213,+0.0640]
+[boot stream 2] fusionC_ctxemb              vs fusionH_whiten all    dAUC=-0.0012[-0.0056,+0.0034] dmac=-0.0005[-0.0051,+0.0043] dmic=-0.0004[-0.0049,+0.0045]
+[boot stream 2] fusionC_ctxemb              vs fusionH_whiten mature dAUC=-0.0022[-0.0063,+0.0019] dmac=-0.0033[-0.0086,+0.0022] dmic=-0.0031[-0.0084,+0.0023]
+[boot stream 2] fusionC_ctxemb              vs fusionR_delta  all    dAUC=+0.0125[+0.0020,+0.0226] dmac=+0.0043[-0.0056,+0.0140] dmic=+0.0053[-0.0044,+0.0149]
+[boot stream 2] fusionC_ctxemb              vs fusionR_delta  mature dAUC=+0.0141[+0.0035,+0.0249] dmac=+0.0043[-0.0060,+0.0150] dmic=+0.0051[-0.0053,+0.0156]
+[done] elapsed=3879.5s -> depositioned_resnet_histcontext.json
