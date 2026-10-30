@@ -1,0 +1,176 @@
+[start] rows=16067 subjects=57 smoke=False sseeds=(0, 1, 2) variants=('hgb_ms', 'hgb_prank', 'hgb_zs') whiten scores reused from depositioned_resnet_histcontext_oof.npz
+[s0 fold 1/5] hgb_delta32 reproduced (maxabs 0.0e+00) fit_s=8.1 elapsed=10.5s
+[s0 fold 1/5] hgb_ms     dim=4290 build_s=3.6 fit_s=18.6 checks ok (naive/prefix/isolation) elapsed=33.1s
+[s0 fold 1/5] hgb_prank  dim=2574 build_s=12.9 fit_s=11.3 checks ok (naive/prefix/isolation) elapsed=58.4s
+[s0 fold 1/5] hgb_zs     dim=1716 build_s=1.3 fit_s=7.5 checks ok (naive/prefix/isolation) elapsed=67.5s
+[s0 fold 2/5] hgb_delta32 reproduced (maxabs 0.0e+00) fit_s=8.2 elapsed=76.5s
+[s0 fold 2/5] hgb_ms     dim=4290 build_s=3.6 fit_s=18.5 checks ok (naive/prefix/isolation) elapsed=99.0s
+[s0 fold 2/5] hgb_prank  dim=2574 build_s=10.8 fit_s=11.3 checks ok (naive/prefix/isolation) elapsed=122.2s
+[s0 fold 2/5] hgb_zs     dim=1716 build_s=1.2 fit_s=7.3 checks ok (naive/prefix/isolation) elapsed=131.0s
+[s0 fold 3/5] hgb_delta32 reproduced (maxabs 0.0e+00) fit_s=8.3 elapsed=140.0s
+[s0 fold 3/5] hgb_ms     dim=4290 build_s=3.7 fit_s=18.3 checks ok (naive/prefix/isolation) elapsed=162.5s
+[s0 fold 3/5] hgb_prank  dim=2574 build_s=13.0 fit_s=11.4 checks ok (naive/prefix/isolation) elapsed=188.2s
+[s0 fold 3/5] hgb_zs     dim=1716 build_s=1.4 fit_s=7.4 checks ok (naive/prefix/isolation) elapsed=197.3s
+[s0 fold 4/5] hgb_delta32 reproduced (maxabs 0.0e+00) fit_s=8.1 elapsed=206.1s
+[s0 fold 4/5] hgb_ms     dim=4290 build_s=3.5 fit_s=18.5 checks ok (naive/prefix/isolation) elapsed=228.5s
+[s0 fold 4/5] hgb_prank  dim=2574 build_s=10.8 fit_s=11.3 checks ok (naive/prefix/isolation) elapsed=251.8s
+[s0 fold 4/5] hgb_zs     dim=1716 build_s=1.2 fit_s=7.4 checks ok (naive/prefix/isolation) elapsed=260.7s
+[s0 fold 5/5] hgb_delta32 reproduced (maxabs 0.0e+00) fit_s=8.2 elapsed=269.6s
+[s0 fold 5/5] hgb_ms     dim=4290 build_s=3.6 fit_s=18.4 checks ok (naive/prefix/isolation) elapsed=292.0s
+[s0 fold 5/5] hgb_prank  dim=2574 build_s=12.7 fit_s=11.1 checks ok (naive/prefix/isolation) elapsed=317.1s
+[s0 fold 5/5] hgb_zs     dim=1716 build_s=1.4 fit_s=7.4 checks ok (naive/prefix/isolation) elapsed=326.2s
+[result stream 0] position_only__lr          all: AUC=0.4935 mac=0.4985 mic=0.4982 | mature: AUC=0.4925 mac=0.5004 mic=0.4966 | subj>=.9=0 max=0.543
+[result stream 0] position_only__hgb         all: AUC=0.4959 mac=0.4992 mic=0.4991 | mature: AUC=0.4971 mac=0.4988 mic=0.4985 | subj>=.9=0 max=0.578
+[result stream 0] hgb_delta32                all: AUC=0.6519 mac=0.6118 mic=0.6131 | mature: AUC=0.6528 mac=0.6158 mic=0.6154 | subj>=.9=0 max=0.831
+[result stream 0] hgb_ms                     all: AUC=0.6554 mac=0.6147 mic=0.6155 | mature: AUC=0.6548 mac=0.6133 mic=0.6147 | subj>=.9=0 max=0.844
+[result stream 0] hgb_prank                  all: AUC=0.6608 mac=0.6150 mic=0.6167 | mature: AUC=0.6607 mac=0.6172 mic=0.6180 | subj>=.9=0 max=0.858
+[result stream 0] hgb_zs                     all: AUC=0.6563 mac=0.6151 mic=0.6170 | mature: AUC=0.6560 mac=0.6147 mic=0.6150 | subj>=.9=0 max=0.792
+[result stream 0] resnet_whiten_logit_delta  all: AUC=0.6838 mac=0.6248 mic=0.6261 | mature: AUC=0.6867 mac=0.6274 mic=0.6284 | subj>=.9=0 max=0.861
+[result stream 0] fusionH_whiten             all: AUC=0.6986 mac=0.6423 mic=0.6429 | mature: AUC=0.6999 mac=0.6441 mic=0.6434 | subj>=.9=0 max=0.867
+[result stream 0] hgb_current                all: AUC=0.6177 mac=0.5878 mic=0.5879 | mature: AUC=0.6141 mac=0.5841 mic=0.5831 | subj>=.9=0 max=0.790
+[result stream 0] fusionM_ms                 all: AUC=0.7028 mac=0.6466 mic=0.6470 | mature: AUC=0.7039 mac=0.6444 mic=0.6451 | subj>=.9=0 max=0.868
+[result stream 0] fusionM_prank              all: AUC=0.7043 mac=0.6463 mic=0.6470 | mature: AUC=0.7057 mac=0.6458 mic=0.6461 | subj>=.9=0 max=0.867
+[result stream 0] fusionM_zs                 all: AUC=0.7032 mac=0.6463 mic=0.6469 | mature: AUC=0.7029 mac=0.6446 mic=0.6446 | subj>=.9=0 max=0.854
+[sanity stream 0] position_only__lr AUC=0.4935 -> OK
+[sanity stream 0] position_only__hgb AUC=0.4959 -> OK
+[boot stream 0] hgb_ms           vs hgb_delta32     all    dAUC=+0.0034[-0.0044,+0.0107] dmac=+0.0029[-0.0054,+0.0110] dmic=+0.0024[-0.0055,+0.0099]
+[boot stream 0] hgb_ms           vs hgb_delta32     mature dAUC=+0.0019[-0.0063,+0.0103] dmac=-0.0025[-0.0109,+0.0056] dmic=-0.0007[-0.0088,+0.0070]
+[boot stream 0] hgb_ms           vs fusionH_whiten  all    dAUC=-0.0432[-0.0582,-0.0278] dmac=-0.0277[-0.0400,-0.0160] dmic=-0.0274[-0.0397,-0.0158]
+[boot stream 0] hgb_ms           vs fusionH_whiten  mature dAUC=-0.0452[-0.0600,-0.0311] dmac=-0.0309[-0.0443,-0.0181] dmic=-0.0289[-0.0423,-0.0165]
+[boot stream 0] hgb_prank        vs hgb_delta32     all    dAUC=+0.0087[+0.0003,+0.0172] dmac=+0.0031[-0.0058,+0.0110] dmic=+0.0035[-0.0053,+0.0116]
+[boot stream 0] hgb_prank        vs hgb_delta32     mature dAUC=+0.0078[-0.0018,+0.0175] dmac=+0.0013[-0.0081,+0.0100] dmic=+0.0025[-0.0065,+0.0110]
+[boot stream 0] hgb_prank        vs fusionH_whiten  all    dAUC=-0.0379[-0.0516,-0.0246] dmac=-0.0274[-0.0391,-0.0156] dmic=-0.0263[-0.0382,-0.0145]
+[boot stream 0] hgb_prank        vs fusionH_whiten  mature dAUC=-0.0394[-0.0537,-0.0255] dmac=-0.0271[-0.0407,-0.0131] dmic=-0.0257[-0.0392,-0.0116]
+[boot stream 0] hgb_zs           vs hgb_delta32     all    dAUC=+0.0042[-0.0071,+0.0148] dmac=+0.0031[-0.0088,+0.0143] dmic=+0.0037[-0.0082,+0.0150]
+[boot stream 0] hgb_zs           vs hgb_delta32     mature dAUC=+0.0030[-0.0081,+0.0145] dmac=-0.0013[-0.0126,+0.0090] dmic=-0.0006[-0.0120,+0.0099]
+[boot stream 0] hgb_zs           vs fusionH_whiten  all    dAUC=-0.0424[-0.0589,-0.0267] dmac=-0.0274[-0.0408,-0.0149] dmic=-0.0261[-0.0386,-0.0140]
+[boot stream 0] hgb_zs           vs fusionH_whiten  mature dAUC=-0.0441[-0.0602,-0.0285] dmac=-0.0297[-0.0426,-0.0165] dmic=-0.0288[-0.0416,-0.0148]
+[boot stream 0] fusionM_ms       vs hgb_delta32     all    dAUC=+0.0507[+0.0372,+0.0654] dmac=+0.0349[+0.0232,+0.0483] dmic=+0.0340[+0.0222,+0.0472]
+[boot stream 0] fusionM_ms       vs hgb_delta32     mature dAUC=+0.0510[+0.0374,+0.0663] dmac=+0.0287[+0.0145,+0.0436] dmic=+0.0298[+0.0156,+0.0448]
+[boot stream 0] fusionM_ms       vs fusionH_whiten  all    dAUC=+0.0041[-0.0016,+0.0089] dmac=+0.0044[-0.0024,+0.0108] dmic=+0.0042[-0.0026,+0.0108]
+[boot stream 0] fusionM_ms       vs fusionH_whiten  mature dAUC=+0.0038[-0.0021,+0.0099] dmac=+0.0003[-0.0077,+0.0081] dmic=+0.0016[-0.0066,+0.0097]
+[boot stream 0] fusionM_prank    vs hgb_delta32     all    dAUC=+0.0523[+0.0383,+0.0682] dmac=+0.0346[+0.0222,+0.0483] dmic=+0.0339[+0.0218,+0.0473]
+[boot stream 0] fusionM_prank    vs hgb_delta32     mature dAUC=+0.0528[+0.0396,+0.0680] dmac=+0.0301[+0.0165,+0.0436] dmic=+0.0308[+0.0175,+0.0438]
+[boot stream 0] fusionM_prank    vs fusionH_whiten  all    dAUC=+0.0057[-0.0002,+0.0116] dmac=+0.0041[-0.0033,+0.0112] dmic=+0.0041[-0.0031,+0.0110]
+[boot stream 0] fusionM_prank    vs fusionH_whiten  mature dAUC=+0.0057[-0.0007,+0.0118] dmac=+0.0017[-0.0068,+0.0100] dmic=+0.0027[-0.0057,+0.0111]
+[boot stream 0] fusionM_zs       vs hgb_delta32     all    dAUC=+0.0511[+0.0353,+0.0670] dmac=+0.0344[+0.0212,+0.0484] dmic=+0.0337[+0.0200,+0.0475]
+[boot stream 0] fusionM_zs       vs hgb_delta32     mature dAUC=+0.0500[+0.0346,+0.0666] dmac=+0.0288[+0.0141,+0.0439] dmic=+0.0292[+0.0150,+0.0440]
+[boot stream 0] fusionM_zs       vs fusionH_whiten  all    dAUC=+0.0045[-0.0031,+0.0118] dmac=+0.0039[-0.0034,+0.0113] dmic=+0.0038[-0.0037,+0.0112]
+[boot stream 0] fusionM_zs       vs fusionH_whiten  mature dAUC=+0.0028[-0.0043,+0.0104] dmac=+0.0004[-0.0081,+0.0087] dmic=+0.0010[-0.0075,+0.0094]
+[s1 fold 1/5] hgb_delta32 reproduced (maxabs 0.0e+00) fit_s=8.4 elapsed=359.5s
+[s1 fold 1/5] hgb_ms     dim=4290 build_s=3.5 fit_s=19.1 checks ok (naive/prefix/isolation) elapsed=382.6s
+[s1 fold 1/5] hgb_prank  dim=2574 build_s=10.6 fit_s=11.2 checks ok (naive/prefix/isolation) elapsed=405.4s
+[s1 fold 1/5] hgb_zs     dim=1716 build_s=1.2 fit_s=7.6 checks ok (naive/prefix/isolation) elapsed=414.3s
+[s1 fold 2/5] hgb_delta32 reproduced (maxabs 0.0e+00) fit_s=8.1 elapsed=423.2s
+[s1 fold 2/5] hgb_ms     dim=4290 build_s=3.7 fit_s=18.5 checks ok (naive/prefix/isolation) elapsed=445.7s
+[s1 fold 2/5] hgb_prank  dim=2574 build_s=12.5 fit_s=11.4 checks ok (naive/prefix/isolation) elapsed=470.9s
+[s1 fold 2/5] hgb_zs     dim=1716 build_s=1.3 fit_s=7.4 checks ok (naive/prefix/isolation) elapsed=479.7s
+[s1 fold 3/5] hgb_delta32 reproduced (maxabs 0.0e+00) fit_s=8.3 elapsed=488.7s
+[s1 fold 3/5] hgb_ms     dim=4290 build_s=3.7 fit_s=18.5 checks ok (naive/prefix/isolation) elapsed=511.3s
+[s1 fold 3/5] hgb_prank  dim=2574 build_s=10.9 fit_s=11.4 checks ok (naive/prefix/isolation) elapsed=534.8s
+[s1 fold 3/5] hgb_zs     dim=1716 build_s=1.2 fit_s=7.5 checks ok (naive/prefix/isolation) elapsed=543.6s
+[s1 fold 4/5] hgb_delta32 reproduced (maxabs 0.0e+00) fit_s=8.1 elapsed=552.5s
+[s1 fold 4/5] hgb_ms     dim=4290 build_s=3.6 fit_s=18.5 checks ok (naive/prefix/isolation) elapsed=574.9s
+[s1 fold 4/5] hgb_prank  dim=2574 build_s=12.2 fit_s=11.3 checks ok (naive/prefix/isolation) elapsed=599.7s
+[s1 fold 4/5] hgb_zs     dim=1716 build_s=1.3 fit_s=7.5 checks ok (naive/prefix/isolation) elapsed=608.7s
+[s1 fold 5/5] hgb_delta32 reproduced (maxabs 0.0e+00) fit_s=8.3 elapsed=617.8s
+[s1 fold 5/5] hgb_ms     dim=4290 build_s=3.5 fit_s=18.8 checks ok (naive/prefix/isolation) elapsed=640.5s
+[s1 fold 5/5] hgb_prank  dim=2574 build_s=10.8 fit_s=11.2 checks ok (naive/prefix/isolation) elapsed=663.7s
+[s1 fold 5/5] hgb_zs     dim=1716 build_s=1.2 fit_s=7.5 checks ok (naive/prefix/isolation) elapsed=672.5s
+[result stream 1] position_only__lr          all: AUC=0.4971 mac=0.5002 mic=0.4987 | mature: AUC=0.4940 mac=0.4977 mic=0.4978 | subj>=.9=0 max=0.548
+[result stream 1] position_only__hgb         all: AUC=0.4983 mac=0.5024 mic=0.5027 | mature: AUC=0.5015 mac=0.5090 mic=0.5094 | subj>=.9=0 max=0.543
+[result stream 1] hgb_delta32                all: AUC=0.6572 mac=0.6176 mic=0.6186 | mature: AUC=0.6592 mac=0.6185 mic=0.6178 | subj>=.9=0 max=0.827
+[result stream 1] hgb_ms                     all: AUC=0.6546 mac=0.6127 mic=0.6138 | mature: AUC=0.6580 mac=0.6133 mic=0.6143 | subj>=.9=0 max=0.848
+[result stream 1] hgb_prank                  all: AUC=0.6667 mac=0.6171 mic=0.6190 | mature: AUC=0.6734 mac=0.6237 mic=0.6243 | subj>=.9=0 max=0.858
+[result stream 1] hgb_zs                     all: AUC=0.6600 mac=0.6160 mic=0.6179 | mature: AUC=0.6675 mac=0.6233 mic=0.6233 | subj>=.9=0 max=0.806
+[result stream 1] resnet_whiten_logit_delta  all: AUC=0.6582 mac=0.6098 mic=0.6108 | mature: AUC=0.6622 mac=0.6128 mic=0.6129 | subj>=.9=0 max=0.874
+[result stream 1] fusionH_whiten             all: AUC=0.6921 mac=0.6357 mic=0.6367 | mature: AUC=0.6956 mac=0.6367 mic=0.6364 | subj>=.9=0 max=0.874
+[result stream 1] hgb_current                all: AUC=0.6177 mac=0.5878 mic=0.5879 | mature: AUC=0.6199 mac=0.5894 mic=0.5877 | subj>=.9=0 max=0.790
+[result stream 1] fusionM_ms                 all: AUC=0.6910 mac=0.6345 mic=0.6362 | mature: AUC=0.6958 mac=0.6363 mic=0.6379 | subj>=.9=0 max=0.881
+[result stream 1] fusionM_prank              all: AUC=0.6990 mac=0.6415 mic=0.6438 | mature: AUC=0.7051 mac=0.6475 mic=0.6481 | subj>=.9=0 max=0.870
+[result stream 1] fusionM_zs                 all: AUC=0.6938 mac=0.6374 mic=0.6385 | mature: AUC=0.6991 mac=0.6403 mic=0.6398 | subj>=.9=0 max=0.856
+[sanity stream 1] position_only__lr AUC=0.4971 -> OK
+[sanity stream 1] position_only__hgb AUC=0.4983 -> OK
+[boot stream 1] hgb_ms           vs hgb_delta32     all    dAUC=-0.0025[-0.0102,+0.0040] dmac=-0.0049[-0.0135,+0.0032] dmic=-0.0049[-0.0127,+0.0029]
+[boot stream 1] hgb_ms           vs hgb_delta32     mature dAUC=-0.0012[-0.0098,+0.0074] dmac=-0.0053[-0.0157,+0.0042] dmic=-0.0036[-0.0133,+0.0058]
+[boot stream 1] hgb_ms           vs fusionH_whiten  all    dAUC=-0.0374[-0.0525,-0.0216] dmac=-0.0230[-0.0359,-0.0097] dmic=-0.0229[-0.0358,-0.0097]
+[boot stream 1] hgb_ms           vs fusionH_whiten  mature dAUC=-0.0373[-0.0536,-0.0212] dmac=-0.0232[-0.0388,-0.0067] dmic=-0.0219[-0.0378,-0.0056]
+[boot stream 1] hgb_prank        vs hgb_delta32     all    dAUC=+0.0094[+0.0005,+0.0175] dmac=-0.0005[-0.0089,+0.0070] dmic=+0.0004[-0.0076,+0.0080]
+[boot stream 1] hgb_prank        vs hgb_delta32     mature dAUC=+0.0141[+0.0058,+0.0225] dmac=+0.0052[-0.0033,+0.0136] dmic=+0.0065[-0.0015,+0.0151]
+[boot stream 1] hgb_prank        vs fusionH_whiten  all    dAUC=-0.0255[-0.0414,-0.0088] dmac=-0.0186[-0.0318,-0.0042] dmic=-0.0177[-0.0306,-0.0037]
+[boot stream 1] hgb_prank        vs fusionH_whiten  mature dAUC=-0.0221[-0.0369,-0.0063] dmac=-0.0127[-0.0284,+0.0035] dmic=-0.0118[-0.0275,+0.0037]
+[boot stream 1] hgb_zs           vs hgb_delta32     all    dAUC=+0.0026[-0.0084,+0.0127] dmac=-0.0017[-0.0115,+0.0074] dmic=-0.0009[-0.0109,+0.0085]
+[boot stream 1] hgb_zs           vs hgb_delta32     mature dAUC=+0.0080[-0.0034,+0.0188] dmac=+0.0045[-0.0063,+0.0152] dmic=+0.0052[-0.0055,+0.0154]
+[boot stream 1] hgb_zs           vs fusionH_whiten  all    dAUC=-0.0323[-0.0484,-0.0146] dmac=-0.0199[-0.0334,-0.0057] dmic=-0.0190[-0.0324,-0.0050]
+[boot stream 1] hgb_zs           vs fusionH_whiten  mature dAUC=-0.0282[-0.0427,-0.0131] dmac=-0.0134[-0.0290,+0.0009] dmic=-0.0131[-0.0285,+0.0010]
+[boot stream 1] fusionM_ms       vs hgb_delta32     all    dAUC=+0.0337[+0.0168,+0.0504] dmac=+0.0169[+0.0025,+0.0315] dmic=+0.0176[+0.0035,+0.0321]
+[boot stream 1] fusionM_ms       vs hgb_delta32     mature dAUC=+0.0364[+0.0169,+0.0543] dmac=+0.0176[-0.0003,+0.0355] dmic=+0.0199[+0.0023,+0.0378]
+[boot stream 1] fusionM_ms       vs fusionH_whiten  all    dAUC=-0.0012[-0.0066,+0.0034] dmac=-0.0012[-0.0070,+0.0041] dmic=-0.0005[-0.0058,+0.0043]
+[boot stream 1] fusionM_ms       vs fusionH_whiten  mature dAUC=+0.0002[-0.0061,+0.0063] dmac=-0.0003[-0.0082,+0.0072] dmic=+0.0016[-0.0053,+0.0083]
+[boot stream 1] fusionM_prank    vs hgb_delta32     all    dAUC=+0.0418[+0.0260,+0.0578] dmac=+0.0239[+0.0104,+0.0372] dmic=+0.0251[+0.0112,+0.0383]
+[boot stream 1] fusionM_prank    vs hgb_delta32     mature dAUC=+0.0457[+0.0287,+0.0637] dmac=+0.0289[+0.0125,+0.0454] dmic=+0.0301[+0.0137,+0.0465]
+[boot stream 1] fusionM_prank    vs fusionH_whiten  all    dAUC=+0.0069[+0.0011,+0.0122] dmac=+0.0058[-0.0001,+0.0117] dmic=+0.0070[+0.0017,+0.0125]
+[boot stream 1] fusionM_prank    vs fusionH_whiten  mature dAUC=+0.0096[+0.0045,+0.0146] dmac=+0.0110[+0.0042,+0.0176] dmic=+0.0118[+0.0057,+0.0178]
+[boot stream 1] fusionM_zs       vs hgb_delta32     all    dAUC=+0.0364[+0.0195,+0.0531] dmac=+0.0196[+0.0037,+0.0347] dmic=+0.0197[+0.0037,+0.0349]
+[boot stream 1] fusionM_zs       vs hgb_delta32     mature dAUC=+0.0396[+0.0201,+0.0589] dmac=+0.0214[+0.0025,+0.0392] dmic=+0.0217[+0.0026,+0.0397]
+[boot stream 1] fusionM_zs       vs fusionH_whiten  all    dAUC=+0.0015[-0.0049,+0.0076] dmac=+0.0015[-0.0048,+0.0083] dmic=+0.0016[-0.0047,+0.0085]
+[boot stream 1] fusionM_zs       vs fusionH_whiten  mature dAUC=+0.0034[-0.0036,+0.0102] dmac=+0.0035[-0.0043,+0.0113] dmic=+0.0034[-0.0045,+0.0114]
+[s2 fold 1/5] hgb_delta32 reproduced (maxabs 0.0e+00) fit_s=8.5 elapsed=705.7s
+[s2 fold 1/5] hgb_ms     dim=4290 build_s=3.6 fit_s=18.6 checks ok (naive/prefix/isolation) elapsed=728.3s
+[s2 fold 1/5] hgb_prank  dim=2574 build_s=12.4 fit_s=11.5 checks ok (naive/prefix/isolation) elapsed=753.4s
+[s2 fold 1/5] hgb_zs     dim=1716 build_s=1.3 fit_s=7.5 checks ok (naive/prefix/isolation) elapsed=762.4s
+[s2 fold 2/5] hgb_delta32 reproduced (maxabs 0.0e+00) fit_s=8.1 elapsed=771.2s
+[s2 fold 2/5] hgb_ms     dim=4290 build_s=3.5 fit_s=18.5 checks ok (naive/prefix/isolation) elapsed=793.7s
+[s2 fold 2/5] hgb_prank  dim=2574 build_s=10.6 fit_s=11.1 checks ok (naive/prefix/isolation) elapsed=816.5s
+[s2 fold 2/5] hgb_zs     dim=1716 build_s=1.2 fit_s=7.3 checks ok (naive/prefix/isolation) elapsed=825.2s
+[s2 fold 3/5] hgb_delta32 reproduced (maxabs 0.0e+00) fit_s=8.2 elapsed=834.1s
+[s2 fold 3/5] hgb_ms     dim=4290 build_s=3.7 fit_s=18.6 checks ok (naive/prefix/isolation) elapsed=856.7s
+[s2 fold 3/5] hgb_prank  dim=2574 build_s=12.1 fit_s=11.4 checks ok (naive/prefix/isolation) elapsed=881.6s
+[s2 fold 3/5] hgb_zs     dim=1716 build_s=1.3 fit_s=7.4 checks ok (naive/prefix/isolation) elapsed=890.4s
+[s2 fold 4/5] hgb_delta32 reproduced (maxabs 0.0e+00) fit_s=7.9 elapsed=899.1s
+[s2 fold 4/5] hgb_ms     dim=4290 build_s=3.6 fit_s=18.7 checks ok (naive/prefix/isolation) elapsed=921.7s
+[s2 fold 4/5] hgb_prank  dim=2574 build_s=10.8 fit_s=11.2 checks ok (naive/prefix/isolation) elapsed=944.9s
+[s2 fold 4/5] hgb_zs     dim=1716 build_s=1.2 fit_s=7.5 checks ok (naive/prefix/isolation) elapsed=953.8s
+[s2 fold 5/5] hgb_delta32 reproduced (maxabs 0.0e+00) fit_s=8.2 elapsed=962.8s
+[s2 fold 5/5] hgb_ms     dim=4290 build_s=3.6 fit_s=18.6 checks ok (naive/prefix/isolation) elapsed=985.5s
+[s2 fold 5/5] hgb_prank  dim=2574 build_s=11.0 fit_s=11.3 checks ok (naive/prefix/isolation) elapsed=1008.9s
+[s2 fold 5/5] hgb_zs     dim=1716 build_s=1.2 fit_s=7.4 checks ok (naive/prefix/isolation) elapsed=1017.8s
+[result stream 2] position_only__lr          all: AUC=0.5047 mac=0.5064 mic=0.5056 | mature: AUC=0.4947 mac=0.4999 mic=0.4998 | subj>=.9=0 max=0.566
+[result stream 2] position_only__hgb         all: AUC=0.5022 mac=0.5025 mic=0.5034 | mature: AUC=0.4951 mac=0.4988 mic=0.4983 | subj>=.9=0 max=0.573
+[result stream 2] hgb_delta32                all: AUC=0.6563 mac=0.6131 mic=0.6145 | mature: AUC=0.6532 mac=0.6110 mic=0.6108 | subj>=.9=0 max=0.817
+[result stream 2] hgb_ms                     all: AUC=0.6596 mac=0.6121 mic=0.6138 | mature: AUC=0.6578 mac=0.6141 mic=0.6141 | subj>=.9=0 max=0.837
+[result stream 2] hgb_prank                  all: AUC=0.6683 mac=0.6228 mic=0.6238 | mature: AUC=0.6684 mac=0.6237 mic=0.6242 | subj>=.9=0 max=0.834
+[result stream 2] hgb_zs                     all: AUC=0.6631 mac=0.6188 mic=0.6202 | mature: AUC=0.6645 mac=0.6191 mic=0.6204 | subj>=.9=0 max=0.830
+[result stream 2] resnet_whiten_logit_delta  all: AUC=0.6597 mac=0.6069 mic=0.6077 | mature: AUC=0.6623 mac=0.6103 mic=0.6105 | subj>=.9=0 max=0.874
+[result stream 2] fusionH_whiten             all: AUC=0.6892 mac=0.6311 mic=0.6323 | mature: AUC=0.6888 mac=0.6334 mic=0.6334 | subj>=.9=0 max=0.874
+[result stream 2] hgb_current                all: AUC=0.6177 mac=0.5878 mic=0.5879 | mature: AUC=0.6128 mac=0.5823 mic=0.5818 | subj>=.9=0 max=0.790
+[result stream 2] fusionM_ms                 all: AUC=0.6913 mac=0.6350 mic=0.6361 | mature: AUC=0.6916 mac=0.6393 mic=0.6393 | subj>=.9=0 max=0.892
+[result stream 2] fusionM_prank              all: AUC=0.6974 mac=0.6407 mic=0.6420 | mature: AUC=0.6987 mac=0.6466 mic=0.6468 | subj>=.9=0 max=0.877
+[result stream 2] fusionM_zs                 all: AUC=0.6944 mac=0.6429 mic=0.6438 | mature: AUC=0.6959 mac=0.6460 mic=0.6467 | subj>=.9=0 max=0.837
+[sanity stream 2] position_only__lr AUC=0.5047 -> OK
+[sanity stream 2] position_only__hgb AUC=0.5022 -> OK
+[boot stream 2] hgb_ms           vs hgb_delta32     all    dAUC=+0.0032[-0.0032,+0.0089] dmac=-0.0010[-0.0079,+0.0053] dmic=-0.0007[-0.0073,+0.0059]
+[boot stream 2] hgb_ms           vs hgb_delta32     mature dAUC=+0.0045[-0.0035,+0.0121] dmac=+0.0032[-0.0062,+0.0114] dmic=+0.0033[-0.0054,+0.0116]
+[boot stream 2] hgb_ms           vs fusionH_whiten  all    dAUC=-0.0297[-0.0430,-0.0163] dmac=-0.0191[-0.0310,-0.0062] dmic=-0.0185[-0.0304,-0.0055]
+[boot stream 2] hgb_ms           vs fusionH_whiten  mature dAUC=-0.0311[-0.0454,-0.0164] dmac=-0.0193[-0.0328,-0.0057] dmic=-0.0193[-0.0329,-0.0056]
+[boot stream 2] hgb_prank        vs hgb_delta32     all    dAUC=+0.0120[+0.0049,+0.0193] dmac=+0.0098[+0.0026,+0.0161] dmic=+0.0095[+0.0025,+0.0157]
+[boot stream 2] hgb_prank        vs hgb_delta32     mature dAUC=+0.0151[+0.0067,+0.0232] dmac=+0.0128[+0.0044,+0.0206] dmic=+0.0135[+0.0051,+0.0218]
+[boot stream 2] hgb_prank        vs fusionH_whiten  all    dAUC=-0.0209[-0.0335,-0.0075] dmac=-0.0082[-0.0183,+0.0024] dmic=-0.0084[-0.0187,+0.0025]
+[boot stream 2] hgb_prank        vs fusionH_whiten  mature dAUC=-0.0204[-0.0338,-0.0070] dmac=-0.0096[-0.0204,+0.0003] dmic=-0.0091[-0.0202,+0.0012]
+[boot stream 2] hgb_zs           vs hgb_delta32     all    dAUC=+0.0068[-0.0047,+0.0185] dmac=+0.0058[-0.0052,+0.0166] dmic=+0.0057[-0.0052,+0.0166]
+[boot stream 2] hgb_zs           vs hgb_delta32     mature dAUC=+0.0113[-0.0026,+0.0249] dmac=+0.0082[-0.0032,+0.0202] dmic=+0.0096[-0.0024,+0.0217]
+[boot stream 2] hgb_zs           vs fusionH_whiten  all    dAUC=-0.0261[-0.0423,-0.0099] dmac=-0.0123[-0.0280,+0.0036] dmic=-0.0121[-0.0282,+0.0041]
+[boot stream 2] hgb_zs           vs fusionH_whiten  mature dAUC=-0.0242[-0.0424,-0.0066] dmac=-0.0142[-0.0304,+0.0030] dmic=-0.0130[-0.0293,+0.0045]
+[boot stream 2] fusionM_ms       vs hgb_delta32     all    dAUC=+0.0349[+0.0214,+0.0475] dmac=+0.0219[+0.0104,+0.0333] dmic=+0.0217[+0.0102,+0.0331]
+[boot stream 2] fusionM_ms       vs hgb_delta32     mature dAUC=+0.0383[+0.0241,+0.0520] dmac=+0.0284[+0.0163,+0.0409] dmic=+0.0285[+0.0167,+0.0410]
+[boot stream 2] fusionM_ms       vs fusionH_whiten  all    dAUC=+0.0020[-0.0020,+0.0059] dmac=+0.0038[-0.0011,+0.0088] dmic=+0.0039[-0.0010,+0.0087]
+[boot stream 2] fusionM_ms       vs fusionH_whiten  mature dAUC=+0.0027[-0.0024,+0.0074] dmac=+0.0059[-0.0006,+0.0122] dmic=+0.0059[-0.0004,+0.0121]
+[boot stream 2] fusionM_prank    vs hgb_delta32     all    dAUC=+0.0411[+0.0275,+0.0544] dmac=+0.0277[+0.0160,+0.0391] dmic=+0.0276[+0.0158,+0.0391]
+[boot stream 2] fusionM_prank    vs hgb_delta32     mature dAUC=+0.0455[+0.0310,+0.0604] dmac=+0.0357[+0.0229,+0.0484] dmic=+0.0361[+0.0229,+0.0490]
+[boot stream 2] fusionM_prank    vs fusionH_whiten  all    dAUC=+0.0082[+0.0038,+0.0127] dmac=+0.0096[+0.0046,+0.0151] dmic=+0.0098[+0.0047,+0.0153]
+[boot stream 2] fusionM_prank    vs fusionH_whiten  mature dAUC=+0.0100[+0.0045,+0.0149] dmac=+0.0133[+0.0073,+0.0195] dmic=+0.0134[+0.0072,+0.0201]
+[boot stream 2] fusionM_zs       vs hgb_delta32     all    dAUC=+0.0381[+0.0230,+0.0529] dmac=+0.0298[+0.0165,+0.0420] dmic=+0.0294[+0.0161,+0.0414]
+[boot stream 2] fusionM_zs       vs hgb_delta32     mature dAUC=+0.0427[+0.0266,+0.0586] dmac=+0.0351[+0.0216,+0.0487] dmic=+0.0359[+0.0223,+0.0499]
+[boot stream 2] fusionM_zs       vs fusionH_whiten  all    dAUC=+0.0052[-0.0022,+0.0122] dmac=+0.0117[+0.0034,+0.0195] dmic=+0.0115[+0.0033,+0.0196]
+[boot stream 2] fusionM_zs       vs fusionH_whiten  mature dAUC=+0.0072[-0.0019,+0.0159] dmac=+0.0126[+0.0030,+0.0217] dmic=+0.0133[+0.0038,+0.0223]
+[done] elapsed=1042.0s -> depositioned_feature_multiscale.json
