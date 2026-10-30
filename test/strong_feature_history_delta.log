@@ -1,0 +1,116 @@
+[start] rows=16067 subjects=57 dim=858 pca=0 smoke=False
+[fold 1/5] built features + checks ok ntr=12949 nte=3118 build_s=2.2 elapsed=3.4s
+[fold 1/5] current_only__hgb      dim=858 fit_s=10.6 thr=0.49 elapsed=14.0s
+[fold 1/5] current_only__lr       dim=858 fit_s=7.7 thr=0.52 elapsed=21.7s
+[fold 1/5] delta_k8__hgb          dim=1716 fit_s=18.3 thr=0.46 elapsed=40.0s
+[fold 1/5] delta_k8__lr           dim=1716 fit_s=15.6 thr=0.48 elapsed=55.6s
+[fold 1/5] delta_k32__hgb         dim=1716 fit_s=18.6 thr=0.48 elapsed=74.2s
+[fold 1/5] delta_k32__lr          dim=1716 fit_s=15.7 thr=0.47 elapsed=89.9s
+[fold 1/5] delta_all__hgb         dim=1716 fit_s=17.9 thr=0.32 elapsed=107.8s
+[fold 1/5] delta_all__lr          dim=1716 fit_s=16.3 thr=0.29 elapsed=124.0s
+[fold 1/5] delta_multi__hgb       dim=2574 fit_s=27.2 thr=0.41 elapsed=151.2s
+[fold 1/5] delta_multi__lr        dim=2574 fit_s=25.6 thr=0.40 elapsed=176.9s
+[fold 2/5] built features + checks ok ntr=12803 nte=3264 build_s=2.1 elapsed=179.5s
+[fold 2/5] current_only__hgb      dim=858 fit_s=9.4 thr=0.56 elapsed=188.9s
+[fold 2/5] current_only__lr       dim=858 fit_s=8.3 thr=0.53 elapsed=197.1s
+[fold 2/5] delta_k8__hgb          dim=1716 fit_s=18.1 thr=0.58 elapsed=215.2s
+[fold 2/5] delta_k8__lr           dim=1716 fit_s=16.2 thr=0.58 elapsed=231.5s
+[fold 2/5] delta_k32__hgb         dim=1716 fit_s=17.9 thr=0.43 elapsed=249.4s
+[fold 2/5] delta_k32__lr          dim=1716 fit_s=16.1 thr=0.54 elapsed=265.5s
+[fold 2/5] delta_all__hgb         dim=1716 fit_s=18.5 thr=0.54 elapsed=284.0s
+[fold 2/5] delta_all__lr          dim=1716 fit_s=16.6 thr=0.49 elapsed=300.6s
+[fold 2/5] delta_multi__hgb       dim=2574 fit_s=26.7 thr=0.60 elapsed=327.2s
+[fold 2/5] delta_multi__lr        dim=2574 fit_s=27.5 thr=0.42 elapsed=354.8s
+[fold 3/5] built features + checks ok ntr=12926 nte=3141 build_s=2.0 elapsed=357.4s
+[fold 3/5] current_only__hgb      dim=858 fit_s=9.6 thr=0.60 elapsed=367.0s
+[fold 3/5] current_only__lr       dim=858 fit_s=8.0 thr=0.41 elapsed=375.0s
+[fold 3/5] delta_k8__hgb          dim=1716 fit_s=18.3 thr=0.63 elapsed=393.3s
+[fold 3/5] delta_k8__lr           dim=1716 fit_s=15.9 thr=0.40 elapsed=409.2s
+[fold 3/5] delta_k32__hgb         dim=1716 fit_s=18.1 thr=0.53 elapsed=427.3s
+[fold 3/5] delta_k32__lr          dim=1716 fit_s=16.0 thr=0.53 elapsed=443.4s
+[fold 3/5] delta_all__hgb         dim=1716 fit_s=18.4 thr=0.58 elapsed=461.7s
+[fold 3/5] delta_all__lr          dim=1716 fit_s=16.5 thr=0.43 elapsed=478.3s
+[fold 3/5] delta_multi__hgb       dim=2574 fit_s=27.5 thr=0.42 elapsed=505.8s
+[fold 3/5] delta_multi__lr        dim=2574 fit_s=28.6 thr=0.45 elapsed=534.4s
+[fold 4/5] built features + checks ok ntr=12666 nte=3401 build_s=2.0 elapsed=537.0s
+[fold 4/5] current_only__hgb      dim=858 fit_s=9.8 thr=0.68 elapsed=546.8s
+[fold 4/5] current_only__lr       dim=858 fit_s=7.3 thr=0.65 elapsed=554.2s
+[fold 4/5] delta_k8__hgb          dim=1716 fit_s=18.0 thr=0.61 elapsed=572.1s
+[fold 4/5] delta_k8__lr           dim=1716 fit_s=14.7 thr=0.53 elapsed=586.9s
+[fold 4/5] delta_k32__hgb         dim=1716 fit_s=18.3 thr=0.35 elapsed=605.2s
+[fold 4/5] delta_k32__lr          dim=1716 fit_s=14.6 thr=0.41 elapsed=619.8s
+[fold 4/5] delta_all__hgb         dim=1716 fit_s=17.9 thr=0.59 elapsed=637.7s
+[fold 4/5] delta_all__lr          dim=1716 fit_s=14.8 thr=0.11 elapsed=652.4s
+[fold 4/5] delta_multi__hgb       dim=2574 fit_s=25.4 thr=0.38 elapsed=677.8s
+[fold 4/5] delta_multi__lr        dim=2574 fit_s=24.5 thr=0.17 elapsed=702.3s
+[fold 5/5] built features + checks ok ntr=12924 nte=3143 build_s=2.0 elapsed=704.9s
+[fold 5/5] current_only__hgb      dim=858 fit_s=9.7 thr=0.66 elapsed=714.6s
+[fold 5/5] current_only__lr       dim=858 fit_s=8.2 thr=0.57 elapsed=722.8s
+[fold 5/5] delta_k8__hgb          dim=1716 fit_s=18.5 thr=0.68 elapsed=741.3s
+[fold 5/5] delta_k8__lr           dim=1716 fit_s=15.7 thr=0.68 elapsed=757.1s
+[fold 5/5] delta_k32__hgb         dim=1716 fit_s=18.4 thr=0.56 elapsed=775.5s
+[fold 5/5] delta_k32__lr          dim=1716 fit_s=15.2 thr=0.56 elapsed=790.7s
+[fold 5/5] delta_all__hgb         dim=1716 fit_s=17.5 thr=0.38 elapsed=808.3s
+[fold 5/5] delta_all__lr          dim=1716 fit_s=16.3 thr=0.36 elapsed=824.5s
+[fold 5/5] delta_multi__hgb       dim=2574 fit_s=26.6 thr=0.28 elapsed=851.2s
+[fold 5/5] delta_multi__lr        dim=2574 fit_s=25.7 thr=0.35 elapsed=876.9s
+[result] baseline_merge_best                all: AUC=0.6743 mac=0.6302 mic=0.6300 | switching: AUC=0.2794 mac=0.3465 mic=0.3484 | steady: AUC=0.7113 mac=0.6571 mic=0.6567 | history_comparable: AUC=0.6708 mac=0.6273 mic=0.6283
+[result] current_only__hgb                  all: AUC=0.6225 mac=0.5888 mic=0.5891 | switching: AUC=0.3025 mac=0.3582 mic=0.3563 | steady: AUC=0.6525 mac=0.6108 mic=0.6113 | history_comparable: AUC=0.6167 mac=0.5832 mic=0.5848
+[result] current_only__lr                   all: AUC=0.6237 mac=0.5879 mic=0.5883 | switching: AUC=0.3307 mac=0.3766 mic=0.3737 | steady: AUC=0.6513 mac=0.6076 mic=0.6084 | history_comparable: AUC=0.6167 mac=0.5801 mic=0.5830
+[result] delta_k8__hgb                      all: AUC=0.6680 mac=0.6182 mic=0.6200 | switching: AUC=0.2657 mac=0.3146 mic=0.3153 | steady: AUC=0.7043 mac=0.6464 mic=0.6482 | history_comparable: AUC=0.6455 mac=0.6081 mic=0.6096
+[result] delta_k8__lr                       all: AUC=0.6374 mac=0.6028 mic=0.6028 | switching: AUC=0.2631 mac=0.3237 mic=0.3214 | steady: AUC=0.6731 mac=0.6293 mic=0.6296 | history_comparable: AUC=0.6282 mac=0.5936 mic=0.5973
+[result] delta_k32__hgb                     all: AUC=0.7423 mac=0.6738 mic=0.6738 | switching: AUC=0.3702 mac=0.4073 mic=0.4051 | steady: AUC=0.7705 mac=0.6963 mic=0.6966 | history_comparable: AUC=0.6835 mac=0.6224 mic=0.6246
+[result] delta_k32__lr                      all: AUC=0.6241 mac=0.5898 mic=0.5885 | switching: AUC=0.4274 mac=0.4491 mic=0.4482 | steady: AUC=0.6417 mac=0.6026 mic=0.6013 | history_comparable: AUC=0.6219 mac=0.5875 mic=0.5887
+[result] delta_all__hgb                     all: AUC=0.9746 mac=0.9158 mic=0.9225 | switching: AUC=0.7949 mac=0.7053 mic=0.7022 | steady: AUC=0.9833 mac=0.9365 mic=0.9438 | history_comparable: AUC=0.9675 mac=0.8962 mic=0.9007
+[result] delta_all__lr                      all: AUC=0.6483 mac=0.6088 mic=0.6089 | switching: AUC=0.3596 mac=0.3836 mic=0.3832 | steady: AUC=0.6750 mac=0.6299 mic=0.6302 | history_comparable: AUC=0.6416 mac=0.6040 mic=0.6054
+[result] delta_multi__hgb                   all: AUC=0.9736 mac=0.9151 mic=0.9217 | switching: AUC=0.7936 mac=0.6933 mic=0.6901 | steady: AUC=0.9822 mac=0.9368 mic=0.9439 | history_comparable: AUC=0.9657 mac=0.8964 mic=0.9007
+[result] delta_multi__lr                    all: AUC=0.6903 mac=0.6459 mic=0.6455 | switching: AUC=0.2561 mac=0.3126 mic=0.3114 | steady: AUC=0.7300 mac=0.6771 mic=0.6771 | history_comparable: AUC=0.6693 mac=0.6287 mic=0.6298
+[result] current_only__hgb__innerthr        all: AUC=0.6129 mac=0.5548 mic=0.5542 | switching: AUC=0.3264 mac=0.4228 mic=0.4224 | steady: AUC=0.6401 mac=0.5672 mic=0.5664 | history_comparable: AUC=0.6054 mac=0.5477 mic=0.5472
+[result] current_only__lr__innerthr         all: AUC=0.6126 mac=0.5760 mic=0.5768 | switching: AUC=0.3530 mac=0.4149 mic=0.4135 | steady: AUC=0.6372 mac=0.5910 mic=0.5921 | history_comparable: AUC=0.6040 mac=0.5709 mic=0.5742
+[result] delta_k8__hgb__innerthr            all: AUC=0.6536 mac=0.5829 mic=0.5827 | switching: AUC=0.2863 mac=0.3670 mic=0.3661 | steady: AUC=0.6869 mac=0.6026 mic=0.6025 | history_comparable: AUC=0.6288 mac=0.5694 mic=0.5681
+[result] delta_k8__lr__innerthr             all: AUC=0.6198 mac=0.5833 mic=0.5840 | switching: AUC=0.2941 mac=0.3494 mic=0.3485 | steady: AUC=0.6511 mac=0.6054 mic=0.6063 | history_comparable: AUC=0.6104 mac=0.5766 mic=0.5805
+[result] delta_k32__hgb__innerthr           all: AUC=0.7329 mac=0.6703 mic=0.6702 | switching: AUC=0.3750 mac=0.4178 mic=0.4157 | steady: AUC=0.7601 mac=0.6916 mic=0.6917 | history_comparable: AUC=0.6695 mac=0.6156 mic=0.6176
+[result] delta_k32__lr__innerthr            all: AUC=0.6180 mac=0.5867 mic=0.5851 | switching: AUC=0.4302 mac=0.4389 mic=0.4378 | steady: AUC=0.6348 mac=0.6002 mic=0.5986 | history_comparable: AUC=0.6152 mac=0.5861 mic=0.5869
+[result] delta_all__hgb__innerthr           all: AUC=0.9731 mac=0.9138 mic=0.9203 | switching: AUC=0.7899 mac=0.7038 mic=0.7007 | steady: AUC=0.9822 mac=0.9346 mic=0.9415 | history_comparable: AUC=0.9658 mac=0.8932 mic=0.8969
+[result] delta_all__lr__innerthr            all: AUC=0.6117 mac=0.5891 mic=0.5883 | switching: AUC=0.3929 mac=0.4278 mic=0.4281 | steady: AUC=0.6319 mac=0.6040 mic=0.6031 | history_comparable: AUC=0.6076 mac=0.5901 mic=0.5911
+[result] delta_multi__hgb__innerthr         all: AUC=0.9734 mac=0.9106 mic=0.9170 | switching: AUC=0.7895 mac=0.6836 mic=0.6804 | steady: AUC=0.9821 mac=0.9322 mic=0.9390 | history_comparable: AUC=0.9669 mac=0.8899 mic=0.8939
+[result] delta_multi__lr__innerthr          all: AUC=0.6719 mac=0.6224 mic=0.6215 | switching: AUC=0.2775 mac=0.3456 mic=0.3438 | steady: AUC=0.7080 mac=0.6482 mic=0.6475 | history_comparable: AUC=0.6534 mac=0.6129 mic=0.6136
+[boot] current_only__hgb_vs_baseline_merge_best__all                          dAUC=-0.0517[-0.0689,-0.0358] dmac=-0.0413[-0.0576,-0.0251] elapsed=1004.3s
+[boot] current_only__hgb_vs_baseline_merge_best__history_comparable           dAUC=-0.0538[-0.0713,-0.0365] dmac=-0.0439[-0.0619,-0.0258] elapsed=1119.5s
+[boot] current_only__lr_vs_baseline_merge_best__all                           dAUC=-0.0508[-0.0690,-0.0342] dmac=-0.0423[-0.0589,-0.0262] elapsed=1244.9s
+[boot] current_only__lr_vs_baseline_merge_best__history_comparable            dAUC=-0.0543[-0.0785,-0.0322] dmac=-0.0470[-0.0694,-0.0264] elapsed=1360.5s
+[boot] delta_k8__hgb_vs_baseline_merge_best__all                              dAUC=-0.0064[-0.0224,+0.0088] dmac=-0.0121[-0.0283,+0.0048] elapsed=1482.4s
+[boot] delta_k8__hgb_vs_baseline_merge_best__history_comparable               dAUC=-0.0251[-0.0441,-0.0060] dmac=-0.0189[-0.0355,-0.0017] elapsed=1597.8s
+[boot] delta_k8__hgb_vs_current_only__hgb__all                                dAUC=+0.0453[+0.0345,+0.0563] dmac=+0.0293[+0.0191,+0.0389] elapsed=1718.3s
+[boot] delta_k8__hgb_vs_current_only__hgb__history_comparable                 dAUC=+0.0287[+0.0164,+0.0402] dmac=+0.0250[+0.0141,+0.0353] elapsed=1833.2s
+[boot] delta_k8__lr_vs_baseline_merge_best__all                               dAUC=-0.0367[-0.0594,-0.0135] dmac=-0.0272[-0.0468,-0.0065] elapsed=1954.8s
+[boot] delta_k8__lr_vs_baseline_merge_best__history_comparable                dAUC=-0.0425[-0.0728,-0.0136] dmac=-0.0334[-0.0613,-0.0063] elapsed=2070.5s
+[boot] delta_k8__lr_vs_current_only__lr__all                                  dAUC=+0.0141[+0.0025,+0.0263] dmac=+0.0151[+0.0049,+0.0261] elapsed=2192.8s
+[boot] delta_k8__lr_vs_current_only__lr__history_comparable                   dAUC=+0.0118[-0.0050,+0.0272] dmac=+0.0136[-0.0007,+0.0269] elapsed=2309.1s
+[boot] delta_k32__hgb_vs_baseline_merge_best__all                             dAUC=+0.0676[+0.0407,+0.0942] dmac=+0.0434[+0.0227,+0.0645] elapsed=2431.5s
+[boot] delta_k32__hgb_vs_baseline_merge_best__history_comparable              dAUC=+0.0124[-0.0159,+0.0400] dmac=-0.0049[-0.0265,+0.0186] elapsed=2547.9s
+[boot] delta_k32__hgb_vs_current_only__hgb__all                               dAUC=+0.1193[+0.0917,+0.1476] dmac=+0.0847[+0.0622,+0.1078] elapsed=2670.5s
+[boot] delta_k32__hgb_vs_current_only__hgb__history_comparable                dAUC=+0.0662[+0.0365,+0.0951] dmac=+0.0391[+0.0156,+0.0628] elapsed=2787.0s
+[boot] delta_k32__lr_vs_baseline_merge_best__all                              dAUC=-0.0502[-0.0814,-0.0166] dmac=-0.0404[-0.0650,-0.0141] elapsed=2909.4s
+[boot] delta_k32__lr_vs_baseline_merge_best__history_comparable               dAUC=-0.0491[-0.0850,-0.0109] dmac=-0.0398[-0.0687,-0.0104] elapsed=3025.9s
+[boot] delta_k32__lr_vs_current_only__lr__all                                 dAUC=+0.0006[-0.0243,+0.0269] dmac=+0.0019[-0.0174,+0.0217] elapsed=3148.5s
+[boot] delta_k32__lr_vs_current_only__lr__history_comparable                  dAUC=+0.0053[-0.0211,+0.0304] dmac=+0.0072[-0.0115,+0.0259] elapsed=3264.8s
+[boot] delta_all__hgb_vs_baseline_merge_best__all                             dAUC=+0.2994[+0.2659,+0.3330] dmac=+0.2850[+0.2486,+0.3193] elapsed=3387.0s
+[boot] delta_all__hgb_vs_baseline_merge_best__history_comparable              dAUC=+0.2961[+0.2604,+0.3325] dmac=+0.2690[+0.2270,+0.3100] elapsed=3503.7s
+[boot] delta_all__hgb_vs_current_only__hgb__all                               dAUC=+0.3511[+0.3147,+0.3851] dmac=+0.3263[+0.2881,+0.3598] elapsed=3626.2s
+[boot] delta_all__hgb_vs_current_only__hgb__history_comparable                dAUC=+0.3499[+0.3099,+0.3862] dmac=+0.3129[+0.2669,+0.3511] elapsed=3742.4s
+[boot] delta_all__lr_vs_baseline_merge_best__all                              dAUC=-0.0265[-0.0507,-0.0022] dmac=-0.0219[-0.0423,-0.0023] elapsed=3865.3s
+[boot] delta_all__lr_vs_baseline_merge_best__history_comparable               dAUC=-0.0295[-0.0583,-0.0024] dmac=-0.0237[-0.0474,-0.0011] elapsed=3981.6s
+[boot] delta_all__lr_vs_current_only__lr__all                                 dAUC=+0.0242[+0.0058,+0.0429] dmac=+0.0204[+0.0034,+0.0370] elapsed=4104.4s
+[boot] delta_all__lr_vs_current_only__lr__history_comparable                  dAUC=+0.0248[+0.0108,+0.0400] dmac=+0.0234[+0.0075,+0.0388] elapsed=4220.8s
+[boot] delta_multi__hgb_vs_baseline_merge_best__all                           dAUC=+0.2984[+0.2652,+0.3317] dmac=+0.2844[+0.2485,+0.3191] elapsed=4343.0s
+[boot] delta_multi__hgb_vs_baseline_merge_best__history_comparable            dAUC=+0.2942[+0.2591,+0.3302] dmac=+0.2691[+0.2283,+0.3096] elapsed=4459.2s
+[boot] delta_multi__hgb_vs_current_only__hgb__all                             dAUC=+0.3501[+0.3143,+0.3838] dmac=+0.3257[+0.2873,+0.3592] elapsed=4581.7s
+[boot] delta_multi__hgb_vs_current_only__hgb__history_comparable              dAUC=+0.3480[+0.3071,+0.3850] dmac=+0.3131[+0.2694,+0.3505] elapsed=4697.9s
+[boot] delta_multi__lr_vs_baseline_merge_best__all                            dAUC=+0.0156[-0.0106,+0.0421] dmac=+0.0157[-0.0061,+0.0382] elapsed=4820.8s
+[boot] delta_multi__lr_vs_baseline_merge_best__history_comparable             dAUC=-0.0018[-0.0328,+0.0291] dmac=+0.0014[-0.0253,+0.0274] elapsed=4936.9s
+[boot] delta_multi__lr_vs_current_only__lr__all                               dAUC=+0.0663[+0.0461,+0.0840] dmac=+0.0580[+0.0408,+0.0754] elapsed=5059.2s
+[boot] delta_multi__lr_vs_current_only__lr__history_comparable                dAUC=+0.0526[+0.0325,+0.0722] dmac=+0.0485[+0.0298,+0.0673] elapsed=5175.3s
+[subject] delta_multi__hgb: n_subj=56 >=0.9: 40 mean=0.8964 001:0.963 002:0.790 003:0.894 004:0.794 005:0.853 006:0.838 007:0.993 008:0.692 009:0.458 010:0.973 011:0.981 012:0.919 013:0.631 014:0.964 015:0.680 016:0.953 017:0.827 018:0.993 019:0.995 020:0.906 021:0.917 022:0.502 023:0.925 024:0.976 025:0.914 026:0.959 027:0.845 028:0.950 029:0.840 030:0.921 031:0.970 035:0.958 036:0.878 037:0.918 038:0.980 039:0.950 040:0.976 041:0.983 042:0.937 043:0.994 044:0.914 045:0.937 046:0.982 047:0.500 048:0.981 049:0.900 050:0.962 051:0.954 052:0.972 053:0.988 054:0.976 055:0.950 056:0.963 057:0.873 058:0.986 059:0.967
+[subject] baseline_merge_best: n_subj=56 >=0.9: 0 mean=0.6273 001:0.753 002:0.565 003:0.554 004:0.483 005:0.592 006:0.679 007:0.789 008:0.404 009:0.714 010:0.590 011:0.678 012:0.610 013:0.574 014:0.622 015:0.580 016:0.667 017:0.537 018:0.771 019:0.471 020:0.767 021:0.656 022:0.600 023:0.503 024:0.498 025:0.758 026:0.709 027:0.549 028:0.668 029:0.380 030:0.749 031:0.696 035:0.727 036:0.700 037:0.492 038:0.694 039:0.442 040:0.642 041:0.605 042:0.410 043:0.802 044:0.775 045:0.532 046:0.661 047:0.641 048:0.659 049:0.692 050:0.490 051:0.730 052:0.469 053:0.534 054:0.709 055:0.688 056:0.815 057:0.696 058:0.726 059:0.630
+[done] elapsed=5175.8s
