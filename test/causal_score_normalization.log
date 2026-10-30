@@ -1,0 +1,9 @@
+[elapsed   0.41s] s10 baseline macro=0.785198 micro=0.785725 AUC=0.808580
+[elapsed  26.24s] s10 location crossfit macro=0.780377 micro=0.781258 delta=-0.004821 CI=[-0.011693922445134331, 0.0014872618833278726]
+[elapsed  52.03s] s10 mad      crossfit macro=0.791572 micro=0.791976 delta=+0.006374 CI=[4.070105824023507e-06, 0.012387344753285923]
+[elapsed  78.19s] s10 iqr      crossfit macro=0.789931 micro=0.790404 delta=+0.004733 CI=[-0.003231170834032933, 0.012151261823775829]
+[elapsed  78.51s] s5 baseline macro=0.767594 micro=0.767957 AUC=0.816438
+[elapsed 104.23s] s5 location crossfit macro=0.768503 micro=0.768798 delta=+0.000908 CI=[-0.006289239061614492, 0.007544686318978307]
+[elapsed 130.11s] s5 mad      crossfit macro=0.776937 micro=0.777162 delta=+0.009343 CI=[0.0030081301965749446, 0.01575159782185386]
+[elapsed 156.33s] s5 iqr      crossfit macro=0.775880 micro=0.776033 delta=+0.008286 CI=[0.0021177646178162147, 0.01446672174736367]
+[elapsed 156.36s] done seconds=156.33
