@@ -1,0 +1,180 @@
+[elapsed     0.55s] loading full dense raw to GPU: shape=(96091, 1500) dtype=float32
+[elapsed     1.03s] GPU=NVIDIA GeForce GTX 1660 SUPER torch=2.5.1+cu121 raw_memory=0.537GiB batch=1024 AMP=True
+[elapsed     1.47s] start fold 1/5 seed 0: train=57899 val=3262 test=3118 subjects=34/12/11
+[elapsed    16.42s] fold 1/5 seed 0 epoch 01/30 loss=0.69458 valAUC=0.56022 valMacro@0.5=0.53019 best=0.56022@1 GPUmax=1.31GiB
+[elapsed    22.00s] fold 1/5 seed 0 epoch 02/30 loss=0.67954 valAUC=0.57865 valMacro@0.5=0.53632 best=0.57865@2 GPUmax=1.31GiB
+[elapsed    27.59s] fold 1/5 seed 0 epoch 03/30 loss=0.67987 valAUC=0.56903 valMacro@0.5=0.51917 best=0.57865@2 GPUmax=1.31GiB
+[elapsed    33.20s] fold 1/5 seed 0 epoch 04/30 loss=0.67287 valAUC=0.57861 valMacro@0.5=0.53762 best=0.57865@2 GPUmax=1.31GiB
+[elapsed    38.80s] fold 1/5 seed 0 epoch 05/30 loss=0.67099 valAUC=0.57983 valMacro@0.5=0.52110 best=0.57983@5 GPUmax=1.31GiB
+[elapsed    44.40s] fold 1/5 seed 0 epoch 06/30 loss=0.67032 valAUC=0.59701 valMacro@0.5=0.56182 best=0.59701@6 GPUmax=1.31GiB
+[elapsed    50.00s] fold 1/5 seed 0 epoch 07/30 loss=0.66476 valAUC=0.61194 valMacro@0.5=0.58440 best=0.61194@7 GPUmax=1.31GiB
+[elapsed    55.60s] fold 1/5 seed 0 epoch 08/30 loss=0.66335 valAUC=0.60285 valMacro@0.5=0.56369 best=0.61194@7 GPUmax=1.31GiB
+[elapsed    61.21s] fold 1/5 seed 0 epoch 09/30 loss=0.66199 valAUC=0.60137 valMacro@0.5=0.57901 best=0.61194@7 GPUmax=1.31GiB
+[elapsed    66.81s] fold 1/5 seed 0 epoch 10/30 loss=0.65905 valAUC=0.59846 valMacro@0.5=0.57117 best=0.61194@7 GPUmax=1.31GiB
+[elapsed    72.42s] fold 1/5 seed 0 epoch 11/30 loss=0.65848 valAUC=0.60181 valMacro@0.5=0.55854 best=0.61194@7 GPUmax=1.31GiB
+[elapsed    78.02s] fold 1/5 seed 0 epoch 12/30 loss=0.65338 valAUC=0.60762 valMacro@0.5=0.58413 best=0.61194@7 GPUmax=1.31GiB
+[elapsed    83.62s] fold 1/5 seed 0 epoch 13/30 loss=0.65048 valAUC=0.61834 valMacro@0.5=0.55911 best=0.61834@13 GPUmax=1.31GiB
+[elapsed    89.24s] fold 1/5 seed 0 epoch 14/30 loss=0.64883 valAUC=0.61074 valMacro@0.5=0.54666 best=0.61834@13 GPUmax=1.31GiB
+[elapsed    94.86s] fold 1/5 seed 0 epoch 15/30 loss=0.63993 valAUC=0.60962 valMacro@0.5=0.57140 best=0.61834@13 GPUmax=1.31GiB
+[elapsed   100.51s] fold 1/5 seed 0 epoch 16/30 loss=0.63690 valAUC=0.59688 valMacro@0.5=0.51803 best=0.61834@13 GPUmax=1.31GiB
+[elapsed   106.15s] fold 1/5 seed 0 epoch 17/30 loss=0.63273 valAUC=0.61131 valMacro@0.5=0.52277 best=0.61834@13 GPUmax=1.31GiB
+[elapsed   111.79s] fold 1/5 seed 0 epoch 18/30 loss=0.62808 valAUC=0.60670 valMacro@0.5=0.53601 best=0.61834@13 GPUmax=1.31GiB
+[elapsed   117.44s] fold 1/5 seed 0 epoch 19/30 loss=0.62632 valAUC=0.61261 valMacro@0.5=0.55757 best=0.61834@13 GPUmax=1.31GiB
+[elapsed   118.58s] finished fold 1/5 seed 0: best_epoch=13 best_val_AUC=0.618340
+[elapsed   118.58s] start fold 1/5 seed 1: train=57899 val=3262 test=3118 subjects=34/12/11
+[elapsed   124.24s] fold 1/5 seed 1 epoch 01/30 loss=0.71745 valAUC=0.54211 valMacro@0.5=0.53281 best=0.54211@1 GPUmax=1.31GiB
+[elapsed   129.87s] fold 1/5 seed 1 epoch 02/30 loss=0.68266 valAUC=0.55600 valMacro@0.5=0.52085 best=0.55600@2 GPUmax=1.31GiB
+[elapsed   135.50s] fold 1/5 seed 1 epoch 03/30 loss=0.67812 valAUC=0.56682 valMacro@0.5=0.55848 best=0.56682@3 GPUmax=1.31GiB
+[elapsed   141.14s] fold 1/5 seed 1 epoch 04/30 loss=0.67196 valAUC=0.58034 valMacro@0.5=0.53301 best=0.58034@4 GPUmax=1.31GiB
+[elapsed   146.79s] fold 1/5 seed 1 epoch 05/30 loss=0.67004 valAUC=0.59503 valMacro@0.5=0.56103 best=0.59503@5 GPUmax=1.31GiB
+[elapsed   152.43s] fold 1/5 seed 1 epoch 06/30 loss=0.66724 valAUC=0.59139 valMacro@0.5=0.56870 best=0.59503@5 GPUmax=1.31GiB
+[elapsed   158.08s] fold 1/5 seed 1 epoch 07/30 loss=0.66575 valAUC=0.60689 valMacro@0.5=0.57626 best=0.60689@7 GPUmax=1.31GiB
+[elapsed   163.72s] fold 1/5 seed 1 epoch 08/30 loss=0.66266 valAUC=0.61953 valMacro@0.5=0.58649 best=0.61953@8 GPUmax=1.31GiB
+[elapsed   169.36s] fold 1/5 seed 1 epoch 09/30 loss=0.66131 valAUC=0.61418 valMacro@0.5=0.57801 best=0.61953@8 GPUmax=1.31GiB
+[elapsed   175.00s] fold 1/5 seed 1 epoch 10/30 loss=0.65747 valAUC=0.61309 valMacro@0.5=0.57978 best=0.61953@8 GPUmax=1.31GiB
+[elapsed   180.64s] fold 1/5 seed 1 epoch 11/30 loss=0.65503 valAUC=0.59716 valMacro@0.5=0.56317 best=0.61953@8 GPUmax=1.31GiB
+[elapsed   186.28s] fold 1/5 seed 1 epoch 12/30 loss=0.65152 valAUC=0.61119 valMacro@0.5=0.52182 best=0.61953@8 GPUmax=1.31GiB
+[elapsed   191.91s] fold 1/5 seed 1 epoch 13/30 loss=0.64883 valAUC=0.59143 valMacro@0.5=0.53807 best=0.61953@8 GPUmax=1.31GiB
+[elapsed   197.55s] fold 1/5 seed 1 epoch 14/30 loss=0.64721 valAUC=0.60764 valMacro@0.5=0.55349 best=0.61953@8 GPUmax=1.31GiB
+[elapsed   197.77s] finished fold 1/5 seed 1: best_epoch=8 best_val_AUC=0.619528
+[elapsed   197.83s] start fold 2/5 seed 0: train=57545 val=3183 test=3264 subjects=34/11/12
+[elapsed   205.11s] fold 2/5 seed 0 epoch 01/30 loss=0.71850 valAUC=0.54245 valMacro@0.5=0.52745 best=0.54245@1 GPUmax=1.31GiB
+[elapsed   210.71s] fold 2/5 seed 0 epoch 02/30 loss=0.68834 valAUC=0.55423 valMacro@0.5=0.53984 best=0.55423@2 GPUmax=1.31GiB
+[elapsed   216.31s] fold 2/5 seed 0 epoch 03/30 loss=0.68473 valAUC=0.55790 valMacro@0.5=0.54380 best=0.55790@3 GPUmax=1.31GiB
+[elapsed   221.92s] fold 2/5 seed 0 epoch 04/30 loss=0.68093 valAUC=0.58395 valMacro@0.5=0.55713 best=0.58395@4 GPUmax=1.31GiB
+[elapsed   227.51s] fold 2/5 seed 0 epoch 05/30 loss=0.67933 valAUC=0.59068 valMacro@0.5=0.57050 best=0.59068@5 GPUmax=1.31GiB
+[elapsed   233.10s] fold 2/5 seed 0 epoch 06/30 loss=0.67479 valAUC=0.60872 valMacro@0.5=0.57974 best=0.60872@6 GPUmax=1.31GiB
+[elapsed   238.70s] fold 2/5 seed 0 epoch 07/30 loss=0.67420 valAUC=0.61168 valMacro@0.5=0.57902 best=0.61168@7 GPUmax=1.31GiB
+[elapsed   244.30s] fold 2/5 seed 0 epoch 08/30 loss=0.67093 valAUC=0.61244 valMacro@0.5=0.57784 best=0.61244@8 GPUmax=1.31GiB
+[elapsed   249.90s] fold 2/5 seed 0 epoch 09/30 loss=0.66915 valAUC=0.59999 valMacro@0.5=0.56460 best=0.61244@8 GPUmax=1.31GiB
+[elapsed   255.51s] fold 2/5 seed 0 epoch 10/30 loss=0.66692 valAUC=0.61117 valMacro@0.5=0.56791 best=0.61244@8 GPUmax=1.31GiB
+[elapsed   261.10s] fold 2/5 seed 0 epoch 11/30 loss=0.66175 valAUC=0.59964 valMacro@0.5=0.55360 best=0.61244@8 GPUmax=1.31GiB
+[elapsed   266.71s] fold 2/5 seed 0 epoch 12/30 loss=0.65990 valAUC=0.58538 valMacro@0.5=0.56308 best=0.61244@8 GPUmax=1.31GiB
+[elapsed   272.31s] fold 2/5 seed 0 epoch 13/30 loss=0.65875 valAUC=0.60371 valMacro@0.5=0.55482 best=0.61244@8 GPUmax=1.31GiB
+[elapsed   277.92s] fold 2/5 seed 0 epoch 14/30 loss=0.65583 valAUC=0.59191 valMacro@0.5=0.55895 best=0.61244@8 GPUmax=1.31GiB
+[elapsed   279.07s] finished fold 2/5 seed 0: best_epoch=8 best_val_AUC=0.612442
+[elapsed   279.07s] start fold 2/5 seed 1: train=57545 val=3183 test=3264 subjects=34/11/12
+[elapsed   284.69s] fold 2/5 seed 1 epoch 01/30 loss=0.70955 valAUC=0.53154 valMacro@0.5=0.52853 best=0.53154@1 GPUmax=1.31GiB
+[elapsed   290.31s] fold 2/5 seed 1 epoch 02/30 loss=0.68872 valAUC=0.57267 valMacro@0.5=0.55144 best=0.57267@2 GPUmax=1.31GiB
+[elapsed   295.95s] fold 2/5 seed 1 epoch 03/30 loss=0.68377 valAUC=0.56539 valMacro@0.5=0.54648 best=0.57267@2 GPUmax=1.31GiB
+[elapsed   301.58s] fold 2/5 seed 1 epoch 04/30 loss=0.67970 valAUC=0.58132 valMacro@0.5=0.55311 best=0.58132@4 GPUmax=1.31GiB
+[elapsed   307.22s] fold 2/5 seed 1 epoch 05/30 loss=0.67739 valAUC=0.60926 valMacro@0.5=0.58325 best=0.60926@5 GPUmax=1.31GiB
+[elapsed   312.86s] fold 2/5 seed 1 epoch 06/30 loss=0.67463 valAUC=0.60075 valMacro@0.5=0.57844 best=0.60926@5 GPUmax=1.31GiB
+[elapsed   318.52s] fold 2/5 seed 1 epoch 07/30 loss=0.67426 valAUC=0.60478 valMacro@0.5=0.58380 best=0.60926@5 GPUmax=1.31GiB
+[elapsed   324.16s] fold 2/5 seed 1 epoch 08/30 loss=0.67072 valAUC=0.60757 valMacro@0.5=0.58821 best=0.60926@5 GPUmax=1.31GiB
+[elapsed   329.80s] fold 2/5 seed 1 epoch 09/30 loss=0.66762 valAUC=0.62221 valMacro@0.5=0.55046 best=0.62221@9 GPUmax=1.31GiB
+[elapsed   335.45s] fold 2/5 seed 1 epoch 10/30 loss=0.66301 valAUC=0.61554 valMacro@0.5=0.57942 best=0.62221@9 GPUmax=1.31GiB
+[elapsed   341.08s] fold 2/5 seed 1 epoch 11/30 loss=0.65961 valAUC=0.61581 valMacro@0.5=0.56976 best=0.62221@9 GPUmax=1.31GiB
+[elapsed   346.73s] fold 2/5 seed 1 epoch 12/30 loss=0.65602 valAUC=0.59585 valMacro@0.5=0.55469 best=0.62221@9 GPUmax=1.31GiB
+[elapsed   352.37s] fold 2/5 seed 1 epoch 13/30 loss=0.64964 valAUC=0.60521 valMacro@0.5=0.56272 best=0.62221@9 GPUmax=1.31GiB
+[elapsed   358.01s] fold 2/5 seed 1 epoch 14/30 loss=0.64730 valAUC=0.59895 valMacro@0.5=0.56113 best=0.62221@9 GPUmax=1.31GiB
+[elapsed   363.64s] fold 2/5 seed 1 epoch 15/30 loss=0.64303 valAUC=0.58736 valMacro@0.5=0.53479 best=0.62221@9 GPUmax=1.31GiB
+[elapsed   363.86s] finished fold 2/5 seed 1: best_epoch=9 best_val_AUC=0.622213
+[elapsed   363.92s] start fold 3/5 seed 0: train=58396 val=3167 test=3141 subjects=35/11/11
+[elapsed   370.78s] fold 3/5 seed 0 epoch 01/30 loss=0.70823 valAUC=0.58043 valMacro@0.5=0.56045 best=0.58043@1 GPUmax=1.31GiB
+[elapsed   376.52s] fold 3/5 seed 0 epoch 02/30 loss=0.68744 valAUC=0.57072 valMacro@0.5=0.55386 best=0.58043@1 GPUmax=1.31GiB
+[elapsed   382.24s] fold 3/5 seed 0 epoch 03/30 loss=0.68219 valAUC=0.58359 valMacro@0.5=0.55293 best=0.58359@3 GPUmax=1.31GiB
+[elapsed   387.95s] fold 3/5 seed 0 epoch 04/30 loss=0.67575 valAUC=0.59186 valMacro@0.5=0.55932 best=0.59186@4 GPUmax=1.31GiB
+[elapsed   393.67s] fold 3/5 seed 0 epoch 05/30 loss=0.67015 valAUC=0.58158 valMacro@0.5=0.55628 best=0.59186@4 GPUmax=1.31GiB
+[elapsed   399.38s] fold 3/5 seed 0 epoch 06/30 loss=0.66495 valAUC=0.58705 valMacro@0.5=0.55056 best=0.59186@4 GPUmax=1.31GiB
+[elapsed   405.10s] fold 3/5 seed 0 epoch 07/30 loss=0.66149 valAUC=0.59109 valMacro@0.5=0.56290 best=0.59186@4 GPUmax=1.31GiB
+[elapsed   410.81s] fold 3/5 seed 0 epoch 08/30 loss=0.65854 valAUC=0.58455 valMacro@0.5=0.54737 best=0.59186@4 GPUmax=1.31GiB
+[elapsed   416.54s] fold 3/5 seed 0 epoch 09/30 loss=0.65654 valAUC=0.58483 valMacro@0.5=0.52594 best=0.59186@4 GPUmax=1.31GiB
+[elapsed   422.25s] fold 3/5 seed 0 epoch 10/30 loss=0.65466 valAUC=0.59448 valMacro@0.5=0.57392 best=0.59448@10 GPUmax=1.31GiB
+[elapsed   427.97s] fold 3/5 seed 0 epoch 11/30 loss=0.64969 valAUC=0.59273 valMacro@0.5=0.57105 best=0.59448@10 GPUmax=1.31GiB
+[elapsed   433.68s] fold 3/5 seed 0 epoch 12/30 loss=0.64571 valAUC=0.58320 valMacro@0.5=0.55238 best=0.59448@10 GPUmax=1.31GiB
+[elapsed   439.39s] fold 3/5 seed 0 epoch 13/30 loss=0.64420 valAUC=0.58718 valMacro@0.5=0.53997 best=0.59448@10 GPUmax=1.31GiB
+[elapsed   445.09s] fold 3/5 seed 0 epoch 14/30 loss=0.63936 valAUC=0.55888 valMacro@0.5=0.52046 best=0.59448@10 GPUmax=1.31GiB
+[elapsed   450.80s] fold 3/5 seed 0 epoch 15/30 loss=0.63924 valAUC=0.56303 valMacro@0.5=0.53697 best=0.59448@10 GPUmax=1.31GiB
+[elapsed   456.51s] fold 3/5 seed 0 epoch 16/30 loss=0.63383 valAUC=0.57148 valMacro@0.5=0.54169 best=0.59448@10 GPUmax=1.31GiB
+[elapsed   457.68s] finished fold 3/5 seed 0: best_epoch=10 best_val_AUC=0.594475
+[elapsed   457.68s] start fold 3/5 seed 1: train=58396 val=3167 test=3141 subjects=35/11/11
+[elapsed   463.42s] fold 3/5 seed 1 epoch 01/30 loss=0.71534 valAUC=0.57902 valMacro@0.5=0.53439 best=0.57902@1 GPUmax=1.31GiB
+[elapsed   469.15s] fold 3/5 seed 1 epoch 02/30 loss=0.68719 valAUC=0.58685 valMacro@0.5=0.55799 best=0.58685@2 GPUmax=1.31GiB
+[elapsed   474.88s] fold 3/5 seed 1 epoch 03/30 loss=0.67897 valAUC=0.59942 valMacro@0.5=0.56391 best=0.59942@3 GPUmax=1.31GiB
+[elapsed   480.59s] fold 3/5 seed 1 epoch 04/30 loss=0.67513 valAUC=0.59723 valMacro@0.5=0.55890 best=0.59942@3 GPUmax=1.31GiB
+[elapsed   486.32s] fold 3/5 seed 1 epoch 05/30 loss=0.67013 valAUC=0.59245 valMacro@0.5=0.54921 best=0.59942@3 GPUmax=1.31GiB
+[elapsed   492.04s] fold 3/5 seed 1 epoch 06/30 loss=0.66783 valAUC=0.58924 valMacro@0.5=0.56101 best=0.59942@3 GPUmax=1.31GiB
+[elapsed   497.76s] fold 3/5 seed 1 epoch 07/30 loss=0.66426 valAUC=0.58282 valMacro@0.5=0.55556 best=0.59942@3 GPUmax=1.31GiB
+[elapsed   503.49s] fold 3/5 seed 1 epoch 08/30 loss=0.65933 valAUC=0.60188 valMacro@0.5=0.56733 best=0.60188@8 GPUmax=1.31GiB
+[elapsed   509.21s] fold 3/5 seed 1 epoch 09/30 loss=0.65571 valAUC=0.58003 valMacro@0.5=0.54921 best=0.60188@8 GPUmax=1.31GiB
+[elapsed   514.93s] fold 3/5 seed 1 epoch 10/30 loss=0.65654 valAUC=0.58691 valMacro@0.5=0.55337 best=0.60188@8 GPUmax=1.31GiB
+[elapsed   520.65s] fold 3/5 seed 1 epoch 11/30 loss=0.64992 valAUC=0.58096 valMacro@0.5=0.55253 best=0.60188@8 GPUmax=1.31GiB
+[elapsed   526.37s] fold 3/5 seed 1 epoch 12/30 loss=0.64540 valAUC=0.57973 valMacro@0.5=0.52538 best=0.60188@8 GPUmax=1.31GiB
+[elapsed   532.10s] fold 3/5 seed 1 epoch 13/30 loss=0.64325 valAUC=0.57317 valMacro@0.5=0.52302 best=0.60188@8 GPUmax=1.31GiB
+[elapsed   537.82s] fold 3/5 seed 1 epoch 14/30 loss=0.63924 valAUC=0.57559 valMacro@0.5=0.54911 best=0.60188@8 GPUmax=1.31GiB
+[elapsed   538.03s] finished fold 3/5 seed 1: best_epoch=8 best_val_AUC=0.601882
+[elapsed   538.09s] start fold 4/5 seed 0: train=56851 val=3150 test=3401 subjects=34/11/12
+[elapsed   546.41s] fold 4/5 seed 0 epoch 01/30 loss=0.69443 valAUC=0.56434 valMacro@0.5=0.53619 best=0.56434@1 GPUmax=1.31GiB
+[elapsed   552.00s] fold 4/5 seed 0 epoch 02/30 loss=0.67341 valAUC=0.55640 valMacro@0.5=0.52767 best=0.56434@1 GPUmax=1.31GiB
+[elapsed   557.57s] fold 4/5 seed 0 epoch 03/30 loss=0.66523 valAUC=0.55972 valMacro@0.5=0.52620 best=0.56434@1 GPUmax=1.31GiB
+[elapsed   563.15s] fold 4/5 seed 0 epoch 04/30 loss=0.65913 valAUC=0.56033 valMacro@0.5=0.53421 best=0.56434@1 GPUmax=1.31GiB
+[elapsed   568.71s] fold 4/5 seed 0 epoch 05/30 loss=0.65542 valAUC=0.57233 valMacro@0.5=0.52312 best=0.57233@5 GPUmax=1.31GiB
+[elapsed   574.29s] fold 4/5 seed 0 epoch 06/30 loss=0.65148 valAUC=0.57739 valMacro@0.5=0.51622 best=0.57739@6 GPUmax=1.31GiB
+[elapsed   579.87s] fold 4/5 seed 0 epoch 07/30 loss=0.64638 valAUC=0.58812 valMacro@0.5=0.52469 best=0.58812@7 GPUmax=1.31GiB
+[elapsed   585.45s] fold 4/5 seed 0 epoch 08/30 loss=0.64625 valAUC=0.58514 valMacro@0.5=0.52896 best=0.58812@7 GPUmax=1.31GiB
+[elapsed   591.02s] fold 4/5 seed 0 epoch 09/30 loss=0.64218 valAUC=0.58923 valMacro@0.5=0.53855 best=0.58923@9 GPUmax=1.31GiB
+[elapsed   596.60s] fold 4/5 seed 0 epoch 10/30 loss=0.63929 valAUC=0.59797 valMacro@0.5=0.51325 best=0.59797@10 GPUmax=1.31GiB
+[elapsed   602.17s] fold 4/5 seed 0 epoch 11/30 loss=0.63441 valAUC=0.59932 valMacro@0.5=0.51663 best=0.59932@11 GPUmax=1.31GiB
+[elapsed   607.78s] fold 4/5 seed 0 epoch 12/30 loss=0.63384 valAUC=0.59956 valMacro@0.5=0.52338 best=0.59956@12 GPUmax=1.31GiB
+[elapsed   613.39s] fold 4/5 seed 0 epoch 13/30 loss=0.63125 valAUC=0.59868 valMacro@0.5=0.51842 best=0.59956@12 GPUmax=1.31GiB
+[elapsed   618.98s] fold 4/5 seed 0 epoch 14/30 loss=0.62705 valAUC=0.59108 valMacro@0.5=0.51468 best=0.59956@12 GPUmax=1.31GiB
+[elapsed   624.59s] fold 4/5 seed 0 epoch 15/30 loss=0.62549 valAUC=0.60490 valMacro@0.5=0.52365 best=0.60490@15 GPUmax=1.31GiB
+[elapsed   630.20s] fold 4/5 seed 0 epoch 16/30 loss=0.61954 valAUC=0.61002 valMacro@0.5=0.54266 best=0.61002@16 GPUmax=1.31GiB
+[elapsed   635.80s] fold 4/5 seed 0 epoch 17/30 loss=0.61596 valAUC=0.59086 valMacro@0.5=0.51952 best=0.61002@16 GPUmax=1.31GiB
+[elapsed   641.39s] fold 4/5 seed 0 epoch 18/30 loss=0.60941 valAUC=0.60092 valMacro@0.5=0.51373 best=0.61002@16 GPUmax=1.31GiB
+[elapsed   646.99s] fold 4/5 seed 0 epoch 19/30 loss=0.60762 valAUC=0.60787 valMacro@0.5=0.52350 best=0.61002@16 GPUmax=1.31GiB
+[elapsed   652.59s] fold 4/5 seed 0 epoch 20/30 loss=0.60228 valAUC=0.59700 valMacro@0.5=0.52314 best=0.61002@16 GPUmax=1.31GiB
+[elapsed   658.18s] fold 4/5 seed 0 epoch 21/30 loss=0.59933 valAUC=0.60020 valMacro@0.5=0.52542 best=0.61002@16 GPUmax=1.31GiB
+[elapsed   663.78s] fold 4/5 seed 0 epoch 22/30 loss=0.59074 valAUC=0.59264 valMacro@0.5=0.52063 best=0.61002@16 GPUmax=1.31GiB
+[elapsed   665.18s] finished fold 4/5 seed 0: best_epoch=16 best_val_AUC=0.610020
+[elapsed   665.18s] start fold 4/5 seed 1: train=56851 val=3150 test=3401 subjects=34/11/12
+[elapsed   670.79s] fold 4/5 seed 1 epoch 01/30 loss=0.69212 valAUC=0.55737 valMacro@0.5=0.52528 best=0.55737@1 GPUmax=1.31GiB
+[elapsed   676.38s] fold 4/5 seed 1 epoch 02/30 loss=0.67416 valAUC=0.54985 valMacro@0.5=0.51956 best=0.55737@1 GPUmax=1.31GiB
+[elapsed   681.97s] fold 4/5 seed 1 epoch 03/30 loss=0.66553 valAUC=0.55394 valMacro@0.5=0.53035 best=0.55737@1 GPUmax=1.31GiB
+[elapsed   687.56s] fold 4/5 seed 1 epoch 04/30 loss=0.65904 valAUC=0.55730 valMacro@0.5=0.52539 best=0.55737@1 GPUmax=1.31GiB
+[elapsed   693.15s] fold 4/5 seed 1 epoch 05/30 loss=0.65407 valAUC=0.57008 valMacro@0.5=0.52111 best=0.57008@5 GPUmax=1.31GiB
+[elapsed   698.75s] fold 4/5 seed 1 epoch 06/30 loss=0.65273 valAUC=0.57994 valMacro@0.5=0.53526 best=0.57994@6 GPUmax=1.31GiB
+[elapsed   704.33s] fold 4/5 seed 1 epoch 07/30 loss=0.64593 valAUC=0.58138 valMacro@0.5=0.51795 best=0.58138@7 GPUmax=1.31GiB
+[elapsed   709.93s] fold 4/5 seed 1 epoch 08/30 loss=0.64655 valAUC=0.58335 valMacro@0.5=0.52732 best=0.58335@8 GPUmax=1.31GiB
+[elapsed   715.53s] fold 4/5 seed 1 epoch 09/30 loss=0.64092 valAUC=0.58881 valMacro@0.5=0.52952 best=0.58881@9 GPUmax=1.31GiB
+[elapsed   721.12s] fold 4/5 seed 1 epoch 10/30 loss=0.63875 valAUC=0.59901 valMacro@0.5=0.53229 best=0.59901@10 GPUmax=1.31GiB
+[elapsed   726.71s] fold 4/5 seed 1 epoch 11/30 loss=0.63718 valAUC=0.60019 valMacro@0.5=0.52888 best=0.60019@11 GPUmax=1.31GiB
+[elapsed   732.30s] fold 4/5 seed 1 epoch 12/30 loss=0.63317 valAUC=0.58921 valMacro@0.5=0.51124 best=0.60019@11 GPUmax=1.31GiB
+[elapsed   737.90s] fold 4/5 seed 1 epoch 13/30 loss=0.62763 valAUC=0.60073 valMacro@0.5=0.51363 best=0.60073@13 GPUmax=1.31GiB
+[elapsed   743.49s] fold 4/5 seed 1 epoch 14/30 loss=0.62597 valAUC=0.59833 valMacro@0.5=0.53878 best=0.60073@13 GPUmax=1.31GiB
+[elapsed   749.08s] fold 4/5 seed 1 epoch 15/30 loss=0.62140 valAUC=0.59697 valMacro@0.5=0.52001 best=0.60073@13 GPUmax=1.31GiB
+[elapsed   754.68s] fold 4/5 seed 1 epoch 16/30 loss=0.61817 valAUC=0.60543 valMacro@0.5=0.51384 best=0.60543@16 GPUmax=1.31GiB
+[elapsed   760.27s] fold 4/5 seed 1 epoch 17/30 loss=0.61415 valAUC=0.59738 valMacro@0.5=0.52351 best=0.60543@16 GPUmax=1.31GiB
+[elapsed   765.87s] fold 4/5 seed 1 epoch 18/30 loss=0.60871 valAUC=0.59657 valMacro@0.5=0.50897 best=0.60543@16 GPUmax=1.31GiB
+[elapsed   771.47s] fold 4/5 seed 1 epoch 19/30 loss=0.60393 valAUC=0.58448 valMacro@0.5=0.51413 best=0.60543@16 GPUmax=1.31GiB
+[elapsed   777.07s] fold 4/5 seed 1 epoch 20/30 loss=0.60579 valAUC=0.58257 valMacro@0.5=0.51999 best=0.60543@16 GPUmax=1.31GiB
+[elapsed   782.68s] fold 4/5 seed 1 epoch 21/30 loss=0.59419 valAUC=0.59180 valMacro@0.5=0.51867 best=0.60543@16 GPUmax=1.31GiB
+[elapsed   788.27s] fold 4/5 seed 1 epoch 22/30 loss=0.59196 valAUC=0.57833 valMacro@0.5=0.51939 best=0.60543@16 GPUmax=1.31GiB
+[elapsed   788.49s] finished fold 4/5 seed 1: best_epoch=16 best_val_AUC=0.605426
+[elapsed   788.56s] start fold 5/5 seed 0: train=58652 val=3112 test=3143 subjects=35/11/11
+[elapsed   796.25s] fold 5/5 seed 0 epoch 01/30 loss=0.71043 valAUC=0.58539 valMacro@0.5=0.52760 best=0.58539@1 GPUmax=1.31GiB
+[elapsed   802.02s] fold 5/5 seed 0 epoch 02/30 loss=0.68532 valAUC=0.59790 valMacro@0.5=0.53777 best=0.59790@2 GPUmax=1.31GiB
+[elapsed   807.79s] fold 5/5 seed 0 epoch 03/30 loss=0.68358 valAUC=0.61012 valMacro@0.5=0.56794 best=0.61012@3 GPUmax=1.31GiB
+[elapsed   813.56s] fold 5/5 seed 0 epoch 04/30 loss=0.67503 valAUC=0.61845 valMacro@0.5=0.57083 best=0.61845@4 GPUmax=1.31GiB
+[elapsed   819.33s] fold 5/5 seed 0 epoch 05/30 loss=0.67405 valAUC=0.61758 valMacro@0.5=0.56973 best=0.61845@4 GPUmax=1.31GiB
+[elapsed   825.09s] fold 5/5 seed 0 epoch 06/30 loss=0.67281 valAUC=0.61619 valMacro@0.5=0.57554 best=0.61845@4 GPUmax=1.31GiB
+[elapsed   830.85s] fold 5/5 seed 0 epoch 07/30 loss=0.66878 valAUC=0.61587 valMacro@0.5=0.56168 best=0.61845@4 GPUmax=1.31GiB
+[elapsed   836.62s] fold 5/5 seed 0 epoch 08/30 loss=0.66422 valAUC=0.61084 valMacro@0.5=0.56522 best=0.61845@4 GPUmax=1.31GiB
+[elapsed   842.38s] fold 5/5 seed 0 epoch 09/30 loss=0.66172 valAUC=0.61460 valMacro@0.5=0.56029 best=0.61845@4 GPUmax=1.31GiB
+[elapsed   848.14s] fold 5/5 seed 0 epoch 10/30 loss=0.65707 valAUC=0.60386 valMacro@0.5=0.55535 best=0.61845@4 GPUmax=1.31GiB
+[elapsed   849.32s] finished fold 5/5 seed 0: best_epoch=4 best_val_AUC=0.618446
+[elapsed   849.32s] start fold 5/5 seed 1: train=58652 val=3112 test=3143 subjects=35/11/11
+[elapsed   855.09s] fold 5/5 seed 1 epoch 01/30 loss=0.71301 valAUC=0.59418 valMacro@0.5=0.55205 best=0.59418@1 GPUmax=1.31GiB
+[elapsed   860.86s] fold 5/5 seed 1 epoch 02/30 loss=0.68451 valAUC=0.60631 valMacro@0.5=0.55790 best=0.60631@2 GPUmax=1.31GiB
+[elapsed   866.63s] fold 5/5 seed 1 epoch 03/30 loss=0.68011 valAUC=0.61746 valMacro@0.5=0.56666 best=0.61746@3 GPUmax=1.31GiB
+[elapsed   872.39s] fold 5/5 seed 1 epoch 04/30 loss=0.67741 valAUC=0.62100 valMacro@0.5=0.57949 best=0.62100@4 GPUmax=1.31GiB
+[elapsed   878.16s] fold 5/5 seed 1 epoch 05/30 loss=0.67373 valAUC=0.61534 valMacro@0.5=0.57485 best=0.62100@4 GPUmax=1.31GiB
+[elapsed   883.93s] fold 5/5 seed 1 epoch 06/30 loss=0.67255 valAUC=0.61594 valMacro@0.5=0.55416 best=0.62100@4 GPUmax=1.31GiB
+[elapsed   889.69s] fold 5/5 seed 1 epoch 07/30 loss=0.67164 valAUC=0.61210 valMacro@0.5=0.56343 best=0.62100@4 GPUmax=1.31GiB
+[elapsed   895.46s] fold 5/5 seed 1 epoch 08/30 loss=0.66648 valAUC=0.60786 valMacro@0.5=0.56378 best=0.62100@4 GPUmax=1.31GiB
+[elapsed   901.22s] fold 5/5 seed 1 epoch 09/30 loss=0.66454 valAUC=0.60350 valMacro@0.5=0.56268 best=0.62100@4 GPUmax=1.31GiB
+[elapsed   906.99s] fold 5/5 seed 1 epoch 10/30 loss=0.66189 valAUC=0.59997 valMacro@0.5=0.56324 best=0.62100@4 GPUmax=1.31GiB
+[elapsed   907.20s] finished fold 5/5 seed 1: best_epoch=4 best_val_AUC=0.620996
+[elapsed   924.32s] seed-mean OOF macro=0.568074 micro=0.567298 AUC=0.595599
+[elapsed   924.99s] done seconds=924.98 peakGPU=1.31GiB
