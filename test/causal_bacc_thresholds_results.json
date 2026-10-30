@@ -1,0 +1,781 @@
+{
+  "meta": {
+    "warmup": 120,
+    "min_history": 20,
+    "trim_fraction": 0.1,
+    "quantiles": [
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6
+    ],
+    "smooths": [
+      1,
+      5,
+      10,
+      20
+    ],
+    "fixed_threshold": 0.5,
+    "hysteresis": "enter/exit thresholds are prior-score quantiles; no labels",
+    "train_thresholds": "per test fold from other folds' OOF predictions and labels",
+    "sources": [
+      "old_best_fusion",
+      "new_spectral_fusion",
+      "new_spectral_D_hgb"
+    ]
+  },
+  "sources": {
+    "old_best_fusion": {
+      "s1": {
+        "fixed_0.5": {
+          "subject_macro_bACC": 0.6984544428864609,
+          "window_micro_bACC": 0.7010679191280813,
+          "AUC": 0.7661398767409393
+        },
+        "median": {
+          "subject_macro_bACC": 0.6832840041568472,
+          "window_micro_bACC": 0.6857790741177792,
+          "AUC": 0.7661398767409393
+        },
+        "trimmed_mean": {
+          "subject_macro_bACC": 0.688246496359225,
+          "window_micro_bACC": 0.6905806966646468,
+          "AUC": 0.7661398767409393
+        },
+        "q0.40": {
+          "subject_macro_bACC": 0.6881204830877115,
+          "window_micro_bACC": 0.6902114719684491,
+          "AUC": 0.7661398767409393
+        },
+        "q0.45": {
+          "subject_macro_bACC": 0.689088032509377,
+          "window_micro_bACC": 0.6914482595994917,
+          "AUC": 0.7661398767409393
+        },
+        "q0.50": {
+          "subject_macro_bACC": 0.6832840041568472,
+          "window_micro_bACC": 0.6857790741177792,
+          "AUC": 0.7661398767409393
+        },
+        "q0.55": {
+          "subject_macro_bACC": 0.6766058776232208,
+          "window_micro_bACC": 0.6790930944672745,
+          "AUC": 0.7661398767409393
+        },
+        "q0.60": {
+          "subject_macro_bACC": 0.6671865865088414,
+          "window_micro_bACC": 0.6695924395913766,
+          "AUC": 0.7661398767409393
+        },
+        "hysteresis_q60_q40": {
+          "subject_macro_bACC": 0.6580495082895935,
+          "window_micro_bACC": 0.6612027617086466,
+          "AUC": 0.7661398767409393
+        },
+        "hysteresis_q55_q45": {
+          "subject_macro_bACC": 0.6502576358925725,
+          "window_micro_bACC": 0.6532301505944328,
+          "AUC": 0.7661398767409393
+        },
+        "train_oof_median": {
+          "subject_macro_bACC": 0.6972863291645602,
+          "window_micro_bACC": 0.7001640242429192,
+          "AUC": 0.7661398767409393
+        },
+        "train_oof_youden": {
+          "subject_macro_bACC": 0.6957739799785019,
+          "window_micro_bACC": 0.698028446215602,
+          "AUC": 0.7661398767409393
+        }
+      },
+      "s5": {
+        "fixed_0.5": {
+          "subject_macro_bACC": 0.7497928545522383,
+          "window_micro_bACC": 0.7510899084655046,
+          "AUC": 0.8247231281855931
+        },
+        "median": {
+          "subject_macro_bACC": 0.7281479912902814,
+          "window_micro_bACC": 0.7304071200213468,
+          "AUC": 0.8247231281855931
+        },
+        "trimmed_mean": {
+          "subject_macro_bACC": 0.7407439092868586,
+          "window_micro_bACC": 0.7420484574134494,
+          "AUC": 0.8247231281855931
+        },
+        "q0.40": {
+          "subject_macro_bACC": 0.7439907965599397,
+          "window_micro_bACC": 0.746012042990606,
+          "AUC": 0.8247231281855931
+        },
+        "q0.45": {
+          "subject_macro_bACC": 0.7400924454406247,
+          "window_micro_bACC": 0.7422963754325553,
+          "AUC": 0.8247231281855931
+        },
+        "q0.50": {
+          "subject_macro_bACC": 0.7281479912902814,
+          "window_micro_bACC": 0.7304071200213468,
+          "AUC": 0.8247231281855931
+        },
+        "q0.55": {
+          "subject_macro_bACC": 0.717359702750702,
+          "window_micro_bACC": 0.7191085840888478,
+          "AUC": 0.8247231281855931
+        },
+        "q0.60": {
+          "subject_macro_bACC": 0.7009598138309848,
+          "window_micro_bACC": 0.7019359825030131,
+          "AUC": 0.8247231281855931
+        },
+        "hysteresis_q60_q40": {
+          "subject_macro_bACC": 0.6925328901313179,
+          "window_micro_bACC": 0.6957310258641449,
+          "AUC": 0.8247231281855931
+        },
+        "hysteresis_q55_q45": {
+          "subject_macro_bACC": 0.6889486369559161,
+          "window_micro_bACC": 0.6919342870119984,
+          "AUC": 0.8247231281855931
+        },
+        "train_oof_median": {
+          "subject_macro_bACC": 0.7511607622465037,
+          "window_micro_bACC": 0.7524234812093755,
+          "AUC": 0.8247231281855931
+        },
+        "train_oof_youden": {
+          "subject_macro_bACC": 0.7477406811708371,
+          "window_micro_bACC": 0.7497187026270902,
+          "AUC": 0.8247231281855931
+        }
+      },
+      "s10": {
+        "fixed_0.5": {
+          "subject_macro_bACC": 0.7453991906277041,
+          "window_micro_bACC": 0.7486000188565824,
+          "AUC": 0.8220619212535505
+        },
+        "median": {
+          "subject_macro_bACC": 0.7366296445441515,
+          "window_micro_bACC": 0.7392498963588581,
+          "AUC": 0.8220619212535505
+        },
+        "trimmed_mean": {
+          "subject_macro_bACC": 0.7507779795223603,
+          "window_micro_bACC": 0.7534869163942772,
+          "AUC": 0.8220619212535505
+        },
+        "q0.40": {
+          "subject_macro_bACC": 0.7556719476235008,
+          "window_micro_bACC": 0.7586303395205745,
+          "AUC": 0.8220619212535505
+        },
+        "q0.45": {
+          "subject_macro_bACC": 0.7490565062900282,
+          "window_micro_bACC": 0.7518748987859925,
+          "AUC": 0.8220619212535505
+        },
+        "q0.50": {
+          "subject_macro_bACC": 0.7366296445441515,
+          "window_micro_bACC": 0.7392498963588581,
+          "AUC": 0.8220619212535505
+        },
+        "q0.55": {
+          "subject_macro_bACC": 0.7189131695330532,
+          "window_micro_bACC": 0.7210952311462699,
+          "AUC": 0.8220619212535505
+        },
+        "q0.60": {
+          "subject_macro_bACC": 0.7028416848203834,
+          "window_micro_bACC": 0.7047445523593447,
+          "AUC": 0.8220619212535505
+        },
+        "hysteresis_q60_q40": {
+          "subject_macro_bACC": 0.6980557056576389,
+          "window_micro_bACC": 0.7009478135071983,
+          "AUC": 0.8220619212535505
+        },
+        "hysteresis_q55_q45": {
+          "subject_macro_bACC": 0.6988884966436879,
+          "window_micro_bACC": 0.702003842178812,
+          "AUC": 0.8220619212535505
+        },
+        "train_oof_median": {
+          "subject_macro_bACC": 0.7451733664697706,
+          "window_micro_bACC": 0.7484620975686018,
+          "AUC": 0.8220619212535505
+        },
+        "train_oof_youden": {
+          "subject_macro_bACC": 0.7486164127257116,
+          "window_micro_bACC": 0.751939455557217,
+          "AUC": 0.8220619212535505
+        }
+      },
+      "s20": {
+        "fixed_0.5": {
+          "subject_macro_bACC": 0.7116092048665698,
+          "window_micro_bACC": 0.7134337936781605,
+          "AUC": 0.7784632472462951
+        },
+        "median": {
+          "subject_macro_bACC": 0.7300022502964281,
+          "window_micro_bACC": 0.7325191773645744,
+          "AUC": 0.7784632472462951
+        },
+        "trimmed_mean": {
+          "subject_macro_bACC": 0.7295187685600959,
+          "window_micro_bACC": 0.7331043920023268,
+          "AUC": 0.7784632472462951
+        },
+        "q0.40": {
+          "subject_macro_bACC": 0.7486878224872717,
+          "window_micro_bACC": 0.7513616474327524,
+          "AUC": 0.7784632472462951
+        },
+        "q0.45": {
+          "subject_macro_bACC": 0.7405225274860319,
+          "window_micro_bACC": 0.7431347126663188,
+          "AUC": 0.7784632472462951
+        },
+        "q0.50": {
+          "subject_macro_bACC": 0.7300022502964281,
+          "window_micro_bACC": 0.7325191773645744,
+          "AUC": 0.7784632472462951
+        },
+        "q0.55": {
+          "subject_macro_bACC": 0.7132362048813536,
+          "window_micro_bACC": 0.7152468881134069,
+          "AUC": 0.7784632472462951
+        },
+        "q0.60": {
+          "subject_macro_bACC": 0.6964231936535341,
+          "window_micro_bACC": 0.698376552340128,
+          "AUC": 0.7784632472462951
+        },
+        "hysteresis_q60_q40": {
+          "subject_macro_bACC": 0.6726104535437346,
+          "window_micro_bACC": 0.6752713336107773,
+          "AUC": 0.7784632472462951
+        },
+        "hysteresis_q55_q45": {
+          "subject_macro_bACC": 0.688668339525487,
+          "window_micro_bACC": 0.6913586808239165,
+          "AUC": 0.7784632472462951
+        },
+        "train_oof_median": {
+          "subject_macro_bACC": 0.7112707120214102,
+          "window_micro_bACC": 0.7135151652363088,
+          "AUC": 0.7784632472462951
+        },
+        "train_oof_youden": {
+          "subject_macro_bACC": 0.7134447862244865,
+          "window_micro_bACC": 0.7158863504565915,
+          "AUC": 0.7784632472462951
+        }
+      }
+    },
+    "new_spectral_fusion": {
+      "s1": {
+        "fixed_0.5": {
+          "subject_macro_bACC": 0.6980512441112513,
+          "window_micro_bACC": 0.7005726836179736,
+          "AUC": 0.7677536292081923
+        },
+        "median": {
+          "subject_macro_bACC": 0.6843938314455782,
+          "window_micro_bACC": 0.6866312234979441,
+          "AUC": 0.7677536292081923
+        },
+        "trimmed_mean": {
+          "subject_macro_bACC": 0.6910573235343538,
+          "window_micro_bACC": 0.6932217191798468,
+          "AUC": 0.7677536292081923
+        },
+        "q0.40": {
+          "subject_macro_bACC": 0.6912468330689044,
+          "window_micro_bACC": 0.6931123229768258,
+          "AUC": 0.7677536292081923
+        },
+        "q0.45": {
+          "subject_macro_bACC": 0.6889994457743348,
+          "window_micro_bACC": 0.6909588291943936,
+          "AUC": 0.7677536292081923
+        },
+        "q0.50": {
+          "subject_macro_bACC": 0.6843938314455782,
+          "window_micro_bACC": 0.6866312234979441,
+          "AUC": 0.7677536292081923
+        },
+        "q0.55": {
+          "subject_macro_bACC": 0.680523621296996,
+          "window_micro_bACC": 0.682865712107227,
+          "AUC": 0.7677536292081923
+        },
+        "q0.60": {
+          "subject_macro_bACC": 0.6684433366447726,
+          "window_micro_bACC": 0.6702497176016589,
+          "AUC": 0.7677536292081923
+        },
+        "hysteresis_q60_q40": {
+          "subject_macro_bACC": 0.6618406966143257,
+          "window_micro_bACC": 0.664674714944322,
+          "AUC": 0.7677536292081923
+        },
+        "hysteresis_q55_q45": {
+          "subject_macro_bACC": 0.6520462421307222,
+          "window_micro_bACC": 0.6550537542715064,
+          "AUC": 0.7677536292081923
+        },
+        "train_oof_median": {
+          "subject_macro_bACC": 0.6987506860801938,
+          "window_micro_bACC": 0.7013560725301831,
+          "AUC": 0.7677536292081923
+        },
+        "train_oof_youden": {
+          "subject_macro_bACC": 0.6960504172466072,
+          "window_micro_bACC": 0.6980223408465405,
+          "AUC": 0.7677536292081923
+        }
+      },
+      "s5": {
+        "fixed_0.5": {
+          "subject_macro_bACC": 0.7488326276048628,
+          "window_micro_bACC": 0.7505644463741414,
+          "AUC": 0.8243528025212038
+        },
+        "median": {
+          "subject_macro_bACC": 0.7304486301521325,
+          "window_micro_bACC": 0.7317457972541053,
+          "AUC": 0.8243528025212038
+        },
+        "trimmed_mean": {
+          "subject_macro_bACC": 0.7447983733072169,
+          "window_micro_bACC": 0.7457365006786969,
+          "AUC": 0.8243528025212038
+        },
+        "q0.40": {
+          "subject_macro_bACC": 0.7459952379263731,
+          "window_micro_bACC": 0.747300876390698,
+          "AUC": 0.8243528025212038
+        },
+        "q0.45": {
+          "subject_macro_bACC": 0.7404227034329632,
+          "window_micro_bACC": 0.7420471562692232,
+          "AUC": 0.8243528025212038
+        },
+        "q0.50": {
+          "subject_macro_bACC": 0.7304486301521325,
+          "window_micro_bACC": 0.7317457972541053,
+          "AUC": 0.8243528025212038
+        },
+        "q0.55": {
+          "subject_macro_bACC": 0.719477030072048,
+          "window_micro_bACC": 0.7205726716074116,
+          "AUC": 0.8243528025212038
+        },
+        "q0.60": {
+          "subject_macro_bACC": 0.7039196857937553,
+          "window_micro_bACC": 0.7047477551759017,
+          "AUC": 0.8243528025212038
+        },
+        "hysteresis_q60_q40": {
+          "subject_macro_bACC": 0.6989967331345502,
+          "window_micro_bACC": 0.7006307346680671,
+          "AUC": 0.8243528025212038
+        },
+        "hysteresis_q55_q45": {
+          "subject_macro_bACC": 0.690610271979094,
+          "window_micro_bACC": 0.6924510414458475,
+          "AUC": 0.8243528025212038
+        },
+        "train_oof_median": {
+          "subject_macro_bACC": 0.7512715767084875,
+          "window_micro_bACC": 0.7516423943215664,
+          "AUC": 0.8243528025212038
+        },
+        "train_oof_youden": {
+          "subject_macro_bACC": 0.7473206711961665,
+          "window_micro_bACC": 0.7484868193089003,
+          "AUC": 0.8243528025212038
+        }
+      },
+      "s10": {
+        "fixed_0.5": {
+          "subject_macro_bACC": 0.7463907028912766,
+          "window_micro_bACC": 0.7501036411420203,
+          "AUC": 0.8203866480182673
+        },
+        "median": {
+          "subject_macro_bACC": 0.7387513181111695,
+          "window_micro_bACC": 0.7417655085882524,
+          "AUC": 0.8203866480182673
+        },
+        "trimmed_mean": {
+          "subject_macro_bACC": 0.7502787126617265,
+          "window_micro_bACC": 0.7534840138417724,
+          "AUC": 0.8203866480182673
+        },
+        "q0.40": {
+          "subject_macro_bACC": 0.7564601825809323,
+          "window_micro_bACC": 0.7598648251272169,
+          "AUC": 0.8203866480182673
+        },
+        "q0.45": {
+          "subject_macro_bACC": 0.7519298017851964,
+          "window_micro_bACC": 0.7551973205236685,
+          "AUC": 0.8203866480182673
+        },
+        "q0.50": {
+          "subject_macro_bACC": 0.7387513181111695,
+          "window_micro_bACC": 0.7417655085882524,
+          "AUC": 0.8203866480182673
+        },
+        "q0.55": {
+          "subject_macro_bACC": 0.7213640357289106,
+          "window_micro_bACC": 0.7240520313563747,
+          "AUC": 0.8203866480182673
+        },
+        "q0.60": {
+          "subject_macro_bACC": 0.7048967897140569,
+          "window_micro_bACC": 0.7065289215335966,
+          "AUC": 0.8203866480182673
+        },
+        "hysteresis_q60_q40": {
+          "subject_macro_bACC": 0.6963183695886391,
+          "window_micro_bACC": 0.6994567022239357,
+          "AUC": 0.8203866480182673
+        },
+        "hysteresis_q55_q45": {
+          "subject_macro_bACC": 0.7012350548908336,
+          "window_micro_bACC": 0.7044696105755401,
+          "AUC": 0.8203866480182673
+        },
+        "train_oof_median": {
+          "subject_macro_bACC": 0.7485096967922136,
+          "window_micro_bACC": 0.7499895408021815,
+          "AUC": 0.8203866480182673
+        },
+        "train_oof_youden": {
+          "subject_macro_bACC": 0.7445766126744141,
+          "window_micro_bACC": 0.7481938616819632,
+          "AUC": 0.8203866480182673
+        }
+      },
+      "s20": {
+        "fixed_0.5": {
+          "subject_macro_bACC": 0.7097777366675092,
+          "window_micro_bACC": 0.712358448019188,
+          "AUC": 0.7751016243684696
+        },
+        "median": {
+          "subject_macro_bACC": 0.7292205951654609,
+          "window_micro_bACC": 0.7321551572452815,
+          "AUC": 0.7751016243684696
+        },
+        "trimmed_mean": {
+          "subject_macro_bACC": 0.7255939083408738,
+          "window_micro_bACC": 0.7293545944303421,
+          "AUC": 0.7751016243684696
+        },
+        "q0.40": {
+          "subject_macro_bACC": 0.7429887737837712,
+          "window_micro_bACC": 0.746064789375777,
+          "AUC": 0.7751016243684696
+        },
+        "q0.45": {
+          "subject_macro_bACC": 0.7385529723441654,
+          "window_micro_bACC": 0.7416088708410176,
+          "AUC": 0.7751016243684696
+        },
+        "q0.50": {
+          "subject_macro_bACC": 0.7292205951654609,
+          "window_micro_bACC": 0.7321551572452815,
+          "AUC": 0.7751016243684696
+        },
+        "q0.55": {
+          "subject_macro_bACC": 0.7138231314985878,
+          "window_micro_bACC": 0.7162501703998496,
+          "AUC": 0.7751016243684696
+        },
+        "q0.60": {
+          "subject_macro_bACC": 0.697817915091351,
+          "window_micro_bACC": 0.6998753704007303,
+          "AUC": 0.7751016243684696
+        },
+        "hysteresis_q60_q40": {
+          "subject_macro_bACC": 0.6685011129005102,
+          "window_micro_bACC": 0.6711362972598103,
+          "AUC": 0.7751016243684696
+        },
+        "hysteresis_q55_q45": {
+          "subject_macro_bACC": 0.6863008382237766,
+          "window_micro_bACC": 0.6893221899338278,
+          "AUC": 0.7751016243684696
+        },
+        "train_oof_median": {
+          "subject_macro_bACC": 0.7064017737601015,
+          "window_micro_bACC": 0.7086276671705097,
+          "AUC": 0.7751016243684696
+        },
+        "train_oof_youden": {
+          "subject_macro_bACC": 0.7067842054091246,
+          "window_micro_bACC": 0.7092685307459379,
+          "AUC": 0.7751016243684696
+        }
+      }
+    },
+    "new_spectral_D_hgb": {
+      "s1": {
+        "fixed_0.5": {
+          "subject_macro_bACC": 0.6395259302089208,
+          "window_micro_bACC": 0.6392991526644952,
+          "AUC": 0.708169583843723
+        },
+        "median": {
+          "subject_macro_bACC": 0.6619103462445162,
+          "window_micro_bACC": 0.6614322033190467,
+          "AUC": 0.708169583843723
+        },
+        "trimmed_mean": {
+          "subject_macro_bACC": 0.6615953059103357,
+          "window_micro_bACC": 0.6611385463010352,
+          "AUC": 0.708169583843723
+        },
+        "q0.40": {
+          "subject_macro_bACC": 0.6600920567218679,
+          "window_micro_bACC": 0.6593335456976404,
+          "AUC": 0.708169583843723
+        },
+        "q0.45": {
+          "subject_macro_bACC": 0.6609783720001522,
+          "window_micro_bACC": 0.6605213745346971,
+          "AUC": 0.708169583843723
+        },
+        "q0.50": {
+          "subject_macro_bACC": 0.6619103462445162,
+          "window_micro_bACC": 0.6614322033190467,
+          "AUC": 0.708169583843723
+        },
+        "q0.55": {
+          "subject_macro_bACC": 0.6541407610339443,
+          "window_micro_bACC": 0.6535904688748522,
+          "AUC": 0.708169583843723
+        },
+        "q0.60": {
+          "subject_macro_bACC": 0.6418829440449426,
+          "window_micro_bACC": 0.6413517996194915,
+          "AUC": 0.708169583843723
+        },
+        "hysteresis_q60_q40": {
+          "subject_macro_bACC": 0.7331636552606147,
+          "window_micro_bACC": 0.7314966076914089,
+          "AUC": 0.708169583843723
+        },
+        "hysteresis_q55_q45": {
+          "subject_macro_bACC": 0.7258426496306002,
+          "window_micro_bACC": 0.7244556796555474,
+          "AUC": 0.708169583843723
+        },
+        "train_oof_median": {
+          "subject_macro_bACC": 0.6672598821586403,
+          "window_micro_bACC": 0.6672063139403055,
+          "AUC": 0.708169583843723
+        },
+        "train_oof_youden": {
+          "subject_macro_bACC": 0.6646566418340699,
+          "window_micro_bACC": 0.6646704469817435,
+          "AUC": 0.708169583843723
+        }
+      },
+      "s5": {
+        "fixed_0.5": {
+          "subject_macro_bACC": 0.6606565610029806,
+          "window_micro_bACC": 0.6603573730304819,
+          "AUC": 0.7524156679927916
+        },
+        "median": {
+          "subject_macro_bACC": 0.7109069503496327,
+          "window_micro_bACC": 0.7099380303287336,
+          "AUC": 0.7524156679927916
+        },
+        "trimmed_mean": {
+          "subject_macro_bACC": 0.7043395146771159,
+          "window_micro_bACC": 0.703613903832955,
+          "AUC": 0.7524156679927916
+        },
+        "q0.40": {
+          "subject_macro_bACC": 0.698635219463254,
+          "window_micro_bACC": 0.6978526339558431,
+          "AUC": 0.7524156679927916
+        },
+        "q0.45": {
+          "subject_macro_bACC": 0.7096141742879608,
+          "window_micro_bACC": 0.708743433099435,
+          "AUC": 0.7524156679927916
+        },
+        "q0.50": {
+          "subject_macro_bACC": 0.7109069503496327,
+          "window_micro_bACC": 0.7099380303287336,
+          "AUC": 0.7524156679927916
+        },
+        "q0.55": {
+          "subject_macro_bACC": 0.7053647672102875,
+          "window_micro_bACC": 0.7042373159609345,
+          "AUC": 0.7524156679927916
+        },
+        "q0.60": {
+          "subject_macro_bACC": 0.6905757504127605,
+          "window_micro_bACC": 0.6895235272674523,
+          "AUC": 0.7524156679927916
+        },
+        "hysteresis_q60_q40": {
+          "subject_macro_bACC": 0.7581757410241813,
+          "window_micro_bACC": 0.7563158460159083,
+          "AUC": 0.7524156679927916
+        },
+        "hysteresis_q55_q45": {
+          "subject_macro_bACC": 0.7604258208935298,
+          "window_micro_bACC": 0.7584884519227659,
+          "AUC": 0.7524156679927916
+        },
+        "train_oof_median": {
+          "subject_macro_bACC": 0.6978905954996427,
+          "window_micro_bACC": 0.697548704342514,
+          "AUC": 0.7524156679927916
+        },
+        "train_oof_youden": {
+          "subject_macro_bACC": 0.6955702153866161,
+          "window_micro_bACC": 0.6954099403968659,
+          "AUC": 0.7524156679927916
+        }
+      },
+      "s10": {
+        "fixed_0.5": {
+          "subject_macro_bACC": 0.6563863309359963,
+          "window_micro_bACC": 0.656336540015167,
+          "AUC": 0.7492301553859649
+        },
+        "median": {
+          "subject_macro_bACC": 0.7195753344477283,
+          "window_micro_bACC": 0.7188136486885688,
+          "AUC": 0.7492301553859649
+        },
+        "trimmed_mean": {
+          "subject_macro_bACC": 0.7101068158264209,
+          "window_micro_bACC": 0.7100301956698994,
+          "AUC": 0.7492301553859649
+        },
+        "q0.40": {
+          "subject_macro_bACC": 0.7014233605492421,
+          "window_micro_bACC": 0.7009237559335038,
+          "AUC": 0.7492301553859649
+        },
+        "q0.45": {
+          "subject_macro_bACC": 0.7112357652194742,
+          "window_micro_bACC": 0.7107995842575069,
+          "AUC": 0.7492301553859649
+        },
+        "q0.50": {
+          "subject_macro_bACC": 0.7195753344477283,
+          "window_micro_bACC": 0.7188136486885688,
+          "AUC": 0.7492301553859649
+        },
+        "q0.55": {
+          "subject_macro_bACC": 0.7192436349426182,
+          "window_micro_bACC": 0.7186381745194897,
+          "AUC": 0.7492301553859649
+        },
+        "q0.60": {
+          "subject_macro_bACC": 0.707402964605489,
+          "window_micro_bACC": 0.7066442234460372,
+          "AUC": 0.7492301553859649
+        },
+        "hysteresis_q60_q40": {
+          "subject_macro_bACC": 0.7533454187324607,
+          "window_micro_bACC": 0.7525539640073222,
+          "AUC": 0.7492301553859649
+        },
+        "hysteresis_q55_q45": {
+          "subject_macro_bACC": 0.7630115908076516,
+          "window_micro_bACC": 0.7619589330440878,
+          "AUC": 0.7492301553859649
+        },
+        "train_oof_median": {
+          "subject_macro_bACC": 0.690549696164733,
+          "window_micro_bACC": 0.6899777295893852,
+          "AUC": 0.7492301553859649
+        },
+        "train_oof_youden": {
+          "subject_macro_bACC": 0.6860479635743096,
+          "window_micro_bACC": 0.685671904058184,
+          "AUC": 0.7492301553859649
+        }
+      },
+      "s20": {
+        "fixed_0.5": {
+          "subject_macro_bACC": 0.6304232498076451,
+          "window_micro_bACC": 0.6312588787145392,
+          "AUC": 0.7053878226350974
+        },
+        "median": {
+          "subject_macro_bACC": 0.7013514923954619,
+          "window_micro_bACC": 0.7015862183245243,
+          "AUC": 0.7053878226350974
+        },
+        "trimmed_mean": {
+          "subject_macro_bACC": 0.6832908245325797,
+          "window_micro_bACC": 0.68375966524012,
+          "AUC": 0.7053878226350974
+        },
+        "q0.40": {
+          "subject_macro_bACC": 0.6847480006807215,
+          "window_micro_bACC": 0.6847158086505429,
+          "AUC": 0.7053878226350974
+        },
+        "q0.45": {
+          "subject_macro_bACC": 0.6953072184982358,
+          "window_micro_bACC": 0.6956666592742382,
+          "AUC": 0.7053878226350974
+        },
+        "q0.50": {
+          "subject_macro_bACC": 0.7013514923954619,
+          "window_micro_bACC": 0.7015862183245243,
+          "AUC": 0.7053878226350974
+        },
+        "q0.55": {
+          "subject_macro_bACC": 0.7044913747648757,
+          "window_micro_bACC": 0.7047123514901936,
+          "AUC": 0.7053878226350974
+        },
+        "q0.60": {
+          "subject_macro_bACC": 0.6981492114189981,
+          "window_micro_bACC": 0.6983246933126268,
+          "AUC": 0.7053878226350974
+        },
+        "hysteresis_q60_q40": {
+          "subject_macro_bACC": 0.7138258248107204,
+          "window_micro_bACC": 0.713328322802963,
+          "AUC": 0.7053878226350974
+        },
+        "hysteresis_q55_q45": {
+          "subject_macro_bACC": 0.7297192400220551,
+          "window_micro_bACC": 0.7291211180270318,
+          "AUC": 0.7053878226350974
+        },
+        "train_oof_median": {
+          "subject_macro_bACC": 0.650019222346595,
+          "window_micro_bACC": 0.6495172168217493,
+          "AUC": 0.7053878226350974
+        },
+        "train_oof_youden": {
+          "subject_macro_bACC": 0.6459266759603077,
+          "window_micro_bACC": 0.645777200080299,
+          "AUC": 0.7053878226350974
+        }
+      }
+    }
+  },
+  "seconds": 67.73052650000318
+}

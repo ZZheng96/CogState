@@ -1,0 +1,16 @@
+﻿[    0.0s] source=old_best_fusion start
+[    5.6s] source=old_best_fusion s1 best_macro=fixed_0.5=0.6985 fixed=0.6985
+[   11.0s] source=old_best_fusion s5 best_macro=train_oof_median=0.7512 fixed=0.7498
+[   16.4s] source=old_best_fusion s10 best_macro=q0.40=0.7557 fixed=0.7454
+[   21.8s] source=old_best_fusion s20 best_macro=q0.40=0.7487 fixed=0.7116
+[   21.8s] source=new_spectral_fusion start
+[   27.2s] source=new_spectral_fusion s1 best_macro=train_oof_median=0.6988 fixed=0.6981
+[   32.7s] source=new_spectral_fusion s5 best_macro=train_oof_median=0.7513 fixed=0.7488
+[   38.1s] source=new_spectral_fusion s10 best_macro=q0.40=0.7565 fixed=0.7464
+[   43.5s] source=new_spectral_fusion s20 best_macro=q0.40=0.7430 fixed=0.7098
+[   43.5s] source=new_spectral_D_hgb start
+[   49.6s] source=new_spectral_D_hgb s1 best_macro=hysteresis_q60_q40=0.7332 fixed=0.6395
+[   55.7s] source=new_spectral_D_hgb s5 best_macro=hysteresis_q55_q45=0.7604 fixed=0.6607
+[   61.7s] source=new_spectral_D_hgb s10 best_macro=hysteresis_q55_q45=0.7630 fixed=0.6564
+[   67.7s] source=new_spectral_D_hgb s20 best_macro=hysteresis_q55_q45=0.7297 fixed=0.6304
+[   67.8s] done seconds=67.7
