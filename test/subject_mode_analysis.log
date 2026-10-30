@@ -1,0 +1,106 @@
+[17:16:56 +    2.8s] [feat] (16067, 54)
+[17:16:56 +    2.8s]   001 grp=mid    ceil=0.7560226735947095 mbAUC=0.8300897496457251 max|d|=1.53 (hf52-60) band=hf52-100 off=+1.23 alpha=+0.79 theta=+0.81
+[17:16:56 +    2.8s]   002 grp=bottom ceil=0.5148517549596686 mbAUC=0.5984848484848485 max|d|=0.61 (lp38Hz) band=gamma31-45 off=+0.23 alpha=+0.12 theta=-0.22
+[17:16:56 +    2.8s]   003 grp=top    ceil=0.7622443862483981 mbAUC=0.6275700674207388 max|d|=1.25 (sub_logvar_mean) band=subwin off=+0.97 alpha=+0.94 theta=+0.90
+[17:16:56 +    2.8s]   004 grp=bottom ceil=0.27188600872811397 mbAUC=0.49445291550554704 max|d|=0.60 (sub_logvar_mean) band=subwin off=-0.15 alpha=-0.09 theta=-0.03
+[17:16:56 +    2.8s]   005 grp=bottom ceil=0.35810185185185184 mbAUC=0.6422839506172839 max|d|=0.57 (sub_spent_std) band=subwin off=+0.35 alpha=+0.30 theta=+0.23
+[17:16:56 +    2.8s]   006 grp=mid    ceil=0.7764991554054055 mbAUC=0.7326858108108107 max|d|=1.48 (lp28Hz) band=beta13-30 off=-0.68 alpha=+0.24 theta=+0.26
+[17:16:56 +    2.8s]   007 grp=top    ceil=0.6067751335599806 mbAUC=0.7333171442447791 max|d|=0.88 (lp38Hz) band=gamma31-45 off=+0.74 alpha=+0.65 theta=+0.73
+[17:16:56 +    2.8s]   008 grp=mid    ceil=0.5277914654577708 mbAUC=0.5182812653986401 max|d|=1.09 (lp26Hz) band=beta13-30 off=-1.02 alpha=-0.98 theta=-0.93
+[17:16:56 +    2.8s]   009 grp=bottom ceil=0.49842847434590554 mbAUC=0.7393815834182806 max|d|=1.03 (lp23Hz) band=beta13-30 off=+0.96 alpha=+0.92 theta=+0.89
+[17:16:56 +    2.8s]   010 grp=mid    ceil=0.5724410197869102 mbAUC=0.680222602739726 max|d|=1.41 (hf60-70) band=hf52-100 off=+0.97 alpha=+0.55 theta=+0.60
+[17:16:56 +    2.8s]   011 grp=mid    ceil=0.6301369863013699 mbAUC=0.7598458904109588 max|d|=0.48 (lp2Hz) band=delta1-3 off=+0.25 alpha=+0.36 theta=+0.38
+[17:16:56 +    2.8s]   012 grp=mid    ceil=0.6223021582733812 mbAUC=0.6152890637130584 max|d|=0.54 (lp37Hz) band=gamma31-45 off=+0.29 alpha=+0.01 theta=+0.05
+[17:16:56 +    2.8s]   013 grp=mid    ceil=0.6399647887323944 mbAUC=0.6113067292644757 max|d|=0.73 (sub_spent_std) band=subwin off=+0.27 alpha=+0.33 theta=+0.33
+[17:16:56 +    2.8s]   014 grp=mid    ceil=0.5943877551020409 mbAUC=0.6192838246409675 max|d|=0.88 (lp24Hz) band=beta13-30 off=+0.55 alpha=+0.14 theta=+0.50
+[17:16:56 +    2.8s]   015 grp=bottom ceil=0.4409566097122302 mbAUC=0.6165692446043165 max|d|=0.25 (sub_spent_std) band=subwin off=-0.06 alpha=+0.09 theta=+0.15
+[17:16:56 +    2.8s]   016 grp=top    ceil=0.7285997732426304 mbAUC=0.6793745275888132 max|d|=0.65 (sub_logvar_mean) band=subwin off=+0.06 alpha=+0.24 theta=+0.25
+[17:16:56 +    2.8s]   017 grp=top    ceil=0.6647470176881942 mbAUC=0.798951048951049 max|d|=0.83 (lp43Hz) band=gamma31-45 off=+0.53 alpha=+0.67 theta=+0.54
+[17:16:56 +    2.8s]   018 grp=top    ceil=0.8715939233180612 mbAUC=0.8408488063660478 max|d|=1.54 (lp36Hz) band=gamma31-45 off=+1.12 alpha=+0.56 theta=+0.44
+[17:16:56 +    2.8s]   019 grp=bottom ceil=0.28735249333840884 mbAUC=0.5561476969927674 max|d|=0.43 (hf60-70) band=hf52-100 off=+0.08 alpha=-0.08 theta=-0.04
+[17:16:56 +    2.8s]   020 grp=mid    ceil=0.6494565217391304 mbAUC=0.8087258454106281 max|d|=0.69 (lp5Hz) band=theta4-7 off=+0.49 alpha=+0.36 theta=+0.64
+[17:16:56 +    2.8s]   021 grp=mid    ceil=0.7194425293016842 mbAUC=0.7145178764897073 max|d|=1.16 (hf90-100) band=hf52-100 off=-0.43 alpha=+0.26 theta=+0.26
+[17:16:56 +    2.8s]   022 grp=mid    ceil=0.7759468652325795 mbAUC=0.7030704173561316 max|d|=0.76 (sub_spent_mean) band=subwin off=+0.52 alpha=+0.60 theta=+0.65
+[17:16:56 +    2.8s]   023 grp=mid    ceil=0.5442176870748299 mbAUC=0.5584247304363923 max|d|=0.91 (sub_logvar_mean) band=subwin off=-0.44 alpha=-0.50 theta=-0.37
+[17:16:56 +    2.8s]   024 grp=bottom ceil=0.36387471655328796 mbAUC=0.451672335600907 max|d|=0.45 (lp4Hz) band=theta4-7 off=-0.22 alpha=-0.32 theta=-0.38
+[17:16:56 +    2.8s]   025 grp=top    ceil=0.7607994842037396 mbAUC=0.7936814958091554 max|d|=1.46 (hf52-60) band=hf52-100 off=+0.90 alpha=+0.17 theta=+0.38
+[17:16:56 +    2.8s]   026 grp=bottom ceil=0.47070138400187667 mbAUC=0.7024630541871921 max|d|=1.45 (lp1Hz) band=delta1-3 off=+1.00 alpha=+1.04 theta=+1.13
+[17:16:56 +    2.8s]   027 grp=mid    ceil=0.5992643328259767 mbAUC=0.5865043125317098 max|d|=0.81 (sub_spent_mean) band=subwin off=+0.35 alpha=+0.26 theta=+0.21
+[17:16:56 +    2.8s]   028 grp=bottom ceil=0.47608568075117375 mbAUC=0.6763986697965572 max|d|=0.55 (sub_logvar_std) band=subwin off=-0.08 alpha=-0.17 theta=-0.20
+[17:16:56 +    2.8s]   029 grp=bottom ceil=0.2417837045443798 mbAUC=0.3069466118125503 max|d|=0.71 (lp27Hz) band=beta13-30 off=-0.50 alpha=-0.22 theta=-0.30
+[17:16:56 +    2.8s]   030 grp=top    ceil=0.7497146509610555 mbAUC=0.8569145779117016 max|d|=1.06 (lp9Hz) band=alpha8-12 off=+0.24 alpha=+0.97 theta=+0.84
+[17:16:56 +    2.8s]   031 grp=top    ceil=0.7705479452054795 mbAUC=0.7405235503846876 max|d|=1.27 (hf80-90) band=hf52-100 off=+0.80 alpha=+0.64 theta=+0.52
+[17:16:56 +    2.8s]   034 grp=mid    ceil=None mbAUC=0.7596371882086168 max|d|=0.90 (lp7Hz) band=theta4-7 off=+0.11 alpha=+0.67 theta=+0.82
+[17:16:56 +    2.8s]   035 grp=mid    ceil=0.5891156462585034 mbAUC=0.8135116115411681 max|d|=0.96 (lp45Hz) band=gamma31-45 off=+0.59 alpha=+0.37 theta=+0.46
+[17:16:56 +    2.8s]   036 grp=top    ceil=0.7809225880133075 mbAUC=0.885048910074979 max|d|=1.03 (lp6Hz) band=theta4-7 off=+0.51 alpha=+0.93 theta=+1.01
+[17:16:56 +    2.8s]   037 grp=mid    ceil=0.6403256704980842 mbAUC=0.47998084291187737 max|d|=0.94 (lp2Hz) band=delta1-3 off=-0.54 alpha=-0.31 theta=-0.50
+[17:16:56 +    2.8s]   038 grp=mid    ceil=0.5987806030815768 mbAUC=0.8487097079119009 max|d|=1.59 (hf60-70) band=hf52-100 off=+1.27 alpha=+0.94 theta=+1.13
+[17:16:56 +    2.8s]   039 grp=mid    ceil=0.7543332401453733 mbAUC=0.5136054421768708 max|d|=0.84 (sub_spent_std) band=subwin off=+0.34 alpha=-0.06 theta=-0.23
+[17:16:56 +    2.8s]   040 grp=bottom ceil=0.46785714285714286 mbAUC=0.7233163265306125 max|d|=0.80 (lp40Hz) band=gamma31-45 off=+0.46 alpha=+0.29 theta=+0.23
+[17:16:56 +    2.8s]   041 grp=bottom ceil=0.29785387026766336 mbAUC=0.6943814805883772 max|d|=0.57 (lp10Hz) band=alpha8-12 off=+0.27 alpha=+0.54 theta=+0.36
+[17:16:56 +    2.8s]   042 grp=mid    ceil=0.38892445582586427 mbAUC=0.4183000098493056 max|d|=0.64 (lp1Hz) band=delta1-3 off=-0.34 alpha=-0.27 theta=-0.36
+[17:16:56 +    2.8s]   043 grp=top    ceil=0.8408816425120773 mbAUC=0.8459641706924315 max|d|=1.65 (lp4Hz) band=theta4-7 off=+1.18 alpha=+1.13 theta=+1.61
+[17:16:56 +    2.8s]   044 grp=mid    ceil=0.7570422535211268 mbAUC=0.8283078754215434 max|d|=1.90 (hf90-100) band=hf52-100 off=-0.82 alpha=+0.33 theta=+0.90
+[17:16:56 +    2.8s]   045 grp=mid    ceil=0.6055191582291046 mbAUC=0.7432995830851697 max|d|=0.94 (lp3Hz) band=delta1-3 off=+0.34 alpha=+0.58 theta=+0.65
+[17:16:56 +    2.8s]   046 grp=mid    ceil=0.7183098591549295 mbAUC=0.799940487998413 max|d|=1.49 (sub_spent_mean) band=subwin off=+0.33 alpha=+0.75 theta=+0.82
+[17:16:56 +    2.8s]   047 grp=mid    ceil=0.5346101497180634 mbAUC=0.7452362434376822 max|d|=0.62 (sub_spent_mean) band=subwin off=-0.16 alpha=+0.11 theta=+0.26
+[17:16:56 +    2.8s]   048 grp=top    ceil=0.7052568121533638 mbAUC=0.8114299493609839 max|d|=1.22 (lp3Hz) band=delta1-3 off=+0.45 alpha=+0.48 theta=+1.08
+[17:16:56 +    2.8s]   049 grp=mid    ceil=0.5259054325955734 mbAUC=0.7030684104627767 max|d|=0.99 (sub_logvar_std) band=subwin off=+0.01 alpha=+0.06 theta=+0.48
+[17:16:56 +    2.8s]   050 grp=mid    ceil=0.7247450218552696 mbAUC=0.6159300631374454 max|d|=1.18 (hf80-90) band=hf52-100 off=-0.62 alpha=-0.23 theta=-0.24
+[17:16:56 +    2.8s]   051 grp=top    ceil=0.7533311283311284 mbAUC=0.8429408429408429 max|d|=1.78 (lp25Hz) band=beta13-30 off=+1.43 alpha=+1.14 theta=+1.13
+[17:16:56 +    2.8s]   052 grp=mid    ceil=0.5833333333333334 mbAUC=0.45264274691358025 max|d|=0.67 (lp23Hz) band=beta13-30 off=+0.15 alpha=-0.05 theta=-0.31
+[17:16:56 +    2.8s]   053 grp=bottom ceil=0.4042998477929985 mbAUC=0.6572012937595129 max|d|=0.60 (sub_spent_mean) band=subwin off=+0.02 alpha=+0.10 theta=+0.09
+[17:16:56 +    2.8s]   054 grp=top    ceil=0.8337883141762452 mbAUC=0.8466475095785441 max|d|=1.59 (lp37Hz) band=gamma31-45 off=+1.18 alpha=+0.56 theta=+0.53
+[17:16:56 +    2.8s]   055 grp=mid    ceil=0.6821428571428572 mbAUC=0.7030612244897959 max|d|=0.54 (hf90-100) band=hf52-100 off=-0.26 alpha=-0.02 theta=-0.30
+[17:16:56 +    2.8s]   056 grp=mid    ceil=0.5924657534246576 mbAUC=0.8068586976918747 max|d|=1.72 (lp2Hz) band=delta1-3 off=+1.02 alpha=+1.22 theta=+1.58
+[17:16:56 +    2.8s]   057 grp=bottom ceil=0.7083080040526849 mbAUC=0.7767983789260384 max|d|=1.21 (lp35Hz) band=gamma31-45 off=+0.90 alpha=+0.70 theta=+0.62
+[17:16:56 +    2.8s]   058 grp=mid    ceil=0.7096982758620689 mbAUC=0.8266283524904214 max|d|=1.17 (lp6Hz) band=theta4-7 off=+0.48 alpha=+0.71 theta=+0.98
+[17:16:56 +    2.8s]   059 grp=top    ceil=0.8268272823067344 mbAUC=0.6799980841076732 max|d|=1.21 (hf60-70) band=hf52-100 off=-0.66 alpha=-0.05 theta=+0.14
+[17:16:56 +    2.8s] [group top] n=14 band_mean_d={"delta1-3": 0.54, "theta4-7": 0.72, "alpha8-12": 0.65, "beta13-30": 0.68, "gamma31-45": 0.7, "hf52-100": 0.7, "subwin": 0.28} frac+={"delta1-3": 0.86, "theta4-7": 1.0, "alpha8-12": 0.93, "beta13-30": 0.86, "gamma31-45": 0.79, "hf52-100": 0.79, "subwin": 0.86} main_band={'delta1-3': 1, 'theta4-7': 2, 'alpha8-12': 1, 'beta13-30': 1, 'gamma31-45': 4, 'hf52-100': 3, 'subwin': 2} med max|d|=1.24
+[17:16:56 +    2.8s] [group bottom] n=14 band_mean_d={"delta1-3": 0.15, "theta4-7": 0.18, "alpha8-12": 0.23, "beta13-30": 0.22, "gamma31-45": 0.27, "hf52-100": 0.26, "subwin": 0.06} frac+={"delta1-3": 0.57, "theta4-7": 0.57, "alpha8-12": 0.64, "beta13-30": 0.57, "gamma31-45": 0.64, "hf52-100": 0.64, "subwin": 0.71} main_band={'delta1-3': 1, 'theta4-7': 1, 'alpha8-12': 1, 'beta13-30': 2, 'gamma31-45': 3, 'hf52-100': 1, 'subwin': 5} med max|d|=0.60
+[17:16:56 +    2.8s] [group flip] n=6 band_mean_d={"delta1-3": -0.43, "theta4-7": -0.31, "alpha8-12": -0.21, "beta13-30": -0.22, "gamma31-45": -0.29, "hf52-100": -0.32, "subwin": -0.13} frac+={"delta1-3": 0.0, "theta4-7": 0.0, "alpha8-12": 0.0, "beta13-30": 0.17, "gamma31-45": 0.17, "hf52-100": 0.17, "subwin": 0.33} main_band={'delta1-3': 2, 'theta4-7': 1, 'alpha8-12': 0, 'beta13-30': 2, 'gamma31-45': 0, 'hf52-100': 0, 'subwin': 1} med max|d|=0.65
+[17:16:56 +    2.8s] [group all] n=57 band_mean_d={"delta1-3": 0.28, "theta4-7": 0.39, "alpha8-12": 0.34, "beta13-30": 0.29, "gamma31-45": 0.28, "hf52-100": 0.23, "subwin": 0.11} frac+={"delta1-3": 0.7, "theta4-7": 0.75, "alpha8-12": 0.75, "beta13-30": 0.65, "gamma31-45": 0.65, "hf52-100": 0.65, "subwin": 0.67} main_band={'delta1-3': 7, 'theta4-7': 6, 'alpha8-12': 2, 'beta13-30': 7, 'gamma31-45': 9, 'hf52-100': 11, 'subwin': 15} med max|d|=0.94
+[17:16:56 +    2.8s] [consistency] median pairwise corr of d-vectors all=0.027 frac<0=0.488
+[17:16:56 +    2.8s] [consistency] top: median pairwise corr=0.134
+[17:16:56 +    2.8s] [consistency] bottom: median pairwise corr=-0.015
+[17:16:56 +    2.8s] [cluster] variant=raw_d
+[17:16:59 +    5.7s]   k=2 silhouette=0.423 null mean=0.434 q95=0.494 p=0.597
+[17:17:00 +    7.4s]   k=3 silhouette=0.392 null mean=0.368 q95=0.430 p=0.244
+[17:17:02 +    9.3s]   k=4 silhouette=0.346 null mean=0.326 q95=0.381 p=0.229
+[17:17:04 +   11.2s]   k=5 silhouette=0.309 null mean=0.302 q95=0.344 p=0.393
+[17:17:06 +   13.2s]   k=6 silhouette=0.278 null mean=0.289 q95=0.336 p=0.662
+[17:17:06 +   13.2s] [cluster] variant=unit_d
+[17:17:08 +   14.8s]   k=2 silhouette=0.550 null mean=0.358 q95=0.412 p=0.005
+[17:17:09 +   16.5s]   k=3 silhouette=0.439 null mean=0.287 q95=0.341 p=0.005
+[17:17:11 +   18.3s]   k=4 silhouette=0.322 null mean=0.266 q95=0.314 p=0.035
+[17:17:13 +   20.3s]   k=5 silhouette=0.316 null mean=0.254 q95=0.298 p=0.020
+[17:17:15 +   22.3s]   k=6 silhouette=0.306 null mean=0.240 q95=0.278 p=0.010
+[17:17:15 +   22.3s] [cluster] variant=shape_unit_d
+[17:17:17 +   23.9s]   k=2 silhouette=0.403 null mean=0.288 q95=0.340 p=0.005
+[17:17:19 +   25.6s]   k=3 silhouette=0.367 null mean=0.236 q95=0.280 p=0.005
+[17:17:20 +   27.5s]   k=4 silhouette=0.329 null mean=0.220 q95=0.262 p=0.005
+[17:17:22 +   29.4s]   k=5 silhouette=0.249 null mean=0.205 q95=0.237 p=0.030
+[17:17:24 +   31.4s]   k=6 silhouette=0.246 null mean=0.186 q95=0.221 p=0.015
+[17:17:24 +   31.4s] [hier cosine] sizes k=2:[16, 41] k=3:[16, 35, 6] k=4:[15, 1, 35, 6] k=5:[15, 1, 35, 2, 4] k=6:[15, 1, 3, 32, 2, 4]
+[17:17:24 +   31.4s] [describe] raw_d k=3 (max silhouette excess over null)
+[17:17:24 +   31.4s]   c0 n=28 ceil_med=0.6055191582291046 mbAUC_med=0.698724945525577 top/bot/flip=5/8/1 bands={"delta1-3": 0.32, "theta4-7": 0.38, "alpha8-12": 0.34, "beta13-30": 0.26, "gamma31-45": 0.27, "hf52-100": 0.26, "subwin": 0.13} feat=['lp6Hz', 'lp5Hz', 'lp7Hz', 'lp4Hz', 'lp3Hz'] wcos=0.5115078023705997
+[17:17:24 +   31.4s]   c1 n=14 ceil_med=0.592271678786457 mbAUC_med=0.5871773967869188 top/bot/flip=1/3/5 bands={"delta1-3": -0.24, "theta4-7": -0.11, "alpha8-12": -0.15, "beta13-30": -0.53, "gamma31-45": -0.7, "hf52-100": -0.8, "subwin": -0.15} feat=['hf70-80', 'hf52-60', 'hf80-90', 'hf60-70', 'hf90-100'] wcos=0.8133670376158013
+[17:17:24 +   31.4s]   c2 n=15 ceil_med=0.7533311283311284 mbAUC_med=0.7936814958091554 top/bot/flip=8/3/0 bands={"delta1-3": 0.7, "theta4-7": 0.87, "alpha8-12": 0.8, "beta13-30": 1.09, "gamma31-45": 1.19, "hf52-100": 1.13, "subwin": 0.31} feat=['hf60-70', 'lp36Hz', 'lp45Hz', 'lp37Hz', 'hf52-60'] wcos=0.9497294666409496
+[17:17:24 +   31.4s] [describe] unit_d k=2 (max silhouette excess over null)
+[17:17:24 +   31.4s]   c0 n=21 ceil_med=0.5394139183964466 mbAUC_med=0.6763986697965572 top/bot/flip=3/6/5 bands={"delta1-3": -0.04, "theta4-7": 0.04, "alpha8-12": -0.0, "beta13-30": -0.36, "gamma31-45": -0.5, "hf52-100": -0.6, "subwin": -0.08} feat=['hf80-90', 'hf70-80', 'hf52-60', 'hf60-70', 'hf90-100'] wcos=0.5485574682549418
+[17:17:24 +   31.4s]   c1 n=36 ceil_med=0.6350508875168821 mbAUC_med=0.7419115667349288 top/bot/flip=11/8/1 bands={"delta1-3": 0.48, "theta4-7": 0.59, "alpha8-12": 0.54, "beta13-30": 0.66, "gamma31-45": 0.73, "hf52-100": 0.71, "subwin": 0.22} feat=['hf60-70', 'lp45Hz', 'lp44Hz', 'lp43Hz', 'hf52-60'] wcos=0.8230308184801034
+[17:17:24 +   31.4s] [describe] shape_unit_d k=3 (max silhouette excess over null)
+[17:17:24 +   31.4s]   c0 n=27 ceil_med=0.6067751335599806 mbAUC_med=0.7333171442447791 top/bot/flip=9/8/1 bands={"delta1-3": 0.33, "theta4-7": 0.49, "alpha8-12": 0.48, "beta13-30": 0.75, "gamma31-45": 0.85, "hf52-100": 0.86, "subwin": 0.19} feat=['hf60-70', 'hf52-60', 'lp45Hz', 'lp44Hz', 'hf70-80'] wcos=0.9021929648570878
+[17:17:24 +   31.4s]   c1 n=10 ceil_med=0.5360045762663004 mbAUC_med=0.5063670904520936 top/bot/flip=1/3/5 bands={"delta1-3": -0.48, "theta4-7": -0.33, "alpha8-12": -0.3, "beta13-30": -0.47, "gamma31-45": -0.57, "hf52-100": -0.65, "subwin": -0.18} feat=['hf70-80', 'hf52-60', 'hf80-90', 'hf60-70', 'hf90-100'] wcos=0.8443976087950639
+[17:17:24 +   31.4s]   c2 n=20 ceil_med=0.7052568121533638 mbAUC_med=0.744267913261426 top/bot/flip=4/3/0 bands={"delta1-3": 0.61, "theta4-7": 0.61, "alpha8-12": 0.48, "beta13-30": 0.04, "gamma31-45": -0.08, "hf52-100": -0.18, "subwin": 0.14} feat=['lp2Hz', 'lp3Hz', 'lp6Hz', 'lp5Hz', 'lp4Hz'] wcos=0.4709851715053399
+[17:17:24 +   31.4s] [describe] unit_d fixed k=3
+[17:17:24 +   31.4s]   c0 n=13 ceil_med=0.6676968992273669 mbAUC_med=0.7598458904109588 top/bot/flip=4/2/0 bands={"delta1-3": 0.73, "theta4-7": 0.72, "alpha8-12": 0.59, "beta13-30": 0.21, "gamma31-45": 0.15, "hf52-100": 0.04, "subwin": 0.2} feat=['lp2Hz', 'lp3Hz', 'lp6Hz', 'lp5Hz', 'lp4Hz'] wcos=0.5988813691043191
+[17:17:24 +   31.4s]   c1 n=16 ceil_med=0.5394139183964466 mbAUC_med=0.6162496538708809 top/bot/flip=1/5/5 bands={"delta1-3": -0.22, "theta4-7": -0.1, "alpha8-12": -0.13, "beta13-30": -0.48, "gamma31-45": -0.62, "hf52-100": -0.7, "subwin": -0.14} feat=['hf70-80', 'hf52-60', 'hf80-90', 'hf60-70', 'hf90-100'] wcos=0.7750461664552487
+[17:17:24 +   31.4s]   c2 n=28 ceil_med=0.6311334735028877 mbAUC_med=0.7283167353876958 top/bot/flip=9/7/1 bands={"delta1-3": 0.36, "theta4-7": 0.52, "alpha8-12": 0.5, "beta13-30": 0.75, "gamma31-45": 0.84, "hf52-100": 0.85, "subwin": 0.21} feat=['hf60-70', 'hf52-60', 'lp45Hz', 'lp44Hz', 'hf70-80'] wcos=0.8990895748012193
+[17:17:24 +   31.4s] [describe] unit_d fixed k=4
+[17:17:24 +   31.4s]   c0 n=23 ceil_med=0.6067751335599806 mbAUC_med=0.7393815834182806 top/bot/flip=7/6/1 bands={"delta1-3": 0.23, "theta4-7": 0.43, "alpha8-12": 0.43, "beta13-30": 0.76, "gamma31-45": 0.86, "hf52-100": 0.85, "subwin": 0.2} feat=['hf60-70', 'hf52-60', 'lp45Hz', 'lp44Hz', 'lp43Hz'] wcos=0.9167501976165973
+[17:17:24 +   31.4s]   c1 n=10 ceil_med=0.7194425293016842 mbAUC_med=0.723601843650259 top/bot/flip=2/2/0 bands={"delta1-3": 0.42, "theta4-7": 0.43, "alpha8-12": 0.31, "beta13-30": -0.27, "gamma31-45": -0.49, "hf52-100": -0.61, "subwin": 0.03} feat=['hf80-90', 'hf70-80', 'hf90-100', 'hf60-70', 'hf52-60'] wcos=0.5582334260264316
+[17:17:24 +   31.4s]   c2 n=13 ceil_med=0.7052568121533638 mbAUC_med=0.7598458904109588 top/bot/flip=4/2/0 bands={"delta1-3": 0.91, "theta4-7": 0.88, "alpha8-12": 0.74, "beta13-30": 0.49, "gamma31-45": 0.5, "hf52-100": 0.47, "subwin": 0.24} feat=['lp2Hz', 'lp3Hz', 'lp6Hz', 'lp4Hz', 'lp5Hz'] wcos=0.8534631287974811
+[17:17:24 +   31.4s]   c3 n=11 ceil_med=0.5277914654577708 mbAUC_med=0.5182812653986401 top/bot/flip=1/4/5 bands={"delta1-3": -0.46, "theta4-7": -0.32, "alpha8-12": -0.29, "beta13-30": -0.44, "gamma31-45": -0.51, "hf52-100": -0.58, "subwin": -0.18} feat=['hf70-80', 'hf52-60', 'hf80-90', 'hf60-70', 'sub_logvar_mean'] wcos=0.8320927913026088
+[17:17:24 +   31.4s] [sign-free |cos| hier] sizes k=2:[50, 7] k=3:[50, 5, 2] k=4:[9, 41, 5, 2] k=5:[9, 41, 5, 1, 1] k=6:[9, 41, 2, 3, 1, 1]
+[17:17:25 +   31.6s] [done] -> subject_mode_analysis_results.json
