@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "smoke": false,
+    "prior": 32.0,
+    "kernel_components": 64,
+    "features": 16,
+    "threshold": 0.5,
+    "history": "all previous unlabeled windows, predict before update",
+    "alternation_assumption": false,
+    "hyperparameter_search": false,
+    "switch_definition": "first five windows after actual label change; reporting only"
+  },
+  "checks": [
+    {
+      "fold": 0,
+      "variant": "kernel_history",
+      "future_and_prefix_invariance": true
+    },
+    {
+      "fold": 1,
+      "variant": "kernel_history",
+      "future_and_prefix_invariance": true
+    },
+    {
+      "fold": 2,
+      "variant": "kernel_history",
+      "future_and_prefix_invariance": true
+    },
+    {
+      "fold": 3,
+      "variant": "kernel_history",
+      "future_and_prefix_invariance": true
+    },
+    {
+      "fold": 4,
+      "variant": "kernel_history",
+      "future_and_prefix_invariance": true
+    }
+  ],
+  "methods": {
+    "kernel_history": {
+      "all": {
+        "n": 16067,
+        "AUC": 0.6756196710520811,
+        "subject_macro_bACC": 0.6294113826133342,
+        "micro_bACC": 0.6287856235510174
+      },
+      "history_comparable": {
+        "n": 9227,
+        "AUC": 0.6226951584298214,
+        "subject_macro_bACC": 0.5891832594992434,
+        "micro_bACC": 0.5885087532592689
+      },
+      "switching": {
+        "n": 1410,
+        "AUC": 0.3563512593601089,
+        "subject_macro_bACC": 0.3988304093567251,
+        "micro_bACC": 0.3974027334136252
+      },
+      "steady": {
+        "n": 14657,
+        "AUC": 0.7039443412132748,
+        "subject_macro_bACC": 0.6502029365626407,
+        "micro_bACC": 0.6499255022128636
+      }
+    },
+    "no_history": {
+      "all": {
+        "n": 16067,
+        "AUC": 0.5842800743019549,
+        "subject_macro_bACC": 0.5613606940284331,
+        "micro_bACC": 0.5602988286037733
+      },
+      "history_comparable": {
+        "n": 9227,
+        "AUC": 0.584209888131437,
+        "subject_macro_bACC": 0.5592623663995886,
+        "micro_bACC": 0.56192807685591
+      },
+      "switching": {
+        "n": 1410,
+        "AUC": 0.35275907210556634,
+        "subject_macro_bACC": 0.39415204678362575,
+        "micro_bACC": 0.3927370791223752
+      },
+      "steady": {
+        "n": 14657,
+        "AUC": 0.6060541278571997,
+        "subject_macro_bACC": 0.5770503846482363,
+        "micro_bACC": 0.5760463260764418
+      }
+    }
+  },
+  "strict_reference": {
+    "all": {
+      "n": 16067,
+      "AUC": 0.6742945095082392,
+      "subject_macro_bACC": 0.6302441135237077,
+      "micro_bACC": 0.6300280801640494
+    },
+    "history_comparable": {
+      "n": 9227,
+      "AUC": 0.6708267557521492,
+      "subject_macro_bACC": 0.6272687224271797,
+      "micro_bACC": 0.6283182522993572
+    },
+    "switching": {
+      "n": 1410,
+      "AUC": 0.27943027700685974,
+      "subject_macro_bACC": 0.34649122807017535,
+      "micro_bACC": 0.3484159815677855
+    },
+    "steady": {
+      "n": 14657,
+      "AUC": 0.7112518291534798,
+      "subject_macro_bACC": 0.6571426299421615,
+      "micro_bACC": 0.6567332031236177
+    }
+  },
+  "seconds": 10.685188499992364
+}

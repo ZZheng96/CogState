@@ -1,0 +1,14 @@
+﻿[start] rows=16067 subjects=57 features=16 smoke=False
+[progress] fold=1/5 method=kernel_history elapsed=4.4s
+[progress] fold=1/5 method=no_history elapsed=4.7s
+[progress] fold=2/5 method=kernel_history elapsed=5.8s
+[progress] fold=2/5 method=no_history elapsed=6.1s
+[progress] fold=3/5 method=kernel_history elapsed=7.1s
+[progress] fold=3/5 method=no_history elapsed=7.4s
+[progress] fold=4/5 method=kernel_history elapsed=8.3s
+[progress] fold=4/5 method=no_history elapsed=8.6s
+[progress] fold=5/5 method=kernel_history elapsed=9.5s
+[progress] fold=5/5 method=no_history elapsed=9.8s
+[result] kernel_history {"all": {"n": 16067, "AUC": 0.6756196710520811, "subject_macro_bACC": 0.6294113826133342, "micro_bACC": 0.6287856235510174}, "history_comparable": {"n": 9227, "AUC": 0.6226951584298214, "subject_macro_bACC": 0.5891832594992434, "micro_bACC": 0.5885087532592689}, "switching": {"n": 1410, "AUC": 0.3563512593601089, "subject_macro_bACC": 0.3988304093567251, "micro_bACC": 0.3974027334136252}, "steady": {"n": 14657, "AUC": 0.7039443412132748, "subject_macro_bACC": 0.6502029365626407, "micro_bACC": 0.6499255022128636}}
+[result] no_history {"all": {"n": 16067, "AUC": 0.5842800743019549, "subject_macro_bACC": 0.5613606940284331, "micro_bACC": 0.5602988286037733}, "history_comparable": {"n": 9227, "AUC": 0.584209888131437, "subject_macro_bACC": 0.5592623663995886, "micro_bACC": 0.56192807685591}, "switching": {"n": 1410, "AUC": 0.35275907210556634, "subject_macro_bACC": 0.39415204678362575, "micro_bACC": 0.3927370791223752}, "steady": {"n": 14657, "AUC": 0.6060541278571997, "subject_macro_bACC": 0.5770503846482363, "micro_bACC": 0.5760463260764418}}
+[done] elapsed=10.7s

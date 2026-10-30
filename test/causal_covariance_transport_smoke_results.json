@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "smoke": true,
+    "prior": 32.0,
+    "shrink": 0.25,
+    "features": 16,
+    "threshold": 0.5,
+    "history": "all previous unlabeled windows, predict before update",
+    "alternation_assumption": false,
+    "hyperparameter_search": false,
+    "switch_definition": "first five windows after actual label change; reporting only"
+  },
+  "checks": [
+    {
+      "fold": 0,
+      "variant": "full",
+      "future_and_prefix_invariance": true
+    },
+    {
+      "fold": 0,
+      "variant": "diagonal",
+      "future_and_prefix_invariance": true
+    }
+  ],
+  "methods": {
+    "full": {
+      "all": {
+        "n": 217,
+        "AUC": 0.6600407747196738,
+        "subject_macro_bACC": 0.6042728508324839,
+        "micro_bACC": 0.6042728508324839
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.6788288288288288,
+        "subject_macro_bACC": 0.5898648648648649,
+        "micro_bACC": 0.5898648648648649
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.5266666666666666,
+        "subject_macro_bACC": 0.5,
+        "micro_bACC": 0.5
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.6795484151107252,
+        "subject_macro_bACC": 0.6171298306556665,
+        "micro_bACC": 0.6171298306556665
+      }
+    },
+    "diagonal": {
+      "all": {
+        "n": 217,
+        "AUC": 0.5955232755691472,
+        "subject_macro_bACC": 0.5397553516819572,
+        "micro_bACC": 0.5397553516819572
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.5950450450450451,
+        "subject_macro_bACC": 0.4806306306306306,
+        "micro_bACC": 0.4806306306306306
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.5066666666666667,
+        "subject_macro_bACC": 0.48333333333333334,
+        "micro_bACC": 0.48333333333333334
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.6114850195397308,
+        "subject_macro_bACC": 0.5439643942683456,
+        "micro_bACC": 0.5439643942683456
+      }
+    },
+    "no_history": {
+      "all": {
+        "n": 217,
+        "AUC": 0.6236408426775399,
+        "subject_macro_bACC": 0.5216190961603806,
+        "micro_bACC": 0.5216190961603806
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.5648648648648649,
+        "subject_macro_bACC": 0.48265765765765767,
+        "micro_bACC": 0.48265765765765767
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.3733333333333333,
+        "subject_macro_bACC": 0.3833333333333333,
+        "micro_bACC": 0.3833333333333333
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.6573491098567087,
+        "subject_macro_bACC": 0.537559704732957,
+        "micro_bACC": 0.537559704732957
+      }
+    }
+  },
+  "strict_reference": {
+    "all": {
+      "n": 217,
+      "AUC": 0.7393815834182806,
+      "subject_macro_bACC": 0.6813200815494393,
+      "micro_bACC": 0.6813200815494393
+    },
+    "history_comparable": {
+      "n": 97,
+      "AUC": 0.7216216216216217,
+      "subject_macro_bACC": 0.713963963963964,
+      "micro_bACC": 0.713963963963964
+    },
+    "switching": {
+      "n": 25,
+      "AUC": 0.2333333333333333,
+      "subject_macro_bACC": 0.33333333333333337,
+      "micro_bACC": 0.33333333333333337
+    },
+    "steady": {
+      "n": 192,
+      "AUC": 0.824576639166305,
+      "subject_macro_bACC": 0.7274207555362571,
+      "micro_bACC": 0.7274207555362571
+    }
+  },
+  "seconds": 4.249274299989338
+}

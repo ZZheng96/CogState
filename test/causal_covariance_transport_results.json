@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "smoke": false,
+    "prior": 32.0,
+    "shrink": 0.25,
+    "features": 16,
+    "threshold": 0.5,
+    "history": "all previous unlabeled windows, predict before update",
+    "alternation_assumption": false,
+    "hyperparameter_search": false,
+    "switch_definition": "first five windows after actual label change; reporting only"
+  },
+  "checks": [
+    {
+      "fold": 0,
+      "variant": "full",
+      "future_and_prefix_invariance": true
+    },
+    {
+      "fold": 0,
+      "variant": "diagonal",
+      "future_and_prefix_invariance": true
+    },
+    {
+      "fold": 1,
+      "variant": "full",
+      "future_and_prefix_invariance": true
+    },
+    {
+      "fold": 1,
+      "variant": "diagonal",
+      "future_and_prefix_invariance": true
+    },
+    {
+      "fold": 2,
+      "variant": "full",
+      "future_and_prefix_invariance": true
+    },
+    {
+      "fold": 2,
+      "variant": "diagonal",
+      "future_and_prefix_invariance": true
+    },
+    {
+      "fold": 3,
+      "variant": "full",
+      "future_and_prefix_invariance": true
+    },
+    {
+      "fold": 3,
+      "variant": "diagonal",
+      "future_and_prefix_invariance": true
+    },
+    {
+      "fold": 4,
+      "variant": "full",
+      "future_and_prefix_invariance": true
+    },
+    {
+      "fold": 4,
+      "variant": "diagonal",
+      "future_and_prefix_invariance": true
+    }
+  ],
+  "methods": {
+    "full": {
+      "all": {
+        "n": 16067,
+        "AUC": 0.652525262385751,
+        "subject_macro_bACC": 0.6160074164550436,
+        "micro_bACC": 0.6170848630840208
+      },
+      "history_comparable": {
+        "n": 9227,
+        "AUC": 0.6547518961818874,
+        "subject_macro_bACC": 0.6193644668221039,
+        "micro_bACC": 0.6204440679746273
+      },
+      "switching": {
+        "n": 1410,
+        "AUC": 0.3201466198879405,
+        "subject_macro_bACC": 0.3695906432748538,
+        "micro_bACC": 0.36912080431481387
+      },
+      "steady": {
+        "n": 14657,
+        "AUC": 0.6836096952910136,
+        "subject_macro_bACC": 0.6387698663142831,
+        "micro_bACC": 0.640167241944787
+      }
+    },
+    "diagonal": {
+      "all": {
+        "n": 16067,
+        "AUC": 0.660426461487161,
+        "subject_macro_bACC": 0.6201435095354539,
+        "micro_bACC": 0.6213364930878047
+      },
+      "history_comparable": {
+        "n": 9227,
+        "AUC": 0.6615009433026662,
+        "subject_macro_bACC": 0.622378803104335,
+        "micro_bACC": 0.62238393239365
+      },
+      "switching": {
+        "n": 1410,
+        "AUC": 0.32450018327485997,
+        "subject_macro_bACC": 0.3809941520467836,
+        "micro_bACC": 0.3794627428391894
+      },
+      "steady": {
+        "n": 14657,
+        "AUC": 0.6914998024877418,
+        "subject_macro_bACC": 0.6420535589878561,
+        "micro_bACC": 0.6436506839734959
+      }
+    },
+    "no_history": {
+      "all": {
+        "n": 16067,
+        "AUC": 0.5848963209437861,
+        "subject_macro_bACC": 0.5665746737834698,
+        "micro_bACC": 0.5659861387310716
+      },
+      "history_comparable": {
+        "n": 9227,
+        "AUC": 0.5880479505548306,
+        "subject_macro_bACC": 0.5647115928389074,
+        "micro_bACC": 0.5676785941098859
+      },
+      "switching": {
+        "n": 1410,
+        "AUC": 0.33852332827145626,
+        "subject_macro_bACC": 0.3804093567251462,
+        "micro_bACC": 0.380609519819867
+      },
+      "steady": {
+        "n": 14657,
+        "AUC": 0.6082954775932075,
+        "subject_macro_bACC": 0.5841824761377932,
+        "micro_bACC": 0.5834857495976653
+      }
+    }
+  },
+  "strict_reference": {
+    "all": {
+      "n": 16067,
+      "AUC": 0.6742945095082392,
+      "subject_macro_bACC": 0.6302441135237077,
+      "micro_bACC": 0.6300280801640494
+    },
+    "history_comparable": {
+      "n": 9227,
+      "AUC": 0.6708267557521492,
+      "subject_macro_bACC": 0.6272687224271797,
+      "micro_bACC": 0.6283182522993572
+    },
+    "switching": {
+      "n": 1410,
+      "AUC": 0.27943027700685974,
+      "subject_macro_bACC": 0.34649122807017535,
+      "micro_bACC": 0.3484159815677855
+    },
+    "steady": {
+      "n": 14657,
+      "AUC": 0.7112518291534798,
+      "subject_macro_bACC": 0.6571426299421615,
+      "micro_bACC": 0.6567332031236177
+    }
+  },
+  "seconds": 15.089386999999988
+}
