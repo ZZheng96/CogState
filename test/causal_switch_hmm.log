@@ -1,0 +1,13 @@
+[elapsed  39.13s] s10 fold 1/5 gate=q0.75 inner=0.786295 resets=552/1798
+[elapsed  77.56s] s10 fold 2/5 gate=q0.50 inner=0.801813 resets=934/1824
+[elapsed 115.96s] s10 fold 3/5 gate=q0.50 inner=0.776426 resets=850/1821
+[elapsed 153.57s] s10 fold 4/5 gate=q0.75 inner=0.803928 resets=402/1961
+[elapsed 192.00s] s10 fold 5/5 gate=q0.75 inner=0.785507 resets=443/1823
+[elapsed 192.53s] s10 adaptive macro=0.787432 micro=0.787977 AUC=0.848027
+[elapsed 230.90s] s5 fold 1/5 gate=no_reset inner=0.788503 resets=0/1798
+[elapsed 269.22s] s5 fold 2/5 gate=no_reset inner=0.803024 resets=0/1824
+[elapsed 307.73s] s5 fold 3/5 gate=no_reset inner=0.781144 resets=0/1821
+[elapsed 345.41s] s5 fold 4/5 gate=no_reset inner=0.805123 resets=0/1961
+[elapsed 383.84s] s5 fold 5/5 gate=no_reset inner=0.786235 resets=0/1823
+[elapsed 384.37s] s5 adaptive macro=0.790821 micro=0.790591 AUC=0.856442
+[elapsed 384.46s] done seconds=384.45

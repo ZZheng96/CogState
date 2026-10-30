@@ -1,0 +1,1683 @@
+{
+  "meta": {
+    "source": "split6 fusion; causal s10/s5; past-only median/MAD normalized logit",
+    "primary_smooth": 10,
+    "robustness_smooth": 5,
+    "emission": "Student-t df=5; same robust fit as causal_normalized_hmm",
+    "blend": "fixed 0.5 normalized observation + 0.5 HMM logit",
+    "new_mechanism": "large absolute current-minus-previous normalized observation replaces predicted prior with stationary initial distribution for that time step",
+    "gate_candidates_inner_only": [
+      "no_reset",
+      "q0.90",
+      "q0.75",
+      "q0.50"
+    ],
+    "nested_protocol": "outer subject fold; gate and threshold selected on four inner subject-fold OOF predictions; final refit on all outer-train subjects",
+    "selection": "maximum inner-OOF source-subject macro bACC; ties prefer less resetting, then threshold nearest zero",
+    "strict_subject_disjoint": true,
+    "strict_causal_history": true,
+    "test_labels_used_for_fit_or_selection": false,
+    "transition_diagnostics": "post-hoc only; never used for fitting or selection"
+  },
+  "results": {
+    "s10": {
+      "normalized_direct": {
+        "subject_macro_bACC": 0.791572213801211,
+        "window_micro_bACC": 0.7919762486075593,
+        "AUC": 0.8085795468018964,
+        "n_eval": 9227,
+        "n_subjects": 57,
+        "n_macro_subjects": 56
+      },
+      "fixed_student_t_blend": {
+        "subject_macro_bACC": 0.7793884337966753,
+        "window_micro_bACC": 0.7801700844167321,
+        "AUC": 0.8472706050261025,
+        "n_eval": 9227,
+        "n_subjects": 57,
+        "n_macro_subjects": 56
+      },
+      "adaptive_student_t_blend": {
+        "metrics": {
+          "subject_macro_bACC": 0.7874323926617056,
+          "window_micro_bACC": 0.7879772808593803,
+          "AUC": 0.8480270808653902,
+          "n_eval": 9227,
+          "n_subjects": 57,
+          "n_macro_subjects": 56
+        },
+        "paired_bootstrap_vs_normalized_direct": {
+          "mean_delta": -0.004139821139505424,
+          "ci95": [
+            -0.009886880710674943,
+            0.001187206975600875
+          ],
+          "n_subjects": 56,
+          "n_bootstrap": 2000
+        },
+        "paired_bootstrap_vs_fixed_blend": {
+          "mean_delta": 0.008043958865030178,
+          "ci95": [
+            -0.0009135132581891052,
+            0.01667027156263213
+          ],
+          "n_subjects": 56,
+          "n_bootstrap": 2000
+        }
+      },
+      "post_hoc_transition_diagnostics": {
+        "normalized_direct": {
+          "first_10_after_true_switch": {
+            "n": 2240,
+            "window_micro_bACC": 0.6598339124951471,
+            "relax_recall": 0.6738159070598749,
+            "task_recall": 0.6458519179304193
+          },
+          "stable_at_least_10": {
+            "n": 6987,
+            "window_micro_bACC": 0.8336264626332461,
+            "relax_recall": 0.8072289156626506,
+            "task_recall": 0.8600240096038415
+          }
+        },
+        "fixed_student_t_blend": {
+          "first_10_after_true_switch": {
+            "n": 2240,
+            "window_micro_bACC": 0.5773270705732387,
+            "relax_recall": 0.6836461126005362,
+            "task_recall": 0.47100802854594115
+          },
+          "stable_at_least_10": {
+            "n": 6987,
+            "window_micro_bACC": 0.8433098540621067,
+            "relax_recall": 0.8710134656272147,
+            "task_recall": 0.8156062424969988
+          }
+        },
+        "adaptive_student_t_blend": {
+          "first_10_after_true_switch": {
+            "n": 2240,
+            "window_micro_bACC": 0.6290570225263253,
+            "relax_recall": 0.6729222520107239,
+            "task_recall": 0.5851917930419268
+          },
+          "stable_at_least_10": {
+            "n": 6987,
+            "window_micro_bACC": 0.8376835071377948,
+            "relax_recall": 0.8249468462083629,
+            "task_recall": 0.8504201680672269
+          }
+        }
+      }
+    },
+    "s5": {
+      "normalized_direct": {
+        "subject_macro_bACC": 0.7769371319391942,
+        "window_micro_bACC": 0.7771617980805223,
+        "AUC": 0.8164384662419957,
+        "n_eval": 9227,
+        "n_subjects": 57,
+        "n_macro_subjects": 56
+      },
+      "fixed_student_t_blend": {
+        "subject_macro_bACC": 0.7908213918934585,
+        "window_micro_bACC": 0.7905912483440241,
+        "AUC": 0.8564419205221782,
+        "n_eval": 9227,
+        "n_subjects": 57,
+        "n_macro_subjects": 56
+      },
+      "adaptive_student_t_blend": {
+        "metrics": {
+          "subject_macro_bACC": 0.7908213918934585,
+          "window_micro_bACC": 0.7905912483440241,
+          "AUC": 0.8564419205221782,
+          "n_eval": 9227,
+          "n_subjects": 57,
+          "n_macro_subjects": 56
+        },
+        "paired_bootstrap_vs_normalized_direct": {
+          "mean_delta": 0.013884259954264205,
+          "ci95": [
+            0.003185013107494828,
+            0.02453807986880583
+          ],
+          "n_subjects": 56,
+          "n_bootstrap": 2000
+        },
+        "paired_bootstrap_vs_fixed_blend": {
+          "mean_delta": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_subjects": 56,
+          "n_bootstrap": 2000
+        }
+      },
+      "post_hoc_transition_diagnostics": {
+        "normalized_direct": {
+          "first_10_after_true_switch": {
+            "n": 2240,
+            "window_micro_bACC": 0.6866379836080865,
+            "relax_recall": 0.7211796246648794,
+            "task_recall": 0.6520963425512935
+          },
+          "stable_at_least_10": {
+            "n": 6987,
+            "window_micro_bACC": 0.8053696177266088,
+            "relax_recall": 0.8054571226080793,
+            "task_recall": 0.8052821128451381
+          }
+        },
+        "fixed_student_t_blend": {
+          "first_10_after_true_switch": {
+            "n": 2240,
+            "window_micro_bACC": 0.6223546096576926,
+            "relax_recall": 0.6595174262734584,
+            "task_recall": 0.5851917930419268
+          },
+          "stable_at_least_10": {
+            "n": 6987,
+            "window_micro_bACC": 0.8435940641316768,
+            "relax_recall": 0.8288447909284196,
+            "task_recall": 0.858343337334934
+          }
+        },
+        "adaptive_student_t_blend": {
+          "first_10_after_true_switch": {
+            "n": 2240,
+            "window_micro_bACC": 0.6223546096576926,
+            "relax_recall": 0.6595174262734584,
+            "task_recall": 0.5851917930419268
+          },
+          "stable_at_least_10": {
+            "n": 6987,
+            "window_micro_bACC": 0.8435940641316768,
+            "relax_recall": 0.8288447909284196,
+            "task_recall": 0.858343337334934
+          }
+        }
+      }
+    }
+  },
+  "folds": {
+    "s10": [
+      {
+        "fold": 0,
+        "fit_subjects": [
+          "001",
+          "002",
+          "003",
+          "004",
+          "005",
+          "006",
+          "007",
+          "008",
+          "010",
+          "011",
+          "012",
+          "013",
+          "014",
+          "015",
+          "016",
+          "017",
+          "018",
+          "019",
+          "020",
+          "021",
+          "025",
+          "026",
+          "027",
+          "028",
+          "030",
+          "031",
+          "034",
+          "035",
+          "036",
+          "038",
+          "039",
+          "040",
+          "041",
+          "042",
+          "043",
+          "044",
+          "046",
+          "047",
+          "049",
+          "050",
+          "052",
+          "054",
+          "056",
+          "057",
+          "058",
+          "059"
+        ],
+        "test_subjects": [
+          "009",
+          "022",
+          "023",
+          "024",
+          "029",
+          "037",
+          "045",
+          "048",
+          "051",
+          "053",
+          "055"
+        ],
+        "transition_matrix": [
+          [
+            0.9712025316455696,
+            0.02879746835443038
+          ],
+          [
+            0.010882422521883131,
+            0.9891175774781169
+          ]
+        ],
+        "initial_probability": [
+          0.27425535407354795,
+          0.725744645926452
+        ],
+        "emissions": [
+          {
+            "location": -0.43876831395582977,
+            "scale": 0.7050102087796428
+          },
+          {
+            "location": 0.7570509331802965,
+            "scale": 0.7178053925921619
+          }
+        ],
+        "direct_threshold": 0.11284269240971082,
+        "direct_train_macro_bACC": 0.78755383158992,
+        "selected_gate": "q0.75",
+        "selected_gate_threshold": 0.19472891626114808,
+        "selected_threshold_inner_oof": 0.40137372115072195,
+        "selected_train_macro_bACC_inner_oof": 0.786295318111309,
+        "n_test_reset": 552,
+        "n_test": 1798,
+        "inner_candidates": [
+          {
+            "quantile": null,
+            "name": "no_reset",
+            "inner_oof_macro_bACC": 0.7786198755965184,
+            "threshold": 0.9838163196991844,
+            "inner_gate_thresholds": {
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "quantile": 0.9,
+            "name": "q0.90",
+            "inner_oof_macro_bACC": 0.7816039360747176,
+            "threshold": 0.46583075363685733,
+            "inner_gate_thresholds": {
+              "1": 0.3489393716617073,
+              "2": 0.3673401853897868,
+              "3": 0.36943357894493334,
+              "4": 0.3517540937869288
+            }
+          },
+          {
+            "quantile": 0.75,
+            "name": "q0.75",
+            "inner_oof_macro_bACC": 0.786295318111309,
+            "threshold": 0.40137372115072195,
+            "inner_gate_thresholds": {
+              "1": 0.18888953287934787,
+              "2": 0.19771425137897813,
+              "3": 0.19898531181125068,
+              "4": 0.19362890066855937
+            }
+          },
+          {
+            "quantile": 0.5,
+            "name": "q0.50",
+            "inner_oof_macro_bACC": 0.7860046250096134,
+            "threshold": 0.4094367845519719,
+            "inner_gate_thresholds": {
+              "1": 0.09395195274957802,
+              "2": 0.09718249940527635,
+              "3": 0.09732878408339643,
+              "4": 0.09669395406296465
+            }
+          }
+        ]
+      },
+      {
+        "fold": 1,
+        "fit_subjects": [
+          "001",
+          "002",
+          "004",
+          "005",
+          "006",
+          "007",
+          "008",
+          "009",
+          "010",
+          "011",
+          "013",
+          "014",
+          "015",
+          "016",
+          "017",
+          "018",
+          "019",
+          "020",
+          "021",
+          "022",
+          "023",
+          "024",
+          "025",
+          "026",
+          "027",
+          "028",
+          "029",
+          "030",
+          "031",
+          "037",
+          "040",
+          "042",
+          "043",
+          "044",
+          "045",
+          "047",
+          "048",
+          "049",
+          "051",
+          "052",
+          "053",
+          "054",
+          "055",
+          "056",
+          "057"
+        ],
+        "test_subjects": [
+          "003",
+          "012",
+          "034",
+          "035",
+          "036",
+          "038",
+          "039",
+          "041",
+          "046",
+          "050",
+          "058",
+          "059"
+        ],
+        "transition_matrix": [
+          [
+            0.9711842938568714,
+            0.02881570614312856
+          ],
+          [
+            0.010941960038058992,
+            0.989058039961941
+          ]
+        ],
+        "initial_probability": [
+          0.27521635671956285,
+          0.7247836432804371
+        ],
+        "emissions": [
+          {
+            "location": -0.39269565705822457,
+            "scale": 0.6274512559310602
+          },
+          {
+            "location": 0.8023165000460323,
+            "scale": 0.7531788277382642
+          }
+        ],
+        "direct_threshold": 0.1297283707029679,
+        "direct_train_macro_bACC": 0.8023200395962811,
+        "selected_gate": "q0.50",
+        "selected_gate_threshold": 0.09920601858055966,
+        "selected_threshold_inner_oof": 0.5326037053297764,
+        "selected_train_macro_bACC_inner_oof": 0.8018127855053695,
+        "n_test_reset": 934,
+        "n_test": 1824,
+        "inner_candidates": [
+          {
+            "quantile": null,
+            "name": "no_reset",
+            "inner_oof_macro_bACC": 0.7926737897023572,
+            "threshold": 1.3698828943203996,
+            "inner_gate_thresholds": {
+              "0": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "quantile": 0.9,
+            "name": "q0.90",
+            "inner_oof_macro_bACC": 0.7905628344431663,
+            "threshold": 0.8998174147586794,
+            "inner_gate_thresholds": {
+              "0": 0.3489393716617073,
+              "2": 0.38358631079460137,
+              "3": 0.38740631679183013,
+              "4": 0.36645810364629344
+            }
+          },
+          {
+            "quantile": 0.75,
+            "name": "q0.75",
+            "inner_oof_macro_bACC": 0.7975411808459548,
+            "threshold": 0.28899956631302176,
+            "inner_gate_thresholds": {
+              "0": 0.18888953287934787,
+              "2": 0.20289927809908054,
+              "3": 0.20394408122991753,
+              "4": 0.1985979623619007
+            }
+          },
+          {
+            "quantile": 0.5,
+            "name": "q0.50",
+            "inner_oof_macro_bACC": 0.8018127855053695,
+            "threshold": 0.5326037053297764,
+            "inner_gate_thresholds": {
+              "0": 0.09395195274957802,
+              "2": 0.10095017070011408,
+              "3": 0.10146881758599591,
+              "4": 0.10024525741260695
+            }
+          }
+        ]
+      },
+      {
+        "fold": 2,
+        "fit_subjects": [
+          "002",
+          "003",
+          "004",
+          "008",
+          "009",
+          "010",
+          "012",
+          "013",
+          "014",
+          "015",
+          "016",
+          "018",
+          "020",
+          "021",
+          "022",
+          "023",
+          "024",
+          "027",
+          "028",
+          "029",
+          "030",
+          "034",
+          "035",
+          "036",
+          "037",
+          "038",
+          "039",
+          "040",
+          "041",
+          "042",
+          "043",
+          "044",
+          "045",
+          "046",
+          "047",
+          "048",
+          "049",
+          "050",
+          "051",
+          "052",
+          "053",
+          "054",
+          "055",
+          "056",
+          "058",
+          "059"
+        ],
+        "test_subjects": [
+          "001",
+          "005",
+          "006",
+          "007",
+          "011",
+          "017",
+          "019",
+          "025",
+          "026",
+          "031",
+          "057"
+        ],
+        "transition_matrix": [
+          [
+            0.9713656387665198,
+            0.028634361233480177
+          ],
+          [
+            0.01098901098901099,
+            0.989010989010989
+          ]
+        ],
+        "initial_probability": [
+          0.27733659132559507,
+          0.7226634086744049
+        ],
+        "emissions": [
+          {
+            "location": -0.3897695949479232,
+            "scale": 0.6694403986256569
+          },
+          {
+            "location": 0.7529742552611107,
+            "scale": 0.7923940661699267
+          }
+        ],
+        "direct_threshold": 0.11963157471323353,
+        "direct_train_macro_bACC": 0.7795530829797831,
+        "selected_gate": "q0.50",
+        "selected_gate_threshold": 0.1018168975963145,
+        "selected_threshold_inner_oof": 0.5978258010911371,
+        "selected_train_macro_bACC_inner_oof": 0.7764259976226557,
+        "n_test_reset": 850,
+        "n_test": 1821,
+        "inner_candidates": [
+          {
+            "quantile": null,
+            "name": "no_reset",
+            "inner_oof_macro_bACC": 0.7662685698002485,
+            "threshold": 1.2523497797825336,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "quantile": 0.9,
+            "name": "q0.90",
+            "inner_oof_macro_bACC": 0.7651697465569229,
+            "threshold": 0.3350460852141,
+            "inner_gate_thresholds": {
+              "0": 0.3673401853897868,
+              "1": 0.38358631079460137,
+              "3": 0.40534342512386035,
+              "4": 0.38496670238358033
+            }
+          },
+          {
+            "quantile": 0.75,
+            "name": "q0.75",
+            "inner_oof_macro_bACC": 0.7749546311184224,
+            "threshold": 0.3323176764915938,
+            "inner_gate_thresholds": {
+              "0": 0.19771425137897813,
+              "1": 0.20289927809908054,
+              "3": 0.2153901765561636,
+              "4": 0.20867744187871934
+            }
+          },
+          {
+            "quantile": 0.5,
+            "name": "q0.50",
+            "inner_oof_macro_bACC": 0.7764259976226557,
+            "threshold": 0.5978258010911371,
+            "inner_gate_thresholds": {
+              "0": 0.09718249940527635,
+              "1": 0.10095017070011408,
+              "3": 0.10494819790678656,
+              "4": 0.10378764894209366
+            }
+          }
+        ]
+      },
+      {
+        "fold": 3,
+        "fit_subjects": [
+          "001",
+          "002",
+          "003",
+          "005",
+          "006",
+          "007",
+          "009",
+          "010",
+          "011",
+          "012",
+          "014",
+          "017",
+          "018",
+          "019",
+          "020",
+          "021",
+          "022",
+          "023",
+          "024",
+          "025",
+          "026",
+          "027",
+          "029",
+          "030",
+          "031",
+          "034",
+          "035",
+          "036",
+          "037",
+          "038",
+          "039",
+          "041",
+          "044",
+          "045",
+          "046",
+          "047",
+          "048",
+          "050",
+          "051",
+          "052",
+          "053",
+          "055",
+          "057",
+          "058",
+          "059"
+        ],
+        "test_subjects": [
+          "004",
+          "008",
+          "013",
+          "015",
+          "016",
+          "028",
+          "040",
+          "042",
+          "043",
+          "049",
+          "054",
+          "056"
+        ],
+        "transition_matrix": [
+          [
+            0.9713457823567289,
+            0.02865421764327109
+          ],
+          [
+            0.010924981791697014,
+            0.989075018208303
+          ]
+        ],
+        "initial_probability": [
+          0.2760283671135806,
+          0.7239716328864194
+        ],
+        "emissions": [
+          {
+            "location": -0.4372259176322537,
+            "scale": 0.6503482989069455
+          },
+          {
+            "location": 0.7981507477134847,
+            "scale": 0.7544816987890299
+          }
+        ],
+        "direct_threshold": 0.11907075450718055,
+        "direct_train_macro_bACC": 0.8051768880040119,
+        "selected_gate": "q0.75",
+        "selected_gate_threshold": 0.20748167833727355,
+        "selected_threshold_inner_oof": 0.37516501615342895,
+        "selected_train_macro_bACC_inner_oof": 0.8039280359830787,
+        "n_test_reset": 402,
+        "n_test": 1961,
+        "inner_candidates": [
+          {
+            "quantile": null,
+            "name": "no_reset",
+            "inner_oof_macro_bACC": 0.7990378572174218,
+            "threshold": 0.9024080373865482,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "4": null
+            }
+          },
+          {
+            "quantile": 0.9,
+            "name": "q0.90",
+            "inner_oof_macro_bACC": 0.7976144645141109,
+            "threshold": 0.2788252818448621,
+            "inner_gate_thresholds": {
+              "0": 0.36943357894493334,
+              "1": 0.38740631679183013,
+              "2": 0.40534342512386035,
+              "4": 0.38950864261327267
+            }
+          },
+          {
+            "quantile": 0.75,
+            "name": "q0.75",
+            "inner_oof_macro_bACC": 0.8039280359830787,
+            "threshold": 0.37516501615342895,
+            "inner_gate_thresholds": {
+              "0": 0.19898531181125068,
+              "1": 0.20394408122991753,
+              "2": 0.2153901765561636,
+              "4": 0.2098353898367165
+            }
+          },
+          {
+            "quantile": 0.5,
+            "name": "q0.50",
+            "inner_oof_macro_bACC": 0.8024559290442327,
+            "threshold": 0.3501146519716648,
+            "inner_gate_thresholds": {
+              "0": 0.09732878408339643,
+              "1": 0.10146881758599591,
+              "2": 0.10494819790678656,
+              "4": 0.10433088977057509
+            }
+          }
+        ]
+      },
+      {
+        "fold": 4,
+        "fit_subjects": [
+          "001",
+          "003",
+          "004",
+          "005",
+          "006",
+          "007",
+          "008",
+          "009",
+          "011",
+          "012",
+          "013",
+          "015",
+          "016",
+          "017",
+          "019",
+          "022",
+          "023",
+          "024",
+          "025",
+          "026",
+          "028",
+          "029",
+          "031",
+          "034",
+          "035",
+          "036",
+          "037",
+          "038",
+          "039",
+          "040",
+          "041",
+          "042",
+          "043",
+          "045",
+          "046",
+          "048",
+          "049",
+          "050",
+          "051",
+          "053",
+          "054",
+          "055",
+          "056",
+          "057",
+          "058",
+          "059"
+        ],
+        "test_subjects": [
+          "002",
+          "010",
+          "014",
+          "018",
+          "020",
+          "021",
+          "027",
+          "030",
+          "044",
+          "047",
+          "052"
+        ],
+        "transition_matrix": [
+          [
+            0.9713114754098361,
+            0.028688524590163935
+          ],
+          [
+            0.010978520286396181,
+            0.9890214797136038
+          ]
+        ],
+        "initial_probability": [
+          0.2767667800956756,
+          0.7232332199043243
+        ],
+        "emissions": [
+          {
+            "location": -0.4466681391831782,
+            "scale": 0.6625534746382974
+          },
+          {
+            "location": 0.7444875535540858,
+            "scale": 0.7811811443781083
+          }
+        ],
+        "direct_threshold": 0.09710762930895665,
+        "direct_train_macro_bACC": 0.7865561270734969,
+        "selected_gate": "q0.75",
+        "selected_gate_threshold": 0.20219288685631137,
+        "selected_threshold_inner_oof": 0.3553384971995403,
+        "selected_train_macro_bACC_inner_oof": 0.7855072277523963,
+        "n_test_reset": 443,
+        "n_test": 1823,
+        "inner_candidates": [
+          {
+            "quantile": null,
+            "name": "no_reset",
+            "inner_oof_macro_bACC": 0.7747401529755826,
+            "threshold": 0.9385998198439839,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          },
+          {
+            "quantile": 0.9,
+            "name": "q0.90",
+            "inner_oof_macro_bACC": 0.7754361034595304,
+            "threshold": 0.28089926513132746,
+            "inner_gate_thresholds": {
+              "0": 0.3517540937869288,
+              "1": 0.36645810364629344,
+              "2": 0.38496670238358033,
+              "3": 0.38950864261327267
+            }
+          },
+          {
+            "quantile": 0.75,
+            "name": "q0.75",
+            "inner_oof_macro_bACC": 0.7855072277523963,
+            "threshold": 0.3553384971995403,
+            "inner_gate_thresholds": {
+              "0": 0.19362890066855937,
+              "1": 0.1985979623619007,
+              "2": 0.20867744187871934,
+              "3": 0.2098353898367165
+            }
+          },
+          {
+            "quantile": 0.5,
+            "name": "q0.50",
+            "inner_oof_macro_bACC": 0.7854956093555827,
+            "threshold": 0.39655751275194884,
+            "inner_gate_thresholds": {
+              "0": 0.09669395406296465,
+              "1": 0.10024525741260695,
+              "2": 0.10378764894209366,
+              "3": 0.10433088977057509
+            }
+          }
+        ]
+      }
+    ],
+    "s5": [
+      {
+        "fold": 0,
+        "fit_subjects": [
+          "001",
+          "002",
+          "003",
+          "004",
+          "005",
+          "006",
+          "007",
+          "008",
+          "010",
+          "011",
+          "012",
+          "013",
+          "014",
+          "015",
+          "016",
+          "017",
+          "018",
+          "019",
+          "020",
+          "021",
+          "025",
+          "026",
+          "027",
+          "028",
+          "030",
+          "031",
+          "034",
+          "035",
+          "036",
+          "038",
+          "039",
+          "040",
+          "041",
+          "042",
+          "043",
+          "044",
+          "046",
+          "047",
+          "049",
+          "050",
+          "052",
+          "054",
+          "056",
+          "057",
+          "058",
+          "059"
+        ],
+        "test_subjects": [
+          "009",
+          "022",
+          "023",
+          "024",
+          "029",
+          "037",
+          "045",
+          "048",
+          "051",
+          "053",
+          "055"
+        ],
+        "transition_matrix": [
+          [
+            0.9712025316455696,
+            0.02879746835443038
+          ],
+          [
+            0.010882422521883131,
+            0.9891175774781169
+          ]
+        ],
+        "initial_probability": [
+          0.27425535407354795,
+          0.725744645926452
+        ],
+        "emissions": [
+          {
+            "location": -0.47706531733046426,
+            "scale": 0.784320086008204
+          },
+          {
+            "location": 0.6838268018846605,
+            "scale": 0.6581107104678918
+          }
+        ],
+        "direct_threshold": 0.17242689051986126,
+        "direct_train_macro_bACC": 0.7765005827203004,
+        "selected_gate": "no_reset",
+        "selected_gate_threshold": null,
+        "selected_threshold_inner_oof": 0.7536569681288889,
+        "selected_train_macro_bACC_inner_oof": 0.7885028720091927,
+        "n_test_reset": 0,
+        "n_test": 1798,
+        "inner_candidates": [
+          {
+            "quantile": null,
+            "name": "no_reset",
+            "inner_oof_macro_bACC": 0.7885028720091927,
+            "threshold": 0.7536569681288889,
+            "inner_gate_thresholds": {
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "quantile": 0.9,
+            "name": "q0.90",
+            "inner_oof_macro_bACC": 0.7876441613357834,
+            "threshold": 0.8347282363413937,
+            "inner_gate_thresholds": {
+              "1": 0.4749059630416758,
+              "2": 0.5133737946928681,
+              "3": 0.5307304718529422,
+              "4": 0.49187415322650635
+            }
+          },
+          {
+            "quantile": 0.75,
+            "name": "q0.75",
+            "inner_oof_macro_bACC": 0.7777496955374128,
+            "threshold": 0.88737742604563,
+            "inner_gate_thresholds": {
+              "1": 0.2821438447592738,
+              "2": 0.30179964532016146,
+              "3": 0.3034497111480823,
+              "4": 0.2944237128076776
+            }
+          },
+          {
+            "quantile": 0.5,
+            "name": "q0.50",
+            "inner_oof_macro_bACC": 0.7743516061025334,
+            "threshold": 0.6735317125363304,
+            "inner_gate_thresholds": {
+              "1": 0.14718421408414195,
+              "2": 0.15416090577658256,
+              "3": 0.1535293938476477,
+              "4": 0.1518636639283465
+            }
+          }
+        ]
+      },
+      {
+        "fold": 1,
+        "fit_subjects": [
+          "001",
+          "002",
+          "004",
+          "005",
+          "006",
+          "007",
+          "008",
+          "009",
+          "010",
+          "011",
+          "013",
+          "014",
+          "015",
+          "016",
+          "017",
+          "018",
+          "019",
+          "020",
+          "021",
+          "022",
+          "023",
+          "024",
+          "025",
+          "026",
+          "027",
+          "028",
+          "029",
+          "030",
+          "031",
+          "037",
+          "040",
+          "042",
+          "043",
+          "044",
+          "045",
+          "047",
+          "048",
+          "049",
+          "051",
+          "052",
+          "053",
+          "054",
+          "055",
+          "056",
+          "057"
+        ],
+        "test_subjects": [
+          "003",
+          "012",
+          "034",
+          "035",
+          "036",
+          "038",
+          "039",
+          "041",
+          "046",
+          "050",
+          "058",
+          "059"
+        ],
+        "transition_matrix": [
+          [
+            0.9711842938568714,
+            0.02881570614312856
+          ],
+          [
+            0.010941960038058992,
+            0.989058039961941
+          ]
+        ],
+        "initial_probability": [
+          0.27521635671956285,
+          0.7247836432804371
+        ],
+        "emissions": [
+          {
+            "location": -0.44897030719491854,
+            "scale": 0.7103384452145616
+          },
+          {
+            "location": 0.7148604053316227,
+            "scale": 0.6523012211323032
+          }
+        ],
+        "direct_threshold": 0.1850026466956245,
+        "direct_train_macro_bACC": 0.7868252240210546,
+        "selected_gate": "no_reset",
+        "selected_gate_threshold": null,
+        "selected_threshold_inner_oof": 0.24854926816666764,
+        "selected_train_macro_bACC_inner_oof": 0.8030239660466237,
+        "n_test_reset": 0,
+        "n_test": 1824,
+        "inner_candidates": [
+          {
+            "quantile": null,
+            "name": "no_reset",
+            "inner_oof_macro_bACC": 0.8030239660466237,
+            "threshold": 0.24854926816666764,
+            "inner_gate_thresholds": {
+              "0": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "quantile": 0.9,
+            "name": "q0.90",
+            "inner_oof_macro_bACC": 0.7983228323193943,
+            "threshold": 0.6666736126961313,
+            "inner_gate_thresholds": {
+              "0": 0.4749059630416758,
+              "2": 0.4956694561083468,
+              "3": 0.5063545993024887,
+              "4": 0.47373596316491
+            }
+          },
+          {
+            "quantile": 0.75,
+            "name": "q0.75",
+            "inner_oof_macro_bACC": 0.7904571668651037,
+            "threshold": 0.42358444544473106,
+            "inner_gate_thresholds": {
+              "0": 0.2821438447592738,
+              "2": 0.297209734621298,
+              "3": 0.29725575901983714,
+              "4": 0.2894555715852874
+            }
+          },
+          {
+            "quantile": 0.5,
+            "name": "q0.50",
+            "inner_oof_macro_bACC": 0.7886266893698446,
+            "threshold": 0.5285398471439839,
+            "inner_gate_thresholds": {
+              "0": 0.14718421408414195,
+              "2": 0.15163907106150176,
+              "3": 0.15156510027772757,
+              "4": 0.14973616856129474
+            }
+          }
+        ]
+      },
+      {
+        "fold": 2,
+        "fit_subjects": [
+          "002",
+          "003",
+          "004",
+          "008",
+          "009",
+          "010",
+          "012",
+          "013",
+          "014",
+          "015",
+          "016",
+          "018",
+          "020",
+          "021",
+          "022",
+          "023",
+          "024",
+          "027",
+          "028",
+          "029",
+          "030",
+          "034",
+          "035",
+          "036",
+          "037",
+          "038",
+          "039",
+          "040",
+          "041",
+          "042",
+          "043",
+          "044",
+          "045",
+          "046",
+          "047",
+          "048",
+          "049",
+          "050",
+          "051",
+          "052",
+          "053",
+          "054",
+          "055",
+          "056",
+          "058",
+          "059"
+        ],
+        "test_subjects": [
+          "001",
+          "005",
+          "006",
+          "007",
+          "011",
+          "017",
+          "019",
+          "025",
+          "026",
+          "031",
+          "057"
+        ],
+        "transition_matrix": [
+          [
+            0.9713656387665198,
+            0.028634361233480177
+          ],
+          [
+            0.01098901098901099,
+            0.989010989010989
+          ]
+        ],
+        "initial_probability": [
+          0.27733659132559507,
+          0.7226634086744049
+        ],
+        "emissions": [
+          {
+            "location": -0.43308478063671374,
+            "scale": 0.7465505257525548
+          },
+          {
+            "location": 0.6830080529070138,
+            "scale": 0.6918263483644727
+          }
+        ],
+        "direct_threshold": 0.18063230741827982,
+        "direct_train_macro_bACC": 0.7645393749910638,
+        "selected_gate": "no_reset",
+        "selected_gate_threshold": null,
+        "selected_threshold_inner_oof": 0.6592376767315052,
+        "selected_train_macro_bACC_inner_oof": 0.7811443044985097,
+        "n_test_reset": 0,
+        "n_test": 1821,
+        "inner_candidates": [
+          {
+            "quantile": null,
+            "name": "no_reset",
+            "inner_oof_macro_bACC": 0.7811443044985097,
+            "threshold": 0.6592376767315052,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "quantile": 0.9,
+            "name": "q0.90",
+            "inner_oof_macro_bACC": 0.774814186216704,
+            "threshold": 0.5989246168911087,
+            "inner_gate_thresholds": {
+              "0": 0.5133737946928681,
+              "1": 0.4956694561083468,
+              "3": 0.5489923764116552,
+              "4": 0.5063700516488935
+            }
+          },
+          {
+            "quantile": 0.75,
+            "name": "q0.75",
+            "inner_oof_macro_bACC": 0.7660893779944649,
+            "threshold": 0.7698752735274015,
+            "inner_gate_thresholds": {
+              "0": 0.30179964532016146,
+              "1": 0.297209734621298,
+              "3": 0.32015819079641544,
+              "4": 0.31082151041346484
+            }
+          },
+          {
+            "quantile": 0.5,
+            "name": "q0.50",
+            "inner_oof_macro_bACC": 0.765536057180391,
+            "threshold": 0.8801117295538889,
+            "inner_gate_thresholds": {
+              "0": 0.15416090577658256,
+              "1": 0.15163907106150176,
+              "3": 0.16063469062332236,
+              "4": 0.15880295222928797
+            }
+          }
+        ]
+      },
+      {
+        "fold": 3,
+        "fit_subjects": [
+          "001",
+          "002",
+          "003",
+          "005",
+          "006",
+          "007",
+          "009",
+          "010",
+          "011",
+          "012",
+          "014",
+          "017",
+          "018",
+          "019",
+          "020",
+          "021",
+          "022",
+          "023",
+          "024",
+          "025",
+          "026",
+          "027",
+          "029",
+          "030",
+          "031",
+          "034",
+          "035",
+          "036",
+          "037",
+          "038",
+          "039",
+          "041",
+          "044",
+          "045",
+          "046",
+          "047",
+          "048",
+          "050",
+          "051",
+          "052",
+          "053",
+          "055",
+          "057",
+          "058",
+          "059"
+        ],
+        "test_subjects": [
+          "004",
+          "008",
+          "013",
+          "015",
+          "016",
+          "028",
+          "040",
+          "042",
+          "043",
+          "049",
+          "054",
+          "056"
+        ],
+        "transition_matrix": [
+          [
+            0.9713457823567289,
+            0.02865421764327109
+          ],
+          [
+            0.010924981791697014,
+            0.989075018208303
+          ]
+        ],
+        "initial_probability": [
+          0.2760283671135806,
+          0.7239716328864194
+        ],
+        "emissions": [
+          {
+            "location": -0.4536360521753021,
+            "scale": 0.7356197720082834
+          },
+          {
+            "location": 0.7173448746043862,
+            "scale": 0.6839272374931189
+          }
+        ],
+        "direct_threshold": 0.18028408238649027,
+        "direct_train_macro_bACC": 0.7850087031068963,
+        "selected_gate": "no_reset",
+        "selected_gate_threshold": null,
+        "selected_threshold_inner_oof": 0.09842450513358991,
+        "selected_train_macro_bACC_inner_oof": 0.8051233520383941,
+        "n_test_reset": 0,
+        "n_test": 1961,
+        "inner_candidates": [
+          {
+            "quantile": null,
+            "name": "no_reset",
+            "inner_oof_macro_bACC": 0.8051233520383941,
+            "threshold": 0.09842450513358991,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "4": null
+            }
+          },
+          {
+            "quantile": 0.9,
+            "name": "q0.90",
+            "inner_oof_macro_bACC": 0.8004282215280825,
+            "threshold": 0.0,
+            "inner_gate_thresholds": {
+              "0": 0.5307304718529422,
+              "1": 0.5063545993024887,
+              "2": 0.5489923764116552,
+              "4": 0.5210877306448864
+            }
+          },
+          {
+            "quantile": 0.75,
+            "name": "q0.75",
+            "inner_oof_macro_bACC": 0.7889247581561041,
+            "threshold": 0.6252592365835757,
+            "inner_gate_thresholds": {
+              "0": 0.3034497111480823,
+              "1": 0.29725575901983714,
+              "2": 0.32015819079641544,
+              "4": 0.31102231000257
+            }
+          },
+          {
+            "quantile": 0.5,
+            "name": "q0.50",
+            "inner_oof_macro_bACC": 0.78581036423129,
+            "threshold": 0.4648649771580568,
+            "inner_gate_thresholds": {
+              "0": 0.1535293938476477,
+              "1": 0.15156510027772757,
+              "2": 0.16063469062332236,
+              "4": 0.15806766164629715
+            }
+          }
+        ]
+      },
+      {
+        "fold": 4,
+        "fit_subjects": [
+          "001",
+          "003",
+          "004",
+          "005",
+          "006",
+          "007",
+          "008",
+          "009",
+          "011",
+          "012",
+          "013",
+          "015",
+          "016",
+          "017",
+          "019",
+          "022",
+          "023",
+          "024",
+          "025",
+          "026",
+          "028",
+          "029",
+          "031",
+          "034",
+          "035",
+          "036",
+          "037",
+          "038",
+          "039",
+          "040",
+          "041",
+          "042",
+          "043",
+          "045",
+          "046",
+          "048",
+          "049",
+          "050",
+          "051",
+          "053",
+          "054",
+          "055",
+          "056",
+          "057",
+          "058",
+          "059"
+        ],
+        "test_subjects": [
+          "002",
+          "010",
+          "014",
+          "018",
+          "020",
+          "021",
+          "027",
+          "030",
+          "044",
+          "047",
+          "052"
+        ],
+        "transition_matrix": [
+          [
+            0.9713114754098361,
+            0.028688524590163935
+          ],
+          [
+            0.010978520286396181,
+            0.9890214797136038
+          ]
+        ],
+        "initial_probability": [
+          0.2767667800956756,
+          0.7232332199043243
+        ],
+        "emissions": [
+          {
+            "location": -0.48611134515495835,
+            "scale": 0.7434747882837455
+          },
+          {
+            "location": 0.6763804928673168,
+            "scale": 0.6851929329200488
+          }
+        ],
+        "direct_threshold": 0.1601873911949752,
+        "direct_train_macro_bACC": 0.7731632131240359,
+        "selected_gate": "no_reset",
+        "selected_gate_threshold": null,
+        "selected_threshold_inner_oof": 0.20146177859497802,
+        "selected_train_macro_bACC_inner_oof": 0.7862347052223821,
+        "n_test_reset": 0,
+        "n_test": 1823,
+        "inner_candidates": [
+          {
+            "quantile": null,
+            "name": "no_reset",
+            "inner_oof_macro_bACC": 0.7862347052223821,
+            "threshold": 0.20146177859497802,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          },
+          {
+            "quantile": 0.9,
+            "name": "q0.90",
+            "inner_oof_macro_bACC": 0.7819447082043216,
+            "threshold": 0.6203745137042506,
+            "inner_gate_thresholds": {
+              "0": 0.49187415322650635,
+              "1": 0.47373596316491,
+              "2": 0.5063700516488935,
+              "3": 0.5210877306448864
+            }
+          },
+          {
+            "quantile": 0.75,
+            "name": "q0.75",
+            "inner_oof_macro_bACC": 0.7731875400810594,
+            "threshold": 0.6054362114972988,
+            "inner_gate_thresholds": {
+              "0": 0.2944237128076776,
+              "1": 0.2894555715852874,
+              "2": 0.31082151041346484,
+              "3": 0.31102231000257
+            }
+          },
+          {
+            "quantile": 0.5,
+            "name": "q0.50",
+            "inner_oof_macro_bACC": 0.7723328617274366,
+            "threshold": 0.6991487922041304,
+            "inner_gate_thresholds": {
+              "0": 0.1518636639283465,
+              "1": 0.14973616856129474,
+              "2": 0.15880295222928797,
+              "3": 0.15806766164629715
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "causality_checks": {
+    "s10": {
+      "subject": "009",
+      "cut_within_subject": 150,
+      "past_outputs_bitwise_identical": true
+    },
+    "s5": {
+      "subject": "009",
+      "cut_within_subject": 150,
+      "past_outputs_bitwise_identical": true
+    }
+  },
+  "seconds": 384.4457457999961
+}
