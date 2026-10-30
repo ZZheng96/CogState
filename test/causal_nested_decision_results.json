@@ -1,0 +1,3445 @@
+{
+  "meta": {
+    "source": "split6 fusion; causal s10/s5; past-only median/MAD normalized logit",
+    "primary_smooth": 10,
+    "robustness_smooth": 5,
+    "emission": "Student-t df=5; same robust fit as causal_normalized_hmm",
+    "candidates": [
+      "direct",
+      "w0.25_no_reset",
+      "w0.25_q0.90",
+      "w0.25_q0.75",
+      "w0.25_q0.50",
+      "w0.50_no_reset",
+      "w0.50_q0.90",
+      "w0.50_q0.75",
+      "w0.50_q0.50",
+      "w0.75_no_reset",
+      "w0.75_q0.90",
+      "w0.75_q0.75",
+      "w0.75_q0.50",
+      "w1.00_no_reset",
+      "w1.00_q0.90",
+      "w1.00_q0.75",
+      "w1.00_q0.50"
+    ],
+    "new_mechanism": "joint inner-OOF selection of direct fallback, HMM logit weight, and innovation reset gate",
+    "nested_protocol": "outer subject fold; all candidates and thresholds selected on four inner subject-fold OOF predictions; final HMM refit on all outer-train subjects",
+    "selection": "maximum inner-OOF source-subject macro bACC; exact ties prefer lower HMM weight, less resetting, then threshold nearest zero",
+    "strict_subject_disjoint": true,
+    "strict_causal_history": true,
+    "test_labels_used_for_fit_or_selection": false
+  },
+  "results": {
+    "s10": {
+      "normalized_direct": {
+        "subject_macro_bACC": 0.791572213801211,
+        "window_micro_bACC": 0.7919762486075593,
+        "AUC": 0.8429400340608538,
+        "n_eval": 9227,
+        "n_subjects": 57,
+        "n_macro_subjects": 56
+      },
+      "fixed_student_t_blend": {
+        "subject_macro_bACC": 0.7793884337966753,
+        "window_micro_bACC": 0.7801700844167321,
+        "AUC": 0.8472706050261025,
+        "n_eval": 9227,
+        "n_subjects": 57,
+        "n_macro_subjects": 56
+      },
+      "adaptive_fixed_weight_blend": {
+        "subject_macro_bACC": 0.7874323926617056,
+        "window_micro_bACC": 0.7879772808593803,
+        "AUC": 0.8480270808653902,
+        "n_eval": 9227,
+        "n_subjects": 57,
+        "n_macro_subjects": 56
+      },
+      "nested_selected_decision": {
+        "metrics": {
+          "subject_macro_bACC": 0.7901936556034863,
+          "window_micro_bACC": 0.7907743549554184,
+          "AUC": 0.8434834735542593,
+          "n_eval": 9227,
+          "n_subjects": 57,
+          "n_macro_subjects": 56
+        },
+        "paired_bootstrap_vs_normalized_direct": {
+          "mean_delta": -0.0013785581977247175,
+          "ci95": [
+            -0.0036417571274985575,
+            0.0005599733269987961
+          ],
+          "n_subjects": 56,
+          "n_bootstrap": 2000
+        },
+        "selection_counts": {
+          "w0.25_q0.75": 1,
+          "direct": 4
+        }
+      }
+    },
+    "s5": {
+      "normalized_direct": {
+        "subject_macro_bACC": 0.7769371319391942,
+        "window_micro_bACC": 0.7771617980805223,
+        "AUC": 0.8339908754392135,
+        "n_eval": 9227,
+        "n_subjects": 57,
+        "n_macro_subjects": 56
+      },
+      "fixed_student_t_blend": {
+        "subject_macro_bACC": 0.7908213918934585,
+        "window_micro_bACC": 0.7905912483440241,
+        "AUC": 0.8564419205221782,
+        "n_eval": 9227,
+        "n_subjects": 57,
+        "n_macro_subjects": 56
+      },
+      "adaptive_fixed_weight_blend": {
+        "subject_macro_bACC": 0.7908213918934585,
+        "window_micro_bACC": 0.7905912483440241,
+        "AUC": 0.8564419205221782,
+        "n_eval": 9227,
+        "n_subjects": 57,
+        "n_macro_subjects": 56
+      },
+      "nested_selected_decision": {
+        "metrics": {
+          "subject_macro_bACC": 0.7914655642357589,
+          "window_micro_bACC": 0.7912879127171177,
+          "AUC": 0.8525659839038993,
+          "n_eval": 9227,
+          "n_subjects": 57,
+          "n_macro_subjects": 56
+        },
+        "paired_bootstrap_vs_normalized_direct": {
+          "mean_delta": 0.014528432296564617,
+          "ci95": [
+            0.00452871888402892,
+            0.02423984671743367
+          ],
+          "n_subjects": 56,
+          "n_bootstrap": 2000
+        },
+        "selection_counts": {
+          "w0.25_no_reset": 5
+        }
+      }
+    }
+  },
+  "folds": {
+    "s10": [
+      {
+        "fold": 0,
+        "fit_subjects": [
+          "001",
+          "002",
+          "003",
+          "004",
+          "005",
+          "006",
+          "007",
+          "008",
+          "010",
+          "011",
+          "012",
+          "013",
+          "014",
+          "015",
+          "016",
+          "017",
+          "018",
+          "019",
+          "020",
+          "021",
+          "025",
+          "026",
+          "027",
+          "028",
+          "030",
+          "031",
+          "034",
+          "035",
+          "036",
+          "038",
+          "039",
+          "040",
+          "041",
+          "042",
+          "043",
+          "044",
+          "046",
+          "047",
+          "049",
+          "050",
+          "052",
+          "054",
+          "056",
+          "057",
+          "058",
+          "059"
+        ],
+        "test_subjects": [
+          "009",
+          "022",
+          "023",
+          "024",
+          "029",
+          "037",
+          "045",
+          "048",
+          "051",
+          "053",
+          "055"
+        ],
+        "transition_matrix": [
+          [
+            0.9712025316455696,
+            0.02879746835443038
+          ],
+          [
+            0.010882422521883131,
+            0.9891175774781169
+          ]
+        ],
+        "initial_probability": [
+          0.27425535407354795,
+          0.725744645926452
+        ],
+        "emissions": [
+          {
+            "location": -0.43876831395582977,
+            "scale": 0.7050102087796428
+          },
+          {
+            "location": 0.7570509331802965,
+            "scale": 0.7178053925921619
+          }
+        ],
+        "direct_threshold": 0.11284269240971082,
+        "direct_train_macro_bACC": 0.78755383158992,
+        "selected_candidate": "w0.25_q0.75",
+        "selected_weight": 0.25,
+        "selected_gate_threshold": 0.19472891626114808,
+        "selected_threshold_inner_oof": 0.25144354118826395,
+        "selected_train_macro_bACC_inner_oof": 0.7876451756840155,
+        "n_test_reset": 552,
+        "n_test": 1798,
+        "inner_candidates": [
+          {
+            "name": "direct",
+            "weight": 0.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.78755383158992,
+            "threshold": 0.11284269240971082,
+            "inner_gate_thresholds": {}
+          },
+          {
+            "name": "w0.25_no_reset",
+            "weight": 0.25,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7818385156816218,
+            "threshold": 0.3848477802236424,
+            "inner_gate_thresholds": {
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.50_no_reset",
+            "weight": 0.5,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7786198755965181,
+            "threshold": 0.9838163196991844,
+            "inner_gate_thresholds": {
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.75_no_reset",
+            "weight": 0.75,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.778746528511956,
+            "threshold": 0.9663588280551965,
+            "inner_gate_thresholds": {
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w1.00_no_reset",
+            "weight": 1.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7790444730097689,
+            "threshold": 1.5287318857711398,
+            "inner_gate_thresholds": {
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.25_q0.90",
+            "weight": 0.25,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7844093216425604,
+            "threshold": 0.30528404968992107,
+            "inner_gate_thresholds": {
+              "1": 0.3489393716617073,
+              "2": 0.3673401853897868,
+              "3": 0.36943357894493334,
+              "4": 0.3517540937869288
+            }
+          },
+          {
+            "name": "w0.50_q0.90",
+            "weight": 0.5,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7816039360747177,
+            "threshold": 0.46583075363685733,
+            "inner_gate_thresholds": {
+              "1": 0.3489393716617073,
+              "2": 0.3673401853897868,
+              "3": 0.36943357894493334,
+              "4": 0.3517540937869288
+            }
+          },
+          {
+            "name": "w0.75_q0.90",
+            "weight": 0.75,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7815289956200959,
+            "threshold": 0.9409972425340773,
+            "inner_gate_thresholds": {
+              "1": 0.3489393716617073,
+              "2": 0.3673401853897868,
+              "3": 0.36943357894493334,
+              "4": 0.3517540937869288
+            }
+          },
+          {
+            "name": "w1.00_q0.90",
+            "weight": 1.0,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7812876847499671,
+            "threshold": 0.7933013439273955,
+            "inner_gate_thresholds": {
+              "1": 0.3489393716617073,
+              "2": 0.3673401853897868,
+              "3": 0.36943357894493334,
+              "4": 0.3517540937869288
+            }
+          },
+          {
+            "name": "w0.25_q0.75",
+            "weight": 0.25,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7876451756840155,
+            "threshold": 0.25144354118826395,
+            "inner_gate_thresholds": {
+              "1": 0.18888953287934787,
+              "2": 0.19771425137897813,
+              "3": 0.19898531181125068,
+              "4": 0.19362890066855937
+            }
+          },
+          {
+            "name": "w0.50_q0.75",
+            "weight": 0.5,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.786295318111309,
+            "threshold": 0.40137372115072195,
+            "inner_gate_thresholds": {
+              "1": 0.18888953287934787,
+              "2": 0.19771425137897813,
+              "3": 0.19898531181125068,
+              "4": 0.19362890066855937
+            }
+          },
+          {
+            "name": "w0.75_q0.75",
+            "weight": 0.75,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7862352376007954,
+            "threshold": 0.94638091734639,
+            "inner_gate_thresholds": {
+              "1": 0.18888953287934787,
+              "2": 0.19771425137897813,
+              "3": 0.19898531181125068,
+              "4": 0.19362890066855937
+            }
+          },
+          {
+            "name": "w1.00_q0.75",
+            "weight": 1.0,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7859539586489981,
+            "threshold": 1.174129981629211,
+            "inner_gate_thresholds": {
+              "1": 0.18888953287934787,
+              "2": 0.19771425137897813,
+              "3": 0.19898531181125068,
+              "4": 0.19362890066855937
+            }
+          },
+          {
+            "name": "w0.25_q0.50",
+            "weight": 0.25,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7865758855763544,
+            "threshold": 0.25362788963505756,
+            "inner_gate_thresholds": {
+              "1": 0.09395195274957802,
+              "2": 0.09718249940527635,
+              "3": 0.09732878408339643,
+              "4": 0.09669395406296465
+            }
+          },
+          {
+            "name": "w0.50_q0.50",
+            "weight": 0.5,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7860046250096134,
+            "threshold": 0.4094367845519719,
+            "inner_gate_thresholds": {
+              "1": 0.09395195274957802,
+              "2": 0.09718249940527635,
+              "3": 0.09732878408339643,
+              "4": 0.09669395406296465
+            }
+          },
+          {
+            "name": "w0.75_q0.50",
+            "weight": 0.75,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7862988475452587,
+            "threshold": 0.5674472607379095,
+            "inner_gate_thresholds": {
+              "1": 0.09395195274957802,
+              "2": 0.09718249940527635,
+              "3": 0.09732878408339643,
+              "4": 0.09669395406296465
+            }
+          },
+          {
+            "name": "w1.00_q0.50",
+            "weight": 1.0,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7857514463576216,
+            "threshold": 0.7232435222206506,
+            "inner_gate_thresholds": {
+              "1": 0.09395195274957802,
+              "2": 0.09718249940527635,
+              "3": 0.09732878408339643,
+              "4": 0.09669395406296465
+            }
+          }
+        ]
+      },
+      {
+        "fold": 1,
+        "fit_subjects": [
+          "001",
+          "002",
+          "004",
+          "005",
+          "006",
+          "007",
+          "008",
+          "009",
+          "010",
+          "011",
+          "013",
+          "014",
+          "015",
+          "016",
+          "017",
+          "018",
+          "019",
+          "020",
+          "021",
+          "022",
+          "023",
+          "024",
+          "025",
+          "026",
+          "027",
+          "028",
+          "029",
+          "030",
+          "031",
+          "037",
+          "040",
+          "042",
+          "043",
+          "044",
+          "045",
+          "047",
+          "048",
+          "049",
+          "051",
+          "052",
+          "053",
+          "054",
+          "055",
+          "056",
+          "057"
+        ],
+        "test_subjects": [
+          "003",
+          "012",
+          "034",
+          "035",
+          "036",
+          "038",
+          "039",
+          "041",
+          "046",
+          "050",
+          "058",
+          "059"
+        ],
+        "transition_matrix": [
+          [
+            0.9711842938568714,
+            0.02881570614312856
+          ],
+          [
+            0.010941960038058992,
+            0.989058039961941
+          ]
+        ],
+        "initial_probability": [
+          0.27521635671956285,
+          0.7247836432804371
+        ],
+        "emissions": [
+          {
+            "location": -0.39269565705822457,
+            "scale": 0.6274512559310602
+          },
+          {
+            "location": 0.8023165000460323,
+            "scale": 0.7531788277382642
+          }
+        ],
+        "direct_threshold": 0.1297283707029679,
+        "direct_train_macro_bACC": 0.8023200395962813,
+        "selected_candidate": "direct",
+        "selected_weight": 0.0,
+        "selected_gate_threshold": null,
+        "selected_threshold_inner_oof": 0.1297283707029679,
+        "selected_train_macro_bACC_inner_oof": 0.8023200395962813,
+        "n_test_reset": 0,
+        "n_test": 1824,
+        "inner_candidates": [
+          {
+            "name": "direct",
+            "weight": 0.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.8023200395962813,
+            "threshold": 0.1297283707029679,
+            "inner_gate_thresholds": {}
+          },
+          {
+            "name": "w0.25_no_reset",
+            "weight": 0.25,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7952622448319056,
+            "threshold": 0.3197119843816057,
+            "inner_gate_thresholds": {
+              "0": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.50_no_reset",
+            "weight": 0.5,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7926737897023572,
+            "threshold": 1.3698828943203996,
+            "inner_gate_thresholds": {
+              "0": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.75_no_reset",
+            "weight": 0.75,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7925302300164044,
+            "threshold": 1.4877853328100827,
+            "inner_gate_thresholds": {
+              "0": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w1.00_no_reset",
+            "weight": 1.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7924501711122717,
+            "threshold": 2.310342055835349,
+            "inner_gate_thresholds": {
+              "0": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.25_q0.90",
+            "weight": 0.25,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7941083969853062,
+            "threshold": 0.14853650306202715,
+            "inner_gate_thresholds": {
+              "0": 0.3489393716617073,
+              "2": 0.38358631079460137,
+              "3": 0.38740631679183013,
+              "4": 0.36645810364629344
+            }
+          },
+          {
+            "name": "w0.50_q0.90",
+            "weight": 0.5,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7905628344431663,
+            "threshold": 0.8998174147586794,
+            "inner_gate_thresholds": {
+              "0": 0.3489393716617073,
+              "2": 0.38358631079460137,
+              "3": 0.38740631679183013,
+              "4": 0.36645810364629344
+            }
+          },
+          {
+            "name": "w0.75_q0.90",
+            "weight": 0.75,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7902435129497392,
+            "threshold": 1.2051655330129127,
+            "inner_gate_thresholds": {
+              "0": 0.3489393716617073,
+              "2": 0.38358631079460137,
+              "3": 0.38740631679183013,
+              "4": 0.36645810364629344
+            }
+          },
+          {
+            "name": "w1.00_q0.90",
+            "weight": 1.0,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7902335104190653,
+            "threshold": 1.5229679915423011,
+            "inner_gate_thresholds": {
+              "0": 0.3489393716617073,
+              "2": 0.38358631079460137,
+              "3": 0.38740631679183013,
+              "4": 0.36645810364629344
+            }
+          },
+          {
+            "name": "w0.25_q0.75",
+            "weight": 0.25,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7994834292060266,
+            "threshold": 0.19782158806358563,
+            "inner_gate_thresholds": {
+              "0": 0.18888953287934787,
+              "2": 0.20289927809908054,
+              "3": 0.20394408122991753,
+              "4": 0.1985979623619007
+            }
+          },
+          {
+            "name": "w0.50_q0.75",
+            "weight": 0.5,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7975411808459547,
+            "threshold": 0.28899956631302176,
+            "inner_gate_thresholds": {
+              "0": 0.18888953287934787,
+              "2": 0.20289927809908054,
+              "3": 0.20394408122991753,
+              "4": 0.1985979623619007
+            }
+          },
+          {
+            "name": "w0.75_q0.75",
+            "weight": 0.75,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7969973801365806,
+            "threshold": 0.36987800445549435,
+            "inner_gate_thresholds": {
+              "0": 0.18888953287934787,
+              "2": 0.20289927809908054,
+              "3": 0.20394408122991753,
+              "4": 0.1985979623619007
+            }
+          },
+          {
+            "name": "w1.00_q0.75",
+            "weight": 1.0,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7956839074881681,
+            "threshold": 0.49634927995131695,
+            "inner_gate_thresholds": {
+              "0": 0.18888953287934787,
+              "2": 0.20289927809908054,
+              "3": 0.20394408122991753,
+              "4": 0.1985979623619007
+            }
+          },
+          {
+            "name": "w0.25_q0.50",
+            "weight": 0.25,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.8014505715693526,
+            "threshold": 0.23246393007536373,
+            "inner_gate_thresholds": {
+              "0": 0.09395195274957802,
+              "2": 0.10095017070011408,
+              "3": 0.10146881758599591,
+              "4": 0.10024525741260695
+            }
+          },
+          {
+            "name": "w0.50_q0.50",
+            "weight": 0.5,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.8018127855053695,
+            "threshold": 0.5326037053297764,
+            "inner_gate_thresholds": {
+              "0": 0.09395195274957802,
+              "2": 0.10095017070011408,
+              "3": 0.10146881758599591,
+              "4": 0.10024525741260695
+            }
+          },
+          {
+            "name": "w0.75_q0.50",
+            "weight": 0.75,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.8015505684237628,
+            "threshold": 0.7033576293577125,
+            "inner_gate_thresholds": {
+              "0": 0.09395195274957802,
+              "2": 0.10095017070011408,
+              "3": 0.10146881758599591,
+              "4": 0.10024525741260695
+            }
+          },
+          {
+            "name": "w1.00_q0.50",
+            "weight": 1.0,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.8018894841386185,
+            "threshold": 0.8687031478560028,
+            "inner_gate_thresholds": {
+              "0": 0.09395195274957802,
+              "2": 0.10095017070011408,
+              "3": 0.10146881758599591,
+              "4": 0.10024525741260695
+            }
+          }
+        ]
+      },
+      {
+        "fold": 2,
+        "fit_subjects": [
+          "002",
+          "003",
+          "004",
+          "008",
+          "009",
+          "010",
+          "012",
+          "013",
+          "014",
+          "015",
+          "016",
+          "018",
+          "020",
+          "021",
+          "022",
+          "023",
+          "024",
+          "027",
+          "028",
+          "029",
+          "030",
+          "034",
+          "035",
+          "036",
+          "037",
+          "038",
+          "039",
+          "040",
+          "041",
+          "042",
+          "043",
+          "044",
+          "045",
+          "046",
+          "047",
+          "048",
+          "049",
+          "050",
+          "051",
+          "052",
+          "053",
+          "054",
+          "055",
+          "056",
+          "058",
+          "059"
+        ],
+        "test_subjects": [
+          "001",
+          "005",
+          "006",
+          "007",
+          "011",
+          "017",
+          "019",
+          "025",
+          "026",
+          "031",
+          "057"
+        ],
+        "transition_matrix": [
+          [
+            0.9713656387665198,
+            0.028634361233480177
+          ],
+          [
+            0.01098901098901099,
+            0.989010989010989
+          ]
+        ],
+        "initial_probability": [
+          0.27733659132559507,
+          0.7226634086744049
+        ],
+        "emissions": [
+          {
+            "location": -0.3897695949479232,
+            "scale": 0.6694403986256569
+          },
+          {
+            "location": 0.7529742552611107,
+            "scale": 0.7923940661699267
+          }
+        ],
+        "direct_threshold": 0.11963157471323353,
+        "direct_train_macro_bACC": 0.7795530829797832,
+        "selected_candidate": "direct",
+        "selected_weight": 0.0,
+        "selected_gate_threshold": null,
+        "selected_threshold_inner_oof": 0.11963157471323353,
+        "selected_train_macro_bACC_inner_oof": 0.7795530829797832,
+        "n_test_reset": 0,
+        "n_test": 1821,
+        "inner_candidates": [
+          {
+            "name": "direct",
+            "weight": 0.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7795530829797832,
+            "threshold": 0.11963157471323353,
+            "inner_gate_thresholds": {}
+          },
+          {
+            "name": "w0.25_no_reset",
+            "weight": 0.25,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7695671586522285,
+            "threshold": 0.1822248658446486,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.50_no_reset",
+            "weight": 0.5,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7662685698002486,
+            "threshold": 1.2523497797825336,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.75_no_reset",
+            "weight": 0.75,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7664765229535468,
+            "threshold": 1.681456947343697,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w1.00_no_reset",
+            "weight": 1.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7661393409765166,
+            "threshold": 0.43295622698014824,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.25_q0.90",
+            "weight": 0.25,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7690506717094553,
+            "threshold": 0.2534158677203563,
+            "inner_gate_thresholds": {
+              "0": 0.3673401853897868,
+              "1": 0.38358631079460137,
+              "3": 0.40534342512386035,
+              "4": 0.38496670238358033
+            }
+          },
+          {
+            "name": "w0.50_q0.90",
+            "weight": 0.5,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7651697465569232,
+            "threshold": 0.3350460852141,
+            "inner_gate_thresholds": {
+              "0": 0.3673401853897868,
+              "1": 0.38358631079460137,
+              "3": 0.40534342512386035,
+              "4": 0.38496670238358033
+            }
+          },
+          {
+            "name": "w0.75_q0.90",
+            "weight": 0.75,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7655127643539967,
+            "threshold": 0.43548998435823455,
+            "inner_gate_thresholds": {
+              "0": 0.3673401853897868,
+              "1": 0.38358631079460137,
+              "3": 0.40534342512386035,
+              "4": 0.38496670238358033
+            }
+          },
+          {
+            "name": "w1.00_q0.90",
+            "weight": 1.0,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7623546394732098,
+            "threshold": 0.5785455132962537,
+            "inner_gate_thresholds": {
+              "0": 0.3673401853897868,
+              "1": 0.38358631079460137,
+              "3": 0.40534342512386035,
+              "4": 0.38496670238358033
+            }
+          },
+          {
+            "name": "w0.25_q0.75",
+            "weight": 0.25,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7765806094347711,
+            "threshold": 0.22186080265980948,
+            "inner_gate_thresholds": {
+              "0": 0.19771425137897813,
+              "1": 0.20289927809908054,
+              "3": 0.2153901765561636,
+              "4": 0.20867744187871934
+            }
+          },
+          {
+            "name": "w0.50_q0.75",
+            "weight": 0.5,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7749546311184224,
+            "threshold": 0.3323176764915938,
+            "inner_gate_thresholds": {
+              "0": 0.19771425137897813,
+              "1": 0.20289927809908054,
+              "3": 0.2153901765561636,
+              "4": 0.20867744187871934
+            }
+          },
+          {
+            "name": "w0.75_q0.75",
+            "weight": 0.75,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.774686989159654,
+            "threshold": 0.44447555414452555,
+            "inner_gate_thresholds": {
+              "0": 0.19771425137897813,
+              "1": 0.20289927809908054,
+              "3": 0.2153901765561636,
+              "4": 0.20867744187871934
+            }
+          },
+          {
+            "name": "w1.00_q0.75",
+            "weight": 1.0,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.771822990057037,
+            "threshold": 0.5934110034181429,
+            "inner_gate_thresholds": {
+              "0": 0.19771425137897813,
+              "1": 0.20289927809908054,
+              "3": 0.2153901765561636,
+              "4": 0.20867744187871934
+            }
+          },
+          {
+            "name": "w0.25_q0.50",
+            "weight": 0.25,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7779274428425793,
+            "threshold": 0.2258886918937755,
+            "inner_gate_thresholds": {
+              "0": 0.09718249940527635,
+              "1": 0.10095017070011408,
+              "3": 0.10494819790678656,
+              "4": 0.10378764894209366
+            }
+          },
+          {
+            "name": "w0.50_q0.50",
+            "weight": 0.5,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7764259976226557,
+            "threshold": 0.5978258010911371,
+            "inner_gate_thresholds": {
+              "0": 0.09718249940527635,
+              "1": 0.10095017070011408,
+              "3": 0.10494819790678656,
+              "4": 0.10378764894209366
+            }
+          },
+          {
+            "name": "w0.75_q0.50",
+            "weight": 0.75,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7763251646309048,
+            "threshold": 0.49492703226885043,
+            "inner_gate_thresholds": {
+              "0": 0.09718249940527635,
+              "1": 0.10095017070011408,
+              "3": 0.10494819790678656,
+              "4": 0.10378764894209366
+            }
+          },
+          {
+            "name": "w1.00_q0.50",
+            "weight": 1.0,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7753597500721596,
+            "threshold": 0.99244272176993,
+            "inner_gate_thresholds": {
+              "0": 0.09718249940527635,
+              "1": 0.10095017070011408,
+              "3": 0.10494819790678656,
+              "4": 0.10378764894209366
+            }
+          }
+        ]
+      },
+      {
+        "fold": 3,
+        "fit_subjects": [
+          "001",
+          "002",
+          "003",
+          "005",
+          "006",
+          "007",
+          "009",
+          "010",
+          "011",
+          "012",
+          "014",
+          "017",
+          "018",
+          "019",
+          "020",
+          "021",
+          "022",
+          "023",
+          "024",
+          "025",
+          "026",
+          "027",
+          "029",
+          "030",
+          "031",
+          "034",
+          "035",
+          "036",
+          "037",
+          "038",
+          "039",
+          "041",
+          "044",
+          "045",
+          "046",
+          "047",
+          "048",
+          "050",
+          "051",
+          "052",
+          "053",
+          "055",
+          "057",
+          "058",
+          "059"
+        ],
+        "test_subjects": [
+          "004",
+          "008",
+          "013",
+          "015",
+          "016",
+          "028",
+          "040",
+          "042",
+          "043",
+          "049",
+          "054",
+          "056"
+        ],
+        "transition_matrix": [
+          [
+            0.9713457823567289,
+            0.02865421764327109
+          ],
+          [
+            0.010924981791697014,
+            0.989075018208303
+          ]
+        ],
+        "initial_probability": [
+          0.2760283671135806,
+          0.7239716328864194
+        ],
+        "emissions": [
+          {
+            "location": -0.4372259176322537,
+            "scale": 0.6503482989069455
+          },
+          {
+            "location": 0.7981507477134847,
+            "scale": 0.7544816987890299
+          }
+        ],
+        "direct_threshold": 0.11907075450718055,
+        "direct_train_macro_bACC": 0.8051768880040119,
+        "selected_candidate": "direct",
+        "selected_weight": 0.0,
+        "selected_gate_threshold": null,
+        "selected_threshold_inner_oof": 0.11907075450718055,
+        "selected_train_macro_bACC_inner_oof": 0.8051768880040119,
+        "n_test_reset": 0,
+        "n_test": 1961,
+        "inner_candidates": [
+          {
+            "name": "direct",
+            "weight": 0.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.8051768880040119,
+            "threshold": 0.11907075450718055,
+            "inner_gate_thresholds": {}
+          },
+          {
+            "name": "w0.25_no_reset",
+            "weight": 0.25,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.8018561810546962,
+            "threshold": 0.37168604317543874,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.50_no_reset",
+            "weight": 0.5,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7990378572174219,
+            "threshold": 0.9024080373865482,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.75_no_reset",
+            "weight": 0.75,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7991502782562193,
+            "threshold": 1.768689897503375,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w1.00_no_reset",
+            "weight": 1.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7991117170270227,
+            "threshold": 2.2326156293912405,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.25_q0.90",
+            "weight": 0.25,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.8004177993530696,
+            "threshold": 0.1920605440169587,
+            "inner_gate_thresholds": {
+              "0": 0.36943357894493334,
+              "1": 0.38740631679183013,
+              "2": 0.40534342512386035,
+              "4": 0.38950864261327267
+            }
+          },
+          {
+            "name": "w0.50_q0.90",
+            "weight": 0.5,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7976144645141109,
+            "threshold": 0.2788252818448621,
+            "inner_gate_thresholds": {
+              "0": 0.36943357894493334,
+              "1": 0.38740631679183013,
+              "2": 0.40534342512386035,
+              "4": 0.38950864261327267
+            }
+          },
+          {
+            "name": "w0.75_q0.90",
+            "weight": 0.75,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7970927818061342,
+            "threshold": 0.3158422970399788,
+            "inner_gate_thresholds": {
+              "0": 0.36943357894493334,
+              "1": 0.38740631679183013,
+              "2": 0.40534342512386035,
+              "4": 0.38950864261327267
+            }
+          },
+          {
+            "name": "w1.00_q0.90",
+            "weight": 1.0,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7961040884668438,
+            "threshold": 0.8019428101393395,
+            "inner_gate_thresholds": {
+              "0": 0.36943357894493334,
+              "1": 0.38740631679183013,
+              "2": 0.40534342512386035,
+              "4": 0.38950864261327267
+            }
+          },
+          {
+            "name": "w0.25_q0.75",
+            "weight": 0.25,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.8038820752980282,
+            "threshold": 0.26647255856897123,
+            "inner_gate_thresholds": {
+              "0": 0.19898531181125068,
+              "1": 0.20394408122991753,
+              "2": 0.2153901765561636,
+              "4": 0.2098353898367165
+            }
+          },
+          {
+            "name": "w0.50_q0.75",
+            "weight": 0.5,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.8039280359830787,
+            "threshold": 0.37516501615342895,
+            "inner_gate_thresholds": {
+              "0": 0.19898531181125068,
+              "1": 0.20394408122991753,
+              "2": 0.2153901765561636,
+              "4": 0.2098353898367165
+            }
+          },
+          {
+            "name": "w0.75_q0.75",
+            "weight": 0.75,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.8037292503077048,
+            "threshold": 0.8893034821092937,
+            "inner_gate_thresholds": {
+              "0": 0.19898531181125068,
+              "1": 0.20394408122991753,
+              "2": 0.2153901765561636,
+              "4": 0.2098353898367165
+            }
+          },
+          {
+            "name": "w1.00_q0.75",
+            "weight": 1.0,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.8031793909511898,
+            "threshold": 1.1154153825015076,
+            "inner_gate_thresholds": {
+              "0": 0.19898531181125068,
+              "1": 0.20394408122991753,
+              "2": 0.2153901765561636,
+              "4": 0.2098353898367165
+            }
+          },
+          {
+            "name": "w0.25_q0.50",
+            "weight": 0.25,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.8038811635860038,
+            "threshold": 0.22123044030461836,
+            "inner_gate_thresholds": {
+              "0": 0.09732878408339643,
+              "1": 0.10146881758599591,
+              "2": 0.10494819790678656,
+              "4": 0.10433088977057509
+            }
+          },
+          {
+            "name": "w0.50_q0.50",
+            "weight": 0.5,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.8024559290442327,
+            "threshold": 0.3501146519716648,
+            "inner_gate_thresholds": {
+              "0": 0.09732878408339643,
+              "1": 0.10146881758599591,
+              "2": 0.10494819790678656,
+              "4": 0.10433088977057509
+            }
+          },
+          {
+            "name": "w0.75_q0.50",
+            "weight": 0.75,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.8025087523337685,
+            "threshold": 0.48935570084839,
+            "inner_gate_thresholds": {
+              "0": 0.09732878408339643,
+              "1": 0.10146881758599591,
+              "2": 0.10494819790678656,
+              "4": 0.10433088977057509
+            }
+          },
+          {
+            "name": "w1.00_q0.50",
+            "weight": 1.0,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.8021362791185166,
+            "threshold": 1.0556361136627757,
+            "inner_gate_thresholds": {
+              "0": 0.09732878408339643,
+              "1": 0.10146881758599591,
+              "2": 0.10494819790678656,
+              "4": 0.10433088977057509
+            }
+          }
+        ]
+      },
+      {
+        "fold": 4,
+        "fit_subjects": [
+          "001",
+          "003",
+          "004",
+          "005",
+          "006",
+          "007",
+          "008",
+          "009",
+          "011",
+          "012",
+          "013",
+          "015",
+          "016",
+          "017",
+          "019",
+          "022",
+          "023",
+          "024",
+          "025",
+          "026",
+          "028",
+          "029",
+          "031",
+          "034",
+          "035",
+          "036",
+          "037",
+          "038",
+          "039",
+          "040",
+          "041",
+          "042",
+          "043",
+          "045",
+          "046",
+          "048",
+          "049",
+          "050",
+          "051",
+          "053",
+          "054",
+          "055",
+          "056",
+          "057",
+          "058",
+          "059"
+        ],
+        "test_subjects": [
+          "002",
+          "010",
+          "014",
+          "018",
+          "020",
+          "021",
+          "027",
+          "030",
+          "044",
+          "047",
+          "052"
+        ],
+        "transition_matrix": [
+          [
+            0.9713114754098361,
+            0.028688524590163935
+          ],
+          [
+            0.010978520286396181,
+            0.9890214797136038
+          ]
+        ],
+        "initial_probability": [
+          0.2767667800956756,
+          0.7232332199043243
+        ],
+        "emissions": [
+          {
+            "location": -0.4466681391831782,
+            "scale": 0.6625534746382974
+          },
+          {
+            "location": 0.7444875535540858,
+            "scale": 0.7811811443781083
+          }
+        ],
+        "direct_threshold": 0.09710762930895665,
+        "direct_train_macro_bACC": 0.7865561270734969,
+        "selected_candidate": "direct",
+        "selected_weight": 0.0,
+        "selected_gate_threshold": null,
+        "selected_threshold_inner_oof": 0.09710762930895665,
+        "selected_train_macro_bACC_inner_oof": 0.7865561270734969,
+        "n_test_reset": 0,
+        "n_test": 1823,
+        "inner_candidates": [
+          {
+            "name": "direct",
+            "weight": 0.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7865561270734969,
+            "threshold": 0.09710762930895665,
+            "inner_gate_thresholds": {}
+          },
+          {
+            "name": "w0.25_no_reset",
+            "weight": 0.25,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7782397384603098,
+            "threshold": 0.4765824067567784,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          },
+          {
+            "name": "w0.50_no_reset",
+            "weight": 0.5,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7747401529755827,
+            "threshold": 0.9385998198439839,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          },
+          {
+            "name": "w0.75_no_reset",
+            "weight": 0.75,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7749870468357216,
+            "threshold": 0.9572256993532845,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          },
+          {
+            "name": "w1.00_no_reset",
+            "weight": 1.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7741239395708732,
+            "threshold": 1.2207067718798983,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          },
+          {
+            "name": "w0.25_q0.90",
+            "weight": 0.25,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7785150528065837,
+            "threshold": 0.19562797526322026,
+            "inner_gate_thresholds": {
+              "0": 0.3517540937869288,
+              "1": 0.36645810364629344,
+              "2": 0.38496670238358033,
+              "3": 0.38950864261327267
+            }
+          },
+          {
+            "name": "w0.50_q0.90",
+            "weight": 0.5,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7754361034595303,
+            "threshold": 0.28089926513132746,
+            "inner_gate_thresholds": {
+              "0": 0.3517540937869288,
+              "1": 0.36645810364629344,
+              "2": 0.38496670238358033,
+              "3": 0.38950864261327267
+            }
+          },
+          {
+            "name": "w0.75_q0.90",
+            "weight": 0.75,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7753918411842419,
+            "threshold": 0.63403859502566,
+            "inner_gate_thresholds": {
+              "0": 0.3517540937869288,
+              "1": 0.36645810364629344,
+              "2": 0.38496670238358033,
+              "3": 0.38950864261327267
+            }
+          },
+          {
+            "name": "w1.00_q0.90",
+            "weight": 1.0,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.774535284716838,
+            "threshold": 0.8084276242515364,
+            "inner_gate_thresholds": {
+              "0": 0.3517540937869288,
+              "1": 0.36645810364629344,
+              "2": 0.38496670238358033,
+              "3": 0.38950864261327267
+            }
+          },
+          {
+            "name": "w0.25_q0.75",
+            "weight": 0.25,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7854745632228434,
+            "threshold": 0.22587241123540172,
+            "inner_gate_thresholds": {
+              "0": 0.19362890066855937,
+              "1": 0.1985979623619007,
+              "2": 0.20867744187871934,
+              "3": 0.2098353898367165
+            }
+          },
+          {
+            "name": "w0.50_q0.75",
+            "weight": 0.5,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7855072277523963,
+            "threshold": 0.3553384971995403,
+            "inner_gate_thresholds": {
+              "0": 0.19362890066855937,
+              "1": 0.1985979623619007,
+              "2": 0.20867744187871934,
+              "3": 0.2098353898367165
+            }
+          },
+          {
+            "name": "w0.75_q0.75",
+            "weight": 0.75,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7846844098136889,
+            "threshold": 0.4964918768037456,
+            "inner_gate_thresholds": {
+              "0": 0.19362890066855937,
+              "1": 0.1985979623619007,
+              "2": 0.20867744187871934,
+              "3": 0.2098353898367165
+            }
+          },
+          {
+            "name": "w1.00_q0.75",
+            "weight": 1.0,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7826693562026672,
+            "threshold": 0.6684213196571196,
+            "inner_gate_thresholds": {
+              "0": 0.19362890066855937,
+              "1": 0.1985979623619007,
+              "2": 0.20867744187871934,
+              "3": 0.2098353898367165
+            }
+          },
+          {
+            "name": "w0.25_q0.50",
+            "weight": 0.25,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7859702509740865,
+            "threshold": 0.197958519178774,
+            "inner_gate_thresholds": {
+              "0": 0.09669395406296465,
+              "1": 0.10024525741260695,
+              "2": 0.10378764894209366,
+              "3": 0.10433088977057509
+            }
+          },
+          {
+            "name": "w0.50_q0.50",
+            "weight": 0.5,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7854956093555826,
+            "threshold": 0.39655751275194884,
+            "inner_gate_thresholds": {
+              "0": 0.09669395406296465,
+              "1": 0.10024525741260695,
+              "2": 0.10378764894209366,
+              "3": 0.10433088977057509
+            }
+          },
+          {
+            "name": "w0.75_q0.50",
+            "weight": 0.75,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7852374326239483,
+            "threshold": 0.5483268720724145,
+            "inner_gate_thresholds": {
+              "0": 0.09669395406296465,
+              "1": 0.10024525741260695,
+              "2": 0.10378764894209366,
+              "3": 0.10433088977057509
+            }
+          },
+          {
+            "name": "w1.00_q0.50",
+            "weight": 1.0,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7831653826925719,
+            "threshold": 0.9637167772412886,
+            "inner_gate_thresholds": {
+              "0": 0.09669395406296465,
+              "1": 0.10024525741260695,
+              "2": 0.10378764894209366,
+              "3": 0.10433088977057509
+            }
+          }
+        ]
+      }
+    ],
+    "s5": [
+      {
+        "fold": 0,
+        "fit_subjects": [
+          "001",
+          "002",
+          "003",
+          "004",
+          "005",
+          "006",
+          "007",
+          "008",
+          "010",
+          "011",
+          "012",
+          "013",
+          "014",
+          "015",
+          "016",
+          "017",
+          "018",
+          "019",
+          "020",
+          "021",
+          "025",
+          "026",
+          "027",
+          "028",
+          "030",
+          "031",
+          "034",
+          "035",
+          "036",
+          "038",
+          "039",
+          "040",
+          "041",
+          "042",
+          "043",
+          "044",
+          "046",
+          "047",
+          "049",
+          "050",
+          "052",
+          "054",
+          "056",
+          "057",
+          "058",
+          "059"
+        ],
+        "test_subjects": [
+          "009",
+          "022",
+          "023",
+          "024",
+          "029",
+          "037",
+          "045",
+          "048",
+          "051",
+          "053",
+          "055"
+        ],
+        "transition_matrix": [
+          [
+            0.9712025316455696,
+            0.02879746835443038
+          ],
+          [
+            0.010882422521883131,
+            0.9891175774781169
+          ]
+        ],
+        "initial_probability": [
+          0.27425535407354795,
+          0.725744645926452
+        ],
+        "emissions": [
+          {
+            "location": -0.47706531733046426,
+            "scale": 0.784320086008204
+          },
+          {
+            "location": 0.6838268018846605,
+            "scale": 0.6581107104678918
+          }
+        ],
+        "direct_threshold": 0.17242689051986126,
+        "direct_train_macro_bACC": 0.7765005827203004,
+        "selected_candidate": "w0.25_no_reset",
+        "selected_weight": 0.25,
+        "selected_gate_threshold": null,
+        "selected_threshold_inner_oof": 0.391161865323471,
+        "selected_train_macro_bACC_inner_oof": 0.7899785442197008,
+        "n_test_reset": 0,
+        "n_test": 1798,
+        "inner_candidates": [
+          {
+            "name": "direct",
+            "weight": 0.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7765005827203004,
+            "threshold": 0.17242689051986126,
+            "inner_gate_thresholds": {}
+          },
+          {
+            "name": "w0.25_no_reset",
+            "weight": 0.25,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7899785442197008,
+            "threshold": 0.391161865323471,
+            "inner_gate_thresholds": {
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.50_no_reset",
+            "weight": 0.5,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7885028720091927,
+            "threshold": 0.7536569681288889,
+            "inner_gate_thresholds": {
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.75_no_reset",
+            "weight": 0.75,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7879539307354054,
+            "threshold": 0.4499714629363209,
+            "inner_gate_thresholds": {
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w1.00_no_reset",
+            "weight": 1.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7870099908745444,
+            "threshold": 1.0403661369611055,
+            "inner_gate_thresholds": {
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.25_q0.90",
+            "weight": 0.25,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7883346956184383,
+            "threshold": 0.48426399126424724,
+            "inner_gate_thresholds": {
+              "1": 0.4749059630416758,
+              "2": 0.5133737946928681,
+              "3": 0.5307304718529422,
+              "4": 0.49187415322650635
+            }
+          },
+          {
+            "name": "w0.50_q0.90",
+            "weight": 0.5,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7876441613357836,
+            "threshold": 0.8347282363413937,
+            "inner_gate_thresholds": {
+              "1": 0.4749059630416758,
+              "2": 0.5133737946928681,
+              "3": 0.5307304718529422,
+              "4": 0.49187415322650635
+            }
+          },
+          {
+            "name": "w0.75_q0.90",
+            "weight": 0.75,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7870906193753129,
+            "threshold": 1.1461136869097404,
+            "inner_gate_thresholds": {
+              "1": 0.4749059630416758,
+              "2": 0.5133737946928681,
+              "3": 0.5307304718529422,
+              "4": 0.49187415322650635
+            }
+          },
+          {
+            "name": "w1.00_q0.90",
+            "weight": 1.0,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.783338211092434,
+            "threshold": 0.22544042018040064,
+            "inner_gate_thresholds": {
+              "1": 0.4749059630416758,
+              "2": 0.5133737946928681,
+              "3": 0.5307304718529422,
+              "4": 0.49187415322650635
+            }
+          },
+          {
+            "name": "w0.25_q0.75",
+            "weight": 0.25,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7775686353574932,
+            "threshold": 0.6233785971900129,
+            "inner_gate_thresholds": {
+              "1": 0.2821438447592738,
+              "2": 0.30179964532016146,
+              "3": 0.3034497111480823,
+              "4": 0.2944237128076776
+            }
+          },
+          {
+            "name": "w0.50_q0.75",
+            "weight": 0.5,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7777496955374128,
+            "threshold": 0.88737742604563,
+            "inner_gate_thresholds": {
+              "1": 0.2821438447592738,
+              "2": 0.30179964532016146,
+              "3": 0.3034497111480823,
+              "4": 0.2944237128076776
+            }
+          },
+          {
+            "name": "w0.75_q0.75",
+            "weight": 0.75,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7777859993339806,
+            "threshold": 1.2087036871964667,
+            "inner_gate_thresholds": {
+              "1": 0.2821438447592738,
+              "2": 0.30179964532016146,
+              "3": 0.3034497111480823,
+              "4": 0.2944237128076776
+            }
+          },
+          {
+            "name": "w1.00_q0.75",
+            "weight": 1.0,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.772273453829687,
+            "threshold": 1.583439165018198,
+            "inner_gate_thresholds": {
+              "1": 0.2821438447592738,
+              "2": 0.30179964532016146,
+              "3": 0.3034497111480823,
+              "4": 0.2944237128076776
+            }
+          },
+          {
+            "name": "w0.25_q0.50",
+            "weight": 0.25,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7746558661424531,
+            "threshold": 0.4086843134249206,
+            "inner_gate_thresholds": {
+              "1": 0.14718421408414195,
+              "2": 0.15416090577658256,
+              "3": 0.1535293938476477,
+              "4": 0.1518636639283465
+            }
+          },
+          {
+            "name": "w0.50_q0.50",
+            "weight": 0.5,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7743516061025334,
+            "threshold": 0.6735317125363304,
+            "inner_gate_thresholds": {
+              "1": 0.14718421408414195,
+              "2": 0.15416090577658256,
+              "3": 0.1535293938476477,
+              "4": 0.1518636639283465
+            }
+          },
+          {
+            "name": "w0.75_q0.50",
+            "weight": 0.75,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7742687630008211,
+            "threshold": 0.8388422889450783,
+            "inner_gate_thresholds": {
+              "1": 0.14718421408414195,
+              "2": 0.15416090577658256,
+              "3": 0.1535293938476477,
+              "4": 0.1518636639283465
+            }
+          },
+          {
+            "name": "w1.00_q0.50",
+            "weight": 1.0,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7716434315320859,
+            "threshold": 1.1231117069656142,
+            "inner_gate_thresholds": {
+              "1": 0.14718421408414195,
+              "2": 0.15416090577658256,
+              "3": 0.1535293938476477,
+              "4": 0.1518636639283465
+            }
+          }
+        ]
+      },
+      {
+        "fold": 1,
+        "fit_subjects": [
+          "001",
+          "002",
+          "004",
+          "005",
+          "006",
+          "007",
+          "008",
+          "009",
+          "010",
+          "011",
+          "013",
+          "014",
+          "015",
+          "016",
+          "017",
+          "018",
+          "019",
+          "020",
+          "021",
+          "022",
+          "023",
+          "024",
+          "025",
+          "026",
+          "027",
+          "028",
+          "029",
+          "030",
+          "031",
+          "037",
+          "040",
+          "042",
+          "043",
+          "044",
+          "045",
+          "047",
+          "048",
+          "049",
+          "051",
+          "052",
+          "053",
+          "054",
+          "055",
+          "056",
+          "057"
+        ],
+        "test_subjects": [
+          "003",
+          "012",
+          "034",
+          "035",
+          "036",
+          "038",
+          "039",
+          "041",
+          "046",
+          "050",
+          "058",
+          "059"
+        ],
+        "transition_matrix": [
+          [
+            0.9711842938568714,
+            0.02881570614312856
+          ],
+          [
+            0.010941960038058992,
+            0.989058039961941
+          ]
+        ],
+        "initial_probability": [
+          0.27521635671956285,
+          0.7247836432804371
+        ],
+        "emissions": [
+          {
+            "location": -0.44897030719491854,
+            "scale": 0.7103384452145616
+          },
+          {
+            "location": 0.7148604053316227,
+            "scale": 0.6523012211323032
+          }
+        ],
+        "direct_threshold": 0.1850026466956245,
+        "direct_train_macro_bACC": 0.7868252240210544,
+        "selected_candidate": "w0.25_no_reset",
+        "selected_weight": 0.25,
+        "selected_gate_threshold": null,
+        "selected_threshold_inner_oof": 0.4287684170137334,
+        "selected_train_macro_bACC_inner_oof": 0.8051956800582084,
+        "n_test_reset": 0,
+        "n_test": 1824,
+        "inner_candidates": [
+          {
+            "name": "direct",
+            "weight": 0.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7868252240210544,
+            "threshold": 0.1850026466956245,
+            "inner_gate_thresholds": {}
+          },
+          {
+            "name": "w0.25_no_reset",
+            "weight": 0.25,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.8051956800582084,
+            "threshold": 0.4287684170137334,
+            "inner_gate_thresholds": {
+              "0": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.50_no_reset",
+            "weight": 0.5,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.8030239660466236,
+            "threshold": 0.24854926816666764,
+            "inner_gate_thresholds": {
+              "0": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.75_no_reset",
+            "weight": 0.75,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.8037296333081698,
+            "threshold": 1.083169477567732,
+            "inner_gate_thresholds": {
+              "0": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w1.00_no_reset",
+            "weight": 1.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.802807434167643,
+            "threshold": 0.9712757875542752,
+            "inner_gate_thresholds": {
+              "0": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.25_q0.90",
+            "weight": 0.25,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7995838761308478,
+            "threshold": 0.4049253599951018,
+            "inner_gate_thresholds": {
+              "0": 0.4749059630416758,
+              "2": 0.4956694561083468,
+              "3": 0.5063545993024887,
+              "4": 0.47373596316491
+            }
+          },
+          {
+            "name": "w0.50_q0.90",
+            "weight": 0.5,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7983228323193945,
+            "threshold": 0.6666736126961313,
+            "inner_gate_thresholds": {
+              "0": 0.4749059630416758,
+              "2": 0.4956694561083468,
+              "3": 0.5063545993024887,
+              "4": 0.47373596316491
+            }
+          },
+          {
+            "name": "w0.75_q0.90",
+            "weight": 0.75,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7980692402175175,
+            "threshold": 1.1858897096889616,
+            "inner_gate_thresholds": {
+              "0": 0.4749059630416758,
+              "2": 0.4956694561083468,
+              "3": 0.5063545993024887,
+              "4": 0.47373596316491
+            }
+          },
+          {
+            "name": "w1.00_q0.90",
+            "weight": 1.0,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7966852518766506,
+            "threshold": 1.1604370705726992,
+            "inner_gate_thresholds": {
+              "0": 0.4749059630416758,
+              "2": 0.4956694561083468,
+              "3": 0.5063545993024887,
+              "4": 0.47373596316491
+            }
+          },
+          {
+            "name": "w0.25_q0.75",
+            "weight": 0.25,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7901961493407089,
+            "threshold": 0.414449674177688,
+            "inner_gate_thresholds": {
+              "0": 0.2821438447592738,
+              "2": 0.297209734621298,
+              "3": 0.29725575901983714,
+              "4": 0.2894555715852874
+            }
+          },
+          {
+            "name": "w0.50_q0.75",
+            "weight": 0.5,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7904571668651035,
+            "threshold": 0.42358444544473106,
+            "inner_gate_thresholds": {
+              "0": 0.2821438447592738,
+              "2": 0.297209734621298,
+              "3": 0.29725575901983714,
+              "4": 0.2894555715852874
+            }
+          },
+          {
+            "name": "w0.75_q0.75",
+            "weight": 0.75,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7908046048719438,
+            "threshold": 0.7443035582706193,
+            "inner_gate_thresholds": {
+              "0": 0.2821438447592738,
+              "2": 0.297209734621298,
+              "3": 0.29725575901983714,
+              "4": 0.2894555715852874
+            }
+          },
+          {
+            "name": "w1.00_q0.75",
+            "weight": 1.0,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7908158996879295,
+            "threshold": 0.9563383402676616,
+            "inner_gate_thresholds": {
+              "0": 0.2821438447592738,
+              "2": 0.297209734621298,
+              "3": 0.29725575901983714,
+              "4": 0.2894555715852874
+            }
+          },
+          {
+            "name": "w0.25_q0.50",
+            "weight": 0.25,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7880491833518644,
+            "threshold": 0.32896039560366686,
+            "inner_gate_thresholds": {
+              "0": 0.14718421408414195,
+              "2": 0.15163907106150176,
+              "3": 0.15156510027772757,
+              "4": 0.14973616856129474
+            }
+          },
+          {
+            "name": "w0.50_q0.50",
+            "weight": 0.5,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7886266893698445,
+            "threshold": 0.5285398471439839,
+            "inner_gate_thresholds": {
+              "0": 0.14718421408414195,
+              "2": 0.15163907106150176,
+              "3": 0.15156510027772757,
+              "4": 0.14973616856129474
+            }
+          },
+          {
+            "name": "w0.75_q0.50",
+            "weight": 0.75,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7886728126743772,
+            "threshold": 0.7336248319521711,
+            "inner_gate_thresholds": {
+              "0": 0.14718421408414195,
+              "2": 0.15163907106150176,
+              "3": 0.15156510027772757,
+              "4": 0.14973616856129474
+            }
+          },
+          {
+            "name": "w1.00_q0.50",
+            "weight": 1.0,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7892234149457459,
+            "threshold": 0.9361209814729335,
+            "inner_gate_thresholds": {
+              "0": 0.14718421408414195,
+              "2": 0.15163907106150176,
+              "3": 0.15156510027772757,
+              "4": 0.14973616856129474
+            }
+          }
+        ]
+      },
+      {
+        "fold": 2,
+        "fit_subjects": [
+          "002",
+          "003",
+          "004",
+          "008",
+          "009",
+          "010",
+          "012",
+          "013",
+          "014",
+          "015",
+          "016",
+          "018",
+          "020",
+          "021",
+          "022",
+          "023",
+          "024",
+          "027",
+          "028",
+          "029",
+          "030",
+          "034",
+          "035",
+          "036",
+          "037",
+          "038",
+          "039",
+          "040",
+          "041",
+          "042",
+          "043",
+          "044",
+          "045",
+          "046",
+          "047",
+          "048",
+          "049",
+          "050",
+          "051",
+          "052",
+          "053",
+          "054",
+          "055",
+          "056",
+          "058",
+          "059"
+        ],
+        "test_subjects": [
+          "001",
+          "005",
+          "006",
+          "007",
+          "011",
+          "017",
+          "019",
+          "025",
+          "026",
+          "031",
+          "057"
+        ],
+        "transition_matrix": [
+          [
+            0.9713656387665198,
+            0.028634361233480177
+          ],
+          [
+            0.01098901098901099,
+            0.989010989010989
+          ]
+        ],
+        "initial_probability": [
+          0.27733659132559507,
+          0.7226634086744049
+        ],
+        "emissions": [
+          {
+            "location": -0.43308478063671374,
+            "scale": 0.7465505257525548
+          },
+          {
+            "location": 0.6830080529070138,
+            "scale": 0.6918263483644727
+          }
+        ],
+        "direct_threshold": 0.18063230741827982,
+        "direct_train_macro_bACC": 0.7645393749910637,
+        "selected_candidate": "w0.25_no_reset",
+        "selected_weight": 0.25,
+        "selected_gate_threshold": null,
+        "selected_threshold_inner_oof": 0.33395181658887996,
+        "selected_train_macro_bACC_inner_oof": 0.7816014108122779,
+        "n_test_reset": 0,
+        "n_test": 1821,
+        "inner_candidates": [
+          {
+            "name": "direct",
+            "weight": 0.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7645393749910637,
+            "threshold": 0.18063230741827982,
+            "inner_gate_thresholds": {}
+          },
+          {
+            "name": "w0.25_no_reset",
+            "weight": 0.25,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7816014108122779,
+            "threshold": 0.33395181658887996,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.50_no_reset",
+            "weight": 0.5,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7811443044985097,
+            "threshold": 0.6592376767315052,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.75_no_reset",
+            "weight": 0.75,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7807521006338733,
+            "threshold": 1.0760484909249761,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w1.00_no_reset",
+            "weight": 1.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7794887653089055,
+            "threshold": 0.6999567624180627,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "3": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.25_q0.90",
+            "weight": 0.25,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7761673565803608,
+            "threshold": 0.3658918195136104,
+            "inner_gate_thresholds": {
+              "0": 0.5133737946928681,
+              "1": 0.4956694561083468,
+              "3": 0.5489923764116552,
+              "4": 0.5063700516488935
+            }
+          },
+          {
+            "name": "w0.50_q0.90",
+            "weight": 0.5,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7748141862167043,
+            "threshold": 0.5989246168911087,
+            "inner_gate_thresholds": {
+              "0": 0.5133737946928681,
+              "1": 0.4956694561083468,
+              "3": 0.5489923764116552,
+              "4": 0.5063700516488935
+            }
+          },
+          {
+            "name": "w0.75_q0.90",
+            "weight": 0.75,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.77435476064444,
+            "threshold": 1.0353782827247702,
+            "inner_gate_thresholds": {
+              "0": 0.5133737946928681,
+              "1": 0.4956694561083468,
+              "3": 0.5489923764116552,
+              "4": 0.5063700516488935
+            }
+          },
+          {
+            "name": "w1.00_q0.90",
+            "weight": 1.0,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7726833847225549,
+            "threshold": 1.2616338342349225,
+            "inner_gate_thresholds": {
+              "0": 0.5133737946928681,
+              "1": 0.4956694561083468,
+              "3": 0.5489923764116552,
+              "4": 0.5063700516488935
+            }
+          },
+          {
+            "name": "w0.25_q0.75",
+            "weight": 0.25,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7665313874754065,
+            "threshold": 0.6886794183548377,
+            "inner_gate_thresholds": {
+              "0": 0.30179964532016146,
+              "1": 0.297209734621298,
+              "3": 0.32015819079641544,
+              "4": 0.31082151041346484
+            }
+          },
+          {
+            "name": "w0.50_q0.75",
+            "weight": 0.5,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.766089377994465,
+            "threshold": 0.7698752735274015,
+            "inner_gate_thresholds": {
+              "0": 0.30179964532016146,
+              "1": 0.297209734621298,
+              "3": 0.32015819079641544,
+              "4": 0.31082151041346484
+            }
+          },
+          {
+            "name": "w0.75_q0.75",
+            "weight": 0.75,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7669345352435631,
+            "threshold": 1.0514465729619655,
+            "inner_gate_thresholds": {
+              "0": 0.30179964532016146,
+              "1": 0.297209734621298,
+              "3": 0.32015819079641544,
+              "4": 0.31082151041346484
+            }
+          },
+          {
+            "name": "w1.00_q0.75",
+            "weight": 1.0,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7648696520096732,
+            "threshold": 1.137310415251104,
+            "inner_gate_thresholds": {
+              "0": 0.30179964532016146,
+              "1": 0.297209734621298,
+              "3": 0.32015819079641544,
+              "4": 0.31082151041346484
+            }
+          },
+          {
+            "name": "w0.25_q0.50",
+            "weight": 0.25,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7655139190283428,
+            "threshold": 0.5848499000809406,
+            "inner_gate_thresholds": {
+              "0": 0.15416090577658256,
+              "1": 0.15163907106150176,
+              "3": 0.16063469062332236,
+              "4": 0.15880295222928797
+            }
+          },
+          {
+            "name": "w0.50_q0.50",
+            "weight": 0.5,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.765536057180391,
+            "threshold": 0.8801117295538889,
+            "inner_gate_thresholds": {
+              "0": 0.15416090577658256,
+              "1": 0.15163907106150176,
+              "3": 0.16063469062332236,
+              "4": 0.15880295222928797
+            }
+          },
+          {
+            "name": "w0.75_q0.50",
+            "weight": 0.75,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7650105110166026,
+            "threshold": 0.7463094896182352,
+            "inner_gate_thresholds": {
+              "0": 0.15416090577658256,
+              "1": 0.15163907106150176,
+              "3": 0.16063469062332236,
+              "4": 0.15880295222928797
+            }
+          },
+          {
+            "name": "w1.00_q0.50",
+            "weight": 1.0,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7647951938825893,
+            "threshold": 0.9537243720275264,
+            "inner_gate_thresholds": {
+              "0": 0.15416090577658256,
+              "1": 0.15163907106150176,
+              "3": 0.16063469062332236,
+              "4": 0.15880295222928797
+            }
+          }
+        ]
+      },
+      {
+        "fold": 3,
+        "fit_subjects": [
+          "001",
+          "002",
+          "003",
+          "005",
+          "006",
+          "007",
+          "009",
+          "010",
+          "011",
+          "012",
+          "014",
+          "017",
+          "018",
+          "019",
+          "020",
+          "021",
+          "022",
+          "023",
+          "024",
+          "025",
+          "026",
+          "027",
+          "029",
+          "030",
+          "031",
+          "034",
+          "035",
+          "036",
+          "037",
+          "038",
+          "039",
+          "041",
+          "044",
+          "045",
+          "046",
+          "047",
+          "048",
+          "050",
+          "051",
+          "052",
+          "053",
+          "055",
+          "057",
+          "058",
+          "059"
+        ],
+        "test_subjects": [
+          "004",
+          "008",
+          "013",
+          "015",
+          "016",
+          "028",
+          "040",
+          "042",
+          "043",
+          "049",
+          "054",
+          "056"
+        ],
+        "transition_matrix": [
+          [
+            0.9713457823567289,
+            0.02865421764327109
+          ],
+          [
+            0.010924981791697014,
+            0.989075018208303
+          ]
+        ],
+        "initial_probability": [
+          0.2760283671135806,
+          0.7239716328864194
+        ],
+        "emissions": [
+          {
+            "location": -0.4536360521753021,
+            "scale": 0.7356197720082834
+          },
+          {
+            "location": 0.7173448746043862,
+            "scale": 0.6839272374931189
+          }
+        ],
+        "direct_threshold": 0.18028408238649027,
+        "direct_train_macro_bACC": 0.7850087031068963,
+        "selected_candidate": "w0.25_no_reset",
+        "selected_weight": 0.25,
+        "selected_gate_threshold": null,
+        "selected_threshold_inner_oof": 0.11548990321239119,
+        "selected_train_macro_bACC_inner_oof": 0.8058110482605101,
+        "n_test_reset": 0,
+        "n_test": 1961,
+        "inner_candidates": [
+          {
+            "name": "direct",
+            "weight": 0.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7850087031068963,
+            "threshold": 0.18028408238649027,
+            "inner_gate_thresholds": {}
+          },
+          {
+            "name": "w0.25_no_reset",
+            "weight": 0.25,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.8058110482605101,
+            "threshold": 0.11548990321239119,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.50_no_reset",
+            "weight": 0.5,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.8051233520383942,
+            "threshold": 0.09842450513358991,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.75_no_reset",
+            "weight": 0.75,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.8045115536156028,
+            "threshold": 0.3261967993763396,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w1.00_no_reset",
+            "weight": 1.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.8051382635438279,
+            "threshold": 0.3894470612143152,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "4": null
+            }
+          },
+          {
+            "name": "w0.25_q0.90",
+            "weight": 0.25,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.8011772244315195,
+            "threshold": 0.11568959257408888,
+            "inner_gate_thresholds": {
+              "0": 0.5307304718529422,
+              "1": 0.5063545993024887,
+              "2": 0.5489923764116552,
+              "4": 0.5210877306448864
+            }
+          },
+          {
+            "name": "w0.50_q0.90",
+            "weight": 0.5,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.8004282215280824,
+            "threshold": 0.0,
+            "inner_gate_thresholds": {
+              "0": 0.5307304718529422,
+              "1": 0.5063545993024887,
+              "2": 0.5489923764116552,
+              "4": 0.5210877306448864
+            }
+          },
+          {
+            "name": "w0.75_q0.90",
+            "weight": 0.75,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.8006119274370023,
+            "threshold": 0.0,
+            "inner_gate_thresholds": {
+              "0": 0.5307304718529422,
+              "1": 0.5063545993024887,
+              "2": 0.5489923764116552,
+              "4": 0.5210877306448864
+            }
+          },
+          {
+            "name": "w1.00_q0.90",
+            "weight": 1.0,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.800201564977762,
+            "threshold": 0.0,
+            "inner_gate_thresholds": {
+              "0": 0.5307304718529422,
+              "1": 0.5063545993024887,
+              "2": 0.5489923764116552,
+              "4": 0.5210877306448864
+            }
+          },
+          {
+            "name": "w0.25_q0.75",
+            "weight": 0.25,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7889895703251967,
+            "threshold": 0.3090011904232999,
+            "inner_gate_thresholds": {
+              "0": 0.3034497111480823,
+              "1": 0.29725575901983714,
+              "2": 0.32015819079641544,
+              "4": 0.31102231000257
+            }
+          },
+          {
+            "name": "w0.50_q0.75",
+            "weight": 0.5,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7889247581561041,
+            "threshold": 0.6252592365835757,
+            "inner_gate_thresholds": {
+              "0": 0.3034497111480823,
+              "1": 0.29725575901983714,
+              "2": 0.32015819079641544,
+              "4": 0.31102231000257
+            }
+          },
+          {
+            "name": "w0.75_q0.75",
+            "weight": 0.75,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7900208411956592,
+            "threshold": 0.8553481463381654,
+            "inner_gate_thresholds": {
+              "0": 0.3034497111480823,
+              "1": 0.29725575901983714,
+              "2": 0.32015819079641544,
+              "4": 0.31102231000257
+            }
+          },
+          {
+            "name": "w1.00_q0.75",
+            "weight": 1.0,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7894674656567763,
+            "threshold": 1.0875091811210913,
+            "inner_gate_thresholds": {
+              "0": 0.3034497111480823,
+              "1": 0.29725575901983714,
+              "2": 0.32015819079641544,
+              "4": 0.31102231000257
+            }
+          },
+          {
+            "name": "w0.25_q0.50",
+            "weight": 0.25,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7849952974942547,
+            "threshold": 0.3762224235524071,
+            "inner_gate_thresholds": {
+              "0": 0.1535293938476477,
+              "1": 0.15156510027772757,
+              "2": 0.16063469062332236,
+              "4": 0.15806766164629715
+            }
+          },
+          {
+            "name": "w0.50_q0.50",
+            "weight": 0.5,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7858103642312901,
+            "threshold": 0.4648649771580568,
+            "inner_gate_thresholds": {
+              "0": 0.1535293938476477,
+              "1": 0.15156510027772757,
+              "2": 0.16063469062332236,
+              "4": 0.15806766164629715
+            }
+          },
+          {
+            "name": "w0.75_q0.50",
+            "weight": 0.75,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7855046254004655,
+            "threshold": 0.7311329404442751,
+            "inner_gate_thresholds": {
+              "0": 0.1535293938476477,
+              "1": 0.15156510027772757,
+              "2": 0.16063469062332236,
+              "4": 0.15806766164629715
+            }
+          },
+          {
+            "name": "w1.00_q0.50",
+            "weight": 1.0,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7855447774862693,
+            "threshold": 0.9318009548278026,
+            "inner_gate_thresholds": {
+              "0": 0.1535293938476477,
+              "1": 0.15156510027772757,
+              "2": 0.16063469062332236,
+              "4": 0.15806766164629715
+            }
+          }
+        ]
+      },
+      {
+        "fold": 4,
+        "fit_subjects": [
+          "001",
+          "003",
+          "004",
+          "005",
+          "006",
+          "007",
+          "008",
+          "009",
+          "011",
+          "012",
+          "013",
+          "015",
+          "016",
+          "017",
+          "019",
+          "022",
+          "023",
+          "024",
+          "025",
+          "026",
+          "028",
+          "029",
+          "031",
+          "034",
+          "035",
+          "036",
+          "037",
+          "038",
+          "039",
+          "040",
+          "041",
+          "042",
+          "043",
+          "045",
+          "046",
+          "048",
+          "049",
+          "050",
+          "051",
+          "053",
+          "054",
+          "055",
+          "056",
+          "057",
+          "058",
+          "059"
+        ],
+        "test_subjects": [
+          "002",
+          "010",
+          "014",
+          "018",
+          "020",
+          "021",
+          "027",
+          "030",
+          "044",
+          "047",
+          "052"
+        ],
+        "transition_matrix": [
+          [
+            0.9713114754098361,
+            0.028688524590163935
+          ],
+          [
+            0.010978520286396181,
+            0.9890214797136038
+          ]
+        ],
+        "initial_probability": [
+          0.2767667800956756,
+          0.7232332199043243
+        ],
+        "emissions": [
+          {
+            "location": -0.48611134515495835,
+            "scale": 0.7434747882837455
+          },
+          {
+            "location": 0.6763804928673168,
+            "scale": 0.6851929329200488
+          }
+        ],
+        "direct_threshold": 0.1601873911949752,
+        "direct_train_macro_bACC": 0.773163213124036,
+        "selected_candidate": "w0.25_no_reset",
+        "selected_weight": 0.25,
+        "selected_gate_threshold": null,
+        "selected_threshold_inner_oof": 0.26830394287958886,
+        "selected_train_macro_bACC_inner_oof": 0.7889556362506205,
+        "n_test_reset": 0,
+        "n_test": 1823,
+        "inner_candidates": [
+          {
+            "name": "direct",
+            "weight": 0.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.773163213124036,
+            "threshold": 0.1601873911949752,
+            "inner_gate_thresholds": {}
+          },
+          {
+            "name": "w0.25_no_reset",
+            "weight": 0.25,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7889556362506205,
+            "threshold": 0.26830394287958886,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          },
+          {
+            "name": "w0.50_no_reset",
+            "weight": 0.5,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7862347052223821,
+            "threshold": 0.20146177859497802,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          },
+          {
+            "name": "w0.75_no_reset",
+            "weight": 0.75,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7858737345248695,
+            "threshold": 0.25517553001559323,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          },
+          {
+            "name": "w1.00_no_reset",
+            "weight": 1.0,
+            "quantile": null,
+            "inner_oof_macro_bACC": 0.7854685285402212,
+            "threshold": 0.8767023234500708,
+            "inner_gate_thresholds": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          },
+          {
+            "name": "w0.25_q0.90",
+            "weight": 0.25,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7825870029416003,
+            "threshold": 0.36273799425673425,
+            "inner_gate_thresholds": {
+              "0": 0.49187415322650635,
+              "1": 0.47373596316491,
+              "2": 0.5063700516488935,
+              "3": 0.5210877306448864
+            }
+          },
+          {
+            "name": "w0.50_q0.90",
+            "weight": 0.5,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7819447082043218,
+            "threshold": 0.6203745137042506,
+            "inner_gate_thresholds": {
+              "0": 0.49187415322650635,
+              "1": 0.47373596316491,
+              "2": 0.5063700516488935,
+              "3": 0.5210877306448864
+            }
+          },
+          {
+            "name": "w0.75_q0.90",
+            "weight": 0.75,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7806027503497268,
+            "threshold": 0.8743524420519306,
+            "inner_gate_thresholds": {
+              "0": 0.49187415322650635,
+              "1": 0.47373596316491,
+              "2": 0.5063700516488935,
+              "3": 0.5210877306448864
+            }
+          },
+          {
+            "name": "w1.00_q0.90",
+            "weight": 1.0,
+            "quantile": 0.9,
+            "inner_oof_macro_bACC": 0.7798204395065927,
+            "threshold": 0.8725946346205572,
+            "inner_gate_thresholds": {
+              "0": 0.49187415322650635,
+              "1": 0.47373596316491,
+              "2": 0.5063700516488935,
+              "3": 0.5210877306448864
+            }
+          },
+          {
+            "name": "w0.25_q0.75",
+            "weight": 0.25,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7735116693606986,
+            "threshold": 0.35936713883017235,
+            "inner_gate_thresholds": {
+              "0": 0.2944237128076776,
+              "1": 0.2894555715852874,
+              "2": 0.31082151041346484,
+              "3": 0.31102231000257
+            }
+          },
+          {
+            "name": "w0.50_q0.75",
+            "weight": 0.5,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7731875400810594,
+            "threshold": 0.6054362114972988,
+            "inner_gate_thresholds": {
+              "0": 0.2944237128076776,
+              "1": 0.2894555715852874,
+              "2": 0.31082151041346484,
+              "3": 0.31102231000257
+            }
+          },
+          {
+            "name": "w0.75_q0.75",
+            "weight": 0.75,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7734494691593395,
+            "threshold": 0.8449058080067766,
+            "inner_gate_thresholds": {
+              "0": 0.2944237128076776,
+              "1": 0.2894555715852874,
+              "2": 0.31082151041346484,
+              "3": 0.31102231000257
+            }
+          },
+          {
+            "name": "w1.00_q0.75",
+            "weight": 1.0,
+            "quantile": 0.75,
+            "inner_oof_macro_bACC": 0.7734550870845925,
+            "threshold": 1.084097427498338,
+            "inner_gate_thresholds": {
+              "0": 0.2944237128076776,
+              "1": 0.2894555715852874,
+              "2": 0.31082151041346484,
+              "3": 0.31102231000257
+            }
+          },
+          {
+            "name": "w0.25_q0.50",
+            "weight": 0.25,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7722935663798602,
+            "threshold": 0.43445974983142166,
+            "inner_gate_thresholds": {
+              "0": 0.1518636639283465,
+              "1": 0.14973616856129474,
+              "2": 0.15880295222928797,
+              "3": 0.15806766164629715
+            }
+          },
+          {
+            "name": "w0.50_q0.50",
+            "weight": 0.5,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7723328617274368,
+            "threshold": 0.6991487922041304,
+            "inner_gate_thresholds": {
+              "0": 0.1518636639283465,
+              "1": 0.14973616856129474,
+              "2": 0.15880295222928797,
+              "3": 0.15806766164629715
+            }
+          },
+          {
+            "name": "w0.75_q0.50",
+            "weight": 0.75,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.7722920921378292,
+            "threshold": 0.8577905212399269,
+            "inner_gate_thresholds": {
+              "0": 0.1518636639283465,
+              "1": 0.14973616856129474,
+              "2": 0.15880295222928797,
+              "3": 0.15806766164629715
+            }
+          },
+          {
+            "name": "w1.00_q0.50",
+            "weight": 1.0,
+            "quantile": 0.5,
+            "inner_oof_macro_bACC": 0.771766665917993,
+            "threshold": 1.0982909733268418,
+            "inner_gate_thresholds": {
+              "0": 0.1518636639283465,
+              "1": 0.14973616856129474,
+              "2": 0.15880295222928797,
+              "3": 0.15806766164629715
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "causality_checks": {
+    "s10": [
+      {
+        "subject": "009",
+        "cut_within_subject": 130,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "009",
+        "cut_within_subject": 150,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "009",
+        "cut_within_subject": 180,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "003",
+        "cut_within_subject": 130,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "003",
+        "cut_within_subject": 150,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "003",
+        "cut_within_subject": 180,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "001",
+        "cut_within_subject": 130,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "001",
+        "cut_within_subject": 150,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "001",
+        "cut_within_subject": 180,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "004",
+        "cut_within_subject": 130,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "004",
+        "cut_within_subject": 150,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "004",
+        "cut_within_subject": 180,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "002",
+        "cut_within_subject": 130,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "002",
+        "cut_within_subject": 150,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "002",
+        "cut_within_subject": 180,
+        "past_outputs_bitwise_identical": true
+      }
+    ],
+    "s5": [
+      {
+        "subject": "009",
+        "cut_within_subject": 130,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "009",
+        "cut_within_subject": 150,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "009",
+        "cut_within_subject": 180,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "003",
+        "cut_within_subject": 130,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "003",
+        "cut_within_subject": 150,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "003",
+        "cut_within_subject": 180,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "001",
+        "cut_within_subject": 130,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "001",
+        "cut_within_subject": 150,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "001",
+        "cut_within_subject": 180,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "004",
+        "cut_within_subject": 130,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "004",
+        "cut_within_subject": 150,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "004",
+        "cut_within_subject": 180,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "002",
+        "cut_within_subject": 130,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "002",
+        "cut_within_subject": 150,
+        "past_outputs_bitwise_identical": true
+      },
+      {
+        "subject": "002",
+        "cut_within_subject": 180,
+        "past_outputs_bitwise_identical": true
+      }
+    ]
+  },
+  "seconds": 129.48055880000175
+}

@@ -1,0 +1,13 @@
+[elapsed  13.03s] s10 fold 1/5 selected=w0.25_q0.75 inner=0.787645 resets=552/1798
+[elapsed  25.14s] s10 fold 2/5 selected=direct inner=0.802320 resets=0/1824
+[elapsed  37.28s] s10 fold 3/5 selected=direct inner=0.779553 resets=0/1821
+[elapsed  49.21s] s10 fold 4/5 selected=direct inner=0.805177 resets=0/1961
+[elapsed  61.41s] s10 fold 5/5 selected=direct inner=0.786556 resets=0/1823
+[elapsed  61.80s] s10 selected macro=0.790194 micro=0.790774 AUC=0.843483
+[elapsed  76.33s] s5 fold 1/5 selected=w0.25_no_reset inner=0.789979 resets=0/1798
+[elapsed  89.12s] s5 fold 2/5 selected=w0.25_no_reset inner=0.805196 resets=0/1824
+[elapsed 101.91s] s5 fold 3/5 selected=w0.25_no_reset inner=0.781601 resets=0/1821
+[elapsed 114.56s] s5 fold 4/5 selected=w0.25_no_reset inner=0.805811 resets=0/1961
+[elapsed 127.39s] s5 fold 5/5 selected=w0.25_no_reset inner=0.788956 resets=0/1823
+[elapsed 127.78s] s5 selected macro=0.791466 micro=0.791288 AUC=0.852566
+[elapsed 129.49s] done seconds=129.48
