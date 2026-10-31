@@ -1,0 +1,18 @@
+[check] fold == depositioned_aperiodic_emg_oof.npz fold
+[start] rows=16067 subjects=57 folds=[0] n_null=4 elapsed=0.5s
+[fold 1/1] subjects=11 fold_s=10.5 elapsed=11.0s
+   sub-009 low  AUC xs=0.408 own_cv=0.869 own_in=0.986 rho(xs,own_cv)=-0.285 cos=+0.052 null|cos|=0.021
+   sub-022 mid  AUC xs=0.640 own_cv=0.826 own_in=0.940 rho(xs,own_cv)=+0.219 cos=+0.130 null|cos|=0.031
+   sub-023 low  AUC xs=0.476 own_cv=0.867 own_in=0.959 rho(xs,own_cv)=-0.128 cos=+0.017 null|cos|=0.036
+   sub-024 low  AUC xs=0.376 own_cv=0.819 own_in=0.950 rho(xs,own_cv)=-0.359 cos=-0.029 null|cos|=0.056
+   sub-029 low  AUC xs=0.360 own_cv=0.684 own_in=0.860 rho(xs,own_cv)=-0.455 cos=-0.035 null|cos|=0.021
+   sub-037 low  AUC xs=0.479 own_cv=0.877 own_in=0.966 rho(xs,own_cv)=-0.134 cos=+0.020 null|cos|=0.014
+   sub-045 mid  AUC xs=0.657 own_cv=0.865 own_in=0.952 rho(xs,own_cv)=+0.355 cos=+0.054 null|cos|=0.037
+   sub-048 mid  AUC xs=0.807 own_cv=0.859 own_in=0.934 rho(xs,own_cv)=+0.721 cos=+0.102 null|cos|=0.019
+   sub-051 mid  AUC xs=0.650 own_cv=0.900 own_in=0.955 rho(xs,own_cv)=+0.335 cos=+0.033 null|cos|=0.032
+   sub-053 mid  AUC xs=0.570 own_cv=0.656 own_in=0.878 rho(xs,own_cv)=+0.179 cos=+0.059 null|cos|=0.026
+   sub-055 mid  AUC xs=0.626 own_cv=0.855 own_in=0.941 rho(xs,own_cv)=+0.252 cos=+0.085 null|cos|=0.018
+[group all] n=11 auc_xs=+0.550[+0.482,+0.625] auc_xs_oriented=+0.623[+0.590,+0.664] auc_own_in=+0.938[+0.920,+0.956] auc_own_cv=+0.825[+0.783,+0.863] spearman_xs_own_in=+0.066[-0.124,+0.287] spearman_xs_own_cv=+0.064[-0.130,+0.263] cos_ws_wxs=+0.044[+0.017,+0.075] cos_null_absmean=+0.028[+0.022,+0.036] frac(AUCxs<.5)=0.45 frac(rho_cv<0)=0.45 frac(cos p<.05)=0.00
+[group mid] n=6 auc_xs=+0.658[+0.611,+0.723] auc_xs_oriented=+0.658[+0.615,+0.714] auc_own_in=+0.933[+0.909,+0.948] auc_own_cv=+0.827[+0.750,+0.874] spearman_xs_own_in=+0.344[+0.229,+0.513] spearman_xs_own_cv=+0.344[+0.230,+0.501] cos_ws_wxs=+0.077[+0.051,+0.102] cos_null_absmean=+0.027[+0.022,+0.033] frac(AUCxs<.5)=0.00 frac(rho_cv<0)=0.00 frac(cos p<.05)=0.00
+[group low] n=5 auc_xs=+0.420[+0.379,+0.463] auc_xs_oriented=+0.580[+0.543,+0.621] auc_own_in=+0.944[+0.902,+0.973] auc_own_cv=+0.823[+0.750,+0.872] spearman_xs_own_in=-0.268[-0.381,-0.152] spearman_xs_own_cv=-0.272[-0.378,-0.175] cos_ws_wxs=+0.005[-0.023,+0.036] cos_null_absmean=+0.030[+0.018,+0.045] frac(AUCxs<.5)=1.00 frac(rho_cv<0)=1.00 frac(cos p<.05)=0.00
+[done] elapsed=11.1s -> direction_scoring_smoke.json

@@ -1,0 +1,69 @@
+[check] fold == depositioned_aperiodic_emg_oof.npz fold
+[start] rows=16067 subjects=57 folds=[0, 1, 2, 3, 4] n_null=50 elapsed=0.5s
+[fold 1/5] subjects=11 fold_s=18.5 elapsed=19.0s
+   sub-009 low  AUC xs=0.408 own_cv=0.869 own_in=0.986 rho(xs,own_cv)=-0.285 cos=+0.052 null|cos|=0.032
+   sub-022 mid  AUC xs=0.640 own_cv=0.826 own_in=0.940 rho(xs,own_cv)=+0.219 cos=+0.130 null|cos|=0.033
+   sub-023 low  AUC xs=0.476 own_cv=0.867 own_in=0.959 rho(xs,own_cv)=-0.128 cos=+0.017 null|cos|=0.030
+   sub-024 low  AUC xs=0.376 own_cv=0.819 own_in=0.950 rho(xs,own_cv)=-0.359 cos=-0.029 null|cos|=0.031
+   sub-029 low  AUC xs=0.360 own_cv=0.684 own_in=0.860 rho(xs,own_cv)=-0.455 cos=-0.035 null|cos|=0.022
+   sub-037 low  AUC xs=0.479 own_cv=0.877 own_in=0.966 rho(xs,own_cv)=-0.134 cos=+0.020 null|cos|=0.025
+   sub-045 mid  AUC xs=0.657 own_cv=0.865 own_in=0.952 rho(xs,own_cv)=+0.355 cos=+0.054 null|cos|=0.030
+   sub-048 mid  AUC xs=0.807 own_cv=0.859 own_in=0.934 rho(xs,own_cv)=+0.721 cos=+0.102 null|cos|=0.026
+   sub-051 mid  AUC xs=0.650 own_cv=0.900 own_in=0.955 rho(xs,own_cv)=+0.335 cos=+0.033 null|cos|=0.032
+   sub-053 mid  AUC xs=0.570 own_cv=0.656 own_in=0.878 rho(xs,own_cv)=+0.179 cos=+0.059 null|cos|=0.030
+   sub-055 mid  AUC xs=0.626 own_cv=0.855 own_in=0.941 rho(xs,own_cv)=+0.252 cos=+0.085 null|cos|=0.032
+[fold 2/5] subjects=12 fold_s=12.4 elapsed=31.4s
+   sub-003 mid  AUC xs=0.631 own_cv=0.850 own_in=0.932 rho(xs,own_cv)=+0.390 cos=-0.014 null|cos|=0.025
+   sub-012 mid  AUC xs=0.590 own_cv=0.795 own_in=0.937 rho(xs,own_cv)=+0.107 cos=+0.085 null|cos|=0.030
+   sub-034 low  AUC xs=0.567 own_cv=0.892 own_in=0.989 rho(xs,own_cv)=+0.204 cos=+0.002 null|cos|=0.026
+   sub-035 mid  AUC xs=0.765 own_cv=0.829 own_in=0.930 rho(xs,own_cv)=+0.608 cos=+0.082 null|cos|=0.030
+   sub-036 high AUC xs=0.851 own_cv=0.867 own_in=0.947 rho(xs,own_cv)=+0.744 cos=+0.145 null|cos|=0.020
+   sub-038 mid  AUC xs=0.851 own_cv=0.924 own_in=0.969 rho(xs,own_cv)=+0.778 cos=+0.050 null|cos|=0.027
+   sub-039 low  AUC xs=0.512 own_cv=0.731 own_in=0.887 rho(xs,own_cv)=-0.058 cos=+0.057 null|cos|=0.028
+   sub-041 mid  AUC xs=0.647 own_cv=0.701 own_in=0.879 rho(xs,own_cv)=+0.375 cos=+0.081 null|cos|=0.027
+   sub-046 mid  AUC xs=0.721 own_cv=0.877 own_in=0.950 rho(xs,own_cv)=+0.543 cos=+0.041 null|cos|=0.023
+   sub-050 low  AUC xs=0.595 own_cv=0.885 own_in=0.949 rho(xs,own_cv)=+0.185 cos=+0.046 null|cos|=0.026
+   sub-058 mid  AUC xs=0.803 own_cv=0.859 own_in=0.937 rho(xs,own_cv)=+0.777 cos=+0.090 null|cos|=0.030
+   sub-059 mid  AUC xs=0.614 own_cv=0.927 own_in=0.973 rho(xs,own_cv)=+0.228 cos=+0.035 null|cos|=0.024
+[fold 3/5] subjects=11 fold_s=16.9 elapsed=48.3s
+   sub-001 mid  AUC xs=0.730 own_cv=0.889 own_in=0.954 rho(xs,own_cv)=+0.493 cos=+0.081 null|cos|=0.031
+   sub-005 low  AUC xs=0.614 own_cv=0.742 own_in=0.910 rho(xs,own_cv)=+0.264 cos=+0.067 null|cos|=0.028
+   sub-006 mid  AUC xs=0.690 own_cv=0.842 own_in=0.932 rho(xs,own_cv)=+0.445 cos=+0.041 null|cos|=0.027
+   sub-007 mid  AUC xs=0.661 own_cv=0.714 own_in=0.880 rho(xs,own_cv)=+0.566 cos=+0.003 null|cos|=0.029
+   sub-011 mid  AUC xs=0.757 own_cv=0.754 own_in=0.934 rho(xs,own_cv)=+0.621 cos=+0.164 null|cos|=0.032
+   sub-017 mid  AUC xs=0.760 own_cv=0.837 own_in=0.934 rho(xs,own_cv)=+0.590 cos=+0.119 null|cos|=0.030
+   sub-019 mid  AUC xs=0.544 own_cv=0.641 own_in=0.877 rho(xs,own_cv)=+0.092 cos=+0.084 null|cos|=0.033
+   sub-025 mid  AUC xs=0.702 own_cv=0.881 own_in=0.960 rho(xs,own_cv)=+0.396 cos=+0.079 null|cos|=0.036
+   sub-026 mid  AUC xs=0.701 own_cv=0.912 own_in=0.957 rho(xs,own_cv)=+0.446 cos=+0.036 null|cos|=0.028
+   sub-031 mid  AUC xs=0.723 own_cv=0.878 own_in=0.945 rho(xs,own_cv)=+0.484 cos=+0.146 null|cos|=0.027
+   sub-057 mid  AUC xs=0.754 own_cv=0.799 own_in=0.911 rho(xs,own_cv)=+0.443 cos=+0.139 null|cos|=0.029
+[fold 4/5] subjects=12 fold_s=20.1 elapsed=68.4s
+   sub-004 low  AUC xs=0.447 own_cv=0.774 own_in=0.931 rho(xs,own_cv)=-0.117 cos=+0.043 null|cos|=0.035
+   sub-008 low  AUC xs=0.462 own_cv=0.934 own_in=0.979 rho(xs,own_cv)=-0.136 cos=+0.060 null|cos|=0.030
+   sub-013 mid  AUC xs=0.707 own_cv=0.808 own_in=0.958 rho(xs,own_cv)=+0.478 cos=+0.069 null|cos|=0.029
+   sub-015 low  AUC xs=0.532 own_cv=0.832 own_in=0.922 rho(xs,own_cv)=+0.056 cos=+0.022 null|cos|=0.029
+   sub-016 mid  AUC xs=0.628 own_cv=0.841 own_in=0.929 rho(xs,own_cv)=+0.358 cos=+0.026 null|cos|=0.032
+   sub-028 low  AUC xs=0.684 own_cv=0.809 own_in=0.953 rho(xs,own_cv)=+0.370 cos=+0.112 null|cos|=0.025
+   sub-040 mid  AUC xs=0.770 own_cv=0.826 own_in=0.936 rho(xs,own_cv)=+0.553 cos=+0.167 null|cos|=0.027
+   sub-042 low  AUC xs=0.436 own_cv=0.676 own_in=0.891 rho(xs,own_cv)=-0.196 cos=-0.028 null|cos|=0.024
+   sub-043 high AUC xs=0.754 own_cv=0.883 own_in=0.957 rho(xs,own_cv)=+0.614 cos=+0.035 null|cos|=0.033
+   sub-049 low  AUC xs=0.651 own_cv=0.801 own_in=0.919 rho(xs,own_cv)=+0.382 cos=+0.045 null|cos|=0.036
+   sub-054 high AUC xs=0.834 own_cv=0.885 own_in=0.946 rho(xs,own_cv)=+0.708 cos=+0.058 null|cos|=0.028
+   sub-056 mid  AUC xs=0.629 own_cv=0.876 own_in=0.932 rho(xs,own_cv)=+0.294 cos=+0.003 null|cos|=0.030
+[fold 5/5] subjects=11 fold_s=17.0 elapsed=85.4s
+   sub-002 low  AUC xs=0.622 own_cv=0.814 own_in=0.924 rho(xs,own_cv)=+0.271 cos=+0.062 null|cos|=0.033
+   sub-010 low  AUC xs=0.678 own_cv=0.895 own_in=0.961 rho(xs,own_cv)=+0.313 cos=+0.105 null|cos|=0.035
+   sub-014 mid  AUC xs=0.619 own_cv=0.826 own_in=0.932 rho(xs,own_cv)=+0.311 cos=+0.038 null|cos|=0.031
+   sub-018 mid  AUC xs=0.755 own_cv=0.909 own_in=0.952 rho(xs,own_cv)=+0.501 cos=+0.044 null|cos|=0.033
+   sub-020 mid  AUC xs=0.626 own_cv=0.804 own_in=0.915 rho(xs,own_cv)=+0.426 cos=+0.019 null|cos|=0.025
+   sub-021 mid  AUC xs=0.717 own_cv=0.864 own_in=0.939 rho(xs,own_cv)=+0.549 cos=+0.034 null|cos|=0.028
+   sub-027 low  AUC xs=0.537 own_cv=0.817 own_in=0.948 rho(xs,own_cv)=+0.044 cos=+0.008 null|cos|=0.027
+   sub-030 mid  AUC xs=0.759 own_cv=0.911 own_in=0.979 rho(xs,own_cv)=+0.556 cos=+0.060 null|cos|=0.030
+   sub-044 low  AUC xs=0.788 own_cv=0.900 own_in=0.962 rho(xs,own_cv)=+0.668 cos=+0.023 null|cos|=0.025
+   sub-047 mid  AUC xs=0.695 own_cv=0.867 own_in=0.962 rho(xs,own_cv)=+0.435 cos=+0.012 null|cos|=0.029
+   sub-052 low  AUC xs=0.442 own_cv=0.835 own_in=0.935 rho(xs,own_cv)=-0.202 cos=+0.013 null|cos|=0.028
+[group all] n=57 auc_xs=+0.642[+0.610,+0.672] auc_xs_oriented=+0.664[+0.641,+0.686] auc_own_in=+0.938[+0.930,+0.945] auc_own_cv=+0.833[+0.816,+0.850] spearman_xs_own_in=+0.315[+0.235,+0.391] spearman_xs_own_cv=+0.310[+0.236,+0.384] cos_ws_wxs=+0.056[+0.044,+0.068] cos_null_absmean=+0.029[+0.028,+0.030] frac(AUCxs<.5)=0.16 frac(rho_cv<0)=0.18 frac(cos p<.05)=0.30
+[group high] n=3 auc_xs=+0.813[+0.754,+0.851] auc_xs_oriented=+0.813[+0.754,+0.851] auc_own_in=+0.950[+0.946,+0.957] auc_own_cv=+0.878[+0.867,+0.885] spearman_xs_own_in=+0.695[+0.604,+0.773] spearman_xs_own_cv=+0.689[+0.614,+0.744] cos_ws_wxs=+0.079[+0.035,+0.145] cos_null_absmean=+0.027[+0.020,+0.033] frac(AUCxs<.5)=0.00 frac(rho_cv<0)=0.00 frac(cos p<.05)=0.33
+[group mid] n=34 auc_xs=+0.691[+0.667,+0.717] auc_xs_oriented=+0.691[+0.668,+0.716] auc_own_in=+0.936[+0.927,+0.944] auc_own_cv=+0.835[+0.810,+0.859] spearman_xs_own_in=+0.441[+0.384,+0.497] spearman_xs_own_cv=+0.438[+0.385,+0.494] cos_ws_wxs=+0.067[+0.051,+0.083] cos_null_absmean=+0.029[+0.028,+0.030] frac(AUCxs<.5)=0.00 frac(rho_cv<0)=0.00 frac(cos p<.05)=0.38
+[group low] n=20 auc_xs=+0.533[+0.488,+0.583] auc_xs_oriented=+0.595[+0.567,+0.628] auc_own_in=+0.939[+0.924,+0.954] auc_own_cv=+0.823[+0.792,+0.852] spearman_xs_own_in=+0.044[-0.079,+0.176] spearman_xs_own_cv=+0.034[-0.085,+0.162] cos_ws_wxs=+0.033[+0.016,+0.050] cos_null_absmean=+0.029[+0.027,+0.031] frac(AUCxs<.5)=0.45 frac(rho_cv<0)=0.50 frac(cos p<.05)=0.15
+[done] elapsed=86.4s -> direction_scoring.json

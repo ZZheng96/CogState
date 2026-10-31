@@ -1,0 +1,83 @@
+[check] fold == npz fold
+[check] real_time.npz y/groups == canonical order
+[start] rows=16067 subjects=57 eval_subjects=57 elapsed=0.6s
+[strict lr] fold 1/5 fold_s=10.1 elapsed=12.8s
+[strict lr] fold 2/5 fold_s=14.3 elapsed=17.0s
+[strict lr] fold 3/5 fold_s=18.3 elapsed=21.0s
+[strict lr] fold 4/5 fold_s=22.2 elapsed=24.9s
+[strict lr] fold 5/5 fold_s=26.7 elapsed=29.4s
+[session_norm lr] fold 1/5 fold_s=3.1 elapsed=32.5s
+[session_norm lr] fold 2/5 fold_s=6.2 elapsed=35.6s
+[session_norm lr] fold 3/5 fold_s=9.6 elapsed=39.0s
+[session_norm lr] fold 4/5 fold_s=12.6 elapsed=42.1s
+[session_norm lr] fold 5/5 fold_s=16.0 elapsed=45.4s
+[strict hgb] fold 1/5 fold_s=17.3 elapsed=62.6s
+[strict hgb] fold 2/5 fold_s=23.3 elapsed=68.7s
+[strict hgb] fold 3/5 fold_s=29.3 elapsed=74.6s
+[strict hgb] fold 4/5 fold_s=35.2 elapsed=80.6s
+[strict hgb] fold 5/5 fold_s=41.1 elapsed=86.5s
+[session_norm hgb] fold 1/5 fold_s=5.1 elapsed=91.6s
+[session_norm hgb] fold 2/5 fold_s=10.4 elapsed=96.9s
+[session_norm hgb] fold 3/5 fold_s=15.5 elapsed=102.0s
+[session_norm hgb] fold 4/5 fold_s=20.5 elapsed=107.0s
+[session_norm hgb] fold 5/5 fold_s=25.6 elapsed=112.1s
+[window_kfold lr] fold 1/5 fold_s=4.0 elapsed=116.1s
+[window_kfold lr] fold 2/5 fold_s=7.9 elapsed=120.0s
+[window_kfold lr] fold 3/5 fold_s=12.6 elapsed=124.7s
+[window_kfold lr] fold 4/5 fold_s=17.5 elapsed=129.6s
+[window_kfold lr] fold 5/5 fold_s=21.7 elapsed=133.8s
+[window_kfold hgb] fold 1/5 fold_s=6.4 elapsed=140.2s
+[window_kfold hgb] fold 2/5 fold_s=13.1 elapsed=146.9s
+[window_kfold hgb] fold 3/5 fold_s=19.1 elapsed=152.9s
+[window_kfold hgb] fold 4/5 fold_s=25.2 elapsed=159.0s
+[window_kfold hgb] fold 5/5 fold_s=31.3 elapsed=165.1s
+[v2 s0] reproduced mac=0.6684 (json 0.6684) stream_s=23.3 elapsed=193.6s
+[v2 s1] reproduced mac=0.6694 (json 0.6694) stream_s=14.7 elapsed=208.3s
+[v2 s2] reproduced mac=0.6691 (json 0.6691) stream_s=15.9 elapsed=224.2s
+[adapt shuffled_s0] stream_s=15.4 elapsed=239.7s
+[adapt shuffled_s1] stream_s=15.3 elapsed=255.0s
+[adapt shuffled_s2] stream_s=15.5 elapsed=270.5s
+[adapt real] stream_s=16.8 elapsed=287.3s
+[result] strict__lr                         AUC=0.6323 mac=0.5959 mic=0.5965 | high=0.687 mid=0.633 low=0.519
+[result] session_norm__lr                   AUC=0.6411 mac=0.6059 mic=0.6085 | high=0.756 mid=0.648 low=0.511
+[result] strict__hgb                        AUC=0.6396 mac=0.6042 mic=0.6045 | high=0.717 mid=0.638 low=0.530
+[result] session_norm__hgb                  AUC=0.6744 mac=0.6346 mic=0.6365 | high=0.780 mid=0.685 low=0.527
+[result] window_kfold__lr                   AUC=0.6817 mac=0.6300 mic=0.6302 | high=0.685 mid=0.661 low=0.569
+[result] window_kfold__hgb                  AUC=0.7508 mac=0.6828 mic=0.6833 | high=0.772 mid=0.703 low=0.634
+[result] real_time__lr                      AUC=0.6323 mac=0.5959 mic=0.5965 | high=0.687 mid=0.633 low=0.519
+[result] real_time__hgb                     AUC=0.6396 mac=0.6042 mic=0.6045 | high=0.717 mid=0.638 low=0.530
+[result] strict__v2_s0                      AUC=0.7152 mac=0.6684 mic=0.6695 | high=0.855 mid=0.728 low=0.539
+[result] session_norm__v2_s0                AUC=0.7093 mac=0.6669 mic=0.6684 | high=0.853 mid=0.727 low=0.536
+[result] strict__v2_s1                      AUC=0.7179 mac=0.6694 mic=0.6709 | high=0.850 mid=0.724 low=0.549
+[result] session_norm__v2_s1                AUC=0.7131 mac=0.6693 mic=0.6709 | high=0.848 mid=0.725 low=0.548
+[result] strict__v2_s2                      AUC=0.7169 mac=0.6691 mic=0.6700 | high=0.858 mid=0.725 low=0.546
+[result] session_norm__v2_s2                AUC=0.7117 mac=0.6699 mic=0.6709 | high=0.857 mid=0.725 low=0.548
+[result] strict__adapt_lr_shuffled_s0       AUC=0.6627 mac=0.6268 mic=0.6282 | high=0.803 mid=0.675 low=0.518
+[result] strict__adaptnothr_lr_shuffled_s0  AUC=0.6598 mac=0.6203 mic=0.6213 | high=0.777 mid=0.669 low=0.515
+[result] strict__adapt_lr_shuffled_s1       AUC=0.6638 mac=0.6249 mic=0.6265 | high=0.808 mid=0.676 low=0.510
+[result] strict__adaptnothr_lr_shuffled_s1  AUC=0.6611 mac=0.6238 mic=0.6246 | high=0.778 mid=0.673 low=0.516
+[result] strict__adapt_lr_shuffled_s2       AUC=0.6654 mac=0.6325 mic=0.6332 | high=0.812 mid=0.682 low=0.522
+[result] strict__adaptnothr_lr_shuffled_s2  AUC=0.6632 mac=0.6279 mic=0.6279 | high=0.785 mid=0.676 low=0.522
+[result] real_time__adapt_lr_real           AUC=0.6717 mac=0.6244 mic=0.6268 | high=0.792 mid=0.664 low=0.532
+[result] real_time__adaptnothr_lr_real      AUC=0.6690 mac=0.6278 mic=0.6295 | high=0.784 mid=0.671 low=0.531
+[result] strict__lr_thr_shuffled_s0         AUC=0.6436 mac=0.6066 mic=0.6079 | high=0.740 mid=0.645 low=0.522
+[result] real_time__lr_thr_real             AUC=0.6495 mac=0.6086 mic=0.6107 | high=0.749 mid=0.645 low=0.526
+[boot] window_kfold__lr                 vs strict__lr                       dAUC=+0.0492[+0.0363,+0.0642] dmac=+0.0341[+0.0239,+0.0454]
+[boot] session_norm__lr                 vs strict__lr                       dAUC=+0.0086[-0.0141,+0.0324] dmac=+0.0098[-0.0071,+0.0273]
+[boot] window_kfold__hgb                vs strict__hgb                      dAUC=+0.1107[+0.0867,+0.1372] dmac=+0.0783[+0.0619,+0.0973]
+[boot] session_norm__hgb                vs strict__hgb                      dAUC=+0.0338[+0.0022,+0.0660] dmac=+0.0295[+0.0026,+0.0567]
+[boot] session_norm__v2_s0              vs strict__v2_s0                    dAUC=-0.0057[-0.0082,-0.0032] dmac=-0.0015[-0.0035,+0.0003]
+[boot] session_norm__v2_s1              vs strict__v2_s1                    dAUC=-0.0048[-0.0076,-0.0022] dmac=-0.0001[-0.0019,+0.0016]
+[boot] session_norm__v2_s2              vs strict__v2_s2                    dAUC=-0.0051[-0.0080,-0.0025] dmac=+0.0008[-0.0009,+0.0026]
+[boot] strict__v2_s0                    vs strict__lr                       dAUC=+0.0820[+0.0618,+0.1019] dmac=+0.0720[+0.0525,+0.0910]
+[boot] strict__v2_s1                    vs strict__lr                       dAUC=+0.0849[+0.0633,+0.1055] dmac=+0.0730[+0.0545,+0.0927]
+[boot] strict__v2_s2                    vs strict__lr                       dAUC=+0.0838[+0.0617,+0.1061] dmac=+0.0727[+0.0536,+0.0936]
+[boot] real_time__adapt_lr_real         vs strict__adapt_lr_shuffled_s0     dAUC=+0.0090[-0.0033,+0.0232] dmac=-0.0024[-0.0163,+0.0119]
+[boot] real_time__adapt_lr_real         vs strict__adapt_lr_shuffled_s1     dAUC=+0.0078[-0.0036,+0.0194] dmac=-0.0005[-0.0118,+0.0116]
+[boot] real_time__adapt_lr_real         vs strict__adapt_lr_shuffled_s2     dAUC=+0.0063[-0.0052,+0.0191] dmac=-0.0081[-0.0220,+0.0061]
+[boot] real_time__adaptnothr_lr_real    vs strict__adaptnothr_lr_shuffled_s0 dAUC=+0.0092[+0.0004,+0.0194] dmac=+0.0075[-0.0026,+0.0172]
+[boot] real_time__adaptnothr_lr_real    vs strict__adaptnothr_lr_shuffled_s1 dAUC=+0.0079[+0.0002,+0.0166] dmac=+0.0041[-0.0049,+0.0129]
+[boot] real_time__adaptnothr_lr_real    vs strict__adaptnothr_lr_shuffled_s2 dAUC=+0.0059[-0.0023,+0.0145] dmac=-0.0001[-0.0103,+0.0103]
+[boot] real_time__lr_thr_real           vs strict__lr_thr_shuffled_s0       dAUC=+0.0058[-0.0035,+0.0157] dmac=+0.0020[-0.0055,+0.0103]
+[boot] real_time__lr_thr_real           vs strict__lr                       dAUC=+0.0167[+0.0096,+0.0242] dmac=+0.0126[+0.0036,+0.0225]
+[done] elapsed=326.9s -> literature_protocol.json

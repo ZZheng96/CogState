@@ -1,0 +1,39 @@
+[check] fold == npz fold
+[check] real_time.npz y/groups == canonical order
+[start] rows=16067 subjects=57 eval_subjects=11 elapsed=0.7s
+[strict lr] fold 1/5 fold_s=10.3 elapsed=12.7s
+[session_norm lr] fold 1/5 fold_s=3.1 elapsed=15.8s
+[strict hgb] fold 1/5 fold_s=17.8 elapsed=33.6s
+[session_norm hgb] fold 1/5 fold_s=5.1 elapsed=38.7s
+[window_kfold lr] fold 1/5 fold_s=3.9 elapsed=42.6s
+[window_kfold hgb] fold 1/5 fold_s=5.9 elapsed=48.5s
+[v2 s0] reproduced mac=0.6153 (json 0.6153) stream_s=12.1 elapsed=61.7s
+[adapt shuffled_s0] stream_s=3.3 elapsed=65.0s
+[adapt real] stream_s=3.3 elapsed=68.3s
+[result] strict__lr                         AUC=0.5515 mac=0.5342 mic=0.5372 | mid=0.602 low=0.452
+[result] session_norm__lr                   AUC=0.5632 mac=0.5504 mic=0.5505 | mid=0.636 low=0.448
+[result] strict__hgb                        AUC=0.5737 mac=0.5513 mic=0.5515 | mid=0.634 low=0.452
+[result] session_norm__hgb                  AUC=0.6348 mac=0.6009 mic=0.6001 | mid=0.682 low=0.503
+[result] window_kfold__lr                   AUC=0.5949 mac=0.5681 mic=0.5614 | mid=0.618 low=0.508
+[result] window_kfold__hgb                  AUC=0.7112 mac=0.6609 mic=0.6541 | mid=0.675 low=0.644
+[result] real_time__lr                      AUC=0.5515 mac=0.5342 mic=0.5372 | mid=0.602 low=0.452
+[result] real_time__hgb                     AUC=0.5737 mac=0.5513 mic=0.5515 | mid=0.634 low=0.452
+[result] strict__v2_s0                      AUC=0.6618 mac=0.6153 mic=0.6181 | mid=0.725 low=0.484
+[result] session_norm__v2_s0                AUC=0.6505 mac=0.6135 mic=0.6165 | mid=0.727 low=0.477
+[result] strict__adapt_lr_shuffled_s0       AUC=0.5498 mac=0.5368 mic=0.5419 | mid=0.648 low=0.403
+[result] strict__adaptnothr_lr_shuffled_s0  AUC=0.5567 mac=0.5416 mic=0.5452 | mid=0.646 low=0.416
+[result] real_time__adapt_lr_real           AUC=0.5802 mac=0.5583 mic=0.5591 | mid=0.627 low=0.476
+[result] real_time__adaptnothr_lr_real      AUC=0.5772 mac=0.5561 mic=0.5588 | mid=0.631 low=0.467
+[result] strict__lr_thr_shuffled_s0         AUC=0.5484 mac=0.5287 mic=0.5332 | mid=0.618 low=0.422
+[result] real_time__lr_thr_real             AUC=0.5640 mac=0.5419 mic=0.5444 | mid=0.604 low=0.467
+[boot] window_kfold__lr                 vs strict__lr                       dAUC=+0.0671[+0.0478,+0.0895] dmac=+0.0446[+0.0275,+0.0591]
+[boot] session_norm__lr                 vs strict__lr                       dAUC=+0.0141[-0.0354,+0.0583] dmac=+0.0184[-0.0148,+0.0457]
+[boot] window_kfold__hgb                vs strict__hgb                      dAUC=+0.1508[+0.0991,+0.2171] dmac=+0.1279[+0.0673,+0.2076]
+[boot] session_norm__hgb                vs strict__hgb                      dAUC=+0.0593[+0.0293,+0.0920] dmac=+0.0483[+0.0192,+0.0764]
+[boot] session_norm__v2_s0              vs strict__v2_s0                    dAUC=-0.0110[-0.0187,-0.0019] dmac=-0.0019[-0.0061,+0.0027]
+[boot] strict__v2_s0                    vs strict__lr                       dAUC=+0.1126[+0.0610,+0.1694] dmac=+0.0850[+0.0467,+0.1414]
+[boot] real_time__adapt_lr_real         vs strict__adapt_lr_shuffled_s0     dAUC=+0.0267[-0.0199,+0.0697] dmac=+0.0185[-0.0236,+0.0661]
+[boot] real_time__adaptnothr_lr_real    vs strict__adaptnothr_lr_shuffled_s0 dAUC=+0.0193[-0.0077,+0.0460] dmac=+0.0132[-0.0119,+0.0384]
+[boot] real_time__lr_thr_real           vs strict__lr_thr_shuffled_s0       dAUC=+0.0132[-0.0124,+0.0380] dmac=+0.0113[-0.0146,+0.0380]
+[boot] real_time__lr_thr_real           vs strict__lr                       dAUC=+0.0106[-0.0083,+0.0289] dmac=+0.0079[-0.0061,+0.0187]
+[done] elapsed=69.9s -> literature_protocol_smoke.json

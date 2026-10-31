@@ -1,0 +1,12 @@
+[check] fold == npz fold
+[obs] reproduces anchor json: all=0.6082 high=0.6974 mid=0.6616 low=0.5039 elapsed=6.0s
+[perm 20/20] perm_s=10.1 elapsed=16.1s
+[label_perm all] obs=0.6082 null=0.5542 95%=[0.5433,0.5682] p_low=1.0000 p_high=0.0476
+[label_perm high] obs=0.6974 null=0.5530 95%=[0.4361,0.6379] p_low=1.0000 p_high=0.0476 subj p_low<.05=0 p_high<.05=1
+[label_perm mid] obs=0.6616 null=0.5540 95%=[0.5368,0.5786] p_low=1.0000 p_high=0.0476 subj p_low<.05=1 p_high<.05=12
+[label_perm low] obs=0.5039 null=0.5548 95%=[0.5345,0.5861] p_low=0.0476 p_high=1.0000 subj p_low<.05=4 p_high<.05=0
+[random_subset high n=3] obs=0.6974 subset mean=0.6098 95%=[0.5146,0.7160] p_low=0.9048
+[random_subset mid n=34] obs=0.6616 subset mean=0.6090 95%=[0.5795,0.6285] p_low=1.0000
+[random_subset low n=20] obs=0.5039 subset mean=0.6092 95%=[0.5666,0.6522] p_low=0.0476
+[split_half] obs=0.5794 null=0.5050 95%=[0.4879,0.5220] p_high=0.0476
+[done] elapsed=16.1s -> sign_null_smoke.json

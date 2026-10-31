@@ -1,0 +1,21 @@
+[check] fold == npz fold
+[obs] reproduces anchor json: all=0.6082 high=0.6974 mid=0.6616 low=0.5039 elapsed=1.7s
+[perm 20/200] perm_s=3.6 elapsed=5.4s
+[perm 40/200] perm_s=6.5 elapsed=8.3s
+[perm 60/200] perm_s=9.6 elapsed=11.3s
+[perm 80/200] perm_s=11.7 elapsed=13.5s
+[perm 100/200] perm_s=13.8 elapsed=15.6s
+[perm 120/200] perm_s=16.7 elapsed=18.5s
+[perm 140/200] perm_s=20.0 elapsed=21.7s
+[perm 160/200] perm_s=24.8 elapsed=26.5s
+[perm 180/200] perm_s=30.1 elapsed=31.8s
+[perm 200/200] perm_s=33.6 elapsed=35.3s
+[label_perm all] obs=0.6082 null=0.5535 95%=[0.5415,0.5718] p_low=1.0000 p_high=0.0050
+[label_perm high] obs=0.6974 null=0.5534 95%=[0.4679,0.6513] p_low=1.0000 p_high=0.0050 subj p_low<.05=0 p_high<.05=2
+[label_perm mid] obs=0.6616 null=0.5528 95%=[0.5328,0.5785] p_low=1.0000 p_high=0.0050 subj p_low<.05=1 p_high<.05=12
+[label_perm low] obs=0.5039 null=0.5546 95%=[0.5220,0.5892] p_low=0.0050 p_high=1.0000 subj p_low<.05=5 p_high<.05=2
+[random_subset high n=3] obs=0.6974 subset mean=0.6122 95%=[0.4618,0.7525] p_low=0.8159
+[random_subset mid n=34] obs=0.6616 subset mean=0.6097 95%=[0.5784,0.6368] p_low=1.0000
+[random_subset low n=20] obs=0.5039 subset mean=0.6104 95%=[0.5557,0.6552] p_low=0.0050
+[split_half] obs=0.5772 null=0.5016 95%=[0.4655,0.5349] p_high=0.0050
+[done] elapsed=35.4s -> sign_null.json
