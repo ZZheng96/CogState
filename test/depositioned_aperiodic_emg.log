@@ -1,0 +1,254 @@
+[start] rows=16067 subjects=57 smoke=False sseeds=(0, 1, 2) groups={'high': 3, 'mid': 34, 'low': 20}
+[data-check] sub-001    2-12:-10.92 12-30:-11.85 30-40:-11.92 40-45:-12.04 45-48:-12.13 49.5-50.5:-12.03 52-55:-12.21 55-65:-12.35 65-80:-12.64 80-95:-13.01 99.5-100.5:-13.35 105-115:-13.61 115-125.1:-13.80 | line50=+1.5dB line100=-0.4dB HF55-95/30-40=-0.71 115-125/30-40=-1.88
+[data-check] sub-009    2-12:-9.64 12-30:-11.66 30-40:-12.01 40-45:-12.07 45-48:-12.16 49.5-50.5:-10.36 52-55:-12.21 55-65:-12.31 65-80:-12.50 80-95:-12.75 99.5-100.5:-12.46 105-115:-13.21 115-125.1:-13.34 | line50=+18.3dB line100=+5.3dB HF55-95/30-40=-0.50 115-125/30-40=-1.33
+[data-check] sub-017    2-12:-10.03 12-30:-11.68 30-40:-11.87 40-45:-12.07 45-48:-12.13 49.5-50.5:-11.02 52-55:-12.24 55-65:-12.37 65-80:-12.65 80-95:-13.00 99.5-100.5:-12.76 105-115:-13.57 115-125.1:-13.75 | line50=+11.8dB line100=+5.7dB HF55-95/30-40=-0.77 115-125/30-40=-1.88
+[data-check] sub-025    2-12:-10.37 12-30:-12.00 30-40:-12.14 40-45:-12.19 45-48:-12.17 49.5-50.5:-10.50 52-55:-12.29 55-65:-12.32 65-80:-12.50 80-95:-12.77 99.5-100.5:-12.69 105-115:-13.20 115-125.1:-13.34 | line50=+17.3dB line100=+3.3dB HF55-95/30-40=-0.38 115-125/30-40=-1.21
+[data-check] sub-035    2-12:-10.80 12-30:-11.96 30-40:-11.95 40-45:-12.14 45-48:-12.17 49.5-50.5:-11.14 52-55:-12.16 55-65:-12.26 65-80:-12.49 80-95:-12.82 99.5-100.5:-12.97 105-115:-13.34 115-125.1:-13.52 | line50=+10.2dB line100=+1.3dB HF55-95/30-40=-0.55 115-125/30-40=-1.57
+[data-check] sub-043    2-12:-10.98 12-30:-11.95 30-40:-11.99 40-45:-12.07 45-48:-12.10 49.5-50.5:-11.88 52-55:-12.18 55-65:-12.26 65-80:-12.48 80-95:-12.75 99.5-100.5:-13.02 105-115:-13.22 115-125.1:-13.36 | line50=+2.6dB line100=-0.3dB HF55-95/30-40=-0.49 115-125/30-40=-1.37
+[data-check] sub-051    2-12:-10.89 12-30:-11.75 30-40:-11.84 40-45:-11.90 45-48:-11.94 49.5-50.5:-10.60 52-55:-11.97 55-65:-12.05 65-80:-12.21 80-95:-12.44 99.5-100.5:-12.61 105-115:-12.81 115-125.1:-12.94 | line50=+13.5dB line100=+0.6dB HF55-95/30-40=-0.39 115-125/30-40=-1.09
+[data-check] sub-059    2-12:-10.59 12-30:-12.19 30-40:-12.43 40-45:-12.50 45-48:-12.54 49.5-50.5:-11.90 52-55:-12.61 55-65:-12.70 65-80:-12.87 80-95:-13.12 99.5-100.5:-13.33 105-115:-13.57 115-125.1:-13.72 | line50=+6.7dB line100=+0.4dB HF55-95/30-40=-0.46 115-125/30-40=-1.29
+[data-check] global2000 2-12:-10.79 12-30:-11.84 30-40:-11.97 40-45:-12.05 45-48:-12.09 49.5-50.5:-10.70 52-55:-12.19 55-65:-12.30 65-80:-12.53 80-95:-12.85 99.5-100.5:-12.74 105-115:-13.37 115-125.1:-13.53 | line50=+14.2dB line100=+3.7dB HF55-95/30-40=-0.57 115-125/30-40=-1.56
+[data-check] shape=(16067, 1500) dtype=float32 (expect 1500=6s@250Hz) lowpassed=False line50_global=+14.2dB -> HF band [55.0, 95.0] (avoid 50/100 Hz, < fs/2=125)
+[feat all 1/63] chunk_s=4.6 elapsed=6.1s
+[feat all 9/63] chunk_s=46.6 elapsed=48.1s
+[feat all 17/63] chunk_s=46.6 elapsed=48.1s
+[feat all 25/63] chunk_s=46.6 elapsed=48.1s
+[feat all 33/63] chunk_s=46.6 elapsed=48.1s
+[feat all 41/63] chunk_s=46.6 elapsed=48.1s
+[feat all 49/63] chunk_s=46.6 elapsed=48.1s
+[feat all 57/63] chunk_s=46.6 elapsed=48.1s
+[feat all 63/63] chunk_s=46.6 elapsed=48.1s
+[feat] dim=31 nan_frac max=0.0051 (ap_r2) knee_fail_frac=0.0051 ap_exponent median=1.079 ap_r2 median=0.604 elapsed=48.1s
+[check] fold == depositioned_feature_multiscale_oof.npz fold
+[diag] within-subject LR + Cohen d on 31 new features elapsed=48.2s
+[diag] high n= 3 within-subj AUC median=0.8833 d-consistency median=+0.744 frac>0=0.67
+[diag] mid  n=34 within-subj AUC median=0.8045 d-consistency median=+0.477 frac>0=0.82
+[diag] low  n=20 within-subj AUC median=0.7645 d-consistency median=-0.032 frac>0=0.50
+[diag] all  n=57 within-subj AUC median=0.7954 d-consistency median=+0.205 frac>0=0.70
+[diag d] ap_offset        high=+0.407 mid=+0.369 low=+0.042 all=+0.256
+[diag d] ap_exponent      high=-0.067 mid=+0.215 low=+0.089 all=+0.156
+[diag d] ap_r2            high=-0.025 mid=+0.158 low=+0.148 all=+0.145
+[diag d] ap_rmse          high=+0.379 mid=+0.066 low=-0.189 all=-0.007
+[diag d] kn_offset        high=+0.448 mid=+0.225 low=-0.056 all=+0.138
+[diag d] kn_logknee       high=-0.150 mid=-0.206 low=-0.066 all=-0.154
+[diag d] kn_exponent      high=+0.069 mid=+0.240 low=+0.067 all=+0.170
+[diag d] kn_r2            high=+0.063 mid=+0.237 low=+0.175 all=+0.206
+[diag d] kn_rmse          high=+0.322 mid=+0.014 low=-0.226 all=-0.054
+[diag d] kn_fail          high=+nan mid=-0.071 low=+0.070 all=-0.001
+[diag d] res_theta_max    high=+0.496 mid=+0.192 low=-0.017 all=+0.135
+[diag d] res_theta_pkf    high=-0.064 mid=+0.013 low=+0.063 all=+0.027
+[diag d] res_theta_mean   high=+0.647 mid=+0.266 low=+0.009 all=+0.196
+[diag d] res_alpha_max    high=-0.291 mid=-0.003 low=+0.023 all=-0.009
+[diag d] res_alpha_pkf    high=-0.075 mid=-0.041 low=+0.010 all=-0.025
+[diag d] res_alpha_mean   high=-0.432 mid=-0.069 low=+0.082 all=-0.035
+[diag d] res_beta1_max    high=-0.109 mid=-0.134 low=-0.019 all=-0.093
+[diag d] res_beta1_pkf    high=-0.081 mid=+0.002 low=+0.001 all=-0.003
+[diag d] res_beta1_mean   high=-0.085 mid=-0.115 low=+0.063 all=-0.051
+[diag d] res_beta2_max    high=-0.405 mid=-0.251 low=-0.233 all=-0.253
+[diag d] res_beta2_pkf    high=-0.034 mid=-0.022 low=-0.051 all=-0.033
+[diag d] res_beta2_mean   high=-0.535 mid=-0.253 low=-0.202 all=-0.250
+[diag d] res_gamlow_max   high=+0.202 mid=+0.006 low=-0.138 all=-0.034
+[diag d] res_gamlow_pkf   high=+0.203 mid=+0.161 low=+0.041 all=+0.121
+[diag d] res_gamlow_mean  high=+0.504 mid=+0.146 low=-0.028 all=+0.104
+[diag d] hf_logpow        high=+1.066 mid=+0.414 low=-0.161 all=+0.247
+[diag d] hf_rel           high=+0.109 mid=-0.245 low=-0.073 all=-0.166
+[diag d] hf_slope         high=+0.047 mid=-0.254 low=-0.102 all=-0.185
+[diag d] hf_lf            high=-0.022 mid=-0.320 low=-0.071 all=-0.217
+[diag d] hf_logrms        high=+1.088 mid=+0.340 low=-0.118 all=+0.219
+[diag d] hf_kurt          high=+0.589 mid=+0.164 low=-0.010 all=+0.125
+[s0 fold 1/5] hgb_prank reproduced (maxabs 0.0e+00) fit_s=24.0 elapsed=75.6s
+[s0 fold 1/5] new_lr     dim=31 fit_s=0.1 checks ok (shuffle/prefix/isolation) elapsed=109.1s
+[s0 fold 1/5] new_hgb    dim=31 fit_s=0.2 checks ok (shuffle/prefix/isolation) elapsed=109.5s
+[s0 fold 1/5] new_prank  dim=93 fit_s=0.7 checks ok (shuffle/prefix/isolation) elapsed=110.7s
+[s0 fold 1/5] all_prank  dim=2667 fit_s=25.0 checks ok (shuffle/prefix/isolation) elapsed=148.4s
+[s0 fold 2/5] hgb_prank reproduced (maxabs 0.0e+00) fit_s=23.7 elapsed=172.8s
+[s0 fold 2/5] new_lr     dim=31 fit_s=0.0 checks ok (shuffle/prefix/isolation) elapsed=189.4s
+[s0 fold 2/5] new_hgb    dim=31 fit_s=0.2 checks ok (shuffle/prefix/isolation) elapsed=189.9s
+[s0 fold 2/5] new_prank  dim=93 fit_s=0.7 checks ok (shuffle/prefix/isolation) elapsed=191.1s
+[s0 fold 2/5] all_prank  dim=2667 fit_s=24.5 checks ok (shuffle/prefix/isolation) elapsed=216.8s
+[s0 fold 3/5] hgb_prank reproduced (maxabs 0.0e+00) fit_s=23.8 elapsed=241.4s
+[s0 fold 3/5] new_lr     dim=31 fit_s=0.0 checks ok (shuffle/prefix/isolation) elapsed=248.7s
+[s0 fold 3/5] new_hgb    dim=31 fit_s=0.3 checks ok (shuffle/prefix/isolation) elapsed=249.2s
+[s0 fold 3/5] new_prank  dim=93 fit_s=0.7 checks ok (shuffle/prefix/isolation) elapsed=250.4s
+[s0 fold 3/5] all_prank  dim=2667 fit_s=24.8 checks ok (shuffle/prefix/isolation) elapsed=276.5s
+[s0 fold 4/5] hgb_prank reproduced (maxabs 0.0e+00) fit_s=23.7 elapsed=300.9s
+[s0 fold 4/5] new_lr     dim=31 fit_s=0.0 checks ok (shuffle/prefix/isolation) elapsed=356.0s
+[s0 fold 4/5] new_hgb    dim=31 fit_s=0.3 checks ok (shuffle/prefix/isolation) elapsed=356.5s
+[s0 fold 4/5] new_prank  dim=93 fit_s=0.7 checks ok (shuffle/prefix/isolation) elapsed=357.6s
+[s0 fold 4/5] all_prank  dim=2667 fit_s=24.6 checks ok (shuffle/prefix/isolation) elapsed=383.6s
+[s0 fold 5/5] hgb_prank reproduced (maxabs 0.0e+00) fit_s=24.0 elapsed=408.3s
+[s0 fold 5/5] new_lr     dim=31 fit_s=0.1 checks ok (shuffle/prefix/isolation) elapsed=414.5s
+[s0 fold 5/5] new_hgb    dim=31 fit_s=0.3 checks ok (shuffle/prefix/isolation) elapsed=415.0s
+[s0 fold 5/5] new_prank  dim=93 fit_s=0.7 checks ok (shuffle/prefix/isolation) elapsed=416.2s
+[s0 fold 5/5] all_prank  dim=2667 fit_s=25.0 checks ok (shuffle/prefix/isolation) elapsed=442.5s
+[result stream 0] position_only__lr      all: AUC=0.4935 mac=0.4985 mic=0.4982 | mature: AUC=0.4925 mac=0.5004 mic=0.4966 | subj>=.9=0 max=0.543
+[result stream 0] position_only__hgb     all: AUC=0.4959 mac=0.4992 mic=0.4991 | mature: AUC=0.4971 mac=0.4988 mic=0.4985 | subj>=.9=0 max=0.578
+[result stream 0] hgb_prank              all: AUC=0.6608 mac=0.6150 mic=0.6167 | mature: AUC=0.6607 mac=0.6172 mic=0.6180 | subj>=.9=0 max=0.858
+[result stream 0] new_lr                 all: AUC=0.6139 mac=0.5836 mic=0.5843 | mature: AUC=0.6092 mac=0.5776 mic=0.5777 | subj>=.9=0 max=0.783
+[result stream 0] new_hgb                all: AUC=0.6350 mac=0.5976 mic=0.5973 | mature: AUC=0.6297 mac=0.5925 mic=0.5946 | subj>=.9=0 max=0.763
+[result stream 0] new_prank              all: AUC=0.6398 mac=0.6036 mic=0.6048 | mature: AUC=0.6379 mac=0.6042 mic=0.6073 | subj>=.9=0 max=0.774
+[result stream 0] all_prank              all: AUC=0.6755 mac=0.6257 mic=0.6267 | mature: AUC=0.6757 mac=0.6268 mic=0.6273 | subj>=.9=0 max=0.855
+[result stream 0] fusionM_prank          all: AUC=0.7043 mac=0.6463 mic=0.6470 | mature: AUC=0.7057 mac=0.6458 mic=0.6461 | subj>=.9=0 max=0.867
+[result stream 0] fuse_newprank          all: AUC=0.6885 mac=0.6398 mic=0.6412 | mature: AUC=0.6881 mac=0.6410 mic=0.6428 | subj>=.9=0 max=0.817
+[result stream 0] fuse_allprank_resnet   all: AUC=0.7116 mac=0.6539 mic=0.6543 | mature: AUC=0.7128 mac=0.6559 mic=0.6563 | subj>=.9=0 max=0.842
+[result stream 0] fuse3                  all: AUC=0.6876 mac=0.6356 mic=0.6357 | mature: AUC=0.6843 mac=0.6309 mic=0.6322 | subj>=.9=0 max=0.828
+[group stream 0] position_only__lr      high(n=3): med=0.5000 mean=0.5000 dmed=-0.3194 dmean=-0.3276 | mid(n=34): med=0.5000 mean=0.4988 dmed=-0.2025 dmean=-0.1996 | low(n=20): med=0.5000 mean=0.4978 dmed=-0.0267 dmean=-0.0327
+[group stream 0] position_only__hgb     high(n=3): med=0.5287 mean=0.5333 dmed=-0.2907 dmean=-0.2943 | mid(n=34): med=0.4973 mean=0.4988 dmed=-0.2053 dmean=-0.1996 | low(n=20): med=0.4880 mean=0.4947 dmed=-0.0387 dmean=-0.0358
+[group stream 0] hgb_prank              high(n=3): med=0.7889 mean=0.8021 dmed=-0.0305 dmean=-0.0255 | mid(n=34): med=0.6773 mean=0.6701 dmed=-0.0252 dmean=-0.0283 | low(n=20): med=0.4798 mean=0.4932 dmed=-0.0469 dmean=-0.0373
+[group stream 0] new_lr                 high(n=3): med=0.7363 mean=0.6857 dmed=-0.0832 dmean=-0.1419 | mid(n=34): med=0.6222 mean=0.6164 dmed=-0.0803 dmean=-0.0821 | low(n=20): med=0.4972 mean=0.5126 dmed=-0.0295 dmean=-0.0179
+[group stream 0] new_hgb                high(n=3): med=0.6253 mean=0.6666 dmed=-0.1941 dmean=-0.1610 | mid(n=34): med=0.6559 mean=0.6407 dmed=-0.0466 dmean=-0.0577 | low(n=20): med=0.4890 mean=0.5138 dmed=-0.0378 dmean=-0.0167
+[group stream 0] new_prank              high(n=3): med=0.7407 mean=0.7280 dmed=-0.0788 dmean=-0.0996 | mid(n=34): med=0.6593 mean=0.6557 dmed=-0.0433 dmean=-0.0427 | low(n=20): med=0.4897 mean=0.4965 dmed=-0.0370 dmean=-0.0340
+[group stream 0] all_prank              high(n=3): med=0.7853 mean=0.7813 dmed=-0.0341 dmean=-0.0463 | mid(n=34): med=0.6887 mean=0.6763 dmed=-0.0138 dmean=-0.0221 | low(n=20): med=0.5086 mean=0.5163 dmed=-0.0181 dmean=-0.0142
+[group stream 0] fusionM_prank          high(n=3): med=0.8194 mean=0.8276 dmed=+0.0000 dmean=+0.0000 | mid(n=34): med=0.7025 mean=0.6984 dmed=+0.0000 dmean=+0.0000 | low(n=20): med=0.5267 mean=0.5305 dmed=+0.0000 dmean=+0.0000
+[group stream 0] fuse_newprank          high(n=3): med=0.8029 mean=0.7961 dmed=-0.0166 dmean=-0.0315 | mid(n=34): med=0.7082 mean=0.6973 dmed=+0.0057 dmean=-0.0011 | low(n=20): med=0.5080 mean=0.5186 dmed=-0.0187 dmean=-0.0119
+[group stream 0] fuse_allprank_resnet   high(n=3): med=0.8236 mean=0.8272 dmed=+0.0041 dmean=-0.0004 | mid(n=34): med=0.7089 mean=0.7018 dmed=+0.0064 dmean=+0.0034 | low(n=20): med=0.5386 mean=0.5465 dmed=+0.0119 dmean=+0.0160
+[group stream 0] fuse3                  high(n=3): med=0.7480 mean=0.7653 dmed=-0.0714 dmean=-0.0623 | mid(n=34): med=0.7044 mean=0.6910 dmed=+0.0019 dmean=-0.0074 | low(n=20): med=0.4940 mean=0.5220 dmed=-0.0327 dmean=-0.0085
+[sanity stream 0] position_only__lr AUC=0.4935 -> OK
+[sanity stream 0] position_only__hgb AUC=0.4959 -> OK
+[boot stream 0] new_lr               vs fusionM_prank all    dAUC=-0.0906[-0.1140,-0.0682] dmac=-0.0628[-0.0822,-0.0444] dmic=-0.0628[-0.0819,-0.0446]
+[boot stream 0] new_lr               vs fusionM_prank mature dAUC=-0.0967[-0.1210,-0.0735] dmac=-0.0685[-0.0894,-0.0492] dmic=-0.0687[-0.0899,-0.0496]
+[boot stream 0] new_hgb              vs fusionM_prank all    dAUC=-0.0687[-0.0888,-0.0490] dmac=-0.0484[-0.0670,-0.0304] dmic=-0.0493[-0.0678,-0.0310]
+[boot stream 0] new_hgb              vs fusionM_prank mature dAUC=-0.0753[-0.0955,-0.0557] dmac=-0.0529[-0.0721,-0.0330] dmic=-0.0511[-0.0704,-0.0313]
+[boot stream 0] new_prank            vs fusionM_prank all    dAUC=-0.0644[-0.0812,-0.0456] dmac=-0.0426[-0.0573,-0.0262] dmic=-0.0421[-0.0567,-0.0258]
+[boot stream 0] new_prank            vs fusionM_prank mature dAUC=-0.0677[-0.0846,-0.0493] dmac=-0.0414[-0.0584,-0.0236] dmic=-0.0388[-0.0549,-0.0212]
+[boot stream 0] all_prank            vs fusionM_prank all    dAUC=-0.0289[-0.0423,-0.0157] dmac=-0.0208[-0.0333,-0.0081] dmic=-0.0205[-0.0331,-0.0080]
+[boot stream 0] all_prank            vs fusionM_prank mature dAUC=-0.0301[-0.0430,-0.0167] dmac=-0.0190[-0.0316,-0.0056] dmic=-0.0189[-0.0310,-0.0057]
+[boot stream 0] fuse_newprank        vs fusionM_prank all    dAUC=-0.0158[-0.0258,-0.0054] dmac=-0.0065[-0.0178,+0.0050] dmic=-0.0058[-0.0169,+0.0051]
+[boot stream 0] fuse_newprank        vs fusionM_prank mature dAUC=-0.0176[-0.0279,-0.0074] dmac=-0.0047[-0.0172,+0.0078] dmic=-0.0032[-0.0154,+0.0091]
+[boot stream 0] fuse_allprank_resnet vs fusionM_prank all    dAUC=+0.0072[+0.0027,+0.0118] dmac=+0.0076[+0.0020,+0.0137] dmic=+0.0073[+0.0016,+0.0134]
+[boot stream 0] fuse_allprank_resnet vs fusionM_prank mature dAUC=+0.0071[+0.0020,+0.0121] dmac=+0.0102[+0.0031,+0.0178] dmic=+0.0103[+0.0033,+0.0181]
+[boot stream 0] fuse3                vs fusionM_prank all    dAUC=-0.0163[-0.0294,-0.0042] dmac=-0.0104[-0.0231,+0.0016] dmic=-0.0110[-0.0235,+0.0012]
+[boot stream 0] fuse3                vs fusionM_prank mature dAUC=-0.0210[-0.0335,-0.0088] dmac=-0.0145[-0.0271,-0.0005] dmic=-0.0136[-0.0265,-0.0000]
+[boot stream 0] all_prank            vs hgb_prank     all    dAUC=+0.0147[+0.0077,+0.0220] dmac=+0.0107[+0.0030,+0.0186] dmic=+0.0100[+0.0023,+0.0180]
+[boot stream 0] all_prank            vs hgb_prank     mature dAUC=+0.0150[+0.0072,+0.0228] dmac=+0.0097[+0.0007,+0.0189] dmic=+0.0095[+0.0005,+0.0185]
+[s1 fold 1/5] hgb_prank reproduced (maxabs 0.0e+00) fit_s=24.2 elapsed=484.5s
+[s1 fold 1/5] new_lr     dim=31 fit_s=0.0 checks ok (shuffle/prefix/isolation) elapsed=518.0s
+[s1 fold 1/5] new_hgb    dim=31 fit_s=0.2 checks ok (shuffle/prefix/isolation) elapsed=518.5s
+[s1 fold 1/5] new_prank  dim=93 fit_s=0.7 checks ok (shuffle/prefix/isolation) elapsed=519.7s
+[s1 fold 1/5] all_prank  dim=2667 fit_s=25.0 checks ok (shuffle/prefix/isolation) elapsed=557.4s
+[s1 fold 2/5] hgb_prank reproduced (maxabs 0.0e+00) fit_s=23.9 elapsed=582.1s
+[s1 fold 2/5] new_lr     dim=31 fit_s=0.0 checks ok (shuffle/prefix/isolation) elapsed=599.2s
+[s1 fold 2/5] new_hgb    dim=31 fit_s=0.3 checks ok (shuffle/prefix/isolation) elapsed=599.7s
+[s1 fold 2/5] new_prank  dim=93 fit_s=0.7 checks ok (shuffle/prefix/isolation) elapsed=600.9s
+[s1 fold 2/5] all_prank  dim=2667 fit_s=24.9 checks ok (shuffle/prefix/isolation) elapsed=627.0s
+[s1 fold 3/5] hgb_prank reproduced (maxabs 0.0e+00) fit_s=24.4 elapsed=652.2s
+[s1 fold 3/5] new_lr     dim=31 fit_s=0.1 checks ok (shuffle/prefix/isolation) elapsed=659.7s
+[s1 fold 3/5] new_hgb    dim=31 fit_s=0.2 checks ok (shuffle/prefix/isolation) elapsed=660.2s
+[s1 fold 3/5] new_prank  dim=93 fit_s=0.7 checks ok (shuffle/prefix/isolation) elapsed=661.4s
+[s1 fold 3/5] all_prank  dim=2667 fit_s=24.7 checks ok (shuffle/prefix/isolation) elapsed=687.5s
+[s1 fold 4/5] hgb_prank reproduced (maxabs 0.0e+00) fit_s=23.0 elapsed=711.2s
+[s1 fold 4/5] new_lr     dim=31 fit_s=0.0 checks ok (shuffle/prefix/isolation) elapsed=761.0s
+[s1 fold 4/5] new_hgb    dim=31 fit_s=0.3 checks ok (shuffle/prefix/isolation) elapsed=761.5s
+[s1 fold 4/5] new_prank  dim=93 fit_s=0.7 checks ok (shuffle/prefix/isolation) elapsed=762.8s
+[s1 fold 4/5] all_prank  dim=2667 fit_s=25.0 checks ok (shuffle/prefix/isolation) elapsed=789.1s
+[s1 fold 5/5] hgb_prank reproduced (maxabs 0.0e+00) fit_s=24.0 elapsed=813.9s
+[s1 fold 5/5] new_lr     dim=31 fit_s=0.1 checks ok (shuffle/prefix/isolation) elapsed=820.0s
+[s1 fold 5/5] new_hgb    dim=31 fit_s=0.3 checks ok (shuffle/prefix/isolation) elapsed=820.6s
+[s1 fold 5/5] new_prank  dim=93 fit_s=0.7 checks ok (shuffle/prefix/isolation) elapsed=821.7s
+[s1 fold 5/5] all_prank  dim=2667 fit_s=24.8 checks ok (shuffle/prefix/isolation) elapsed=847.9s
+[result stream 1] position_only__lr      all: AUC=0.4971 mac=0.5002 mic=0.4987 | mature: AUC=0.4940 mac=0.4977 mic=0.4978 | subj>=.9=0 max=0.548
+[result stream 1] position_only__hgb     all: AUC=0.4983 mac=0.5024 mic=0.5027 | mature: AUC=0.5015 mac=0.5090 mic=0.5094 | subj>=.9=0 max=0.543
+[result stream 1] hgb_prank              all: AUC=0.6667 mac=0.6171 mic=0.6190 | mature: AUC=0.6734 mac=0.6237 mic=0.6243 | subj>=.9=0 max=0.858
+[result stream 1] new_lr                 all: AUC=0.6139 mac=0.5836 mic=0.5843 | mature: AUC=0.6134 mac=0.5848 mic=0.5853 | subj>=.9=0 max=0.783
+[result stream 1] new_hgb                all: AUC=0.6350 mac=0.5976 mic=0.5973 | mature: AUC=0.6361 mac=0.5952 mic=0.5967 | subj>=.9=0 max=0.763
+[result stream 1] new_prank              all: AUC=0.6473 mac=0.6089 mic=0.6100 | mature: AUC=0.6502 mac=0.6143 mic=0.6147 | subj>=.9=0 max=0.784
+[result stream 1] all_prank              all: AUC=0.6803 mac=0.6328 mic=0.6346 | mature: AUC=0.6876 mac=0.6369 mic=0.6380 | subj>=.9=0 max=0.858
+[result stream 1] fusionM_prank          all: AUC=0.6990 mac=0.6415 mic=0.6438 | mature: AUC=0.7051 mac=0.6475 mic=0.6481 | subj>=.9=0 max=0.870
+[result stream 1] fuse_newprank          all: AUC=0.6919 mac=0.6394 mic=0.6412 | mature: AUC=0.6957 mac=0.6444 mic=0.6454 | subj>=.9=0 max=0.817
+[result stream 1] fuse_allprank_resnet   all: AUC=0.7056 mac=0.6474 mic=0.6495 | mature: AUC=0.7116 mac=0.6520 mic=0.6529 | subj>=.9=0 max=0.855
+[result stream 1] fuse3                  all: AUC=0.6872 mac=0.6371 mic=0.6374 | mature: AUC=0.6897 mac=0.6351 mic=0.6355 | subj>=.9=0 max=0.810
+[group stream 1] position_only__lr      high(n=3): med=0.4952 mean=0.4994 dmed=-0.3179 dmean=-0.3315 | mid(n=34): med=0.5000 mean=0.4999 dmed=-0.1886 dmean=-0.1915 | low(n=20): med=0.5000 mean=0.5009 dmed=-0.0336 dmean=-0.0274
+[group stream 1] position_only__hgb     high(n=3): med=0.4899 mean=0.4890 dmed=-0.3232 dmean=-0.3419 | mid(n=34): med=0.5004 mean=0.5015 dmed=-0.1883 dmean=-0.1899 | low(n=20): med=0.5121 mean=0.5059 dmed=-0.0215 dmean=-0.0224
+[group stream 1] hgb_prank              high(n=3): med=0.7793 mean=0.7865 dmed=-0.0338 dmean=-0.0444 | mid(n=34): med=0.6622 mean=0.6676 dmed=-0.0265 dmean=-0.0238 | low(n=20): med=0.4861 mean=0.5056 dmed=-0.0475 dmean=-0.0227
+[group stream 1] new_lr                 high(n=3): med=0.7363 mean=0.6857 dmed=-0.0768 dmean=-0.1453 | mid(n=34): med=0.6222 mean=0.6164 dmed=-0.0664 dmean=-0.0751 | low(n=20): med=0.4972 mean=0.5126 dmed=-0.0364 dmean=-0.0157
+[group stream 1] new_hgb                high(n=3): med=0.6253 mean=0.6666 dmed=-0.1878 dmean=-0.1643 | mid(n=34): med=0.6559 mean=0.6407 dmed=-0.0327 dmean=-0.0507 | low(n=20): med=0.4890 mean=0.5138 dmed=-0.0446 dmean=-0.0146
+[group stream 1] new_prank              high(n=3): med=0.7404 mean=0.7299 dmed=-0.0727 dmean=-0.1011 | mid(n=34): med=0.6720 mean=0.6579 dmed=-0.0166 dmean=-0.0335 | low(n=20): med=0.4990 mean=0.5073 dmed=-0.0346 dmean=-0.0211
+[group stream 1] all_prank              high(n=3): med=0.7689 mean=0.7746 dmed=-0.0442 dmean=-0.0563 | mid(n=34): med=0.6787 mean=0.6796 dmed=-0.0099 dmean=-0.0118 | low(n=20): med=0.5097 mean=0.5320 dmed=-0.0239 dmean=+0.0036
+[group stream 1] fusionM_prank          high(n=3): med=0.8131 mean=0.8309 dmed=+0.0000 dmean=+0.0000 | mid(n=34): med=0.6886 mean=0.6914 dmed=+0.0000 dmean=+0.0000 | low(n=20): med=0.5336 mean=0.5283 dmed=+0.0000 dmean=+0.0000
+[group stream 1] fuse_newprank          high(n=3): med=0.8132 mean=0.8021 dmed=+0.0001 dmean=-0.0289 | mid(n=34): med=0.6979 mean=0.6955 dmed=+0.0093 dmean=+0.0041 | low(n=20): med=0.5110 mean=0.5196 dmed=-0.0226 dmean=-0.0087
+[group stream 1] fuse_allprank_resnet   high(n=3): med=0.8128 mean=0.8247 dmed=-0.0003 dmean=-0.0062 | mid(n=34): med=0.6892 mean=0.6962 dmed=+0.0005 dmean=+0.0048 | low(n=20): med=0.5430 mean=0.5377 dmed=+0.0094 dmean=+0.0094
+[group stream 1] fuse3                  high(n=3): med=0.7324 mean=0.7566 dmed=-0.0807 dmean=-0.0743 | mid(n=34): med=0.7084 mean=0.6941 dmed=+0.0198 dmean=+0.0027 | low(n=20): med=0.5129 mean=0.5222 dmed=-0.0207 dmean=-0.0062
+[sanity stream 1] position_only__lr AUC=0.4971 -> OK
+[sanity stream 1] position_only__hgb AUC=0.4983 -> OK
+[boot stream 1] new_lr               vs fusionM_prank all    dAUC=-0.0853[-0.1143,-0.0573] dmac=-0.0580[-0.0805,-0.0357] dmic=-0.0595[-0.0819,-0.0369]
+[boot stream 1] new_lr               vs fusionM_prank mature dAUC=-0.0919[-0.1193,-0.0636] dmac=-0.0629[-0.0856,-0.0397] dmic=-0.0630[-0.0851,-0.0401]
+[boot stream 1] new_hgb              vs fusionM_prank all    dAUC=-0.0634[-0.0885,-0.0391] dmac=-0.0435[-0.0660,-0.0221] dmic=-0.0461[-0.0682,-0.0251]
+[boot stream 1] new_hgb              vs fusionM_prank mature dAUC=-0.0684[-0.0934,-0.0440] dmac=-0.0519[-0.0745,-0.0304] dmic=-0.0510[-0.0738,-0.0291]
+[boot stream 1] new_prank            vs fusionM_prank all    dAUC=-0.0516[-0.0729,-0.0312] dmac=-0.0325[-0.0499,-0.0151] dmic=-0.0336[-0.0507,-0.0162]
+[boot stream 1] new_prank            vs fusionM_prank mature dAUC=-0.0548[-0.0763,-0.0332] dmac=-0.0331[-0.0515,-0.0150] dmic=-0.0332[-0.0516,-0.0148]
+[boot stream 1] all_prank            vs fusionM_prank all    dAUC=-0.0187[-0.0331,-0.0042] dmac=-0.0088[-0.0213,+0.0035] dmic=-0.0092[-0.0218,+0.0033]
+[boot stream 1] all_prank            vs fusionM_prank mature dAUC=-0.0175[-0.0319,-0.0030] dmac=-0.0106[-0.0244,+0.0018] dmic=-0.0101[-0.0235,+0.0022]
+[boot stream 1] fuse_newprank        vs fusionM_prank all    dAUC=-0.0072[-0.0196,+0.0045] dmac=-0.0021[-0.0136,+0.0086] dmic=-0.0025[-0.0140,+0.0083]
+[boot stream 1] fuse_newprank        vs fusionM_prank mature dAUC=-0.0094[-0.0225,+0.0029] dmac=-0.0031[-0.0149,+0.0080] dmic=-0.0027[-0.0147,+0.0087]
+[boot stream 1] fuse_allprank_resnet vs fusionM_prank all    dAUC=+0.0066[+0.0025,+0.0111] dmac=+0.0058[+0.0010,+0.0111] dmic=+0.0058[+0.0009,+0.0108]
+[boot stream 1] fuse_allprank_resnet vs fusionM_prank mature dAUC=+0.0066[+0.0018,+0.0113] dmac=+0.0045[-0.0012,+0.0109] dmic=+0.0048[-0.0008,+0.0113]
+[boot stream 1] fuse3                vs fusionM_prank all    dAUC=-0.0115[-0.0256,+0.0023] dmac=-0.0042[-0.0181,+0.0098] dmic=-0.0062[-0.0191,+0.0068]
+[boot stream 1] fuse3                vs fusionM_prank mature dAUC=-0.0151[-0.0294,-0.0011] dmac=-0.0122[-0.0256,+0.0023] dmic=-0.0124[-0.0257,+0.0021]
+[boot stream 1] all_prank            vs hgb_prank     all    dAUC=+0.0136[+0.0066,+0.0210] dmac=+0.0156[+0.0092,+0.0222] dmic=+0.0155[+0.0089,+0.0222]
+[boot stream 1] all_prank            vs hgb_prank     mature dAUC=+0.0142[+0.0068,+0.0222] dmac=+0.0130[+0.0059,+0.0208] dmic=+0.0135[+0.0066,+0.0212]
+[s2 fold 1/5] hgb_prank reproduced (maxabs 0.0e+00) fit_s=23.9 elapsed=889.7s
+[s2 fold 1/5] new_lr     dim=31 fit_s=0.0 checks ok (shuffle/prefix/isolation) elapsed=925.0s
+[s2 fold 1/5] new_hgb    dim=31 fit_s=0.2 checks ok (shuffle/prefix/isolation) elapsed=925.5s
+[s2 fold 1/5] new_prank  dim=93 fit_s=0.7 checks ok (shuffle/prefix/isolation) elapsed=926.8s
+[s2 fold 1/5] all_prank  dim=2667 fit_s=25.0 checks ok (shuffle/prefix/isolation) elapsed=964.5s
+[s2 fold 2/5] hgb_prank reproduced (maxabs 0.0e+00) fit_s=23.7 elapsed=988.9s
+[s2 fold 2/5] new_lr     dim=31 fit_s=0.0 checks ok (shuffle/prefix/isolation) elapsed=1005.9s
+[s2 fold 2/5] new_hgb    dim=31 fit_s=0.3 checks ok (shuffle/prefix/isolation) elapsed=1006.4s
+[s2 fold 2/5] new_prank  dim=93 fit_s=0.7 checks ok (shuffle/prefix/isolation) elapsed=1007.6s
+[s2 fold 2/5] all_prank  dim=2667 fit_s=24.7 checks ok (shuffle/prefix/isolation) elapsed=1033.7s
+[s2 fold 3/5] hgb_prank reproduced (maxabs 0.0e+00) fit_s=24.0 elapsed=1058.4s
+[s2 fold 3/5] new_lr     dim=31 fit_s=0.0 checks ok (shuffle/prefix/isolation) elapsed=1066.0s
+[s2 fold 3/5] new_hgb    dim=31 fit_s=0.3 checks ok (shuffle/prefix/isolation) elapsed=1066.5s
+[s2 fold 3/5] new_prank  dim=93 fit_s=0.7 checks ok (shuffle/prefix/isolation) elapsed=1067.7s
+[s2 fold 3/5] all_prank  dim=2667 fit_s=24.6 checks ok (shuffle/prefix/isolation) elapsed=1093.5s
+[s2 fold 4/5] hgb_prank reproduced (maxabs 0.0e+00) fit_s=23.9 elapsed=1118.2s
+[s2 fold 4/5] new_lr     dim=31 fit_s=0.0 checks ok (shuffle/prefix/isolation) elapsed=1171.9s
+[s2 fold 4/5] new_hgb    dim=31 fit_s=0.2 checks ok (shuffle/prefix/isolation) elapsed=1172.5s
+[s2 fold 4/5] new_prank  dim=93 fit_s=0.7 checks ok (shuffle/prefix/isolation) elapsed=1173.6s
+[s2 fold 4/5] all_prank  dim=2667 fit_s=24.9 checks ok (shuffle/prefix/isolation) elapsed=1199.8s
+[s2 fold 5/5] hgb_prank reproduced (maxabs 0.0e+00) fit_s=23.3 elapsed=1223.9s
+[s2 fold 5/5] new_lr     dim=31 fit_s=0.1 checks ok (shuffle/prefix/isolation) elapsed=1230.0s
+[s2 fold 5/5] new_hgb    dim=31 fit_s=0.3 checks ok (shuffle/prefix/isolation) elapsed=1230.5s
+[s2 fold 5/5] new_prank  dim=93 fit_s=0.7 checks ok (shuffle/prefix/isolation) elapsed=1231.7s
+[s2 fold 5/5] all_prank  dim=2667 fit_s=25.2 checks ok (shuffle/prefix/isolation) elapsed=1258.2s
+[result stream 2] position_only__lr      all: AUC=0.5047 mac=0.5064 mic=0.5056 | mature: AUC=0.4947 mac=0.4999 mic=0.4998 | subj>=.9=0 max=0.566
+[result stream 2] position_only__hgb     all: AUC=0.5022 mac=0.5025 mic=0.5034 | mature: AUC=0.4951 mac=0.4988 mic=0.4983 | subj>=.9=0 max=0.573
+[result stream 2] hgb_prank              all: AUC=0.6683 mac=0.6228 mic=0.6238 | mature: AUC=0.6684 mac=0.6237 mic=0.6242 | subj>=.9=0 max=0.834
+[result stream 2] new_lr                 all: AUC=0.6139 mac=0.5836 mic=0.5843 | mature: AUC=0.6049 mac=0.5802 mic=0.5784 | subj>=.9=0 max=0.783
+[result stream 2] new_hgb                all: AUC=0.6350 mac=0.5976 mic=0.5973 | mature: AUC=0.6239 mac=0.5931 mic=0.5916 | subj>=.9=0 max=0.763
+[result stream 2] new_prank              all: AUC=0.6483 mac=0.6148 mic=0.6156 | mature: AUC=0.6404 mac=0.6072 mic=0.6074 | subj>=.9=0 max=0.795
+[result stream 2] all_prank              all: AUC=0.6806 mac=0.6299 mic=0.6308 | mature: AUC=0.6759 mac=0.6262 mic=0.6261 | subj>=.9=0 max=0.855
+[result stream 2] fusionM_prank          all: AUC=0.6974 mac=0.6407 mic=0.6420 | mature: AUC=0.6987 mac=0.6466 mic=0.6468 | subj>=.9=0 max=0.877
+[result stream 2] fuse_newprank          all: AUC=0.6908 mac=0.6431 mic=0.6449 | mature: AUC=0.6864 mac=0.6409 mic=0.6409 | subj>=.9=0 max=0.818
+[result stream 2] fuse_allprank_resnet   all: AUC=0.7038 mac=0.6466 mic=0.6476 | mature: AUC=0.7014 mac=0.6466 mic=0.6462 | subj>=.9=0 max=0.852
+[result stream 2] fuse3                  all: AUC=0.6853 mac=0.6376 mic=0.6378 | mature: AUC=0.6786 mac=0.6346 mic=0.6334 | subj>=.9=0 max=0.817
+[group stream 2] position_only__lr      high(n=3): med=0.5178 mean=0.5246 dmed=-0.2838 dmean=-0.3015 | mid(n=34): med=0.5007 mean=0.4992 dmed=-0.1954 dmean=-0.1912 | low(n=20): med=0.5122 mean=0.5159 dmed=-0.0323 dmean=-0.0127
+[group stream 2] position_only__hgb     high(n=3): med=0.5162 mean=0.5257 dmed=-0.2855 dmean=-0.3004 | mid(n=34): med=0.4917 mean=0.4979 dmed=-0.2044 dmean=-0.1924 | low(n=20): med=0.5049 mean=0.5069 dmed=-0.0396 dmean=-0.0217
+[group stream 2] hgb_prank              high(n=3): med=0.7945 mean=0.8071 dmed=-0.0071 dmean=-0.0190 | mid(n=34): med=0.6741 mean=0.6691 dmed=-0.0220 dmean=-0.0212 | low(n=20): med=0.5317 mean=0.5164 dmed=-0.0128 dmean=-0.0121
+[group stream 2] new_lr                 high(n=3): med=0.7363 mean=0.6857 dmed=-0.0654 dmean=-0.1404 | mid(n=34): med=0.6222 mean=0.6164 dmed=-0.0739 dmean=-0.0740 | low(n=20): med=0.4972 mean=0.5126 dmed=-0.0473 dmean=-0.0159
+[group stream 2] new_hgb                high(n=3): med=0.6253 mean=0.6666 dmed=-0.1763 dmean=-0.1595 | mid(n=34): med=0.6559 mean=0.6407 dmed=-0.0402 dmean=-0.0496 | low(n=20): med=0.4890 mean=0.5138 dmed=-0.0556 dmean=-0.0147
+[group stream 2] new_prank              high(n=3): med=0.7301 mean=0.7280 dmed=-0.0715 dmean=-0.0981 | mid(n=34): med=0.6733 mean=0.6636 dmed=-0.0229 dmean=-0.0268 | low(n=20): med=0.4988 mean=0.5149 dmed=-0.0457 dmean=-0.0137
+[group stream 2] all_prank              high(n=3): med=0.7862 mean=0.7949 dmed=-0.0154 dmean=-0.0312 | mid(n=34): med=0.6962 mean=0.6767 dmed=+0.0000 dmean=-0.0136 | low(n=20): med=0.5122 mean=0.5254 dmed=-0.0323 dmean=-0.0031
+[group stream 2] fusionM_prank          high(n=3): med=0.8016 mean=0.8261 dmed=+0.0000 dmean=+0.0000 | mid(n=34): med=0.6961 mean=0.6903 dmed=+0.0000 dmean=+0.0000 | low(n=20): med=0.5445 mean=0.5285 dmed=+0.0000 dmean=+0.0000
+[group stream 2] fuse_newprank          high(n=3): med=0.8028 mean=0.7982 dmed=+0.0012 dmean=-0.0279 | mid(n=34): med=0.6991 mean=0.6985 dmed=+0.0030 dmean=+0.0081 | low(n=20): med=0.5162 mean=0.5256 dmed=-0.0284 dmean=-0.0029
+[group stream 2] fuse_allprank_resnet   high(n=3): med=0.7985 mean=0.8132 dmed=-0.0032 dmean=-0.0129 | mid(n=34): med=0.6922 mean=0.6953 dmed=-0.0039 dmean=+0.0050 | low(n=20): med=0.5350 mean=0.5387 dmed=-0.0096 dmean=+0.0101
+[group stream 2] fuse3                  high(n=3): med=0.7366 mean=0.7557 dmed=-0.0651 dmean=-0.0704 | mid(n=34): med=0.7096 mean=0.6932 dmed=+0.0135 dmean=+0.0029 | low(n=20): med=0.5177 mean=0.5253 dmed=-0.0269 dmean=-0.0032
+[sanity stream 2] position_only__lr AUC=0.5047 -> OK
+[sanity stream 2] position_only__hgb AUC=0.5022 -> OK
+[boot stream 2] new_lr               vs fusionM_prank all    dAUC=-0.0837[-0.1115,-0.0561] dmac=-0.0572[-0.0793,-0.0354] dmic=-0.0577[-0.0801,-0.0360]
+[boot stream 2] new_lr               vs fusionM_prank mature dAUC=-0.0940[-0.1202,-0.0660] dmac=-0.0664[-0.0881,-0.0459] dmic=-0.0684[-0.0898,-0.0474]
+[boot stream 2] new_hgb              vs fusionM_prank all    dAUC=-0.0618[-0.0865,-0.0377] dmac=-0.0427[-0.0634,-0.0228] dmic=-0.0443[-0.0650,-0.0240]
+[boot stream 2] new_hgb              vs fusionM_prank mature dAUC=-0.0740[-0.0987,-0.0497] dmac=-0.0530[-0.0751,-0.0305] dmic=-0.0547[-0.0774,-0.0329]
+[boot stream 2] new_prank            vs fusionM_prank all    dAUC=-0.0490[-0.0676,-0.0291] dmac=-0.0257[-0.0415,-0.0094] dmic=-0.0262[-0.0418,-0.0100]
+[boot stream 2] new_prank            vs fusionM_prank mature dAUC=-0.0582[-0.0776,-0.0394] dmac=-0.0392[-0.0583,-0.0205] dmic=-0.0392[-0.0584,-0.0208]
+[boot stream 2] all_prank            vs fusionM_prank all    dAUC=-0.0168[-0.0304,-0.0034] dmac=-0.0108[-0.0228,+0.0007] dmic=-0.0111[-0.0230,+0.0006]
+[boot stream 2] all_prank            vs fusionM_prank mature dAUC=-0.0228[-0.0364,-0.0096] dmac=-0.0203[-0.0340,-0.0074] dmic=-0.0207[-0.0345,-0.0078]
+[boot stream 2] fuse_newprank        vs fusionM_prank all    dAUC=-0.0065[-0.0173,+0.0039] dmac=+0.0025[-0.0080,+0.0124] dmic=+0.0030[-0.0072,+0.0133]
+[boot stream 2] fuse_newprank        vs fusionM_prank mature dAUC=-0.0122[-0.0233,-0.0010] dmac=-0.0056[-0.0177,+0.0072] dmic=-0.0057[-0.0175,+0.0066]
+[boot stream 2] fuse_allprank_resnet vs fusionM_prank all    dAUC=+0.0065[+0.0021,+0.0113] dmac=+0.0059[+0.0007,+0.0115] dmic=+0.0057[+0.0005,+0.0113]
+[boot stream 2] fuse_allprank_resnet vs fusionM_prank mature dAUC=+0.0027[-0.0023,+0.0076] dmac=+0.0001[-0.0067,+0.0078] dmic=-0.0004[-0.0074,+0.0070]
+[boot stream 2] fuse3                vs fusionM_prank all    dAUC=-0.0117[-0.0258,+0.0014] dmac=-0.0028[-0.0152,+0.0102] dmic=-0.0039[-0.0160,+0.0091]
+[boot stream 2] fuse3                vs fusionM_prank mature dAUC=-0.0197[-0.0339,-0.0061] dmac=-0.0118[-0.0247,+0.0015] dmic=-0.0131[-0.0261,+0.0010]
+[boot stream 2] all_prank            vs hgb_prank     all    dAUC=+0.0123[+0.0056,+0.0197] dmac=+0.0070[+0.0003,+0.0135] dmic=+0.0070[+0.0002,+0.0137]
+[boot stream 2] all_prank            vs hgb_prank     mature dAUC=+0.0076[-0.0004,+0.0153] dmac=+0.0026[-0.0057,+0.0114] dmic=+0.0019[-0.0064,+0.0108]
+[done] all checks passed elapsed=1275.4s -> depositioned_aperiodic_emg.json
