@@ -1,0 +1,65 @@
+[start] rows=16067 subjects=57 folds=[0, 1, 2, 3, 4] sseeds=(0, 1, 2) elapsed=2.2s
+[fold 0] cross-subject LR + causal-z LR + within-subject rand/block ceilings for 11 subjects elapsed=25.8s
+[fold 1] cross-subject LR + causal-z LR + within-subject rand/block ceilings for 12 subjects elapsed=50.5s
+[fold 2] cross-subject LR + causal-z LR + within-subject rand/block ceilings for 11 subjects elapsed=89.4s
+[fold 3] cross-subject LR + causal-z LR + within-subject rand/block ceilings for 12 subjects elapsed=113.3s
+[fold 4] cross-subject LR + causal-z LR + within-subject rand/block ceilings for 11 subjects elapsed=123.9s
+[s0] adapted 20/57 7.2s elapsed=134.3s
+[s0] adapted 40/57 13.3s elapsed=140.4s
+[s0] adapted 57/57 17.2s elapsed=144.3s
+[check s0] sub-001: isolation / label shuffle / prefix OK (cut=165)
+[check s0] sub-002: isolation / label shuffle / prefix OK (cut=149)
+[check s0] sub-003: isolation / label shuffle / prefix OK (cut=149)
+[result s0] pipeline       all: AUC=0.7152 mac=0.6684
+[result s0] oracle_past    all: AUC=0.8251 mac=0.7518
+[result s0] fuseH_wf       all: AUC=0.7140 mac=0.6541
+[result s0] fuseH_wf_thr   all: AUC=0.7161 mac=0.6574
+[check s0] pipeline/oracle reproduce v2 fuse_pseudo_lr_full_thr / fuse_oracle_lr_full_c_thr
+[check s0] per-subject group means reproduce v2
+[group s0] pipeline       high(n=3): mean=0.8553 med=0.8568 | mid(n=34): mean=0.7279 med=0.7205 | low(n=20): mean=0.5393 med=0.5253
+[group s0] oracle_past    high(n=3): mean=0.8588 med=0.8650 | mid(n=34): mean=0.7754 med=0.7752 | low(n=20): mean=0.6955 med=0.7112
+[group s0] fuseH_wf       high(n=3): mean=0.8146 med=0.8051 | mid(n=34): mean=0.7001 med=0.7099 | low(n=20): mean=0.5518 med=0.5579
+[group s0] fuseH_wf_thr   high(n=3): mean=0.8300 med=0.8165 | mid(n=34): mean=0.7060 med=0.7071 | low(n=20): mean=0.5490 med=0.5487
+[s1] adapted 20/57 7.4s elapsed=158.4s
+[s1] adapted 40/57 13.1s elapsed=164.0s
+[s1] adapted 57/57 17.3s elapsed=168.2s
+[check s1] sub-001: isolation / label shuffle / prefix OK (cut=165)
+[check s1] sub-002: isolation / label shuffle / prefix OK (cut=149)
+[check s1] sub-003: isolation / label shuffle / prefix OK (cut=149)
+[result s1] pipeline       all: AUC=0.7179 mac=0.6694
+[result s1] oracle_past    all: AUC=0.8232 mac=0.7510
+[result s1] fuseH_wf       all: AUC=0.7106 mac=0.6505
+[result s1] fuseH_wf_thr   all: AUC=0.7134 mac=0.6568
+[check s1] pipeline/oracle reproduce v2 fuse_pseudo_lr_full_thr / fuse_oracle_lr_full_c_thr
+[check s1] per-subject group means reproduce v2
+[group s1] pipeline       high(n=3): mean=0.8495 med=0.8568 | mid(n=34): mean=0.7244 med=0.7324 | low(n=20): mean=0.5488 med=0.5458
+[group s1] oracle_past    high(n=3): mean=0.8659 med=0.8615 | mid(n=34): mean=0.7704 med=0.7864 | low(n=20): mean=0.7007 med=0.6984
+[group s1] fuseH_wf       high(n=3): mean=0.8145 med=0.7770 | mid(n=34): mean=0.6958 med=0.6966 | low(n=20): mean=0.5490 med=0.5511
+[group s1] fuseH_wf_thr   high(n=3): mean=0.8128 med=0.7908 | mid(n=34): mean=0.7036 med=0.7040 | low(n=20): mean=0.5539 med=0.5538
+[s2] adapted 20/57 7.1s elapsed=182.0s
+[s2] adapted 40/57 12.3s elapsed=187.2s
+[s2] adapted 57/57 16.8s elapsed=191.7s
+[check s2] sub-001: isolation / label shuffle / prefix OK (cut=165)
+[check s2] sub-002: isolation / label shuffle / prefix OK (cut=149)
+[check s2] sub-003: isolation / label shuffle / prefix OK (cut=149)
+[result s2] pipeline       all: AUC=0.7169 mac=0.6691
+[result s2] oracle_past    all: AUC=0.8219 mac=0.7491
+[result s2] fuseH_wf       all: AUC=0.7097 mac=0.6500
+[result s2] fuseH_wf_thr   all: AUC=0.7116 mac=0.6539
+[check s2] pipeline/oracle reproduce v2 fuse_pseudo_lr_full_thr / fuse_oracle_lr_full_c_thr
+[check s2] per-subject group means reproduce v2
+[group s2] pipeline       high(n=3): mean=0.8575 med=0.8542 | mid(n=34): mean=0.7246 med=0.7308 | low(n=20): mean=0.5464 med=0.5356
+[group s2] oracle_past    high(n=3): mean=0.8623 med=0.8650 | mid(n=34): mean=0.7736 med=0.7766 | low(n=20): mean=0.6906 med=0.6909
+[group s2] fuseH_wf       high(n=3): mean=0.8042 med=0.7837 | mid(n=34): mean=0.6941 med=0.6969 | low(n=20): mean=0.5520 med=0.5429
+[group s2] fuseH_wf_thr   high(n=3): mean=0.8182 med=0.7970 | mid(n=34): mean=0.7001 med=0.6946 | low(n=20): mean=0.5506 med=0.5495
+[order-free high] n=3 AUC_L=0.862 AUC_xs=0.834 AUC_xs_or=0.834 AUC_xs_cz=0.773 AUC_ws_rand=0.883 bACC_ws_rand=0.823 AUC_ws_block=0.808 bACC_ws_block=0.750 cos=0.058 frac_cos<0=0.00 frac_xs<.5=0.00
+[attribution high] -> (a) {'label': 'a', 'recovery_frac': 0.0, 'AUC_ws_rand': 0.8833534621578101, 'AUC_xs': 0.8339559386973179, 'AUC_xs_oriented': 0.8339559386973179, 'AUC_ws_block': 0.8078200483091788, 'median_cos': 0.05799424605219459, 'frac_cos_neg': 0.0}
+[order-free mid] n=34 AUC_L=0.760 AUC_xs=0.698 AUC_xs_or=0.698 AUC_xs_cz=0.687 AUC_ws_rand=0.853 bACC_ws_rand=0.791 AUC_ws_block=0.666 bACC_ws_block=0.631 cos=0.059 frac_cos<0=0.03 frac_xs<.5=0.00
+[attribution mid] -> (a) {'label': 'a', 'recovery_frac': 0.0, 'AUC_ws_rand': 0.8527231366322489, 'AUC_xs': 0.6978990788387606, 'AUC_xs_oriented': 0.6978990788387606, 'AUC_ws_block': 0.6659312401964566, 'median_cos': 0.05919957588634364, 'frac_cos_neg': 0.029411764705882353}
+[order-free low] n=20 AUC_L=0.582 AUC_xs=0.522 AUC_xs_or=0.579 AUC_xs_cz=0.551 AUC_ws_rand=0.826 bACC_ws_rand=0.763 AUC_ws_block=0.425 bACC_ws_block=0.433 cos=0.033 frac_cos<0=0.15 frac_xs<.5=0.45
+[attribution low] -> (a) {'label': 'a', 'recovery_frac': 0.18916309549857685, 'AUC_ws_rand': 0.8256158678499377, 'AUC_xs': 0.5218933516172803, 'AUC_xs_oriented': 0.5793464429604666, 'AUC_ws_block': 0.4248337245696401, 'median_cos': 0.03268134431790261, 'frac_cos_neg': 0.15}
+[ref per_subject_ceiling] {"high": {"lr": 0.8337883141762452, "hgb": 0.7732487922705313, "cnn": 0.4501915708812261, "mean3": 0.7809970703609911, "n": 3}, "mid": {"lr": 0.6734449374155257, "hgb": 0.6310675819640612, "cnn": 0.48568811915528964, "mean3": 0.6257769502236303, "n": 34}, "low": {"lr": 0.5259054325955734, "hgb": 0.4697964231354642, "cnn": 0.3833333333333333, "mean3": 0.4874429223744292, "n": 20}}
+[ladder high] pipeline=0.858 oracle_past=0.862 xs_lr=0.635 ws_rand=0.832 ws_block=0.723
+[ladder mid] pipeline=0.725 oracle_past=0.774 xs_lr=0.590 ws_rand=0.778 ws_block=0.614
+[ladder low] pipeline=0.546 oracle_past=0.691 xs_lr=0.527 ws_rand=0.756 ws_block=0.468
+[done] all checks passed elapsed=195.9s -> depositioned_transfer_ceiling.json
