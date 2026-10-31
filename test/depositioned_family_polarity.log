@@ -1,0 +1,278 @@
+[start] rows=16067 subjects=57 smoke=False sseeds=(0, 1, 2) folds=[0, 1, 2, 3, 4] families=12 models=('lr', 'hgb') aligns=('none', 'corr', 'pca', 'oracle') mature=120
+[s0 fold 1/5] prank features (16067, 2574) build_s=14.2 test_subjects=11 elapsed=15.3s
+[s0 fold 1/5] 24 family models fit_s=26.4 dwt_energy:0.529 stft_abs_band:0.573 stft_rel_band:0.554 time_qc:0.554 stft_ms_log:0.562 stft_ms_rel:0.510 dwt_stats:0.519 hilbert_env:0.542 hilbert_freq:0.505 hjorth:0.523 entropy_zc:0.580 autocorr:0.568 (lr test AUC) elapsed=42.4s
+[s0 fold 1/5 align 1/11] sub-009 elapsed=43.4s
+[s0 fold 1/5 align 5/11] sub-029 elapsed=43.6s
+[s0 fold 1/5 align 9/11] sub-051 elapsed=43.8s
+[s0 fold 1/5 align 11/11] sub-055 elapsed=43.9s
+[s0 fold 1/5] checks ok (isolation/shuffle/prefix) elapsed=45.7s
+[s0 fold 2/5] prank features (16067, 2574) build_s=14.3 test_subjects=12 elapsed=60.7s
+[s0 fold 2/5] 24 family models fit_s=24.6 dwt_energy:0.608 stft_abs_band:0.652 stft_rel_band:0.599 time_qc:0.585 stft_ms_log:0.645 stft_ms_rel:0.586 dwt_stats:0.644 hilbert_env:0.643 hilbert_freq:0.596 hjorth:0.508 entropy_zc:0.596 autocorr:0.613 (lr test AUC) elapsed=86.1s
+[s0 fold 2/5 align 1/12] sub-003 elapsed=86.2s
+[s0 fold 2/5 align 5/12] sub-036 elapsed=86.4s
+[s0 fold 2/5 align 9/12] sub-046 elapsed=86.7s
+[s0 fold 2/5 align 12/12] sub-059 elapsed=86.8s
+[s0 fold 2/5] checks ok (isolation/shuffle/prefix) elapsed=87.4s
+[s0 fold 3/5] prank features (16067, 2574) build_s=14.3 test_subjects=11 elapsed=102.4s
+[s0 fold 3/5] 24 family models fit_s=23.1 dwt_energy:0.622 stft_abs_band:0.669 stft_rel_band:0.578 time_qc:0.650 stft_ms_log:0.681 stft_ms_rel:0.581 dwt_stats:0.628 hilbert_env:0.662 hilbert_freq:0.590 hjorth:0.536 entropy_zc:0.572 autocorr:0.553 (lr test AUC) elapsed=126.3s
+[s0 fold 3/5 align 1/11] sub-001 elapsed=126.3s
+[s0 fold 3/5 align 5/11] sub-011 elapsed=126.6s
+[s0 fold 3/5 align 9/11] sub-026 elapsed=126.8s
+[s0 fold 3/5 align 11/11] sub-057 elapsed=126.9s
+[s0 fold 3/5] checks ok (isolation/shuffle/prefix) elapsed=127.5s
+[s0 fold 4/5] prank features (16067, 2574) build_s=14.4 test_subjects=12 elapsed=142.6s
+[s0 fold 4/5] 24 family models fit_s=23.1 dwt_energy:0.589 stft_abs_band:0.599 stft_rel_band:0.553 time_qc:0.560 stft_ms_log:0.614 stft_ms_rel:0.555 dwt_stats:0.603 hilbert_env:0.578 hilbert_freq:0.559 hjorth:0.460 entropy_zc:0.557 autocorr:0.558 (lr test AUC) elapsed=166.6s
+[s0 fold 4/5 align 1/12] sub-004 elapsed=166.6s
+[s0 fold 4/5 align 5/12] sub-016 elapsed=166.9s
+[s0 fold 4/5 align 9/12] sub-043 elapsed=167.1s
+[s0 fold 4/5 align 12/12] sub-056 elapsed=167.3s
+[s0 fold 4/5] checks ok (isolation/shuffle/prefix) elapsed=167.9s
+[s0 fold 5/5] prank features (16067, 2574) build_s=14.3 test_subjects=11 elapsed=182.9s
+[s0 fold 5/5] 24 family models fit_s=23.2 dwt_energy:0.604 stft_abs_band:0.643 stft_rel_band:0.593 time_qc:0.610 stft_ms_log:0.660 stft_ms_rel:0.596 dwt_stats:0.619 hilbert_env:0.616 hilbert_freq:0.597 hjorth:0.527 entropy_zc:0.574 autocorr:0.559 (lr test AUC) elapsed=206.9s
+[s0 fold 5/5 align 1/11] sub-002 elapsed=206.9s
+[s0 fold 5/5 align 5/11] sub-020 elapsed=207.2s
+[s0 fold 5/5 align 9/11] sub-044 elapsed=207.4s
+[s0 fold 5/5 align 11/11] sub-052 elapsed=207.5s
+[s0 fold 5/5] checks ok (isolation/shuffle/prefix) elapsed=208.1s
+[sanity stream 0] position_only__lr AUC=0.4935 -> OK
+[sanity stream 0] position_only__hgb AUC=0.4959 -> OK
+[result] s0_fusionM_prank         all: AUC=0.7043 mac=0.6463 | mature: AUC=0.7057 mac=0.6458 | n>=.9=0
+[result] s0_fam_lr_none           all: AUC=0.6345 mac=0.5976 | mature: AUC=0.6264 mac=0.5931 | n>=.9=0
+[result] s0_fusionG_lr_none       all: AUC=0.6854 mac=0.6316 | mature: AUC=0.6815 mac=0.6303 | n>=.9=0
+[result] s0_fam_lr_corr           all: AUC=0.6358 mac=0.5984 | mature: AUC=0.6288 mac=0.5947 | n>=.9=0
+[result] s0_fusionG_lr_corr       all: AUC=0.6863 mac=0.6326 | mature: AUC=0.6831 mac=0.6321 | n>=.9=0
+[result] s0_fam_lr_pca            all: AUC=0.6317 mac=0.5948 | mature: AUC=0.6213 mac=0.5878 | n>=.9=0
+[result] s0_fusionG_lr_pca        all: AUC=0.6855 mac=0.6319 | mature: AUC=0.6816 mac=0.6305 | n>=.9=0
+[result] s0_fam_lr_oracle         all: AUC=0.7282 mac=0.6759 | mature: AUC=0.7295 mac=0.6766 | n>=.9=0
+[result] s0_fusionG_lr_oracle     all: AUC=0.7543 mac=0.6861 | mature: AUC=0.7547 mac=0.6893 | n>=.9=0
+[result] s0_fam_hgb_none          all: AUC=0.6430 mac=0.6018 | mature: AUC=0.6368 mac=0.5967 | n>=.9=0
+[result] s0_fusionG_hgb_none      all: AUC=0.6882 mac=0.6331 | mature: AUC=0.6860 mac=0.6288 | n>=.9=0
+[result] s0_fam_hgb_corr          all: AUC=0.6434 mac=0.6013 | mature: AUC=0.6376 mac=0.5959 | n>=.9=0
+[result] s0_fusionG_hgb_corr      all: AUC=0.6885 mac=0.6330 | mature: AUC=0.6865 mac=0.6286 | n>=.9=0
+[result] s0_fam_hgb_pca           all: AUC=0.6467 mac=0.6047 | mature: AUC=0.6434 mac=0.6017 | n>=.9=0
+[result] s0_fusionG_hgb_pca       all: AUC=0.6904 mac=0.6351 | mature: AUC=0.6898 mac=0.6323 | n>=.9=0
+[result] s0_fam_hgb_oracle        all: AUC=0.7265 mac=0.6743 | mature: AUC=0.7218 mac=0.6731 | n>=.9=0
+[result] s0_fusionG_hgb_oracle    all: AUC=0.7482 mac=0.6809 | mature: AUC=0.7459 mac=0.6819 | n>=.9=0
+[boot stream 0] fusionG_lr_none   vs fusionM_prank      all    dAUC=-0.0192[-0.0304,-0.0089] dmac=-0.0149[-0.0254,-0.0048]
+[boot stream 0] fusionG_lr_none   vs fusionM_prank      mature dAUC=-0.0246[-0.0360,-0.0138] dmac=-0.0158[-0.0266,-0.0050]
+[boot stream 0] fusionG_lr_none   vs fusionG_lr_none    all    dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot stream 0] fusionG_lr_corr   vs fusionM_prank      all    dAUC=-0.0183[-0.0298,-0.0079] dmac=-0.0140[-0.0245,-0.0038]
+[boot stream 0] fusionG_lr_corr   vs fusionM_prank      mature dAUC=-0.0229[-0.0350,-0.0114] dmac=-0.0140[-0.0257,-0.0027]
+[boot stream 0] fusionG_lr_corr   vs fusionG_lr_none    all    dAUC=+0.0009[-0.0000,+0.0019] dmac=+0.0009[-0.0003,+0.0021]
+[boot stream 0] fusionG_lr_pca    vs fusionM_prank      all    dAUC=-0.0191[-0.0307,-0.0075] dmac=-0.0146[-0.0250,-0.0047]
+[boot stream 0] fusionG_lr_pca    vs fusionM_prank      mature dAUC=-0.0243[-0.0369,-0.0113] dmac=-0.0156[-0.0271,-0.0039]
+[boot stream 0] fusionG_lr_pca    vs fusionG_lr_none    all    dAUC=+0.0001[-0.0030,+0.0032] dmac=+0.0003[-0.0029,+0.0033]
+[boot stream 0] fusionG_lr_oracle vs fusionM_prank      all    dAUC=+0.0498[+0.0316,+0.0704] dmac=+0.0397[+0.0255,+0.0548]
+[boot stream 0] fusionG_lr_oracle vs fusionM_prank      mature dAUC=+0.0488[+0.0291,+0.0707] dmac=+0.0434[+0.0272,+0.0600]
+[boot stream 0] fusionG_lr_oracle vs fusionG_lr_none    all    dAUC=+0.0690[+0.0481,+0.0925] dmac=+0.0546[+0.0386,+0.0726]
+[boot stream 0] fusionG_hgb_none   vs fusionM_prank      all    dAUC=-0.0164[-0.0254,-0.0076] dmac=-0.0133[-0.0231,-0.0051]
+[boot stream 0] fusionG_hgb_none   vs fusionM_prank      mature dAUC=-0.0199[-0.0294,-0.0112] dmac=-0.0172[-0.0275,-0.0075]
+[boot stream 0] fusionG_hgb_none   vs fusionG_hgb_none   all    dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot stream 0] fusionG_hgb_corr   vs fusionM_prank      all    dAUC=-0.0161[-0.0250,-0.0073] dmac=-0.0134[-0.0231,-0.0051]
+[boot stream 0] fusionG_hgb_corr   vs fusionM_prank      mature dAUC=-0.0194[-0.0287,-0.0108] dmac=-0.0173[-0.0277,-0.0077]
+[boot stream 0] fusionG_hgb_corr   vs fusionG_hgb_none   all    dAUC=+0.0003[-0.0003,+0.0011] dmac=-0.0001[-0.0006,+0.0004]
+[boot stream 0] fusionG_hgb_pca    vs fusionM_prank      all    dAUC=-0.0142[-0.0233,-0.0059] dmac=-0.0113[-0.0211,-0.0025]
+[boot stream 0] fusionG_hgb_pca    vs fusionM_prank      mature dAUC=-0.0162[-0.0259,-0.0068] dmac=-0.0136[-0.0248,-0.0026]
+[boot stream 0] fusionG_hgb_pca    vs fusionG_hgb_none   all    dAUC=+0.0022[-0.0003,+0.0066] dmac=+0.0020[-0.0008,+0.0065]
+[boot stream 0] fusionG_hgb_oracle vs fusionM_prank      all    dAUC=+0.0438[+0.0272,+0.0619] dmac=+0.0346[+0.0215,+0.0489]
+[boot stream 0] fusionG_hgb_oracle vs fusionM_prank      mature dAUC=+0.0401[+0.0230,+0.0583] dmac=+0.0359[+0.0224,+0.0508]
+[boot stream 0] fusionG_hgb_oracle vs fusionG_hgb_none   all    dAUC=+0.0602[+0.0409,+0.0823] dmac=+0.0479[+0.0318,+0.0663]
+[sign stream 0] lr corr final_acc=0.722 mature_rows_acc=0.717 acc_on_oracle_neg=0.06282722513089005 flip_rate=0.034 (baseline all+ 0.721)
+[sign stream 0] lr pca  final_acc=0.693 mature_rows_acc=0.697 acc_on_oracle_neg=0.10471204188481675 flip_rate=0.086 (baseline all+ 0.721)
+[sign stream 0] lr oracle negative frac by family: dwt_energy=0.23 stft_abs_band=0.25 stft_rel_band=0.26 time_qc=0.30 stft_ms_log=0.21 stft_ms_rel=0.26 dwt_stats=0.21 hilbert_env=0.25 hilbert_freq=0.35 hjorth=0.46 entropy_zc=0.26 autocorr=0.32
+[sign stream 0] hgb corr final_acc=0.744 mature_rows_acc=0.744 acc_on_oracle_neg=0.005714285714285714 flip_rate=0.003 (baseline all+ 0.744)
+[sign stream 0] hgb pca  final_acc=0.749 mature_rows_acc=0.746 acc_on_oracle_neg=0.06285714285714286 flip_rate=0.028 (baseline all+ 0.744)
+[sign stream 0] hgb oracle negative frac by family: dwt_energy=0.28 stft_abs_band=0.21 stft_rel_band=0.28 time_qc=0.25 stft_ms_log=0.21 stft_ms_rel=0.28 dwt_stats=0.23 hilbert_env=0.23 hilbert_freq=0.32 hjorth=0.33 entropy_zc=0.21 autocorr=0.25
+[group stream 0] fusionG_lr_none      high: med=0.838 d=+0.003 mid: med=0.693 d=-0.009 low: med=0.501 d=-0.032
+[group stream 0] fusionG_lr_corr      high: med=0.838 d=+0.003 mid: med=0.695 d=-0.004 low: med=0.503 d=-0.030
+[group stream 0] fusionG_lr_pca       high: med=0.838 d=+0.003 mid: med=0.700 d=-0.004 low: med=0.499 d=-0.031
+[group stream 0] fusionG_lr_oracle    high: med=0.838 d=+0.018 mid: med=0.715 d=+0.013 low: med=0.604 d=+0.087
+[group stream 0] fusionG_hgb_none     high: med=0.803 d=+0.007 mid: med=0.697 d=-0.005 low: med=0.509 d=-0.029
+[group stream 0] fusionG_hgb_corr     high: med=0.803 d=+0.007 mid: med=0.697 d=-0.005 low: med=0.509 d=-0.029
+[group stream 0] fusionG_hgb_pca      high: med=0.813 d=+0.008 mid: med=0.697 d=-0.003 low: med=0.509 d=-0.023
+[group stream 0] fusionG_hgb_oracle   high: med=0.827 d=+0.008 mid: med=0.701 d=+0.007 low: med=0.612 d=+0.066
+[s1 fold 1/5] prank features (16067, 2574) build_s=14.3 test_subjects=11 elapsed=253.2s
+[s1 fold 1/5] 24 family models fit_s=23.0 dwt_energy:0.532 stft_abs_band:0.571 stft_rel_band:0.552 time_qc:0.558 stft_ms_log:0.571 stft_ms_rel:0.508 dwt_stats:0.515 hilbert_env:0.535 hilbert_freq:0.508 hjorth:0.517 entropy_zc:0.592 autocorr:0.565 (lr test AUC) elapsed=276.9s
+[s1 fold 1/5 align 1/11] sub-009 elapsed=277.8s
+[s1 fold 1/5 align 5/11] sub-029 elapsed=278.0s
+[s1 fold 1/5 align 9/11] sub-051 elapsed=278.2s
+[s1 fold 1/5 align 11/11] sub-055 elapsed=278.3s
+[s1 fold 1/5] checks ok (isolation/shuffle/prefix) elapsed=278.9s
+[s1 fold 2/5] prank features (16067, 2574) build_s=14.2 test_subjects=12 elapsed=293.8s
+[s1 fold 2/5] 24 family models fit_s=23.5 dwt_energy:0.616 stft_abs_band:0.651 stft_rel_band:0.601 time_qc:0.580 stft_ms_log:0.640 stft_ms_rel:0.589 dwt_stats:0.645 hilbert_env:0.647 hilbert_freq:0.594 hjorth:0.515 entropy_zc:0.592 autocorr:0.611 (lr test AUC) elapsed=318.0s
+[s1 fold 2/5 align 1/12] sub-003 elapsed=318.1s
+[s1 fold 2/5 align 5/12] sub-036 elapsed=318.3s
+[s1 fold 2/5 align 9/12] sub-046 elapsed=318.5s
+[s1 fold 2/5 align 12/12] sub-059 elapsed=318.7s
+[s1 fold 2/5] checks ok (isolation/shuffle/prefix) elapsed=319.3s
+[s1 fold 3/5] prank features (16067, 2574) build_s=14.3 test_subjects=11 elapsed=334.3s
+[s1 fold 3/5] 24 family models fit_s=23.6 dwt_energy:0.625 stft_abs_band:0.664 stft_rel_band:0.575 time_qc:0.651 stft_ms_log:0.678 stft_ms_rel:0.580 dwt_stats:0.630 hilbert_env:0.653 hilbert_freq:0.590 hjorth:0.531 entropy_zc:0.569 autocorr:0.547 (lr test AUC) elapsed=358.7s
+[s1 fold 3/5 align 1/11] sub-001 elapsed=358.8s
+[s1 fold 3/5 align 5/11] sub-011 elapsed=359.0s
+[s1 fold 3/5 align 9/11] sub-026 elapsed=359.2s
+[s1 fold 3/5 align 11/11] sub-057 elapsed=359.4s
+[s1 fold 3/5] checks ok (isolation/shuffle/prefix) elapsed=360.0s
+[s1 fold 4/5] prank features (16067, 2574) build_s=14.4 test_subjects=12 elapsed=375.1s
+[s1 fold 4/5] 24 family models fit_s=22.2 dwt_energy:0.591 stft_abs_band:0.601 stft_rel_band:0.555 time_qc:0.558 stft_ms_log:0.617 stft_ms_rel:0.550 dwt_stats:0.596 hilbert_env:0.575 hilbert_freq:0.552 hjorth:0.466 entropy_zc:0.557 autocorr:0.556 (lr test AUC) elapsed=398.1s
+[s1 fold 4/5 align 1/12] sub-004 elapsed=398.2s
+[s1 fold 4/5 align 5/12] sub-016 elapsed=398.4s
+[s1 fold 4/5 align 9/12] sub-043 elapsed=398.6s
+[s1 fold 4/5 align 12/12] sub-056 elapsed=398.8s
+[s1 fold 4/5] checks ok (isolation/shuffle/prefix) elapsed=399.4s
+[s1 fold 5/5] prank features (16067, 2574) build_s=14.2 test_subjects=11 elapsed=414.4s
+[s1 fold 5/5] 24 family models fit_s=24.3 dwt_energy:0.603 stft_abs_band:0.646 stft_rel_band:0.593 time_qc:0.615 stft_ms_log:0.665 stft_ms_rel:0.596 dwt_stats:0.629 hilbert_env:0.618 hilbert_freq:0.597 hjorth:0.534 entropy_zc:0.575 autocorr:0.554 (lr test AUC) elapsed=439.4s
+[s1 fold 5/5 align 1/11] sub-002 elapsed=439.5s
+[s1 fold 5/5 align 5/11] sub-020 elapsed=439.7s
+[s1 fold 5/5 align 9/11] sub-044 elapsed=439.9s
+[s1 fold 5/5 align 11/11] sub-052 elapsed=440.1s
+[s1 fold 5/5] checks ok (isolation/shuffle/prefix) elapsed=440.7s
+[sanity stream 1] position_only__lr AUC=0.4971 -> OK
+[sanity stream 1] position_only__hgb AUC=0.4983 -> OK
+[result] s1_fusionM_prank         all: AUC=0.6990 mac=0.6415 | mature: AUC=0.7051 mac=0.6475 | n>=.9=0
+[result] s1_fam_lr_none           all: AUC=0.6341 mac=0.5994 | mature: AUC=0.6381 mac=0.6024 | n>=.9=0
+[result] s1_fusionG_lr_none       all: AUC=0.6838 mac=0.6306 | mature: AUC=0.6884 mac=0.6318 | n>=.9=0
+[result] s1_fam_lr_corr           all: AUC=0.6355 mac=0.6004 | mature: AUC=0.6405 mac=0.6046 | n>=.9=0
+[result] s1_fusionG_lr_corr       all: AUC=0.6845 mac=0.6308 | mature: AUC=0.6897 mac=0.6319 | n>=.9=0
+[result] s1_fam_lr_pca            all: AUC=0.6321 mac=0.5978 | mature: AUC=0.6347 mac=0.5997 | n>=.9=0
+[result] s1_fusionG_lr_pca        all: AUC=0.6843 mac=0.6326 | mature: AUC=0.6894 mac=0.6350 | n>=.9=0
+[result] s1_fam_lr_oracle         all: AUC=0.7286 mac=0.6771 | mature: AUC=0.7275 mac=0.6757 | n>=.9=0
+[result] s1_fusionG_lr_oracle     all: AUC=0.7527 mac=0.6819 | mature: AUC=0.7555 mac=0.6863 | n>=.9=0
+[result] s1_fam_hgb_none          all: AUC=0.6430 mac=0.6007 | mature: AUC=0.6498 mac=0.6063 | n>=.9=0
+[result] s1_fusionG_hgb_none      all: AUC=0.6864 mac=0.6314 | mature: AUC=0.6926 mac=0.6362 | n>=.9=0
+[result] s1_fam_hgb_corr          all: AUC=0.6431 mac=0.6011 | mature: AUC=0.6499 mac=0.6070 | n>=.9=0
+[result] s1_fusionG_hgb_corr      all: AUC=0.6865 mac=0.6313 | mature: AUC=0.6927 mac=0.6361 | n>=.9=0
+[result] s1_fam_hgb_pca           all: AUC=0.6401 mac=0.5985 | mature: AUC=0.6447 mac=0.6026 | n>=.9=0
+[result] s1_fusionG_hgb_pca       all: AUC=0.6853 mac=0.6301 | mature: AUC=0.6906 mac=0.6339 | n>=.9=0
+[result] s1_fam_hgb_oracle        all: AUC=0.7250 mac=0.6698 | mature: AUC=0.7303 mac=0.6754 | n>=.9=0
+[result] s1_fusionG_hgb_oracle    all: AUC=0.7459 mac=0.6778 | mature: AUC=0.7522 mac=0.6864 | n>=.9=0
+[boot stream 1] fusionG_lr_none   vs fusionM_prank      all    dAUC=-0.0156[-0.0284,-0.0028] dmac=-0.0111[-0.0220,-0.0003]
+[boot stream 1] fusionG_lr_none   vs fusionM_prank      mature dAUC=-0.0171[-0.0294,-0.0042] dmac=-0.0159[-0.0278,-0.0036]
+[boot stream 1] fusionG_lr_none   vs fusionG_lr_none    all    dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot stream 1] fusionG_lr_corr   vs fusionM_prank      all    dAUC=-0.0148[-0.0278,-0.0019] dmac=-0.0109[-0.0221,+0.0001]
+[boot stream 1] fusionG_lr_corr   vs fusionM_prank      mature dAUC=-0.0157[-0.0283,-0.0022] dmac=-0.0159[-0.0282,-0.0031]
+[boot stream 1] fusionG_lr_corr   vs fusionG_lr_none    all    dAUC=+0.0008[-0.0002,+0.0020] dmac=+0.0002[-0.0013,+0.0017]
+[boot stream 1] fusionG_lr_pca    vs fusionM_prank      all    dAUC=-0.0150[-0.0294,-0.0003] dmac=-0.0092[-0.0207,+0.0026]
+[boot stream 1] fusionG_lr_pca    vs fusionM_prank      mature dAUC=-0.0160[-0.0304,-0.0003] dmac=-0.0127[-0.0254,+0.0018]
+[boot stream 1] fusionG_lr_pca    vs fusionG_lr_none    all    dAUC=+0.0006[-0.0023,+0.0038] dmac=+0.0019[-0.0003,+0.0043]
+[boot stream 1] fusionG_lr_oracle vs fusionM_prank      all    dAUC=+0.0535[+0.0362,+0.0723] dmac=+0.0402[+0.0275,+0.0544]
+[boot stream 1] fusionG_lr_oracle vs fusionM_prank      mature dAUC=+0.0501[+0.0324,+0.0702] dmac=+0.0386[+0.0233,+0.0555]
+[boot stream 1] fusionG_lr_oracle vs fusionG_lr_none    all    dAUC=+0.0691[+0.0492,+0.0922] dmac=+0.0513[+0.0365,+0.0687]
+[boot stream 1] fusionG_hgb_none   vs fusionM_prank      all    dAUC=-0.0129[-0.0229,-0.0022] dmac=-0.0103[-0.0196,-0.0008]
+[boot stream 1] fusionG_hgb_none   vs fusionM_prank      mature dAUC=-0.0128[-0.0229,-0.0025] dmac=-0.0116[-0.0222,-0.0014]
+[boot stream 1] fusionG_hgb_none   vs fusionG_hgb_none   all    dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot stream 1] fusionG_hgb_corr   vs fusionM_prank      all    dAUC=-0.0128[-0.0229,-0.0021] dmac=-0.0104[-0.0198,-0.0009]
+[boot stream 1] fusionG_hgb_corr   vs fusionM_prank      mature dAUC=-0.0127[-0.0228,-0.0025] dmac=-0.0117[-0.0222,-0.0016]
+[boot stream 1] fusionG_hgb_corr   vs fusionG_hgb_none   all    dAUC=+0.0001[-0.0000,+0.0002] dmac=-0.0001[-0.0002,+0.0000]
+[boot stream 1] fusionG_hgb_pca    vs fusionM_prank      all    dAUC=-0.0140[-0.0249,-0.0028] dmac=-0.0116[-0.0220,-0.0017]
+[boot stream 1] fusionG_hgb_pca    vs fusionM_prank      mature dAUC=-0.0148[-0.0264,-0.0033] dmac=-0.0138[-0.0258,-0.0025]
+[boot stream 1] fusionG_hgb_pca    vs fusionG_hgb_none   all    dAUC=-0.0011[-0.0041,+0.0005] dmac=-0.0013[-0.0045,+0.0004]
+[boot stream 1] fusionG_hgb_oracle vs fusionM_prank      all    dAUC=+0.0468[+0.0304,+0.0654] dmac=+0.0363[+0.0226,+0.0515]
+[boot stream 1] fusionG_hgb_oracle vs fusionM_prank      mature dAUC=+0.0470[+0.0303,+0.0656] dmac=+0.0389[+0.0235,+0.0562]
+[boot stream 1] fusionG_hgb_oracle vs fusionG_hgb_none   all    dAUC=+0.0597[+0.0398,+0.0834] dmac=+0.0466[+0.0307,+0.0656]
+[sign stream 1] lr corr final_acc=0.713 mature_rows_acc=0.711 acc_on_oracle_neg=0.05154639175257732 flip_rate=0.032 (baseline all+ 0.716)
+[sign stream 1] lr pca  final_acc=0.678 mature_rows_acc=0.686 acc_on_oracle_neg=0.10824742268041238 flip_rate=0.099 (baseline all+ 0.716)
+[sign stream 1] lr oracle negative frac by family: dwt_energy=0.23 stft_abs_band=0.25 stft_rel_band=0.30 time_qc=0.26 stft_ms_log=0.25 stft_ms_rel=0.28 dwt_stats=0.21 hilbert_env=0.26 hilbert_freq=0.35 hjorth=0.42 entropy_zc=0.30 autocorr=0.30
+[sign stream 1] hgb corr final_acc=0.735 mature_rows_acc=0.737 acc_on_oracle_neg=0.0 flip_rate=0.000 (baseline all+ 0.735)
+[sign stream 1] hgb pca  final_acc=0.730 mature_rows_acc=0.729 acc_on_oracle_neg=0.03314917127071823 flip_rate=0.023 (baseline all+ 0.735)
+[sign stream 1] hgb oracle negative frac by family: dwt_energy=0.23 stft_abs_band=0.26 stft_rel_band=0.32 time_qc=0.23 stft_ms_log=0.21 stft_ms_rel=0.23 dwt_stats=0.21 hilbert_env=0.21 hilbert_freq=0.33 hjorth=0.35 entropy_zc=0.28 autocorr=0.32
+[group stream 1] fusionG_lr_none      high: med=0.842 d=-0.011 mid: med=0.688 d=-0.003 low: med=0.497 d=-0.029
+[group stream 1] fusionG_lr_corr      high: med=0.842 d=-0.011 mid: med=0.687 d=-0.002 low: med=0.497 d=-0.033
+[group stream 1] fusionG_lr_pca       high: med=0.842 d=-0.011 mid: med=0.694 d=-0.002 low: med=0.497 d=-0.025
+[group stream 1] fusionG_lr_oracle    high: med=0.835 d=+0.021 mid: med=0.709 d=+0.020 low: med=0.607 d=+0.073
+[group stream 1] fusionG_hgb_none     high: med=0.824 d=+0.003 mid: med=0.687 d=-0.002 low: med=0.502 d=-0.026
+[group stream 1] fusionG_hgb_corr     high: med=0.824 d=+0.003 mid: med=0.687 d=-0.002 low: med=0.502 d=-0.026
+[group stream 1] fusionG_hgb_pca      high: med=0.824 d=+0.003 mid: med=0.688 d=-0.002 low: med=0.502 d=-0.026
+[group stream 1] fusionG_hgb_oracle   high: med=0.828 d=+0.014 mid: med=0.696 d=+0.008 low: med=0.618 d=+0.067
+[s2 fold 1/5] prank features (16067, 2574) build_s=14.1 test_subjects=11 elapsed=485.8s
+[s2 fold 1/5] 24 family models fit_s=22.8 dwt_energy:0.530 stft_abs_band:0.573 stft_rel_band:0.554 time_qc:0.555 stft_ms_log:0.574 stft_ms_rel:0.512 dwt_stats:0.512 hilbert_env:0.536 hilbert_freq:0.503 hjorth:0.523 entropy_zc:0.580 autocorr:0.566 (lr test AUC) elapsed=509.2s
+[s2 fold 1/5 align 1/11] sub-009 elapsed=510.2s
+[s2 fold 1/5 align 5/11] sub-029 elapsed=510.4s
+[s2 fold 1/5 align 9/11] sub-051 elapsed=510.6s
+[s2 fold 1/5 align 11/11] sub-055 elapsed=510.7s
+[s2 fold 1/5] checks ok (isolation/shuffle/prefix) elapsed=511.2s
+[s2 fold 2/5] prank features (16067, 2574) build_s=14.3 test_subjects=12 elapsed=526.2s
+[s2 fold 2/5] 24 family models fit_s=23.3 dwt_energy:0.604 stft_abs_band:0.641 stft_rel_band:0.602 time_qc:0.590 stft_ms_log:0.633 stft_ms_rel:0.589 dwt_stats:0.647 hilbert_env:0.643 hilbert_freq:0.598 hjorth:0.508 entropy_zc:0.595 autocorr:0.611 (lr test AUC) elapsed=550.4s
+[s2 fold 2/5 align 1/12] sub-003 elapsed=550.5s
+[s2 fold 2/5 align 5/12] sub-036 elapsed=550.7s
+[s2 fold 2/5 align 9/12] sub-046 elapsed=550.9s
+[s2 fold 2/5 align 12/12] sub-059 elapsed=551.1s
+[s2 fold 2/5] checks ok (isolation/shuffle/prefix) elapsed=551.6s
+[s2 fold 3/5] prank features (16067, 2574) build_s=14.5 test_subjects=11 elapsed=566.9s
+[s2 fold 3/5] 24 family models fit_s=23.4 dwt_energy:0.622 stft_abs_band:0.666 stft_rel_band:0.576 time_qc:0.652 stft_ms_log:0.683 stft_ms_rel:0.584 dwt_stats:0.623 hilbert_env:0.663 hilbert_freq:0.592 hjorth:0.535 entropy_zc:0.574 autocorr:0.551 (lr test AUC) elapsed=591.1s
+[s2 fold 3/5 align 1/11] sub-001 elapsed=591.2s
+[s2 fold 3/5 align 5/11] sub-011 elapsed=591.4s
+[s2 fold 3/5 align 9/11] sub-026 elapsed=591.7s
+[s2 fold 3/5 align 11/11] sub-057 elapsed=591.8s
+[s2 fold 3/5] checks ok (isolation/shuffle/prefix) elapsed=592.6s
+[s2 fold 4/5] prank features (16067, 2574) build_s=18.6 test_subjects=12 elapsed=611.9s
+[s2 fold 4/5] 24 family models fit_s=21.6 dwt_energy:0.597 stft_abs_band:0.604 stft_rel_band:0.548 time_qc:0.564 stft_ms_log:0.626 stft_ms_rel:0.551 dwt_stats:0.599 hilbert_env:0.585 hilbert_freq:0.554 hjorth:0.461 entropy_zc:0.551 autocorr:0.560 (lr test AUC) elapsed=634.5s
+[s2 fold 4/5 align 1/12] sub-004 elapsed=634.6s
+[s2 fold 4/5 align 5/12] sub-016 elapsed=634.8s
+[s2 fold 4/5 align 9/12] sub-043 elapsed=635.1s
+[s2 fold 4/5 align 12/12] sub-056 elapsed=635.3s
+[s2 fold 4/5] checks ok (isolation/shuffle/prefix) elapsed=636.3s
+[s2 fold 5/5] prank features (16067, 2574) build_s=17.1 test_subjects=11 elapsed=654.4s
+[s2 fold 5/5] 24 family models fit_s=26.2 dwt_energy:0.604 stft_abs_band:0.642 stft_rel_band:0.590 time_qc:0.612 stft_ms_log:0.657 stft_ms_rel:0.596 dwt_stats:0.611 hilbert_env:0.614 hilbert_freq:0.592 hjorth:0.539 entropy_zc:0.575 autocorr:0.562 (lr test AUC) elapsed=681.3s
+[s2 fold 5/5 align 1/11] sub-002 elapsed=681.4s
+[s2 fold 5/5 align 5/11] sub-020 elapsed=681.7s
+[s2 fold 5/5 align 9/11] sub-044 elapsed=681.9s
+[s2 fold 5/5 align 11/11] sub-052 elapsed=682.0s
+[s2 fold 5/5] checks ok (isolation/shuffle/prefix) elapsed=682.6s
+[sanity stream 2] position_only__lr AUC=0.5047 -> OK
+[sanity stream 2] position_only__hgb AUC=0.5022 -> OK
+[result] s2_fusionM_prank         all: AUC=0.6974 mac=0.6407 | mature: AUC=0.6987 mac=0.6466 | n>=.9=0
+[result] s2_fam_lr_none           all: AUC=0.6353 mac=0.5982 | mature: AUC=0.6296 mac=0.5907 | n>=.9=0
+[result] s2_fusionG_lr_none       all: AUC=0.6822 mac=0.6278 | mature: AUC=0.6799 mac=0.6268 | n>=.9=0
+[result] s2_fam_lr_corr           all: AUC=0.6360 mac=0.5998 | mature: AUC=0.6309 mac=0.5935 | n>=.9=0
+[result] s2_fusionG_lr_corr       all: AUC=0.6829 mac=0.6283 | mature: AUC=0.6811 mac=0.6280 | n>=.9=0
+[result] s2_fam_lr_pca            all: AUC=0.6281 mac=0.5948 | mature: AUC=0.6168 mac=0.5846 | n>=.9=0
+[result] s2_fusionG_lr_pca        all: AUC=0.6808 mac=0.6287 | mature: AUC=0.6776 mac=0.6282 | n>=.9=0
+[result] s2_fam_lr_oracle         all: AUC=0.7279 mac=0.6762 | mature: AUC=0.7254 mac=0.6731 | n>=.9=0
+[result] s2_fusionG_lr_oracle     all: AUC=0.7481 mac=0.6787 | mature: AUC=0.7467 mac=0.6795 | n>=.9=0
+[result] s2_fam_hgb_none          all: AUC=0.6422 mac=0.5994 | mature: AUC=0.6396 mac=0.5982 | n>=.9=0
+[result] s2_fusionG_hgb_none      all: AUC=0.6833 mac=0.6292 | mature: AUC=0.6824 mac=0.6320 | n>=.9=0
+[result] s2_fam_hgb_corr          all: AUC=0.6421 mac=0.5995 | mature: AUC=0.6393 mac=0.5982 | n>=.9=0
+[result] s2_fusionG_hgb_corr      all: AUC=0.6833 mac=0.6291 | mature: AUC=0.6825 mac=0.6319 | n>=.9=0
+[result] s2_fam_hgb_pca           all: AUC=0.6402 mac=0.5981 | mature: AUC=0.6358 mac=0.5954 | n>=.9=0
+[result] s2_fusionG_hgb_pca       all: AUC=0.6827 mac=0.6290 | mature: AUC=0.6813 mac=0.6311 | n>=.9=0
+[result] s2_fam_hgb_oracle        all: AUC=0.7211 mac=0.6661 | mature: AUC=0.7227 mac=0.6673 | n>=.9=0
+[result] s2_fusionG_hgb_oracle    all: AUC=0.7396 mac=0.6724 | mature: AUC=0.7417 mac=0.6761 | n>=.9=0
+[boot stream 2] fusionG_lr_none   vs fusionM_prank      all    dAUC=-0.0155[-0.0271,-0.0036] dmac=-0.0131[-0.0245,-0.0017]
+[boot stream 2] fusionG_lr_none   vs fusionM_prank      mature dAUC=-0.0191[-0.0307,-0.0075] dmac=-0.0200[-0.0319,-0.0081]
+[boot stream 2] fusionG_lr_none   vs fusionG_lr_none    all    dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot stream 2] fusionG_lr_corr   vs fusionM_prank      all    dAUC=-0.0148[-0.0269,-0.0025] dmac=-0.0125[-0.0242,-0.0010]
+[boot stream 2] fusionG_lr_corr   vs fusionM_prank      mature dAUC=-0.0179[-0.0297,-0.0053] dmac=-0.0187[-0.0312,-0.0055]
+[boot stream 2] fusionG_lr_corr   vs fusionG_lr_none    all    dAUC=+0.0007[-0.0004,+0.0018] dmac=+0.0006[-0.0009,+0.0022]
+[boot stream 2] fusionG_lr_pca    vs fusionM_prank      all    dAUC=-0.0168[-0.0299,-0.0029] dmac=-0.0122[-0.0242,-0.0002]
+[boot stream 2] fusionG_lr_pca    vs fusionM_prank      mature dAUC=-0.0213[-0.0361,-0.0057] dmac=-0.0185[-0.0322,-0.0040]
+[boot stream 2] fusionG_lr_pca    vs fusionG_lr_none    all    dAUC=-0.0013[-0.0057,+0.0025] dmac=+0.0009[-0.0024,+0.0039]
+[boot stream 2] fusionG_lr_oracle vs fusionM_prank      all    dAUC=+0.0505[+0.0337,+0.0684] dmac=+0.0380[+0.0242,+0.0517]
+[boot stream 2] fusionG_lr_oracle vs fusionM_prank      mature dAUC=+0.0478[+0.0298,+0.0666] dmac=+0.0329[+0.0186,+0.0474]
+[boot stream 2] fusionG_lr_oracle vs fusionG_lr_none    all    dAUC=+0.0660[+0.0472,+0.0875] dmac=+0.0511[+0.0363,+0.0677]
+[boot stream 2] fusionG_hgb_none   vs fusionM_prank      all    dAUC=-0.0143[-0.0234,-0.0052] dmac=-0.0116[-0.0195,-0.0032]
+[boot stream 2] fusionG_hgb_none   vs fusionM_prank      mature dAUC=-0.0166[-0.0263,-0.0079] dmac=-0.0148[-0.0243,-0.0053]
+[boot stream 2] fusionG_hgb_none   vs fusionG_hgb_none   all    dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot stream 2] fusionG_hgb_corr   vs fusionM_prank      all    dAUC=-0.0143[-0.0231,-0.0050] dmac=-0.0116[-0.0197,-0.0031]
+[boot stream 2] fusionG_hgb_corr   vs fusionM_prank      mature dAUC=-0.0165[-0.0261,-0.0074] dmac=-0.0149[-0.0242,-0.0053]
+[boot stream 2] fusionG_hgb_corr   vs fusionG_hgb_none   all    dAUC=+0.0001[-0.0004,+0.0004] dmac=-0.0001[-0.0006,+0.0003]
+[boot stream 2] fusionG_hgb_pca    vs fusionM_prank      all    dAUC=-0.0149[-0.0242,-0.0052] dmac=-0.0118[-0.0208,-0.0030]
+[boot stream 2] fusionG_hgb_pca    vs fusionM_prank      mature dAUC=-0.0177[-0.0283,-0.0075] dmac=-0.0157[-0.0258,-0.0053]
+[boot stream 2] fusionG_hgb_pca    vs fusionG_hgb_none   all    dAUC=-0.0006[-0.0027,+0.0009] dmac=-0.0002[-0.0032,+0.0018]
+[boot stream 2] fusionG_hgb_oracle vs fusionM_prank      all    dAUC=+0.0421[+0.0250,+0.0598] dmac=+0.0317[+0.0183,+0.0464]
+[boot stream 2] fusionG_hgb_oracle vs fusionM_prank      mature dAUC=+0.0429[+0.0245,+0.0619] dmac=+0.0293[+0.0143,+0.0453]
+[boot stream 2] fusionG_hgb_oracle vs fusionG_hgb_none   all    dAUC=+0.0564[+0.0372,+0.0793] dmac=+0.0432[+0.0287,+0.0613]
+[sign stream 2] lr corr final_acc=0.716 mature_rows_acc=0.714 acc_on_oracle_neg=0.05319148936170213 flip_rate=0.038 (baseline all+ 0.725)
+[sign stream 2] lr pca  final_acc=0.694 mature_rows_acc=0.689 acc_on_oracle_neg=0.1276595744680851 flip_rate=0.101 (baseline all+ 0.725)
+[sign stream 2] lr oracle negative frac by family: dwt_energy=0.23 stft_abs_band=0.23 stft_rel_band=0.28 time_qc=0.32 stft_ms_log=0.21 stft_ms_rel=0.28 dwt_stats=0.19 hilbert_env=0.25 hilbert_freq=0.33 hjorth=0.46 entropy_zc=0.23 autocorr=0.30
+[sign stream 2] hgb corr final_acc=0.754 mature_rows_acc=0.755 acc_on_oracle_neg=0.011764705882352941 flip_rate=0.003 (baseline all+ 0.751)
+[sign stream 2] hgb pca  final_acc=0.765 mature_rows_acc=0.747 acc_on_oracle_neg=0.1 flip_rate=0.037 (baseline all+ 0.751)
+[sign stream 2] hgb oracle negative frac by family: dwt_energy=0.21 stft_abs_band=0.25 stft_rel_band=0.30 time_qc=0.21 stft_ms_log=0.21 stft_ms_rel=0.26 dwt_stats=0.21 hilbert_env=0.19 hilbert_freq=0.32 hjorth=0.32 entropy_zc=0.23 autocorr=0.28
+[group stream 2] fusionG_lr_none      high: med=0.816 d=-0.021 mid: med=0.685 d=-0.007 low: med=0.518 d=-0.034
+[group stream 2] fusionG_lr_corr      high: med=0.816 d=-0.021 mid: med=0.684 d=-0.006 low: med=0.518 d=-0.036
+[group stream 2] fusionG_lr_pca       high: med=0.816 d=-0.021 mid: med=0.680 d=-0.002 low: med=0.518 d=-0.036
+[group stream 2] fusionG_lr_oracle    high: med=0.827 d=+0.024 mid: med=0.709 d=+0.018 low: med=0.613 d=+0.059
+[group stream 2] fusionG_hgb_none     high: med=0.816 d=-0.003 mid: med=0.692 d=+0.002 low: med=0.509 d=-0.026
+[group stream 2] fusionG_hgb_corr     high: med=0.816 d=-0.003 mid: med=0.692 d=+0.002 low: med=0.509 d=-0.027
+[group stream 2] fusionG_hgb_pca      high: med=0.816 d=-0.003 mid: med=0.692 d=+0.002 low: med=0.509 d=-0.026
+[group stream 2] fusionG_hgb_oracle   high: med=0.817 d=+0.017 mid: med=0.699 d=+0.011 low: med=0.613 d=+0.050
+[done] elapsed=710.8s -> depositioned_family_polarity.json
