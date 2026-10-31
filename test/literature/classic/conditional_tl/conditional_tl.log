@@ -1,0 +1,47 @@
+[setup] rows=16067 subjects=57 strict folds == npz OK elapsed=0.6s
+[fold 1/5] base/sessnorm/inner-base done elapsed=34.8s
+[fold 2/5] base/sessnorm/inner-base done elapsed=46.9s
+[fold 3/5] base/sessnorm/inner-base done elapsed=60.3s
+[fold 4/5] base/sessnorm/inner-base done elapsed=74.4s
+[fold 5/5] base/sessnorm/inner-base done elapsed=91.0s
+  [stream 0 fold 1/5] adapt expert + gates done; gate train pos-rate=0.63 elapsed=104.0s
+[check] prefix invariance + test-label shuffle OK {'strict_fold_equality': 'ok', 'prefix_gate_pipeline': {'max_abs_prefix_change': 0.0, 'max_abs_future_change': 6.761825551444976}, 'test_label_shuffle_gate': 'ok'}
+  [stream 0 fold 2/5] adapt expert + gates done; gate train pos-rate=0.56 elapsed=116.2s
+  [stream 0 fold 3/5] adapt expert + gates done; gate train pos-rate=0.52 elapsed=127.7s
+  [stream 0 fold 4/5] adapt expert + gates done; gate train pos-rate=0.51 elapsed=139.7s
+  [stream 0 fold 5/5] adapt expert + gates done; gate train pos-rate=0.67 elapsed=152.1s
+  [stream 1 fold 1/5] adapt expert + gates done; gate train pos-rate=0.64 elapsed=164.3s
+  [stream 1 fold 2/5] adapt expert + gates done; gate train pos-rate=0.62 elapsed=175.3s
+  [stream 1 fold 3/5] adapt expert + gates done; gate train pos-rate=0.60 elapsed=186.5s
+  [stream 1 fold 4/5] adapt expert + gates done; gate train pos-rate=0.57 elapsed=198.3s
+  [stream 1 fold 5/5] adapt expert + gates done; gate train pos-rate=0.58 elapsed=210.7s
+  [stream 2 fold 1/5] adapt expert + gates done; gate train pos-rate=0.65 elapsed=223.1s
+  [stream 2 fold 2/5] adapt expert + gates done; gate train pos-rate=0.65 elapsed=235.0s
+  [stream 2 fold 3/5] adapt expert + gates done; gate train pos-rate=0.58 elapsed=251.2s
+  [stream 2 fold 4/5] adapt expert + gates done; gate train pos-rate=0.54 elapsed=267.3s
+  [stream 2 fold 5/5] adapt expert + gates done; gate train pos-rate=0.65 elapsed=282.0s
+[result] sessnorm_expert__lit               AUC=0.6410 mac=0.6057 >=.9: 0 dAUC=+0.0085[-0.0141,+0.0323] dmac=+0.0095[-0.0075,+0.0271]
+[result] gate_conf_session__lit             AUC=0.6340 mac=0.6003 >=.9: 0 dAUC=+0.0015[-0.0171,+0.0195] dmac=+0.0041[-0.0119,+0.0194]
+[result] adapt_expert__s0                   AUC=0.6440 mac=0.6088 >=.9: 0 dAUC=+0.0113[-0.0093,+0.0324] dmac=+0.0125[-0.0032,+0.0285]
+[result] gate_conf__s0                      AUC=0.6413 mac=0.6054 >=.9: 0 dAUC=+0.0088[-0.0028,+0.0213] dmac=+0.0093[-0.0026,+0.0208]
+[result] gate_learned__s0                   AUC=0.6380 mac=0.6051 >=.9: 0 dAUC=+0.0053[-0.0126,+0.0215] dmac=+0.0088[-0.0062,+0.0231]
+[result] gate_soft__s0                      AUC=0.6465 mac=0.6075 >=.9: 0 dAUC=+0.0138[+0.0014,+0.0263] dmac=+0.0113[+0.0002,+0.0225]
+[result] gate_oracle__s0                    AUC=0.6661 mac=0.6259 >=.9: 0 dAUC=+0.0334[+0.0213,+0.0480] dmac=+0.0297[+0.0204,+0.0402]
+[result] adapt_expert__s1                   AUC=0.6449 mac=0.6067 >=.9: 0 dAUC=+0.0122[-0.0077,+0.0324] dmac=+0.0104[-0.0064,+0.0275]
+[result] gate_conf__s1                      AUC=0.6435 mac=0.6066 >=.9: 0 dAUC=+0.0110[-0.0011,+0.0232] dmac=+0.0104[-0.0023,+0.0228]
+[result] gate_learned__s1                   AUC=0.6437 mac=0.6053 >=.9: 0 dAUC=+0.0110[-0.0088,+0.0305] dmac=+0.0091[-0.0072,+0.0256]
+[result] gate_soft__s1                      AUC=0.6482 mac=0.6079 >=.9: 0 dAUC=+0.0156[+0.0023,+0.0295] dmac=+0.0117[-0.0003,+0.0234]
+[result] gate_oracle__s1                    AUC=0.6665 mac=0.6258 >=.9: 0 dAUC=+0.0337[+0.0221,+0.0475] dmac=+0.0296[+0.0202,+0.0399]
+[result] adapt_expert__s2                   AUC=0.6459 mac=0.6089 >=.9: 0 dAUC=+0.0133[-0.0072,+0.0332] dmac=+0.0128[-0.0037,+0.0296]
+[result] gate_conf__s2                      AUC=0.6431 mac=0.6068 >=.9: 0 dAUC=+0.0105[-0.0020,+0.0220] dmac=+0.0107[-0.0011,+0.0225]
+[result] gate_learned__s2                   AUC=0.6434 mac=0.6084 >=.9: 0 dAUC=+0.0108[-0.0087,+0.0292] dmac=+0.0123[-0.0034,+0.0273]
+[result] gate_soft__s2                      AUC=0.6478 mac=0.6118 >=.9: 0 dAUC=+0.0152[+0.0009,+0.0291] dmac=+0.0157[+0.0036,+0.0274]
+[result] gate_oracle__s2                    AUC=0.6681 mac=0.6275 >=.9: 0 dAUC=+0.0354[+0.0231,+0.0497] dmac=+0.0314[+0.0218,+0.0422]
+[result] base_lr889__strict                 AUC=0.6324 mac=0.5960 >=.9: 0 dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[seedmean] adapt_expert   AUC=0.6449 subject_macro_bACC=0.6081 n_subj_bacc_ge_0.9=0.0000
+[seedmean] gate_conf      AUC=0.6426 subject_macro_bACC=0.6062 n_subj_bacc_ge_0.9=0.0000
+[seedmean] gate_learned   AUC=0.6417 subject_macro_bACC=0.6063 n_subj_bacc_ge_0.9=0.0000
+[seedmean] gate_soft      AUC=0.6475 subject_macro_bACC=0.6091 n_subj_bacc_ge_0.9=0.0000
+[seedmean] gate_oracle    AUC=0.6669 subject_macro_bACC=0.6264 n_subj_bacc_ge_0.9=0.0000
+[gate] learned-gate majority decision matches true better expert for 0.53 of test subjects (true adapt-better rate 0.56)
+[done] elapsed=327.3s -> D:\BCIC2026\CogState\test\literature\classic\conditional_tl\conditional_tl.json

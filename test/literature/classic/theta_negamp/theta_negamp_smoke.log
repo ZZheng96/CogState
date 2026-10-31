@@ -1,0 +1,22 @@
+[setup] rows=16067 subjects=57 strict folds == npz OK elapsed=1.4s
+[raw] loaded cache _cache_rawfeat.npz elapsed=1.5s
+[lda3] scores done elapsed=6.7s
+[lda1] scores done elapsed=7.0s
+[result] lda3__strict                       AUC=0.5447 mac=0.5315 >=.9: 0 dAUC=-0.0054[-0.0740,+0.0590] dmac=-0.0022[-0.0413,+0.0378]
+[result] lda3__lit_kfold                    AUC=0.5717 mac=0.5482 >=.9: 0 dAUC=+0.0379[-0.0413,+0.1218] dmac=+0.0227[-0.0552,+0.0938]
+[result] lda3__sessnorm                     AUC=0.5684 mac=0.5520 >=.9: 0 dAUC=+0.0165[-0.0463,+0.0805] dmac=+0.0172[-0.0282,+0.0651]
+[result] lda3__causal_norm_s0               AUC=0.5705 mac=0.5514 >=.9: 0 dAUC=+0.0189[-0.0441,+0.0780] dmac=+0.0178[-0.0277,+0.0610]
+[result] lda1__strict                       AUC=0.5687 mac=0.5481 >=.9: 0 dAUC=+0.0152[-0.0619,+0.0784] dmac=+0.0143[-0.0281,+0.0513]
+[result] lda1__lit_kfold                    AUC=0.5671 mac=0.5488 >=.9: 0 dAUC=+0.0332[-0.0354,+0.1125] dmac=+0.0248[-0.0154,+0.0648]
+[result] lda1__sessnorm                     AUC=0.5632 mac=0.5441 >=.9: 0 dAUC=+0.0127[-0.0651,+0.0797] dmac=+0.0111[-0.0421,+0.0610]
+[result] lda1__causal_norm_s0               AUC=0.5699 mac=0.5451 >=.9: 0 dAUC=+0.0188[-0.0607,+0.0882] dmac=+0.0122[-0.0426,+0.0629]
+[result] lr889__strict                      AUC=0.5515 mac=0.5342 >=.9: 0 dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[result] lr889__lit_kfold                   AUC=0.5949 mac=0.5681 >=.9: 0 dAUC=+0.0671[+0.0478,+0.0895] dmac=+0.0446[+0.0275,+0.0591]
+[single] log_mean_neg_trough      raw      pooledAUC=0.5687 median within-subj AUC=0.5870 frac>.5=0.55
+[single] log_mean_neg_trough      sessnorm pooledAUC=0.5632 median within-subj AUC=0.5870 frac>.5=0.55
+[single] log_median_neg_trough    raw      pooledAUC=0.5568 median within-subj AUC=0.5728 frac>.5=0.55
+[single] log_median_neg_trough    sessnorm pooledAUC=0.5441 median within-subj AUC=0.5728 frac>.5=0.55
+[single] log_rel_neg_trough       raw      pooledAUC=0.5008 median within-subj AUC=0.4931 frac>.5=0.45
+[single] log_rel_neg_trough       sessnorm pooledAUC=0.5087 median within-subj AUC=0.4931 frac>.5=0.45
+[check] fold equality, test-label shuffle, prefix invariance OK {'strict_fold_equality': 'ok', 'test_label_shuffle': 'ok', 'prefix_causal_norm': {'max_abs_prefix_change': 0.0, 'max_abs_future_change': 8.35946543141899}}
+[done] elapsed=12.8s -> D:\BCIC2026\CogState\test\literature\classic\theta_negamp\theta_negamp_smoke.json

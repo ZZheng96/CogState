@@ -1,0 +1,26 @@
+[setup] rows=16067 subjects=57 strict folds == npz OK elapsed=0.6s
+[raw] loaded cache _cache_rawfeat.npz elapsed=0.6s
+[lda3] scores done elapsed=26.5s
+[lda1] scores done elapsed=29.7s
+[result] lda3__strict                       AUC=0.5890 mac=0.5658 >=.9: 0 dAUC=-0.0444[-0.0700,-0.0201] dmac=-0.0311[-0.0534,-0.0098]
+[result] lda3__lit_kfold                    AUC=0.5931 mac=0.5644 >=.9: 0 dAUC=-0.0402[-0.0657,-0.0162] dmac=-0.0325[-0.0550,-0.0111]
+[result] lda3__sessnorm                     AUC=0.6175 mac=0.5894 >=.9: 0 dAUC=-0.0162[-0.0436,+0.0104] dmac=-0.0076[-0.0323,+0.0134]
+[result] lda3__causal_norm_s0               AUC=0.6141 mac=0.5850 >=.9: 0 dAUC=-0.0197[-0.0470,+0.0068] dmac=-0.0120[-0.0367,+0.0098]
+[result] lda3__causal_norm_s1               AUC=0.6132 mac=0.5822 >=.9: 0 dAUC=-0.0205[-0.0486,+0.0052] dmac=-0.0149[-0.0382,+0.0070]
+[result] lda3__causal_norm_s2               AUC=0.6145 mac=0.5828 >=.9: 0 dAUC=-0.0193[-0.0465,+0.0069] dmac=-0.0142[-0.0381,+0.0073]
+[result] lda1__strict                       AUC=0.6047 mac=0.5836 >=.9: 0 dAUC=-0.0286[-0.0575,-0.0002] dmac=-0.0131[-0.0371,+0.0096]
+[result] lda1__lit_kfold                    AUC=0.6078 mac=0.5827 >=.9: 0 dAUC=-0.0254[-0.0518,+0.0001] dmac=-0.0140[-0.0389,+0.0089]
+[result] lda1__sessnorm                     AUC=0.6185 mac=0.5899 >=.9: 0 dAUC=-0.0150[-0.0451,+0.0162] dmac=-0.0070[-0.0333,+0.0169]
+[result] lda1__causal_norm_s0               AUC=0.6182 mac=0.5874 >=.9: 0 dAUC=-0.0154[-0.0465,+0.0158] dmac=-0.0095[-0.0364,+0.0150]
+[result] lda1__causal_norm_s1               AUC=0.6187 mac=0.5882 >=.9: 0 dAUC=-0.0149[-0.0450,+0.0156] dmac=-0.0086[-0.0331,+0.0150]
+[result] lda1__causal_norm_s2               AUC=0.6191 mac=0.5872 >=.9: 0 dAUC=-0.0146[-0.0459,+0.0160] dmac=-0.0096[-0.0352,+0.0152]
+[result] lr889__strict                      AUC=0.6324 mac=0.5960 >=.9: 0 dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[result] lr889__lit_kfold                   AUC=0.6817 mac=0.6300 >=.9: 0 dAUC=+0.0492[+0.0363,+0.0642] dmac=+0.0340[+0.0239,+0.0453]
+[single] log_mean_neg_trough      raw      pooledAUC=0.6094 median within-subj AUC=0.6383 frac>.5=0.74
+[single] log_mean_neg_trough      sessnorm pooledAUC=0.6200 median within-subj AUC=0.6383 frac>.5=0.74
+[single] log_median_neg_trough    raw      pooledAUC=0.5924 median within-subj AUC=0.6139 frac>.5=0.68
+[single] log_median_neg_trough    sessnorm pooledAUC=0.5986 median within-subj AUC=0.6139 frac>.5=0.68
+[single] log_rel_neg_trough       raw      pooledAUC=0.5255 median within-subj AUC=0.5261 frac>.5=0.56
+[single] log_rel_neg_trough       sessnorm pooledAUC=0.5314 median within-subj AUC=0.5261 frac>.5=0.56
+[check] fold equality, test-label shuffle, prefix invariance OK {'strict_fold_equality': 'ok', 'test_label_shuffle': 'ok', 'prefix_causal_norm': {'max_abs_prefix_change': 0.0, 'max_abs_future_change': 8.35946543141899}}
+[done] elapsed=83.7s -> D:\BCIC2026\CogState\test\literature\classic\theta_negamp\theta_negamp.json

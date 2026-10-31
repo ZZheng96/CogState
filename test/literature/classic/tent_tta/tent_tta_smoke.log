@@ -1,0 +1,16 @@
+[setup] rows=16067 subjects=57 strict folds == npz OK elapsed=0.6s
+[fold 1/5 stream 0] 11 test subjects x 5 variants elapsed=13.8s
+[check] {'strict_fold_equality': 'ok', 'prefix_tent_causal': {'max_abs_prefix_change': 0.0, 'max_abs_future_change': 14.483129775682382}, 'prefix_tent_affine': {'max_abs_prefix_change': 0.0, 'max_abs_future_change': 68.35424185856161}, 'test_label_shuffle': 'ok'}
+[result] none__strict                       AUC=0.5515 mac=0.5342 >=.9: 0 dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[result] tent_session__lit                  AUC=0.5558 mac=0.5105 >=.9: 0 dAUC=+0.0109[-0.0476,+0.0674] dmac=-0.0233[-0.0647,+0.0171]
+[result] stats_causal__s0                   AUC=0.5656 mac=0.5509 >=.9: 0 dAUC=+0.0152[-0.0184,+0.0472] dmac=+0.0184[-0.0046,+0.0427]
+[result] tent_causal_lr0.1__s0              AUC=0.5141 mac=0.5044 >=.9: 0 dAUC=-0.0383[-0.0877,+0.0184] dmac=-0.0301[-0.0679,+0.0077]
+[result] tent_causal_lr1__s0                AUC=0.5163 mac=0.5024 >=.9: 0 dAUC=-0.0344[-0.0829,+0.0147] dmac=-0.0327[-0.0780,+0.0142]
+[result] tent_affine_lr0.1__s0              AUC=0.5000 mac=0.4905 >=.9: 0 dAUC=-0.0526[-0.0932,-0.0144] dmac=-0.0446[-0.0821,-0.0023]
+[result] tent_affine_lr1__s0                AUC=0.5189 mac=0.5031 >=.9: 0 dAUC=-0.0320[-0.0764,+0.0116] dmac=-0.0321[-0.0765,+0.0143]
+[seedmean] stats_causal         AUC=0.5656 subject_macro_bACC=0.5509 n_subj_bacc_ge_0.9=0.0000
+[seedmean] tent_causal_lr0.1    AUC=0.5141 subject_macro_bACC=0.5044 n_subj_bacc_ge_0.9=0.0000
+[seedmean] tent_causal_lr1      AUC=0.5163 subject_macro_bACC=0.5024 n_subj_bacc_ge_0.9=0.0000
+[seedmean] tent_affine_lr0.1    AUC=0.5000 subject_macro_bACC=0.4905 n_subj_bacc_ge_0.9=0.0000
+[seedmean] tent_affine_lr1      AUC=0.5189 subject_macro_bACC=0.5031 n_subj_bacc_ge_0.9=0.0000
+[done] elapsed=21.4s -> D:\BCIC2026\CogState\test\literature\classic\tent_tta\tent_tta_smoke.json

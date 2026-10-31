@@ -1,0 +1,19 @@
+[setup] rows=16067 subjects=57 strict folds == npz OK elapsed=0.5s
+[fold 1/5] base/sessnorm/inner-base done elapsed=19.8s
+  [stream 0 fold 1/5] adapt expert + gates done; gate train pos-rate=0.63 elapsed=31.0s
+[check] prefix invariance + test-label shuffle OK {'strict_fold_equality': 'ok', 'prefix_gate_pipeline': {'max_abs_prefix_change': 0.0, 'max_abs_future_change': 6.761825551444976}, 'test_label_shuffle_gate': 'ok'}
+[result] sessnorm_expert__lit               AUC=0.5633 mac=0.5501 >=.9: 0 dAUC=+0.0142[-0.0350,+0.0583] dmac=+0.0181[-0.0151,+0.0452]
+[result] gate_conf_session__lit             AUC=0.5451 mac=0.5365 >=.9: 0 dAUC=-0.0056[-0.0517,+0.0323] dmac=+0.0032[-0.0262,+0.0273]
+[result] adapt_expert__s0                   AUC=0.5704 mac=0.5536 >=.9: 0 dAUC=+0.0199[-0.0098,+0.0478] dmac=+0.0214[-0.0026,+0.0462]
+[result] gate_conf__s0                      AUC=0.5511 mac=0.5343 >=.9: 0 dAUC=-0.0005[-0.0192,+0.0121] dmac=+0.0003[-0.0142,+0.0108]
+[result] gate_learned__s0                   AUC=0.5706 mac=0.5527 >=.9: 0 dAUC=+0.0200[-0.0099,+0.0477] dmac=+0.0205[-0.0038,+0.0454]
+[result] gate_soft__s0                      AUC=0.5723 mac=0.5531 >=.9: 0 dAUC=+0.0215[-0.0016,+0.0422] dmac=+0.0203[+0.0029,+0.0392]
+[result] gate_oracle__s0                    AUC=0.5896 mac=0.5619 >=.9: 0 dAUC=+0.0381[+0.0164,+0.0670] dmac=+0.0295[+0.0096,+0.0505]
+[result] base_lr889__strict                 AUC=0.5515 mac=0.5342 >=.9: 0 dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[seedmean] adapt_expert   AUC=0.5704 subject_macro_bACC=0.5536 n_subj_bacc_ge_0.9=0.0000
+[seedmean] gate_conf      AUC=0.5511 subject_macro_bACC=0.5343 n_subj_bacc_ge_0.9=0.0000
+[seedmean] gate_learned   AUC=0.5706 subject_macro_bACC=0.5527 n_subj_bacc_ge_0.9=0.0000
+[seedmean] gate_soft      AUC=0.5723 subject_macro_bACC=0.5531 n_subj_bacc_ge_0.9=0.0000
+[seedmean] gate_oracle    AUC=0.5896 subject_macro_bACC=0.5619 n_subj_bacc_ge_0.9=0.0000
+[gate] learned-gate majority decision matches true better expert for 0.55 of test subjects (true adapt-better rate 0.55)
+[done] elapsed=32.1s -> D:\BCIC2026\CogState\test\literature\classic\conditional_tl\conditional_tl_smoke.json

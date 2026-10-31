@@ -1,0 +1,102 @@
+[setup] rows=16067 subjects=57 strict folds == npz OK elapsed=0.6s
+[raw] loaded cache _cache_rawfeat.npz elapsed=0.6s
+  [1/16] svm_rbf_band__strict fold 1/5 elapsed=54.0s
+  [1/16] svm_rbf_band__strict fold 2/5 elapsed=74.0s
+  [1/16] svm_rbf_band__strict fold 3/5 elapsed=92.0s
+  [1/16] svm_rbf_band__strict fold 4/5 elapsed=105.2s
+  [1/16] svm_rbf_band__strict fold 5/5 elapsed=120.9s
+  [2/16] svm_rbf_band__lit_kfold fold 1/5 elapsed=148.3s
+  [2/16] svm_rbf_band__lit_kfold fold 2/5 elapsed=160.2s
+  [2/16] svm_rbf_band__lit_kfold fold 3/5 elapsed=193.3s
+  [2/16] svm_rbf_band__lit_kfold fold 4/5 elapsed=213.5s
+  [2/16] svm_rbf_band__lit_kfold fold 5/5 elapsed=232.8s
+  [3/16] svm_rbf_band__sessnorm fold 1/5 elapsed=250.0s
+  [3/16] svm_rbf_band__sessnorm fold 2/5 elapsed=265.2s
+  [3/16] svm_rbf_band__sessnorm fold 3/5 elapsed=280.1s
+  [3/16] svm_rbf_band__sessnorm fold 4/5 elapsed=294.4s
+  [3/16] svm_rbf_band__sessnorm fold 5/5 elapsed=315.3s
+  [4/16] svm_lin_band__strict fold 1/5 elapsed=315.4s
+  [4/16] svm_lin_band__strict fold 2/5 elapsed=315.5s
+  [4/16] svm_lin_band__strict fold 3/5 elapsed=315.6s
+  [4/16] svm_lin_band__strict fold 4/5 elapsed=315.6s
+  [4/16] svm_lin_band__strict fold 5/5 elapsed=315.7s
+  [5/16] svm_lin_band__lit_kfold fold 1/5 elapsed=315.8s
+  [5/16] svm_lin_band__lit_kfold fold 2/5 elapsed=315.9s
+  [5/16] svm_lin_band__lit_kfold fold 3/5 elapsed=315.9s
+  [5/16] svm_lin_band__lit_kfold fold 4/5 elapsed=316.0s
+  [5/16] svm_lin_band__lit_kfold fold 5/5 elapsed=316.1s
+  [6/16] svm_lin_band__sessnorm fold 1/5 elapsed=316.3s
+  [6/16] svm_lin_band__sessnorm fold 2/5 elapsed=316.4s
+  [6/16] svm_lin_band__sessnorm fold 3/5 elapsed=316.6s
+  [6/16] svm_lin_band__sessnorm fold 4/5 elapsed=316.8s
+  [6/16] svm_lin_band__sessnorm fold 5/5 elapsed=317.0s
+  [7/16] svm_rbf_psd__strict fold 1/5 elapsed=377.0s
+  [7/16] svm_rbf_psd__strict fold 2/5 elapsed=432.2s
+  [7/16] svm_rbf_psd__strict fold 3/5 elapsed=463.2s
+  [7/16] svm_rbf_psd__strict fold 4/5 elapsed=482.4s
+  [7/16] svm_rbf_psd__strict fold 5/5 elapsed=502.3s
+  [8/16] svm_rbf_psd__lit_kfold fold 1/5 elapsed=521.0s
+  [8/16] svm_rbf_psd__lit_kfold fold 2/5 elapsed=541.0s
+  [8/16] svm_rbf_psd__lit_kfold fold 3/5 elapsed=561.4s
+  [8/16] svm_rbf_psd__lit_kfold fold 4/5 elapsed=582.3s
+  [8/16] svm_rbf_psd__lit_kfold fold 5/5 elapsed=602.5s
+  [9/16] svm_rbf_psd__sessnorm fold 1/5 elapsed=624.1s
+  [9/16] svm_rbf_psd__sessnorm fold 2/5 elapsed=644.2s
+  [9/16] svm_rbf_psd__sessnorm fold 3/5 elapsed=664.0s
+  [9/16] svm_rbf_psd__sessnorm fold 4/5 elapsed=682.2s
+  [9/16] svm_rbf_psd__sessnorm fold 5/5 elapsed=702.6s
+  [10/16] svm_lin_psd__strict fold 1/5 elapsed=702.7s
+  [10/16] svm_lin_psd__strict fold 2/5 elapsed=702.9s
+  [10/16] svm_lin_psd__strict fold 3/5 elapsed=703.0s
+  [10/16] svm_lin_psd__strict fold 4/5 elapsed=703.2s
+  [10/16] svm_lin_psd__strict fold 5/5 elapsed=703.3s
+  [11/16] svm_lin_psd__lit_kfold fold 1/5 elapsed=703.5s
+  [11/16] svm_lin_psd__lit_kfold fold 2/5 elapsed=703.6s
+  [11/16] svm_lin_psd__lit_kfold fold 3/5 elapsed=703.7s
+  [11/16] svm_lin_psd__lit_kfold fold 4/5 elapsed=703.9s
+  [11/16] svm_lin_psd__lit_kfold fold 5/5 elapsed=704.0s
+  [12/16] svm_lin_psd__sessnorm fold 1/5 elapsed=704.2s
+  [12/16] svm_lin_psd__sessnorm fold 2/5 elapsed=704.3s
+  [12/16] svm_lin_psd__sessnorm fold 3/5 elapsed=704.5s
+  [12/16] svm_lin_psd__sessnorm fold 4/5 elapsed=704.7s
+  [12/16] svm_lin_psd__sessnorm fold 5/5 elapsed=704.9s
+  [13/16] svm_rbf_f889__strict fold 1/5 elapsed=863.9s
+  [13/16] svm_rbf_f889__strict fold 2/5 elapsed=1025.1s
+  [13/16] svm_rbf_f889__strict fold 3/5 elapsed=1305.6s
+  [13/16] svm_rbf_f889__strict fold 4/5 elapsed=1611.9s
+  [13/16] svm_rbf_f889__strict fold 5/5 elapsed=1741.7s
+  [14/16] svm_rbf_f889__lit_kfold fold 1/5 elapsed=1872.4s
+  [14/16] svm_rbf_f889__lit_kfold fold 2/5 elapsed=2000.8s
+  [14/16] svm_rbf_f889__lit_kfold fold 3/5 elapsed=2127.4s
+  [14/16] svm_rbf_f889__lit_kfold fold 4/5 elapsed=2255.1s
+  [14/16] svm_rbf_f889__lit_kfold fold 5/5 elapsed=2378.3s
+  [15/16] svm_lin_f889__strict fold 1/5 elapsed=2390.6s
+  [15/16] svm_lin_f889__strict fold 2/5 elapsed=2402.9s
+  [15/16] svm_lin_f889__strict fold 3/5 elapsed=2414.8s
+  [15/16] svm_lin_f889__strict fold 4/5 elapsed=2427.5s
+  [15/16] svm_lin_f889__strict fold 5/5 elapsed=2438.9s
+  [16/16] svm_lin_f889__lit_kfold fold 1/5 elapsed=2451.5s
+  [16/16] svm_lin_f889__lit_kfold fold 2/5 elapsed=2464.4s
+  [16/16] svm_lin_f889__lit_kfold fold 3/5 elapsed=2476.5s
+  [16/16] svm_lin_f889__lit_kfold fold 4/5 elapsed=2489.2s
+  [16/16] svm_lin_f889__lit_kfold fold 5/5 elapsed=2501.2s
+[result] svm_rbf_band__strict               AUC=0.6064 mac=0.5716 >=.9: 0 dAUC=-0.0264[-0.0528,-0.0025] dmac=-0.0249[-0.0476,-0.0049]
+[result] svm_rbf_band__lit_kfold            AUC=0.6443 mac=0.6013 >=.9: 0 dAUC=+0.0114[-0.0138,+0.0379] dmac=+0.0048[-0.0169,+0.0259]
+[result] svm_rbf_band__sessnorm             AUC=0.6361 mac=0.6038 >=.9: 0 dAUC=+0.0028[-0.0283,+0.0335] dmac=+0.0072[-0.0189,+0.0319]
+[result] svm_lin_band__strict               AUC=0.5815 mac=0.5555 >=.9: 0 dAUC=-0.0520[-0.0785,-0.0264] dmac=-0.0414[-0.0627,-0.0208]
+[result] svm_lin_band__lit_kfold            AUC=0.5942 mac=0.5609 >=.9: 0 dAUC=-0.0392[-0.0678,-0.0133] dmac=-0.0359[-0.0564,-0.0168]
+[result] svm_lin_band__sessnorm             AUC=0.6045 mac=0.5818 >=.9: 0 dAUC=-0.0290[-0.0578,-0.0005] dmac=-0.0151[-0.0386,+0.0072]
+[result] svm_rbf_psd__strict                AUC=0.6137 mac=0.5748 >=.9: 0 dAUC=-0.0188[-0.0399,+0.0011] dmac=-0.0214[-0.0406,-0.0029]
+[result] svm_rbf_psd__lit_kfold             AUC=0.6562 mac=0.6073 >=.9: 0 dAUC=+0.0236[+0.0024,+0.0458] dmac=+0.0110[-0.0075,+0.0303]
+[result] svm_rbf_psd__sessnorm              AUC=0.6487 mac=0.6159 >=.9: 0 dAUC=+0.0155[-0.0162,+0.0464] dmac=+0.0193[-0.0069,+0.0447]
+[result] svm_lin_psd__strict                AUC=0.6109 mac=0.5791 >=.9: 0 dAUC=-0.0219[-0.0431,-0.0010] dmac=-0.0174[-0.0346,-0.0001]
+[result] svm_lin_psd__lit_kfold             AUC=0.6297 mac=0.5881 >=.9: 0 dAUC=-0.0031[-0.0244,+0.0178] dmac=-0.0083[-0.0246,+0.0088]
+[result] svm_lin_psd__sessnorm              AUC=0.6208 mac=0.5951 >=.9: 0 dAUC=-0.0122[-0.0390,+0.0149] dmac=-0.0015[-0.0243,+0.0210]
+[result] svm_rbf_f889__strict               AUC=0.6388 mac=0.5974 >=.9: 0 dAUC=+0.0067[-0.0121,+0.0251] dmac=+0.0015[-0.0142,+0.0178]
+[result] svm_rbf_f889__lit_kfold            AUC=0.7263 mac=0.6656 >=.9: 0 dAUC=+0.0941[+0.0775,+0.1129] dmac=+0.0696[+0.0551,+0.0867]
+[result] svm_lin_f889__strict               AUC=0.6307 mac=0.5965 >=.9: 0 dAUC=-0.0016[-0.0066,+0.0035] dmac=+0.0005[-0.0049,+0.0062]
+[result] svm_lin_f889__lit_kfold            AUC=0.6807 mac=0.6284 >=.9: 0 dAUC=+0.0482[+0.0341,+0.0641] dmac=+0.0324[+0.0214,+0.0445]
+[result] lr889__strict                      AUC=0.6324 mac=0.5960 >=.9: 0 dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[result] lr889__lit_kfold                   AUC=0.6817 mac=0.6300 >=.9: 0 dAUC=+0.0492[+0.0363,+0.0642] dmac=+0.0340[+0.0239,+0.0453]
+[check] fold equality + test-label shuffle invariance OK
+[done] elapsed=2566.8s -> D:\BCIC2026\CogState\test\literature\classic\svm_spectral\svm_spectral.json

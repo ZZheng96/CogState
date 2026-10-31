@@ -1,0 +1,30 @@
+[setup] rows=16067 subjects=57 strict folds == npz OK elapsed=0.7s
+[raw] loaded cache _cache_rawfeat.npz elapsed=0.7s
+[strict fold 1/5] done elapsed=54.0s
+[strict fold 2/5] done elapsed=60.7s
+[strict fold 3/5] done elapsed=65.8s
+[strict fold 4/5] done elapsed=70.6s
+[strict fold 5/5] done elapsed=75.3s
+[lit_kfold fold 1/5] done elapsed=80.3s
+[lit_kfold fold 2/5] done elapsed=85.3s
+[lit_kfold fold 3/5] done elapsed=90.4s
+[lit_kfold fold 4/5] done elapsed=95.9s
+[lit_kfold fold 5/5] done elapsed=100.9s
+[sessnorm fold 1/5] done elapsed=105.8s
+[sessnorm fold 2/5] done elapsed=113.4s
+[sessnorm fold 3/5] done elapsed=118.4s
+[sessnorm fold 4/5] done elapsed=123.0s
+[sessnorm fold 5/5] done elapsed=127.9s
+[result] envcorr__strict                    AUC=0.5660 mac=0.5525 >=.9: 0 dAUC=-0.0666[-0.0921,-0.0381] dmac=-0.0436[-0.0630,-0.0232]
+[result] graph36__strict                    AUC=0.5666 mac=0.5478 >=.9: 0 dAUC=-0.0659[-0.0922,-0.0377] dmac=-0.0483[-0.0689,-0.0272]
+[result] fuse889__strict                    AUC=0.6344 mac=0.5956 >=.9: 0 dAUC=+0.0021[-0.0007,+0.0052] dmac=-0.0005[-0.0053,+0.0044]
+[result] envcorr__lit_kfold                 AUC=0.5706 mac=0.5532 >=.9: 0 dAUC=-0.0621[-0.0872,-0.0350] dmac=-0.0430[-0.0613,-0.0245]
+[result] graph36__lit_kfold                 AUC=0.5741 mac=0.5521 >=.9: 0 dAUC=-0.0585[-0.0850,-0.0318] dmac=-0.0440[-0.0646,-0.0234]
+[result] fuse889__lit_kfold                 AUC=0.6839 mac=0.6319 >=.9: 0 dAUC=+0.0514[+0.0384,+0.0665] dmac=+0.0358[+0.0255,+0.0472]
+[result] envcorr__sessnorm                  AUC=0.5770 mac=0.5579 >=.9: 0 dAUC=-0.0554[-0.0810,-0.0285] dmac=-0.0382[-0.0583,-0.0193]
+[result] graph36__sessnorm                  AUC=0.5766 mac=0.5568 >=.9: 0 dAUC=-0.0558[-0.0826,-0.0283] dmac=-0.0393[-0.0597,-0.0199]
+[result] fuse889__sessnorm                  AUC=0.6384 mac=0.5990 >=.9: 0 dAUC=+0.0061[+0.0018,+0.0104] dmac=+0.0030[-0.0018,+0.0077]
+[result] lr889__strict                      AUC=0.6324 mac=0.5960 >=.9: 0 dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[result] lr889__lit_kfold                   AUC=0.6817 mac=0.6300 >=.9: 0 dAUC=+0.0492[+0.0363,+0.0642] dmac=+0.0340[+0.0239,+0.0453]
+[check] {'strict_fold_equality': 'ok', 'test_label_shuffle': 'ok'}
+[done] elapsed=153.8s -> D:\BCIC2026\CogState\test\literature\classic\graph_note\graph_note.json

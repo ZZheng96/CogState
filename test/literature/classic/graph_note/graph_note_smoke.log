@@ -1,0 +1,18 @@
+[setup] rows=16067 subjects=57 strict folds == npz OK elapsed=0.7s
+[raw] loaded cache _cache_rawfeat.npz elapsed=0.7s
+[strict fold 1/5] done elapsed=23.1s
+[lit_kfold fold 1/5] done elapsed=28.0s
+[sessnorm fold 1/5] done elapsed=33.0s
+[result] envcorr__strict                    AUC=0.5483 mac=0.5360 >=.9: 0 dAUC=-0.0057[-0.0590,+0.0461] dmac=+0.0016[-0.0274,+0.0352]
+[result] graph36__strict                    AUC=0.5350 mac=0.5241 >=.9: 0 dAUC=-0.0178[-0.0676,+0.0380] dmac=-0.0107[-0.0462,+0.0313]
+[result] fuse889__strict                    AUC=0.5579 mac=0.5418 >=.9: 0 dAUC=+0.0066[-0.0011,+0.0157] dmac=+0.0076[-0.0016,+0.0169]
+[result] envcorr__lit_kfold                 AUC=0.5503 mac=0.5235 >=.9: 0 dAUC=+0.0190[-0.0356,+0.0854] dmac=+0.0014[-0.0494,+0.0579]
+[result] graph36__lit_kfold                 AUC=0.5316 mac=0.5111 >=.9: 0 dAUC=+0.0010[-0.0473,+0.0577] dmac=-0.0118[-0.0475,+0.0384]
+[result] fuse889__lit_kfold                 AUC=0.6041 mac=0.5680 >=.9: 0 dAUC=+0.0768[+0.0518,+0.1018] dmac=+0.0443[+0.0104,+0.0723]
+[result] envcorr__sessnorm                  AUC=0.5508 mac=0.5284 >=.9: 0 dAUC=-0.0022[-0.0467,+0.0430] dmac=-0.0056[-0.0354,+0.0260]
+[result] graph36__sessnorm                  AUC=0.5491 mac=0.5291 >=.9: 0 dAUC=-0.0034[-0.0478,+0.0417] dmac=-0.0042[-0.0304,+0.0204]
+[result] fuse889__sessnorm                  AUC=0.5582 mac=0.5399 >=.9: 0 dAUC=+0.0069[-0.0027,+0.0154] dmac=+0.0057[-0.0056,+0.0182]
+[result] lr889__strict                      AUC=0.5515 mac=0.5342 >=.9: 0 dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[result] lr889__lit_kfold                   AUC=0.5949 mac=0.5681 >=.9: 0 dAUC=+0.0671[+0.0478,+0.0895] dmac=+0.0446[+0.0275,+0.0591]
+[check] {'strict_fold_equality': 'ok', 'test_label_shuffle': 'ok'}
+[done] elapsed=34.6s -> D:\BCIC2026\CogState\test\literature\classic\graph_note\graph_note_smoke.json

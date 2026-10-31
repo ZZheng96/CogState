@@ -1,0 +1,73 @@
+[setup] rows=16067 subjects=57 strict folds == npz OK elapsed=0.6s
+[raw] loaded cache _cache_rawfeat.npz elapsed=0.6s
+[fold 1/5] order-free variants done elapsed=79.5s
+[fold 2/5] order-free variants done elapsed=109.9s
+[fold 3/5] order-free variants done elapsed=158.8s
+[fold 4/5] order-free variants done elapsed=216.4s
+[fold 5/5] order-free variants done elapsed=260.7s
+  [stream 0 fold 1/5] ea_causal done elapsed=300.4s
+  [stream 0 fold 1/5] rpa_causal done elapsed=357.6s
+  [stream 0 fold 2/5] ea_causal done elapsed=411.7s
+  [stream 0 fold 2/5] rpa_causal done elapsed=451.8s
+  [stream 0 fold 3/5] ea_causal done elapsed=475.0s
+  [stream 0 fold 3/5] rpa_causal done elapsed=497.5s
+  [stream 0 fold 4/5] ea_causal done elapsed=518.1s
+  [stream 0 fold 4/5] rpa_causal done elapsed=542.0s
+  [stream 0 fold 5/5] ea_causal done elapsed=566.5s
+  [stream 0 fold 5/5] rpa_causal done elapsed=590.9s
+  [stream 1 fold 1/5] ea_causal done elapsed=614.9s
+  [stream 1 fold 1/5] rpa_causal done elapsed=636.8s
+  [stream 1 fold 2/5] ea_causal done elapsed=657.9s
+  [stream 1 fold 2/5] rpa_causal done elapsed=679.3s
+  [stream 1 fold 3/5] ea_causal done elapsed=701.4s
+  [stream 1 fold 3/5] rpa_causal done elapsed=726.4s
+  [stream 1 fold 4/5] ea_causal done elapsed=748.9s
+  [stream 1 fold 4/5] rpa_causal done elapsed=770.9s
+  [stream 1 fold 5/5] ea_causal done elapsed=795.7s
+  [stream 1 fold 5/5] rpa_causal done elapsed=819.2s
+  [stream 2 fold 1/5] ea_causal done elapsed=841.4s
+  [stream 2 fold 1/5] rpa_causal done elapsed=862.8s
+  [stream 2 fold 2/5] ea_causal done elapsed=885.6s
+  [stream 2 fold 2/5] rpa_causal done elapsed=911.3s
+  [stream 2 fold 3/5] ea_causal done elapsed=934.6s
+  [stream 2 fold 3/5] rpa_causal done elapsed=957.3s
+  [stream 2 fold 4/5] ea_causal done elapsed=980.2s
+  [stream 2 fold 4/5] rpa_causal done elapsed=1001.2s
+  [stream 2 fold 5/5] ea_causal done elapsed=1022.9s
+  [stream 2 fold 5/5] rpa_causal done elapsed=1046.9s
+[result] ts_noalign__lr                     AUC=0.5918 mac=0.5677 >=.9: 0 dAUC=-0.0410[-0.0592,-0.0220] dmac=-0.0288[-0.0418,-0.0161]
+[result] fuse889_ts_noalign__lr             AUC=0.6329 mac=0.5968 >=.9: 0 dAUC=+0.0006[-0.0021,+0.0038] dmac=+0.0008[-0.0028,+0.0050]
+[result] ea_session__lr                     AUC=0.5791 mac=0.5629 >=.9: 0 dAUC=-0.0538[-0.0750,-0.0328] dmac=-0.0335[-0.0511,-0.0152]
+[result] fuse889_ea_session__lr             AUC=0.6327 mac=0.6000 >=.9: 0 dAUC=+0.0003[-0.0101,+0.0085] dmac=+0.0039[-0.0027,+0.0101]
+[result] rpa_session__lr                    AUC=0.6035 mac=0.5781 >=.9: 0 dAUC=-0.0299[-0.0541,-0.0071] dmac=-0.0186[-0.0389,-0.0007]
+[result] fuse889_rpa_session__lr            AUC=0.6442 mac=0.6060 >=.9: 0 dAUC=+0.0115[+0.0033,+0.0198] dmac=+0.0098[+0.0017,+0.0190]
+[result] ts_noalign__svm                    AUC=0.6038 mac=0.5710 >=.9: 0 dAUC=-0.0288[-0.0491,-0.0104] dmac=-0.0252[-0.0424,-0.0085]
+[result] ts_noalign__lr__lit_kfold          AUC=0.6078 mac=0.5748 >=.9: 0 dAUC=-0.0250[-0.0421,-0.0072] dmac=-0.0216[-0.0344,-0.0089]
+[result] ea_causal__lr__s0                  AUC=0.5848 mac=0.5628 >=.9: 0 dAUC=-0.0480[-0.0659,-0.0297] dmac=-0.0337[-0.0470,-0.0193]
+[result] ea_causal__lr__s1                  AUC=0.5864 mac=0.5647 >=.9: 0 dAUC=-0.0464[-0.0653,-0.0270] dmac=-0.0317[-0.0464,-0.0161]
+[result] ea_causal__lr__s2                  AUC=0.5875 mac=0.5611 >=.9: 0 dAUC=-0.0454[-0.0640,-0.0255] dmac=-0.0355[-0.0504,-0.0198]
+[result] ea_causal__svm__s0                 AUC=0.5920 mac=0.5621 >=.9: 0 dAUC=-0.0407[-0.0577,-0.0238] dmac=-0.0342[-0.0476,-0.0213]
+[result] ea_causal__svm__s1                 AUC=0.5915 mac=0.5602 >=.9: 0 dAUC=-0.0414[-0.0611,-0.0220] dmac=-0.0362[-0.0526,-0.0209]
+[result] ea_causal__svm__s2                 AUC=0.5887 mac=0.5579 >=.9: 0 dAUC=-0.0441[-0.0611,-0.0265] dmac=-0.0386[-0.0522,-0.0260]
+[result] fuse889_ea_causal__lr__s0          AUC=0.6331 mac=0.5984 >=.9: 0 dAUC=+0.0007[-0.0027,+0.0043] dmac=+0.0024[-0.0016,+0.0068]
+[result] fuse889_ea_causal__lr__s1          AUC=0.6343 mac=0.5978 >=.9: 0 dAUC=+0.0020[-0.0009,+0.0055] dmac=+0.0018[-0.0023,+0.0060]
+[result] fuse889_ea_causal__lr__s2          AUC=0.6340 mac=0.5974 >=.9: 0 dAUC=+0.0017[-0.0010,+0.0045] dmac=+0.0014[-0.0021,+0.0052]
+[result] fuse889_rpa_causal__lr__s0         AUC=0.6418 mac=0.6043 >=.9: 0 dAUC=+0.0091[+0.0023,+0.0161] dmac=+0.0081[+0.0009,+0.0164]
+[result] fuse889_rpa_causal__lr__s1         AUC=0.6429 mac=0.6065 >=.9: 0 dAUC=+0.0102[+0.0030,+0.0175] dmac=+0.0104[+0.0028,+0.0188]
+[result] fuse889_rpa_causal__lr__s2         AUC=0.6418 mac=0.6054 >=.9: 0 dAUC=+0.0092[+0.0023,+0.0163] dmac=+0.0092[+0.0023,+0.0169]
+[result] rpa_causal__lr__s0                 AUC=0.6021 mac=0.5761 >=.9: 0 dAUC=-0.0313[-0.0553,-0.0090] dmac=-0.0207[-0.0406,-0.0032]
+[result] rpa_causal__lr__s1                 AUC=0.6022 mac=0.5782 >=.9: 0 dAUC=-0.0311[-0.0550,-0.0089] dmac=-0.0185[-0.0377,-0.0008]
+[result] rpa_causal__lr__s2                 AUC=0.6023 mac=0.5775 >=.9: 0 dAUC=-0.0310[-0.0547,-0.0085] dmac=-0.0192[-0.0381,-0.0017]
+[result] rpa_causal__svm__s0                AUC=0.6388 mac=0.6023 >=.9: 0 dAUC=+0.0059[-0.0170,+0.0289] dmac=+0.0057[-0.0142,+0.0254]
+[result] rpa_causal__svm__s1                AUC=0.6402 mac=0.6025 >=.9: 0 dAUC=+0.0072[-0.0167,+0.0309] dmac=+0.0060[-0.0131,+0.0253]
+[result] rpa_causal__svm__s2                AUC=0.6378 mac=0.6013 >=.9: 0 dAUC=+0.0048[-0.0189,+0.0289] dmac=+0.0048[-0.0158,+0.0250]
+[result] lr889__strict                      AUC=0.6324 mac=0.5960 >=.9: 0 dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[result] lr889__lit_kfold                   AUC=0.6817 mac=0.6300 >=.9: 0 dAUC=+0.0492[+0.0363,+0.0642] dmac=+0.0340[+0.0239,+0.0453]
+[seedmean] ea_causal__lr                  AUC=0.5862 subject_macro_bACC=0.5629 n_subj_bacc_ge_0.9=0.0000
+[seedmean] ea_causal__svm                 AUC=0.5907 subject_macro_bACC=0.5601 n_subj_bacc_ge_0.9=0.0000
+[seedmean] fuse889_ea_causal__lr          AUC=0.6338 subject_macro_bACC=0.5979 n_subj_bacc_ge_0.9=0.0000
+[seedmean] fuse889_rpa_causal__lr         AUC=0.6422 subject_macro_bACC=0.6054 n_subj_bacc_ge_0.9=0.0000
+[seedmean] rpa_causal__lr                 AUC=0.6022 subject_macro_bACC=0.5772 n_subj_bacc_ge_0.9=0.0000
+[seedmean] rpa_causal__svm                AUC=0.6389 subject_macro_bACC=0.6020 n_subj_bacc_ge_0.9=0.0000
+[check] fold equality, prefix invariance (EA/RPA causal), test-label shuffle OK {'strict_fold_equality': 'ok', 'prefix_ea_causal': {'max_abs_prefix_change': 0.0, 'max_abs_future_change': 16.64054320995751}, 'prefix_rpa_causal': {'max_abs_prefix_change': 0.0, 'max_abs_future_change': 16.533171134366782}, 'test_label_shuffle': 'ok'}
+[done] elapsed=1127.9s -> D:\BCIC2026\CogState\test\literature\classic\ea_tangent\ea_tangent.json

@@ -1,0 +1,29 @@
+[setup] rows=16067 subjects=57 strict folds == npz OK elapsed=0.6s
+[raw] loaded cache _cache_rawfeat.npz elapsed=0.6s
+[fold 1/5] order-free variants done elapsed=34.5s
+  [stream 0 fold 1/5] ea_causal done elapsed=78.3s
+  [stream 0 fold 1/5] rpa_causal done elapsed=99.1s
+[result] ts_noalign__lr                     AUC=0.5351 mac=0.5264 >=.9: 0 dAUC=-0.0208[-0.0859,+0.0405] dmac=-0.0102[-0.0487,+0.0278]
+[result] fuse889_ts_noalign__lr             AUC=0.5498 mac=0.5326 >=.9: 0 dAUC=-0.0022[-0.0077,+0.0033] dmac=-0.0019[-0.0100,+0.0056]
+[result] ea_session__lr                     AUC=0.5214 mac=0.5225 >=.9: 0 dAUC=-0.0356[-0.0938,+0.0196] dmac=-0.0147[-0.0596,+0.0385]
+[result] fuse889_ea_session__lr             AUC=0.5512 mac=0.5458 >=.9: 0 dAUC=-0.0008[-0.0090,+0.0085] dmac=+0.0113[-0.0004,+0.0223]
+[result] rpa_session__lr                    AUC=0.5377 mac=0.5266 >=.9: 0 dAUC=-0.0192[-0.0903,+0.0527] dmac=-0.0106[-0.0603,+0.0438]
+[result] fuse889_rpa_session__lr            AUC=0.5561 mac=0.5327 >=.9: 0 dAUC=+0.0039[-0.0077,+0.0138] dmac=-0.0013[-0.0166,+0.0123]
+[result] ts_noalign__svm                    AUC=0.5385 mac=0.5074 >=.9: 0 dAUC=-0.0149[-0.0417,+0.0148] dmac=-0.0274[-0.0452,-0.0089]
+[result] ts_noalign__lr__lit_kfold          AUC=0.5161 mac=0.5113 >=.9: 0 dAUC=-0.0188[-0.1138,+0.0651] dmac=-0.0149[-0.0814,+0.0369]
+[result] ea_causal__lr__s0                  AUC=0.5201 mac=0.5191 >=.9: 0 dAUC=-0.0356[-0.0996,+0.0217] dmac=-0.0169[-0.0590,+0.0274]
+[result] ea_causal__svm__s0                 AUC=0.5320 mac=0.5085 >=.9: 0 dAUC=-0.0240[-0.0575,+0.0045] dmac=-0.0271[-0.0413,-0.0065]
+[result] fuse889_ea_causal__lr__s0          AUC=0.5481 mac=0.5358 >=.9: 0 dAUC=-0.0037[-0.0089,+0.0011] dmac=+0.0011[-0.0066,+0.0089]
+[result] fuse889_rpa_causal__lr__s0         AUC=0.5552 mac=0.5336 >=.9: 0 dAUC=+0.0030[-0.0061,+0.0102] dmac=-0.0005[-0.0123,+0.0112]
+[result] rpa_causal__lr__s0                 AUC=0.5385 mac=0.5321 >=.9: 0 dAUC=-0.0183[-0.0896,+0.0530] dmac=-0.0053[-0.0571,+0.0530]
+[result] rpa_causal__svm__s0                AUC=0.5630 mac=0.5352 >=.9: 0 dAUC=+0.0086[-0.0315,+0.0520] dmac=+0.0010[-0.0292,+0.0335]
+[result] lr889__strict                      AUC=0.5515 mac=0.5342 >=.9: 0 dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[result] lr889__lit_kfold                   AUC=0.5949 mac=0.5681 >=.9: 0 dAUC=+0.0671[+0.0478,+0.0895] dmac=+0.0446[+0.0275,+0.0591]
+[seedmean] ea_causal__lr                  AUC=0.5201 subject_macro_bACC=0.5191 n_subj_bacc_ge_0.9=0.0000
+[seedmean] ea_causal__svm                 AUC=0.5320 subject_macro_bACC=0.5085 n_subj_bacc_ge_0.9=0.0000
+[seedmean] fuse889_ea_causal__lr          AUC=0.5481 subject_macro_bACC=0.5358 n_subj_bacc_ge_0.9=0.0000
+[seedmean] fuse889_rpa_causal__lr         AUC=0.5552 subject_macro_bACC=0.5336 n_subj_bacc_ge_0.9=0.0000
+[seedmean] rpa_causal__lr                 AUC=0.5385 subject_macro_bACC=0.5321 n_subj_bacc_ge_0.9=0.0000
+[seedmean] rpa_causal__svm                AUC=0.5630 subject_macro_bACC=0.5352 n_subj_bacc_ge_0.9=0.0000
+[check] fold equality, prefix invariance (EA/RPA causal), test-label shuffle OK {'strict_fold_equality': 'ok', 'prefix_ea_causal': {'max_abs_prefix_change': 0.0, 'max_abs_future_change': 16.64054320995751}, 'prefix_rpa_causal': {'max_abs_prefix_change': 0.0, 'max_abs_future_change': 16.533171134366782}, 'test_label_shuffle': 'ok'}
+[done] elapsed=108.0s -> D:\BCIC2026\CogState\test\literature\classic\ea_tangent\ea_tangent_smoke.json
