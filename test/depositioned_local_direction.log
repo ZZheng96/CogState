@@ -1,0 +1,70 @@
+[start] rows=16067 subjects=57 folds=[0, 1, 2, 3, 4] sseeds=(0, 1, 2) elapsed=0.6s
+[s0] adapted 10/57 16.7s elapsed=35.4s
+[s0] adapted 20/57 25.0s elapsed=43.7s
+[s0] adapted 30/57 34.9s elapsed=53.6s
+[s0] adapted 40/57 43.9s elapsed=62.6s
+[s0] adapted 50/57 54.4s elapsed=73.1s
+[s0] adapted 57/57 58.3s elapsed=77.0s
+[check s0] sub-001: isolation + prefix invariance OK (cut=165)
+[check s0] sub-002: isolation + prefix invariance OK (cut=149)
+[result s0] exp      all: AUC=0.8251 mac=0.7518 | high:0.859 mid:0.775 low:0.695 | cos_exp=0.011017559760326767 cos_xs=None
+[result s0] last16   all: AUC=0.7306 mac=0.6689 | high:0.833 mid:0.712 low:0.570 | cos_exp=0.4319634668751824 cos_xs=0.009674592097615361
+[result s0] last32   all: AUC=0.7960 mac=0.7279 | high:0.844 mid:0.756 low:0.662 | cos_exp=0.589546013273998 cos_xs=0.009210551688355911
+[result s0] last64   all: AUC=0.8120 mac=0.7400 | high:0.855 mid:0.765 low:0.680 | cos_exp=0.755039530289477 cos_xs=0.012752909623583527
+[result s0] last128  all: AUC=0.8204 mac=0.7457 | high:0.859 mid:0.770 low:0.687 | cos_exp=0.9119629467922676 cos_xs=0.014911756354704927
+[result s0] last256  all: AUC=0.8251 mac=0.7514 | high:0.859 mid:0.775 low:0.695 | cos_exp=0.9985678814304086 cos_xs=0.011402095878225549
+[result s0] tau64    all: AUC=0.8212 mac=0.7476 | high:0.853 mid:0.773 low:0.689 | cos_exp=0.8996914011783514 cos_xs=0.014868331184764862
+[result s0] tau256   all: AUC=0.8252 mac=0.7514 | high:0.855 mid:0.775 low:0.696 | cos_exp=0.9906963170059191 cos_xs=0.013338912912799417
+[result s0] md32     all: AUC=0.7802 mac=0.7141 | high:0.841 mid:0.745 low:0.643 | cos_exp=0.4469019417297575 cos_xs=0.006798247332343513
+[result s0] md64     all: AUC=0.7891 mac=0.7208 | high:0.842 mid:0.751 low:0.652 | cos_exp=0.5019085884163202 cos_xs=0.008193945728878578
+[result s0] md128    all: AUC=0.7932 mac=0.7259 | high:0.848 mid:0.753 low:0.661 | cos_exp=0.53450892076558 cos_xs=0.011621023512728083
+[result s0] md256    all: AUC=0.7939 mac=0.7255 | high:0.854 mid:0.753 low:0.660 | cos_exp=0.5482746952022581 cos_xs=0.011282640473315423
+[check s0] exp reproduces the stored oracle_past per subject
+[boot s0] exp:+0.083[+0.065,+0.104] last16:+0.001[-0.011,+0.011] last32:+0.059[+0.043,+0.078] last64:+0.072[+0.055,+0.091] last128:+0.077[+0.059,+0.097] last256:+0.083[+0.065,+0.103] tau64:+0.079[+0.062,+0.098] tau256:+0.083[+0.065,+0.103] md32:+0.046[+0.030,+0.064] md64:+0.052[+0.036,+0.072] md128:+0.058[+0.041,+0.077] md256:+0.057[+0.041,+0.077]
+[s1] adapted 10/57 15.3s elapsed=115.4s
+[s1] adapted 20/57 23.9s elapsed=124.0s
+[s1] adapted 30/57 32.6s elapsed=132.8s
+[s1] adapted 40/57 42.7s elapsed=142.9s
+[s1] adapted 50/57 53.8s elapsed=154.0s
+[s1] adapted 57/57 57.4s elapsed=157.6s
+[check s1] sub-001: isolation + prefix invariance OK (cut=165)
+[check s1] sub-002: isolation + prefix invariance OK (cut=149)
+[result s1] exp      all: AUC=0.8232 mac=0.7510 | high:0.866 mid:0.770 low:0.701 | cos_exp=0.02460786532195068 cos_xs=None
+[result s1] last16   all: AUC=0.7248 mac=0.6644 | high:0.817 mid:0.705 low:0.572 | cos_exp=0.41343288277248735 cos_xs=0.008300160444388386
+[result s1] last32   all: AUC=0.7952 mac=0.7300 | high:0.855 mid:0.751 low:0.676 | cos_exp=0.5765952036672676 cos_xs=0.00897667112904634
+[result s1] last64   all: AUC=0.8112 mac=0.7407 | high:0.862 mid:0.763 low:0.684 | cos_exp=0.7621925477986569 cos_xs=0.014739800522628448
+[result s1] last128  all: AUC=0.8191 mac=0.7490 | high:0.871 mid:0.768 low:0.699 | cos_exp=0.9191388761241452 cos_xs=0.02244018408220822
+[result s1] last256  all: AUC=0.8231 mac=0.7509 | high:0.866 mid:0.770 low:0.701 | cos_exp=0.9987276131073641 cos_xs=0.02409745746488451
+[result s1] tau64    all: AUC=0.8196 mac=0.7484 | high:0.865 mid:0.767 low:0.699 | cos_exp=0.900449767589851 cos_xs=0.02157795895706622
+[result s1] tau256   all: AUC=0.8233 mac=0.7508 | high:0.868 mid:0.770 low:0.700 | cos_exp=0.9912553744455692 cos_xs=0.023758533779201216
+[result s1] md32     all: AUC=0.7798 mac=0.7171 | high:0.847 mid:0.740 low:0.659 | cos_exp=0.4374696599813861 cos_xs=0.007274495823762533
+[result s1] md64     all: AUC=0.7895 mac=0.7225 | high:0.856 mid:0.746 low:0.663 | cos_exp=0.49811998242357103 cos_xs=0.0093178430167755
+[result s1] md128    all: AUC=0.7936 mac=0.7274 | high:0.859 mid:0.752 low:0.666 | cos_exp=0.5369510312351241 cos_xs=0.008438790119314135
+[result s1] md256    all: AUC=0.7949 mac=0.7283 | high:0.858 mid:0.752 low:0.668 | cos_exp=0.5418551225428353 cos_xs=0.008217186314136178
+[check s1] exp reproduces the stored oracle_past per subject
+[boot s1] exp:+0.082[+0.065,+0.100] last16:-0.005[-0.016,+0.006] last32:+0.061[+0.045,+0.078] last64:+0.071[+0.055,+0.089] last128:+0.080[+0.063,+0.098] last256:+0.082[+0.064,+0.100] tau64:+0.079[+0.062,+0.097] tau256:+0.081[+0.065,+0.099] md32:+0.048[+0.032,+0.065] md64:+0.053[+0.038,+0.070] md128:+0.058[+0.042,+0.075] md256:+0.059[+0.043,+0.076]
+[s2] adapted 10/57 16.1s elapsed=196.9s
+[s2] adapted 20/57 25.1s elapsed=205.9s
+[s2] adapted 30/57 34.4s elapsed=215.2s
+[s2] adapted 40/57 43.2s elapsed=224.0s
+[s2] adapted 50/57 55.1s elapsed=235.9s
+[s2] adapted 57/57 58.2s elapsed=239.0s
+[check s2] sub-001: isolation + prefix invariance OK (cut=165)
+[check s2] sub-002: isolation + prefix invariance OK (cut=149)
+[result s2] exp      all: AUC=0.8219 mac=0.7491 | high:0.862 mid:0.774 low:0.691 | cos_exp=0.02135576187793372 cos_xs=None
+[result s2] last16   all: AUC=0.7235 mac=0.6614 | high:0.812 mid:0.704 low:0.566 | cos_exp=0.41366753077752866 cos_xs=0.01232801185049946
+[result s2] last32   all: AUC=0.7927 mac=0.7272 | high:0.847 mid:0.753 low:0.665 | cos_exp=0.5881851589467268 cos_xs=0.010835103672949233
+[result s2] last64   all: AUC=0.8084 mac=0.7386 | high:0.853 mid:0.762 low:0.682 | cos_exp=0.7566005271550302 cos_xs=0.013209524543930377
+[result s2] last128  all: AUC=0.8185 mac=0.7457 | high:0.860 mid:0.770 low:0.688 | cos_exp=0.9137062135777145 cos_xs=0.015849873900349823
+[result s2] last256  all: AUC=0.8218 mac=0.7490 | high:0.862 mid:0.773 low:0.691 | cos_exp=0.9986527609945861 cos_xs=0.021070863627394305
+[result s2] tau64    all: AUC=0.8183 mac=0.7466 | high:0.856 mid:0.771 low:0.689 | cos_exp=0.9002137138580386 cos_xs=0.015388362436375352
+[result s2] tau256   all: AUC=0.8221 mac=0.7504 | high:0.860 mid:0.774 low:0.693 | cos_exp=0.9909033610522815 cos_xs=0.018936819289310004
+[result s2] md32     all: AUC=0.7791 mac=0.7125 | high:0.843 mid:0.742 low:0.643 | cos_exp=0.43407292996279445 cos_xs=0.008995546602613438
+[result s2] md64     all: AUC=0.7880 mac=0.7205 | high:0.851 mid:0.750 low:0.651 | cos_exp=0.4954127830144526 cos_xs=0.01277103273607714
+[result s2] md128    all: AUC=0.7918 mac=0.7231 | high:0.850 mid:0.751 low:0.657 | cos_exp=0.5349002020780931 cos_xs=0.012622780177419846
+[result s2] md256    all: AUC=0.7930 mac=0.7244 | high:0.851 mid:0.753 low:0.657 | cos_exp=0.5470203140848131 cos_xs=0.010805623617198633
+[check s2] exp reproduces the stored oracle_past per subject
+[boot s2] exp:+0.080[+0.063,+0.098] last16:-0.008[-0.018,+0.002] last32:+0.058[+0.041,+0.076] last64:+0.069[+0.052,+0.088] last128:+0.077[+0.059,+0.094] last256:+0.080[+0.063,+0.098] tau64:+0.077[+0.060,+0.095] tau256:+0.081[+0.064,+0.100] md32:+0.043[+0.028,+0.060] md64:+0.051[+0.036,+0.069] md128:+0.054[+0.037,+0.072] md256:+0.055[+0.038,+0.073]
+[rule] low-group recovery fraction of the oracle gap: exp:1.00 last16:0.20 last32:0.79 last64:0.90 last128:0.95 last256:1.00 tau64:0.96 tau256:1.00 md32:0.66 md64:0.72 md128:0.78 md256:0.77
+[rule] R1 hits=['last64', 'last128'] -> locality <=128 labels is the lever
+[done] elapsed=248.4s

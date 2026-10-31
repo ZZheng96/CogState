@@ -1,0 +1,61 @@
+[start] rows=16067 subjects=57 folds=[0, 1, 2, 3, 4] sseeds=(0, 1, 2) elapsed=0.6s
+[s0] adapted 10/57 26.5s elapsed=31.4s
+[s0] adapted 20/57 38.2s elapsed=43.1s
+[s0] adapted 30/57 51.5s elapsed=56.3s
+[s0] adapted 40/57 63.4s elapsed=68.3s
+[s0] adapted 50/57 79.9s elapsed=84.8s
+[s0] adapted 57/57 87.0s elapsed=91.9s
+[check s0] sub-001: isolation / label-shuffle / prefix invariance OK (cut=165)
+[check s0] sub-002: isolation / label-shuffle / prefix invariance OK (cut=149)
+[result s0] ref        all: AUC=0.7152 mac=0.6684 | high:0.855 mid:0.728 low:0.539
+[result s0] rec64      all: AUC=0.7159 mac=0.6693 | high:0.848 mid:0.728 low:0.543
+[result s0] last128    all: AUC=0.7155 mac=0.6680 | high:0.851 mid:0.727 low:0.540
+[result s0] last64     all: AUC=0.7159 mac=0.6689 | high:0.844 mid:0.729 low:0.541
+[result s0] md64       all: AUC=0.7092 mac=0.6626 | high:0.845 mid:0.719 low:0.539
+[result s0] md128      all: AUC=0.7076 mac=0.6607 | high:0.851 mid:0.718 low:0.535
+[result s0] pca_rec64  all: AUC=0.7122 mac=0.6657 | high:0.851 mid:0.726 low:0.536
+[result s0] em2        all: AUC=0.7173 mac=0.6699 | high:0.859 mid:0.729 low:0.541
+[check s0] ref reproduces v2 fuse_pseudo_lr_full_thr per subject
+[boot s0] ref:+0.000[+0.000,+0.000] rec64:+0.001[-0.002,+0.004] last128:-0.000[-0.003,+0.002] last64:+0.001[-0.003,+0.004] md64:-0.006[-0.012,+0.000] md128:-0.008[-0.014,-0.002] pca_rec64:-0.003[-0.007,+0.001] em2:+0.002[-0.002,+0.005]
+[pseudo-acc s0] last128: high=0.895 mid=0.786 low=0.568 | last64: high=0.889 mid=0.786 low=0.565 | ref: high=0.902 mid=0.785 low=0.570 | ref_128: high=0.895 mid=0.786 low=0.568 | ref_64: high=0.889 mid=0.786 low=0.565
+[s1] adapted 10/57 24.7s elapsed=132.7s
+[s1] adapted 20/57 36.8s elapsed=144.8s
+[s1] adapted 30/57 50.0s elapsed=158.0s
+[s1] adapted 40/57 62.2s elapsed=170.2s
+[s1] adapted 50/57 79.8s elapsed=187.9s
+[s1] adapted 57/57 86.6s elapsed=194.6s
+[check s1] sub-001: isolation / label-shuffle / prefix invariance OK (cut=165)
+[check s1] sub-002: isolation / label-shuffle / prefix invariance OK (cut=149)
+[result s1] ref        all: AUC=0.7179 mac=0.6694 | high:0.850 mid:0.724 low:0.549
+[result s1] rec64      all: AUC=0.7179 mac=0.6689 | high:0.850 mid:0.725 low:0.546
+[result s1] last128    all: AUC=0.7166 mac=0.6687 | high:0.852 mid:0.724 low:0.547
+[result s1] last64     all: AUC=0.7126 mac=0.6647 | high:0.853 mid:0.720 low:0.542
+[result s1] md64       all: AUC=0.7066 mac=0.6593 | high:0.846 mid:0.714 low:0.538
+[result s1] md128      all: AUC=0.7095 mac=0.6624 | high:0.850 mid:0.719 low:0.538
+[result s1] pca_rec64  all: AUC=0.7148 mac=0.6649 | high:0.850 mid:0.720 low:0.543
+[result s1] em2        all: AUC=0.7207 mac=0.6692 | high:0.855 mid:0.723 low:0.550
+[check s1] ref reproduces v2 fuse_pseudo_lr_full_thr per subject
+[boot s1] ref:+0.000[+0.000,+0.000] rec64:-0.000[-0.003,+0.002] last128:-0.001[-0.003,+0.002] last64:-0.005[-0.010,+0.000] md64:-0.010[-0.017,-0.003] md128:-0.007[-0.013,+0.001] pca_rec64:-0.005[-0.010,-0.000] em2:-0.000[-0.006,+0.005]
+[pseudo-acc s1] last128: high=0.858 mid=0.776 low=0.569 | last64: high=0.873 mid=0.773 low=0.571 | ref: high=0.845 mid=0.775 low=0.568 | ref_128: high=0.858 mid=0.776 low=0.569 | ref_64: high=0.873 mid=0.773 low=0.571
+[s2] adapted 10/57 25.0s elapsed=235.9s
+[s2] adapted 20/57 37.5s elapsed=248.4s
+[s2] adapted 30/57 50.5s elapsed=261.4s
+[s2] adapted 40/57 62.3s elapsed=273.2s
+[s2] adapted 50/57 78.4s elapsed=289.3s
+[s2] adapted 57/57 84.5s elapsed=295.4s
+[check s2] sub-001: isolation / label-shuffle / prefix invariance OK (cut=165)
+[check s2] sub-002: isolation / label-shuffle / prefix invariance OK (cut=149)
+[result s2] ref        all: AUC=0.7169 mac=0.6691 | high:0.858 mid:0.725 low:0.546
+[result s2] rec64      all: AUC=0.7158 mac=0.6680 | high:0.854 mid:0.724 low:0.545
+[result s2] last128    all: AUC=0.7149 mac=0.6674 | high:0.854 mid:0.724 low:0.542
+[result s2] last64     all: AUC=0.7118 mac=0.6651 | high:0.850 mid:0.722 low:0.540
+[result s2] md64       all: AUC=0.7074 mac=0.6600 | high:0.844 mid:0.717 low:0.535
+[result s2] md128      all: AUC=0.7108 mac=0.6641 | high:0.849 mid:0.719 low:0.542
+[result s2] pca_rec64  all: AUC=0.7124 mac=0.6636 | high:0.845 mid:0.720 low:0.541
+[result s2] em2        all: AUC=0.7204 mac=0.6681 | high:0.858 mid:0.724 low:0.545
+[check s2] ref reproduces v2 fuse_pseudo_lr_full_thr per subject
+[boot s2] ref:+0.000[+0.000,+0.000] rec64:-0.001[-0.004,+0.002] last128:-0.002[-0.004,+0.001] last64:-0.004[-0.009,+0.001] md64:-0.009[-0.015,-0.003] md128:-0.005[-0.012,+0.002] pca_rec64:-0.006[-0.009,-0.002] em2:-0.001[-0.005,+0.004]
+[pseudo-acc s2] last128: high=0.872 mid=0.779 low=0.567 | last64: high=0.873 mid=0.776 low=0.563 | ref: high=0.871 mid=0.779 low=0.568 | ref_128: high=0.872 mid=0.779 low=0.567 | ref_64: high=0.873 mid=0.776 low=0.563
+[rule] low-group recovery fraction: ref:0.00 rec64:0.03 last128:0.01 last64:0.01 md64:-0.00 md128:-0.03 pca_rec64:-0.02 em2:0.01
+[rule] closes >=50% of the locality gap with CI>0: []
+[done] elapsed=306.6s
