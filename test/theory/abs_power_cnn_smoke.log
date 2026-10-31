@@ -1,0 +1,20 @@
+[load] rows=16067 subjects=57 real time/block loaded elapsed=5.6s
+[raw] X=(16067, 1500) device=cuda folds=[0] seeds=(0,) epochs=3 elapsed=10.2s
+    fold0 absmean seed0 epoch 1/3 train_loss=0.7203 elapsed=70.0s
+    fold0 absmean seed0 epoch 3/3 train_loss=0.6950 elapsed=73.8s
+[fold 0] absmean seed0 AUC=0.5048 elapsed=74.3s
+    fold0 zscore seed0 epoch 1/3 train_loss=0.6915 elapsed=80.5s
+    fold0 zscore seed0 epoch 3/3 train_loss=0.6825 elapsed=82.6s
+[fold 0] zscore seed0 AUC=0.5415 elapsed=82.9s
+    fold0 absmean_globalstd seed0 epoch 1/3 train_loss=0.6953 elapsed=97.0s
+    fold0 absmean_globalstd seed0 epoch 3/3 train_loss=0.6953 elapsed=100.1s
+[fold 0] absmean_globalstd seed0 AUC=0.5201 elapsed=100.4s
+[result] absmean_seed0      AUC=0.5048 mac=0.5108 mid=0.525/0.557 low=0.493/0.438
+[result] absmean_seedavg    AUC=0.5048 mac=0.5108 mid=0.525/0.557 low=0.493/0.438
+[result] zscore_seed0       AUC=0.5415 mac=0.5236 mid=0.543/0.571 low=0.500/0.507
+[result] zscore_seedavg     AUC=0.5415 mac=0.5236 mid=0.543/0.571 low=0.500/0.507
+[result] absmean_globalstd_seed0 AUC=0.5201 mac=0.5004 mid=0.500/0.500 low=0.501/0.535
+[result] absmean_globalstd_seedavg AUC=0.5201 mac=0.5004 mid=0.500/0.500 low=0.501/0.535
+[result] LR889              AUC=0.5515 mac=0.5342 mid=0.602/0.658 low=0.452/0.420
+[boot] absmean-zscore dAUC=-0.0378[-0.0826,+0.0031] dmac=-0.0121[-0.0373,+0.0172]
+[done] elapsed=122.1s -> abs_power_cnn_smoke_results.json

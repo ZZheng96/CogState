@@ -1,0 +1,101 @@
+[load] rows=16067 subjects=57 real time/block loaded elapsed=3.7s
+[families] dims={'emg_hf': 213, 'delta_ocular': 160, 'theta': 159, 'alpha': 159, 'beta': 162, 'aperiodic': 10, 'spectral_shape': 7, 'time_stats': 19, 'other': 0}
+   sub-009 low  cos=+0.052 aucxs=0.408 art_share=0.31 art_cos=+0.167 nonart_cos=-0.007 | emg_hf:0.21/+0.21 delta_ocular:0.10/+0.07 theta:0.24/+0.04 alpha:0.17/-0.02 beta:0.25/-0.14 aperiodic:0.01/+0.35 spectral_shape:0.01/+0.36 time_stats:0.02/+0.33
+   sub-022 mid  cos=+0.130 aucxs=0.640 art_share=0.37 art_cos=+0.175 nonart_cos=+0.104 | emg_hf:0.25/+0.17 delta_ocular:0.12/+0.19 theta:0.17/-0.00 alpha:0.18/+0.07 beta:0.22/+0.26 aperiodic:0.03/-0.30 spectral_shape:0.00/+0.21 time_stats:0.03/+0.30
+   sub-023 low  cos=+0.017 aucxs=0.476 art_share=0.33 art_cos=-0.049 nonart_cos=+0.052 | emg_hf:0.25/-0.07 delta_ocular:0.08/+0.01 theta:0.21/+0.06 alpha:0.27/+0.10 beta:0.16/-0.13 aperiodic:0.00/+0.55 spectral_shape:0.00/+0.40 time_stats:0.03/+0.50
+   sub-024 low  cos=-0.029 aucxs=0.376 art_share=0.45 art_cos=+0.019 nonart_cos=-0.062 | emg_hf:0.34/+0.04 delta_ocular:0.11/-0.05 theta:0.19/-0.18 alpha:0.18/-0.03 beta:0.17/-0.01 aperiodic:0.01/+0.20 spectral_shape:0.00/-0.34 time_stats:0.01/+0.16
+   sub-029 low  cos=-0.035 aucxs=0.360 art_share=0.33 art_cos=-0.138 nonart_cos=+0.021 | emg_hf:0.20/-0.18 delta_ocular:0.13/-0.06 theta:0.16/+0.07 alpha:0.27/-0.12 beta:0.19/+0.11 aperiodic:0.01/+0.24 spectral_shape:0.00/-0.32 time_stats:0.04/-0.02
+   sub-037 low  cos=+0.020 aucxs=0.479 art_share=0.38 art_cos=-0.022 nonart_cos=+0.045 | emg_hf:0.24/-0.04 delta_ocular:0.14/+0.02 theta:0.22/+0.09 alpha:0.16/-0.03 beta:0.13/-0.01 aperiodic:0.06/+0.46 spectral_shape:0.00/-0.27 time_stats:0.05/-0.09
+   sub-045 mid  cos=+0.054 aucxs=0.657 art_share=0.29 art_cos=+0.070 nonart_cos=+0.046 | emg_hf:0.22/+0.10 delta_ocular:0.06/-0.04 theta:0.21/-0.01 alpha:0.22/-0.05 beta:0.22/+0.13 aperiodic:0.02/-0.02 spectral_shape:0.00/+0.03 time_stats:0.05/+0.30
+   sub-048 mid  cos=+0.102 aucxs=0.807 art_share=0.29 art_cos=+0.110 nonart_cos=+0.098 | emg_hf:0.21/+0.16 delta_ocular:0.08/-0.03 theta:0.21/+0.17 alpha:0.22/+0.02 beta:0.18/+0.15 aperiodic:0.03/-0.46 spectral_shape:0.00/-0.16 time_stats:0.07/+0.23
+   sub-051 mid  cos=+0.033 aucxs=0.650 art_share=0.41 art_cos=+0.090 nonart_cos=-0.003 | emg_hf:0.28/+0.16 delta_ocular:0.12/-0.10 theta:0.16/+0.03 alpha:0.16/-0.05 beta:0.22/+0.01 aperiodic:0.01/-0.37 spectral_shape:0.00/-0.22 time_stats:0.04/+0.16
+   sub-053 mid  cos=+0.059 aucxs=0.570 art_share=0.30 art_cos=+0.120 nonart_cos=+0.028 | emg_hf:0.21/+0.12 delta_ocular:0.09/+0.11 theta:0.17/-0.05 alpha:0.24/+0.03 beta:0.25/+0.12 aperiodic:0.01/+0.02 spectral_shape:0.00/+0.05 time_stats:0.04/-0.10
+   sub-055 mid  cos=+0.085 aucxs=0.626 art_share=0.40 art_cos=+0.081 nonart_cos=+0.087 | emg_hf:0.25/+0.13 delta_ocular:0.16/-0.03 theta:0.15/+0.07 alpha:0.15/-0.02 beta:0.20/+0.16 aperiodic:0.03/+0.45 spectral_shape:0.00/+0.12 time_stats:0.06/-0.04
+[fold 1/5] subjects=11 fold_s=137.4 elapsed=141.2s
+   sub-003 mid  cos=-0.014 aucxs=0.631 art_share=0.39 art_cos=+0.099 nonart_cos=-0.091 | emg_hf:0.19/+0.16 delta_ocular:0.19/+0.00 theta:0.24/-0.05 alpha:0.17/-0.06 beta:0.17/-0.04 aperiodic:0.01/-0.07 spectral_shape:0.00/+0.30 time_stats:0.03/-0.63
+   sub-012 mid  cos=+0.085 aucxs=0.590 art_share=0.40 art_cos=+0.139 nonart_cos=+0.048 | emg_hf:0.21/+0.22 delta_ocular:0.18/-0.01 theta:0.18/+0.06 alpha:0.20/-0.10 beta:0.17/+0.18 aperiodic:0.05/+0.04 spectral_shape:0.00/+0.41 time_stats:0.00/+0.19
+   sub-034 low  cos=+0.001 aucxs=0.567 art_share=0.36 art_cos=+0.052 nonart_cos=-0.031 | emg_hf:0.22/+0.10 delta_ocular:0.15/-0.04 theta:0.22/+0.01 alpha:0.23/+0.05 beta:0.11/+0.02 aperiodic:0.02/-0.03 spectral_shape:0.00/+0.16 time_stats:0.06/-0.55
+   sub-035 mid  cos=+0.082 aucxs=0.765 art_share=0.33 art_cos=+0.072 nonart_cos=+0.089 | emg_hf:0.23/+0.11 delta_ocular:0.10/-0.03 theta:0.19/+0.13 alpha:0.21/-0.02 beta:0.20/+0.01 aperiodic:0.02/+0.15 spectral_shape:0.00/-0.01 time_stats:0.05/+0.56
+   sub-036 high cos=+0.145 aucxs=0.851 art_share=0.31 art_cos=+0.100 nonart_cos=+0.173 | emg_hf:0.22/+0.15 delta_ocular:0.09/-0.04 theta:0.19/+0.17 alpha:0.20/+0.10 beta:0.21/+0.24 aperiodic:0.01/-0.69 spectral_shape:0.01/+0.35 time_stats:0.07/+0.41
+   sub-038 mid  cos=+0.050 aucxs=0.851 art_share=0.29 art_cos=+0.077 nonart_cos=+0.036 | emg_hf:0.16/+0.12 delta_ocular:0.13/+0.00 theta:0.26/+0.15 alpha:0.17/-0.00 beta:0.18/-0.17 aperiodic:0.01/-0.58 spectral_shape:0.00/-0.13 time_stats:0.10/+0.40
+   sub-039 low  cos=+0.057 aucxs=0.512 art_share=0.34 art_cos=+0.040 nonart_cos=+0.068 | emg_hf:0.27/+0.09 delta_ocular:0.07/-0.11 theta:0.22/+0.08 alpha:0.13/-0.03 beta:0.22/+0.01 aperiodic:0.05/+0.65 spectral_shape:0.00/+0.40 time_stats:0.04/+0.04
+   sub-041 mid  cos=+0.081 aucxs=0.647 art_share=0.27 art_cos=+0.117 nonart_cos=+0.064 | emg_hf:0.19/+0.14 delta_ocular:0.07/+0.07 theta:0.18/+0.08 alpha:0.23/+0.04 beta:0.21/+0.04 aperiodic:0.08/+0.13 spectral_shape:0.00/-0.42 time_stats:0.04/+0.17
+   sub-046 mid  cos=+0.041 aucxs=0.721 art_share=0.35 art_cos=+0.041 nonart_cos=+0.041 | emg_hf:0.24/+0.01 delta_ocular:0.11/+0.13 theta:0.19/-0.07 alpha:0.18/-0.02 beta:0.23/+0.17 aperiodic:0.01/+0.32 spectral_shape:0.00/+0.75 time_stats:0.05/-0.06
+   sub-050 low  cos=+0.046 aucxs=0.595 art_share=0.35 art_cos=-0.013 nonart_cos=+0.083 | emg_hf:0.28/-0.02 delta_ocular:0.07/+0.00 theta:0.17/+0.00 alpha:0.13/+0.01 beta:0.31/+0.19 aperiodic:0.01/+0.13 spectral_shape:0.00/-0.07 time_stats:0.03/+0.08
+   sub-058 mid  cos=+0.090 aucxs=0.803 art_share=0.35 art_cos=+0.069 nonart_cos=+0.104 | emg_hf:0.28/+0.09 delta_ocular:0.07/+0.01 theta:0.21/+0.18 alpha:0.14/-0.06 beta:0.24/+0.20 aperiodic:0.03/+0.09 spectral_shape:0.00/+0.41 time_stats:0.04/-0.08
+   sub-059 mid  cos=+0.035 aucxs=0.614 art_share=0.40 art_cos=-0.146 nonart_cos=+0.162 | emg_hf:0.29/-0.19 delta_ocular:0.11/-0.04 theta:0.20/+0.12 alpha:0.16/+0.15 beta:0.18/+0.20 aperiodic:0.03/+0.19 spectral_shape:0.00/-0.19 time_stats:0.03/+0.27
+[fold 2/5] subjects=12 fold_s=88.1 elapsed=229.2s
+   sub-001 mid  cos=+0.081 aucxs=0.731 art_share=0.39 art_cos=+0.151 nonart_cos=+0.036 | emg_hf:0.22/+0.25 delta_ocular:0.17/-0.03 theta:0.15/-0.01 alpha:0.19/-0.00 beta:0.25/+0.09 aperiodic:0.01/-0.12 spectral_shape:0.00/+0.00 time_stats:0.02/+0.22
+   sub-005 low  cos=+0.067 aucxs=0.613 art_share=0.32 art_cos=-0.032 nonart_cos=+0.124 | emg_hf:0.23/-0.07 delta_ocular:0.09/+0.07 theta:0.16/+0.02 alpha:0.16/-0.07 beta:0.24/+0.14 aperiodic:0.05/+0.64 spectral_shape:0.00/-0.47 time_stats:0.07/+0.46
+   sub-006 mid  cos=+0.041 aucxs=0.690 art_share=0.38 art_cos=-0.060 nonart_cos=+0.107 | emg_hf:0.21/-0.10 delta_ocular:0.16/+0.01 theta:0.22/+0.11 alpha:0.16/+0.13 beta:0.20/+0.09 aperiodic:0.02/+0.33 spectral_shape:0.00/-0.33 time_stats:0.04/+0.02
+   sub-007 mid  cos=+0.004 aucxs=0.661 art_share=0.41 art_cos=-0.001 nonart_cos=+0.007 | emg_hf:0.25/-0.02 delta_ocular:0.16/+0.03 theta:0.18/+0.14 alpha:0.23/-0.03 beta:0.16/+0.01 aperiodic:0.00/-0.63 spectral_shape:0.00/+0.50 time_stats:0.02/-0.37
+   sub-011 mid  cos=+0.163 aucxs=0.756 art_share=0.40 art_cos=+0.091 nonart_cos=+0.212 | emg_hf:0.24/+0.10 delta_ocular:0.15/+0.08 theta:0.15/+0.07 alpha:0.15/-0.04 beta:0.23/+0.38 aperiodic:0.01/+0.58 spectral_shape:0.00/-0.40 time_stats:0.07/+0.59
+   sub-017 mid  cos=+0.119 aucxs=0.759 art_share=0.38 art_cos=+0.183 nonart_cos=+0.078 | emg_hf:0.30/+0.26 delta_ocular:0.08/-0.05 theta:0.19/-0.17 alpha:0.17/-0.00 beta:0.21/+0.32 aperiodic:0.02/+0.48 spectral_shape:0.00/-0.25 time_stats:0.02/+0.22
+   sub-019 mid  cos=+0.084 aucxs=0.545 art_share=0.44 art_cos=+0.087 nonart_cos=+0.081 | emg_hf:0.31/+0.17 delta_ocular:0.13/-0.13 theta:0.20/+0.12 alpha:0.15/-0.04 beta:0.15/+0.10 aperiodic:0.04/+0.02 spectral_shape:0.00/+0.06 time_stats:0.02/+0.37
+   sub-025 mid  cos=+0.079 aucxs=0.701 art_share=0.35 art_cos=+0.063 nonart_cos=+0.090 | emg_hf:0.23/+0.12 delta_ocular:0.12/-0.07 theta:0.26/+0.12 alpha:0.17/+0.21 beta:0.15/-0.03 aperiodic:0.02/-0.40 spectral_shape:0.01/+0.26 time_stats:0.03/+0.19
+   sub-026 mid  cos=+0.036 aucxs=0.700 art_share=0.38 art_cos=+0.004 nonart_cos=+0.057 | emg_hf:0.22/+0.01 delta_ocular:0.16/-0.00 theta:0.21/+0.03 alpha:0.21/+0.05 beta:0.18/+0.16 aperiodic:0.01/-0.74 spectral_shape:0.00/+0.15 time_stats:0.01/+0.28
+   sub-031 mid  cos=+0.146 aucxs=0.723 art_share=0.41 art_cos=+0.153 nonart_cos=+0.142 | emg_hf:0.34/+0.20 delta_ocular:0.07/-0.00 theta:0.08/+0.10 alpha:0.12/+0.02 beta:0.31/+0.21 aperiodic:0.07/+0.33 spectral_shape:0.00/-0.43 time_stats:0.00/+0.38
+   sub-057 mid  cos=+0.139 aucxs=0.754 art_share=0.50 art_cos=+0.158 nonart_cos=+0.123 | emg_hf:0.44/+0.21 delta_ocular:0.06/-0.05 theta:0.16/+0.25 alpha:0.15/-0.12 beta:0.16/+0.11 aperiodic:0.02/+0.53 spectral_shape:0.00/-0.26 time_stats:0.01/+0.41
+[fold 3/5] subjects=11 fold_s=44.9 elapsed=274.2s
+   sub-004 low  cos=+0.043 aucxs=0.447 art_share=0.45 art_cos=+0.033 nonart_cos=+0.051 | emg_hf:0.32/+0.05 delta_ocular:0.13/-0.03 theta:0.08/-0.03 alpha:0.22/+0.04 beta:0.19/+0.00 aperiodic:0.01/-0.10 spectral_shape:0.00/+0.22 time_stats:0.05/+0.56
+   sub-008 low  cos=+0.060 aucxs=0.462 art_share=0.39 art_cos=+0.016 nonart_cos=+0.093 | emg_hf:0.26/-0.02 delta_ocular:0.13/+0.11 theta:0.14/+0.10 alpha:0.19/+0.09 beta:0.25/+0.13 aperiodic:0.01/-0.27 spectral_shape:0.00/-0.21 time_stats:0.02/+0.21
+   sub-013 mid  cos=+0.069 aucxs=0.707 art_share=0.41 art_cos=+0.044 nonart_cos=+0.088 | emg_hf:0.32/+0.09 delta_ocular:0.09/-0.15 theta:0.14/+0.26 alpha:0.18/+0.06 beta:0.23/+0.01 aperiodic:0.01/-0.44 spectral_shape:0.01/+0.70 time_stats:0.02/+0.07
+   sub-015 low  cos=+0.022 aucxs=0.532 art_share=0.45 art_cos=-0.066 nonart_cos=+0.094 | emg_hf:0.40/-0.09 delta_ocular:0.05/+0.07 theta:0.12/-0.03 alpha:0.12/-0.12 beta:0.24/+0.27 aperiodic:0.03/+0.01 spectral_shape:0.00/+0.43 time_stats:0.04/+0.40
+   sub-016 mid  cos=+0.026 aucxs=0.628 art_share=0.35 art_cos=-0.049 nonart_cos=+0.076 | emg_hf:0.19/-0.11 delta_ocular:0.16/+0.08 theta:0.22/+0.01 alpha:0.16/+0.19 beta:0.16/+0.16 aperiodic:0.05/-0.10 spectral_shape:0.00/-0.84 time_stats:0.06/-0.12
+   sub-028 low  cos=+0.112 aucxs=0.684 art_share=0.53 art_cos=+0.112 nonart_cos=+0.112 | emg_hf:0.42/+0.12 delta_ocular:0.11/+0.09 theta:0.21/+0.11 alpha:0.11/+0.01 beta:0.14/+0.24 aperiodic:0.00/-0.55 spectral_shape:0.00/-0.14 time_stats:0.01/+0.35
+   sub-040 mid  cos=+0.167 aucxs=0.770 art_share=0.38 art_cos=+0.171 nonart_cos=+0.165 | emg_hf:0.30/+0.20 delta_ocular:0.09/+0.06 theta:0.13/+0.21 alpha:0.22/+0.11 beta:0.21/+0.17 aperiodic:0.02/+0.71 spectral_shape:0.00/+0.42 time_stats:0.03/-0.17
+   sub-042 low  cos=-0.028 aucxs=0.436 art_share=0.44 art_cos=+0.024 nonart_cos=-0.070 | emg_hf:0.30/+0.06 delta_ocular:0.14/-0.10 theta:0.14/-0.04 alpha:0.23/-0.09 beta:0.17/-0.18 aperiodic:0.01/+0.65 spectral_shape:0.00/-0.45 time_stats:0.02/+0.02
+   sub-043 high cos=+0.035 aucxs=0.754 art_share=0.32 art_cos=+0.054 nonart_cos=+0.025 | emg_hf:0.21/+0.07 delta_ocular:0.11/+0.02 theta:0.32/+0.11 alpha:0.20/-0.06 beta:0.11/+0.04 aperiodic:0.01/-0.25 spectral_shape:0.02/+0.39 time_stats:0.01/-0.17
+   sub-049 low  cos=+0.045 aucxs=0.651 art_share=0.35 art_cos=+0.032 nonart_cos=+0.053 | emg_hf:0.25/+0.06 delta_ocular:0.10/-0.07 theta:0.17/+0.10 alpha:0.20/-0.03 beta:0.15/+0.15 aperiodic:0.01/-0.65 spectral_shape:0.00/+0.41 time_stats:0.13/+0.09
+   sub-054 high cos=+0.058 aucxs=0.834 art_share=0.38 art_cos=+0.064 nonart_cos=+0.054 | emg_hf:0.31/+0.08 delta_ocular:0.07/+0.01 theta:0.14/+0.08 alpha:0.13/-0.02 beta:0.25/+0.03 aperiodic:0.10/+0.36 spectral_shape:0.00/-0.08 time_stats:0.01/-0.23
+   sub-056 mid  cos=+0.003 aucxs=0.629 art_share=0.46 art_cos=+0.015 nonart_cos=-0.008 | emg_hf:0.33/+0.01 delta_ocular:0.14/+0.04 theta:0.19/+0.08 alpha:0.15/+0.04 beta:0.14/+0.06 aperiodic:0.04/-0.82 spectral_shape:0.00/+0.44 time_stats:0.02/-0.05
+[fold 4/5] subjects=12 fold_s=43.1 elapsed=317.3s
+   sub-002 low  cos=+0.062 aucxs=0.622 art_share=0.35 art_cos=+0.019 nonart_cos=+0.086 | emg_hf:0.22/+0.02 delta_ocular:0.13/+0.02 theta:0.24/+0.08 alpha:0.21/-0.00 beta:0.17/+0.14 aperiodic:0.02/+0.39 spectral_shape:0.00/-0.15 time_stats:0.01/+0.21
+   sub-010 low  cos=+0.105 aucxs=0.678 art_share=0.43 art_cos=+0.119 nonart_cos=+0.095 | emg_hf:0.37/+0.16 delta_ocular:0.06/-0.07 theta:0.09/+0.12 alpha:0.14/-0.08 beta:0.18/-0.05 aperiodic:0.01/+0.38 spectral_shape:0.00/+0.37 time_stats:0.14/+0.53
+   sub-014 mid  cos=+0.038 aucxs=0.619 art_share=0.35 art_cos=+0.023 nonart_cos=+0.046 | emg_hf:0.25/+0.02 delta_ocular:0.09/+0.03 theta:0.15/+0.03 alpha:0.27/+0.06 beta:0.22/+0.04 aperiodic:0.00/-0.60 spectral_shape:0.00/+0.09 time_stats:0.01/+0.55
+   sub-018 mid  cos=+0.044 aucxs=0.755 art_share=0.38 art_cos=+0.112 nonart_cos=+0.002 | emg_hf:0.30/+0.17 delta_ocular:0.09/-0.08 theta:0.15/+0.07 alpha:0.22/-0.06 beta:0.23/-0.02 aperiodic:0.01/-0.18 spectral_shape:0.00/+0.32 time_stats:0.01/+0.25
+   sub-020 mid  cos=+0.019 aucxs=0.626 art_share=0.30 art_cos=+0.043 nonart_cos=+0.006 | emg_hf:0.24/+0.04 delta_ocular:0.07/+0.07 theta:0.29/+0.05 alpha:0.19/-0.04 beta:0.16/+0.10 aperiodic:0.00/-0.36 spectral_shape:0.00/-0.60 time_stats:0.05/-0.19
+   sub-021 mid  cos=+0.034 aucxs=0.717 art_share=0.52 art_cos=-0.015 nonart_cos=+0.075 | emg_hf:0.44/-0.03 delta_ocular:0.08/+0.07 theta:0.16/-0.05 alpha:0.16/+0.08 beta:0.12/+0.05 aperiodic:0.02/+0.35 spectral_shape:0.00/-0.03 time_stats:0.02/+0.56
+   sub-027 low  cos=+0.008 aucxs=0.537 art_share=0.40 art_cos=-0.007 nonart_cos=+0.018 | emg_hf:0.32/+0.02 delta_ocular:0.09/-0.10 theta:0.19/+0.14 alpha:0.21/+0.02 beta:0.16/-0.15 aperiodic:0.00/-0.09 spectral_shape:0.01/+0.34 time_stats:0.03/+0.14
+   sub-030 mid  cos=+0.060 aucxs=0.759 art_share=0.31 art_cos=+0.049 nonart_cos=+0.066 | emg_hf:0.20/+0.05 delta_ocular:0.12/+0.06 theta:0.16/-0.12 alpha:0.24/+0.03 beta:0.19/+0.20 aperiodic:0.06/+0.39 spectral_shape:0.01/-0.25 time_stats:0.02/+0.19
+   sub-044 low  cos=+0.023 aucxs=0.788 art_share=0.38 art_cos=-0.035 nonart_cos=+0.058 | emg_hf:0.28/-0.09 delta_ocular:0.10/+0.14 theta:0.12/-0.05 alpha:0.16/+0.07 beta:0.23/+0.15 aperiodic:0.06/+0.20 spectral_shape:0.00/-0.41 time_stats:0.05/-0.08
+   sub-047 mid  cos=+0.012 aucxs=0.695 art_share=0.33 art_cos=-0.032 nonart_cos=+0.037 | emg_hf:0.21/-0.05 delta_ocular:0.12/+0.01 theta:0.28/+0.07 alpha:0.23/+0.12 beta:0.11/-0.06 aperiodic:0.01/-0.11 spectral_shape:0.00/-0.52 time_stats:0.04/-0.02
+   sub-052 low  cos=+0.013 aucxs=0.442 art_share=0.34 art_cos=+0.092 nonart_cos=-0.032 | emg_hf:0.24/+0.12 delta_ocular:0.10/+0.01 theta:0.15/-0.09 alpha:0.16/-0.05 beta:0.31/+0.05 aperiodic:0.02/+0.23 spectral_shape:0.00/-0.73 time_stats:0.01/-0.49
+[fold 5/5] subjects=11 fold_s=46.1 elapsed=363.4s
+[group all] n=57 cos_all=+0.056 auc_xs=0.642 artifact share=0.375 (dims 0.420, w_xs 0.409) art_cos=+0.051 nonart_cos=+0.060 art_aucxs=0.604 nonart_aucxs=0.572
+   emg_hf          dims=213 share=0.265 enrich=1.11 share_xs=0.311 cos=+0.068 auc_xs_f=0.589 own_random=0.832 own_lobo=0.317 own_seg10_gap5=0.672
+   delta_ocular    dims=160 share=0.110 enrich=0.61 share_xs=0.098 cos=+0.004 auc_xs_f=0.522 own_random=0.770 own_lobo=0.208 own_seg10_gap5=0.588
+   theta           dims=159 share=0.183 enrich=1.02 share_xs=0.176 cos=+0.055 auc_xs_f=0.554 own_random=0.772 own_lobo=0.225 own_seg10_gap5=0.594
+   alpha           dims=159 share=0.185 enrich=1.03 share_xs=0.139 cos=+0.007 auc_xs_f=0.467 own_random=0.777 own_lobo=0.225 own_seg10_gap5=0.603
+   beta            dims=162 share=0.196 enrich=1.07 share_xs=0.170 cos=+0.084 auc_xs_f=0.574 own_random=0.812 own_lobo=0.310 own_seg10_gap5=0.657
+   aperiodic       dims= 10 share=0.024 enrich=2.15 share_xs=0.033 cos=+0.029 auc_xs_f=0.477 own_random=0.714 own_lobo=0.246 own_seg10_gap5=0.544
+   spectral_shape  dims=  7 share=0.002 enrich=0.22 share_xs=0.014 cos=+0.007 auc_xs_f=0.499 own_random=0.530 own_lobo=0.012 own_seg10_gap5=0.347
+   time_stats      dims= 19 share=0.036 enrich=1.71 share_xs=0.058 cos=+0.139 auc_xs_f=0.572 own_random=0.743 own_lobo=0.124 own_seg10_gap5=0.504
+[group high] n=3 cos_all=+0.079 auc_xs=0.813 artifact share=0.337 (dims 0.420, w_xs 0.441) art_cos=+0.072 nonart_cos=+0.084 art_aucxs=0.773 nonart_aucxs=0.586
+   emg_hf          dims=213 share=0.246 enrich=1.03 share_xs=0.346 cos=+0.098 auc_xs_f=0.774 own_random=0.886 own_lobo=0.552 own_seg10_gap5=0.761
+   delta_ocular    dims=160 share=0.091 enrich=0.50 share_xs=0.095 cos=-0.001 auc_xs_f=0.402 own_random=0.834 own_lobo=0.392 own_seg10_gap5=0.599
+   theta           dims=159 share=0.215 enrich=1.20 share_xs=0.164 cos=+0.118 auc_xs_f=0.663 own_random=0.847 own_lobo=0.389 own_seg10_gap5=0.620
+   alpha           dims=159 share=0.178 enrich=0.99 share_xs=0.134 cos=+0.006 auc_xs_f=0.509 own_random=0.850 own_lobo=0.462 own_seg10_gap5=0.677
+   beta            dims=162 share=0.188 enrich=1.03 share_xs=0.162 cos=+0.103 auc_xs_f=0.511 own_random=0.876 own_lobo=0.561 own_seg10_gap5=0.757
+   aperiodic       dims= 10 share=0.042 enrich=3.70 share_xs=0.038 cos=-0.194 auc_xs_f=0.385 own_random=0.815 own_lobo=0.492 own_seg10_gap5=0.640
+   spectral_shape  dims=  7 share=0.011 enrich=1.34 share_xs=0.008 cos=+0.220 auc_xs_f=0.558 own_random=0.557 own_lobo=0.004 own_seg10_gap5=0.335
+   time_stats      dims= 19 share=0.031 enrich=1.43 share_xs=0.053 cos=+0.003 auc_xs_f=0.496 own_random=0.818 own_lobo=0.248 own_seg10_gap5=0.535
+[group mid] n=34 cos_all=+0.067 auc_xs=0.691 artifact share=0.373 (dims 0.420, w_xs 0.407) art_cos=+0.068 nonart_cos=+0.068 art_aucxs=0.657 nonart_aucxs=0.573
+   emg_hf          dims=213 share=0.258 enrich=1.08 share_xs=0.306 cos=+0.090 auc_xs_f=0.639 own_random=0.832 own_lobo=0.351 own_seg10_gap5=0.693
+   delta_ocular    dims=160 share=0.115 enrich=0.64 share_xs=0.101 cos=+0.007 auc_xs_f=0.539 own_random=0.773 own_lobo=0.232 own_seg10_gap5=0.612
+   theta           dims=159 share=0.187 enrich=1.04 share_xs=0.178 cos=+0.065 auc_xs_f=0.567 own_random=0.780 own_lobo=0.261 own_seg10_gap5=0.622
+   alpha           dims=159 share=0.186 enrich=1.04 share_xs=0.139 cos=+0.020 auc_xs_f=0.443 own_random=0.788 own_lobo=0.270 own_seg10_gap5=0.635
+   beta            dims=162 share=0.195 enrich=1.07 share_xs=0.169 cos=+0.105 auc_xs_f=0.593 own_random=0.817 own_lobo=0.339 own_seg10_gap5=0.683
+   aperiodic       dims= 10 share=0.025 enrich=2.20 share_xs=0.033 cos=-0.034 auc_xs_f=0.450 own_random=0.719 own_lobo=0.270 own_seg10_gap5=0.563
+   spectral_shape  dims=  7 share=0.001 enrich=0.15 share_xs=0.014 cos=+0.005 auc_xs_f=0.511 own_random=0.518 own_lobo=0.009 own_seg10_gap5=0.338
+   time_stats      dims= 19 share=0.034 enrich=1.57 share_xs=0.060 cos=+0.149 auc_xs_f=0.577 own_random=0.750 own_lobo=0.128 own_seg10_gap5=0.520
+[group low] n=20 cos_all=+0.033 auc_xs=0.533 artifact share=0.384 (dims 0.420, w_xs 0.409) art_cos=+0.018 nonart_cos=+0.043 art_aucxs=0.489 nonart_aucxs=0.568
+   emg_hf          dims=213 share=0.280 enrich=1.17 share_xs=0.316 cos=+0.024 auc_xs_f=0.475 own_random=0.826 own_lobo=0.220 own_seg10_gap5=0.624
+   delta_ocular    dims=160 share=0.104 enrich=0.58 share_xs=0.093 cos=-0.001 auc_xs_f=0.511 own_random=0.757 own_lobo=0.137 own_seg10_gap5=0.545
+   theta           dims=159 share=0.171 enrich=0.96 share_xs=0.176 cos=+0.030 auc_xs_f=0.515 own_random=0.747 own_lobo=0.135 own_seg10_gap5=0.541
+   alpha           dims=159 share=0.183 enrich=1.02 share_xs=0.140 cos=-0.014 auc_xs_f=0.503 own_random=0.746 own_lobo=0.107 own_seg10_gap5=0.537
+   beta            dims=162 share=0.198 enrich=1.09 share_xs=0.174 cos=+0.046 auc_xs_f=0.552 own_random=0.792 own_lobo=0.218 own_seg10_gap5=0.599
+   aperiodic       dims= 10 share=0.021 enrich=1.84 share_xs=0.034 cos=+0.170 auc_xs_f=0.536 own_random=0.688 own_lobo=0.164 own_seg10_gap5=0.497
+   spectral_shape  dims=  7 share=0.001 enrich=0.18 share_xs=0.013 cos=-0.023 auc_xs_f=0.471 own_random=0.548 own_lobo=0.018 own_seg10_gap5=0.363
+   time_stats      dims= 19 share=0.042 enrich=1.98 share_xs=0.055 cos=+0.142 auc_xs_f=0.573 own_random=0.718 own_lobo=0.098 own_seg10_gap5=0.472
+[done] elapsed=363.6s -> own_direction_loading_results.json

@@ -1,0 +1,104 @@
+﻿[load] rows=16067 subjects=57 real time/block loaded elapsed=4.8s
+[start] subjects=57 models=('lr', 'hgb') gaps=(1, 2, 5) elapsed=4.8s
+[subject 1/57] sub-001 mid  n=291 blocks=6 random:lr=0.879 lobo:lr=0.685 gap1:lr=0.868 gap1_ctrl:lr=0.863 gap2:lr=0.859 gap2_ctrl:lr=0.874 gap5:lr=0.731 gap5_ctrl:lr=0.844 seg10_gap5:lr=0.804 seg10_gap5_ctrl:lr=0.846 | hgb random=0.910 lobo=0.656 elapsed=876.1s
+[subject 2/57] sub-002 low  n=271 blocks=6 random:lr=0.839 lobo:lr=0.144 gap1:lr=0.794 gap1_ctrl:lr=0.831 gap2:lr=0.710 gap2_ctrl:lr=0.814 gap5:lr=0.543 gap5_ctrl:lr=0.749 seg10_gap5:lr=0.690 seg10_gap5_ctrl:lr=0.753 | hgb random=0.873 lobo=0.037 elapsed=876.1s
+[subject 3/57] sub-003 mid  n=268 blocks=6 random:lr=0.851 lobo:lr=0.524 gap1:lr=0.818 gap1_ctrl:lr=0.844 gap2:lr=0.801 gap2_ctrl:lr=0.850 gap5:lr=0.757 gap5_ctrl:lr=0.845 seg10_gap5:lr=0.777 seg10_gap5_ctrl:lr=0.793 | hgb random=0.893 lobo=0.392 elapsed=876.1s
+[subject 4/57] sub-004 low  n=276 blocks=6 random:lr=0.816 lobo:lr=0.251 gap1:lr=0.760 gap1_ctrl:lr=0.821 gap2:lr=0.719 gap2_ctrl:lr=0.735 gap5:lr=0.551 gap5_ctrl:lr=0.663 seg10_gap5:lr=0.616 seg10_gap5_ctrl:lr=0.710 | hgb random=0.918 lobo=0.098 elapsed=876.1s
+[subject 5/57] sub-005 low  n=279 blocks=6 random:lr=0.781 lobo:lr=0.081 gap1:lr=0.722 gap1_ctrl:lr=0.745 gap2:lr=0.590 gap2_ctrl:lr=0.706 gap5:lr=0.514 gap5_ctrl:lr=0.569 seg10_gap5:lr=0.429 seg10_gap5_ctrl:lr=0.537 | hgb random=0.873 lobo=0.026 elapsed=876.1s
+[subject 6/57] sub-006 mid  n=276 blocks=6 random:lr=0.817 lobo:lr=0.425 gap1:lr=0.808 gap1_ctrl:lr=0.826 gap2:lr=0.804 gap2_ctrl:lr=0.827 gap5:lr=0.742 gap5_ctrl:lr=0.830 seg10_gap5:lr=0.673 seg10_gap5_ctrl:lr=0.729 | hgb random=0.852 lobo=0.404 elapsed=876.1s
+[subject 7/57] sub-007 mid  n=287 blocks=6 random:lr=0.732 lobo:lr=0.243 gap1:lr=0.724 gap1_ctrl:lr=0.701 gap2:lr=0.689 gap2_ctrl:lr=0.677 gap5:lr=0.611 gap5_ctrl:lr=0.676 seg10_gap5:lr=0.576 seg10_gap5_ctrl:lr=0.635 | hgb random=0.813 lobo=0.107 elapsed=876.1s
+[subject 8/57] sub-008 low  n=285 blocks=6 random:lr=0.931 lobo:lr=0.043 gap1:lr=0.917 gap1_ctrl:lr=0.916 gap2:lr=0.901 gap2_ctrl:lr=0.905 gap5:lr=0.667 gap5_ctrl:lr=0.821 seg10_gap5:lr=0.748 seg10_gap5_ctrl:lr=0.828 | hgb random=0.980 lobo=0.004 elapsed=876.1s
+[subject 9/57] sub-009 low  n=217 blocks=6 random:lr=0.861 lobo:lr=0.491 gap1:lr=0.839 gap1_ctrl:lr=0.863 gap2:lr=0.797 gap2_ctrl:lr=0.831 gap5:lr=0.674 gap5_ctrl:lr=0.683 seg10_gap5:lr=0.752 seg10_gap5_ctrl:lr=0.826 | hgb random=0.905 lobo=0.118 elapsed=876.1s
+[subject 10/57] sub-010 low  n=290 blocks=6 random:lr=0.885 lobo:lr=0.377 gap1:lr=0.854 gap1_ctrl:lr=0.880 gap2:lr=0.852 gap2_ctrl:lr=0.884 gap5:lr=0.601 gap5_ctrl:lr=0.845 seg10_gap5:lr=0.790 seg10_gap5_ctrl:lr=0.839 | hgb random=0.930 lobo=0.250 elapsed=896.2s
+[subject 11/57] sub-011 mid  n=290 blocks=6 random:lr=0.736 lobo:lr=0.188 gap1:lr=0.735 gap1_ctrl:lr=0.752 gap2:lr=0.698 gap2_ctrl:lr=0.736 gap5:lr=0.651 gap5_ctrl:lr=0.611 seg10_gap5:lr=0.499 seg10_gap5_ctrl:lr=0.632 | hgb random=0.835 lobo=0.097 elapsed=896.2s
+[subject 12/57] sub-012 mid  n=278 blocks=6 random:lr=0.833 lobo:lr=0.608 gap1:lr=0.809 gap1_ctrl:lr=0.800 gap2:lr=0.788 gap2_ctrl:lr=0.778 gap5:lr=0.694 gap5_ctrl:lr=0.754 seg10_gap5:lr=0.746 seg10_gap5_ctrl:lr=0.755 | hgb random=0.845 lobo=0.365 elapsed=896.2s
+[subject 13/57] sub-013 mid  n=286 blocks=6 random:lr=0.816 lobo:lr=0.302 gap1:lr=0.772 gap1_ctrl:lr=0.792 gap2:lr=0.734 gap2_ctrl:lr=0.781 gap5:lr=0.519 gap5_ctrl:lr=0.703 seg10_gap5:lr=0.630 seg10_gap5_ctrl:lr=0.744 | hgb random=0.904 lobo=0.228 elapsed=896.2s
+[subject 14/57] sub-014 mid  n=291 blocks=6 random:lr=0.843 lobo:lr=0.247 gap1:lr=0.810 gap1_ctrl:lr=0.835 gap2:lr=0.790 gap2_ctrl:lr=0.813 gap5:lr=0.600 gap5_ctrl:lr=0.739 seg10_gap5:lr=0.605 seg10_gap5_ctrl:lr=0.762 | hgb random=0.920 lobo=0.180 elapsed=896.2s
+[subject 15/57] sub-015 low  n=267 blocks=6 random:lr=0.826 lobo:lr=0.271 gap1:lr=0.802 gap1_ctrl:lr=0.814 gap2:lr=0.767 gap2_ctrl:lr=0.783 gap5:lr=0.599 gap5_ctrl:lr=0.753 seg10_gap5:lr=0.619 seg10_gap5_ctrl:lr=0.633 | hgb random=0.968 lobo=0.359 elapsed=1508.3s
+[subject 16/57] sub-016 mid  n=291 blocks=6 random:lr=0.836 lobo:lr=0.584 gap1:lr=0.810 gap1_ctrl:lr=0.816 gap2:lr=0.796 gap2_ctrl:lr=0.821 gap5:lr=0.752 gap5_ctrl:lr=0.775 seg10_gap5:lr=0.724 seg10_gap5_ctrl:lr=0.778 | hgb random=0.872 lobo=0.559 elapsed=1685.8s
+[subject 17/57] sub-017 mid  n=279 blocks=6 random:lr=0.864 lobo:lr=0.458 gap1:lr=0.827 gap1_ctrl:lr=0.849 gap2:lr=0.794 gap2_ctrl:lr=0.830 gap5:lr=0.595 gap5_ctrl:lr=0.635 seg10_gap5:lr=0.676 seg10_gap5_ctrl:lr=0.722 | hgb random=0.942 lobo=0.374 elapsed=1685.8s
+[subject 18/57] sub-018 mid  n=288 blocks=6 random:lr=0.907 lobo:lr=0.497 gap1:lr=0.913 gap1_ctrl:lr=0.903 gap2:lr=0.904 gap2_ctrl:lr=0.887 gap5:lr=0.781 gap5_ctrl:lr=0.819 seg10_gap5:lr=0.765 seg10_gap5_ctrl:lr=0.883 | hgb random=0.937 lobo=0.276 elapsed=1685.8s
+[subject 19/57] sub-019 mid  n=290 blocks=6 random:lr=0.720 lobo:lr=0.069 gap1:lr=0.638 gap1_ctrl:lr=0.687 gap2:lr=0.543 gap2_ctrl:lr=0.645 gap5:lr=0.479 gap5_ctrl:lr=0.606 seg10_gap5:lr=0.512 seg10_gap5_ctrl:lr=0.573 | hgb random=0.884 lobo=0.000 elapsed=1685.8s
+[subject 20/57] sub-020 mid  n=282 blocks=6 random:lr=0.809 lobo:lr=0.435 gap1:lr=0.776 gap1_ctrl:lr=0.778 gap2:lr=0.750 gap2_ctrl:lr=0.787 gap5:lr=0.600 gap5_ctrl:lr=0.756 seg10_gap5:lr=0.690 seg10_gap5_ctrl:lr=0.741 | hgb random=0.854 lobo=0.459 elapsed=1685.8s
+[subject 21/57] sub-021 mid  n=285 blocks=6 random:lr=0.863 lobo:lr=0.310 gap1:lr=0.843 gap1_ctrl:lr=0.855 gap2:lr=0.812 gap2_ctrl:lr=0.832 gap5:lr=0.577 gap5_ctrl:lr=0.794 seg10_gap5:lr=0.760 seg10_gap5_ctrl:lr=0.817 | hgb random=0.841 lobo=0.091 elapsed=1685.8s
+[subject 22/57] sub-022 mid  n=295 blocks=6 random:lr=0.815 lobo:lr=0.537 gap1:lr=0.798 gap1_ctrl:lr=0.800 gap2:lr=0.783 gap2_ctrl:lr=0.791 gap5:lr=0.590 gap5_ctrl:lr=0.711 seg10_gap5:lr=0.726 seg10_gap5_ctrl:lr=0.788 | hgb random=0.888 lobo=0.418 elapsed=1685.8s
+[subject 23/57] sub-023 low  n=294 blocks=6 random:lr=0.889 lobo:lr=0.108 gap1:lr=0.872 gap1_ctrl:lr=0.883 gap2:lr=0.826 gap2_ctrl:lr=0.840 gap5:lr=0.561 gap5_ctrl:lr=0.770 seg10_gap5:lr=0.658 seg10_gap5_ctrl:lr=0.810 | hgb random=0.916 lobo=0.038 elapsed=1685.8s
+[subject 24/57] sub-024 low  n=291 blocks=6 random:lr=0.847 lobo:lr=0.253 gap1:lr=0.809 gap1_ctrl:lr=0.812 gap2:lr=0.742 gap2_ctrl:lr=0.792 gap5:lr=0.570 gap5_ctrl:lr=0.705 seg10_gap5:lr=0.635 seg10_gap5_ctrl:lr=0.740 | hgb random=0.924 lobo=0.000 elapsed=1685.8s
+[subject 25/57] sub-025 mid  n=284 blocks=6 random:lr=0.892 lobo:lr=0.454 gap1:lr=0.836 gap1_ctrl:lr=0.888 gap2:lr=0.787 gap2_ctrl:lr=0.851 gap5:lr=0.671 gap5_ctrl:lr=0.834 seg10_gap5:lr=0.731 seg10_gap5_ctrl:lr=0.855 | hgb random=0.911 lobo=0.412 elapsed=1685.8s
+[subject 26/57] sub-026 mid  n=292 blocks=6 random:lr=0.930 lobo:lr=0.506 gap1:lr=0.892 gap1_ctrl:lr=0.923 gap2:lr=0.894 gap2_ctrl:lr=0.910 gap5:lr=0.596 gap5_ctrl:lr=0.892 seg10_gap5:lr=0.870 seg10_gap5_ctrl:lr=0.903 | hgb random=0.951 lobo=0.200 elapsed=1687.5s
+[subject 27/57] sub-027 low  n=281 blocks=6 random:lr=0.830 lobo:lr=0.191 gap1:lr=0.814 gap1_ctrl:lr=0.831 gap2:lr=0.705 gap2_ctrl:lr=0.825 gap5:lr=0.644 gap5_ctrl:lr=0.716 seg10_gap5:lr=0.749 seg10_gap5_ctrl:lr=0.782 | hgb random=0.915 lobo=0.142 elapsed=1708.9s
+[subject 28/57] sub-028 low  n=286 blocks=6 random:lr=0.801 lobo:lr=0.228 gap1:lr=0.754 gap1_ctrl:lr=0.793 gap2:lr=0.703 gap2_ctrl:lr=0.735 gap5:lr=0.520 gap5_ctrl:lr=0.590 seg10_gap5:lr=0.504 seg10_gap5_ctrl:lr=0.622 | hgb random=0.885 lobo=0.067 elapsed=1717.1s
+[subject 29/57] sub-029 low  n=292 blocks=6 random:lr=0.701 lobo:lr=0.127 gap1:lr=0.675 gap1_ctrl:lr=0.724 gap2:lr=0.640 gap2_ctrl:lr=0.716 gap5:lr=0.489 gap5_ctrl:lr=0.661 seg10_gap5:lr=0.635 seg10_gap5_ctrl:lr=0.654 | hgb random=0.927 lobo=0.021 elapsed=2340.7s
+[subject 30/57] sub-030 mid  n=296 blocks=6 random:lr=0.906 lobo:lr=0.351 gap1:lr=0.878 gap1_ctrl:lr=0.908 gap2:lr=0.858 gap2_ctrl:lr=0.886 gap5:lr=0.717 gap5_ctrl:lr=0.843 seg10_gap5:lr=0.822 seg10_gap5_ctrl:lr=0.851 | hgb random=0.932 lobo=0.050 elapsed=2515.6s
+[subject 31/57] sub-031 mid  n=292 blocks=6 random:lr=0.880 lobo:lr=0.576 gap1:lr=0.837 gap1_ctrl:lr=0.871 gap2:lr=0.811 gap2_ctrl:lr=0.846 gap5:lr=0.644 gap5_ctrl:lr=0.759 seg10_gap5:lr=0.800 seg10_gap5_ctrl:lr=0.823 | hgb random=0.904 lobo=0.521 elapsed=2515.6s
+[subject 32/57] sub-034 low  n=121 blocks=3 random:lr=0.891 gap1:lr=0.841 gap1_ctrl:lr=0.881 gap2:lr=0.797 gap2_ctrl:lr=0.867 gap5:lr=0.655 gap5_ctrl:lr=0.533 seg10_gap5:lr=0.492 seg10_gap5_ctrl:lr=0.759 | hgb random=1.000 lobo=NA elapsed=2515.6s
+[subject 33/57] sub-035 mid  n=292 blocks=6 random:lr=0.829 lobo:lr=0.116 gap1:lr=0.799 gap1_ctrl:lr=0.832 gap2:lr=0.740 gap2_ctrl:lr=0.787 gap5:lr=0.564 gap5_ctrl:lr=0.735 seg10_gap5:lr=0.637 seg10_gap5_ctrl:lr=0.718 | hgb random=0.899 lobo=0.075 elapsed=2522.2s
+[subject 34/57] sub-036 high n=284 blocks=6 random:lr=0.898 lobo:lr=0.327 gap1:lr=0.881 gap1_ctrl:lr=0.878 gap2:lr=0.827 gap2_ctrl:lr=0.855 gap5:lr=0.587 gap5_ctrl:lr=0.789 seg10_gap5:lr=0.701 seg10_gap5_ctrl:lr=0.830 | hgb random=0.925 lobo=0.195 elapsed=2522.2s
+[subject 35/57] sub-037 low  n=289 blocks=6 random:lr=0.909 lobo:lr=0.295 gap1:lr=0.865 gap1_ctrl:lr=0.881 gap2:lr=0.818 gap2_ctrl:lr=0.855 gap5:lr=0.547 gap5_ctrl:lr=0.785 seg10_gap5:lr=0.893 seg10_gap5_ctrl:lr=0.904 | hgb random=0.954 lobo=0.049 elapsed=2522.2s
+[subject 36/57] sub-038 mid  n=291 blocks=6 random:lr=0.924 lobo:lr=0.376 gap1:lr=0.899 gap1_ctrl:lr=0.916 gap2:lr=0.886 gap2_ctrl:lr=0.905 gap5:lr=0.780 gap5_ctrl:lr=0.870 seg10_gap5:lr=0.870 seg10_gap5_ctrl:lr=0.895 | hgb random=0.968 lobo=0.323 elapsed=2522.2s
+[subject 37/57] sub-039 low  n=293 blocks=6 random:lr=0.750 lobo:lr=0.325 gap1:lr=0.702 gap1_ctrl:lr=0.732 gap2:lr=0.659 gap2_ctrl:lr=0.683 gap5:lr=0.593 gap5_ctrl:lr=0.672 seg10_gap5:lr=0.589 seg10_gap5_ctrl:lr=0.662 | hgb random=0.876 lobo=0.369 elapsed=2522.2s
+[subject 38/57] sub-040 mid  n=280 blocks=6 random:lr=0.835 lobo:lr=0.298 gap1:lr=0.793 gap1_ctrl:lr=0.843 gap2:lr=0.737 gap2_ctrl:lr=0.819 gap5:lr=0.482 gap5_ctrl:lr=0.732 seg10_gap5:lr=0.779 seg10_gap5_ctrl:lr=0.792 | hgb random=0.903 lobo=0.006 elapsed=2522.2s
+[subject 39/57] sub-041 mid  n=288 blocks=6 random:lr=0.730 lobo:lr=0.073 gap1:lr=0.668 gap1_ctrl:lr=0.721 gap2:lr=0.587 gap2_ctrl:lr=0.668 gap5:lr=0.531 gap5_ctrl:lr=0.569 seg10_gap5:lr=0.373 seg10_gap5_ctrl:lr=0.561 | hgb random=0.802 lobo=0.039 elapsed=2522.2s
+[subject 40/57] sub-042 low  n=285 blocks=6 random:lr=0.721 lobo:lr=0.074 gap1:lr=0.651 gap1_ctrl:lr=0.685 gap2:lr=0.606 gap2_ctrl:lr=0.665 gap5:lr=0.547 gap5_ctrl:lr=0.576 seg10_gap5:lr=0.473 seg10_gap5_ctrl:lr=0.600 | hgb random=0.844 lobo=0.039 elapsed=2522.2s
+[subject 41/57] sub-043 high n=282 blocks=6 random:lr=0.898 lobo:lr=0.591 gap1:lr=0.878 gap1_ctrl:lr=0.895 gap2:lr=0.851 gap2_ctrl:lr=0.860 gap5:lr=0.770 gap5_ctrl:lr=0.828 seg10_gap5:lr=0.819 seg10_gap5_ctrl:lr=0.855 | hgb random=0.901 lobo=0.530 elapsed=2560.4s
+[subject 42/57] sub-044 low  n=284 blocks=6 random:lr=0.899 lobo:lr=0.716 gap1:lr=0.880 gap1_ctrl:lr=0.886 gap2:lr=0.864 gap2_ctrl:lr=0.884 gap5:lr=0.734 gap5_ctrl:lr=0.843 seg10_gap5:lr=0.840 seg10_gap5_ctrl:lr=0.854 | hgb random=0.913 lobo=0.649 elapsed=2563.4s
+[subject 43/57] sub-045 mid  n=284 blocks=6 random:lr=0.885 lobo:lr=0.289 gap1:lr=0.864 gap1_ctrl:lr=0.867 gap2:lr=0.843 gap2_ctrl:lr=0.846 gap5:lr=0.596 gap5_ctrl:lr=0.679 seg10_gap5:lr=0.780 seg10_gap5_ctrl:lr=0.840 | hgb random=0.932 lobo=0.053 elapsed=2705.1s
+[subject 44/57] sub-046 mid  n=284 blocks=6 random:lr=0.898 lobo:lr=0.170 gap1:lr=0.886 gap1_ctrl:lr=0.901 gap2:lr=0.848 gap2_ctrl:lr=0.879 gap5:lr=0.654 gap5_ctrl:lr=0.816 seg10_gap5:lr=0.699 seg10_gap5_ctrl:lr=0.810 | hgb random=0.902 lobo=0.098 elapsed=3159.6s
+[subject 45/57] sub-047 mid  n=287 blocks=6 random:lr=0.880 lobo:lr=0.441 gap1:lr=0.846 gap1_ctrl:lr=0.870 gap2:lr=0.814 gap2_ctrl:lr=0.840 gap5:lr=0.594 gap5_ctrl:lr=0.813 seg10_gap5:lr=0.788 seg10_gap5_ctrl:lr=0.808 | hgb random=0.929 lobo=0.353 elapsed=3322.4s
+[subject 46/57] sub-048 mid  n=288 blocks=6 random:lr=0.879 lobo:lr=0.435 gap1:lr=0.865 gap1_ctrl:lr=0.870 gap2:lr=0.865 gap2_ctrl:lr=0.868 gap5:lr=0.659 gap5_ctrl:lr=0.696 seg10_gap5:lr=0.774 seg10_gap5_ctrl:lr=0.817 | hgb random=0.923 lobo=0.430 elapsed=3322.4s
+[subject 47/57] sub-049 low  n=282 blocks=6 random:lr=0.815 lobo:lr=0.065 gap1:lr=0.796 gap1_ctrl:lr=0.784 gap2:lr=0.737 gap2_ctrl:lr=0.778 gap5:lr=0.566 gap5_ctrl:lr=0.670 seg10_gap5:lr=0.634 seg10_gap5_ctrl:lr=0.772 | hgb random=0.972 lobo=0.000 elapsed=3322.4s
+[subject 48/57] sub-050 low  n=287 blocks=6 random:lr=0.894 lobo:lr=0.494 gap1:lr=0.873 gap1_ctrl:lr=0.878 gap2:lr=0.871 gap2_ctrl:lr=0.872 gap5:lr=0.766 gap5_ctrl:lr=0.819 seg10_gap5:lr=0.688 seg10_gap5_ctrl:lr=0.796 | hgb random=0.930 lobo=0.441 elapsed=3324.0s
+[subject 49/57] sub-051 mid  n=291 blocks=6 random:lr=0.908 lobo:lr=0.176 gap1:lr=0.879 gap1_ctrl:lr=0.900 gap2:lr=0.852 gap2_ctrl:lr=0.905 gap5:lr=0.653 gap5_ctrl:lr=0.816 seg10_gap5:lr=0.823 seg10_gap5_ctrl:lr=0.878 | hgb random=0.991 lobo=0.000 elapsed=3325.4s
+[subject 50/57] sub-052 low  n=288 blocks=6 random:lr=0.836 lobo:lr=0.091 gap1:lr=0.814 gap1_ctrl:lr=0.821 gap2:lr=0.783 gap2_ctrl:lr=0.803 gap5:lr=0.622 gap5_ctrl:lr=0.775 seg10_gap5:lr=0.703 seg10_gap5_ctrl:lr=0.755 | hgb random=0.943 lobo=0.014 elapsed=3325.6s
+[subject 51/57] sub-053 mid  n=290 blocks=6 random:lr=0.679 lobo:lr=0.087 gap1:lr=0.665 gap1_ctrl:lr=0.654 gap2:lr=0.610 gap2_ctrl:lr=0.631 gap5:lr=0.585 gap5_ctrl:lr=0.616 seg10_gap5:lr=0.483 seg10_gap5_ctrl:lr=0.572 | hgb random=0.809 lobo=0.055 elapsed=3325.6s
+[subject 52/57] sub-054 high n=289 blocks=6 random:lr=0.900 lobo:lr=0.785 gap1:lr=0.880 gap1_ctrl:lr=0.886 gap2:lr=0.869 gap2_ctrl:lr=0.882 gap5:lr=0.762 gap5_ctrl:lr=0.873 seg10_gap5:lr=0.796 seg10_gap5_ctrl:lr=0.849 | hgb random=0.948 lobo=0.686 elapsed=3341.8s
+[subject 53/57] sub-055 mid  n=287 blocks=6 random:lr=0.855 lobo:lr=0.370 gap1:lr=0.820 gap1_ctrl:lr=0.846 gap2:lr=0.804 gap2_ctrl:lr=0.835 gap5:lr=0.736 gap5_ctrl:lr=0.775 seg10_gap5:lr=0.692 seg10_gap5_ctrl:lr=0.753 | hgb random=0.940 lobo=0.368 elapsed=3341.8s
+[subject 54/57] sub-056 mid  n=292 blocks=6 random:lr=0.881 lobo:lr=0.257 gap1:lr=0.856 gap1_ctrl:lr=0.881 gap2:lr=0.819 gap2_ctrl:lr=0.872 gap5:lr=0.683 gap5_ctrl:lr=0.819 seg10_gap5:lr=0.763 seg10_gap5_ctrl:lr=0.817 | hgb random=0.951 lobo=0.073 elapsed=3341.8s
+[subject 55/57] sub-057 mid  n=281 blocks=6 random:lr=0.802 lobo:lr=0.246 gap1:lr=0.745 gap1_ctrl:lr=0.797 gap2:lr=0.654 gap2_ctrl:lr=0.761 gap5:lr=0.509 gap5_ctrl:lr=0.701 seg10_gap5:lr=0.668 seg10_gap5_ctrl:lr=0.716 | hgb random=0.826 lobo=0.013 elapsed=3341.8s
+[subject 56/57] sub-058 mid  n=289 blocks=6 random:lr=0.871 lobo:lr=0.250 gap1:lr=0.847 gap1_ctrl:lr=0.854 gap2:lr=0.809 gap2_ctrl:lr=0.844 gap5:lr=0.574 gap5_ctrl:lr=0.688 seg10_gap5:lr=0.749 seg10_gap5_ctrl:lr=0.806 | hgb random=0.981 lobo=0.484 elapsed=3347.5s
+[subject 57/57] sub-059 mid  n=289 blocks=6 random:lr=0.940 lobo:lr=0.722 gap1:lr=0.928 gap1_ctrl:lr=0.935 gap2:lr=0.920 gap2_ctrl:lr=0.925 gap5:lr=0.804 gap5_ctrl:lr=0.882 seg10_gap5:lr=0.815 seg10_gap5_ctrl:lr=0.872 | hgb random=0.948 lobo=0.584 elapsed=3366.5s
+[group all] n=57
+   random           lr: AUC mean=0.845 med=0.855 bACC=0.784 n=57 hgb: AUC mean=0.909 med=0.915 bACC=0.845 n=57 train_n=226 cov=1.00
+   lobo             lr: AUC mean=0.333 med=0.300 bACC=0.394 n=56 hgb: AUC mean=0.230 med=0.161 bACC=0.292 n=56 train_n=235 cov=0.99
+   gap1             lr: AUC mean=0.815 med=0.820 bACC=0.757 n=57 hgb: AUC mean=0.852 med=0.862 bACC=0.789 n=57 train_n=146 cov=1.00
+   gap1_ctrl        lr: AUC mean=0.833 med=0.846 bACC=0.771 n=57 hgb: AUC mean=0.882 med=0.886 bACC=0.815 n=57 train_n=146 cov=1.00
+   gap2             lr: AUC mean=0.778 med=0.797 bACC=0.727 n=57 hgb: AUC mean=0.793 med=0.801 bACC=0.734 n=57 train_n=95 cov=1.00
+   gap2_ctrl        lr: AUC mean=0.814 med=0.831 bACC=0.755 n=57 hgb: AUC mean=0.832 med=0.835 bACC=0.772 n=57 train_n=95 cov=1.00
+   gap5             lr: AUC mean=0.628 med=0.600 bACC=0.602 n=57 hgb: AUC mean=0.514 med=0.501 bACC=0.509 n=57 train_n=25 cov=0.86
+   gap5_ctrl        lr: AUC mean=0.743 med=0.754 bACC=0.694 n=57 hgb: AUC mean=0.528 med=0.502 bACC=0.516 n=57 train_n=25 cov=0.94
+   seg10_gap5       lr: AUC mean=0.694 med=0.703 bACC=0.656 n=57 hgb: AUC mean=0.706 med=0.722 bACC=0.662 n=57 train_n=182 cov=1.00
+   seg10_gap5_ctrl  lr: AUC mean=0.766 med=0.788 bACC=0.718 n=57 hgb: AUC mean=0.807 med=0.821 bACC=0.753 n=57 train_n=182 cov=1.00
+[group high] n=3
+   random           lr: AUC mean=0.899 med=0.898 bACC=0.863 n=3 hgb: AUC mean=0.925 med=0.925 bACC=0.867 n=3 train_n=228 cov=1.00
+   lobo             lr: AUC mean=0.568 med=0.591 bACC=0.588 n=3 hgb: AUC mean=0.470 med=0.530 bACC=0.485 n=3 train_n=238 cov=1.00
+   gap1             lr: AUC mean=0.880 med=0.880 bACC=0.844 n=3 hgb: AUC mean=0.893 med=0.891 bACC=0.845 n=3 train_n=146 cov=1.00
+   gap1_ctrl        lr: AUC mean=0.886 med=0.886 bACC=0.835 n=3 hgb: AUC mean=0.915 med=0.906 bACC=0.849 n=3 train_n=146 cov=1.00
+   gap2             lr: AUC mean=0.849 med=0.851 bACC=0.817 n=3 hgb: AUC mean=0.848 med=0.846 bACC=0.810 n=3 train_n=94 cov=1.00
+   gap2_ctrl        lr: AUC mean=0.866 med=0.860 bACC=0.840 n=3 hgb: AUC mean=0.878 med=0.866 bACC=0.838 n=3 train_n=94 cov=1.00
+   gap5             lr: AUC mean=0.706 med=0.762 bACC=0.645 n=3 hgb: AUC mean=0.577 med=0.585 bACC=0.542 n=3 train_n=25 cov=0.93
+   gap5_ctrl        lr: AUC mean=0.830 med=0.828 bACC=0.772 n=3 hgb: AUC mean=0.608 med=0.579 bACC=0.564 n=3 train_n=25 cov=0.93
+   seg10_gap5       lr: AUC mean=0.772 med=0.796 bACC=0.716 n=3 hgb: AUC mean=0.725 med=0.764 bACC=0.644 n=3 train_n=182 cov=1.00
+   seg10_gap5_ctrl  lr: AUC mean=0.844 med=0.849 bACC=0.816 n=3 hgb: AUC mean=0.868 med=0.859 bACC=0.834 n=3 train_n=182 cov=1.00
+[group mid] n=34
+   random           lr: AUC mean=0.845 med=0.859 bACC=0.788 n=34 hgb: AUC mean=0.900 med=0.904 bACC=0.836 n=34 train_n=230 cov=1.00
+   lobo             lr: AUC mean=0.362 med=0.361 bACC=0.429 n=34 hgb: AUC mean=0.257 med=0.252 bACC=0.323 n=34 train_n=239 cov=1.00
+   gap1             lr: AUC mean=0.816 med=0.823 bACC=0.762 n=34 hgb: AUC mean=0.847 med=0.863 bACC=0.785 n=34 train_n=149 cov=1.00
+   gap1_ctrl        lr: AUC mean=0.835 med=0.847 bACC=0.776 n=34 hgb: AUC mean=0.873 med=0.881 bACC=0.810 n=34 train_n=149 cov=1.00
+   gap2             lr: AUC mean=0.785 med=0.802 bACC=0.737 n=34 hgb: AUC mean=0.796 med=0.803 bACC=0.738 n=34 train_n=97 cov=1.00
+   gap2_ctrl        lr: AUC mean=0.818 med=0.833 bACC=0.764 n=34 hgb: AUC mean=0.830 med=0.836 bACC=0.774 n=34 train_n=97 cov=1.00
+   gap5             lr: AUC mean=0.638 med=0.627 bACC=0.611 n=34 hgb: AUC mean=0.515 med=0.501 bACC=0.509 n=34 train_n=26 cov=0.87
+   gap5_ctrl        lr: AUC mean=0.754 med=0.757 bACC=0.704 n=34 hgb: AUC mean=0.531 med=0.502 bACC=0.517 n=34 train_n=26 cov=0.95
+   seg10_gap5       lr: AUC mean=0.708 med=0.738 bACC=0.675 n=34 hgb: AUC mean=0.721 med=0.747 bACC=0.678 n=34 train_n=186 cov=1.00
+   seg10_gap5_ctrl  lr: AUC mean=0.773 med=0.792 bACC=0.729 n=34 hgb: AUC mean=0.804 med=0.815 bACC=0.752 n=34 train_n=186 cov=1.00
+[group low] n=20
+   random           lr: AUC mean=0.836 med=0.838 bACC=0.764 n=20 hgb: AUC mean=0.922 med=0.921 bACC=0.857 n=20 train_n=218 cov=1.00
+   lobo             lr: AUC mean=0.243 med=0.228 bACC=0.301 n=19 hgb: AUC mean=0.143 med=0.049 bACC=0.206 n=19 train_n=226 cov=0.98
+   gap1             lr: AUC mean=0.802 med=0.811 bACC=0.735 n=20 hgb: AUC mean=0.854 med=0.850 bACC=0.787 n=20 train_n=141 cov=1.00
+   gap1_ctrl        lr: AUC mean=0.823 med=0.826 bACC=0.753 n=20 hgb: AUC mean=0.892 med=0.885 bACC=0.818 n=20 train_n=141 cov=1.00
+   gap2             lr: AUC mean=0.754 med=0.754 bACC=0.696 n=20 hgb: AUC mean=0.778 med=0.773 bACC=0.715 n=20 train_n=92 cov=1.00
+   gap2_ctrl        lr: AUC mean=0.799 med=0.808 bACC=0.728 n=20 hgb: AUC mean=0.829 med=0.822 bACC=0.757 n=20 train_n=92 cov=1.00
+   gap5             lr: AUC mean=0.598 med=0.581 bACC=0.580 n=20 hgb: AUC mean=0.504 med=0.501 bACC=0.503 n=20 train_n=25 cov=0.84
+   gap5_ctrl        lr: AUC mean=0.710 med=0.711 bACC=0.666 n=20 hgb: AUC mean=0.512 med=0.502 bACC=0.508 n=20 train_n=25 cov=0.91
+   seg10_gap5       lr: AUC mean=0.657 med=0.646 bACC=0.615 n=20 hgb: AUC mean=0.677 med=0.676 bACC=0.638 n=20 train_n=176 cov=1.00
+   seg10_gap5_ctrl  lr: AUC mean=0.742 med=0.757 bACC=0.685 n=20 hgb: AUC mean=0.803 med=0.801 bACC=0.742 n=20 train_n=176 cov=1.00
+[done] elapsed=3468.4s -> own_cv_block_results.json

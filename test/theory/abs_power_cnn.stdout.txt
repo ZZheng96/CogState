@@ -1,0 +1,164 @@
+﻿[load] rows=16067 subjects=57 real time/block loaded elapsed=3.8s
+[raw] X=(16067, 1500) device=cuda folds=[0, 1, 2, 3, 4] seeds=(0, 1) epochs=30 elapsed=7.5s
+    fold0 absmean seed0 epoch 1/30 train_loss=0.7203 elapsed=124.6s
+    fold0 absmean seed0 epoch 10/30 train_loss=0.6795 elapsed=155.2s
+    fold0 absmean seed0 epoch 20/30 train_loss=0.6348 elapsed=193.3s
+    fold0 absmean seed0 epoch 30/30 train_loss=0.5262 elapsed=225.2s
+[fold 0] absmean seed0 AUC=0.5346 elapsed=226.5s
+    fold0 absmean seed1 epoch 1/30 train_loss=0.7905 elapsed=231.9s
+    fold0 absmean seed1 epoch 10/30 train_loss=0.6773 elapsed=273.2s
+    fold0 absmean seed1 epoch 20/30 train_loss=0.6647 elapsed=310.8s
+    fold0 absmean seed1 epoch 30/30 train_loss=0.6174 elapsed=341.7s
+[fold 0] absmean seed1 AUC=0.5564 elapsed=342.5s
+    fold0 zscore seed0 epoch 1/30 train_loss=0.6915 elapsed=360.4s
+    fold0 zscore seed0 epoch 10/30 train_loss=0.6092 elapsed=393.9s
+    fold0 zscore seed0 epoch 20/30 train_loss=0.4234 elapsed=413.7s
+    fold0 zscore seed0 epoch 30/30 train_loss=0.3149 elapsed=431.9s
+[fold 0] zscore seed0 AUC=0.5085 elapsed=432.3s
+    fold0 zscore seed1 epoch 1/30 train_loss=0.6942 elapsed=435.7s
+    fold0 zscore seed1 epoch 10/30 train_loss=0.6322 elapsed=450.5s
+    fold0 zscore seed1 epoch 20/30 train_loss=0.4914 elapsed=466.7s
+    fold0 zscore seed1 epoch 30/30 train_loss=0.3790 elapsed=482.9s
+[fold 0] zscore seed1 AUC=0.5047 elapsed=483.3s
+    fold0 absmean_globalstd seed0 epoch 1/30 train_loss=0.6953 elapsed=501.7s
+    fold0 absmean_globalstd seed0 epoch 10/30 train_loss=0.6903 elapsed=519.1s
+    fold0 absmean_globalstd seed0 epoch 20/30 train_loss=0.6874 elapsed=537.0s
+    fold0 absmean_globalstd seed0 epoch 30/30 train_loss=0.6855 elapsed=552.6s
+[fold 0] absmean_globalstd seed0 AUC=0.5123 elapsed=553.1s
+    fold0 absmean_globalstd seed1 epoch 1/30 train_loss=0.6945 elapsed=556.8s
+    fold0 absmean_globalstd seed1 epoch 10/30 train_loss=0.6915 elapsed=574.9s
+    fold0 absmean_globalstd seed1 epoch 20/30 train_loss=0.6889 elapsed=591.1s
+    fold0 absmean_globalstd seed1 epoch 30/30 train_loss=0.6855 elapsed=607.7s
+[fold 0] absmean_globalstd seed1 AUC=0.5297 elapsed=608.1s
+    fold1 absmean seed0 epoch 1/30 train_loss=0.7471 elapsed=625.3s
+    fold1 absmean seed0 epoch 10/30 train_loss=0.6665 elapsed=637.2s
+    fold1 absmean seed0 epoch 20/30 train_loss=0.6728 elapsed=650.4s
+    fold1 absmean seed0 epoch 30/30 train_loss=0.5333 elapsed=664.8s
+[fold 1] absmean seed0 AUC=0.5368 elapsed=665.2s
+    fold1 absmean seed1 epoch 1/30 train_loss=0.8944 elapsed=668.3s
+    fold1 absmean seed1 epoch 10/30 train_loss=0.6829 elapsed=681.6s
+    fold1 absmean seed1 epoch 20/30 train_loss=0.7169 elapsed=697.7s
+    fold1 absmean seed1 epoch 30/30 train_loss=0.6134 elapsed=717.3s
+[fold 1] absmean seed1 AUC=0.5096 elapsed=717.7s
+    fold1 zscore seed0 epoch 1/30 train_loss=0.6980 elapsed=725.0s
+    fold1 zscore seed0 epoch 10/30 train_loss=0.6797 elapsed=743.2s
+    fold1 zscore seed0 epoch 20/30 train_loss=0.6544 elapsed=762.4s
+    fold1 zscore seed0 epoch 30/30 train_loss=0.5823 elapsed=780.1s
+[fold 1] zscore seed0 AUC=0.5352 elapsed=780.6s
+    fold1 zscore seed1 epoch 1/30 train_loss=0.6946 elapsed=784.1s
+    fold1 zscore seed1 epoch 10/30 train_loss=0.6365 elapsed=801.3s
+    fold1 zscore seed1 epoch 20/30 train_loss=0.4844 elapsed=820.5s
+    fold1 zscore seed1 epoch 30/30 train_loss=0.3431 elapsed=840.1s
+[fold 1] zscore seed1 AUC=0.5261 elapsed=840.4s
+    fold1 absmean_globalstd seed0 epoch 1/30 train_loss=0.6956 elapsed=856.6s
+    fold1 absmean_globalstd seed0 epoch 10/30 train_loss=0.6908 elapsed=871.1s
+    fold1 absmean_globalstd seed0 epoch 20/30 train_loss=0.6875 elapsed=885.6s
+    fold1 absmean_globalstd seed0 epoch 30/30 train_loss=0.6843 elapsed=900.8s
+[fold 1] absmean_globalstd seed0 AUC=0.4342 elapsed=901.3s
+    fold1 absmean_globalstd seed1 epoch 1/30 train_loss=0.6963 elapsed=904.2s
+    fold1 absmean_globalstd seed1 epoch 10/30 train_loss=0.6888 elapsed=916.6s
+    fold1 absmean_globalstd seed1 epoch 20/30 train_loss=0.6862 elapsed=930.6s
+    fold1 absmean_globalstd seed1 epoch 30/30 train_loss=0.6812 elapsed=947.0s
+[fold 1] absmean_globalstd seed1 AUC=0.5693 elapsed=947.3s
+    fold2 absmean seed0 epoch 1/30 train_loss=0.8300 elapsed=966.2s
+    fold2 absmean seed0 epoch 10/30 train_loss=0.6709 elapsed=979.6s
+    fold2 absmean seed0 epoch 20/30 train_loss=0.6379 elapsed=994.8s
+    fold2 absmean seed0 epoch 30/30 train_loss=0.5523 elapsed=1008.9s
+[fold 2] absmean seed0 AUC=0.5737 elapsed=1009.4s
+    fold2 absmean seed1 epoch 1/30 train_loss=0.7892 elapsed=1012.3s
+    fold2 absmean seed1 epoch 10/30 train_loss=0.6933 elapsed=1025.2s
+    fold2 absmean seed1 epoch 20/30 train_loss=0.6931 elapsed=1039.9s
+    fold2 absmean seed1 epoch 30/30 train_loss=0.6926 elapsed=1055.5s
+[fold 2] absmean seed1 AUC=0.5177 elapsed=1055.9s
+    fold2 zscore seed0 epoch 1/30 train_loss=0.6921 elapsed=1063.1s
+    fold2 zscore seed0 epoch 10/30 train_loss=0.6150 elapsed=1076.3s
+    fold2 zscore seed0 epoch 20/30 train_loss=0.3997 elapsed=1090.1s
+    fold2 zscore seed0 epoch 30/30 train_loss=0.2738 elapsed=1104.3s
+[fold 2] zscore seed0 AUC=0.5186 elapsed=1104.7s
+    fold2 zscore seed1 epoch 1/30 train_loss=0.7002 elapsed=1107.7s
+    fold2 zscore seed1 epoch 10/30 train_loss=0.6817 elapsed=1120.7s
+    fold2 zscore seed1 epoch 20/30 train_loss=0.6636 elapsed=1136.5s
+    fold2 zscore seed1 epoch 30/30 train_loss=0.6506 elapsed=1152.9s
+[fold 2] zscore seed1 AUC=0.5241 elapsed=1153.4s
+    fold2 absmean_globalstd seed0 epoch 1/30 train_loss=0.6962 elapsed=1173.9s
+    fold2 absmean_globalstd seed0 epoch 10/30 train_loss=0.6903 elapsed=1188.5s
+    fold2 absmean_globalstd seed0 epoch 20/30 train_loss=0.6838 elapsed=1205.5s
+    fold2 absmean_globalstd seed0 epoch 30/30 train_loss=0.6776 elapsed=1222.2s
+[fold 2] absmean_globalstd seed0 AUC=0.5351 elapsed=1222.7s
+    fold2 absmean_globalstd seed1 epoch 1/30 train_loss=0.6980 elapsed=1225.9s
+    fold2 absmean_globalstd seed1 epoch 10/30 train_loss=0.6925 elapsed=1240.5s
+    fold2 absmean_globalstd seed1 epoch 20/30 train_loss=0.6919 elapsed=1258.2s
+    fold2 absmean_globalstd seed1 epoch 30/30 train_loss=0.6913 elapsed=1273.3s
+[fold 2] absmean_globalstd seed1 AUC=0.5228 elapsed=1273.7s
+    fold3 absmean seed0 epoch 1/30 train_loss=0.7510 elapsed=1292.6s
+    fold3 absmean seed0 epoch 10/30 train_loss=0.6855 elapsed=1307.1s
+    fold3 absmean seed0 epoch 20/30 train_loss=0.6428 elapsed=1321.9s
+    fold3 absmean seed0 epoch 30/30 train_loss=0.5293 elapsed=1336.1s
+[fold 3] absmean seed0 AUC=0.5140 elapsed=1336.4s
+    fold3 absmean seed1 epoch 1/30 train_loss=0.8325 elapsed=1338.4s
+    fold3 absmean seed1 epoch 10/30 train_loss=0.6818 elapsed=1351.6s
+    fold3 absmean seed1 epoch 20/30 train_loss=0.6630 elapsed=1366.5s
+    fold3 absmean seed1 epoch 30/30 train_loss=0.6585 elapsed=1382.2s
+[fold 3] absmean seed1 AUC=0.5409 elapsed=1382.5s
+    fold3 zscore seed0 epoch 1/30 train_loss=0.6950 elapsed=1389.3s
+    fold3 zscore seed0 epoch 10/30 train_loss=0.6385 elapsed=1402.1s
+    fold3 zscore seed0 epoch 20/30 train_loss=0.4733 elapsed=1416.6s
+    fold3 zscore seed0 epoch 30/30 train_loss=0.3307 elapsed=1431.5s
+[fold 3] zscore seed0 AUC=0.5003 elapsed=1431.9s
+    fold3 zscore seed1 epoch 1/30 train_loss=0.7012 elapsed=1434.6s
+    fold3 zscore seed1 epoch 10/30 train_loss=0.6932 elapsed=1450.8s
+    fold3 zscore seed1 epoch 20/30 train_loss=0.6932 elapsed=1468.1s
+    fold3 zscore seed1 epoch 30/30 train_loss=0.6932 elapsed=1486.3s
+[fold 3] zscore seed1 AUC=0.5000 elapsed=1486.7s
+    fold3 absmean_globalstd seed0 epoch 1/30 train_loss=0.6964 elapsed=1503.5s
+    fold3 absmean_globalstd seed0 epoch 10/30 train_loss=0.6869 elapsed=1518.4s
+    fold3 absmean_globalstd seed0 epoch 20/30 train_loss=0.6821 elapsed=1534.3s
+    fold3 absmean_globalstd seed0 epoch 30/30 train_loss=0.6764 elapsed=1550.5s
+[fold 3] absmean_globalstd seed0 AUC=0.5133 elapsed=1550.9s
+    fold3 absmean_globalstd seed1 epoch 1/30 train_loss=0.6984 elapsed=1553.3s
+    fold3 absmean_globalstd seed1 epoch 10/30 train_loss=0.6932 elapsed=1565.6s
+    fold3 absmean_globalstd seed1 epoch 20/30 train_loss=0.6932 elapsed=1580.7s
+    fold3 absmean_globalstd seed1 epoch 30/30 train_loss=0.6932 elapsed=1594.1s
+[fold 3] absmean_globalstd seed1 AUC=0.5000 elapsed=1594.4s
+    fold4 absmean seed0 epoch 1/30 train_loss=0.8351 elapsed=1610.4s
+    fold4 absmean seed0 epoch 10/30 train_loss=0.6923 elapsed=1622.1s
+    fold4 absmean seed0 epoch 20/30 train_loss=0.6924 elapsed=1634.7s
+    fold4 absmean seed0 epoch 30/30 train_loss=0.6946 elapsed=1647.6s
+[fold 4] absmean seed0 AUC=0.4939 elapsed=1648.0s
+    fold4 absmean seed1 epoch 1/30 train_loss=0.7503 elapsed=1650.6s
+    fold4 absmean seed1 epoch 10/30 train_loss=0.6899 elapsed=1662.6s
+    fold4 absmean seed1 epoch 20/30 train_loss=0.6816 elapsed=1675.7s
+    fold4 absmean seed1 epoch 30/30 train_loss=0.6693 elapsed=1689.5s
+[fold 4] absmean seed1 AUC=0.5249 elapsed=1689.8s
+    fold4 zscore seed0 epoch 1/30 train_loss=0.6912 elapsed=1695.9s
+    fold4 zscore seed0 epoch 10/30 train_loss=0.5957 elapsed=1706.8s
+    fold4 zscore seed0 epoch 20/30 train_loss=0.3281 elapsed=1719.7s
+    fold4 zscore seed0 epoch 30/30 train_loss=0.1864 elapsed=1732.5s
+[fold 4] zscore seed0 AUC=0.5188 elapsed=1732.9s
+    fold4 zscore seed1 epoch 1/30 train_loss=0.6930 elapsed=1735.1s
+    fold4 zscore seed1 epoch 10/30 train_loss=0.6587 elapsed=1746.8s
+    fold4 zscore seed1 epoch 20/30 train_loss=0.5592 elapsed=1759.6s
+    fold4 zscore seed1 epoch 30/30 train_loss=0.4692 elapsed=1773.3s
+[fold 4] zscore seed1 AUC=0.5366 elapsed=1773.6s
+    fold4 absmean_globalstd seed0 epoch 1/30 train_loss=0.6955 elapsed=1789.4s
+    fold4 absmean_globalstd seed0 epoch 10/30 train_loss=0.6862 elapsed=1803.7s
+    fold4 absmean_globalstd seed0 epoch 20/30 train_loss=0.6789 elapsed=1817.7s
+    fold4 absmean_globalstd seed0 epoch 30/30 train_loss=0.6755 elapsed=1823.6s
+[fold 4] absmean_globalstd seed0 AUC=0.5194 elapsed=1823.7s
+    fold4 absmean_globalstd seed1 epoch 1/30 train_loss=0.6954 elapsed=1824.4s
+    fold4 absmean_globalstd seed1 epoch 10/30 train_loss=0.6932 elapsed=1829.4s
+    fold4 absmean_globalstd seed1 epoch 20/30 train_loss=0.6932 elapsed=1835.0s
+    fold4 absmean_globalstd seed1 epoch 30/30 train_loss=0.6932 elapsed=1840.6s
+[fold 4] absmean_globalstd seed1 AUC=0.5000 elapsed=1840.7s
+[result] absmean_seed0      AUC=0.5274 mac=0.5207 high=0.510/0.533 mid=0.535/0.552 low=0.498/0.503
+[result] absmean_seed1      AUC=0.5301 mac=0.5230 high=0.552/0.576 mid=0.538/0.553 low=0.493/0.492
+[result] absmean_seedavg    AUC=0.5352 mac=0.5298 high=0.550/0.560 mid=0.540/0.567 low=0.509/0.508
+[result] zscore_seed0       AUC=0.5133 mac=0.5147 high=0.518/0.519 mid=0.521/0.523 low=0.504/0.508
+[result] zscore_seed1       AUC=0.5185 mac=0.5142 high=0.541/0.545 mid=0.518/0.518 low=0.504/0.512
+[result] zscore_seedavg     AUC=0.5169 mac=0.5124 high=0.536/0.542 mid=0.515/0.521 low=0.504/0.510
+[result] absmean_globalstd_seed0 AUC=0.5111 mac=0.5110 high=0.518/0.491 mid=0.524/0.530 low=0.489/0.458
+[result] absmean_globalstd_seed1 AUC=0.5244 mac=0.5157 high=0.497/0.541 mid=0.524/0.536 low=0.505/0.501
+[result] absmean_globalstd_seedavg AUC=0.5223 mac=0.5155 high=0.514/0.547 mid=0.530/0.550 low=0.492/0.482
+[result] LR889              AUC=0.6323 mac=0.5959 high=0.687/0.813 mid=0.633/0.691 low=0.519/0.533
+[boot] absmean-zscore dAUC=+0.0186[+0.0011,+0.0368] dmac=+0.0175[+0.0041,+0.0320]
+[done] elapsed=1866.0s -> abs_power_cnn_results.json

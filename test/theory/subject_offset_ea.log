@@ -1,0 +1,116 @@
+[load] rows=16067 subjects=57 real time/block loaded elapsed=2.6s
+[psd] (16067, 44) fooof-style features (16067, 46) (np.polyfit, fooof package not installed) elapsed=2.9s
+[s0 psd_raw] AUC=0.5843 fuse AUC=0.6331 variant_s=48.8 elapsed=119.8s
+[s0 ea_mean] AUC=0.5905 fuse AUC=0.6352 variant_s=55.0 elapsed=174.9s
+[s0 ea_mean_var] AUC=0.6180 fuse AUC=0.6410 variant_s=59.0 elapsed=233.9s
+[s0 ea_median] AUC=0.5925 fuse AUC=0.6451 variant_s=93.2 elapsed=327.1s
+[s0 fooof_raw] AUC=0.5821 fuse AUC=0.6326 variant_s=48.0 elapsed=375.1s
+[s0 fooof_ea_mean] AUC=0.5884 fuse AUC=0.6369 variant_s=58.9 elapsed=434.0s
+[s0 fooof_ea_mean_var] AUC=0.6042 fuse AUC=0.6318 variant_s=53.4 elapsed=487.4s
+[s0 fooof_ea_median] AUC=0.5877 fuse AUC=0.6398 variant_s=83.8 elapsed=571.2s
+[s1 psd_raw] AUC=0.5843 fuse AUC=0.6331 variant_s=48.8 elapsed=620.0s
+[s1 ea_mean] AUC=0.5910 fuse AUC=0.6363 variant_s=54.8 elapsed=674.7s
+[s1 ea_mean_var] AUC=0.6172 fuse AUC=0.6404 variant_s=67.1 elapsed=741.8s
+[s1 ea_median] AUC=0.5912 fuse AUC=0.6442 variant_s=109.8 elapsed=851.6s
+[s1 fooof_raw] AUC=0.5821 fuse AUC=0.6326 variant_s=69.9 elapsed=921.5s
+[s1 fooof_ea_mean] AUC=0.5888 fuse AUC=0.6362 variant_s=85.5 elapsed=1007.0s
+[s1 fooof_ea_mean_var] AUC=0.6028 fuse AUC=0.6316 variant_s=76.2 elapsed=1083.3s
+[s1 fooof_ea_median] AUC=0.5882 fuse AUC=0.6378 variant_s=72.3 elapsed=1155.6s
+[s2 psd_raw] AUC=0.5843 fuse AUC=0.6331 variant_s=48.1 elapsed=1203.7s
+[s2 ea_mean] AUC=0.5911 fuse AUC=0.6356 variant_s=53.3 elapsed=1257.0s
+[s2 ea_mean_var] AUC=0.6185 fuse AUC=0.6433 variant_s=50.7 elapsed=1307.7s
+[s2 ea_median] AUC=0.5934 fuse AUC=0.6448 variant_s=69.0 elapsed=1376.7s
+[s2 fooof_raw] AUC=0.5821 fuse AUC=0.6326 variant_s=50.8 elapsed=1427.4s
+[s2 fooof_ea_mean] AUC=0.5886 fuse AUC=0.6368 variant_s=55.0 elapsed=1482.5s
+[s2 fooof_ea_mean_var] AUC=0.6063 fuse AUC=0.6332 variant_s=53.7 elapsed=1536.2s
+[s2 fooof_ea_median] AUC=0.5887 fuse AUC=0.6397 variant_s=66.8 elapsed=1603.0s
+[real psd_raw] AUC=0.5843 fuse AUC=0.6331 variant_s=46.0 elapsed=1649.1s
+[real ea_mean] AUC=0.6039 fuse AUC=0.6619 variant_s=49.3 elapsed=1698.4s
+[real ea_mean_var] AUC=0.6279 fuse AUC=0.6556 variant_s=48.8 elapsed=1747.2s
+[real ea_median] AUC=0.5924 fuse AUC=0.6551 variant_s=67.6 elapsed=1814.8s
+[real fooof_raw] AUC=0.5821 fuse AUC=0.6326 variant_s=46.8 elapsed=1861.6s
+[real fooof_ea_mean] AUC=0.5988 fuse AUC=0.6485 variant_s=52.4 elapsed=1914.0s
+[real fooof_ea_mean_var] AUC=0.6151 fuse AUC=0.6402 variant_s=50.9 elapsed=1964.9s
+[real fooof_ea_median] AUC=0.6026 fuse AUC=0.6498 variant_s=70.3 elapsed=2035.2s
+[result] strict_LR889                   AUC=0.6324 mac=0.5960 high=0.687 mid=0.633 low=0.519
+[result] s0__psd_raw                    AUC=0.5843 mac=0.5636 high=0.675 mid=0.588 low=0.505 dAUC=-0.0486[-0.0690,-0.0271] dmac=-0.0331[-0.0492,-0.0157]
+[result] s0__fuse889_psd_raw            AUC=0.6331 mac=0.5971 high=0.694 mid=0.633 low=0.522 dAUC=+0.0007[-0.0003,+0.0018] dmac=+0.0011[-0.0015,+0.0036]
+[result] s0__ea_mean                    AUC=0.5905 mac=0.5718 high=0.746 mid=0.599 low=0.500 dAUC=-0.0428[-0.0711,-0.0178] dmac=-0.0249[-0.0479,-0.0043]
+[result] s0__fuse889_ea_mean            AUC=0.6352 mac=0.6008 high=0.758 mid=0.635 low=0.518 dAUC=+0.0026[-0.0065,+0.0101] dmac=+0.0046[-0.0024,+0.0120]
+[result] s0__ea_mean_var                AUC=0.6180 mac=0.5904 high=0.742 mid=0.626 low=0.507 dAUC=-0.0150[-0.0385,+0.0104] dmac=-0.0062[-0.0256,+0.0135]
+[result] s0__fuse889_ea_mean_var        AUC=0.6410 mac=0.6042 high=0.747 mid=0.640 low=0.522 dAUC=+0.0086[+0.0008,+0.0167] dmac=+0.0081[-0.0001,+0.0166]
+[result] s0__ea_median                  AUC=0.5925 mac=0.5712 high=0.719 mid=0.596 low=0.506 dAUC=-0.0408[-0.0675,-0.0176] dmac=-0.0254[-0.0461,-0.0058]
+[result] s0__fuse889_ea_median          AUC=0.6451 mac=0.6079 high=0.754 mid=0.646 low=0.522 dAUC=+0.0124[+0.0061,+0.0189] dmac=+0.0117[+0.0045,+0.0196]
+[result] s0__fooof_raw                  AUC=0.5821 mac=0.5620 high=0.654 mid=0.583 low=0.512 dAUC=-0.0508[-0.0715,-0.0291] dmac=-0.0347[-0.0517,-0.0163]
+[result] s0__fuse889_fooof_raw          AUC=0.6326 mac=0.5962 high=0.691 mid=0.631 low=0.523 dAUC=+0.0003[-0.0023,+0.0028] dmac=+0.0002[-0.0041,+0.0042]
+[result] s0__fooof_ea_mean              AUC=0.5884 mac=0.5685 high=0.704 mid=0.591 low=0.509 dAUC=-0.0448[-0.0696,-0.0220] dmac=-0.0282[-0.0479,-0.0097]
+[result] s0__fuse889_fooof_ea_mean      AUC=0.6369 mac=0.6011 high=0.749 mid=0.636 low=0.519 dAUC=+0.0044[-0.0018,+0.0099] dmac=+0.0049[-0.0021,+0.0125]
+[result] s0__fooof_ea_mean_var          AUC=0.6042 mac=0.5774 high=0.715 mid=0.606 low=0.508 dAUC=-0.0289[-0.0506,-0.0080] dmac=-0.0193[-0.0362,-0.0030]
+[result] s0__fuse889_fooof_ea_mean_var  AUC=0.6318 mac=0.5951 high=0.724 mid=0.631 low=0.515 dAUC=-0.0007[-0.0052,+0.0038] dmac=-0.0011[-0.0061,+0.0040]
+[result] s0__fooof_ea_median            AUC=0.5877 mac=0.5661 high=0.693 mid=0.586 low=0.513 dAUC=-0.0455[-0.0699,-0.0230] dmac=-0.0307[-0.0495,-0.0117]
+[result] s0__fuse889_fooof_ea_median    AUC=0.6398 mac=0.6026 high=0.734 mid=0.638 low=0.523 dAUC=+0.0072[+0.0026,+0.0114] dmac=+0.0064[+0.0007,+0.0128]
+[result] s1__psd_raw                    AUC=0.5843 mac=0.5636 high=0.675 mid=0.588 low=0.505 dAUC=-0.0486[-0.0690,-0.0271] dmac=-0.0331[-0.0492,-0.0157]
+[result] s1__fuse889_psd_raw            AUC=0.6331 mac=0.5971 high=0.694 mid=0.633 low=0.522 dAUC=+0.0007[-0.0003,+0.0018] dmac=+0.0011[-0.0015,+0.0036]
+[result] s1__ea_mean                    AUC=0.5910 mac=0.5706 high=0.750 mid=0.597 low=0.499 dAUC=-0.0424[-0.0713,-0.0176] dmac=-0.0260[-0.0484,-0.0051]
+[result] s1__fuse889_ea_mean            AUC=0.6363 mac=0.5997 high=0.749 mid=0.634 low=0.519 dAUC=+0.0037[-0.0048,+0.0110] dmac=+0.0036[-0.0028,+0.0108]
+[result] s1__ea_mean_var                AUC=0.6172 mac=0.5890 high=0.750 mid=0.622 low=0.509 dAUC=-0.0158[-0.0400,+0.0091] dmac=-0.0077[-0.0275,+0.0120]
+[result] s1__fuse889_ea_mean_var        AUC=0.6404 mac=0.6042 high=0.747 mid=0.641 low=0.521 dAUC=+0.0079[+0.0005,+0.0160] dmac=+0.0081[+0.0003,+0.0163]
+[result] s1__ea_median                  AUC=0.5912 mac=0.5698 high=0.727 mid=0.595 low=0.504 dAUC=-0.0420[-0.0684,-0.0187] dmac=-0.0267[-0.0475,-0.0068]
+[result] s1__fuse889_ea_median          AUC=0.6442 mac=0.6074 high=0.749 mid=0.645 low=0.522 dAUC=+0.0116[+0.0050,+0.0179] dmac=+0.0112[+0.0038,+0.0185]
+[result] s1__fooof_raw                  AUC=0.5821 mac=0.5620 high=0.654 mid=0.583 low=0.512 dAUC=-0.0508[-0.0715,-0.0291] dmac=-0.0347[-0.0517,-0.0163]
+[result] s1__fuse889_fooof_raw          AUC=0.6326 mac=0.5962 high=0.691 mid=0.631 low=0.523 dAUC=+0.0003[-0.0023,+0.0028] dmac=+0.0002[-0.0041,+0.0042]
+[result] s1__fooof_ea_mean              AUC=0.5888 mac=0.5651 high=0.702 mid=0.588 low=0.506 dAUC=-0.0444[-0.0693,-0.0215] dmac=-0.0316[-0.0519,-0.0128]
+[result] s1__fuse889_fooof_ea_mean      AUC=0.6362 mac=0.6003 high=0.739 mid=0.637 low=0.517 dAUC=+0.0037[-0.0021,+0.0090] dmac=+0.0041[-0.0023,+0.0109]
+[result] s1__fooof_ea_mean_var          AUC=0.6028 mac=0.5742 high=0.720 mid=0.600 low=0.509 dAUC=-0.0303[-0.0519,-0.0093] dmac=-0.0225[-0.0398,-0.0061]
+[result] s1__fuse889_fooof_ea_mean_var  AUC=0.6316 mac=0.5961 high=0.726 mid=0.632 low=0.515 dAUC=-0.0008[-0.0052,+0.0036] dmac=-0.0000[-0.0053,+0.0052]
+[result] s1__fooof_ea_median            AUC=0.5882 mac=0.5662 high=0.707 mid=0.586 low=0.511 dAUC=-0.0450[-0.0694,-0.0222] dmac=-0.0305[-0.0495,-0.0120]
+[result] s1__fuse889_fooof_ea_median    AUC=0.6378 mac=0.6018 high=0.737 mid=0.638 low=0.520 dAUC=+0.0052[+0.0008,+0.0094] dmac=+0.0056[-0.0002,+0.0118]
+[result] s2__psd_raw                    AUC=0.5843 mac=0.5636 high=0.675 mid=0.588 low=0.505 dAUC=-0.0486[-0.0690,-0.0271] dmac=-0.0331[-0.0492,-0.0157]
+[result] s2__fuse889_psd_raw            AUC=0.6331 mac=0.5971 high=0.694 mid=0.633 low=0.522 dAUC=+0.0007[-0.0003,+0.0018] dmac=+0.0011[-0.0015,+0.0036]
+[result] s2__ea_mean                    AUC=0.5911 mac=0.5712 high=0.745 mid=0.599 low=0.499 dAUC=-0.0423[-0.0707,-0.0173] dmac=-0.0255[-0.0475,-0.0048]
+[result] s2__fuse889_ea_mean            AUC=0.6356 mac=0.5998 high=0.750 mid=0.635 low=0.518 dAUC=+0.0030[-0.0051,+0.0099] dmac=+0.0037[-0.0023,+0.0102]
+[result] s2__ea_mean_var                AUC=0.6185 mac=0.5909 high=0.760 mid=0.626 low=0.506 dAUC=-0.0145[-0.0388,+0.0113] dmac=-0.0057[-0.0256,+0.0147]
+[result] s2__fuse889_ea_mean_var        AUC=0.6433 mac=0.6085 high=0.759 mid=0.644 low=0.525 dAUC=+0.0109[+0.0029,+0.0191] dmac=+0.0125[+0.0040,+0.0214]
+[result] s2__ea_median                  AUC=0.5934 mac=0.5728 high=0.742 mid=0.597 low=0.507 dAUC=-0.0399[-0.0673,-0.0163] dmac=-0.0238[-0.0451,-0.0035]
+[result] s2__fuse889_ea_median          AUC=0.6448 mac=0.6064 high=0.751 mid=0.644 low=0.521 dAUC=+0.0121[+0.0057,+0.0191] dmac=+0.0102[+0.0038,+0.0178]
+[result] s2__fooof_raw                  AUC=0.5821 mac=0.5620 high=0.654 mid=0.583 low=0.512 dAUC=-0.0508[-0.0715,-0.0291] dmac=-0.0347[-0.0517,-0.0163]
+[result] s2__fuse889_fooof_raw          AUC=0.6326 mac=0.5962 high=0.691 mid=0.631 low=0.523 dAUC=+0.0003[-0.0023,+0.0028] dmac=+0.0002[-0.0041,+0.0042]
+[result] s2__fooof_ea_mean              AUC=0.5886 mac=0.5666 high=0.698 mid=0.591 low=0.506 dAUC=-0.0447[-0.0697,-0.0213] dmac=-0.0301[-0.0495,-0.0111]
+[result] s2__fuse889_fooof_ea_mean      AUC=0.6368 mac=0.6015 high=0.744 mid=0.637 low=0.520 dAUC=+0.0042[-0.0017,+0.0096] dmac=+0.0054[-0.0012,+0.0123]
+[result] s2__fooof_ea_mean_var          AUC=0.6063 mac=0.5788 high=0.732 mid=0.605 low=0.511 dAUC=-0.0268[-0.0493,-0.0057] dmac=-0.0180[-0.0358,-0.0009]
+[result] s2__fuse889_fooof_ea_mean_var  AUC=0.6332 mac=0.5975 high=0.724 mid=0.632 low=0.519 dAUC=+0.0007[-0.0039,+0.0053] dmac=+0.0013[-0.0044,+0.0067]
+[result] s2__fooof_ea_median            AUC=0.5887 mac=0.5668 high=0.709 mid=0.586 low=0.513 dAUC=-0.0445[-0.0694,-0.0215] dmac=-0.0299[-0.0494,-0.0100]
+[result] s2__fuse889_fooof_ea_median    AUC=0.6397 mac=0.6053 high=0.748 mid=0.641 low=0.523 dAUC=+0.0071[+0.0024,+0.0117] dmac=+0.0091[+0.0028,+0.0163]
+[result] real__psd_raw                  AUC=0.5843 mac=0.5636 high=0.675 mid=0.588 low=0.505 dAUC=-0.0486[-0.0690,-0.0271] dmac=-0.0331[-0.0492,-0.0157]
+[result] real__fuse889_psd_raw          AUC=0.6331 mac=0.5971 high=0.694 mid=0.633 low=0.522 dAUC=+0.0007[-0.0003,+0.0018] dmac=+0.0011[-0.0015,+0.0036]
+[result] real__ea_mean                  AUC=0.6039 mac=0.5793 high=0.785 mid=0.603 low=0.508 dAUC=-0.0294[-0.0592,-0.0030] dmac=-0.0172[-0.0416,+0.0049]
+[result] real__fuse889_ea_mean          AUC=0.6619 mac=0.6240 high=0.791 mid=0.661 low=0.536 dAUC=+0.0291[+0.0181,+0.0409] dmac=+0.0278[+0.0157,+0.0401]
+[result] real__ea_mean_var              AUC=0.6279 mac=0.5962 high=0.753 mid=0.627 low=0.520 dAUC=-0.0052[-0.0310,+0.0206] dmac=-0.0005[-0.0213,+0.0206]
+[result] real__fuse889_ea_mean_var      AUC=0.6556 mac=0.6154 high=0.786 mid=0.651 low=0.530 dAUC=+0.0230[+0.0113,+0.0358] dmac=+0.0192[+0.0067,+0.0318]
+[result] real__ea_median                AUC=0.5924 mac=0.5685 high=0.766 mid=0.591 low=0.500 dAUC=-0.0409[-0.0735,-0.0123] dmac=-0.0279[-0.0536,-0.0062]
+[result] real__fuse889_ea_median        AUC=0.6551 mac=0.6169 high=0.772 mid=0.654 low=0.531 dAUC=+0.0223[+0.0119,+0.0336] dmac=+0.0206[+0.0096,+0.0315]
+[result] real__fooof_raw                AUC=0.5821 mac=0.5620 high=0.654 mid=0.583 low=0.512 dAUC=-0.0508[-0.0715,-0.0291] dmac=-0.0347[-0.0517,-0.0163]
+[result] real__fuse889_fooof_raw        AUC=0.6326 mac=0.5962 high=0.691 mid=0.631 low=0.523 dAUC=+0.0003[-0.0023,+0.0028] dmac=+0.0002[-0.0041,+0.0042]
+[result] real__fooof_ea_mean            AUC=0.5988 mac=0.5714 high=0.719 mid=0.594 low=0.511 dAUC=-0.0343[-0.0615,-0.0105] dmac=-0.0252[-0.0455,-0.0060]
+[result] real__fuse889_fooof_ea_mean    AUC=0.6485 mac=0.6105 high=0.758 mid=0.644 low=0.531 dAUC=+0.0160[+0.0092,+0.0236] dmac=+0.0143[+0.0069,+0.0229]
+[result] real__fooof_ea_mean_var        AUC=0.6151 mac=0.5845 high=0.738 mid=0.610 low=0.519 dAUC=-0.0179[-0.0416,+0.0045] dmac=-0.0120[-0.0306,+0.0059]
+[result] real__fuse889_fooof_ea_mean_var AUC=0.6402 mac=0.6022 high=0.739 mid=0.636 low=0.524 dAUC=+0.0077[+0.0005,+0.0152] dmac=+0.0061[-0.0004,+0.0131]
+[result] real__fooof_ea_median          AUC=0.6026 mac=0.5746 high=0.711 mid=0.595 low=0.519 dAUC=-0.0303[-0.0576,-0.0061] dmac=-0.0218[-0.0418,-0.0025]
+[result] real__fuse889_fooof_ea_median  AUC=0.6498 mac=0.6106 high=0.753 mid=0.643 low=0.534 dAUC=+0.0173[+0.0110,+0.0240] dmac=+0.0146[+0.0078,+0.0220]
+[seed-mean] psd_raw                  AUC=+0.5843 subject_macro_bACC=+0.5636 dAUC=-0.0486 dmac=-0.0331
+[seed-mean] ea_mean                  AUC=+0.5908 subject_macro_bACC=+0.5712 dAUC=-0.0425 dmac=-0.0255
+[seed-mean] ea_mean_var              AUC=+0.6179 subject_macro_bACC=+0.5901 dAUC=-0.0151 dmac=-0.0065
+[seed-mean] ea_median                AUC=+0.5924 subject_macro_bACC=+0.5713 dAUC=-0.0409 dmac=-0.0253
+[seed-mean] fooof_raw                AUC=+0.5821 subject_macro_bACC=+0.5620 dAUC=-0.0508 dmac=-0.0347
+[seed-mean] fooof_ea_mean            AUC=+0.5886 subject_macro_bACC=+0.5667 dAUC=-0.0446 dmac=-0.0300
+[seed-mean] fooof_ea_mean_var        AUC=+0.6045 subject_macro_bACC=+0.5768 dAUC=-0.0287 dmac=-0.0199
+[seed-mean] fooof_ea_median          AUC=+0.5882 subject_macro_bACC=+0.5664 dAUC=-0.0450 dmac=-0.0304
+[seed-mean] fuse889_psd_raw          AUC=+0.6331 subject_macro_bACC=+0.5971 dAUC=+0.0007 dmac=+0.0011
+[seed-mean] fuse889_ea_mean          AUC=+0.6357 subject_macro_bACC=+0.6001 dAUC=+0.0031 dmac=+0.0039
+[seed-mean] fuse889_ea_mean_var      AUC=+0.6415 subject_macro_bACC=+0.6056 dAUC=+0.0091 dmac=+0.0096
+[seed-mean] fuse889_ea_median        AUC=+0.6447 subject_macro_bACC=+0.6072 dAUC=+0.0120 dmac=+0.0110
+[seed-mean] fuse889_fooof_raw        AUC=+0.6326 subject_macro_bACC=+0.5962 dAUC=+0.0003 dmac=+0.0002
+[seed-mean] fuse889_fooof_ea_mean    AUC=+0.6366 subject_macro_bACC=+0.6010 dAUC=+0.0041 dmac=+0.0048
+[seed-mean] fuse889_fooof_ea_mean_var AUC=+0.6322 subject_macro_bACC=+0.5962 dAUC=-0.0003 dmac=+0.0001
+[seed-mean] fuse889_fooof_ea_median  AUC=+0.6391 subject_macro_bACC=+0.6032 dAUC=+0.0065 dmac=+0.0071
+[done] elapsed=2515.6s -> subject_offset_ea_results.json

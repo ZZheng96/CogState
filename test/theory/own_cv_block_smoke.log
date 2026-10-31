@@ -1,0 +1,50 @@
+[load] rows=16067 subjects=57 real time/block loaded elapsed=1.3s
+[start] subjects=3 models=('lr', 'hgb') gaps=(1, 2, 5) elapsed=1.3s
+[subject 1/3] sub-036 high n=284 blocks=6 random:lr=0.898 lobo:lr=0.327 gap1:lr=0.881 gap1_ctrl:lr=0.878 gap2:lr=0.827 gap2_ctrl:lr=0.855 gap5:lr=0.587 gap5_ctrl:lr=0.789 seg10_gap5:lr=0.701 seg10_gap5_ctrl:lr=0.830 | hgb random=0.925 lobo=0.195 elapsed=193.4s
+[subject 2/3] sub-001 mid  n=291 blocks=6 random:lr=0.879 lobo:lr=0.685 gap1:lr=0.868 gap1_ctrl:lr=0.863 gap2:lr=0.859 gap2_ctrl:lr=0.874 gap5:lr=0.731 gap5_ctrl:lr=0.844 seg10_gap5:lr=0.804 seg10_gap5_ctrl:lr=0.846 | hgb random=0.910 lobo=0.656 elapsed=199.1s
+[subject 3/3] sub-002 low  n=271 blocks=6 random:lr=0.839 lobo:lr=0.144 gap1:lr=0.794 gap1_ctrl:lr=0.831 gap2:lr=0.710 gap2_ctrl:lr=0.814 gap5:lr=0.543 gap5_ctrl:lr=0.749 seg10_gap5:lr=0.690 seg10_gap5_ctrl:lr=0.753 | hgb random=0.873 lobo=0.037 elapsed=199.1s
+[group all] n=3
+   random           lr: AUC mean=0.872 med=0.879 bACC=0.801 hgb: AUC mean=0.903 med=0.910 bACC=0.839 train_n=226 cov=1.00
+   lobo             lr: AUC mean=0.386 med=0.327 bACC=0.427 hgb: AUC mean=0.296 med=0.195 bACC=0.336 train_n=235 cov=1.00
+   gap1             lr: AUC mean=0.847 med=0.868 bACC=0.790 hgb: AUC mean=0.858 med=0.879 bACC=0.810 train_n=145 cov=1.00
+   gap1_ctrl        lr: AUC mean=0.857 med=0.863 bACC=0.806 hgb: AUC mean=0.893 med=0.897 bACC=0.823 train_n=145 cov=1.00
+   gap2             lr: AUC mean=0.798 med=0.827 bACC=0.734 hgb: AUC mean=0.799 med=0.813 bACC=0.746 train_n=93 cov=1.00
+   gap2_ctrl        lr: AUC mean=0.848 med=0.855 bACC=0.779 hgb: AUC mean=0.851 med=0.866 bACC=0.793 train_n=93 cov=1.00
+   gap5             lr: AUC mean=0.620 med=0.587 bACC=0.581 hgb: AUC mean=0.511 med=0.500 bACC=0.507 train_n=25 cov=0.93
+   gap5_ctrl        lr: AUC mean=0.794 med=0.789 bACC=0.718 hgb: AUC mean=0.518 med=0.503 bACC=0.512 train_n=25 cov=0.93
+   seg10_gap5       lr: AUC mean=0.732 med=0.701 bACC=0.679 hgb: AUC mean=0.660 med=0.633 bACC=0.611 train_n=182 cov=1.00
+   seg10_gap5_ctrl  lr: AUC mean=0.810 med=0.830 bACC=0.759 hgb: AUC mean=0.835 med=0.859 bACC=0.780 train_n=182 cov=1.00
+[group high] n=1
+   random           lr: AUC mean=0.898 med=0.898 bACC=0.844 hgb: AUC mean=0.925 med=0.925 bACC=0.862 train_n=227 cov=1.00
+   lobo             lr: AUC mean=0.327 med=0.327 bACC=0.421 hgb: AUC mean=0.195 med=0.195 bACC=0.266 train_n=237 cov=1.00
+   gap1             lr: AUC mean=0.881 med=0.881 bACC=0.828 hgb: AUC mean=0.891 med=0.891 bACC=0.855 train_n=143 cov=1.00
+   gap1_ctrl        lr: AUC mean=0.878 med=0.878 bACC=0.815 hgb: AUC mean=0.906 med=0.906 bACC=0.847 train_n=143 cov=1.00
+   gap2             lr: AUC mean=0.827 med=0.827 bACC=0.764 hgb: AUC mean=0.813 med=0.813 bACC=0.753 train_n=89 cov=1.00
+   gap2_ctrl        lr: AUC mean=0.855 med=0.855 bACC=0.788 hgb: AUC mean=0.866 med=0.866 bACC=0.806 train_n=89 cov=1.00
+   gap5             lr: AUC mean=0.587 med=0.587 bACC=0.538 hgb: AUC mean=0.494 med=0.494 bACC=0.493 train_n=18 cov=0.80
+   gap5_ctrl        lr: AUC mean=0.789 med=0.789 bACC=0.707 hgb: AUC mean=0.503 med=0.503 bACC=0.505 train_n=18 cov=0.80
+   seg10_gap5       lr: AUC mean=0.701 med=0.701 bACC=0.646 hgb: AUC mean=0.633 med=0.633 bACC=0.543 train_n=179 cov=1.00
+   seg10_gap5_ctrl  lr: AUC mean=0.830 med=0.830 bACC=0.775 hgb: AUC mean=0.859 med=0.859 bACC=0.823 train_n=179 cov=1.00
+[group mid] n=1
+   random           lr: AUC mean=0.879 med=0.879 bACC=0.808 hgb: AUC mean=0.910 med=0.910 bACC=0.842 train_n=233 cov=1.00
+   lobo             lr: AUC mean=0.685 med=0.685 bACC=0.660 hgb: AUC mean=0.656 med=0.656 bACC=0.636 train_n=242 cov=1.00
+   gap1             lr: AUC mean=0.868 med=0.868 bACC=0.797 hgb: AUC mean=0.879 med=0.879 bACC=0.811 train_n=152 cov=1.00
+   gap1_ctrl        lr: AUC mean=0.863 med=0.863 bACC=0.818 hgb: AUC mean=0.897 med=0.897 bACC=0.825 train_n=152 cov=1.00
+   gap2             lr: AUC mean=0.859 med=0.859 bACC=0.797 hgb: AUC mean=0.832 med=0.832 bACC=0.773 train_n=102 cov=1.00
+   gap2_ctrl        lr: AUC mean=0.874 med=0.874 bACC=0.808 hgb: AUC mean=0.876 med=0.876 bACC=0.821 train_n=102 cov=1.00
+   gap5             lr: AUC mean=0.731 med=0.731 bACC=0.660 hgb: AUC mean=0.500 med=0.500 bACC=0.500 train_n=29 cov=1.00
+   gap5_ctrl        lr: AUC mean=0.844 med=0.844 bACC=0.763 hgb: AUC mean=0.500 med=0.500 bACC=0.501 train_n=29 cov=1.00
+   seg10_gap5       lr: AUC mean=0.804 med=0.804 bACC=0.749 hgb: AUC mean=0.786 med=0.786 bACC=0.732 train_n=186 cov=1.00
+   seg10_gap5_ctrl  lr: AUC mean=0.846 med=0.846 bACC=0.801 hgb: AUC mean=0.860 med=0.860 bACC=0.797 train_n=186 cov=1.00
+[group low] n=1
+   random           lr: AUC mean=0.839 med=0.839 bACC=0.752 hgb: AUC mean=0.873 med=0.873 bACC=0.812 train_n=217 cov=1.00
+   lobo             lr: AUC mean=0.144 med=0.144 bACC=0.199 hgb: AUC mean=0.037 med=0.037 bACC=0.107 train_n=226 cov=1.00
+   gap1             lr: AUC mean=0.794 med=0.794 bACC=0.745 hgb: AUC mean=0.803 med=0.803 bACC=0.764 train_n=139 cov=1.00
+   gap1_ctrl        lr: AUC mean=0.831 med=0.831 bACC=0.785 hgb: AUC mean=0.876 med=0.876 bACC=0.796 train_n=139 cov=1.00
+   gap2             lr: AUC mean=0.710 med=0.710 bACC=0.642 hgb: AUC mean=0.753 med=0.753 bACC=0.712 train_n=90 cov=1.00
+   gap2_ctrl        lr: AUC mean=0.814 med=0.814 bACC=0.741 hgb: AUC mean=0.812 med=0.812 bACC=0.751 train_n=90 cov=1.00
+   gap5             lr: AUC mean=0.543 med=0.543 bACC=0.544 hgb: AUC mean=0.540 med=0.540 bACC=0.527 train_n=30 cov=1.00
+   gap5_ctrl        lr: AUC mean=0.749 med=0.749 bACC=0.684 hgb: AUC mean=0.552 med=0.552 bACC=0.529 train_n=30 cov=1.00
+   seg10_gap5       lr: AUC mean=0.690 med=0.690 bACC=0.642 hgb: AUC mean=0.561 med=0.561 bACC=0.559 train_n=181 cov=1.00
+   seg10_gap5_ctrl  lr: AUC mean=0.753 med=0.753 bACC=0.702 hgb: AUC mean=0.786 med=0.786 bACC=0.721 train_n=181 cov=1.00
+[done] elapsed=288.5s -> own_cv_block_smoke_results.json
