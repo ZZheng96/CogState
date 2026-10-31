@@ -1,0 +1,143 @@
+[start legal] rows=16067 subjects=57 sseeds=(0, 1, 2) folds=[0, 1, 2, 3, 4] variants=('pol_align', 'pol_knn', 'pol_metalr') refit=8 warm=64 knn=10 C_meta=0.05
+[s0 axes 1/57] sub-001 refits=29 elapsed=1.4s
+[s0 axes 11/57] sub-011 refits=29 elapsed=8.3s
+[s0 axes 21/57] sub-021 refits=28 elapsed=15.7s
+[s0 axes 31/57] sub-031 refits=29 elapsed=23.5s
+[s0 axes 41/57] sub-043 refits=28 elapsed=30.5s
+[s0 axes 51/57] sub-053 refits=29 elapsed=38.1s
+[s0 axes 57/57] sub-059 refits=29 elapsed=42.7s
+[s0 fold 1/5] test=11 train=46 meta_snap=1272 pos_rate=0.652 pol_align: signacc=0.509 pol_knn: signacc=0.610 pol_metalr: signacc=0.532 checks ok elapsed=50.7s
+[s0 fold 2/5] test=12 train=45 meta_snap=1261 pos_rate=0.608 pol_align: signacc=0.658 pol_knn: signacc=0.882 pol_metalr: signacc=0.747 checks ok elapsed=55.8s
+[s0 fold 3/5] test=11 train=46 meta_snap=1269 pos_rate=0.559 pol_align: signacc=0.833 pol_knn: signacc=0.456 pol_metalr: signacc=0.566 checks ok elapsed=61.1s
+[s0 fold 4/5] test=12 train=45 meta_snap=1244 pos_rate=0.592 pol_align: signacc=0.519 pol_knn: signacc=0.639 pol_metalr: signacc=0.660 checks ok elapsed=66.4s
+[s0 fold 5/5] test=11 train=46 meta_snap=1270 pos_rate=0.621 pol_align: signacc=0.659 pol_knn: signacc=0.765 pol_metalr: signacc=0.728 checks ok elapsed=71.6s
+[sanity stream 0] position_only__lr AUC=0.4935 -> OK
+[sanity stream 0] position_only__hgb AUC=0.4959 -> OK
+[legal] s0_fusionM_prank__all              AUC=0.7043 mac=0.6463 mic=0.6470 subjAUC_mean=0.6964 n>=.9=0 n>=.85=1
+[legal] s0_fusionM_prank__mature           AUC=0.7057 mac=0.6458 mic=0.6461 subjAUC_mean=0.6963 n>=.9=0 n>=.85=1
+[legal] s0_fusionM_prank__t>=64            AUC=0.7058 mac=0.6480 mic=0.6492 subjAUC_mean=0.6969 n>=.9=0 n>=.85=1
+[legal] s0_fusion3_resnet_fbank__all       AUC=0.7088 mac=0.6486 mic=0.6492 subjAUC_mean=0.7001 n>=.9=0 n>=.85=1
+[legal] s0_fusion3_resnet_fbank__mature    AUC=0.7094 mac=0.6485 mic=0.6484 subjAUC_mean=0.7000 n>=.9=0 n>=.85=1
+[legal] s0_fusion3_resnet_fbank__t>=64     AUC=0.7098 mac=0.6508 mic=0.6510 subjAUC_mean=0.7010 n>=.9=0 n>=.85=1
+[legal] s0_fusion_pol_align__all           AUC=0.6563 mac=0.6180 mic=0.6187 subjAUC_mean=0.6477 n>=.9=0 n>=.85=0
+[legal] s0_fusion_pol_align__mature        AUC=0.6465 mac=0.6105 mic=0.6101 subjAUC_mean=0.6379 n>=.9=0 n>=.85=0
+[legal] s0_fusion_pol_align__t>=64         AUC=0.6479 mac=0.6113 mic=0.6127 subjAUC_mean=0.6388 n>=.9=0 n>=.85=1
+[legal] s0_fusion_pol_knn__all             AUC=0.6954 mac=0.6381 mic=0.6387 subjAUC_mean=0.6836 n>=.9=0 n>=.85=1
+[legal] s0_fusion_pol_knn__mature          AUC=0.6941 mac=0.6363 mic=0.6365 subjAUC_mean=0.6802 n>=.9=0 n>=.85=1
+[legal] s0_fusion_pol_knn__t>=64           AUC=0.6942 mac=0.6375 mic=0.6386 subjAUC_mean=0.6807 n>=.9=0 n>=.85=1
+[legal] s0_fusion_pol_metalr__all          AUC=0.6753 mac=0.6322 mic=0.6323 subjAUC_mean=0.6622 n>=.9=0 n>=.85=0
+[legal] s0_fusion_pol_metalr__mature       AUC=0.6701 mac=0.6306 mic=0.6299 subjAUC_mean=0.6544 n>=.9=0 n>=.85=0
+[legal] s0_fusion_pol_metalr__t>=64        AUC=0.6702 mac=0.6304 mic=0.6303 subjAUC_mean=0.6546 n>=.9=0 n>=.85=1
+[legal] s0_axis_pol_align__t>=64           AUC=0.5619 mac=0.5482 mic=0.5515 subjAUC_mean=0.5579 n>=.9=0 n>=.85=0
+[sign stream 0] pol_align  refit sign acc=0.634 subjects majority-correct 35/57 mean conf=1.000
+[legal] s0_axis_pol_knn__t>=64             AUC=0.5792 mac=0.5622 mic=0.5608 subjAUC_mean=0.5797 n>=.9=0 n>=.85=0
+[sign stream 0] pol_knn    refit sign acc=0.673 subjects majority-correct 40/57 mean conf=0.338
+[legal] s0_axis_pol_metalr__t>=64          AUC=0.5689 mac=0.5554 mic=0.5541 subjAUC_mean=0.5607 n>=.9=0 n>=.85=0
+[sign stream 0] pol_metalr refit sign acc=0.649 subjects majority-correct 37/57 mean conf=0.777
+[boot stream 0] fusion_pol_align  vs fusionM_prank        all    dAUC=-0.0485[-0.0681,-0.0296] dmac=-0.0287[-0.0449,-0.0137]
+[boot stream 0] fusion_pol_align  vs fusionM_prank        mature dAUC=-0.0597[-0.0867,-0.0332] dmac=-0.0358[-0.0587,-0.0141]
+[boot stream 0] fusion_pol_align  vs fusion3_resnet_fbank all    dAUC=-0.0529[-0.0760,-0.0310] dmac=-0.0310[-0.0496,-0.0130]
+[boot stream 0] fusion_pol_align  vs fusion3_resnet_fbank mature dAUC=-0.0635[-0.0938,-0.0345] dmac=-0.0385[-0.0644,-0.0150]
+[boot stream 0] fusion_pol_knn    vs fusionM_prank        all    dAUC=-0.0091[-0.0205,+0.0017] dmac=-0.0083[-0.0177,+0.0003]
+[boot stream 0] fusion_pol_knn    vs fusionM_prank        mature dAUC=-0.0117[-0.0252,+0.0014] dmac=-0.0096[-0.0220,+0.0023]
+[boot stream 0] fusion_pol_knn    vs fusion3_resnet_fbank all    dAUC=-0.0135[-0.0276,-0.0000] dmac=-0.0105[-0.0229,+0.0007]
+[boot stream 0] fusion_pol_knn    vs fusion3_resnet_fbank mature dAUC=-0.0155[-0.0320,+0.0006] dmac=-0.0123[-0.0281,+0.0021]
+[boot stream 0] fusion_pol_metalr vs fusionM_prank        all    dAUC=-0.0292[-0.0502,-0.0081] dmac=-0.0141[-0.0295,+0.0017]
+[boot stream 0] fusion_pol_metalr vs fusionM_prank        mature dAUC=-0.0358[-0.0627,-0.0107] dmac=-0.0152[-0.0353,+0.0057]
+[boot stream 0] fusion_pol_metalr vs fusion3_resnet_fbank all    dAUC=-0.0337[-0.0579,-0.0115] dmac=-0.0164[-0.0330,+0.0008]
+[boot stream 0] fusion_pol_metalr vs fusion3_resnet_fbank mature dAUC=-0.0396[-0.0690,-0.0128] dmac=-0.0179[-0.0411,+0.0050]
+[s1 axes 1/57] sub-001 refits=29 elapsed=91.8s
+[s1 axes 11/57] sub-011 refits=29 elapsed=98.7s
+[s1 axes 21/57] sub-021 refits=28 elapsed=106.2s
+[s1 axes 31/57] sub-031 refits=29 elapsed=114.0s
+[s1 axes 41/57] sub-043 refits=28 elapsed=121.1s
+[s1 axes 51/57] sub-053 refits=29 elapsed=128.7s
+[s1 axes 57/57] sub-059 refits=29 elapsed=133.4s
+[s1 fold 1/5] test=11 train=46 meta_snap=1272 pos_rate=0.635 pol_align: signacc=0.586 pol_knn: signacc=0.600 pol_metalr: signacc=0.453 checks ok elapsed=141.4s
+[s1 fold 2/5] test=12 train=45 meta_snap=1261 pos_rate=0.616 pol_align: signacc=0.669 pol_knn: signacc=0.858 pol_metalr: signacc=0.769 checks ok elapsed=146.5s
+[s1 fold 3/5] test=11 train=46 meta_snap=1269 pos_rate=0.592 pol_align: signacc=0.761 pol_knn: signacc=0.627 pol_metalr: signacc=0.509 checks ok elapsed=151.8s
+[s1 fold 4/5] test=12 train=45 meta_snap=1244 pos_rate=0.605 pol_align: signacc=0.500 pol_knn: signacc=0.557 pol_metalr: signacc=0.631 checks ok elapsed=157.1s
+[s1 fold 5/5] test=11 train=46 meta_snap=1270 pos_rate=0.626 pol_align: signacc=0.661 pol_knn: signacc=0.611 pol_metalr: signacc=0.775 checks ok elapsed=162.4s
+[sanity stream 1] position_only__lr AUC=0.4971 -> OK
+[sanity stream 1] position_only__hgb AUC=0.4983 -> OK
+[legal] s1_fusionM_prank__all              AUC=0.6990 mac=0.6415 mic=0.6438 subjAUC_mean=0.6895 n>=.9=0 n>=.85=1
+[legal] s1_fusionM_prank__mature           AUC=0.7051 mac=0.6475 mic=0.6481 subjAUC_mean=0.6969 n>=.9=0 n>=.85=0
+[legal] s1_fusionM_prank__t>=64            AUC=0.7013 mac=0.6424 mic=0.6455 subjAUC_mean=0.6901 n>=.9=0 n>=.85=1
+[legal] s1_fusion3_resnet_fbank__all       AUC=0.7066 mac=0.6458 mic=0.6473 subjAUC_mean=0.6961 n>=.9=0 n>=.85=1
+[legal] s1_fusion3_resnet_fbank__mature    AUC=0.7116 mac=0.6495 mic=0.6498 subjAUC_mean=0.7028 n>=.9=0 n>=.85=2
+[legal] s1_fusion3_resnet_fbank__t>=64     AUC=0.7084 mac=0.6468 mic=0.6486 subjAUC_mean=0.6961 n>=.9=0 n>=.85=1
+[legal] s1_fusion_pol_align__all           AUC=0.6513 mac=0.6137 mic=0.6155 subjAUC_mean=0.6452 n>=.9=0 n>=.85=0
+[legal] s1_fusion_pol_align__mature        AUC=0.6446 mac=0.6079 mic=0.6082 subjAUC_mean=0.6397 n>=.9=0 n>=.85=3
+[legal] s1_fusion_pol_align__t>=64         AUC=0.6440 mac=0.6059 mic=0.6089 subjAUC_mean=0.6356 n>=.9=0 n>=.85=1
+[legal] s1_fusion_pol_knn__all             AUC=0.6909 mac=0.6366 mic=0.6387 subjAUC_mean=0.6791 n>=.9=0 n>=.85=1
+[legal] s1_fusion_pol_knn__mature          AUC=0.6948 mac=0.6408 mic=0.6417 subjAUC_mean=0.6830 n>=.9=0 n>=.85=2
+[legal] s1_fusion_pol_knn__t>=64           AUC=0.6909 mac=0.6360 mic=0.6389 subjAUC_mean=0.6768 n>=.9=0 n>=.85=2
+[legal] s1_fusion_pol_metalr__all          AUC=0.6672 mac=0.6250 mic=0.6256 subjAUC_mean=0.6596 n>=.9=0 n>=.85=0
+[legal] s1_fusion_pol_metalr__mature       AUC=0.6618 mac=0.6203 mic=0.6195 subjAUC_mean=0.6543 n>=.9=0 n>=.85=3
+[legal] s1_fusion_pol_metalr__t>=64        AUC=0.6623 mac=0.6230 mic=0.6219 subjAUC_mean=0.6548 n>=.9=0 n>=.85=1
+[legal] s1_axis_pol_align__t>=64           AUC=0.5602 mac=0.5518 mic=0.5543 subjAUC_mean=0.5535 n>=.9=0 n>=.85=0
+[sign stream 1] pol_align  refit sign acc=0.634 subjects majority-correct 35/57 mean conf=1.000
+[legal] s1_axis_pol_knn__t>=64             AUC=0.5716 mac=0.5492 mic=0.5478 subjAUC_mean=0.5681 n>=.9=0 n>=.85=0
+[sign stream 1] pol_knn    refit sign acc=0.653 subjects majority-correct 38/57 mean conf=0.328
+[legal] s1_axis_pol_metalr__t>=64          AUC=0.5603 mac=0.5446 mic=0.5431 subjAUC_mean=0.5550 n>=.9=0 n>=.85=0
+[sign stream 1] pol_metalr refit sign acc=0.630 subjects majority-correct 37/57 mean conf=0.773
+[boot stream 1] fusion_pol_align  vs fusionM_prank        all    dAUC=-0.0481[-0.0706,-0.0267] dmac=-0.0281[-0.0451,-0.0117]
+[boot stream 1] fusion_pol_align  vs fusionM_prank        mature dAUC=-0.0611[-0.0898,-0.0338] dmac=-0.0400[-0.0643,-0.0165]
+[boot stream 1] fusion_pol_align  vs fusion3_resnet_fbank all    dAUC=-0.0557[-0.0783,-0.0344] dmac=-0.0324[-0.0529,-0.0138]
+[boot stream 1] fusion_pol_align  vs fusion3_resnet_fbank mature dAUC=-0.0675[-0.0960,-0.0411] dmac=-0.0419[-0.0673,-0.0180]
+[boot stream 1] fusion_pol_knn    vs fusionM_prank        all    dAUC=-0.0082[-0.0193,+0.0025] dmac=-0.0050[-0.0139,+0.0025]
+[boot stream 1] fusion_pol_knn    vs fusionM_prank        mature dAUC=-0.0105[-0.0245,+0.0028] dmac=-0.0069[-0.0192,+0.0041]
+[boot stream 1] fusion_pol_knn    vs fusion3_resnet_fbank all    dAUC=-0.0158[-0.0287,-0.0022] dmac=-0.0092[-0.0219,+0.0029]
+[boot stream 1] fusion_pol_knn    vs fusion3_resnet_fbank mature dAUC=-0.0169[-0.0331,-0.0002] dmac=-0.0087[-0.0246,+0.0077]
+[boot stream 1] fusion_pol_metalr vs fusionM_prank        all    dAUC=-0.0319[-0.0537,-0.0114] dmac=-0.0166[-0.0314,-0.0015]
+[boot stream 1] fusion_pol_metalr vs fusionM_prank        mature dAUC=-0.0434[-0.0719,-0.0164] dmac=-0.0273[-0.0502,-0.0060]
+[boot stream 1] fusion_pol_metalr vs fusion3_resnet_fbank all    dAUC=-0.0395[-0.0626,-0.0183] dmac=-0.0208[-0.0375,-0.0055]
+[boot stream 1] fusion_pol_metalr vs fusion3_resnet_fbank mature dAUC=-0.0499[-0.0783,-0.0234] dmac=-0.0291[-0.0513,-0.0079]
+[s2 axes 1/57] sub-001 refits=29 elapsed=182.7s
+[s2 axes 11/57] sub-011 refits=29 elapsed=189.6s
+[s2 axes 21/57] sub-021 refits=28 elapsed=197.0s
+[s2 axes 31/57] sub-031 refits=29 elapsed=204.7s
+[s2 axes 41/57] sub-043 refits=28 elapsed=211.6s
+[s2 axes 51/57] sub-053 refits=29 elapsed=219.0s
+[s2 axes 57/57] sub-059 refits=29 elapsed=223.6s
+[s2 fold 1/5] test=11 train=46 meta_snap=1272 pos_rate=0.661 pol_align: signacc=0.570 pol_knn: signacc=0.530 pol_metalr: signacc=0.574 checks ok elapsed=231.5s
+[s2 fold 2/5] test=12 train=45 meta_snap=1261 pos_rate=0.625 pol_align: signacc=0.648 pol_knn: signacc=0.635 pol_metalr: signacc=0.731 checks ok elapsed=236.7s
+[s2 fold 3/5] test=11 train=46 meta_snap=1269 pos_rate=0.589 pol_align: signacc=0.811 pol_knn: signacc=0.611 pol_metalr: signacc=0.654 checks ok elapsed=241.9s
+[s2 fold 4/5] test=12 train=45 meta_snap=1244 pos_rate=0.625 pol_align: signacc=0.483 pol_knn: signacc=0.601 pol_metalr: signacc=0.516 checks ok elapsed=247.2s
+[s2 fold 5/5] test=11 train=46 meta_snap=1270 pos_rate=0.628 pol_align: signacc=0.761 pol_knn: signacc=0.681 pol_metalr: signacc=0.662 checks ok elapsed=252.4s
+[sanity stream 2] position_only__lr AUC=0.5047 -> OK
+[sanity stream 2] position_only__hgb AUC=0.5022 -> OK
+[legal] s2_fusionM_prank__all              AUC=0.6974 mac=0.6407 mic=0.6420 subjAUC_mean=0.6885 n>=.9=0 n>=.85=1
+[legal] s2_fusionM_prank__mature           AUC=0.6987 mac=0.6466 mic=0.6468 subjAUC_mean=0.6907 n>=.9=0 n>=.85=1
+[legal] s2_fusionM_prank__t>=64            AUC=0.6996 mac=0.6440 mic=0.6452 subjAUC_mean=0.6902 n>=.9=0 n>=.85=1
+[legal] s2_fusion3_resnet_fbank__all       AUC=0.7056 mac=0.6443 mic=0.6454 subjAUC_mean=0.6966 n>=.9=0 n>=.85=1
+[legal] s2_fusion3_resnet_fbank__mature    AUC=0.7071 mac=0.6488 mic=0.6488 subjAUC_mean=0.6994 n>=.9=0 n>=.85=1
+[legal] s2_fusion3_resnet_fbank__t>=64     AUC=0.7075 mac=0.6452 mic=0.6460 subjAUC_mean=0.6975 n>=.9=0 n>=.85=1
+[legal] s2_fusion_pol_align__all           AUC=0.6580 mac=0.6160 mic=0.6168 subjAUC_mean=0.6498 n>=.9=0 n>=.85=0
+[legal] s2_fusion_pol_align__mature        AUC=0.6457 mac=0.6090 mic=0.6080 subjAUC_mean=0.6397 n>=.9=0 n>=.85=1
+[legal] s2_fusion_pol_align__t>=64         AUC=0.6530 mac=0.6114 mic=0.6125 subjAUC_mean=0.6435 n>=.9=0 n>=.85=2
+[legal] s2_fusion_pol_knn__all             AUC=0.6888 mac=0.6345 mic=0.6356 subjAUC_mean=0.6770 n>=.9=0 n>=.85=1
+[legal] s2_fusion_pol_knn__mature          AUC=0.6876 mac=0.6381 mic=0.6386 subjAUC_mean=0.6752 n>=.9=0 n>=.85=2
+[legal] s2_fusion_pol_knn__t>=64           AUC=0.6885 mac=0.6358 mic=0.6369 subjAUC_mean=0.6755 n>=.9=0 n>=.85=2
+[legal] s2_fusion_pol_metalr__all          AUC=0.6692 mac=0.6233 mic=0.6232 subjAUC_mean=0.6557 n>=.9=0 n>=.85=0
+[legal] s2_fusion_pol_metalr__mature       AUC=0.6627 mac=0.6189 mic=0.6189 subjAUC_mean=0.6484 n>=.9=0 n>=.85=1
+[legal] s2_fusion_pol_metalr__t>=64        AUC=0.6656 mac=0.6225 mic=0.6208 subjAUC_mean=0.6485 n>=.9=0 n>=.85=2
+[legal] s2_axis_pol_align__t>=64           AUC=0.5735 mac=0.5566 mic=0.5602 subjAUC_mean=0.5658 n>=.9=0 n>=.85=0
+[sign stream 2] pol_align  refit sign acc=0.652 subjects majority-correct 38/57 mean conf=1.000
+[legal] s2_axis_pol_knn__t>=64             AUC=0.5690 mac=0.5424 mic=0.5458 subjAUC_mean=0.5562 n>=.9=0 n>=.85=0
+[sign stream 2] pol_knn    refit sign acc=0.612 subjects majority-correct 36/57 mean conf=0.285
+[legal] s2_axis_pol_metalr__t>=64          AUC=0.5699 mac=0.5553 mic=0.5544 subjAUC_mean=0.5533 n>=.9=0 n>=.85=0
+[sign stream 2] pol_metalr refit sign acc=0.627 subjects majority-correct 36/57 mean conf=0.785
+[boot stream 2] fusion_pol_align  vs fusionM_prank        all    dAUC=-0.0398[-0.0608,-0.0199] dmac=-0.0250[-0.0423,-0.0085]
+[boot stream 2] fusion_pol_align  vs fusionM_prank        mature dAUC=-0.0536[-0.0821,-0.0283] dmac=-0.0380[-0.0609,-0.0155]
+[boot stream 2] fusion_pol_align  vs fusion3_resnet_fbank all    dAUC=-0.0481[-0.0720,-0.0277] dmac=-0.0287[-0.0474,-0.0108]
+[boot stream 2] fusion_pol_align  vs fusion3_resnet_fbank mature dAUC=-0.0621[-0.0933,-0.0357] dmac=-0.0404[-0.0655,-0.0161]
+[boot stream 2] fusion_pol_knn    vs fusionM_prank        all    dAUC=-0.0087[-0.0180,+0.0005] dmac=-0.0062[-0.0142,+0.0015]
+[boot stream 2] fusion_pol_knn    vs fusionM_prank        mature dAUC=-0.0113[-0.0230,+0.0006] dmac=-0.0085[-0.0187,+0.0018]
+[boot stream 2] fusion_pol_knn    vs fusion3_resnet_fbank all    dAUC=-0.0170[-0.0304,-0.0049] dmac=-0.0099[-0.0221,+0.0012]
+[boot stream 2] fusion_pol_knn    vs fusion3_resnet_fbank mature dAUC=-0.0198[-0.0356,-0.0052] dmac=-0.0109[-0.0253,+0.0034]
+[boot stream 2] fusion_pol_metalr vs fusionM_prank        all    dAUC=-0.0288[-0.0513,-0.0083] dmac=-0.0177[-0.0336,-0.0013]
+[boot stream 2] fusion_pol_metalr vs fusionM_prank        mature dAUC=-0.0368[-0.0661,-0.0102] dmac=-0.0280[-0.0499,-0.0062]
+[boot stream 2] fusion_pol_metalr vs fusion3_resnet_fbank all    dAUC=-0.0370[-0.0597,-0.0166] dmac=-0.0214[-0.0385,-0.0053]
+[boot stream 2] fusion_pol_metalr vs fusion3_resnet_fbank mature dAUC=-0.0453[-0.0754,-0.0183] dmac=-0.0304[-0.0549,-0.0074]
+[done] elapsed=272.0s -> depositioned_polarity.json

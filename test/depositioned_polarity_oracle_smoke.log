@@ -1,0 +1,43 @@
+[start oracle] rows=16067 subjects=8 sseeds=(0,) fams=('pc1', 'pcbest3', 'pcbest10', 'km3', 'km10', 'gmm3', 'gmm10') refit=8 warm=64
+[full 1/8] sub-001 pc1=0.865 pcbest3=0.865 pcbest10=0.865 km3=0.870 km10=0.870 gmm3=0.862 gmm10=0.538 elapsed=3.6s
+[full 8/8] sub-008 pc1=0.667 pcbest3=0.667 pcbest10=0.675 km3=0.668 km10=0.677 gmm3=0.718 gmm10=0.716 elapsed=5.0s
+[oracle] full_pc1                           AUC=0.6803 mac=0.6292 mic=0.6296 subjAUC_mean=0.6744 n>=.9=0 n>=.85=0
+[oracle] full_pcbest3                       AUC=0.7172 mac=0.6603 mic=0.6601 subjAUC_mean=0.7137 n>=.9=0 n>=.85=0
+[oracle] full_pcbest10                      AUC=0.7227 mac=0.6811 mic=0.6811 subjAUC_mean=0.7212 n>=.9=0 n>=.85=0
+[oracle] full_km3                           AUC=0.6700 mac=0.6351 mic=0.6350 subjAUC_mean=0.6698 n>=.9=0 n>=.85=0
+[oracle] full_km10                          AUC=0.6742 mac=0.6351 mic=0.6350 subjAUC_mean=0.6749 n>=.9=0 n>=.85=0
+[oracle] full_gmm3                          AUC=0.6539 mac=0.6231 mic=0.6234 subjAUC_mean=0.6505 n>=.9=0 n>=.85=0
+[oracle] full_gmm10                         AUC=0.6108 mac=0.5977 mic=0.5965 subjAUC_mean=0.6191 n>=.9=0 n>=.85=0
+[oracle] s0_fusionM_prank                   AUC=0.6457 mac=0.6081 mic=0.6084 subjAUC_mean=0.6424 n>=.9=0 n>=.85=0
+[oracle] s0_fusionM_prank__t>=64            AUC=0.6399 mac=0.6033 mic=0.6034 subjAUC_mean=0.6363 n>=.9=0 n>=.85=0
+[oracle] s0_fusionM_prank_FLIP              AUC=0.6628 mac=0.6236 mic=0.6237 subjAUC_mean=0.6598 n>=.9=0 n>=.85=0
+[oracle] s0_fusionM_prank_FLIP_medthr       AUC=0.6642 mac=0.6246 mic=0.6252 subjAUC_mean=0.6598 n>=.9=0 n>=.85=0
+[oracle] s0_fusion3_resnet_fbank            AUC=0.6518 mac=0.6141 mic=0.6144 subjAUC_mean=0.6480 n>=.9=0 n>=.85=0
+[oracle] s0_fusion3_resnet_fbank__t>=64     AUC=0.6436 mac=0.6118 mic=0.6118 subjAUC_mean=0.6391 n>=.9=0 n>=.85=0
+[oracle] s0_fusion3_resnet_fbank_FLIP       AUC=0.6706 mac=0.6261 mic=0.6261 subjAUC_mean=0.6687 n>=.9=0 n>=.85=0
+[oracle] s0_fusion3_resnet_fbank_FLIP_medthr AUC=0.6706 mac=0.6234 mic=0.6234 subjAUC_mean=0.6687 n>=.9=0 n>=.85=0
+[causal s0 1/8] sub-001 pc1=0.859 pcbest3=0.859 pcbest10=0.859 km3=0.859 km10=0.857 gmm3=0.814 gmm10=0.737 elapsed=8.6s
+[causal s0 8/8] sub-008 pc1=0.662 pcbest3=0.662 pcbest10=0.662 km3=0.652 km10=0.660 gmm3=0.666 gmm10=0.706 elapsed=23.2s
+[oracle] s0_causal_pc1__t>=64               AUC=0.6722 mac=0.6200 mic=0.6211 subjAUC_mean=0.6658 n>=.9=0 n>=.85=0
+[oracle] s0_causal_pc1+fusionM__all         AUC=0.6868 mac=0.6364 mic=0.6366 subjAUC_mean=0.6791 n>=.9=0 n>=.85=0
+[oracle] s0_causal_pc1+fusionM__t>=64       AUC=0.6955 mac=0.6403 mic=0.6399 subjAUC_mean=0.6868 n>=.9=0 n>=.85=0
+[oracle] s0_causal_pcbest3__t>=64           AUC=0.7288 mac=0.6648 mic=0.6647 subjAUC_mean=0.7255 n>=.9=0 n>=.85=0
+[oracle] s0_causal_pcbest3+fusionM__all     AUC=0.7354 mac=0.6760 mic=0.6756 subjAUC_mean=0.7321 n>=.9=0 n>=.85=0
+[oracle] s0_causal_pcbest3+fusionM__t>=64   AUC=0.7535 mac=0.6923 mic=0.6905 subjAUC_mean=0.7498 n>=.9=0 n>=.85=0
+[oracle] s0_causal_pcbest10__t>=64          AUC=0.7288 mac=0.6648 mic=0.6647 subjAUC_mean=0.7255 n>=.9=0 n>=.85=0
+[oracle] s0_causal_pcbest10+fusionM__all    AUC=0.7354 mac=0.6760 mic=0.6756 subjAUC_mean=0.7321 n>=.9=0 n>=.85=0
+[oracle] s0_causal_pcbest10+fusionM__t>=64  AUC=0.7535 mac=0.6923 mic=0.6905 subjAUC_mean=0.7498 n>=.9=0 n>=.85=0
+[oracle] s0_causal_km3__t>=64               AUC=0.6667 mac=0.6222 mic=0.6234 subjAUC_mean=0.6631 n>=.9=0 n>=.85=0
+[oracle] s0_causal_km3+fusionM__all         AUC=0.6844 mac=0.6414 mic=0.6416 subjAUC_mean=0.6788 n>=.9=0 n>=.85=0
+[oracle] s0_causal_km3+fusionM__t>=64       AUC=0.6923 mac=0.6467 mic=0.6464 subjAUC_mean=0.6873 n>=.9=0 n>=.85=0
+[oracle] s0_causal_km10__t>=64              AUC=0.6634 mac=0.6167 mic=0.6182 subjAUC_mean=0.6600 n>=.9=0 n>=.85=0
+[oracle] s0_causal_km10+fusionM__all        AUC=0.6823 mac=0.6395 mic=0.6397 subjAUC_mean=0.6762 n>=.9=0 n>=.85=0
+[oracle] s0_causal_km10+fusionM__t>=64      AUC=0.6898 mac=0.6441 mic=0.6440 subjAUC_mean=0.6840 n>=.9=0 n>=.85=0
+[oracle] s0_causal_gmm3__t>=64              AUC=0.6345 mac=0.6079 mic=0.6096 subjAUC_mean=0.6346 n>=.9=0 n>=.85=0
+[oracle] s0_causal_gmm3+fusionM__all        AUC=0.6498 mac=0.6147 mic=0.6156 subjAUC_mean=0.6431 n>=.9=0 n>=.85=0
+[oracle] s0_causal_gmm3+fusionM__t>=64      AUC=0.6486 mac=0.6116 mic=0.6128 subjAUC_mean=0.6385 n>=.9=0 n>=.85=0
+[oracle] s0_causal_gmm10__t>=64             AUC=0.6364 mac=0.6091 mic=0.6094 subjAUC_mean=0.6382 n>=.9=0 n>=.85=0
+[oracle] s0_causal_gmm10+fusionM__all       AUC=0.6701 mac=0.6203 mic=0.6209 subjAUC_mean=0.6634 n>=.9=0 n>=.85=0
+[oracle] s0_causal_gmm10+fusionM__t>=64     AUC=0.6720 mac=0.6192 mic=0.6196 subjAUC_mean=0.6641 n>=.9=0 n>=.85=0
+[oracle summary] combos with macro bACC >= .85: {}
+[done] elapsed=24.9s -> depositioned_polarity_oracle_smoke.json

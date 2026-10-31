@@ -1,0 +1,125 @@
+[start oracle] rows=16067 subjects=57 sseeds=(0, 1, 2) fams=('pc1', 'pcbest3', 'pcbest10', 'km3', 'km10', 'gmm3', 'gmm10') refit=8 warm=64
+[full 1/57] sub-001 pc1=0.865 pcbest3=0.865 pcbest10=0.865 km3=0.870 km10=0.870 gmm3=0.862 gmm10=0.538 elapsed=2.4s
+[full 11/57] sub-011 pc1=0.670 pcbest3=0.670 pcbest10=0.670 km3=0.675 km10=0.681 gmm3=0.610 gmm10=0.694 elapsed=4.4s
+[full 21/57] sub-021 pc1=0.524 pcbest3=0.734 pcbest10=0.734 km3=0.593 km10=0.587 gmm3=0.697 gmm10=0.651 elapsed=6.5s
+[full 31/57] sub-031 pc1=0.713 pcbest3=0.713 pcbest10=0.719 km3=0.669 km10=0.665 gmm3=0.670 gmm10=0.634 elapsed=8.7s
+[full 41/57] sub-043 pc1=0.806 pcbest3=0.806 pcbest10=0.806 km3=0.855 km10=0.851 gmm3=0.528 gmm10=0.740 elapsed=10.6s
+[full 51/57] sub-053 pc1=0.608 pcbest3=0.641 pcbest10=0.641 km3=0.591 km10=0.596 gmm3=0.635 gmm10=0.522 elapsed=12.7s
+[full 57/57] sub-059 pc1=0.708 pcbest3=0.708 pcbest10=0.865 km3=0.656 km10=0.654 gmm3=0.616 gmm10=0.692 elapsed=14.0s
+[oracle] full_pc1                           AUC=0.6556 mac=0.6196 mic=0.6196 subjAUC_mean=0.6541 n>=.9=0 n>=.85=0
+[oracle] full_pcbest3                       AUC=0.7273 mac=0.6715 mic=0.6721 subjAUC_mean=0.7245 n>=.9=0 n>=.85=0
+[oracle] full_pcbest10                      AUC=0.7436 mac=0.6906 mic=0.6897 subjAUC_mean=0.7426 n>=.9=0 n>=.85=0
+[oracle] full_km3                           AUC=0.6597 mac=0.6270 mic=0.6268 subjAUC_mean=0.6573 n>=.9=0 n>=.85=0
+[oracle] full_km10                          AUC=0.6579 mac=0.6249 mic=0.6246 subjAUC_mean=0.6569 n>=.9=0 n>=.85=0
+[oracle] full_gmm3                          AUC=0.6422 mac=0.6174 mic=0.6188 subjAUC_mean=0.6451 n>=.9=0 n>=.85=0
+[oracle] full_gmm10                         AUC=0.6187 mac=0.6098 mic=0.6089 subjAUC_mean=0.6367 n>=.9=0 n>=.85=0
+[oracle] s0_fusionM_prank                   AUC=0.7043 mac=0.6463 mic=0.6470 subjAUC_mean=0.6964 n>=.9=0 n>=.85=1
+[oracle] s0_fusionM_prank__t>=64            AUC=0.7058 mac=0.6480 mic=0.6492 subjAUC_mean=0.6969 n>=.9=0 n>=.85=1
+[oracle] s0_fusionM_prank_FLIP              AUC=0.7154 mac=0.6565 mic=0.6576 subjAUC_mean=0.7076 n>=.9=0 n>=.85=1
+[oracle] s0_fusionM_prank_FLIP_medthr       AUC=0.7202 mac=0.6586 mic=0.6604 subjAUC_mean=0.7076 n>=.9=0 n>=.85=0
+[oracle] s0_fusion3_resnet_fbank            AUC=0.7088 mac=0.6486 mic=0.6492 subjAUC_mean=0.7001 n>=.9=0 n>=.85=1
+[oracle] s0_fusion3_resnet_fbank__t>=64     AUC=0.7098 mac=0.6508 mic=0.6510 subjAUC_mean=0.7010 n>=.9=0 n>=.85=1
+[oracle] s0_fusion3_resnet_fbank_FLIP       AUC=0.7177 mac=0.6544 mic=0.6552 subjAUC_mean=0.7092 n>=.9=0 n>=.85=1
+[oracle] s0_fusion3_resnet_fbank_FLIP_medthr AUC=0.7216 mac=0.6611 mic=0.6623 subjAUC_mean=0.7092 n>=.9=0 n>=.85=1
+[causal s0 1/57] sub-001 pc1=0.859 pcbest3=0.859 pcbest10=0.859 km3=0.859 km10=0.857 gmm3=0.814 gmm10=0.737 elapsed=24.9s
+[causal s0 11/57] sub-011 pc1=0.665 pcbest3=0.665 pcbest10=0.665 km3=0.658 km10=0.641 gmm3=0.646 gmm10=0.636 elapsed=45.4s
+[causal s0 21/57] sub-021 pc1=0.501 pcbest3=0.719 pcbest10=0.719 km3=0.512 km10=0.557 gmm3=0.557 gmm10=0.537 elapsed=67.3s
+[causal s0 31/57] sub-031 pc1=0.697 pcbest3=0.697 pcbest10=0.697 km3=0.667 km10=0.660 gmm3=0.641 gmm10=0.705 elapsed=90.5s
+[causal s0 41/57] sub-043 pc1=0.803 pcbest3=0.803 pcbest10=0.803 km3=0.833 km10=0.793 gmm3=0.659 gmm10=0.696 elapsed=111.5s
+[causal s0 51/57] sub-053 pc1=0.616 pcbest3=0.622 pcbest10=0.622 km3=0.605 km10=0.596 gmm3=0.520 gmm10=0.589 elapsed=133.5s
+[causal s0 57/57] sub-059 pc1=0.716 pcbest3=0.716 pcbest10=0.826 km3=0.660 km10=0.638 gmm3=0.533 gmm10=0.527 elapsed=147.2s
+[oracle] s0_causal_pc1__t>=64               AUC=0.6527 mac=0.6098 mic=0.6098 subjAUC_mean=0.6521 n>=.9=0 n>=.85=0
+[oracle] s0_causal_pc1+fusionM__all         AUC=0.7204 mac=0.6623 mic=0.6624 subjAUC_mean=0.7123 n>=.9=0 n>=.85=0
+[oracle] s0_causal_pc1+fusionM__t>=64       AUC=0.7265 mac=0.6694 mic=0.6693 subjAUC_mean=0.7164 n>=.9=0 n>=.85=1
+[oracle] s0_causal_pcbest3__t>=64           AUC=0.7280 mac=0.6716 mic=0.6724 subjAUC_mean=0.7257 n>=.9=0 n>=.85=0
+[oracle] s0_causal_pcbest3+fusionM__all     AUC=0.7592 mac=0.6960 mic=0.6966 subjAUC_mean=0.7512 n>=.9=0 n>=.85=0
+[oracle] s0_causal_pcbest3+fusionM__t>=64   AUC=0.7723 mac=0.7129 mic=0.7135 subjAUC_mean=0.7643 n>=.9=0 n>=.85=1
+[oracle] s0_causal_pcbest10__t>=64          AUC=0.7391 mac=0.6813 mic=0.6812 subjAUC_mean=0.7393 n>=.9=0 n>=.85=0
+[oracle] s0_causal_pcbest10+fusionM__all    AUC=0.7654 mac=0.6994 mic=0.6996 subjAUC_mean=0.7582 n>=.9=0 n>=.85=0
+[oracle] s0_causal_pcbest10+fusionM__t>=64  AUC=0.7800 mac=0.7179 mic=0.7173 subjAUC_mean=0.7738 n>=.9=0 n>=.85=1
+[oracle] s0_causal_km3__t>=64               AUC=0.6492 mac=0.6137 mic=0.6138 subjAUC_mean=0.6465 n>=.9=0 n>=.85=0
+[oracle] s0_causal_km3+fusionM__all         AUC=0.7167 mac=0.6601 mic=0.6604 subjAUC_mean=0.7095 n>=.9=0 n>=.85=0
+[oracle] s0_causal_km3+fusionM__t>=64       AUC=0.7223 mac=0.6664 mic=0.6666 subjAUC_mean=0.7135 n>=.9=0 n>=.85=0
+[oracle] s0_causal_km10__t>=64              AUC=0.6423 mac=0.6090 mic=0.6089 subjAUC_mean=0.6407 n>=.9=0 n>=.85=0
+[oracle] s0_causal_km10+fusionM__all        AUC=0.7115 mac=0.6558 mic=0.6559 subjAUC_mean=0.7048 n>=.9=0 n>=.85=0
+[oracle] s0_causal_km10+fusionM__t>=64      AUC=0.7160 mac=0.6609 mic=0.6608 subjAUC_mean=0.7082 n>=.9=0 n>=.85=1
+[oracle] s0_causal_gmm3__t>=64              AUC=0.6144 mac=0.5949 mic=0.5993 subjAUC_mean=0.6183 n>=.9=0 n>=.85=0
+[oracle] s0_causal_gmm3+fusionM__all        AUC=0.7022 mac=0.6476 mic=0.6480 subjAUC_mean=0.6942 n>=.9=0 n>=.85=0
+[oracle] s0_causal_gmm3+fusionM__t>=64      AUC=0.7032 mac=0.6504 mic=0.6505 subjAUC_mean=0.6958 n>=.9=0 n>=.85=0
+[oracle] s0_causal_gmm10__t>=64             AUC=0.5988 mac=0.5872 mic=0.5866 subjAUC_mean=0.6051 n>=.9=0 n>=.85=0
+[oracle] s0_causal_gmm10+fusionM__all       AUC=0.7050 mac=0.6472 mic=0.6478 subjAUC_mean=0.6948 n>=.9=0 n>=.85=0
+[oracle] s0_causal_gmm10+fusionM__t>=64     AUC=0.7064 mac=0.6492 mic=0.6503 subjAUC_mean=0.6947 n>=.9=0 n>=.85=0
+[oracle] s1_fusionM_prank                   AUC=0.6990 mac=0.6415 mic=0.6438 subjAUC_mean=0.6895 n>=.9=0 n>=.85=1
+[oracle] s1_fusionM_prank__t>=64            AUC=0.7013 mac=0.6424 mic=0.6455 subjAUC_mean=0.6901 n>=.9=0 n>=.85=1
+[oracle] s1_fusionM_prank_FLIP              AUC=0.7074 mac=0.6477 mic=0.6502 subjAUC_mean=0.6974 n>=.9=0 n>=.85=1
+[oracle] s1_fusionM_prank_FLIP_medthr       AUC=0.7101 mac=0.6511 mic=0.6538 subjAUC_mean=0.6974 n>=.9=0 n>=.85=1
+[oracle] s1_fusion3_resnet_fbank            AUC=0.7066 mac=0.6458 mic=0.6473 subjAUC_mean=0.6961 n>=.9=0 n>=.85=1
+[oracle] s1_fusion3_resnet_fbank__t>=64     AUC=0.7084 mac=0.6468 mic=0.6486 subjAUC_mean=0.6961 n>=.9=0 n>=.85=1
+[oracle] s1_fusion3_resnet_fbank_FLIP       AUC=0.7133 mac=0.6509 mic=0.6525 subjAUC_mean=0.7028 n>=.9=0 n>=.85=1
+[oracle] s1_fusion3_resnet_fbank_FLIP_medthr AUC=0.7160 mac=0.6556 mic=0.6577 subjAUC_mean=0.7028 n>=.9=0 n>=.85=1
+[causal s1 1/57] sub-001 pc1=0.851 pcbest3=0.851 pcbest10=0.851 km3=0.836 km10=0.844 gmm3=0.750 gmm10=0.527 elapsed=166.2s
+[causal s1 11/57] sub-011 pc1=0.653 pcbest3=0.653 pcbest10=0.653 km3=0.634 km10=0.612 gmm3=0.618 gmm10=0.542 elapsed=186.8s
+[causal s1 21/57] sub-021 pc1=0.541 pcbest3=0.738 pcbest10=0.738 km3=0.540 km10=0.541 gmm3=0.515 gmm10=0.552 elapsed=209.0s
+[causal s1 31/57] sub-031 pc1=0.676 pcbest3=0.676 pcbest10=0.676 km3=0.646 km10=0.633 gmm3=0.595 gmm10=0.585 elapsed=232.3s
+[causal s1 41/57] sub-043 pc1=0.837 pcbest3=0.837 pcbest10=0.837 km3=0.874 km10=0.871 gmm3=0.688 gmm10=0.763 elapsed=253.2s
+[causal s1 51/57] sub-053 pc1=0.603 pcbest3=0.615 pcbest10=0.615 km3=0.596 km10=0.598 gmm3=0.537 gmm10=0.569 elapsed=275.4s
+[causal s1 57/57] sub-059 pc1=0.688 pcbest3=0.688 pcbest10=0.747 km3=0.659 km10=0.629 gmm3=0.585 gmm10=0.683 elapsed=288.9s
+[oracle] s1_causal_pc1__t>=64               AUC=0.6534 mac=0.6169 mic=0.6171 subjAUC_mean=0.6525 n>=.9=0 n>=.85=0
+[oracle] s1_causal_pc1+fusionM__all         AUC=0.7134 mac=0.6568 mic=0.6581 subjAUC_mean=0.7077 n>=.9=0 n>=.85=0
+[oracle] s1_causal_pc1+fusionM__t>=64       AUC=0.7201 mac=0.6639 mic=0.6640 subjAUC_mean=0.7150 n>=.9=0 n>=.85=1
+[oracle] s1_causal_pcbest3__t>=64           AUC=0.7238 mac=0.6709 mic=0.6717 subjAUC_mean=0.7232 n>=.9=0 n>=.85=0
+[oracle] s1_causal_pcbest3+fusionM__all     AUC=0.7546 mac=0.6930 mic=0.6944 subjAUC_mean=0.7482 n>=.9=0 n>=.85=0
+[oracle] s1_causal_pcbest3+fusionM__t>=64   AUC=0.7687 mac=0.7105 mic=0.7110 subjAUC_mean=0.7618 n>=.9=0 n>=.85=1
+[oracle] s1_causal_pcbest10__t>=64          AUC=0.7330 mac=0.6798 mic=0.6783 subjAUC_mean=0.7346 n>=.9=0 n>=.85=0
+[oracle] s1_causal_pcbest10+fusionM__all    AUC=0.7594 mac=0.6967 mic=0.6983 subjAUC_mean=0.7539 n>=.9=0 n>=.85=0
+[oracle] s1_causal_pcbest10+fusionM__t>=64  AUC=0.7747 mac=0.7151 mic=0.7160 subjAUC_mean=0.7702 n>=.9=0 n>=.85=1
+[oracle] s1_causal_km3__t>=64               AUC=0.6506 mac=0.6156 mic=0.6161 subjAUC_mean=0.6479 n>=.9=0 n>=.85=0
+[oracle] s1_causal_km3+fusionM__all         AUC=0.7126 mac=0.6592 mic=0.6605 subjAUC_mean=0.7072 n>=.9=0 n>=.85=0
+[oracle] s1_causal_km3+fusionM__t>=64       AUC=0.7190 mac=0.6669 mic=0.6671 subjAUC_mean=0.7135 n>=.9=0 n>=.85=2
+[oracle] s1_causal_km10__t>=64              AUC=0.6487 mac=0.6178 mic=0.6182 subjAUC_mean=0.6449 n>=.9=0 n>=.85=0
+[oracle] s1_causal_km10+fusionM__all        AUC=0.7110 mac=0.6579 mic=0.6592 subjAUC_mean=0.7060 n>=.9=0 n>=.85=0
+[oracle] s1_causal_km10+fusionM__t>=64      AUC=0.7174 mac=0.6651 mic=0.6654 subjAUC_mean=0.7121 n>=.9=0 n>=.85=2
+[oracle] s1_causal_gmm3__t>=64              AUC=0.6274 mac=0.6062 mic=0.6053 subjAUC_mean=0.6304 n>=.9=0 n>=.85=0
+[oracle] s1_causal_gmm3+fusionM__all        AUC=0.7020 mac=0.6476 mic=0.6489 subjAUC_mean=0.6938 n>=.9=0 n>=.85=0
+[oracle] s1_causal_gmm3+fusionM__t>=64      AUC=0.7053 mac=0.6508 mic=0.6522 subjAUC_mean=0.6959 n>=.9=0 n>=.85=0
+[oracle] s1_causal_gmm10__t>=64             AUC=0.6133 mac=0.6026 mic=0.6003 subjAUC_mean=0.6209 n>=.9=0 n>=.85=0
+[oracle] s1_causal_gmm10+fusionM__all       AUC=0.7024 mac=0.6458 mic=0.6470 subjAUC_mean=0.6926 n>=.9=0 n>=.85=0
+[oracle] s1_causal_gmm10+fusionM__t>=64     AUC=0.7053 mac=0.6491 mic=0.6497 subjAUC_mean=0.6950 n>=.9=0 n>=.85=0
+[oracle] s2_fusionM_prank                   AUC=0.6974 mac=0.6407 mic=0.6420 subjAUC_mean=0.6885 n>=.9=0 n>=.85=1
+[oracle] s2_fusionM_prank__t>=64            AUC=0.6996 mac=0.6440 mic=0.6452 subjAUC_mean=0.6902 n>=.9=0 n>=.85=1
+[oracle] s2_fusionM_prank_FLIP              AUC=0.7056 mac=0.6455 mic=0.6468 subjAUC_mean=0.6961 n>=.9=0 n>=.85=1
+[oracle] s2_fusionM_prank_FLIP_medthr       AUC=0.7088 mac=0.6483 mic=0.6498 subjAUC_mean=0.6961 n>=.9=0 n>=.85=1
+[oracle] s2_fusion3_resnet_fbank            AUC=0.7056 mac=0.6443 mic=0.6454 subjAUC_mean=0.6966 n>=.9=0 n>=.85=1
+[oracle] s2_fusion3_resnet_fbank__t>=64     AUC=0.7075 mac=0.6452 mic=0.6460 subjAUC_mean=0.6975 n>=.9=0 n>=.85=1
+[oracle] s2_fusion3_resnet_fbank_FLIP       AUC=0.7116 mac=0.6475 mic=0.6487 subjAUC_mean=0.7031 n>=.9=0 n>=.85=1
+[oracle] s2_fusion3_resnet_fbank_FLIP_medthr AUC=0.7148 mac=0.6507 mic=0.6522 subjAUC_mean=0.7031 n>=.9=0 n>=.85=1
+[causal s2 1/57] sub-001 pc1=0.877 pcbest3=0.877 pcbest10=0.877 km3=0.877 km10=0.872 gmm3=0.844 gmm10=0.653 elapsed=308.0s
+[causal s2 11/57] sub-011 pc1=0.667 pcbest3=0.667 pcbest10=0.667 km3=0.634 km10=0.658 gmm3=0.570 gmm10=0.628 elapsed=328.6s
+[causal s2 21/57] sub-021 pc1=0.512 pcbest3=0.728 pcbest10=0.728 km3=0.602 km10=0.557 gmm3=0.541 gmm10=0.532 elapsed=350.9s
+[causal s2 31/57] sub-031 pc1=0.703 pcbest3=0.703 pcbest10=0.703 km3=0.663 km10=0.655 gmm3=0.622 gmm10=0.636 elapsed=374.1s
+[causal s2 41/57] sub-043 pc1=0.823 pcbest3=0.823 pcbest10=0.823 km3=0.799 km10=0.807 gmm3=0.722 gmm10=0.719 elapsed=394.9s
+[causal s2 51/57] sub-053 pc1=0.606 pcbest3=0.618 pcbest10=0.618 km3=0.621 km10=0.642 gmm3=0.610 gmm10=0.557 elapsed=417.4s
+[causal s2 57/57] sub-059 pc1=0.749 pcbest3=0.749 pcbest10=0.852 km3=0.680 km10=0.659 gmm3=0.509 gmm10=0.670 elapsed=432.0s
+[oracle] s2_causal_pc1__t>=64               AUC=0.6517 mac=0.6157 mic=0.6156 subjAUC_mean=0.6510 n>=.9=0 n>=.85=0
+[oracle] s2_causal_pc1+fusionM__all         AUC=0.7120 mac=0.6528 mic=0.6534 subjAUC_mean=0.7032 n>=.9=0 n>=.85=0
+[oracle] s2_causal_pc1+fusionM__t>=64       AUC=0.7189 mac=0.6603 mic=0.6599 subjAUC_mean=0.7091 n>=.9=0 n>=.85=2
+[oracle] s2_causal_pcbest3__t>=64           AUC=0.7270 mac=0.6769 mic=0.6775 subjAUC_mean=0.7251 n>=.9=0 n>=.85=0
+[oracle] s2_causal_pcbest3+fusionM__all     AUC=0.7539 mac=0.6928 mic=0.6943 subjAUC_mean=0.7459 n>=.9=0 n>=.85=0
+[oracle] s2_causal_pcbest3+fusionM__t>=64   AUC=0.7680 mac=0.7112 mic=0.7127 subjAUC_mean=0.7600 n>=.9=0 n>=.85=3
+[oracle] s2_causal_pcbest10__t>=64          AUC=0.7351 mac=0.6850 mic=0.6846 subjAUC_mean=0.7356 n>=.9=0 n>=.85=0
+[oracle] s2_causal_pcbest10+fusionM__all    AUC=0.7561 mac=0.6929 mic=0.6937 subjAUC_mean=0.7490 n>=.9=0 n>=.85=0
+[oracle] s2_causal_pcbest10+fusionM__t>=64  AUC=0.7713 mac=0.7124 mic=0.7120 subjAUC_mean=0.7654 n>=.9=0 n>=.85=3
+[oracle] s2_causal_km3__t>=64               AUC=0.6565 mac=0.6242 mic=0.6240 subjAUC_mean=0.6537 n>=.9=0 n>=.85=1
+[oracle] s2_causal_km3+fusionM__all         AUC=0.7142 mac=0.6555 mic=0.6560 subjAUC_mean=0.7050 n>=.9=0 n>=.85=0
+[oracle] s2_causal_km3+fusionM__t>=64       AUC=0.7217 mac=0.6638 mic=0.6632 subjAUC_mean=0.7117 n>=.9=0 n>=.85=1
+[oracle] s2_causal_km10__t>=64              AUC=0.6522 mac=0.6194 mic=0.6193 subjAUC_mean=0.6498 n>=.9=0 n>=.85=1
+[oracle] s2_causal_km10+fusionM__all        AUC=0.7112 mac=0.6533 mic=0.6538 subjAUC_mean=0.7022 n>=.9=0 n>=.85=0
+[oracle] s2_causal_km10+fusionM__t>=64      AUC=0.7181 mac=0.6610 mic=0.6603 subjAUC_mean=0.7086 n>=.9=0 n>=.85=2
+[oracle] s2_causal_gmm3__t>=64              AUC=0.6234 mac=0.6000 mic=0.6004 subjAUC_mean=0.6263 n>=.9=0 n>=.85=0
+[oracle] s2_causal_gmm3+fusionM__all        AUC=0.7020 mac=0.6462 mic=0.6466 subjAUC_mean=0.6912 n>=.9=0 n>=.85=0
+[oracle] s2_causal_gmm3+fusionM__t>=64      AUC=0.7059 mac=0.6518 mic=0.6511 subjAUC_mean=0.6937 n>=.9=0 n>=.85=1
+[oracle] s2_causal_gmm10__t>=64             AUC=0.5966 mac=0.5879 mic=0.5873 subjAUC_mean=0.6039 n>=.9=0 n>=.85=0
+[oracle] s2_causal_gmm10+fusionM__all       AUC=0.6974 mac=0.6404 mic=0.6416 subjAUC_mean=0.6872 n>=.9=0 n>=.85=0
+[oracle] s2_causal_gmm10+fusionM__t>=64     AUC=0.6994 mac=0.6434 mic=0.6446 subjAUC_mean=0.6873 n>=.9=0 n>=.85=0
+[oracle summary] combos with macro bACC >= .85: {}
+[done] elapsed=443.8s -> depositioned_polarity_oracle.json
