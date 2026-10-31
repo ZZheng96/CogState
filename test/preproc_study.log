@@ -1,0 +1,267 @@
+[start] smoke=False rows=16067 subjects=57 seeds=(0, 1, 2) folds=[0, 1, 2, 3, 4] elapsed=1.3s
+[feat P0r 1/126] var_s=11.6 elapsed=12.9s
+[feat P0r 11/126] var_s=17.9 elapsed=19.2s
+[feat P0r 21/126] var_s=23.9 elapsed=25.2s
+[feat P0r 31/126] var_s=29.7 elapsed=31.0s
+[feat P0r 41/126] var_s=40.6 elapsed=41.9s
+[feat P0r 51/126] var_s=46.7 elapsed=48.0s
+[feat P0r 61/126] var_s=52.7 elapsed=54.0s
+[feat P0r 71/126] var_s=58.6 elapsed=59.9s
+[feat P0r 81/126] var_s=69.2 elapsed=70.5s
+[feat P0r 91/126] var_s=75.8 elapsed=77.1s
+[feat P0r 101/126] var_s=81.8 elapsed=83.1s
+[feat P0r 111/126] var_s=87.8 elapsed=89.1s
+[feat P0r 121/126] var_s=97.4 elapsed=98.7s
+[feat P0r 126/126] var_s=98.2 elapsed=99.5s
+[feat P1 1/126] var_s=5.8 elapsed=107.0s
+[feat P1 11/126] var_s=11.8 elapsed=113.0s
+[feat P1 21/126] var_s=17.7 elapsed=118.9s
+[feat P1 31/126] var_s=23.6 elapsed=124.8s
+[feat P1 41/126] var_s=34.4 elapsed=135.6s
+[feat P1 51/126] var_s=40.6 elapsed=141.8s
+[feat P1 61/126] var_s=46.5 elapsed=147.7s
+[feat P1 71/126] var_s=52.6 elapsed=153.8s
+[feat P1 81/126] var_s=63.1 elapsed=164.3s
+[feat P1 91/126] var_s=69.1 elapsed=170.3s
+[feat P1 101/126] var_s=75.6 elapsed=176.8s
+[feat P1 111/126] var_s=81.7 elapsed=182.9s
+[feat P1 121/126] var_s=91.0 elapsed=192.2s
+[feat P1 126/126] var_s=92.2 elapsed=193.4s
+[feat P2 1/126] var_s=6.6 elapsed=201.7s
+[feat P2 11/126] var_s=13.4 elapsed=208.5s
+[feat P2 21/126] var_s=20.1 elapsed=215.2s
+[feat P2 31/126] var_s=26.7 elapsed=221.9s
+[feat P2 41/126] var_s=38.7 elapsed=233.8s
+[feat P2 51/126] var_s=45.8 elapsed=241.0s
+[feat P2 61/126] var_s=52.5 elapsed=247.6s
+[feat P2 71/126] var_s=59.3 elapsed=254.5s
+[feat P2 81/126] var_s=71.0 elapsed=266.1s
+[feat P2 91/126] var_s=78.0 elapsed=273.2s
+[feat P2 101/126] var_s=85.0 elapsed=280.1s
+[feat P2 111/126] var_s=92.2 elapsed=287.3s
+[feat P2 121/126] var_s=102.9 elapsed=298.0s
+[feat P2 126/126] var_s=103.8 elapsed=298.9s
+[feat P3 1/126] var_s=6.6 elapsed=307.3s
+[feat P3 11/126] var_s=13.2 elapsed=313.8s
+[feat P3 21/126] var_s=19.9 elapsed=320.5s
+[feat P3 31/126] var_s=26.6 elapsed=327.2s
+[feat P3 41/126] var_s=39.5 elapsed=340.1s
+[feat P3 51/126] var_s=46.1 elapsed=346.7s
+[feat P3 61/126] var_s=52.7 elapsed=353.3s
+[feat P3 71/126] var_s=59.7 elapsed=360.3s
+[feat P3 81/126] var_s=71.6 elapsed=372.3s
+[feat P3 91/126] var_s=78.8 elapsed=379.4s
+[feat P3 101/126] var_s=85.7 elapsed=386.3s
+[feat P3 111/126] var_s=92.5 elapsed=393.2s
+[feat P3 121/126] var_s=103.8 elapsed=404.5s
+[feat P3 126/126] var_s=104.6 elapsed=405.2s
+[diag] dc_over_std      per-subject median: median=209 min=15 max=1.28e+03
+[diag] transient_P0     per-subject median: median=218 min=169 max=219
+[diag] transient_P1     per-subject median: median=nan min=nan max=nan
+[diag] transient_P2     per-subject median: median=0.802 min=0.432 max=2.86
+[diag] transient_P3     per-subject median: median=0.832 min=0.485 max=2.6
+[diag] line50_dB_raw    per-subject median: median=14 min=0.292 max=44.1
+[diag] line50_dB_P2     per-subject median: median=-8.38 min=-9.29 max=7.86
+[diag sub-001] |DC|/std=126.5 transient P0=218 P1=3.8 P2=0.67 P3=0.68 line50 raw=+1.5dB P2=-9.2dB
+[diag sub-002] |DC|/std=155.2 transient P0=218 P1=3.1 P2=0.83 P3=0.84 line50 raw=+3.9dB P2=-8.8dB
+[diag sub-003] |DC|/std=118.9 transient P0=218 P1=5.8 P2=0.43 P3=0.49 line50 raw=+5.5dB P2=-8.8dB
+[diag sub-004] |DC|/std=398.7 transient P0=219 P1=18.1 P2=1.23 P3=1.25 line50 raw=+30.1dB P2=-4.9dB
+[diag sub-005] |DC|/std=226.7 transient P0=219 P1=6.8 P2=0.78 P3=0.78 line50 raw=+8.7dB P2=-8.5dB
+[diag sub-006] |DC|/std=197.9 transient P0=219 P1=5.5 P2=0.73 P3=0.74 line50 raw=+19.5dB P2=-7.9dB
+[diag sub-007] |DC|/std=127.6 transient P0=219 P1=21.8 P2=0.74 P3=0.74 line50 raw=+15.9dB P2=-8.6dB
+[diag sub-008] |DC|/std=111.0 transient P0=216 P1=nan P2=1.04 P3=1.07 line50 raw=+18.8dB P2=-8.7dB
+[diag sub-009] |DC|/std=15.0 transient P0=169 P1=nan P2=0.70 P3=0.75 line50 raw=+17.4dB P2=-8.1dB
+[diag sub-010] |DC|/std=215.3 transient P0=219 P1=16.3 P2=2.86 P3=2.60 line50 raw=+44.1dB P2=+7.9dB
+[diag sub-011] |DC|/std=104.8 transient P0=218 P1=9.9 P2=0.86 P3=0.91 line50 raw=+20.4dB P2=-6.7dB
+[diag sub-012] |DC|/std=317.9 transient P0=219 P1=4.0 P2=1.02 P3=1.03 line50 raw=+18.4dB P2=-7.7dB
+[diag sub-013] |DC|/std=83.8 transient P0=218 P1=nan P2=1.28 P3=1.30 line50 raw=+28.7dB P2=-4.7dB
+[diag sub-014] |DC|/std=108.2 transient P0=217 P1=4.5 P2=0.60 P3=0.61 line50 raw=+1.1dB P2=-9.2dB
+[diag sub-015] |DC|/std=1280.0 transient P0=219 P1=nan P2=0.72 P3=0.77 line50 raw=+30.1dB P2=-2.8dB
+[diag sub-016] |DC|/std=150.2 transient P0=219 P1=15.0 P2=0.75 P3=0.75 line50 raw=+14.0dB P2=-8.6dB
+[diag sub-017] |DC|/std=220.9 transient P0=217 P1=1.9 P2=0.74 P3=0.77 line50 raw=+11.2dB P2=-8.6dB
+[diag sub-018] |DC|/std=348.6 transient P0=219 P1=5.1 P2=0.79 P3=0.79 line50 raw=+18.7dB P2=-7.9dB
+[diag sub-019] |DC|/std=360.3 transient P0=218 P1=2.3 P2=1.00 P3=1.00 line50 raw=+25.5dB P2=-6.4dB
+[diag sub-020] |DC|/std=289.8 transient P0=218 P1=3.0 P2=0.60 P3=0.66 line50 raw=+14.6dB P2=-8.5dB
+[diag sub-021] |DC|/std=116.7 transient P0=218 P1=10.5 P2=0.80 P3=0.83 line50 raw=+1.0dB P2=-9.1dB
+[diag sub-022] |DC|/std=278.7 transient P0=219 P1=nan P2=0.78 P3=0.80 line50 raw=+18.8dB P2=-7.3dB
+[diag sub-023] |DC|/std=144.5 transient P0=219 P1=14.1 P2=0.64 P3=0.67 line50 raw=+9.0dB P2=-9.2dB
+[diag sub-024] |DC|/std=227.5 transient P0=218 P1=4.9 P2=0.77 P3=0.78 line50 raw=+8.4dB P2=-8.7dB
+[diag sub-025] |DC|/std=72.6 transient P0=216 P1=5.0 P2=0.51 P3=0.51 line50 raw=+16.5dB P2=-8.0dB
+[diag sub-026] |DC|/std=242.7 transient P0=219 P1=4.4 P2=0.74 P3=0.75 line50 raw=+14.4dB P2=-8.2dB
+[diag sub-027] |DC|/std=54.4 transient P0=214 P1=6.5 P2=0.88 P3=0.89 line50 raw=+5.7dB P2=-9.0dB
+[diag sub-028] |DC|/std=176.5 transient P0=218 P1=6.3 P2=1.20 P3=1.20 line50 raw=+30.8dB P2=-3.6dB
+[diag sub-029] |DC|/std=991.4 transient P0=219 P1=2.1 P2=0.97 P3=0.98 line50 raw=+23.4dB P2=-6.9dB
+[diag sub-030] |DC|/std=89.8 transient P0=210 P1=1.6 P2=1.07 P3=1.07 line50 raw=+1.9dB P2=-9.1dB
+[diag sub-031] |DC|/std=405.6 transient P0=219 P1=6.9 P2=0.88 P3=0.88 line50 raw=+0.3dB P2=-9.2dB
+[diag sub-034] |DC|/std=153.6 transient P0=218 P1=34.8 P2=1.03 P3=1.04 line50 raw=+25.7dB P2=-5.7dB
+[diag sub-035] |DC|/std=91.4 transient P0=215 P1=4.4 P2=0.63 P3=0.69 line50 raw=+9.3dB P2=-9.2dB
+[diag sub-036] |DC|/std=238.8 transient P0=217 P1=1.7 P2=0.73 P3=0.75 line50 raw=+7.5dB P2=-9.1dB
+[diag sub-037] |DC|/std=304.7 transient P0=219 P1=7.4 P2=0.76 P3=0.77 line50 raw=+25.9dB P2=-6.6dB
+[diag sub-038] |DC|/std=134.4 transient P0=218 P1=6.1 P2=1.67 P3=1.74 line50 raw=+33.9dB P2=-2.3dB
+[diag sub-039] |DC|/std=311.8 transient P0=218 P1=3.3 P2=0.87 P3=0.87 line50 raw=+9.4dB P2=-9.3dB
+[diag sub-040] |DC|/std=685.7 transient P0=219 P1=2.4 P2=0.96 P3=0.97 line50 raw=+13.4dB P2=-8.7dB
+[diag sub-041] |DC|/std=521.8 transient P0=219 P1=3.1 P2=0.79 P3=0.82 line50 raw=+24.6dB P2=-5.1dB
+[diag sub-042] |DC|/std=208.8 transient P0=218 P1=2.2 P2=0.93 P3=0.93 line50 raw=+4.7dB P2=-9.0dB
+[diag sub-043] |DC|/std=85.5 transient P0=214 P1=4.1 P2=0.79 P3=0.80 line50 raw=+2.3dB P2=-8.8dB
+[diag sub-044] |DC|/std=422.4 transient P0=219 P1=4.0 P2=1.08 P3=1.13 line50 raw=+22.8dB P2=-5.1dB
+[diag sub-045] |DC|/std=176.1 transient P0=215 P1=1.4 P2=0.76 P3=0.77 line50 raw=+16.1dB P2=-8.2dB
+[diag sub-046] |DC|/std=56.3 transient P0=211 P1=3.9 P2=0.96 P3=0.98 line50 raw=+4.8dB P2=-9.3dB
+[diag sub-047] |DC|/std=113.8 transient P0=216 P1=nan P2=0.78 P3=0.80 line50 raw=+13.3dB P2=-8.5dB
+[diag sub-048] |DC|/std=486.1 transient P0=219 P1=1.9 P2=0.83 P3=0.83 line50 raw=+19.2dB P2=-7.6dB
+[diag sub-049] |DC|/std=176.1 transient P0=216 P1=1.2 P2=0.83 P3=0.84 line50 raw=+28.3dB P2=-1.4dB
+[diag sub-050] |DC|/std=144.7 transient P0=218 P1=8.4 P2=0.93 P3=0.93 line50 raw=+14.0dB P2=-8.4dB
+[diag sub-051] |DC|/std=136.4 transient P0=214 P1=1.4 P2=0.72 P3=0.72 line50 raw=+13.1dB P2=-8.5dB
+[diag sub-052] |DC|/std=298.0 transient P0=218 P1=4.0 P2=0.88 P3=0.89 line50 raw=+6.2dB P2=-9.1dB
+[diag sub-053] |DC|/std=233.2 transient P0=219 P1=3.9 P2=0.76 P3=0.77 line50 raw=+9.5dB P2=-8.3dB
+[diag sub-054] |DC|/std=854.0 transient P0=219 P1=2.7 P2=0.88 P3=0.88 line50 raw=+12.4dB P2=-8.4dB
+[diag sub-055] |DC|/std=302.6 transient P0=218 P1=3.4 P2=0.95 P3=0.95 line50 raw=+17.0dB P2=-8.1dB
+[diag sub-056] |DC|/std=393.1 transient P0=219 P1=3.9 P2=0.84 P3=0.86 line50 raw=+13.6dB P2=-7.8dB
+[diag sub-057] |DC|/std=344.3 transient P0=219 P1=4.6 P2=0.55 P3=0.57 line50 raw=+12.4dB P2=-8.7dB
+[diag sub-058] |DC|/std=558.0 transient P0=219 P1=3.2 P2=0.94 P3=0.94 line50 raw=+18.8dB P2=-8.0dB
+[diag sub-059] |DC|/std=65.0 transient P0=211 P1=3.9 P2=0.69 P3=0.73 line50 raw=+6.5dB P2=-9.1dB
+[diag label] window_mean            within_mean_AUC=0.5160 within_mean_absdev=0.1159 within_median_absdev=0.0966 cross_subject_AUC=0.5097
+[diag label] first1s_logenergy_P0   within_mean_AUC=0.5206 within_mean_absdev=0.1136 within_median_absdev=0.0945 cross_subject_AUC=0.5138
+[verify] P0r vs stored f on 16067 windows (57 subjects): allclose=False frac_close=0.999844 mismatch_cols=[79, 80] max_rel={79: 0.03329133299520803, 80: 0.11682425921960995} win_frac={79: 0.06454222941432751, 80: 0.06896122487085331} allclose_excl=True | float32 +-0.5ulp sensitivity max_rel={'low_freq_drift': 1.935975009111539e-05, 'high_freq_ratio': 7.016081763443274e-05} median={'low_freq_drift': 4.2181454475477127e-07, 'high_freq_ratio': 8.403852641405797e-06}
+[eval P0 s0 fold 1/5] dim=2667 fit_s=25.1 elapsed=440.8s
+[eval P0 s0 fold 2/5] dim=2667 fit_s=23.5 elapsed=464.4s
+[eval P0 s0 fold 3/5] dim=2667 fit_s=23.5 elapsed=487.9s
+[eval P0 s0 fold 4/5] dim=2667 fit_s=23.4 elapsed=511.3s
+[eval P0 s0 fold 5/5] dim=2667 fit_s=23.6 elapsed=534.8s
+[check] P0 all_prank == stored stream0__all_prank max|d|=0.0e+00
+[eval P0r s0 fold 1/5] dim=2667 fit_s=24.2 elapsed=559.1s
+[eval P0r s0 fold 2/5] dim=2667 fit_s=23.5 elapsed=582.6s
+[eval P0r s0 fold 3/5] dim=2667 fit_s=23.5 elapsed=606.1s
+[eval P0r s0 fold 4/5] dim=2667 fit_s=23.3 elapsed=629.4s
+[eval P0r s0 fold 5/5] dim=2667 fit_s=23.3 elapsed=652.7s
+[eval P1 s0 fold 1/5] dim=2667 fit_s=23.7 elapsed=676.4s
+[eval P1 s0 fold 2/5] dim=2667 fit_s=23.5 elapsed=699.9s
+[eval P1 s0 fold 3/5] dim=2667 fit_s=25.1 elapsed=725.0s
+[eval P1 s0 fold 4/5] dim=2667 fit_s=23.6 elapsed=748.6s
+[eval P1 s0 fold 5/5] dim=2667 fit_s=23.6 elapsed=772.2s
+[eval P2 s0 fold 1/5] dim=2667 fit_s=23.8 elapsed=796.0s
+[eval P2 s0 fold 2/5] dim=2667 fit_s=23.7 elapsed=819.7s
+[eval P2 s0 fold 3/5] dim=2667 fit_s=23.8 elapsed=843.6s
+[eval P2 s0 fold 4/5] dim=2667 fit_s=23.7 elapsed=867.3s
+[eval P2 s0 fold 5/5] dim=2667 fit_s=23.5 elapsed=890.8s
+[eval P3 s0 fold 1/5] dim=2667 fit_s=23.7 elapsed=914.5s
+[eval P3 s0 fold 2/5] dim=2667 fit_s=23.5 elapsed=938.0s
+[eval P3 s0 fold 3/5] dim=2667 fit_s=23.5 elapsed=961.5s
+[eval P3 s0 fold 4/5] dim=2667 fit_s=23.3 elapsed=984.8s
+[eval P3 s0 fold 5/5] dim=2667 fit_s=23.5 elapsed=1008.4s
+[eval P2+P0 s0 fold 1/5] dim=5241 fit_s=51.2 elapsed=1059.6s
+[eval P2+P0 s0 fold 2/5] dim=5241 fit_s=50.3 elapsed=1109.9s
+[eval P2+P0 s0 fold 3/5] dim=5241 fit_s=50.9 elapsed=1160.7s
+[eval P2+P0 s0 fold 4/5] dim=5241 fit_s=50.8 elapsed=1211.5s
+[eval P2+P0 s0 fold 5/5] dim=5241 fit_s=50.7 elapsed=1262.2s
+[result s0] all_prank|P0       AUC=0.6755 mac=0.6257 mic=0.6267 n>=.9=0 max=0.855 groups=high:0.7813 mid:0.6763 low:0.5163
+[result s0] fuseH_wf|P0        AUC=0.7140 mac=0.6541 mic=0.6545 n>=.9=0 max=0.853 groups=high:0.8146 mid:0.7001 low:0.5518
+[result s0] all_prank|P0r      AUC=0.6759 mac=0.6264 mic=0.6275 n>=.9=0 max=0.855 groups=high:0.7837 mid:0.6775 low:0.5158 | vs P0 dAUC=+0.0004[-0.0010,+0.0018] dmac=+0.0007[-0.0015,+0.0027] dmic=+0.0009[-0.0012,+0.0028]
+[result s0] fuseH_wf|P0r       AUC=0.7142 mac=0.6544 mic=0.6548 n>=.9=0 max=0.857 groups=high:0.8159 mid:0.6995 low:0.5536 | vs P0 dAUC=+0.0002[-0.0005,+0.0009] dmac=+0.0004[-0.0008,+0.0017] dmic=+0.0003[-0.0009,+0.0014]
+[result s0] all_prank|P1       AUC=0.6809 mac=0.6318 mic=0.6325 n>=.9=0 max=0.815 groups=high:0.7552 mid:0.6817 low:0.5284 | vs P0 dAUC=+0.0057[-0.0049,+0.0168] dmac=+0.0064[-0.0057,+0.0180] dmic=+0.0062[-0.0057,+0.0178]
+[result s0] fuseH_wf|P1        AUC=0.7131 mac=0.6568 mic=0.6570 n>=.9=0 max=0.857 groups=high:0.7963 mid:0.7020 low:0.5590 | vs P0 dAUC=-0.0008[-0.0064,+0.0046] dmac=+0.0028[-0.0036,+0.0092] dmic=+0.0025[-0.0039,+0.0090]
+[result s0] all_prank|P2       AUC=0.6867 mac=0.6351 mic=0.6360 n>=.9=0 max=0.811 groups=high:0.7809 mid:0.6840 low:0.5301 | vs P0 dAUC=+0.0115[+0.0009,+0.0226] dmac=+0.0097[-0.0013,+0.0210] dmic=+0.0097[-0.0015,+0.0211]
+[result s0] fuseH_wf|P2        AUC=0.7171 mac=0.6560 mic=0.6568 n>=.9=0 max=0.875 groups=high:0.8022 mid:0.7050 low:0.5506 | vs P0 dAUC=+0.0032[-0.0021,+0.0082] dmac=+0.0019[-0.0048,+0.0085] dmic=+0.0023[-0.0046,+0.0090]
+[result s0] all_prank|P3       AUC=0.6836 mac=0.6338 mic=0.6351 n>=.9=0 max=0.832 groups=high:0.7843 mid:0.6854 low:0.5235 | vs P0 dAUC=+0.0083[-0.0017,+0.0189] dmac=+0.0084[-0.0020,+0.0193] dmic=+0.0087[-0.0020,+0.0198]
+[result s0] fuseH_wf|P3        AUC=0.7159 mac=0.6578 mic=0.6584 n>=.9=0 max=0.875 groups=high:0.8125 mid:0.7072 low:0.5505 | vs P0 dAUC=+0.0020[-0.0027,+0.0069] dmac=+0.0037[-0.0026,+0.0101] dmic=+0.0040[-0.0024,+0.0104]
+[result s0] all_prank|P2+P0    AUC=0.6834 mac=0.6332 mic=0.6348 n>=.9=0 max=0.848 groups=high:0.7758 mid:0.6848 low:0.5243 | vs P0 dAUC=+0.0080[+0.0001,+0.0161] dmac=+0.0078[-0.0006,+0.0159] dmic=+0.0083[-0.0001,+0.0165]
+[result s0] fuseH_wf|P2+P0     AUC=0.7167 mac=0.6566 mic=0.6579 n>=.9=0 max=0.860 groups=high:0.8194 mid:0.7033 low:0.5530 | vs P0 dAUC=+0.0027[-0.0011,+0.0063] dmac=+0.0026[-0.0025,+0.0079] dmic=+0.0034[-0.0016,+0.0087]
+[eval P0 s1 fold 1/5] dim=2667 fit_s=23.6 elapsed=1299.6s
+[eval P0 s1 fold 2/5] dim=2667 fit_s=23.3 elapsed=1322.9s
+[eval P0 s1 fold 3/5] dim=2667 fit_s=23.4 elapsed=1346.3s
+[eval P0 s1 fold 4/5] dim=2667 fit_s=23.3 elapsed=1369.6s
+[eval P0 s1 fold 5/5] dim=2667 fit_s=23.3 elapsed=1392.9s
+[check] P0 all_prank == stored stream1__all_prank max|d|=0.0e+00
+[eval P0r s1 fold 1/5] dim=2667 fit_s=23.6 elapsed=1416.5s
+[eval P0r s1 fold 2/5] dim=2667 fit_s=23.4 elapsed=1439.9s
+[eval P0r s1 fold 3/5] dim=2667 fit_s=23.6 elapsed=1463.5s
+[eval P0r s1 fold 4/5] dim=2667 fit_s=23.5 elapsed=1487.0s
+[eval P0r s1 fold 5/5] dim=2667 fit_s=23.6 elapsed=1510.5s
+[eval P1 s1 fold 1/5] dim=2667 fit_s=23.6 elapsed=1534.2s
+[eval P1 s1 fold 2/5] dim=2667 fit_s=23.6 elapsed=1557.8s
+[eval P1 s1 fold 3/5] dim=2667 fit_s=23.9 elapsed=1581.7s
+[eval P1 s1 fold 4/5] dim=2667 fit_s=23.3 elapsed=1605.0s
+[eval P1 s1 fold 5/5] dim=2667 fit_s=23.3 elapsed=1628.3s
+[eval P2 s1 fold 1/5] dim=2667 fit_s=23.6 elapsed=1651.9s
+[eval P2 s1 fold 2/5] dim=2667 fit_s=23.5 elapsed=1675.4s
+[eval P2 s1 fold 3/5] dim=2667 fit_s=23.3 elapsed=1698.7s
+[eval P2 s1 fold 4/5] dim=2667 fit_s=23.6 elapsed=1722.2s
+[eval P2 s1 fold 5/5] dim=2667 fit_s=23.6 elapsed=1745.9s
+[eval P3 s1 fold 1/5] dim=2667 fit_s=23.7 elapsed=1769.7s
+[eval P3 s1 fold 2/5] dim=2667 fit_s=23.5 elapsed=1793.2s
+[eval P3 s1 fold 3/5] dim=2667 fit_s=23.5 elapsed=1816.7s
+[eval P3 s1 fold 4/5] dim=2667 fit_s=23.3 elapsed=1840.0s
+[eval P3 s1 fold 5/5] dim=2667 fit_s=23.6 elapsed=1863.6s
+[eval P2+P0 s1 fold 1/5] dim=5241 fit_s=50.7 elapsed=1914.4s
+[eval P2+P0 s1 fold 2/5] dim=5241 fit_s=50.6 elapsed=1965.0s
+[eval P2+P0 s1 fold 3/5] dim=5241 fit_s=50.7 elapsed=2015.7s
+[eval P2+P0 s1 fold 4/5] dim=5241 fit_s=50.7 elapsed=2066.5s
+[eval P2+P0 s1 fold 5/5] dim=5241 fit_s=51.2 elapsed=2117.7s
+[result s1] all_prank|P0       AUC=0.6803 mac=0.6328 mic=0.6346 n>=.9=0 max=0.858 groups=high:0.7746 mid:0.6796 low:0.5320
+[result s1] fuseH_wf|P0        AUC=0.7106 mac=0.6505 mic=0.6520 n>=.9=0 max=0.891 groups=high:0.8145 mid:0.6958 low:0.5490
+[result s1] all_prank|P0r      AUC=0.6811 mac=0.6322 mic=0.6338 n>=.9=0 max=0.851 groups=high:0.7735 mid:0.6814 low:0.5273 | vs P0 dAUC=+0.0008[-0.0006,+0.0023] dmac=-0.0006[-0.0040,+0.0028] dmic=-0.0008[-0.0042,+0.0024]
+[result s1] fuseH_wf|P0r       AUC=0.7108 mac=0.6517 mic=0.6530 n>=.9=0 max=0.895 groups=high:0.8133 mid:0.6968 low:0.5508 | vs P0 dAUC=+0.0002[-0.0004,+0.0009] dmac=+0.0011[-0.0005,+0.0030] dmic=+0.0009[-0.0007,+0.0027]
+[result s1] all_prank|P1       AUC=0.6818 mac=0.6355 mic=0.6361 n>=.9=0 max=0.784 groups=high:0.7517 mid:0.6826 low:0.5380 | vs P0 dAUC=+0.0018[-0.0101,+0.0140] dmac=+0.0030[-0.0092,+0.0149] dmic=+0.0018[-0.0100,+0.0130]
+[result s1] fuseH_wf|P1        AUC=0.7066 mac=0.6499 mic=0.6508 n>=.9=0 max=0.899 groups=high:0.7962 mid:0.6946 low:0.5520 | vs P0 dAUC=-0.0039[-0.0098,+0.0018] dmac=-0.0006[-0.0066,+0.0055] dmic=-0.0012[-0.0072,+0.0045]
+[result s1] all_prank|P2       AUC=0.6900 mac=0.6370 mic=0.6386 n>=.9=0 max=0.818 groups=high:0.7716 mid:0.6881 low:0.5299 | vs P0 dAUC=+0.0098[-0.0013,+0.0218] dmac=+0.0044[-0.0072,+0.0164] dmic=+0.0042[-0.0071,+0.0156]
+[result s1] fuseH_wf|P2        AUC=0.7109 mac=0.6519 mic=0.6529 n>=.9=0 max=0.885 groups=high:0.7972 mid:0.6994 low:0.5494 | vs P0 dAUC=+0.0002[-0.0052,+0.0053] dmac=+0.0013[-0.0046,+0.0076] dmic=+0.0008[-0.0047,+0.0068]
+[result s1] all_prank|P3       AUC=0.6885 mac=0.6375 mic=0.6393 n>=.9=0 max=0.825 groups=high:0.7778 mid:0.6882 low:0.5302 | vs P0 dAUC=+0.0084[-0.0019,+0.0197] dmac=+0.0049[-0.0064,+0.0166] dmic=+0.0048[-0.0062,+0.0165]
+[result s1] fuseH_wf|P3        AUC=0.7112 mac=0.6503 mic=0.6515 n>=.9=0 max=0.899 groups=high:0.8102 mid:0.6968 low:0.5471 | vs P0 dAUC=+0.0005[-0.0043,+0.0056] dmac=-0.0003[-0.0056,+0.0054] dmic=-0.0005[-0.0059,+0.0052]
+[result s1] all_prank|P2+P0    AUC=0.6870 mac=0.6372 mic=0.6385 n>=.9=0 max=0.855 groups=high:0.7817 mid:0.6877 low:0.5297 | vs P0 dAUC=+0.0068[-0.0009,+0.0142] dmac=+0.0046[-0.0040,+0.0127] dmic=+0.0040[-0.0040,+0.0119]
+[result s1] fuseH_wf|P2+P0     AUC=0.7119 mac=0.6513 mic=0.6529 n>=.9=1 max=0.906 groups=high:0.8147 mid:0.6990 low:0.5456 | vs P0 dAUC=+0.0013[-0.0024,+0.0046] dmac=+0.0007[-0.0036,+0.0051] dmic=+0.0009[-0.0034,+0.0053]
+[eval P0 s2 fold 1/5] dim=2667 fit_s=23.7 elapsed=2155.3s
+[eval P0 s2 fold 2/5] dim=2667 fit_s=23.4 elapsed=2178.8s
+[eval P0 s2 fold 3/5] dim=2667 fit_s=23.5 elapsed=2202.3s
+[eval P0 s2 fold 4/5] dim=2667 fit_s=23.3 elapsed=2225.6s
+[eval P0 s2 fold 5/5] dim=2667 fit_s=23.7 elapsed=2249.3s
+[check] P0 all_prank == stored stream2__all_prank max|d|=0.0e+00
+[eval P0r s2 fold 1/5] dim=2667 fit_s=23.6 elapsed=2272.9s
+[eval P0r s2 fold 2/5] dim=2667 fit_s=23.4 elapsed=2296.3s
+[eval P0r s2 fold 3/5] dim=2667 fit_s=23.6 elapsed=2319.9s
+[eval P0r s2 fold 4/5] dim=2667 fit_s=23.4 elapsed=2343.4s
+[eval P0r s2 fold 5/5] dim=2667 fit_s=23.7 elapsed=2367.1s
+[eval P1 s2 fold 1/5] dim=2667 fit_s=23.7 elapsed=2390.8s
+[eval P1 s2 fold 2/5] dim=2667 fit_s=23.6 elapsed=2414.4s
+[eval P1 s2 fold 3/5] dim=2667 fit_s=23.6 elapsed=2438.0s
+[eval P1 s2 fold 4/5] dim=2667 fit_s=23.6 elapsed=2461.6s
+[eval P1 s2 fold 5/5] dim=2667 fit_s=23.6 elapsed=2485.3s
+[eval P2 s2 fold 1/5] dim=2667 fit_s=23.8 elapsed=2509.1s
+[eval P2 s2 fold 2/5] dim=2667 fit_s=23.5 elapsed=2532.6s
+[eval P2 s2 fold 3/5] dim=2667 fit_s=23.6 elapsed=2556.3s
+[eval P2 s2 fold 4/5] dim=2667 fit_s=23.5 elapsed=2579.8s
+[eval P2 s2 fold 5/5] dim=2667 fit_s=23.8 elapsed=2603.6s
+[eval P3 s2 fold 1/5] dim=2667 fit_s=23.7 elapsed=2627.3s
+[eval P3 s2 fold 2/5] dim=2667 fit_s=23.5 elapsed=2650.8s
+[eval P3 s2 fold 3/5] dim=2667 fit_s=23.5 elapsed=2674.4s
+[eval P3 s2 fold 4/5] dim=2667 fit_s=23.4 elapsed=2697.8s
+[eval P3 s2 fold 5/5] dim=2667 fit_s=23.6 elapsed=2721.4s
+[eval P2+P0 s2 fold 1/5] dim=5241 fit_s=51.6 elapsed=2773.1s
+[eval P2+P0 s2 fold 2/5] dim=5241 fit_s=51.6 elapsed=2824.6s
+[eval P2+P0 s2 fold 3/5] dim=5241 fit_s=51.7 elapsed=2876.3s
+[eval P2+P0 s2 fold 4/5] dim=5241 fit_s=52.3 elapsed=2928.5s
+[eval P2+P0 s2 fold 5/5] dim=5241 fit_s=51.2 elapsed=2979.8s
+[result s2] all_prank|P0       AUC=0.6806 mac=0.6299 mic=0.6308 n>=.9=0 max=0.855 groups=high:0.7949 mid:0.6767 low:0.5254
+[result s2] fuseH_wf|P0        AUC=0.7097 mac=0.6500 mic=0.6510 n>=.9=0 max=0.871 groups=high:0.8042 mid:0.6941 low:0.5520
+[result s2] all_prank|P0r      AUC=0.6791 mac=0.6315 mic=0.6326 n>=.9=0 max=0.851 groups=high:0.7925 mid:0.6806 low:0.5238 | vs P0 dAUC=-0.0015[-0.0038,+0.0008] dmac=+0.0017[-0.0018,+0.0051] dmic=+0.0018[-0.0017,+0.0052]
+[result s2] fuseH_wf|P0r       AUC=0.7087 mac=0.6504 mic=0.6515 n>=.9=0 max=0.874 groups=high:0.8054 mid:0.6948 low:0.5518 | vs P0 dAUC=-0.0010[-0.0021,+0.0000] dmac=+0.0005[-0.0015,+0.0024] dmic=+0.0006[-0.0014,+0.0025]
+[result s2] all_prank|P1       AUC=0.6874 mac=0.6357 mic=0.6371 n>=.9=0 max=0.794 groups=high:0.7601 mid:0.6789 low:0.5435 | vs P0 dAUC=+0.0069[-0.0043,+0.0178] dmac=+0.0061[-0.0052,+0.0175] dmic=+0.0066[-0.0049,+0.0182]
+[result s2] fuseH_wf|P1        AUC=0.7089 mac=0.6505 mic=0.6517 n>=.9=0 max=0.870 groups=high:0.7962 mid:0.6954 low:0.5522 | vs P0 dAUC=-0.0008[-0.0060,+0.0046] dmac=+0.0006[-0.0061,+0.0074] dmic=+0.0009[-0.0059,+0.0078]
+[result s2] all_prank|P2       AUC=0.6884 mac=0.6378 mic=0.6395 n>=.9=0 max=0.806 groups=high:0.7797 mid:0.6843 low:0.5375 | vs P0 dAUC=+0.0079[-0.0038,+0.0204] dmac=+0.0082[-0.0063,+0.0220] dmic=+0.0088[-0.0055,+0.0226]
+[result s2] fuseH_wf|P2        AUC=0.7102 mac=0.6499 mic=0.6512 n>=.9=0 max=0.870 groups=high:0.8030 mid:0.6992 low:0.5432 | vs P0 dAUC=+0.0005[-0.0050,+0.0064] dmac=+0.0002[-0.0092,+0.0085] dmic=+0.0005[-0.0084,+0.0087]
+[result s2] all_prank|P3       AUC=0.6882 mac=0.6382 mic=0.6395 n>=.9=0 max=0.822 groups=high:0.7773 mid:0.6873 low:0.5337 | vs P0 dAUC=+0.0078[-0.0035,+0.0204] dmac=+0.0086[-0.0053,+0.0229] dmic=+0.0089[-0.0052,+0.0231]
+[result s2] fuseH_wf|P3        AUC=0.7101 mac=0.6522 mic=0.6533 n>=.9=0 max=0.867 groups=high:0.8109 mid:0.6992 low:0.5483 | vs P0 dAUC=+0.0005[-0.0049,+0.0060] dmac=+0.0024[-0.0052,+0.0100] dmic=+0.0025[-0.0048,+0.0101]
+[result s2] all_prank|P2+P0    AUC=0.6825 mac=0.6341 mic=0.6359 n>=.9=0 max=0.820 groups=high:0.7729 mid:0.6882 low:0.5211 | vs P0 dAUC=+0.0019[-0.0053,+0.0088] dmac=+0.0044[-0.0040,+0.0128] dmic=+0.0053[-0.0030,+0.0135]
+[result s2] fuseH_wf|P2+P0     AUC=0.7082 mac=0.6482 mic=0.6496 n>=.9=0 max=0.867 groups=high:0.8067 mid:0.6968 low:0.5417 | vs P0 dAUC=-0.0015[-0.0049,+0.0018] dmac=-0.0017[-0.0077,+0.0039] dmic=-0.0013[-0.0070,+0.0040]
+[summary] mean over seeds
+[summary] all_prank|P0       AUC=0.6788 mac=0.6295 mic=0.6307 n>=.9=0.00 max=0.856 high:0.7836 mid:0.6775 low:0.5246
+[summary] fuseH_wf|P0        AUC=0.7114 mac=0.6515 mic=0.6525 n>=.9=0.00 max=0.872 high:0.8111 mid:0.6966 low:0.5509
+[summary] all_prank|P0r      AUC=0.6787 mac=0.6300 mic=0.6313 n>=.9=0.00 max=0.852 high:0.7833 mid:0.6799 low:0.5223 | dAUC=-0.0001[-0.0018,+0.0016] dmac=+0.0006[-0.0024,+0.0035] dmic=+0.0006[-0.0023,+0.0035]
+[summary] fuseH_wf|P0r       AUC=0.7112 mac=0.6522 mic=0.6531 n>=.9=0.00 max=0.875 high:0.8115 mid:0.6970 low:0.5521 | dAUC=-0.0002[-0.0010,+0.0006] dmac=+0.0007[-0.0010,+0.0024] dmic=+0.0006[-0.0010,+0.0022]
+[summary] all_prank|P1       AUC=0.6834 mac=0.6343 mic=0.6353 n>=.9=0.00 max=0.798 high:0.7557 mid:0.6811 low:0.5366 | dAUC=+0.0048[-0.0064,+0.0162] dmac=+0.0052[-0.0067,+0.0168] dmic=+0.0049[-0.0069,+0.0163]
+[summary] fuseH_wf|P1        AUC=0.7095 mac=0.6524 mic=0.6532 n>=.9=0.00 max=0.875 high:0.7962 mid:0.6974 low:0.5544 | dAUC=-0.0019[-0.0074,+0.0037] dmac=+0.0009[-0.0054,+0.0074] dmic=+0.0007[-0.0057,+0.0071]
+[summary] all_prank|P2       AUC=0.6884 mac=0.6366 mic=0.6380 n>=.9=0.00 max=0.812 high:0.7774 mid:0.6855 low:0.5325 | dAUC=+0.0098[-0.0014,+0.0216] dmac=+0.0075[-0.0049,+0.0198] dmic=+0.0076[-0.0047,+0.0197]
+[summary] fuseH_wf|P2        AUC=0.7127 mac=0.6526 mic=0.6536 n>=.9=0.00 max=0.877 high:0.8008 mid:0.7012 low:0.5477 | dAUC=+0.0013[-0.0041,+0.0066] dmac=+0.0011[-0.0062,+0.0082] dmic=+0.0012[-0.0059,+0.0082]
+[summary] all_prank|P3       AUC=0.6868 mac=0.6365 mic=0.6379 n>=.9=0.00 max=0.826 high:0.7798 mid:0.6870 low:0.5292 | dAUC=+0.0082[-0.0024,+0.0197] dmac=+0.0073[-0.0046,+0.0196] dmic=+0.0075[-0.0045,+0.0198]
+[summary] fuseH_wf|P3        AUC=0.7124 mac=0.6534 mic=0.6544 n>=.9=0.00 max=0.880 high:0.8112 mid:0.7011 low:0.5486 | dAUC=+0.0010[-0.0040,+0.0062] dmac=+0.0019[-0.0045,+0.0085] dmic=+0.0020[-0.0044,+0.0086]
+[summary] all_prank|P2+P0    AUC=0.6843 mac=0.6348 mic=0.6364 n>=.9=0.00 max=0.841 high:0.7768 mid:0.6869 low:0.5250 | dAUC=+0.0056[-0.0020,+0.0130] dmac=+0.0056[-0.0029,+0.0138] dmic=+0.0059[-0.0024,+0.0140]
+[summary] fuseH_wf|P2+P0     AUC=0.7123 mac=0.6520 mic=0.6535 n>=.9=0.33 max=0.878 high:0.8136 mid:0.6997 low:0.5468 | dAUC=+0.0008[-0.0028,+0.0042] dmac=+0.0005[-0.0046,+0.0056] dmic=+0.0010[-0.0040,+0.0060]
+[done] elapsed=2993.8s -> preproc_study_results.json
