@@ -1,0 +1,443 @@
+[check] P2 rows aligned with load_db order (11 raw_ columns identical, 16067 rows)
+[fam] autocorr=10 dwt_energy=23 dwt_stats=234 entropy_zc=6 hilbert_env=65 hilbert_freq=65 hjorth=6 stft_abs_band=25 stft_ms_log=195 stft_ms_rel=195 stft_rel_band=25 time_qc=9 aper_emg=31
+[start] rows=16067 subjects=57 smoke=False sseeds=(0, 1, 2) R=16 MIN=48 PCA=16 clip=+-3.0 knn=10 alpha=0.2 jobs=8
+[check] fold == depositioned_aperiodic_emg_oof.npz fold
+[zz] fold 0 ZZ / ZP2 built (3118 test rows) elapsed=1.9s
+[zz] fold 1 ZZ / ZP2 built (3264 test rows) elapsed=3.0s
+[zz] fold 2 ZZ / ZP2 built (3141 test rows) elapsed=4.3s
+[zz] fold 3 ZZ / ZP2 built (3401 test rows) elapsed=5.5s
+[zz] fold 4 ZZ / ZP2 built (3143 test rows) elapsed=6.6s
+[s0] subject sub-001 (fold 2) 1/57 refits=16 stream_s=9.9 elapsed=16.5s
+[s0] subject sub-002 (fold 4) 2/57 refits=14 stream_s=9.9 elapsed=16.5s
+[s0] subject sub-003 (fold 1) 3/57 refits=14 stream_s=9.9 elapsed=16.5s
+[s0] subject sub-004 (fold 3) 4/57 refits=15 stream_s=9.9 elapsed=16.5s
+[s0] subject sub-005 (fold 2) 5/57 refits=15 stream_s=9.9 elapsed=16.5s
+[s0] subject sub-006 (fold 2) 6/57 refits=15 stream_s=9.9 elapsed=16.5s
+[s0] subject sub-007 (fold 2) 7/57 refits=15 stream_s=9.9 elapsed=16.5s
+[s0] subject sub-008 (fold 3) 8/57 refits=15 stream_s=9.9 elapsed=16.5s
+[s0] subject sub-009 (fold 0) 9/57 refits=11 stream_s=11.9 elapsed=18.5s
+[s0] subject sub-010 (fold 4) 10/57 refits=16 stream_s=14.2 elapsed=20.8s
+[s0] subject sub-011 (fold 2) 11/57 refits=16 stream_s=14.6 elapsed=21.2s
+[s0] subject sub-012 (fold 1) 12/57 refits=15 stream_s=14.6 elapsed=21.2s
+[s0] subject sub-013 (fold 3) 13/57 refits=15 stream_s=14.6 elapsed=21.2s
+[s0] subject sub-014 (fold 4) 14/57 refits=16 stream_s=14.6 elapsed=21.2s
+[s0] subject sub-015 (fold 3) 15/57 refits=14 stream_s=14.6 elapsed=21.2s
+[s0] subject sub-016 (fold 3) 16/57 refits=16 stream_s=14.6 elapsed=21.2s
+[s0] subject sub-017 (fold 2) 17/57 refits=15 stream_s=15.9 elapsed=22.5s
+[s0] subject sub-018 (fold 4) 18/57 refits=15 stream_s=17.8 elapsed=24.4s
+[s0] subject sub-019 (fold 2) 19/57 refits=16 stream_s=18.6 elapsed=25.2s
+[s0] subject sub-020 (fold 4) 20/57 refits=15 stream_s=18.6 elapsed=25.2s
+[s0] subject sub-021 (fold 4) 21/57 refits=15 stream_s=18.6 elapsed=25.2s
+[s0] subject sub-022 (fold 0) 22/57 refits=16 stream_s=18.8 elapsed=25.4s
+[s0] subject sub-023 (fold 0) 23/57 refits=16 stream_s=19.2 elapsed=25.8s
+[s0] subject sub-024 (fold 0) 24/57 refits=16 stream_s=19.2 elapsed=25.8s
+[s0] subject sub-025 (fold 2) 25/57 refits=15 stream_s=20.1 elapsed=26.7s
+[s0] subject sub-026 (fold 2) 26/57 refits=16 stream_s=22.4 elapsed=29.0s
+[s0] subject sub-027 (fold 4) 27/57 refits=15 stream_s=22.4 elapsed=29.0s
+[s0] subject sub-028 (fold 3) 28/57 refits=15 stream_s=22.4 elapsed=29.0s
+[s0] subject sub-029 (fold 0) 29/57 refits=16 stream_s=23.2 elapsed=29.7s
+[s0] subject sub-030 (fold 4) 30/57 refits=16 stream_s=23.2 elapsed=29.7s
+[s0] subject sub-031 (fold 2) 31/57 refits=16 stream_s=23.7 elapsed=30.3s
+[s0] subject sub-034 (fold 1) 32/57 refits=5 stream_s=23.7 elapsed=30.3s
+[s0] subject sub-035 (fold 1) 33/57 refits=16 stream_s=24.5 elapsed=31.1s
+[s0] subject sub-036 (fold 1) 34/57 refits=15 stream_s=24.5 elapsed=31.1s
+[s0] subject sub-037 (fold 0) 35/57 refits=16 stream_s=26.7 elapsed=33.3s
+[s0] subject sub-038 (fold 1) 36/57 refits=16 stream_s=26.7 elapsed=33.3s
+[s0] subject sub-039 (fold 1) 37/57 refits=16 stream_s=27.1 elapsed=33.7s
+[s0] subject sub-040 (fold 3) 38/57 refits=15 stream_s=27.3 elapsed=33.9s
+[s0] subject sub-041 (fold 1) 39/57 refits=15 stream_s=27.3 elapsed=33.9s
+[s0] subject sub-042 (fold 3) 40/57 refits=15 stream_s=27.8 elapsed=34.3s
+[s0] subject sub-043 (fold 3) 41/57 refits=15 stream_s=28.0 elapsed=34.6s
+[s0] subject sub-044 (fold 4) 42/57 refits=15 stream_s=28.4 elapsed=35.0s
+[s0] subject sub-045 (fold 0) 43/57 refits=15 stream_s=30.6 elapsed=37.2s
+[s0] subject sub-046 (fold 1) 44/57 refits=15 stream_s=30.6 elapsed=37.2s
+[s0] subject sub-047 (fold 4) 45/57 refits=15 stream_s=31.1 elapsed=37.7s
+[s0] subject sub-048 (fold 0) 46/57 refits=15 stream_s=31.3 elapsed=37.9s
+[s0] subject sub-049 (fold 3) 47/57 refits=15 stream_s=31.4 elapsed=38.0s
+[s0] subject sub-050 (fold 1) 48/57 refits=15 stream_s=31.9 elapsed=38.5s
+[s0] subject sub-051 (fold 0) 49/57 refits=16 stream_s=32.3 elapsed=38.9s
+[s0] subject sub-052 (fold 4) 50/57 refits=15 stream_s=32.4 elapsed=38.9s
+[s0] subject sub-053 (fold 0) 51/57 refits=16 stream_s=34.7 elapsed=41.3s
+[s0] subject sub-054 (fold 3) 52/57 refits=16 stream_s=34.7 elapsed=41.3s
+[s0] subject sub-055 (fold 0) 53/57 refits=15 stream_s=35.0 elapsed=41.6s
+[s0] subject sub-056 (fold 3) 54/57 refits=16 stream_s=35.2 elapsed=41.8s
+[s0] subject sub-057 (fold 2) 55/57 refits=15 stream_s=35.2 elapsed=41.8s
+[s0] subject sub-058 (fold 1) 56/57 refits=16 stream_s=35.7 elapsed=42.3s
+[s0] subject sub-059 (fold 1) 57/57 refits=16 stream_s=36.0 elapsed=42.6s
+[naive] t0=80 max|diff| ref_lr_full=1.68e-04 rank_lr=1.11e-16 spread=3.09e-04
+[check s0] sub-001: isolation / prefix / label shuffle / naive ref OK elapsed=50.5s
+[naive] t0=80 max|diff| ref_lr_full=8.12e-04 rank_lr=2.22e-16 spread=9.00e-03
+[check s0] sub-002: isolation / prefix / label shuffle / naive ref OK elapsed=55.9s
+[label-acc s0] pseudo       all=0.7153 high=0.9020 mid=0.7845 low=0.5696 (n_subj=57)
+[label-acc s0] spread       all=0.6795 high=0.8775 mid=0.7359 low=0.5540 (n_subj=57)
+[label-acc s0] gmm_orient   all=0.5410 high=0.6775 mid=0.5536 low=0.4992 (n_subj=57)
+[spread s0] degenerate 0/861; seed flip rate=0.0000
+[past-AUC s0] ref_lr_full  all=0.6994 high=0.8936 mid=0.7674 low=0.5547
+[past-AUC s0] rank_lr      all=0.7011 high=0.8938 mid=0.7712 low=0.5530
+[past-AUC s0] p2_lr        all=0.6926 high=0.8872 mid=0.7620 low=0.5453
+[past-AUC s0] cat_lr       all=0.6990 high=0.8939 mid=0.7675 low=0.5534
+[past-AUC s0] fam_vote     all=0.6908 high=0.8866 mid=0.7551 low=0.5521
+[past-AUC s0] spread       all=0.6994 high=0.8942 mid=0.7704 low=0.5495
+[past-AUC s0] gmm_orient   all=0.5615 high=0.7231 mid=0.5823 low=0.5018
+[z s0] ref_lr_full  coverage=0.830 std=0.979 clipped=0.009
+[z s0] rank_lr      coverage=0.830 std=0.957 clipped=0.000
+[z s0] p2_lr        coverage=0.830 std=0.962 clipped=0.008
+[z s0] cat_lr       coverage=0.830 std=0.964 clipped=0.009
+[z s0] fam_vote     coverage=0.830 std=0.968 clipped=0.011
+[z s0] spread       coverage=0.830 std=0.987 clipped=0.009
+[z s0] gmm_orient   coverage=0.830 std=0.828 clipped=0.003
+[result stream 0] fuseH_wf               all: AUC=0.7140 mac=0.6541 mic=0.6545 | mature: AUC=0.7147 mac=0.6563 mic=0.6561 | subj>=.9=0 max=0.853
+[result stream 0] fuseH_wf_thr           all: AUC=0.7161 mac=0.6574 mic=0.6582 | mature: AUC=0.7175 mac=0.6592 mic=0.6594 | subj>=.9=0 max=0.872
+[result stream 0] fuse_ref_lr_full       all: AUC=0.7144 mac=0.6664 mic=0.6674 | mature: AUC=0.7164 mac=0.6667 mic=0.6675 | subj>=.9=0 max=0.856
+[result stream 0] fuse_ref_lr_full_thr   all: AUC=0.7152 mac=0.6684 mic=0.6695 | mature: AUC=0.7171 mac=0.6687 mic=0.6697 | subj>=.9=0 max=0.868
+[result stream 0] fuse_rank_lr           all: AUC=0.7151 mac=0.6654 mic=0.6660 | mature: AUC=0.7175 mac=0.6641 mic=0.6650 | subj>=.9=0 max=0.855
+[result stream 0] fuse_rank_lr_thr       all: AUC=0.7157 mac=0.6649 mic=0.6657 | mature: AUC=0.7180 mac=0.6631 mic=0.6642 | subj>=.9=0 max=0.861
+[result stream 0] fuse_p2_lr             all: AUC=0.7118 mac=0.6599 mic=0.6613 | mature: AUC=0.7128 mac=0.6618 mic=0.6627 | subj>=.9=0 max=0.860
+[result stream 0] fuse_p2_lr_thr         all: AUC=0.7126 mac=0.6625 mic=0.6640 | mature: AUC=0.7134 mac=0.6623 mic=0.6637 | subj>=.9=0 max=0.865
+[result stream 0] fuse_cat_lr            all: AUC=0.7148 mac=0.6637 mic=0.6646 | mature: AUC=0.7161 mac=0.6631 mic=0.6639 | subj>=.9=0 max=0.858
+[result stream 0] fuse_cat_lr_thr        all: AUC=0.7155 mac=0.6653 mic=0.6663 | mature: AUC=0.7167 mac=0.6641 mic=0.6650 | subj>=.9=0 max=0.868
+[result stream 0] fuse_fam_vote          all: AUC=0.7135 mac=0.6661 mic=0.6669 | mature: AUC=0.7158 mac=0.6672 mic=0.6676 | subj>=.9=0 max=0.862
+[result stream 0] fuse_fam_vote_thr      all: AUC=0.7142 mac=0.6676 mic=0.6687 | mature: AUC=0.7166 mac=0.6692 mic=0.6702 | subj>=.9=0 max=0.861
+[result stream 0] fuse_spread            all: AUC=0.7149 mac=0.6678 mic=0.6688 | mature: AUC=0.7188 mac=0.6712 mic=0.6717 | subj>=.9=0 max=0.861
+[result stream 0] fuse_spread_thr        all: AUC=0.7157 mac=0.6690 mic=0.6700 | mature: AUC=0.7193 mac=0.6716 mic=0.6724 | subj>=.9=0 max=0.879
+[result stream 0] fuse_gmm_orient        all: AUC=0.6608 mac=0.6140 mic=0.6158 | mature: AUC=0.6533 mac=0.6079 mic=0.6099 | subj>=.9=0 max=0.854
+[result stream 0] fuse_gmm_orient_thr    all: AUC=0.6646 mac=0.6224 mic=0.6239 | mature: AUC=0.6563 mac=0.6148 mic=0.6164 | subj>=.9=0 max=0.844
+[check s0] fuse_ref_lr_full(_thr) reproduces v2 fuse_pseudo_lr_full(_thr) mac=0.6664/0.6684
+[group stream 0] fuseH_wf               high(n=3): mean=0.8146 dmean_vs_ref_thr=-0.0407 | mid(n=34): mean=0.7001 dmean_vs_ref_thr=-0.0278 | low(n=20): mean=0.5518 dmean_vs_ref_thr=+0.0125
+[group stream 0] fuseH_wf_thr           high(n=3): mean=0.8300 dmean_vs_ref_thr=-0.0253 | mid(n=34): mean=0.7060 dmean_vs_ref_thr=-0.0219 | low(n=20): mean=0.5490 dmean_vs_ref_thr=+0.0097
+[group stream 0] fuse_ref_lr_full       high(n=3): mean=0.8503 dmean_vs_ref_thr=-0.0050 | mid(n=34): mean=0.7247 dmean_vs_ref_thr=-0.0031 | low(n=20): mean=0.5396 dmean_vs_ref_thr=+0.0003
+[group stream 0] fuse_ref_lr_full_thr   high(n=3): mean=0.8553 dmean_vs_ref_thr=+0.0000 | mid(n=34): mean=0.7279 dmean_vs_ref_thr=+0.0000 | low(n=20): mean=0.5393 dmean_vs_ref_thr=+0.0000
+[group stream 0] fuse_rank_lr           high(n=3): mean=0.8444 dmean_vs_ref_thr=-0.0110 | mid(n=34): mean=0.7251 dmean_vs_ref_thr=-0.0028 | low(n=20): mean=0.5371 dmean_vs_ref_thr=-0.0022
+[group stream 0] fuse_rank_lr_thr       high(n=3): mean=0.8458 dmean_vs_ref_thr=-0.0095 | mid(n=34): mean=0.7253 dmean_vs_ref_thr=-0.0026 | low(n=20): mean=0.5351 dmean_vs_ref_thr=-0.0042
+[group stream 0] fuse_p2_lr             high(n=3): mean=0.8528 dmean_vs_ref_thr=-0.0025 | mid(n=34): mean=0.7180 dmean_vs_ref_thr=-0.0099 | low(n=20): mean=0.5323 dmean_vs_ref_thr=-0.0070
+[group stream 0] fuse_p2_lr_thr         high(n=3): mean=0.8554 dmean_vs_ref_thr=+0.0001 | mid(n=34): mean=0.7232 dmean_vs_ref_thr=-0.0047 | low(n=20): mean=0.5303 dmean_vs_ref_thr=-0.0089
+[group stream 0] fuse_cat_lr            high(n=3): mean=0.8505 dmean_vs_ref_thr=-0.0048 | mid(n=34): mean=0.7198 dmean_vs_ref_thr=-0.0081 | low(n=20): mean=0.5403 dmean_vs_ref_thr=+0.0010
+[group stream 0] fuse_cat_lr_thr        high(n=3): mean=0.8530 dmean_vs_ref_thr=-0.0023 | mid(n=34): mean=0.7239 dmean_vs_ref_thr=-0.0040 | low(n=20): mean=0.5375 dmean_vs_ref_thr=-0.0018
+[group stream 0] fuse_fam_vote          high(n=3): mean=0.8458 dmean_vs_ref_thr=-0.0096 | mid(n=34): mean=0.7211 dmean_vs_ref_thr=-0.0068 | low(n=20): mean=0.5455 dmean_vs_ref_thr=+0.0063
+[group stream 0] fuse_fam_vote_thr      high(n=3): mean=0.8461 dmean_vs_ref_thr=-0.0092 | mid(n=34): mean=0.7255 dmean_vs_ref_thr=-0.0024 | low(n=20): mean=0.5424 dmean_vs_ref_thr=+0.0031
+[group stream 0] fuse_spread            high(n=3): mean=0.8491 dmean_vs_ref_thr=-0.0062 | mid(n=34): mean=0.7295 dmean_vs_ref_thr=+0.0016 | low(n=20): mean=0.5357 dmean_vs_ref_thr=-0.0036
+[group stream 0] fuse_spread_thr        high(n=3): mean=0.8517 dmean_vs_ref_thr=-0.0036 | mid(n=34): mean=0.7306 dmean_vs_ref_thr=+0.0027 | low(n=20): mean=0.5370 dmean_vs_ref_thr=-0.0023
+[group stream 0] fuse_gmm_orient        high(n=3): mean=0.8074 dmean_vs_ref_thr=-0.0479 | mid(n=34): mean=0.6460 dmean_vs_ref_thr=-0.0819 | low(n=20): mean=0.5305 dmean_vs_ref_thr=-0.0087
+[group stream 0] fuse_gmm_orient_thr    high(n=3): mean=0.8179 dmean_vs_ref_thr=-0.0374 | mid(n=34): mean=0.6577 dmean_vs_ref_thr=-0.0702 | low(n=20): mean=0.5332 dmean_vs_ref_thr=-0.0061
+[boot stream 0] fuse_ref_lr_full       vs fuseH_wf             all    dAUC=+0.0001[-0.0106,+0.0109] dmac=+0.0121[+0.0023,+0.0225] dmic=+0.0126[+0.0027,+0.0230]
+[boot stream 0] fuse_ref_lr_full       vs fuseH_wf             mature dAUC=+0.0014[-0.0107,+0.0138] dmac=+0.0100[-0.0027,+0.0234] dmic=+0.0109[-0.0023,+0.0247]
+[boot stream 0] fuse_ref_lr_full_thr   vs fuseH_wf_thr         all    dAUC=-0.0011[-0.0118,+0.0091] dmac=+0.0108[+0.0019,+0.0208] dmic=+0.0111[+0.0023,+0.0211]
+[boot stream 0] fuse_ref_lr_full_thr   vs fuseH_wf_thr         mature dAUC=-0.0005[-0.0124,+0.0114] dmac=+0.0091[-0.0027,+0.0219] dmic=+0.0100[-0.0023,+0.0233]
+[boot stream 0] fuse_rank_lr           vs fuse_ref_lr_full     all    dAUC=+0.0007[-0.0024,+0.0040] dmac=-0.0010[-0.0048,+0.0027] dmic=-0.0014[-0.0052,+0.0024]
+[boot stream 0] fuse_rank_lr           vs fuse_ref_lr_full     mature dAUC=+0.0011[-0.0028,+0.0051] dmac=-0.0026[-0.0083,+0.0027] dmic=-0.0025[-0.0082,+0.0027]
+[boot stream 0] fuse_rank_lr_thr       vs fuse_ref_lr_full_thr all    dAUC=+0.0006[-0.0025,+0.0038] dmac=-0.0035[-0.0075,+0.0005] dmic=-0.0038[-0.0077,+0.0001]
+[boot stream 0] fuse_rank_lr_thr       vs fuse_ref_lr_full_thr mature dAUC=+0.0009[-0.0029,+0.0048] dmac=-0.0055[-0.0111,-0.0001] dmic=-0.0055[-0.0111,-0.0000]
+[boot stream 0] fuse_p2_lr             vs fuse_ref_lr_full     all    dAUC=-0.0025[-0.0079,+0.0023] dmac=-0.0064[-0.0123,-0.0006] dmic=-0.0060[-0.0119,-0.0006]
+[boot stream 0] fuse_p2_lr             vs fuse_ref_lr_full     mature dAUC=-0.0035[-0.0096,+0.0022] dmac=-0.0047[-0.0125,+0.0024] dmic=-0.0046[-0.0124,+0.0026]
+[boot stream 0] fuse_p2_lr_thr         vs fuse_ref_lr_full_thr all    dAUC=-0.0025[-0.0077,+0.0021] dmac=-0.0059[-0.0116,-0.0004] dmic=-0.0055[-0.0110,+0.0001]
+[boot stream 0] fuse_p2_lr_thr         vs fuse_ref_lr_full_thr mature dAUC=-0.0036[-0.0095,+0.0019] dmac=-0.0062[-0.0134,+0.0009] dmic=-0.0059[-0.0132,+0.0012]
+[boot stream 0] fuse_cat_lr            vs fuse_ref_lr_full     all    dAUC=+0.0004[-0.0019,+0.0027] dmac=-0.0027[-0.0057,+0.0005] dmic=-0.0027[-0.0058,+0.0005]
+[boot stream 0] fuse_cat_lr            vs fuse_ref_lr_full     mature dAUC=-0.0003[-0.0034,+0.0027] dmac=-0.0036[-0.0084,+0.0016] dmic=-0.0035[-0.0083,+0.0016]
+[boot stream 0] fuse_cat_lr_thr        vs fuse_ref_lr_full_thr all    dAUC=+0.0003[-0.0020,+0.0025] dmac=-0.0032[-0.0066,+0.0002] dmic=-0.0032[-0.0067,+0.0002]
+[boot stream 0] fuse_cat_lr_thr        vs fuse_ref_lr_full_thr mature dAUC=-0.0004[-0.0035,+0.0025] dmac=-0.0045[-0.0097,+0.0010] dmic=-0.0047[-0.0098,+0.0008]
+[boot stream 0] fuse_fam_vote          vs fuse_ref_lr_full     all    dAUC=-0.0010[-0.0063,+0.0047] dmac=-0.0004[-0.0065,+0.0065] dmic=-0.0005[-0.0069,+0.0065]
+[boot stream 0] fuse_fam_vote          vs fuse_ref_lr_full     mature dAUC=-0.0007[-0.0070,+0.0061] dmac=+0.0005[-0.0072,+0.0097] dmic=+0.0001[-0.0076,+0.0093]
+[boot stream 0] fuse_fam_vote_thr      vs fuse_ref_lr_full_thr all    dAUC=-0.0010[-0.0061,+0.0044] dmac=-0.0008[-0.0067,+0.0055] dmic=-0.0009[-0.0068,+0.0054]
+[boot stream 0] fuse_fam_vote_thr      vs fuse_ref_lr_full_thr mature dAUC=-0.0006[-0.0069,+0.0061] dmac=+0.0005[-0.0076,+0.0096] dmic=+0.0004[-0.0079,+0.0093]
+[boot stream 0] fuse_spread            vs fuse_ref_lr_full     all    dAUC=+0.0004[-0.0024,+0.0033] dmac=+0.0013[-0.0024,+0.0051] dmic=+0.0014[-0.0023,+0.0052]
+[boot stream 0] fuse_spread            vs fuse_ref_lr_full     mature dAUC=+0.0024[-0.0013,+0.0059] dmac=+0.0044[-0.0011,+0.0097] dmic=+0.0042[-0.0014,+0.0096]
+[boot stream 0] fuse_spread_thr        vs fuse_ref_lr_full_thr all    dAUC=+0.0004[-0.0025,+0.0033] dmac=+0.0006[-0.0035,+0.0048] dmic=+0.0005[-0.0036,+0.0047]
+[boot stream 0] fuse_spread_thr        vs fuse_ref_lr_full_thr mature dAUC=+0.0021[-0.0015,+0.0057] dmac=+0.0030[-0.0030,+0.0092] dmic=+0.0028[-0.0033,+0.0090]
+[boot stream 0] fuse_gmm_orient        vs fuse_ref_lr_full     all    dAUC=-0.0533[-0.0728,-0.0351] dmac=-0.0524[-0.0710,-0.0352] dmic=-0.0516[-0.0704,-0.0341]
+[boot stream 0] fuse_gmm_orient        vs fuse_ref_lr_full     mature dAUC=-0.0627[-0.0861,-0.0404] dmac=-0.0588[-0.0826,-0.0367] dmic=-0.0576[-0.0814,-0.0350]
+[boot stream 0] fuse_gmm_orient_thr    vs fuse_ref_lr_full_thr all    dAUC=-0.0504[-0.0694,-0.0328] dmac=-0.0461[-0.0641,-0.0297] dmic=-0.0457[-0.0641,-0.0292]
+[boot stream 0] fuse_gmm_orient_thr    vs fuse_ref_lr_full_thr mature dAUC=-0.0606[-0.0842,-0.0383] dmac=-0.0540[-0.0768,-0.0330] dmic=-0.0534[-0.0767,-0.0320]
+[s0] done elapsed=85.1s
+[s1] subject sub-001 (fold 2) 1/57 refits=16 stream_s=4.8 elapsed=89.9s
+[s1] subject sub-002 (fold 4) 2/57 refits=14 stream_s=4.8 elapsed=89.9s
+[s1] subject sub-003 (fold 1) 3/57 refits=14 stream_s=4.8 elapsed=89.9s
+[s1] subject sub-004 (fold 3) 4/57 refits=15 stream_s=4.8 elapsed=89.9s
+[s1] subject sub-005 (fold 2) 5/57 refits=15 stream_s=4.8 elapsed=89.9s
+[s1] subject sub-006 (fold 2) 6/57 refits=15 stream_s=4.8 elapsed=89.9s
+[s1] subject sub-007 (fold 2) 7/57 refits=15 stream_s=4.8 elapsed=89.9s
+[s1] subject sub-008 (fold 3) 8/57 refits=15 stream_s=4.8 elapsed=89.9s
+[s1] subject sub-009 (fold 0) 9/57 refits=11 stream_s=6.2 elapsed=91.3s
+[s1] subject sub-010 (fold 4) 10/57 refits=16 stream_s=8.6 elapsed=93.7s
+[s1] subject sub-011 (fold 2) 11/57 refits=16 stream_s=8.6 elapsed=93.7s
+[s1] subject sub-012 (fold 1) 12/57 refits=15 stream_s=8.6 elapsed=93.7s
+[s1] subject sub-013 (fold 3) 13/57 refits=15 stream_s=8.6 elapsed=93.7s
+[s1] subject sub-014 (fold 4) 14/57 refits=16 stream_s=8.8 elapsed=93.9s
+[s1] subject sub-015 (fold 3) 15/57 refits=14 stream_s=8.8 elapsed=93.9s
+[s1] subject sub-016 (fold 3) 16/57 refits=16 stream_s=9.2 elapsed=94.3s
+[s1] subject sub-017 (fold 2) 17/57 refits=15 stream_s=10.5 elapsed=95.6s
+[s1] subject sub-018 (fold 4) 18/57 refits=15 stream_s=12.1 elapsed=97.2s
+[s1] subject sub-019 (fold 2) 19/57 refits=16 stream_s=12.7 elapsed=97.8s
+[s1] subject sub-020 (fold 4) 20/57 refits=15 stream_s=12.7 elapsed=97.8s
+[s1] subject sub-021 (fold 4) 21/57 refits=15 stream_s=12.7 elapsed=97.8s
+[s1] subject sub-022 (fold 0) 22/57 refits=16 stream_s=12.9 elapsed=98.0s
+[s1] subject sub-023 (fold 0) 23/57 refits=16 stream_s=13.3 elapsed=98.4s
+[s1] subject sub-024 (fold 0) 24/57 refits=16 stream_s=13.9 elapsed=99.0s
+[s1] subject sub-025 (fold 2) 25/57 refits=15 stream_s=14.6 elapsed=99.7s
+[s1] subject sub-026 (fold 2) 26/57 refits=16 stream_s=16.5 elapsed=101.6s
+[s1] subject sub-027 (fold 4) 27/57 refits=15 stream_s=16.8 elapsed=101.9s
+[s1] subject sub-028 (fold 3) 28/57 refits=15 stream_s=16.8 elapsed=101.9s
+[s1] subject sub-029 (fold 0) 29/57 refits=16 stream_s=17.2 elapsed=102.3s
+[s1] subject sub-030 (fold 4) 30/57 refits=16 stream_s=17.3 elapsed=102.4s
+[s1] subject sub-031 (fold 2) 31/57 refits=16 stream_s=17.7 elapsed=102.8s
+[s1] subject sub-034 (fold 1) 32/57 refits=5 stream_s=17.7 elapsed=102.8s
+[s1] subject sub-035 (fold 1) 33/57 refits=16 stream_s=18.8 elapsed=103.9s
+[s1] subject sub-036 (fold 1) 34/57 refits=15 stream_s=18.8 elapsed=103.9s
+[s1] subject sub-037 (fold 0) 35/57 refits=16 stream_s=21.0 elapsed=106.1s
+[s1] subject sub-038 (fold 1) 36/57 refits=16 stream_s=21.0 elapsed=106.1s
+[s1] subject sub-039 (fold 1) 37/57 refits=16 stream_s=21.4 elapsed=106.5s
+[s1] subject sub-040 (fold 3) 38/57 refits=15 stream_s=21.4 elapsed=106.5s
+[s1] subject sub-041 (fold 1) 39/57 refits=15 stream_s=21.7 elapsed=106.8s
+[s1] subject sub-042 (fold 3) 40/57 refits=15 stream_s=21.8 elapsed=106.9s
+[s1] subject sub-043 (fold 3) 41/57 refits=15 stream_s=22.5 elapsed=107.6s
+[s1] subject sub-044 (fold 4) 42/57 refits=15 stream_s=22.9 elapsed=108.0s
+[s1] subject sub-045 (fold 0) 43/57 refits=15 stream_s=25.0 elapsed=110.1s
+[s1] subject sub-046 (fold 1) 44/57 refits=15 stream_s=25.0 elapsed=110.1s
+[s1] subject sub-047 (fold 4) 45/57 refits=15 stream_s=25.1 elapsed=110.2s
+[s1] subject sub-048 (fold 0) 46/57 refits=15 stream_s=25.5 elapsed=110.6s
+[s1] subject sub-049 (fold 3) 47/57 refits=15 stream_s=25.9 elapsed=111.0s
+[s1] subject sub-050 (fold 1) 48/57 refits=15 stream_s=26.0 elapsed=111.1s
+[s1] subject sub-051 (fold 0) 49/57 refits=16 stream_s=27.0 elapsed=112.1s
+[s1] subject sub-052 (fold 4) 50/57 refits=15 stream_s=27.0 elapsed=112.1s
+[s1] subject sub-053 (fold 0) 51/57 refits=16 stream_s=29.0 elapsed=114.1s
+[s1] subject sub-054 (fold 3) 52/57 refits=16 stream_s=29.0 elapsed=114.1s
+[s1] subject sub-055 (fold 0) 53/57 refits=15 stream_s=29.0 elapsed=114.1s
+[s1] subject sub-056 (fold 3) 54/57 refits=16 stream_s=29.4 elapsed=114.5s
+[s1] subject sub-057 (fold 2) 55/57 refits=15 stream_s=29.6 elapsed=114.7s
+[s1] subject sub-058 (fold 1) 56/57 refits=16 stream_s=29.8 elapsed=114.9s
+[s1] subject sub-059 (fold 1) 57/57 refits=16 stream_s=30.4 elapsed=115.5s
+[naive] t0=80 max|diff| ref_lr_full=3.22e-04 rank_lr=0.00e+00 spread=3.21e-04
+[check s1] sub-001: isolation / prefix / label shuffle / naive ref OK elapsed=122.2s
+[naive] t0=80 max|diff| ref_lr_full=8.10e-04 rank_lr=2.22e-16 spread=3.21e-04
+[check s1] sub-002: isolation / prefix / label shuffle / naive ref OK elapsed=127.7s
+[label-acc s1] pseudo       all=0.7063 high=0.8448 mid=0.7754 low=0.5682 (n_subj=57)
+[label-acc s1] spread       all=0.6757 high=0.8354 mid=0.7383 low=0.5453 (n_subj=57)
+[label-acc s1] gmm_orient   all=0.5454 high=0.6492 mid=0.5674 low=0.4924 (n_subj=57)
+[spread s1] degenerate 0/861; seed flip rate=0.0000
+[past-AUC s1] ref_lr_full  all=0.7021 high=0.8524 mid=0.7792 low=0.5484
+[past-AUC s1] rank_lr      all=0.7016 high=0.8541 mid=0.7804 low=0.5449
+[past-AUC s1] p2_lr        all=0.6968 high=0.8518 mid=0.7732 low=0.5437
+[past-AUC s1] cat_lr       all=0.7033 high=0.8543 mid=0.7790 low=0.5517
+[past-AUC s1] fam_vote     all=0.6935 high=0.8499 mid=0.7696 low=0.5405
+[past-AUC s1] spread       all=0.7042 high=0.8530 mid=0.7836 low=0.5470
+[past-AUC s1] gmm_orient   all=0.5663 high=0.6952 mid=0.5949 low=0.4983
+[z s1] ref_lr_full  coverage=0.830 std=0.973 clipped=0.010
+[z s1] rank_lr      coverage=0.830 std=0.955 clipped=0.000
+[z s1] p2_lr        coverage=0.830 std=0.96 clipped=0.010
+[z s1] cat_lr       coverage=0.830 std=0.961 clipped=0.010
+[z s1] fam_vote     coverage=0.830 std=0.958 clipped=0.011
+[z s1] spread       coverage=0.830 std=0.975 clipped=0.009
+[z s1] gmm_orient   coverage=0.830 std=0.833 clipped=0.002
+[result stream 1] fuseH_wf               all: AUC=0.7106 mac=0.6505 mic=0.6520 | mature: AUC=0.7156 mac=0.6541 mic=0.6548 | subj>=.9=0 max=0.891
+[result stream 1] fuseH_wf_thr           all: AUC=0.7134 mac=0.6568 mic=0.6580 | mature: AUC=0.7190 mac=0.6608 mic=0.6614 | subj>=.9=0 max=0.883
+[result stream 1] fuse_ref_lr_full       all: AUC=0.7176 mac=0.6684 mic=0.6698 | mature: AUC=0.7266 mac=0.6763 mic=0.6777 | subj>=.9=0 max=0.856
+[result stream 1] fuse_ref_lr_full_thr   all: AUC=0.7179 mac=0.6694 mic=0.6709 | mature: AUC=0.7267 mac=0.6761 mic=0.6778 | subj>=.9=0 max=0.858
+[result stream 1] fuse_rank_lr           all: AUC=0.7163 mac=0.6655 mic=0.6668 | mature: AUC=0.7245 mac=0.6730 mic=0.6739 | subj>=.9=0 max=0.865
+[result stream 1] fuse_rank_lr_thr       all: AUC=0.7165 mac=0.6670 mic=0.6682 | mature: AUC=0.7244 mac=0.6743 mic=0.6755 | subj>=.9=0 max=0.864
+[result stream 1] fuse_p2_lr             all: AUC=0.7135 mac=0.6648 mic=0.6664 | mature: AUC=0.7200 mac=0.6701 mic=0.6716 | subj>=.9=0 max=0.856
+[result stream 1] fuse_p2_lr_thr         all: AUC=0.7141 mac=0.6661 mic=0.6680 | mature: AUC=0.7204 mac=0.6712 mic=0.6729 | subj>=.9=0 max=0.864
+[result stream 1] fuse_cat_lr            all: AUC=0.7175 mac=0.6678 mic=0.6691 | mature: AUC=0.7255 mac=0.6764 mic=0.6776 | subj>=.9=0 max=0.863
+[result stream 1] fuse_cat_lr_thr        all: AUC=0.7180 mac=0.6703 mic=0.6718 | mature: AUC=0.7256 mac=0.6772 mic=0.6785 | subj>=.9=0 max=0.868
+[result stream 1] fuse_fam_vote          all: AUC=0.7160 mac=0.6652 mic=0.6666 | mature: AUC=0.7235 mac=0.6711 mic=0.6734 | subj>=.9=0 max=0.860
+[result stream 1] fuse_fam_vote_thr      all: AUC=0.7165 mac=0.6654 mic=0.6669 | mature: AUC=0.7236 mac=0.6705 mic=0.6727 | subj>=.9=0 max=0.860
+[result stream 1] fuse_spread            all: AUC=0.7204 mac=0.6698 mic=0.6713 | mature: AUC=0.7304 mac=0.6792 mic=0.6805 | subj>=.9=0 max=0.852
+[result stream 1] fuse_spread_thr        all: AUC=0.7207 mac=0.6707 mic=0.6723 | mature: AUC=0.7305 mac=0.6790 mic=0.6805 | subj>=.9=0 max=0.858
+[result stream 1] fuse_gmm_orient        all: AUC=0.6606 mac=0.6136 mic=0.6153 | mature: AUC=0.6610 mac=0.6115 mic=0.6134 | subj>=.9=0 max=0.879
+[result stream 1] fuse_gmm_orient_thr    all: AUC=0.6654 mac=0.6196 mic=0.6209 | mature: AUC=0.6649 mac=0.6152 mic=0.6167 | subj>=.9=0 max=0.859
+[check s1] fuse_ref_lr_full(_thr) reproduces v2 fuse_pseudo_lr_full(_thr) mac=0.6684/0.6694
+[group stream 1] fuseH_wf               high(n=3): mean=0.8145 dmean_vs_ref_thr=-0.0350 | mid(n=34): mean=0.6958 dmean_vs_ref_thr=-0.0286 | low(n=20): mean=0.5490 dmean_vs_ref_thr=+0.0002
+[group stream 1] fuseH_wf_thr           high(n=3): mean=0.8128 dmean_vs_ref_thr=-0.0368 | mid(n=34): mean=0.7036 dmean_vs_ref_thr=-0.0208 | low(n=20): mean=0.5539 dmean_vs_ref_thr=+0.0051
+[group stream 1] fuse_ref_lr_full       high(n=3): mean=0.8458 dmean_vs_ref_thr=-0.0037 | mid(n=34): mean=0.7243 dmean_vs_ref_thr=-0.0001 | low(n=20): mean=0.5467 dmean_vs_ref_thr=-0.0022
+[group stream 1] fuse_ref_lr_full_thr   high(n=3): mean=0.8495 dmean_vs_ref_thr=+0.0000 | mid(n=34): mean=0.7244 dmean_vs_ref_thr=+0.0000 | low(n=20): mean=0.5488 dmean_vs_ref_thr=+0.0000
+[group stream 1] fuse_rank_lr           high(n=3): mean=0.8492 dmean_vs_ref_thr=-0.0003 | mid(n=34): mean=0.7225 dmean_vs_ref_thr=-0.0019 | low(n=20): mean=0.5410 dmean_vs_ref_thr=-0.0078
+[group stream 1] fuse_rank_lr_thr       high(n=3): mean=0.8519 dmean_vs_ref_thr=+0.0024 | mid(n=34): mean=0.7229 dmean_vs_ref_thr=-0.0015 | low(n=20): mean=0.5441 dmean_vs_ref_thr=-0.0047
+[group stream 1] fuse_p2_lr             high(n=3): mean=0.8459 dmean_vs_ref_thr=-0.0036 | mid(n=34): mean=0.7212 dmean_vs_ref_thr=-0.0032 | low(n=20): mean=0.5417 dmean_vs_ref_thr=-0.0071
+[group stream 1] fuse_p2_lr_thr         high(n=3): mean=0.8520 dmean_vs_ref_thr=+0.0025 | mid(n=34): mean=0.7224 dmean_vs_ref_thr=-0.0020 | low(n=20): mean=0.5425 dmean_vs_ref_thr=-0.0063
+[group stream 1] fuse_cat_lr            high(n=3): mean=0.8481 dmean_vs_ref_thr=-0.0014 | mid(n=34): mean=0.7246 dmean_vs_ref_thr=+0.0002 | low(n=20): mean=0.5441 dmean_vs_ref_thr=-0.0048
+[group stream 1] fuse_cat_lr_thr        high(n=3): mean=0.8531 dmean_vs_ref_thr=+0.0036 | mid(n=34): mean=0.7260 dmean_vs_ref_thr=+0.0016 | low(n=20): mean=0.5483 dmean_vs_ref_thr=-0.0005
+[group stream 1] fuse_fam_vote          high(n=3): mean=0.8426 dmean_vs_ref_thr=-0.0069 | mid(n=34): mean=0.7232 dmean_vs_ref_thr=-0.0012 | low(n=20): mean=0.5400 dmean_vs_ref_thr=-0.0088
+[group stream 1] fuse_fam_vote_thr      high(n=3): mean=0.8472 dmean_vs_ref_thr=-0.0023 | mid(n=34): mean=0.7225 dmean_vs_ref_thr=-0.0019 | low(n=20): mean=0.5411 dmean_vs_ref_thr=-0.0077
+[group stream 1] fuse_spread            high(n=3): mean=0.8470 dmean_vs_ref_thr=-0.0025 | mid(n=34): mean=0.7302 dmean_vs_ref_thr=+0.0058 | low(n=20): mean=0.5405 dmean_vs_ref_thr=-0.0083
+[group stream 1] fuse_spread_thr        high(n=3): mean=0.8554 dmean_vs_ref_thr=+0.0059 | mid(n=34): mean=0.7302 dmean_vs_ref_thr=+0.0058 | low(n=20): mean=0.5418 dmean_vs_ref_thr=-0.0070
+[group stream 1] fuse_gmm_orient        high(n=3): mean=0.7955 dmean_vs_ref_thr=-0.0540 | mid(n=34): mean=0.6464 dmean_vs_ref_thr=-0.0780 | low(n=20): mean=0.5306 dmean_vs_ref_thr=-0.0182
+[group stream 1] fuse_gmm_orient_thr    high(n=3): mean=0.7923 dmean_vs_ref_thr=-0.0572 | mid(n=34): mean=0.6544 dmean_vs_ref_thr=-0.0700 | low(n=20): mean=0.5348 dmean_vs_ref_thr=-0.0141
+[boot stream 1] fuse_ref_lr_full       vs fuseH_wf             all    dAUC=+0.0068[-0.0043,+0.0183] dmac=+0.0177[+0.0073,+0.0282] dmic=+0.0176[+0.0073,+0.0283]
+[boot stream 1] fuse_ref_lr_full       vs fuseH_wf             mature dAUC=+0.0109[-0.0010,+0.0227] dmac=+0.0219[+0.0089,+0.0352] dmic=+0.0226[+0.0100,+0.0356]
+[boot stream 1] fuse_ref_lr_full_thr   vs fuseH_wf_thr         all    dAUC=+0.0044[-0.0070,+0.0159] dmac=+0.0125[+0.0021,+0.0234] dmic=+0.0128[+0.0024,+0.0236]
+[boot stream 1] fuse_ref_lr_full_thr   vs fuseH_wf_thr         mature dAUC=+0.0076[-0.0041,+0.0195] dmac=+0.0152[+0.0032,+0.0281] dmic=+0.0163[+0.0041,+0.0289]
+[boot stream 1] fuse_rank_lr           vs fuse_ref_lr_full     all    dAUC=-0.0012[-0.0044,+0.0022] dmac=-0.0029[-0.0063,+0.0004] dmic=-0.0031[-0.0066,+0.0003]
+[boot stream 1] fuse_rank_lr           vs fuse_ref_lr_full     mature dAUC=-0.0022[-0.0059,+0.0014] dmac=-0.0034[-0.0089,+0.0021] dmic=-0.0038[-0.0092,+0.0012]
+[boot stream 1] fuse_rank_lr_thr       vs fuse_ref_lr_full_thr all    dAUC=-0.0014[-0.0046,+0.0020] dmac=-0.0024[-0.0063,+0.0012] dmic=-0.0027[-0.0066,+0.0009]
+[boot stream 1] fuse_rank_lr_thr       vs fuse_ref_lr_full_thr mature dAUC=-0.0023[-0.0060,+0.0013] dmac=-0.0018[-0.0078,+0.0036] dmic=-0.0023[-0.0082,+0.0028]
+[boot stream 1] fuse_p2_lr             vs fuse_ref_lr_full     all    dAUC=-0.0040[-0.0091,+0.0010] dmac=-0.0035[-0.0081,+0.0018] dmic=-0.0034[-0.0079,+0.0019]
+[boot stream 1] fuse_p2_lr             vs fuse_ref_lr_full     mature dAUC=-0.0066[-0.0126,-0.0010] dmac=-0.0062[-0.0126,+0.0003] dmic=-0.0061[-0.0124,+0.0002]
+[boot stream 1] fuse_p2_lr_thr         vs fuse_ref_lr_full_thr all    dAUC=-0.0038[-0.0089,+0.0011] dmac=-0.0032[-0.0086,+0.0025] dmic=-0.0028[-0.0080,+0.0030]
+[boot stream 1] fuse_p2_lr_thr         vs fuse_ref_lr_full_thr mature dAUC=-0.0063[-0.0122,-0.0007] dmac=-0.0048[-0.0116,+0.0023] dmic=-0.0049[-0.0118,+0.0023]
+[boot stream 1] fuse_cat_lr            vs fuse_ref_lr_full     all    dAUC=-0.0001[-0.0022,+0.0020] dmac=-0.0006[-0.0037,+0.0026] dmic=-0.0007[-0.0038,+0.0025]
+[boot stream 1] fuse_cat_lr            vs fuse_ref_lr_full     mature dAUC=-0.0012[-0.0036,+0.0011] dmac=+0.0002[-0.0045,+0.0047] dmic=-0.0001[-0.0047,+0.0044]
+[boot stream 1] fuse_cat_lr_thr        vs fuse_ref_lr_full_thr all    dAUC=+0.0000[-0.0021,+0.0021] dmac=+0.0009[-0.0025,+0.0048] dmic=+0.0009[-0.0025,+0.0047]
+[boot stream 1] fuse_cat_lr_thr        vs fuse_ref_lr_full_thr mature dAUC=-0.0011[-0.0035,+0.0012] dmac=+0.0010[-0.0040,+0.0061] dmic=+0.0007[-0.0043,+0.0056]
+[boot stream 1] fuse_fam_vote          vs fuse_ref_lr_full     all    dAUC=-0.0015[-0.0074,+0.0046] dmac=-0.0031[-0.0087,+0.0024] dmic=-0.0032[-0.0086,+0.0025]
+[boot stream 1] fuse_fam_vote          vs fuse_ref_lr_full     mature dAUC=-0.0032[-0.0106,+0.0047] dmac=-0.0051[-0.0131,+0.0028] dmic=-0.0043[-0.0120,+0.0037]
+[boot stream 1] fuse_fam_vote_thr      vs fuse_ref_lr_full_thr all    dAUC=-0.0014[-0.0073,+0.0044] dmac=-0.0040[-0.0095,+0.0011] dmic=-0.0040[-0.0094,+0.0012]
+[boot stream 1] fuse_fam_vote_thr      vs fuse_ref_lr_full_thr mature dAUC=-0.0031[-0.0105,+0.0048] dmac=-0.0055[-0.0139,+0.0023] dmic=-0.0051[-0.0132,+0.0026]
+[boot stream 1] fuse_spread            vs fuse_ref_lr_full     all    dAUC=+0.0028[+0.0003,+0.0052] dmac=+0.0014[-0.0021,+0.0051] dmic=+0.0015[-0.0021,+0.0052]
+[boot stream 1] fuse_spread            vs fuse_ref_lr_full     mature dAUC=+0.0038[+0.0008,+0.0067] dmac=+0.0029[-0.0020,+0.0079] dmic=+0.0028[-0.0020,+0.0078]
+[boot stream 1] fuse_spread_thr        vs fuse_ref_lr_full_thr all    dAUC=+0.0027[+0.0003,+0.0050] dmac=+0.0013[-0.0025,+0.0051] dmic=+0.0014[-0.0025,+0.0051]
+[boot stream 1] fuse_spread_thr        vs fuse_ref_lr_full_thr mature dAUC=+0.0038[+0.0009,+0.0066] dmac=+0.0028[-0.0021,+0.0079] dmic=+0.0026[-0.0022,+0.0077]
+[boot stream 1] fuse_gmm_orient        vs fuse_ref_lr_full     all    dAUC=-0.0568[-0.0749,-0.0398] dmac=-0.0548[-0.0690,-0.0403] dmic=-0.0546[-0.0691,-0.0393]
+[boot stream 1] fuse_gmm_orient        vs fuse_ref_lr_full     mature dAUC=-0.0653[-0.0889,-0.0421] dmac=-0.0648[-0.0833,-0.0447] dmic=-0.0643[-0.0840,-0.0438]
+[boot stream 1] fuse_gmm_orient_thr    vs fuse_ref_lr_full_thr all    dAUC=-0.0524[-0.0701,-0.0359] dmac=-0.0499[-0.0643,-0.0362] dmic=-0.0500[-0.0647,-0.0361]
+[boot stream 1] fuse_gmm_orient_thr    vs fuse_ref_lr_full_thr mature dAUC=-0.0616[-0.0841,-0.0393] dmac=-0.0610[-0.0790,-0.0430] dmic=-0.0612[-0.0792,-0.0428]
+[s1] done elapsed=157.0s
+[s2] subject sub-001 (fold 2) 1/57 refits=16 stream_s=4.7 elapsed=161.7s
+[s2] subject sub-002 (fold 4) 2/57 refits=14 stream_s=4.7 elapsed=161.7s
+[s2] subject sub-003 (fold 1) 3/57 refits=14 stream_s=4.7 elapsed=161.7s
+[s2] subject sub-004 (fold 3) 4/57 refits=15 stream_s=4.7 elapsed=161.7s
+[s2] subject sub-005 (fold 2) 5/57 refits=15 stream_s=4.7 elapsed=161.7s
+[s2] subject sub-006 (fold 2) 6/57 refits=15 stream_s=4.7 elapsed=161.7s
+[s2] subject sub-007 (fold 2) 7/57 refits=15 stream_s=4.7 elapsed=161.7s
+[s2] subject sub-008 (fold 3) 8/57 refits=15 stream_s=4.7 elapsed=161.7s
+[s2] subject sub-009 (fold 0) 9/57 refits=11 stream_s=6.3 elapsed=163.3s
+[s2] subject sub-010 (fold 4) 10/57 refits=16 stream_s=8.6 elapsed=165.6s
+[s2] subject sub-011 (fold 2) 11/57 refits=16 stream_s=8.9 elapsed=165.9s
+[s2] subject sub-012 (fold 1) 12/57 refits=15 stream_s=8.9 elapsed=165.9s
+[s2] subject sub-013 (fold 3) 13/57 refits=15 stream_s=8.9 elapsed=165.9s
+[s2] subject sub-014 (fold 4) 14/57 refits=16 stream_s=8.9 elapsed=165.9s
+[s2] subject sub-015 (fold 3) 15/57 refits=14 stream_s=8.9 elapsed=165.9s
+[s2] subject sub-016 (fold 3) 16/57 refits=16 stream_s=9.1 elapsed=166.1s
+[s2] subject sub-017 (fold 2) 17/57 refits=15 stream_s=10.5 elapsed=167.5s
+[s2] subject sub-018 (fold 4) 18/57 refits=15 stream_s=12.4 elapsed=169.4s
+[s2] subject sub-019 (fold 2) 19/57 refits=16 stream_s=12.9 elapsed=169.9s
+[s2] subject sub-020 (fold 4) 20/57 refits=15 stream_s=12.9 elapsed=169.9s
+[s2] subject sub-021 (fold 4) 21/57 refits=15 stream_s=12.9 elapsed=169.9s
+[s2] subject sub-022 (fold 0) 22/57 refits=16 stream_s=13.2 elapsed=170.2s
+[s2] subject sub-023 (fold 0) 23/57 refits=16 stream_s=13.4 elapsed=170.4s
+[s2] subject sub-024 (fold 0) 24/57 refits=16 stream_s=13.8 elapsed=170.8s
+[s2] subject sub-025 (fold 2) 25/57 refits=15 stream_s=14.7 elapsed=171.7s
+[s2] subject sub-026 (fold 2) 26/57 refits=16 stream_s=16.8 elapsed=173.8s
+[s2] subject sub-027 (fold 4) 27/57 refits=15 stream_s=16.8 elapsed=173.8s
+[s2] subject sub-028 (fold 3) 28/57 refits=15 stream_s=16.8 elapsed=173.8s
+[s2] subject sub-029 (fold 0) 29/57 refits=16 stream_s=17.4 elapsed=174.4s
+[s2] subject sub-030 (fold 4) 30/57 refits=16 stream_s=17.5 elapsed=174.5s
+[s2] subject sub-031 (fold 2) 31/57 refits=16 stream_s=17.9 elapsed=174.9s
+[s2] subject sub-034 (fold 1) 32/57 refits=5 stream_s=17.9 elapsed=174.9s
+[s2] subject sub-035 (fold 1) 33/57 refits=16 stream_s=19.0 elapsed=176.0s
+[s2] subject sub-036 (fold 1) 34/57 refits=15 stream_s=19.0 elapsed=176.0s
+[s2] subject sub-037 (fold 0) 35/57 refits=16 stream_s=21.3 elapsed=178.3s
+[s2] subject sub-038 (fold 1) 36/57 refits=16 stream_s=21.3 elapsed=178.3s
+[s2] subject sub-039 (fold 1) 37/57 refits=16 stream_s=21.6 elapsed=178.6s
+[s2] subject sub-040 (fold 3) 38/57 refits=15 stream_s=21.6 elapsed=178.6s
+[s2] subject sub-041 (fold 1) 39/57 refits=15 stream_s=21.8 elapsed=178.8s
+[s2] subject sub-042 (fold 3) 40/57 refits=15 stream_s=21.9 elapsed=178.9s
+[s2] subject sub-043 (fold 3) 41/57 refits=15 stream_s=22.7 elapsed=179.7s
+[s2] subject sub-044 (fold 4) 42/57 refits=15 stream_s=23.0 elapsed=180.0s
+[s2] subject sub-045 (fold 0) 43/57 refits=15 stream_s=25.0 elapsed=182.0s
+[s2] subject sub-046 (fold 1) 44/57 refits=15 stream_s=25.2 elapsed=182.2s
+[s2] subject sub-047 (fold 4) 45/57 refits=15 stream_s=25.5 elapsed=182.5s
+[s2] subject sub-048 (fold 0) 46/57 refits=15 stream_s=25.5 elapsed=182.5s
+[s2] subject sub-049 (fold 3) 47/57 refits=15 stream_s=26.0 elapsed=182.9s
+[s2] subject sub-050 (fold 1) 48/57 refits=15 stream_s=26.1 elapsed=183.1s
+[s2] subject sub-051 (fold 0) 49/57 refits=16 stream_s=27.2 elapsed=184.2s
+[s2] subject sub-052 (fold 4) 50/57 refits=15 stream_s=27.2 elapsed=184.2s
+[s2] subject sub-053 (fold 0) 51/57 refits=16 stream_s=29.2 elapsed=186.2s
+[s2] subject sub-054 (fold 3) 52/57 refits=16 stream_s=29.3 elapsed=186.3s
+[s2] subject sub-055 (fold 0) 53/57 refits=15 stream_s=29.3 elapsed=186.3s
+[s2] subject sub-056 (fold 3) 54/57 refits=16 stream_s=29.6 elapsed=186.6s
+[s2] subject sub-057 (fold 2) 55/57 refits=15 stream_s=29.7 elapsed=186.7s
+[s2] subject sub-058 (fold 1) 56/57 refits=16 stream_s=30.0 elapsed=187.0s
+[s2] subject sub-059 (fold 1) 57/57 refits=16 stream_s=30.6 elapsed=187.6s
+[naive] t0=80 max|diff| ref_lr_full=7.12e-04 rank_lr=5.55e-17 spread=1.53e-04
+[check s2] sub-001: isolation / prefix / label shuffle / naive ref OK elapsed=194.3s
+[naive] t0=80 max|diff| ref_lr_full=7.04e-04 rank_lr=2.22e-16 spread=1.87e-04
+[check s2] sub-002: isolation / prefix / label shuffle / naive ref OK elapsed=199.7s
+[label-acc s2] pseudo       all=0.7101 high=0.8714 mid=0.7793 low=0.5682 (n_subj=57)
+[label-acc s2] spread       all=0.6731 high=0.8530 mid=0.7327 low=0.5449 (n_subj=57)
+[label-acc s2] gmm_orient   all=0.5540 high=0.6648 mid=0.5648 low=0.5190 (n_subj=57)
+[spread s2] degenerate 0/861; seed flip rate=0.0000
+[past-AUC s2] ref_lr_full  all=0.7017 high=0.8620 mid=0.7739 low=0.5550
+[past-AUC s2] rank_lr      all=0.7039 high=0.8672 mid=0.7757 low=0.5574
+[past-AUC s2] p2_lr        all=0.6932 high=0.8625 mid=0.7650 low=0.5456
+[past-AUC s2] cat_lr       all=0.7015 high=0.8629 mid=0.7732 low=0.5552
+[past-AUC s2] fam_vote     all=0.6931 high=0.8683 mid=0.7620 low=0.5497
+[past-AUC s2] spread       all=0.7015 high=0.8614 mid=0.7766 low=0.5498
+[past-AUC s2] gmm_orient   all=0.5720 high=0.6941 mid=0.5936 low=0.5170
+[z s2] ref_lr_full  coverage=0.830 std=0.971 clipped=0.010
+[z s2] rank_lr      coverage=0.830 std=0.956 clipped=0.000
+[z s2] p2_lr        coverage=0.830 std=0.962 clipped=0.009
+[z s2] cat_lr       coverage=0.830 std=0.961 clipped=0.009
+[z s2] fam_vote     coverage=0.830 std=0.949 clipped=0.011
+[z s2] spread       coverage=0.830 std=0.974 clipped=0.010
+[z s2] gmm_orient   coverage=0.830 std=0.82 clipped=0.002
+[result stream 2] fuseH_wf               all: AUC=0.7097 mac=0.6500 mic=0.6510 | mature: AUC=0.7085 mac=0.6538 mic=0.6534 | subj>=.9=0 max=0.871
+[result stream 2] fuseH_wf_thr           all: AUC=0.7116 mac=0.6539 mic=0.6549 | mature: AUC=0.7110 mac=0.6571 mic=0.6575 | subj>=.9=0 max=0.869
+[result stream 2] fuse_ref_lr_full       all: AUC=0.7168 mac=0.6688 mic=0.6697 | mature: AUC=0.7187 mac=0.6729 mic=0.6729 | subj>=.9=0 max=0.865
+[result stream 2] fuse_ref_lr_full_thr   all: AUC=0.7169 mac=0.6691 mic=0.6700 | mature: AUC=0.7187 mac=0.6738 mic=0.6741 | subj>=.9=0 max=0.865
+[result stream 2] fuse_rank_lr           all: AUC=0.7178 mac=0.6703 mic=0.6710 | mature: AUC=0.7186 mac=0.6734 mic=0.6735 | subj>=.9=0 max=0.858
+[result stream 2] fuse_rank_lr_thr       all: AUC=0.7177 mac=0.6697 mic=0.6705 | mature: AUC=0.7185 mac=0.6724 mic=0.6727 | subj>=.9=0 max=0.855
+[result stream 2] fuse_p2_lr             all: AUC=0.7104 mac=0.6619 mic=0.6627 | mature: AUC=0.7108 mac=0.6656 mic=0.6661 | subj>=.9=0 max=0.867
+[result stream 2] fuse_p2_lr_thr         all: AUC=0.7104 mac=0.6625 mic=0.6636 | mature: AUC=0.7108 mac=0.6661 mic=0.6667 | subj>=.9=0 max=0.864
+[result stream 2] fuse_cat_lr            all: AUC=0.7153 mac=0.6662 mic=0.6673 | mature: AUC=0.7168 mac=0.6700 mic=0.6702 | subj>=.9=0 max=0.858
+[result stream 2] fuse_cat_lr_thr        all: AUC=0.7153 mac=0.6671 mic=0.6682 | mature: AUC=0.7169 mac=0.6726 mic=0.6728 | subj>=.9=0 max=0.864
+[result stream 2] fuse_fam_vote          all: AUC=0.7157 mac=0.6681 mic=0.6688 | mature: AUC=0.7166 mac=0.6729 mic=0.6726 | subj>=.9=0 max=0.862
+[result stream 2] fuse_fam_vote_thr      all: AUC=0.7157 mac=0.6698 mic=0.6706 | mature: AUC=0.7170 mac=0.6744 mic=0.6744 | subj>=.9=0 max=0.861
+[result stream 2] fuse_spread            all: AUC=0.7196 mac=0.6716 mic=0.6728 | mature: AUC=0.7223 mac=0.6770 mic=0.6773 | subj>=.9=0 max=0.868
+[result stream 2] fuse_spread_thr        all: AUC=0.7196 mac=0.6709 mic=0.6721 | mature: AUC=0.7225 mac=0.6768 mic=0.6773 | subj>=.9=0 max=0.868
+[result stream 2] fuse_gmm_orient        all: AUC=0.6688 mac=0.6166 mic=0.6181 | mature: AUC=0.6659 mac=0.6123 mic=0.6135 | subj>=.9=0 max=0.858
+[result stream 2] fuse_gmm_orient_thr    all: AUC=0.6729 mac=0.6218 mic=0.6232 | mature: AUC=0.6698 mac=0.6185 mic=0.6199 | subj>=.9=0 max=0.845
+[check s2] fuse_ref_lr_full(_thr) reproduces v2 fuse_pseudo_lr_full(_thr) mac=0.6688/0.6691
+[group stream 2] fuseH_wf               high(n=3): mean=0.8042 dmean_vs_ref_thr=-0.0533 | mid(n=34): mean=0.6941 dmean_vs_ref_thr=-0.0306 | low(n=20): mean=0.5520 dmean_vs_ref_thr=+0.0056
+[group stream 2] fuseH_wf_thr           high(n=3): mean=0.8182 dmean_vs_ref_thr=-0.0393 | mid(n=34): mean=0.7001 dmean_vs_ref_thr=-0.0245 | low(n=20): mean=0.5506 dmean_vs_ref_thr=+0.0042
+[group stream 2] fuse_ref_lr_full       high(n=3): mean=0.8586 dmean_vs_ref_thr=+0.0011 | mid(n=34): mean=0.7229 dmean_vs_ref_thr=-0.0018 | low(n=20): mean=0.5485 dmean_vs_ref_thr=+0.0021
+[group stream 2] fuse_ref_lr_full_thr   high(n=3): mean=0.8575 dmean_vs_ref_thr=+0.0000 | mid(n=34): mean=0.7246 dmean_vs_ref_thr=+0.0000 | low(n=20): mean=0.5464 dmean_vs_ref_thr=+0.0000
+[group stream 2] fuse_rank_lr           high(n=3): mean=0.8562 dmean_vs_ref_thr=-0.0013 | mid(n=34): mean=0.7233 dmean_vs_ref_thr=-0.0014 | low(n=20): mean=0.5525 dmean_vs_ref_thr=+0.0061
+[group stream 2] fuse_rank_lr_thr       high(n=3): mean=0.8540 dmean_vs_ref_thr=-0.0035 | mid(n=34): mean=0.7258 dmean_vs_ref_thr=+0.0011 | low(n=20): mean=0.5467 dmean_vs_ref_thr=+0.0003
+[group stream 2] fuse_p2_lr             high(n=3): mean=0.8504 dmean_vs_ref_thr=-0.0071 | mid(n=34): mean=0.7172 dmean_vs_ref_thr=-0.0075 | low(n=20): mean=0.5396 dmean_vs_ref_thr=-0.0068
+[group stream 2] fuse_p2_lr_thr         high(n=3): mean=0.8483 dmean_vs_ref_thr=-0.0092 | mid(n=34): mean=0.7185 dmean_vs_ref_thr=-0.0061 | low(n=20): mean=0.5395 dmean_vs_ref_thr=-0.0069
+[group stream 2] fuse_cat_lr            high(n=3): mean=0.8528 dmean_vs_ref_thr=-0.0047 | mid(n=34): mean=0.7206 dmean_vs_ref_thr=-0.0041 | low(n=20): mean=0.5458 dmean_vs_ref_thr=-0.0006
+[group stream 2] fuse_cat_lr_thr        high(n=3): mean=0.8529 dmean_vs_ref_thr=-0.0046 | mid(n=34): mean=0.7218 dmean_vs_ref_thr=-0.0029 | low(n=20): mean=0.5463 dmean_vs_ref_thr=-0.0001
+[group stream 2] fuse_fam_vote          high(n=3): mean=0.8563 dmean_vs_ref_thr=-0.0012 | mid(n=34): mean=0.7202 dmean_vs_ref_thr=-0.0045 | low(n=20): mean=0.5512 dmean_vs_ref_thr=+0.0048
+[group stream 2] fuse_fam_vote_thr      high(n=3): mean=0.8519 dmean_vs_ref_thr=-0.0056 | mid(n=34): mean=0.7236 dmean_vs_ref_thr=-0.0010 | low(n=20): mean=0.5509 dmean_vs_ref_thr=+0.0045
+[group stream 2] fuse_spread            high(n=3): mean=0.8584 dmean_vs_ref_thr=+0.0009 | mid(n=34): mean=0.7298 dmean_vs_ref_thr=+0.0051 | low(n=20): mean=0.5446 dmean_vs_ref_thr=-0.0018
+[group stream 2] fuse_spread_thr        high(n=3): mean=0.8586 dmean_vs_ref_thr=+0.0011 | mid(n=34): mean=0.7297 dmean_vs_ref_thr=+0.0050 | low(n=20): mean=0.5427 dmean_vs_ref_thr=-0.0037
+[group stream 2] fuse_gmm_orient        high(n=3): mean=0.7991 dmean_vs_ref_thr=-0.0584 | mid(n=34): mean=0.6441 dmean_vs_ref_thr=-0.0805 | low(n=20): mean=0.5424 dmean_vs_ref_thr=-0.0041
+[group stream 2] fuse_gmm_orient_thr    high(n=3): mean=0.8030 dmean_vs_ref_thr=-0.0545 | mid(n=34): mean=0.6504 dmean_vs_ref_thr=-0.0742 | low(n=20): mean=0.5459 dmean_vs_ref_thr=-0.0005
+[boot stream 2] fuse_ref_lr_full       vs fuseH_wf             all    dAUC=+0.0069[-0.0048,+0.0175] dmac=+0.0187[+0.0077,+0.0297] dmic=+0.0187[+0.0075,+0.0299]
+[boot stream 2] fuse_ref_lr_full       vs fuseH_wf             mature dAUC=+0.0099[-0.0027,+0.0221] dmac=+0.0189[+0.0051,+0.0329] dmic=+0.0194[+0.0052,+0.0337]
+[boot stream 2] fuse_ref_lr_full_thr   vs fuseH_wf_thr         all    dAUC=+0.0051[-0.0062,+0.0157] dmac=+0.0151[+0.0054,+0.0251] dmic=+0.0150[+0.0053,+0.0252]
+[boot stream 2] fuse_ref_lr_full_thr   vs fuseH_wf_thr         mature dAUC=+0.0075[-0.0050,+0.0196] dmac=+0.0165[+0.0043,+0.0293] dmic=+0.0164[+0.0039,+0.0297]
+[boot stream 2] fuse_rank_lr           vs fuse_ref_lr_full     all    dAUC=+0.0010[-0.0023,+0.0045] dmac=+0.0015[-0.0009,+0.0041] dmic=+0.0013[-0.0012,+0.0038]
+[boot stream 2] fuse_rank_lr           vs fuse_ref_lr_full     mature dAUC=-0.0001[-0.0043,+0.0042] dmac=+0.0005[-0.0032,+0.0046] dmic=+0.0005[-0.0035,+0.0048]
+[boot stream 2] fuse_rank_lr_thr       vs fuse_ref_lr_full_thr all    dAUC=+0.0008[-0.0025,+0.0043] dmac=+0.0006[-0.0023,+0.0038] dmic=+0.0005[-0.0025,+0.0037]
+[boot stream 2] fuse_rank_lr_thr       vs fuse_ref_lr_full_thr mature dAUC=-0.0002[-0.0045,+0.0040] dmac=-0.0014[-0.0058,+0.0030] dmic=-0.0014[-0.0058,+0.0031]
+[boot stream 2] fuse_p2_lr             vs fuse_ref_lr_full     all    dAUC=-0.0064[-0.0131,-0.0003] dmac=-0.0069[-0.0140,+0.0000] dmic=-0.0070[-0.0141,-0.0001]
+[boot stream 2] fuse_p2_lr             vs fuse_ref_lr_full     mature dAUC=-0.0079[-0.0148,-0.0015] dmac=-0.0072[-0.0165,+0.0008] dmic=-0.0068[-0.0159,+0.0013]
+[boot stream 2] fuse_p2_lr_thr         vs fuse_ref_lr_full_thr all    dAUC=-0.0065[-0.0130,-0.0003] dmac=-0.0065[-0.0130,-0.0002] dmic=-0.0064[-0.0128,-0.0001]
+[boot stream 2] fuse_p2_lr_thr         vs fuse_ref_lr_full_thr mature dAUC=-0.0079[-0.0146,-0.0016] dmac=-0.0077[-0.0159,+0.0007] dmic=-0.0074[-0.0156,+0.0008]
+[boot stream 2] fuse_cat_lr            vs fuse_ref_lr_full     all    dAUC=-0.0016[-0.0040,+0.0007] dmac=-0.0027[-0.0059,+0.0004] dmic=-0.0025[-0.0058,+0.0007]
+[boot stream 2] fuse_cat_lr            vs fuse_ref_lr_full     mature dAUC=-0.0019[-0.0046,+0.0007] dmac=-0.0030[-0.0083,+0.0021] dmic=-0.0028[-0.0083,+0.0025]
+[boot stream 2] fuse_cat_lr_thr        vs fuse_ref_lr_full_thr all    dAUC=-0.0016[-0.0040,+0.0006] dmac=-0.0020[-0.0056,+0.0015] dmic=-0.0019[-0.0054,+0.0016]
+[boot stream 2] fuse_cat_lr_thr        vs fuse_ref_lr_full_thr mature dAUC=-0.0019[-0.0045,+0.0007] dmac=-0.0012[-0.0058,+0.0035] dmic=-0.0013[-0.0058,+0.0034]
+[boot stream 2] fuse_fam_vote          vs fuse_ref_lr_full     all    dAUC=-0.0010[-0.0068,+0.0056] dmac=-0.0007[-0.0064,+0.0050] dmic=-0.0009[-0.0067,+0.0048]
+[boot stream 2] fuse_fam_vote          vs fuse_ref_lr_full     mature dAUC=-0.0020[-0.0092,+0.0058] dmac=-0.0000[-0.0088,+0.0082] dmic=-0.0004[-0.0093,+0.0079]
+[boot stream 2] fuse_fam_vote_thr      vs fuse_ref_lr_full_thr all    dAUC=-0.0011[-0.0067,+0.0053] dmac=+0.0007[-0.0042,+0.0059] dmic=+0.0005[-0.0043,+0.0058]
+[boot stream 2] fuse_fam_vote_thr      vs fuse_ref_lr_full_thr mature dAUC=-0.0017[-0.0086,+0.0061] dmac=+0.0005[-0.0073,+0.0082] dmic=+0.0003[-0.0075,+0.0083]
+[boot stream 2] fuse_spread            vs fuse_ref_lr_full     all    dAUC=+0.0028[+0.0005,+0.0052] dmac=+0.0027[-0.0007,+0.0063] dmic=+0.0030[-0.0005,+0.0065]
+[boot stream 2] fuse_spread            vs fuse_ref_lr_full     mature dAUC=+0.0036[+0.0004,+0.0071] dmac=+0.0040[-0.0008,+0.0097] dmic=+0.0043[-0.0004,+0.0099]
+[boot stream 2] fuse_spread_thr        vs fuse_ref_lr_full_thr all    dAUC=+0.0027[+0.0003,+0.0052] dmac=+0.0017[-0.0015,+0.0054] dmic=+0.0020[-0.0013,+0.0056]
+[boot stream 2] fuse_spread_thr        vs fuse_ref_lr_full_thr mature dAUC=+0.0037[+0.0004,+0.0071] dmac=+0.0029[-0.0019,+0.0087] dmic=+0.0031[-0.0016,+0.0088]
+[boot stream 2] fuse_gmm_orient        vs fuse_ref_lr_full     all    dAUC=-0.0479[-0.0646,-0.0290] dmac=-0.0524[-0.0678,-0.0362] dmic=-0.0518[-0.0673,-0.0356]
+[boot stream 2] fuse_gmm_orient        vs fuse_ref_lr_full     mature dAUC=-0.0528[-0.0753,-0.0265] dmac=-0.0609[-0.0811,-0.0385] dmic=-0.0599[-0.0804,-0.0370]
+[boot stream 2] fuse_gmm_orient_thr    vs fuse_ref_lr_full_thr all    dAUC=-0.0440[-0.0608,-0.0260] dmac=-0.0474[-0.0632,-0.0314] dmic=-0.0470[-0.0627,-0.0307]
+[boot stream 2] fuse_gmm_orient_thr    vs fuse_ref_lr_full_thr mature dAUC=-0.0490[-0.0708,-0.0247] dmac=-0.0556[-0.0756,-0.0335] dmic=-0.0545[-0.0747,-0.0321]
+[s2] done elapsed=229.0s
+[summary] fuse_ref_lr_full_thr   mac=0.6690 AUC=0.7166 mature_mac=0.6729 pastAUC_low=0.5527
+[summary] fuse_rank_lr_thr       mac=0.6672 AUC=0.7166 mature_mac=0.6699 pastAUC_low=0.5518 dmac=[-0.0017609168768756948, -0.00536256872584336, 0.0018212298599199325] dAUC=[-5.211055038561393e-06, -0.0031941786450352346, 0.0033625424754111597]
+[summary] fuse_p2_lr_thr         mac=0.6637 AUC=0.7123 mature_mac=0.6666 pastAUC_low=0.5449 dmac=[-0.005227016327042246, -0.011048762488617062, 0.0006351345763029909] dAUC=[-0.004281447027235577, -0.009865890887447342, 0.0009810369816670554]
+[summary] fuse_cat_lr_thr        mac=0.6676 AUC=0.7162 mature_mac=0.6713 pastAUC_low=0.5534 dmac=[-0.0014329236011974937, -0.004894684603320006, 0.002155096178311032] dAUC=[-0.00040949760324933204, -0.002675341575453502, 0.0017486387476180877]
+[summary] fuse_fam_vote_thr      mac=0.6676 AUC=0.7155 mature_mac=0.6714 pastAUC_low=0.5474 dmac=[-0.0013880763609066614, -0.006823956830676297, 0.004172232276604837] dAUC=[-0.0011444377987052045, -0.006736743660152988, 0.004728845019196635]
+[summary] fuse_spread_thr        mac=0.6702 AUC=0.7186 mature_mac=0.6758 pastAUC_low=0.5488 dmac=[0.001208598140541431, -0.0025102830084352498, 0.005055429558046057] dAUC=[0.001958236496295781, -0.0006460443561529203, 0.004485112199991892]
+[summary] fuse_gmm_orient_thr    mac=0.6213 AUC=0.6676 mature_mac=0.6162 pastAUC_low=0.5057 dmac=[-0.0477844517244679, -0.06387746351822159, -0.0324233011090419] dAUC=[-0.04894723225812337, -0.06678579757689863, -0.03155630351522031]
+[summary] label_acc pseudo       {'all': 0.7105759584810828, 'high': 0.8727135730590699, 'mid': 0.7797378892172188, 'low': 0.5686800340429533}
+[summary] label_acc spread       {'all': 0.6760982294384791, 'high': 0.8552881424901312, 'mid': 0.7355980814595587, 'low': 0.548069994044896}
+[summary] label_acc gmm_orient   {'all': 0.5468148616255548, 'high': 0.6638138898715135, 'mid': 0.5619435743525002, 'low': 0.5035461957528541}
+[done] all checks passed elapsed=229.0s -> depositioned_within_subject_repr.json
