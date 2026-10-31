@@ -1,0 +1,312 @@
+[start] rows=16067 subjects=57 device=cuda smoke=False sseeds=(0, 1, 2) epochs=40 groups={'low': 20, 'mid': 34, 'high': 3}
+    [encoder fold1/5] ep01/40 nce=3.4445 pos_top1=0.031 (chance 0.032) t=5s elapsed=6.9s
+    [encoder fold1/5] ep02/40 nce=3.4337 pos_top1=0.036 (chance 0.032) t=8s elapsed=10.2s
+    [encoder fold1/5] ep03/40 nce=3.4336 pos_top1=0.036 (chance 0.032) t=11s elapsed=13.4s
+    [encoder fold1/5] ep04/40 nce=3.4335 pos_top1=0.034 (chance 0.032) t=15s elapsed=16.7s
+    [encoder fold1/5] ep05/40 nce=3.4323 pos_top1=0.034 (chance 0.032) t=18s elapsed=19.9s
+    [encoder fold1/5] ep06/40 nce=3.4327 pos_top1=0.036 (chance 0.032) t=21s elapsed=23.2s
+    [encoder fold1/5] ep07/40 nce=3.4320 pos_top1=0.037 (chance 0.032) t=24s elapsed=26.4s
+    [encoder fold1/5] ep08/40 nce=3.4320 pos_top1=0.038 (chance 0.032) t=28s elapsed=29.7s
+    [encoder fold1/5] ep09/40 nce=3.4324 pos_top1=0.035 (chance 0.032) t=31s elapsed=32.9s
+    [encoder fold1/5] ep10/40 nce=3.4323 pos_top1=0.037 (chance 0.032) t=34s elapsed=36.2s
+    [encoder fold1/5] ep11/40 nce=3.4314 pos_top1=0.037 (chance 0.032) t=37s elapsed=39.5s
+    [encoder fold1/5] ep12/40 nce=3.4308 pos_top1=0.039 (chance 0.032) t=41s elapsed=42.7s
+    [encoder fold1/5] ep13/40 nce=3.4319 pos_top1=0.036 (chance 0.032) t=44s elapsed=46.0s
+    [encoder fold1/5] ep14/40 nce=3.4304 pos_top1=0.037 (chance 0.032) t=47s elapsed=49.3s
+    [encoder fold1/5] ep15/40 nce=3.4300 pos_top1=0.036 (chance 0.032) t=50s elapsed=52.5s
+    [encoder fold1/5] ep16/40 nce=3.4298 pos_top1=0.037 (chance 0.032) t=54s elapsed=55.7s
+    [encoder fold1/5] ep17/40 nce=3.4278 pos_top1=0.039 (chance 0.032) t=57s elapsed=58.8s
+    [encoder fold1/5] ep18/40 nce=3.4300 pos_top1=0.041 (chance 0.032) t=60s elapsed=62.0s
+    [encoder fold1/5] ep19/40 nce=3.4292 pos_top1=0.035 (chance 0.032) t=63s elapsed=65.2s
+    [encoder fold1/5] ep20/40 nce=3.4283 pos_top1=0.039 (chance 0.032) t=66s elapsed=68.5s
+    [encoder fold1/5] ep21/40 nce=3.4306 pos_top1=0.036 (chance 0.032) t=70s elapsed=71.8s
+    [encoder fold1/5] ep22/40 nce=3.4278 pos_top1=0.038 (chance 0.032) t=73s elapsed=75.1s
+    [encoder fold1/5] ep23/40 nce=3.4270 pos_top1=0.038 (chance 0.032) t=76s elapsed=78.4s
+    [encoder fold1/5] ep24/40 nce=3.4291 pos_top1=0.039 (chance 0.032) t=80s elapsed=81.7s
+    [encoder fold1/5] ep25/40 nce=3.4284 pos_top1=0.035 (chance 0.032) t=83s elapsed=85.1s
+    [encoder fold1/5] ep26/40 nce=3.4278 pos_top1=0.038 (chance 0.032) t=86s elapsed=88.5s
+    [encoder fold1/5] ep27/40 nce=3.4244 pos_top1=0.039 (chance 0.032) t=90s elapsed=92.0s
+    [encoder fold1/5] ep28/40 nce=3.4264 pos_top1=0.038 (chance 0.032) t=94s elapsed=95.9s
+    [encoder fold1/5] ep29/40 nce=3.4245 pos_top1=0.036 (chance 0.032) t=98s elapsed=99.6s
+    [encoder fold1/5] ep30/40 nce=3.4254 pos_top1=0.038 (chance 0.032) t=101s elapsed=103.4s
+    [encoder fold1/5] ep31/40 nce=3.4257 pos_top1=0.037 (chance 0.032) t=105s elapsed=106.8s
+    [encoder fold1/5] ep32/40 nce=3.4271 pos_top1=0.039 (chance 0.032) t=108s elapsed=110.1s
+    [encoder fold1/5] ep33/40 nce=3.4226 pos_top1=0.036 (chance 0.032) t=111s elapsed=113.4s
+    [encoder fold1/5] ep34/40 nce=3.4243 pos_top1=0.039 (chance 0.032) t=114s elapsed=116.6s
+    [encoder fold1/5] ep35/40 nce=3.4230 pos_top1=0.041 (chance 0.032) t=118s elapsed=119.7s
+    [encoder fold1/5] ep36/40 nce=3.4252 pos_top1=0.043 (chance 0.032) t=121s elapsed=122.9s
+    [encoder fold1/5] ep37/40 nce=3.4216 pos_top1=0.040 (chance 0.032) t=124s elapsed=126.0s
+    [encoder fold1/5] ep38/40 nce=3.4225 pos_top1=0.038 (chance 0.032) t=127s elapsed=129.2s
+    [encoder fold1/5] ep39/40 nce=3.4250 pos_top1=0.039 (chance 0.032) t=130s elapsed=132.4s
+    [encoder fold1/5] ep40/40 nce=3.4217 pos_top1=0.041 (chance 0.032) t=134s elapsed=135.8s
+[encoder] fold1/5 done 134s final nce=3.4217 pos_top1=0.041 iso=0.0e+00 elapsed=137.4s
+    [encoder fold2/5] ep01/40 nce=3.4389 pos_top1=0.031 (chance 0.032) t=3s elapsed=140.7s
+    [encoder fold2/5] ep02/40 nce=3.4338 pos_top1=0.034 (chance 0.032) t=7s elapsed=144.1s
+    [encoder fold2/5] ep03/40 nce=3.4333 pos_top1=0.033 (chance 0.032) t=10s elapsed=147.5s
+    [encoder fold2/5] ep04/40 nce=3.4334 pos_top1=0.037 (chance 0.032) t=14s elapsed=151.0s
+    [encoder fold2/5] ep05/40 nce=3.4328 pos_top1=0.034 (chance 0.032) t=17s elapsed=154.7s
+    [encoder fold2/5] ep06/40 nce=3.4338 pos_top1=0.036 (chance 0.032) t=21s elapsed=158.6s
+    [encoder fold2/5] ep07/40 nce=3.4334 pos_top1=0.033 (chance 0.032) t=25s elapsed=162.4s
+    [encoder fold2/5] ep08/40 nce=3.4335 pos_top1=0.032 (chance 0.032) t=29s elapsed=166.0s
+    [encoder fold2/5] ep09/40 nce=3.4334 pos_top1=0.037 (chance 0.032) t=32s elapsed=169.3s
+    [encoder fold2/5] ep10/40 nce=3.4326 pos_top1=0.033 (chance 0.032) t=35s elapsed=172.6s
+    [encoder fold2/5] ep11/40 nce=3.4329 pos_top1=0.033 (chance 0.032) t=39s elapsed=176.0s
+    [encoder fold2/5] ep12/40 nce=3.4337 pos_top1=0.033 (chance 0.032) t=42s elapsed=179.3s
+    [encoder fold2/5] ep13/40 nce=3.4327 pos_top1=0.035 (chance 0.032) t=45s elapsed=182.6s
+    [encoder fold2/5] ep14/40 nce=3.4329 pos_top1=0.032 (chance 0.032) t=49s elapsed=186.0s
+    [encoder fold2/5] ep15/40 nce=3.4322 pos_top1=0.034 (chance 0.032) t=52s elapsed=189.4s
+    [encoder fold2/5] ep16/40 nce=3.4325 pos_top1=0.035 (chance 0.032) t=56s elapsed=192.9s
+    [encoder fold2/5] ep17/40 nce=3.4318 pos_top1=0.032 (chance 0.032) t=59s elapsed=196.4s
+    [encoder fold2/5] ep18/40 nce=3.4330 pos_top1=0.031 (chance 0.032) t=63s elapsed=200.3s
+    [encoder fold2/5] ep19/40 nce=3.4331 pos_top1=0.036 (chance 0.032) t=67s elapsed=204.1s
+    [encoder fold2/5] ep20/40 nce=3.4318 pos_top1=0.036 (chance 0.032) t=70s elapsed=207.7s
+    [encoder fold2/5] ep21/40 nce=3.4325 pos_top1=0.034 (chance 0.032) t=74s elapsed=211.1s
+    [encoder fold2/5] ep22/40 nce=3.4324 pos_top1=0.032 (chance 0.032) t=77s elapsed=214.5s
+    [encoder fold2/5] ep23/40 nce=3.4321 pos_top1=0.034 (chance 0.032) t=80s elapsed=217.8s
+    [encoder fold2/5] ep24/40 nce=3.4317 pos_top1=0.034 (chance 0.032) t=84s elapsed=221.1s
+    [encoder fold2/5] ep25/40 nce=3.4300 pos_top1=0.036 (chance 0.032) t=87s elapsed=224.5s
+    [encoder fold2/5] ep26/40 nce=3.4314 pos_top1=0.036 (chance 0.032) t=90s elapsed=227.8s
+    [encoder fold2/5] ep27/40 nce=3.4305 pos_top1=0.036 (chance 0.032) t=94s elapsed=231.2s
+    [encoder fold2/5] ep28/40 nce=3.4297 pos_top1=0.035 (chance 0.032) t=97s elapsed=234.7s
+    [encoder fold2/5] ep29/40 nce=3.4301 pos_top1=0.038 (chance 0.032) t=101s elapsed=238.3s
+    [encoder fold2/5] ep30/40 nce=3.4321 pos_top1=0.034 (chance 0.032) t=105s elapsed=242.2s
+    [encoder fold2/5] ep31/40 nce=3.4291 pos_top1=0.034 (chance 0.032) t=109s elapsed=245.9s
+    [encoder fold2/5] ep32/40 nce=3.4294 pos_top1=0.036 (chance 0.032) t=112s elapsed=249.4s
+    [encoder fold2/5] ep33/40 nce=3.4309 pos_top1=0.037 (chance 0.032) t=115s elapsed=252.8s
+    [encoder fold2/5] ep34/40 nce=3.4287 pos_top1=0.035 (chance 0.032) t=119s elapsed=256.1s
+    [encoder fold2/5] ep35/40 nce=3.4281 pos_top1=0.035 (chance 0.032) t=122s elapsed=259.5s
+    [encoder fold2/5] ep36/40 nce=3.4278 pos_top1=0.038 (chance 0.032) t=125s elapsed=262.8s
+    [encoder fold2/5] ep37/40 nce=3.4282 pos_top1=0.035 (chance 0.032) t=129s elapsed=266.1s
+    [encoder fold2/5] ep38/40 nce=3.4279 pos_top1=0.037 (chance 0.032) t=132s elapsed=269.5s
+    [encoder fold2/5] ep39/40 nce=3.4280 pos_top1=0.039 (chance 0.032) t=136s elapsed=273.0s
+    [encoder fold2/5] ep40/40 nce=3.4272 pos_top1=0.036 (chance 0.032) t=139s elapsed=276.4s
+[encoder] fold2/5 done 139s final nce=3.4272 pos_top1=0.036 iso=0.0e+00 elapsed=278.1s
+    [encoder fold3/5] ep01/40 nce=3.4408 pos_top1=0.036 (chance 0.032) t=4s elapsed=282.1s
+    [encoder fold3/5] ep02/40 nce=3.4337 pos_top1=0.032 (chance 0.032) t=8s elapsed=285.9s
+    [encoder fold3/5] ep03/40 nce=3.4326 pos_top1=0.034 (chance 0.032) t=11s elapsed=289.5s
+    [encoder fold3/5] ep04/40 nce=3.4336 pos_top1=0.033 (chance 0.032) t=15s elapsed=292.8s
+    [encoder fold3/5] ep05/40 nce=3.4327 pos_top1=0.035 (chance 0.032) t=18s elapsed=296.2s
+    [encoder fold3/5] ep06/40 nce=3.4331 pos_top1=0.035 (chance 0.032) t=21s elapsed=299.5s
+    [encoder fold3/5] ep07/40 nce=3.4319 pos_top1=0.035 (chance 0.032) t=25s elapsed=302.8s
+    [encoder fold3/5] ep08/40 nce=3.4330 pos_top1=0.036 (chance 0.032) t=28s elapsed=306.2s
+    [encoder fold3/5] ep09/40 nce=3.4324 pos_top1=0.037 (chance 0.032) t=31s elapsed=309.5s
+    [encoder fold3/5] ep10/40 nce=3.4330 pos_top1=0.035 (chance 0.032) t=35s elapsed=313.0s
+    [encoder fold3/5] ep11/40 nce=3.4325 pos_top1=0.037 (chance 0.032) t=38s elapsed=316.5s
+    [encoder fold3/5] ep12/40 nce=3.4318 pos_top1=0.035 (chance 0.032) t=42s elapsed=320.2s
+    [encoder fold3/5] ep13/40 nce=3.4319 pos_top1=0.034 (chance 0.032) t=46s elapsed=324.0s
+    [encoder fold3/5] ep14/40 nce=3.4317 pos_top1=0.037 (chance 0.032) t=50s elapsed=327.6s
+    [encoder fold3/5] ep15/40 nce=3.4320 pos_top1=0.039 (chance 0.032) t=53s elapsed=331.1s
+    [encoder fold3/5] ep16/40 nce=3.4332 pos_top1=0.035 (chance 0.032) t=56s elapsed=334.4s
+    [encoder fold3/5] ep17/40 nce=3.4322 pos_top1=0.036 (chance 0.032) t=60s elapsed=337.7s
+    [encoder fold3/5] ep18/40 nce=3.4321 pos_top1=0.034 (chance 0.032) t=63s elapsed=341.1s
+    [encoder fold3/5] ep19/40 nce=3.4298 pos_top1=0.041 (chance 0.032) t=66s elapsed=344.5s
+    [encoder fold3/5] ep20/40 nce=3.4302 pos_top1=0.035 (chance 0.032) t=70s elapsed=347.9s
+    [encoder fold3/5] ep21/40 nce=3.4321 pos_top1=0.036 (chance 0.032) t=73s elapsed=351.4s
+    [encoder fold3/5] ep22/40 nce=3.4305 pos_top1=0.036 (chance 0.032) t=77s elapsed=354.9s
+    [encoder fold3/5] ep23/40 nce=3.4305 pos_top1=0.033 (chance 0.032) t=80s elapsed=358.3s
+    [encoder fold3/5] ep24/40 nce=3.4309 pos_top1=0.037 (chance 0.032) t=84s elapsed=361.7s
+    [encoder fold3/5] ep25/40 nce=3.4306 pos_top1=0.038 (chance 0.032) t=87s elapsed=365.1s
+    [encoder fold3/5] ep26/40 nce=3.4302 pos_top1=0.037 (chance 0.032) t=90s elapsed=368.4s
+    [encoder fold3/5] ep27/40 nce=3.4296 pos_top1=0.035 (chance 0.032) t=94s elapsed=371.8s
+    [encoder fold3/5] ep28/40 nce=3.4318 pos_top1=0.036 (chance 0.032) t=97s elapsed=375.1s
+    [encoder fold3/5] ep29/40 nce=3.4312 pos_top1=0.036 (chance 0.032) t=100s elapsed=378.4s
+    [encoder fold3/5] ep30/40 nce=3.4312 pos_top1=0.036 (chance 0.032) t=104s elapsed=381.9s
+    [encoder fold3/5] ep31/40 nce=3.4290 pos_top1=0.035 (chance 0.032) t=107s elapsed=385.3s
+    [encoder fold3/5] ep32/40 nce=3.4306 pos_top1=0.036 (chance 0.032) t=111s elapsed=388.9s
+    [encoder fold3/5] ep33/40 nce=3.4291 pos_top1=0.036 (chance 0.032) t=115s elapsed=392.8s
+    [encoder fold3/5] ep34/40 nce=3.4298 pos_top1=0.036 (chance 0.032) t=118s elapsed=396.5s
+    [encoder fold3/5] ep35/40 nce=3.4301 pos_top1=0.037 (chance 0.032) t=122s elapsed=400.0s
+    [encoder fold3/5] ep36/40 nce=3.4285 pos_top1=0.037 (chance 0.032) t=125s elapsed=403.4s
+    [encoder fold3/5] ep37/40 nce=3.4293 pos_top1=0.037 (chance 0.032) t=129s elapsed=406.7s
+    [encoder fold3/5] ep38/40 nce=3.4284 pos_top1=0.039 (chance 0.032) t=132s elapsed=410.1s
+    [encoder fold3/5] ep39/40 nce=3.4296 pos_top1=0.038 (chance 0.032) t=135s elapsed=413.4s
+    [encoder fold3/5] ep40/40 nce=3.4271 pos_top1=0.036 (chance 0.032) t=139s elapsed=416.7s
+[encoder] fold3/5 done 139s final nce=3.4271 pos_top1=0.036 iso=0.0e+00 elapsed=418.3s
+    [encoder fold4/5] ep01/40 nce=3.4440 pos_top1=0.034 (chance 0.032) t=3s elapsed=421.7s
+    [encoder fold4/5] ep02/40 nce=3.4338 pos_top1=0.033 (chance 0.032) t=7s elapsed=425.2s
+    [encoder fold4/5] ep03/40 nce=3.4332 pos_top1=0.035 (chance 0.032) t=10s elapsed=428.7s
+    [encoder fold4/5] ep04/40 nce=3.4331 pos_top1=0.033 (chance 0.032) t=14s elapsed=432.5s
+    [encoder fold4/5] ep05/40 nce=3.4335 pos_top1=0.033 (chance 0.032) t=18s elapsed=436.4s
+    [encoder fold4/5] ep06/40 nce=3.4336 pos_top1=0.034 (chance 0.032) t=22s elapsed=440.0s
+    [encoder fold4/5] ep07/40 nce=3.4332 pos_top1=0.035 (chance 0.032) t=25s elapsed=443.4s
+    [encoder fold4/5] ep08/40 nce=3.4329 pos_top1=0.034 (chance 0.032) t=29s elapsed=446.8s
+    [encoder fold4/5] ep09/40 nce=3.4323 pos_top1=0.038 (chance 0.032) t=32s elapsed=450.1s
+    [encoder fold4/5] ep10/40 nce=3.4333 pos_top1=0.034 (chance 0.032) t=35s elapsed=453.4s
+    [encoder fold4/5] ep11/40 nce=3.4336 pos_top1=0.036 (chance 0.032) t=39s elapsed=456.8s
+    [encoder fold4/5] ep12/40 nce=3.4329 pos_top1=0.034 (chance 0.032) t=42s elapsed=460.1s
+    [encoder fold4/5] ep13/40 nce=3.4332 pos_top1=0.035 (chance 0.032) t=45s elapsed=463.6s
+    [encoder fold4/5] ep14/40 nce=3.4329 pos_top1=0.034 (chance 0.032) t=49s elapsed=467.1s
+    [encoder fold4/5] ep15/40 nce=3.4330 pos_top1=0.035 (chance 0.032) t=52s elapsed=470.6s
+    [encoder fold4/5] ep16/40 nce=3.4329 pos_top1=0.034 (chance 0.032) t=56s elapsed=474.6s
+    [encoder fold4/5] ep17/40 nce=3.4316 pos_top1=0.036 (chance 0.032) t=60s elapsed=478.2s
+    [encoder fold4/5] ep18/40 nce=3.4334 pos_top1=0.034 (chance 0.032) t=63s elapsed=481.8s
+    [encoder fold4/5] ep19/40 nce=3.4340 pos_top1=0.033 (chance 0.032) t=67s elapsed=485.1s
+    [encoder fold4/5] ep20/40 nce=3.4340 pos_top1=0.033 (chance 0.032) t=70s elapsed=488.5s
+    [encoder fold4/5] ep21/40 nce=3.4340 pos_top1=0.036 (chance 0.032) t=74s elapsed=491.8s
+    [encoder fold4/5] ep22/40 nce=3.4339 pos_top1=0.035 (chance 0.032) t=77s elapsed=495.1s
+    [encoder fold4/5] ep23/40 nce=3.4336 pos_top1=0.034 (chance 0.032) t=80s elapsed=498.5s
+    [encoder fold4/5] ep24/40 nce=3.4330 pos_top1=0.035 (chance 0.032) t=84s elapsed=501.8s
+    [encoder fold4/5] ep25/40 nce=3.4335 pos_top1=0.034 (chance 0.032) t=87s elapsed=505.3s
+    [encoder fold4/5] ep26/40 nce=3.4327 pos_top1=0.034 (chance 0.032) t=90s elapsed=508.7s
+    [encoder fold4/5] ep27/40 nce=3.4321 pos_top1=0.038 (chance 0.032) t=94s elapsed=512.5s
+    [encoder fold4/5] ep28/40 nce=3.4333 pos_top1=0.033 (chance 0.032) t=98s elapsed=516.3s
+    [encoder fold4/5] ep29/40 nce=3.4322 pos_top1=0.033 (chance 0.032) t=102s elapsed=519.9s
+    [encoder fold4/5] ep30/40 nce=3.4317 pos_top1=0.036 (chance 0.032) t=105s elapsed=523.3s
+    [encoder fold4/5] ep31/40 nce=3.4325 pos_top1=0.039 (chance 0.032) t=108s elapsed=526.6s
+    [encoder fold4/5] ep32/40 nce=3.4326 pos_top1=0.034 (chance 0.032) t=112s elapsed=530.0s
+    [encoder fold4/5] ep33/40 nce=3.4313 pos_top1=0.038 (chance 0.032) t=115s elapsed=533.3s
+    [encoder fold4/5] ep34/40 nce=3.4309 pos_top1=0.037 (chance 0.032) t=118s elapsed=536.6s
+    [encoder fold4/5] ep35/40 nce=3.4320 pos_top1=0.036 (chance 0.032) t=122s elapsed=540.0s
+    [encoder fold4/5] ep36/40 nce=3.4320 pos_top1=0.035 (chance 0.032) t=125s elapsed=543.4s
+    [encoder fold4/5] ep37/40 nce=3.4315 pos_top1=0.036 (chance 0.032) t=129s elapsed=546.9s
+    [encoder fold4/5] ep38/40 nce=3.4310 pos_top1=0.035 (chance 0.032) t=132s elapsed=550.4s
+    [encoder fold4/5] ep39/40 nce=3.4306 pos_top1=0.037 (chance 0.032) t=136s elapsed=554.4s
+    [encoder fold4/5] ep40/40 nce=3.4322 pos_top1=0.035 (chance 0.032) t=140s elapsed=558.1s
+[encoder] fold4/5 done 140s final nce=3.4322 pos_top1=0.035 iso=0.0e+00 elapsed=559.8s
+    [encoder fold5/5] ep01/40 nce=3.4418 pos_top1=0.035 (chance 0.032) t=4s elapsed=563.3s
+    [encoder fold5/5] ep02/40 nce=3.4338 pos_top1=0.033 (chance 0.032) t=7s elapsed=566.6s
+    [encoder fold5/5] ep03/40 nce=3.4339 pos_top1=0.036 (chance 0.032) t=10s elapsed=569.9s
+    [encoder fold5/5] ep04/40 nce=3.4340 pos_top1=0.037 (chance 0.032) t=13s elapsed=573.2s
+    [encoder fold5/5] ep05/40 nce=3.4330 pos_top1=0.035 (chance 0.032) t=17s elapsed=576.7s
+    [encoder fold5/5] ep06/40 nce=3.4322 pos_top1=0.035 (chance 0.032) t=20s elapsed=580.1s
+    [encoder fold5/5] ep07/40 nce=3.4325 pos_top1=0.034 (chance 0.032) t=24s elapsed=583.6s
+    [encoder fold5/5] ep08/40 nce=3.4328 pos_top1=0.035 (chance 0.032) t=27s elapsed=587.0s
+    [encoder fold5/5] ep09/40 nce=3.4323 pos_top1=0.035 (chance 0.032) t=31s elapsed=590.5s
+    [encoder fold5/5] ep10/40 nce=3.4331 pos_top1=0.034 (chance 0.032) t=34s elapsed=593.9s
+    [encoder fold5/5] ep11/40 nce=3.4324 pos_top1=0.035 (chance 0.032) t=38s elapsed=597.3s
+    [encoder fold5/5] ep12/40 nce=3.4320 pos_top1=0.036 (chance 0.032) t=41s elapsed=600.6s
+    [encoder fold5/5] ep13/40 nce=3.4327 pos_top1=0.033 (chance 0.032) t=44s elapsed=603.9s
+    [encoder fold5/5] ep14/40 nce=3.4325 pos_top1=0.035 (chance 0.032) t=48s elapsed=607.3s
+    [encoder fold5/5] ep15/40 nce=3.4321 pos_top1=0.034 (chance 0.032) t=51s elapsed=610.6s
+    [encoder fold5/5] ep16/40 nce=3.4295 pos_top1=0.036 (chance 0.032) t=54s elapsed=614.0s
+    [encoder fold5/5] ep17/40 nce=3.4315 pos_top1=0.036 (chance 0.032) t=58s elapsed=617.5s
+    [encoder fold5/5] ep18/40 nce=3.4323 pos_top1=0.036 (chance 0.032) t=61s elapsed=621.0s
+    [encoder fold5/5] ep19/40 nce=3.4286 pos_top1=0.037 (chance 0.032) t=65s elapsed=624.9s
+    [encoder fold5/5] ep20/40 nce=3.4302 pos_top1=0.037 (chance 0.032) t=69s elapsed=628.5s
+    [encoder fold5/5] ep21/40 nce=3.4292 pos_top1=0.038 (chance 0.032) t=72s elapsed=632.0s
+    [encoder fold5/5] ep22/40 nce=3.4290 pos_top1=0.039 (chance 0.032) t=76s elapsed=635.4s
+    [encoder fold5/5] ep23/40 nce=3.4277 pos_top1=0.037 (chance 0.032) t=79s elapsed=638.7s
+    [encoder fold5/5] ep24/40 nce=3.4290 pos_top1=0.036 (chance 0.032) t=82s elapsed=642.1s
+    [encoder fold5/5] ep25/40 nce=3.4274 pos_top1=0.037 (chance 0.032) t=86s elapsed=645.4s
+    [encoder fold5/5] ep26/40 nce=3.4273 pos_top1=0.039 (chance 0.032) t=89s elapsed=648.7s
+    [encoder fold5/5] ep27/40 nce=3.4291 pos_top1=0.038 (chance 0.032) t=92s elapsed=652.1s
+    [encoder fold5/5] ep28/40 nce=3.4283 pos_top1=0.035 (chance 0.032) t=96s elapsed=655.5s
+    [encoder fold5/5] ep29/40 nce=3.4273 pos_top1=0.035 (chance 0.032) t=99s elapsed=659.0s
+    [encoder fold5/5] ep30/40 nce=3.4257 pos_top1=0.039 (chance 0.032) t=103s elapsed=662.5s
+    [encoder fold5/5] ep31/40 nce=3.4281 pos_top1=0.037 (chance 0.032) t=107s elapsed=666.6s
+    [encoder fold5/5] ep32/40 nce=3.4298 pos_top1=0.035 (chance 0.032) t=111s elapsed=670.3s
+    [encoder fold5/5] ep33/40 nce=3.4260 pos_top1=0.036 (chance 0.032) t=114s elapsed=673.8s
+    [encoder fold5/5] ep34/40 nce=3.4277 pos_top1=0.036 (chance 0.032) t=117s elapsed=677.0s
+    [encoder fold5/5] ep35/40 nce=3.4292 pos_top1=0.035 (chance 0.032) t=121s elapsed=680.3s
+    [encoder fold5/5] ep36/40 nce=3.4279 pos_top1=0.039 (chance 0.032) t=124s elapsed=683.7s
+    [encoder fold5/5] ep37/40 nce=3.4272 pos_top1=0.037 (chance 0.032) t=127s elapsed=687.0s
+    [encoder fold5/5] ep38/40 nce=3.4269 pos_top1=0.037 (chance 0.032) t=131s elapsed=690.3s
+    [encoder fold5/5] ep39/40 nce=3.4262 pos_top1=0.038 (chance 0.032) t=134s elapsed=693.7s
+    [encoder fold5/5] ep40/40 nce=3.4267 pos_top1=0.037 (chance 0.032) t=137s elapsed=697.1s
+[encoder] fold5/5 done 137s final nce=3.4267 pos_top1=0.037 iso=0.0e+00 elapsed=698.7s
+[stream 0 fold 1/5] heads fit; testAUC lr=0.5672 hgb=0.5865; checks ok (naive/label-shuffle/isolation/prefix) elapsed=708.7s
+[stream 0 fold 2/5] heads fit; testAUC lr=0.5445 hgb=0.5572; checks ok (naive/label-shuffle/isolation/prefix) elapsed=713.5s
+[stream 0 fold 3/5] heads fit; testAUC lr=0.5591 hgb=0.5690; checks ok (naive/label-shuffle/isolation/prefix) elapsed=716.2s
+[stream 0 fold 4/5] heads fit; testAUC lr=0.5231 hgb=0.5147; checks ok (naive/label-shuffle/isolation/prefix) elapsed=718.2s
+[stream 0 fold 5/5] heads fit; testAUC lr=0.5429 hgb=0.5510; checks ok (naive/label-shuffle/isolation/prefix) elapsed=720.4s
+[result stream 0] position_only__lr  all: AUC=0.4935 mac=0.4985 mic=0.4982 | mature: AUC=0.4925 mac=0.5004 mic=0.4966 | subj>=.9=0 max=0.543
+[result stream 0] position_only__hgb all: AUC=0.4959 mac=0.4992 mic=0.4991 | mature: AUC=0.4971 mac=0.4988 mic=0.4985 | subj>=.9=0 max=0.578
+[result stream 0] contrastive_lr     all: AUC=0.5469 mac=0.5356 mic=0.5358 | mature: AUC=0.5482 mac=0.5398 mic=0.5406 | subj>=.9=0 max=0.715
+[result stream 0] contrastive_hgb    all: AUC=0.5521 mac=0.5414 mic=0.5400 | mature: AUC=0.5508 mac=0.5413 mic=0.5409 | subj>=.9=0 max=0.722
+[result stream 0] fusionM_prank      all: AUC=0.7043 mac=0.6463 mic=0.6470 | mature: AUC=0.7057 mac=0.6458 mic=0.6461 | subj>=.9=0 max=0.867
+[result stream 0] fusionF            all: AUC=0.6832 mac=0.6269 mic=0.6273 | mature: AUC=0.6849 mac=0.6267 mic=0.6271 | subj>=.9=0 max=0.874
+[result stream 0] fusionF_hgb        all: AUC=0.6763 mac=0.6244 mic=0.6240 | mature: AUC=0.6764 mac=0.6249 mic=0.6248 | subj>=.9=0 max=0.826
+[sanity stream 0] position_only__lr AUC=0.4935 -> OK
+[sanity stream 0] position_only__hgb AUC=0.4959 -> OK
+[boot stream 0] contrastive_lr   vs fusionM_prank all    dAUC=-0.1577[-0.2010,-0.1168] dmac=-0.1109[-0.1458,-0.0778] dmic=-0.1114[-0.1466,-0.0775]
+[boot stream 0] contrastive_lr   vs fusionM_prank mature dAUC=-0.1578[-0.2048,-0.1133] dmac=-0.1063[-0.1428,-0.0706] dmic=-0.1058[-0.1438,-0.0691]
+[group stream 0] contrastive_lr   low  n=20 medAUC=0.5206 medbACC=0.5092 med dAUC=-0.0361 med dbACC=-0.0091
+[group stream 0] contrastive_lr   mid  n=34 medAUC=0.5623 medbACC=0.5512 med dAUC=-0.2249 med dbACC=-0.1570
+[group stream 0] contrastive_lr   high n= 3 medAUC=0.6677 medbACC=0.6253 med dAUC=-0.1913 med dbACC=-0.1941
+[boot stream 0] contrastive_hgb  vs fusionM_prank all    dAUC=-0.1522[-0.1914,-0.1168] dmac=-0.1049[-0.1379,-0.0758] dmic=-0.1069[-0.1390,-0.0777]
+[boot stream 0] contrastive_hgb  vs fusionM_prank mature dAUC=-0.1549[-0.1961,-0.1172] dmac=-0.1045[-0.1375,-0.0734] dmic=-0.1052[-0.1391,-0.0738]
+[group stream 0] contrastive_hgb  low  n=20 medAUC=0.5178 medbACC=0.5134 med dAUC=+0.0074 med dbACC=+0.0102
+[group stream 0] contrastive_hgb  mid  n=34 medAUC=0.5749 medbACC=0.5538 med dAUC=-0.2039 med dbACC=-0.1524
+[group stream 0] contrastive_hgb  high n= 3 medAUC=0.6786 medbACC=0.6184 med dAUC=-0.2263 med dbACC=-0.2384
+[boot stream 0] fusionF          vs fusionM_prank all    dAUC=-0.0213[-0.0345,-0.0082] dmac=-0.0195[-0.0318,-0.0077] dmic=-0.0199[-0.0324,-0.0080]
+[boot stream 0] fusionF          vs fusionM_prank mature dAUC=-0.0209[-0.0355,-0.0072] dmac=-0.0193[-0.0334,-0.0060] dmic=-0.0193[-0.0335,-0.0055]
+[group stream 0] fusionF          low  n=20 medAUC=0.5436 medbACC=0.5192 med dAUC=+0.0016 med dbACC=-0.0140
+[group stream 0] fusionF          mid  n=34 medAUC=0.7253 medbACC=0.6742 med dAUC=-0.0276 med dbACC=-0.0209
+[group stream 0] fusionF          high n= 3 medAUC=0.8443 medbACC=0.7844 med dAUC=-0.0146 med dbACC=-0.0350
+[boot stream 0] fusionF_hgb      vs fusionM_prank all    dAUC=-0.0282[-0.0425,-0.0156] dmac=-0.0219[-0.0346,-0.0098] dmic=-0.0230[-0.0359,-0.0109]
+[boot stream 0] fusionF_hgb      vs fusionM_prank mature dAUC=-0.0294[-0.0439,-0.0156] dmac=-0.0208[-0.0352,-0.0072] dmic=-0.0212[-0.0356,-0.0077]
+[group stream 0] fusionF_hgb      low  n=20 medAUC=0.5386 medbACC=0.5318 med dAUC=+0.0066 med dbACC=+0.0192
+[group stream 0] fusionF_hgb      mid  n=34 medAUC=0.7243 medbACC=0.6689 med dAUC=-0.0285 med dbACC=-0.0273
+[group stream 0] fusionF_hgb      high n= 3 medAUC=0.8553 medbACC=0.7914 med dAUC=-0.0037 med dbACC=-0.0411
+[progress] stream 0 finished in 34s elapsed=732.8s
+[stream 1 fold 1/5] heads fit; testAUC lr=0.5845 hgb=0.5906; checks ok (naive/label-shuffle/isolation/prefix) elapsed=735.2s
+[stream 1 fold 2/5] heads fit; testAUC lr=0.5739 hgb=0.5567; checks ok (naive/label-shuffle/isolation/prefix) elapsed=737.0s
+[stream 1 fold 3/5] heads fit; testAUC lr=0.5630 hgb=0.5680; checks ok (naive/label-shuffle/isolation/prefix) elapsed=738.8s
+[stream 1 fold 4/5] heads fit; testAUC lr=0.5265 hgb=0.5145; checks ok (naive/label-shuffle/isolation/prefix) elapsed=744.1s
+[stream 1 fold 5/5] heads fit; testAUC lr=0.5458 hgb=0.5435; checks ok (naive/label-shuffle/isolation/prefix) elapsed=753.2s
+[result stream 1] position_only__lr  all: AUC=0.4971 mac=0.5002 mic=0.4987 | mature: AUC=0.4940 mac=0.4977 mic=0.4978 | subj>=.9=0 max=0.548
+[result stream 1] position_only__hgb all: AUC=0.4983 mac=0.5024 mic=0.5027 | mature: AUC=0.5015 mac=0.5090 mic=0.5094 | subj>=.9=0 max=0.543
+[result stream 1] contrastive_lr     all: AUC=0.5578 mac=0.5421 mic=0.5419 | mature: AUC=0.5629 mac=0.5476 mic=0.5483 | subj>=.9=0 max=0.712
+[result stream 1] contrastive_hgb    all: AUC=0.5516 mac=0.5408 mic=0.5396 | mature: AUC=0.5509 mac=0.5406 mic=0.5403 | subj>=.9=0 max=0.709
+[result stream 1] fusionM_prank      all: AUC=0.6990 mac=0.6415 mic=0.6438 | mature: AUC=0.7051 mac=0.6475 mic=0.6481 | subj>=.9=0 max=0.870
+[result stream 1] fusionF            all: AUC=0.6853 mac=0.6312 mic=0.6320 | mature: AUC=0.6921 mac=0.6386 mic=0.6386 | subj>=.9=0 max=0.873
+[result stream 1] fusionF_hgb        all: AUC=0.6713 mac=0.6242 mic=0.6249 | mature: AUC=0.6761 mac=0.6319 mic=0.6320 | subj>=.9=0 max=0.848
+[sanity stream 1] position_only__lr AUC=0.4971 -> OK
+[sanity stream 1] position_only__hgb AUC=0.4983 -> OK
+[boot stream 1] contrastive_lr   vs fusionM_prank all    dAUC=-0.1416[-0.1797,-0.1038] dmac=-0.0997[-0.1315,-0.0706] dmic=-0.1021[-0.1332,-0.0736]
+[boot stream 1] contrastive_lr   vs fusionM_prank mature dAUC=-0.1428[-0.1871,-0.1011] dmac=-0.1005[-0.1360,-0.0686] dmic=-0.1004[-0.1361,-0.0678]
+[group stream 1] contrastive_lr   low  n=20 medAUC=0.5254 medbACC=0.5262 med dAUC=-0.0267 med dbACC=-0.0073
+[group stream 1] contrastive_lr   mid  n=34 medAUC=0.5617 medbACC=0.5582 med dAUC=-0.2012 med dbACC=-0.1418
+[group stream 1] contrastive_lr   high n= 3 medAUC=0.6772 medbACC=0.6393 med dAUC=-0.1791 med dbACC=-0.1738
+[boot stream 1] contrastive_hgb  vs fusionM_prank all    dAUC=-0.1475[-0.1865,-0.1128] dmac=-0.1007[-0.1321,-0.0716] dmic=-0.1041[-0.1362,-0.0769]
+[boot stream 1] contrastive_hgb  vs fusionM_prank mature dAUC=-0.1545[-0.1957,-0.1158] dmac=-0.1071[-0.1413,-0.0768] dmic=-0.1080[-0.1417,-0.0778]
+[group stream 1] contrastive_hgb  low  n=20 medAUC=0.5239 medbACC=0.5234 med dAUC=-0.0048 med dbACC=-0.0008
+[group stream 1] contrastive_hgb  mid  n=34 medAUC=0.5716 medbACC=0.5596 med dAUC=-0.2025 med dbACC=-0.1365
+[group stream 1] contrastive_hgb  high n= 3 medAUC=0.6799 medbACC=0.6296 med dAUC=-0.2374 med dbACC=-0.2403
+[boot stream 1] fusionF          vs fusionM_prank all    dAUC=-0.0138[-0.0260,-0.0018] dmac=-0.0106[-0.0230,+0.0007] dmic=-0.0120[-0.0236,-0.0011]
+[boot stream 1] fusionF          vs fusionM_prank mature dAUC=-0.0132[-0.0266,+0.0004] dmac=-0.0095[-0.0235,+0.0047] dmic=-0.0100[-0.0237,+0.0044]
+[group stream 1] fusionF          low  n=20 medAUC=0.5548 medbACC=0.5471 med dAUC=+0.0072 med dbACC=+0.0023
+[group stream 1] fusionF          mid  n=34 medAUC=0.7349 medbACC=0.6705 med dAUC=-0.0184 med dbACC=-0.0156
+[group stream 1] fusionF          high n= 3 medAUC=0.8398 medbACC=0.7745 med dAUC=-0.0165 med dbACC=-0.0386
+[boot stream 1] fusionF_hgb      vs fusionM_prank all    dAUC=-0.0279[-0.0427,-0.0142] dmac=-0.0174[-0.0307,-0.0053] dmic=-0.0189[-0.0322,-0.0070]
+[boot stream 1] fusionF_hgb      vs fusionM_prank mature dAUC=-0.0293[-0.0446,-0.0147] dmac=-0.0158[-0.0309,-0.0024] dmic=-0.0162[-0.0310,-0.0031]
+[group stream 1] fusionF_hgb      low  n=20 medAUC=0.5444 medbACC=0.5382 med dAUC=-0.0088 med dbACC=+0.0037
+[group stream 1] fusionF_hgb      mid  n=34 medAUC=0.7210 medbACC=0.6639 med dAUC=-0.0295 med dbACC=-0.0230
+[group stream 1] fusionF_hgb      high n= 3 medAUC=0.8438 medbACC=0.7885 med dAUC=-0.0125 med dbACC=-0.0246
+[progress] stream 1 finished in 35s elapsed=767.5s
+[stream 2 fold 1/5] heads fit; testAUC lr=0.5765 hgb=0.5776; checks ok (naive/label-shuffle/isolation/prefix) elapsed=770.1s
+[stream 2 fold 2/5] heads fit; testAUC lr=0.5584 hgb=0.5604; checks ok (naive/label-shuffle/isolation/prefix) elapsed=772.0s
+[stream 2 fold 3/5] heads fit; testAUC lr=0.5558 hgb=0.5561; checks ok (naive/label-shuffle/isolation/prefix) elapsed=773.8s
+[stream 2 fold 4/5] heads fit; testAUC lr=0.5263 hgb=0.5116; checks ok (naive/label-shuffle/isolation/prefix) elapsed=775.4s
+[stream 2 fold 5/5] heads fit; testAUC lr=0.5384 hgb=0.5480; checks ok (naive/label-shuffle/isolation/prefix) elapsed=777.7s
+[result stream 2] position_only__lr  all: AUC=0.5047 mac=0.5064 mic=0.5056 | mature: AUC=0.4947 mac=0.4999 mic=0.4998 | subj>=.9=0 max=0.566
+[result stream 2] position_only__hgb all: AUC=0.5022 mac=0.5025 mic=0.5034 | mature: AUC=0.4951 mac=0.4988 mic=0.4983 | subj>=.9=0 max=0.573
+[result stream 2] contrastive_lr     all: AUC=0.5508 mac=0.5360 mic=0.5369 | mature: AUC=0.5528 mac=0.5403 mic=0.5407 | subj>=.9=0 max=0.694
+[result stream 2] contrastive_hgb    all: AUC=0.5487 mac=0.5366 mic=0.5355 | mature: AUC=0.5472 mac=0.5334 mic=0.5337 | subj>=.9=0 max=0.694
+[result stream 2] fusionM_prank      all: AUC=0.6974 mac=0.6407 mic=0.6420 | mature: AUC=0.6987 mac=0.6466 mic=0.6468 | subj>=.9=0 max=0.877
+[result stream 2] fusionF            all: AUC=0.6811 mac=0.6301 mic=0.6306 | mature: AUC=0.6844 mac=0.6362 mic=0.6357 | subj>=.9=0 max=0.870
+[result stream 2] fusionF_hgb        all: AUC=0.6690 mac=0.6193 mic=0.6192 | mature: AUC=0.6699 mac=0.6193 mic=0.6201 | subj>=.9=0 max=0.861
+[sanity stream 2] position_only__lr AUC=0.5047 -> OK
+[sanity stream 2] position_only__hgb AUC=0.5022 -> OK
+[boot stream 2] contrastive_lr   vs fusionM_prank all    dAUC=-0.1469[-0.1880,-0.1084] dmac=-0.1050[-0.1369,-0.0756] dmic=-0.1053[-0.1382,-0.0766]
+[boot stream 2] contrastive_lr   vs fusionM_prank mature dAUC=-0.1464[-0.1893,-0.1057] dmac=-0.1066[-0.1392,-0.0770] dmic=-0.1065[-0.1402,-0.0769]
+[group stream 2] contrastive_lr   low  n=20 medAUC=0.5218 medbACC=0.5105 med dAUC=-0.0411 med dbACC=-0.0332
+[group stream 2] contrastive_lr   mid  n=34 medAUC=0.5664 medbACC=0.5547 med dAUC=-0.2100 med dbACC=-0.1571
+[group stream 2] contrastive_lr   high n= 3 medAUC=0.6768 medbACC=0.6140 med dAUC=-0.1813 med dbACC=-0.1877
+[boot stream 2] contrastive_hgb  vs fusionM_prank all    dAUC=-0.1488[-0.1858,-0.1125] dmac=-0.1040[-0.1337,-0.0774] dmic=-0.1064[-0.1366,-0.0796]
+[boot stream 2] contrastive_hgb  vs fusionM_prank mature dAUC=-0.1517[-0.1913,-0.1132] dmac=-0.1131[-0.1442,-0.0842] dmic=-0.1131[-0.1444,-0.0837]
+[group stream 2] contrastive_hgb  low  n=20 medAUC=0.5162 medbACC=0.5229 med dAUC=-0.0628 med dbACC=-0.0295
+[group stream 2] contrastive_hgb  mid  n=34 medAUC=0.5607 medbACC=0.5467 med dAUC=-0.2024 med dbACC=-0.1562
+[group stream 2] contrastive_hgb  high n= 3 medAUC=0.7089 medbACC=0.6413 med dAUC=-0.2015 med dbACC=-0.2359
+[boot stream 2] fusionF          vs fusionM_prank all    dAUC=-0.0164[-0.0293,-0.0036] dmac=-0.0107[-0.0249,+0.0021] dmic=-0.0115[-0.0256,+0.0016]
+[boot stream 2] fusionF          vs fusionM_prank mature dAUC=-0.0145[-0.0280,-0.0011] dmac=-0.0104[-0.0253,+0.0029] dmic=-0.0112[-0.0266,+0.0023]
+[group stream 2] fusionF          low  n=20 medAUC=0.5498 medbACC=0.5304 med dAUC=+0.0055 med dbACC=+0.0072
+[group stream 2] fusionF          mid  n=34 medAUC=0.7354 medbACC=0.6545 med dAUC=-0.0229 med dbACC=-0.0139
+[group stream 2] fusionF          high n= 3 medAUC=0.8425 medbACC=0.7628 med dAUC=-0.0155 med dbACC=-0.0388
+[boot stream 2] fusionF_hgb      vs fusionM_prank all    dAUC=-0.0285[-0.0429,-0.0147] dmac=-0.0214[-0.0353,-0.0088] dmic=-0.0228[-0.0365,-0.0097]
+[boot stream 2] fusionF_hgb      vs fusionM_prank mature dAUC=-0.0289[-0.0432,-0.0150] dmac=-0.0273[-0.0422,-0.0143] dmic=-0.0267[-0.0417,-0.0135]
+[group stream 2] fusionF_hgb      low  n=20 medAUC=0.5217 medbACC=0.5234 med dAUC=-0.0142 med dbACC=+0.0017
+[group stream 2] fusionF_hgb      mid  n=34 medAUC=0.7167 medbACC=0.6503 med dAUC=-0.0263 med dbACC=-0.0286
+[group stream 2] fusionF_hgb      high n= 3 medAUC=0.8520 medbACC=0.7883 med dAUC=-0.0061 med dbACC=-0.0158
+[progress] stream 2 finished in 38s elapsed=805.5s
+[done] elapsed=805.8s -> depositioned_contrastive.json
