@@ -1,0 +1,46 @@
+[result stream 0] fuseH_wf               all: AUC=0.7140 mac=0.6541 mic=0.6545 | mature: AUC=0.7147 mac=0.6563 mic=0.6561 | subj>=.9=0 max=0.853
+[result stream 0] fuseH_f                all: AUC=0.7059 mac=0.6497 mic=0.6501 | mature: AUC=0.7060 mac=0.6506 mic=0.6507 | subj>=.9=0 max=0.834
+[result stream 0] fuse_allprank_resnet   all: AUC=0.7116 mac=0.6539 mic=0.6543 | mature: AUC=0.7128 mac=0.6559 mic=0.6563 | subj>=.9=0 max=0.842
+[result stream 0] fusion3_resnet_fbank   all: AUC=0.7088 mac=0.6486 mic=0.6492 | mature: AUC=0.7094 mac=0.6485 mic=0.6484 | subj>=.9=0 max=0.871
+[result stream 0] fusionM_prank          all: AUC=0.7043 mac=0.6463 mic=0.6470 | mature: AUC=0.7057 mac=0.6458 mic=0.6461 | subj>=.9=0 max=0.867
+[group stream 0] fuseH_wf   high(n=3): mean=0.8146 dmean=-0.0126 dmed=-0.0185 | mid(n=34): mean=0.7001 dmean=-0.0018 dmed=+0.0010 | low(n=20): mean=0.5518 dmean=+0.0053 dmed=+0.0192
+[group stream 0] fuseH_f    high(n=3): mean=0.8236 dmean=-0.0036 dmed=+0.0040 | mid(n=34): mean=0.6974 dmean=-0.0044 dmed=-0.0091 | low(n=20): mean=0.5426 dmean=-0.0039 dmed=-0.0005
+[boot stream 0] fuseH_wf  vs fuse_allprank_resnet all    dAUC=+0.0025[-0.0034,+0.0082] dmac=+0.0002[-0.0058,+0.0067]
+[boot stream 0] fuseH_wf  vs fuse_allprank_resnet mature dAUC=+0.0021[-0.0034,+0.0081] dmac=+0.0004[-0.0062,+0.0073]
+[boot stream 0] fuseH_wf  vs fusionM_prank        all    dAUC=+0.0097[+0.0028,+0.0173] dmac=+0.0078[+0.0001,+0.0159]
+[boot stream 0] fuseH_wf  vs fusionM_prank        mature dAUC=+0.0091[+0.0012,+0.0176] dmac=+0.0106[+0.0009,+0.0203]
+[boot stream 0] fuseH_f   vs fuse_allprank_resnet all    dAUC=-0.0056[-0.0125,+0.0012] dmac=-0.0043[-0.0115,+0.0031]
+[boot stream 0] fuseH_f   vs fuse_allprank_resnet mature dAUC=-0.0067[-0.0137,+0.0005] dmac=-0.0054[-0.0137,+0.0030]
+[boot stream 0] fuseH_f   vs fusionM_prank        all    dAUC=+0.0016[-0.0063,+0.0101] dmac=+0.0033[-0.0059,+0.0132]
+[boot stream 0] fuseH_f   vs fusionM_prank        mature dAUC=+0.0003[-0.0089,+0.0100] dmac=+0.0049[-0.0058,+0.0166]
+[result stream 1] fuseH_wf               all: AUC=0.7106 mac=0.6505 mic=0.6520 | mature: AUC=0.7156 mac=0.6541 mic=0.6548 | subj>=.9=0 max=0.891
+[result stream 1] fuseH_f                all: AUC=0.7089 mac=0.6496 mic=0.6509 | mature: AUC=0.7151 mac=0.6556 mic=0.6561 | subj>=.9=0 max=0.831
+[result stream 1] fuse_allprank_resnet   all: AUC=0.7056 mac=0.6474 mic=0.6495 | mature: AUC=0.7116 mac=0.6520 mic=0.6529 | subj>=.9=0 max=0.855
+[result stream 1] fusion3_resnet_fbank   all: AUC=0.7066 mac=0.6458 mic=0.6473 | mature: AUC=0.7116 mac=0.6495 mic=0.6498 | subj>=.9=0 max=0.895
+[result stream 1] fusionM_prank          all: AUC=0.6990 mac=0.6415 mic=0.6438 | mature: AUC=0.7051 mac=0.6475 mic=0.6481 | subj>=.9=0 max=0.870
+[group stream 1] fuseH_wf   high(n=3): mean=0.8145 dmean=-0.0102 dmed=-0.0358 | mid(n=34): mean=0.6958 dmean=-0.0004 dmed=+0.0074 | low(n=20): mean=0.5490 dmean=+0.0113 dmed=+0.0081
+[group stream 1] fuseH_f    high(n=3): mean=0.8178 dmean=-0.0069 dmed=+0.0108 | mid(n=34): mean=0.6969 dmean=+0.0007 dmed=-0.0047 | low(n=20): mean=0.5440 dmean=+0.0063 dmed=+0.0063
+[boot stream 1] fuseH_wf  vs fuse_allprank_resnet all    dAUC=+0.0050[-0.0015,+0.0129] dmac=+0.0032[-0.0035,+0.0103]
+[boot stream 1] fuseH_wf  vs fuse_allprank_resnet mature dAUC=+0.0039[-0.0032,+0.0123] dmac=+0.0021[-0.0057,+0.0101]
+[boot stream 1] fuseH_wf  vs fusionM_prank        all    dAUC=+0.0116[+0.0035,+0.0209] dmac=+0.0091[+0.0004,+0.0188]
+[boot stream 1] fuseH_wf  vs fusionM_prank        mature dAUC=+0.0105[+0.0016,+0.0202] dmac=+0.0066[-0.0025,+0.0164]
+[boot stream 1] fuseH_f   vs fuse_allprank_resnet all    dAUC=+0.0032[-0.0065,+0.0134] dmac=+0.0023[-0.0073,+0.0116]
+[boot stream 1] fuseH_f   vs fuse_allprank_resnet mature dAUC=+0.0034[-0.0072,+0.0139] dmac=+0.0036[-0.0066,+0.0132]
+[boot stream 1] fuseH_f   vs fusionM_prank        all    dAUC=+0.0098[-0.0008,+0.0216] dmac=+0.0081[-0.0015,+0.0180]
+[boot stream 1] fuseH_f   vs fusionM_prank        mature dAUC=+0.0100[-0.0009,+0.0219] dmac=+0.0081[-0.0018,+0.0174]
+[result stream 2] fuseH_wf               all: AUC=0.7097 mac=0.6500 mic=0.6510 | mature: AUC=0.7085 mac=0.6538 mic=0.6534 | subj>=.9=0 max=0.871
+[result stream 2] fuseH_f                all: AUC=0.7095 mac=0.6540 mic=0.6550 | mature: AUC=0.7066 mac=0.6537 mic=0.6530 | subj>=.9=0 max=0.842
+[result stream 2] fuse_allprank_resnet   all: AUC=0.7038 mac=0.6466 mic=0.6476 | mature: AUC=0.7014 mac=0.6466 mic=0.6462 | subj>=.9=0 max=0.852
+[result stream 2] fusion3_resnet_fbank   all: AUC=0.7056 mac=0.6443 mic=0.6454 | mature: AUC=0.7071 mac=0.6488 mic=0.6488 | subj>=.9=0 max=0.875
+[result stream 2] fusionM_prank          all: AUC=0.6974 mac=0.6407 mic=0.6420 | mature: AUC=0.6987 mac=0.6466 mic=0.6468 | subj>=.9=0 max=0.877
+[group stream 2] fuseH_wf   high(n=3): mean=0.8042 dmean=-0.0090 dmed=-0.0148 | mid(n=34): mean=0.6941 dmean=-0.0013 dmed=+0.0047 | low(n=20): mean=0.5520 dmean=+0.0133 dmed=+0.0079
+[group stream 2] fuseH_f    high(n=3): mean=0.8205 dmean=+0.0072 dmed=+0.0143 | mid(n=34): mean=0.6982 dmean=+0.0029 dmed=+0.0097 | low(n=20): mean=0.5537 dmean=+0.0150 dmed=+0.0126
+[boot stream 2] fuseH_wf  vs fuse_allprank_resnet all    dAUC=+0.0059[-0.0001,+0.0141] dmac=+0.0034[-0.0040,+0.0119]
+[boot stream 2] fuseH_wf  vs fuse_allprank_resnet mature dAUC=+0.0072[+0.0017,+0.0140] dmac=+0.0072[-0.0008,+0.0152]
+[boot stream 2] fuseH_wf  vs fusionM_prank        all    dAUC=+0.0124[+0.0037,+0.0229] dmac=+0.0093[+0.0005,+0.0190]
+[boot stream 2] fuseH_wf  vs fusionM_prank        mature dAUC=+0.0099[+0.0015,+0.0191] dmac=+0.0073[-0.0029,+0.0181]
+[boot stream 2] fuseH_f   vs fuse_allprank_resnet all    dAUC=+0.0057[-0.0025,+0.0152] dmac=+0.0075[-0.0007,+0.0173]
+[boot stream 2] fuseH_f   vs fuse_allprank_resnet mature dAUC=+0.0053[-0.0026,+0.0143] dmac=+0.0072[-0.0023,+0.0174]
+[boot stream 2] fuseH_f   vs fusionM_prank        all    dAUC=+0.0122[+0.0014,+0.0253] dmac=+0.0134[+0.0037,+0.0244]
+[boot stream 2] fuseH_f   vs fusionM_prank        mature dAUC=+0.0080[-0.0024,+0.0196] dmac=+0.0073[-0.0036,+0.0190]
+[done]
