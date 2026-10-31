@@ -1,0 +1,198 @@
+[align] md5 multiset 1:1 n=16067 subjects=57; subject/label/window-count/fold agree elapsed=1.8s
+[check] pipeline-1 fold == depositioned_aperiodic_emg_oof.npz fold; folds=[0, 1, 2, 3, 4] subjects=57 elapsed=1.9s
+[fold 0] test-side ZZ rows=3118 elapsed=2.5s
+[fold 1] test-side ZZ rows=3264 elapsed=3.1s
+[fold 2] test-side ZZ rows=3141 elapsed=3.7s
+[fold 3] test-side ZZ rows=3401 elapsed=4.4s
+[fold 4] test-side ZZ rows=3143 elapsed=5.0s
+[check] pipeline 2 reproduces 4.30 AUC=0.6743 bACC@0=0.6300
+[s0] std(L)=0.604 mean(L)=-0.017
+[s0] subjects 8/57 stream_s=6.3 elapsed=11.3s
+[s0] subjects 16/57 stream_s=6.9 elapsed=11.9s
+[s0] subjects 24/57 stream_s=7.3 elapsed=12.3s
+[s0] subjects 32/57 stream_s=7.7 elapsed=12.7s
+[s0] subjects 40/57 stream_s=8.1 elapsed=13.2s
+[s0] subjects 48/57 stream_s=8.4 elapsed=13.5s
+[s0] subjects 56/57 stream_s=8.8 elapsed=13.8s
+[s0] subjects 57/57 stream_s=8.9 elapsed=14.0s
+[s0] pipeline 1 adapted elapsed=14.0s
+[z s0] coverage(both past-z channels available)=0.943
+[check s0] sub-001: isolation / label shuffle / past-only prefix OK (cut=165)
+[check s0] sub-002: isolation / label shuffle / past-only prefix OK (cut=149)
+[check s0] fuse_pseudo_lr_full_thr reproduces v2 mac=0.6684
+[result stream 0] m_plain              all: AUC=0.7159 mac=0.6666 mic=0.6669 | mature: AUC=0.7156 mac=0.6637 mic=0.6648 | subj>=.9=0 max=0.848
+[result stream 0] m_plain_thr          all: AUC=0.7204 mac=0.6705 mic=0.6707 | mature: AUC=0.7194 mac=0.6669 mic=0.6676 | subj>=.9=0 max=0.858
+[result stream 0] m_z                  all: AUC=0.7150 mac=0.6707 mic=0.6710 | mature: AUC=0.7136 mac=0.6664 mic=0.6674 | subj>=.9=0 max=0.858
+[result stream 0] m_z_thr              all: AUC=0.7142 mac=0.6711 mic=0.6713 | mature: AUC=0.7124 mac=0.6665 mic=0.6670 | subj>=.9=0 max=0.855
+[result stream 0] m_pseudo_only        all: AUC=0.7144 mac=0.6664 mic=0.6674 | mature: AUC=0.7141 mac=0.6641 mic=0.6657 | subj>=.9=0 max=0.856
+[result stream 0] m_pseudo_only_thr    all: AUC=0.7152 mac=0.6684 mic=0.6695 | mature: AUC=0.7153 mac=0.6663 mic=0.6682 | subj>=.9=0 max=0.868
+[result stream 0] m_c4_only            all: AUC=0.6743 mac=0.6302 mic=0.6300 | mature: AUC=0.6751 mac=0.6294 mic=0.6308 | subj>=.9=0 max=0.807
+[result stream 0] m_c4_only_thr        all: AUC=0.6926 mac=0.6495 mic=0.6493 | mature: AUC=0.6898 mac=0.6459 mic=0.6455 | subj>=.9=0 max=0.820
+[result stream 0] m_hwf_c4             all: AUC=0.7137 mac=0.6635 mic=0.6638 | mature: AUC=0.7128 mac=0.6628 mic=0.6631 | subj>=.9=0 max=0.867
+[result stream 0] m_hwf_c4_thr         all: AUC=0.7127 mac=0.6639 mic=0.6642 | mature: AUC=0.7113 mac=0.6619 mic=0.6619 | subj>=.9=0 max=0.861
+[group stream 0] m_plain              high(n=3): mean=0.8346 dmean_vs_p1=-0.0157 dmean_vs_p2=+0.0879 | mid(n=34): mean=0.7212 dmean_vs_p1=-0.0036 dmean_vs_p2=+0.0574 | low(n=20): mean=0.5486 dmean_vs_p1=+0.0090 dmean_vs_p2=-0.0072
+[group stream 0] m_plain_thr          high(n=3): mean=0.8528 dmean_vs_p1=+0.0025 dmean_vs_p2=+0.1061 | mid(n=34): mean=0.7257 dmean_vs_p1=+0.0010 dmean_vs_p2=+0.0620 | low(n=20): mean=0.5492 dmean_vs_p1=+0.0096 dmean_vs_p2=-0.0066
+[group stream 0] m_z                  high(n=3): mean=0.8528 dmean_vs_p1=+0.0025 dmean_vs_p2=+0.1061 | mid(n=34): mean=0.7223 dmean_vs_p1=-0.0025 dmean_vs_p2=+0.0585 | low(n=20): mean=0.5558 dmean_vs_p1=+0.0162 dmean_vs_p2=-0.0001
+[group stream 0] m_z_thr              high(n=3): mean=0.8507 dmean_vs_p1=+0.0003 dmean_vs_p2=+0.1040 | mid(n=34): mean=0.7226 dmean_vs_p1=-0.0022 dmean_vs_p2=+0.0588 | low(n=20): mean=0.5566 dmean_vs_p1=+0.0170 dmean_vs_p2=+0.0008
+[group stream 0] m_pseudo_only        high(n=3): mean=0.8503 dmean_vs_p1=+0.0000 dmean_vs_p2=+0.1036 | mid(n=34): mean=0.7247 dmean_vs_p1=+0.0000 dmean_vs_p2=+0.0610 | low(n=20): mean=0.5396 dmean_vs_p1=+0.0000 dmean_vs_p2=-0.0162
+[group stream 0] m_pseudo_only_thr    high(n=3): mean=0.8553 dmean_vs_p1=+0.0050 dmean_vs_p2=+0.1086 | mid(n=34): mean=0.7279 dmean_vs_p1=+0.0031 dmean_vs_p2=+0.0641 | low(n=20): mean=0.5393 dmean_vs_p1=-0.0003 dmean_vs_p2=-0.0165
+[group stream 0] m_c4_only            high(n=3): mean=0.7467 dmean_vs_p1=-0.1036 dmean_vs_p2=+0.0000 | mid(n=34): mean=0.6638 dmean_vs_p1=-0.0610 dmean_vs_p2=+0.0000 | low(n=20): mean=0.5558 dmean_vs_p1=+0.0162 dmean_vs_p2=+0.0000
+[group stream 0] m_c4_only_thr        high(n=3): mean=0.8069 dmean_vs_p1=-0.0434 dmean_vs_p2=+0.0602 | mid(n=34): mean=0.6871 dmean_vs_p1=-0.0376 dmean_vs_p2=+0.0234 | low(n=20): mean=0.5619 dmean_vs_p1=+0.0223 dmean_vs_p2=+0.0061
+[group stream 0] m_hwf_c4             high(n=3): mean=0.8438 dmean_vs_p1=-0.0065 dmean_vs_p2=+0.0971 | mid(n=34): mean=0.7093 dmean_vs_p1=-0.0155 dmean_vs_p2=+0.0455 | low(n=20): mean=0.5586 dmean_vs_p1=+0.0190 dmean_vs_p2=+0.0028
+[group stream 0] m_hwf_c4_thr         high(n=3): mean=0.8369 dmean_vs_p1=-0.0134 dmean_vs_p2=+0.0902 | mid(n=34): mean=0.7101 dmean_vs_p1=-0.0146 dmean_vs_p2=+0.0464 | low(n=20): mean=0.5594 dmean_vs_p1=+0.0198 dmean_vs_p2=+0.0036
+[boot stream 0] m_plain                vs m_pseudo_only          all    dAUC=+0.0018[-0.0041,+0.0081] dmac=+0.0004[-0.0075,+0.0082] dmic=-0.0003[-0.0081,+0.0073]
+[boot stream 0] m_plain_thr            vs m_pseudo_only_thr      all    dAUC=+0.0053[-0.0014,+0.0119] dmac=+0.0022[-0.0052,+0.0096] dmic=+0.0014[-0.0058,+0.0083]
+[boot stream 0] m_plain                vs m_pseudo_only          mature dAUC=+0.0018[-0.0047,+0.0083] dmac=-0.0002[-0.0091,+0.0085] dmic=-0.0006[-0.0087,+0.0081]
+[boot stream 0] m_plain_thr            vs m_pseudo_only_thr      mature dAUC=+0.0043[-0.0025,+0.0103] dmac=+0.0006[-0.0072,+0.0092] dmic=-0.0005[-0.0075,+0.0064]
+[boot stream 0] m_plain                vs m_c4_only              all    dAUC=+0.0409[+0.0269,+0.0557] dmac=+0.0360[+0.0229,+0.0483] dmic=+0.0364[+0.0235,+0.0488]
+[boot stream 0] m_plain_thr            vs m_c4_only_thr          all    dAUC=+0.0275[+0.0148,+0.0397] dmac=+0.0208[+0.0082,+0.0330] dmic=+0.0212[+0.0093,+0.0337]
+[boot stream 0] m_plain                vs m_c4_only              mature dAUC=+0.0397[+0.0257,+0.0539] dmac=+0.0338[+0.0199,+0.0475] dmic=+0.0335[+0.0195,+0.0470]
+[boot stream 0] m_plain_thr            vs m_c4_only_thr          mature dAUC=+0.0293[+0.0165,+0.0419] dmac=+0.0207[+0.0064,+0.0348] dmic=+0.0218[+0.0083,+0.0354]
+[boot stream 0] m_z                    vs m_pseudo_only          all    dAUC=+0.0009[-0.0071,+0.0090] dmac=+0.0045[-0.0043,+0.0133] dmic=+0.0039[-0.0047,+0.0126]
+[boot stream 0] m_z_thr                vs m_pseudo_only_thr      all    dAUC=-0.0006[-0.0086,+0.0075] dmac=+0.0029[-0.0054,+0.0116] dmic=+0.0021[-0.0064,+0.0105]
+[boot stream 0] m_z                    vs m_pseudo_only          mature dAUC=-0.0001[-0.0086,+0.0080] dmac=+0.0026[-0.0072,+0.0125] dmic=+0.0020[-0.0075,+0.0113]
+[boot stream 0] m_z_thr                vs m_pseudo_only_thr      mature dAUC=-0.0025[-0.0112,+0.0058] dmac=+0.0005[-0.0092,+0.0101] dmic=-0.0010[-0.0098,+0.0080]
+[boot stream 0] m_z                    vs m_c4_only              all    dAUC=+0.0400[+0.0258,+0.0549] dmac=+0.0401[+0.0260,+0.0543] dmic=+0.0407[+0.0271,+0.0548]
+[boot stream 0] m_z_thr                vs m_c4_only_thr          all    dAUC=+0.0215[+0.0096,+0.0336] dmac=+0.0215[+0.0110,+0.0315] dmic=+0.0219[+0.0119,+0.0318]
+[boot stream 0] m_z                    vs m_c4_only              mature dAUC=+0.0378[+0.0237,+0.0529] dmac=+0.0366[+0.0212,+0.0526] dmic=+0.0361[+0.0212,+0.0521]
+[boot stream 0] m_z_thr                vs m_c4_only_thr          mature dAUC=+0.0225[+0.0107,+0.0345] dmac=+0.0205[+0.0084,+0.0317] dmic=+0.0214[+0.0104,+0.0318]
+[boot stream 0] m_hwf_c4               vs m_pseudo_only          all    dAUC=-0.0002[-0.0103,+0.0104] dmac=-0.0027[-0.0147,+0.0096] dmic=-0.0033[-0.0152,+0.0086]
+[boot stream 0] m_hwf_c4_thr           vs m_pseudo_only_thr      all    dAUC=-0.0020[-0.0124,+0.0091] dmac=-0.0042[-0.0160,+0.0083] dmic=-0.0050[-0.0167,+0.0067]
+[boot stream 0] m_hwf_c4               vs m_pseudo_only          mature dAUC=-0.0007[-0.0123,+0.0113] dmac=-0.0010[-0.0139,+0.0126] dmic=-0.0022[-0.0141,+0.0101]
+[boot stream 0] m_hwf_c4_thr           vs m_pseudo_only_thr      mature dAUC=-0.0034[-0.0150,+0.0085] dmac=-0.0041[-0.0172,+0.0101] dmic=-0.0060[-0.0184,+0.0063]
+[boot stream 0] m_hwf_c4               vs m_c4_only              all    dAUC=+0.0389[+0.0264,+0.0515] dmac=+0.0329[+0.0212,+0.0458] dmic=+0.0335[+0.0218,+0.0461]
+[boot stream 0] m_hwf_c4_thr           vs m_c4_only_thr          all    dAUC=+0.0202[+0.0099,+0.0315] dmac=+0.0144[+0.0057,+0.0227] dmic=+0.0148[+0.0063,+0.0233]
+[boot stream 0] m_hwf_c4               vs m_c4_only              mature dAUC=+0.0372[+0.0251,+0.0500] dmac=+0.0330[+0.0190,+0.0490] dmic=+0.0319[+0.0184,+0.0476]
+[boot stream 0] m_hwf_c4_thr           vs m_c4_only_thr          mature dAUC=+0.0215[+0.0110,+0.0330] dmac=+0.0159[+0.0057,+0.0263] dmic=+0.0164[+0.0065,+0.0266]
+[boot stream 0] m_plain                vs m_z                    all    dAUC=+0.0009[-0.0031,+0.0046] dmac=-0.0042[-0.0086,+0.0005] dmic=-0.0042[-0.0088,+0.0004]
+[boot stream 0] m_plain_thr            vs m_z_thr                all    dAUC=+0.0060[+0.0012,+0.0102] dmac=-0.0007[-0.0041,+0.0030] dmic=-0.0007[-0.0040,+0.0031]
+[boot stream 0] m_plain                vs m_z                    mature dAUC=+0.0019[-0.0018,+0.0056] dmac=-0.0028[-0.0087,+0.0034] dmic=-0.0026[-0.0082,+0.0033]
+[boot stream 0] m_plain_thr            vs m_z_thr                mature dAUC=+0.0068[+0.0020,+0.0114] dmac=+0.0002[-0.0042,+0.0046] dmic=+0.0005[-0.0040,+0.0049]
+[s0] done elapsed=45.1s
+[s1] std(L)=0.639 mean(L)=-0.024
+[s1] subjects 8/57 stream_s=0.4 elapsed=45.5s
+[s1] subjects 16/57 stream_s=0.9 elapsed=46.0s
+[s1] subjects 24/57 stream_s=1.3 elapsed=46.4s
+[s1] subjects 32/57 stream_s=1.7 elapsed=46.8s
+[s1] subjects 40/57 stream_s=2.1 elapsed=47.2s
+[s1] subjects 48/57 stream_s=2.5 elapsed=47.5s
+[s1] subjects 56/57 stream_s=2.8 elapsed=47.9s
+[s1] subjects 57/57 stream_s=3.0 elapsed=48.1s
+[s1] pipeline 1 adapted elapsed=48.1s
+[z s1] coverage(both past-z channels available)=0.943
+[check s1] sub-001: isolation / label shuffle / past-only prefix OK (cut=165)
+[check s1] sub-002: isolation / label shuffle / past-only prefix OK (cut=149)
+[check s1] fuse_pseudo_lr_full_thr reproduces v2 mac=0.6694
+[result stream 1] m_plain              all: AUC=0.7184 mac=0.6690 mic=0.6696 | mature: AUC=0.7179 mac=0.6672 mic=0.6674 | subj>=.9=0 max=0.855
+[result stream 1] m_plain_thr          all: AUC=0.7229 mac=0.6730 mic=0.6739 | mature: AUC=0.7234 mac=0.6730 mic=0.6736 | subj>=.9=0 max=0.858
+[result stream 1] m_z                  all: AUC=0.7173 mac=0.6721 mic=0.6729 | mature: AUC=0.7173 mac=0.6729 mic=0.6736 | subj>=.9=0 max=0.848
+[result stream 1] m_z_thr              all: AUC=0.7160 mac=0.6715 mic=0.6724 | mature: AUC=0.7160 mac=0.6739 mic=0.6745 | subj>=.9=0 max=0.856
+[result stream 1] m_pseudo_only        all: AUC=0.7176 mac=0.6684 mic=0.6698 | mature: AUC=0.7186 mac=0.6712 mic=0.6722 | subj>=.9=0 max=0.856
+[result stream 1] m_pseudo_only_thr    all: AUC=0.7179 mac=0.6694 mic=0.6709 | mature: AUC=0.7193 mac=0.6736 mic=0.6745 | subj>=.9=0 max=0.858
+[result stream 1] m_c4_only            all: AUC=0.6743 mac=0.6302 mic=0.6300 | mature: AUC=0.6712 mac=0.6266 mic=0.6257 | subj>=.9=0 max=0.807
+[result stream 1] m_c4_only_thr        all: AUC=0.6932 mac=0.6500 mic=0.6497 | mature: AUC=0.6923 mac=0.6463 mic=0.6460 | subj>=.9=0 max=0.817
+[result stream 1] m_hwf_c4             all: AUC=0.7140 mac=0.6660 mic=0.6667 | mature: AUC=0.7151 mac=0.6659 mic=0.6660 | subj>=.9=0 max=0.867
+[result stream 1] m_hwf_c4_thr         all: AUC=0.7126 mac=0.6647 mic=0.6655 | mature: AUC=0.7135 mac=0.6634 mic=0.6636 | subj>=.9=0 max=0.875
+[group stream 1] m_plain              high(n=3): mean=0.8333 dmean_vs_p1=-0.0125 dmean_vs_p2=+0.0865 | mid(n=34): mean=0.7218 dmean_vs_p1=-0.0025 dmean_vs_p2=+0.0581 | low(n=20): mean=0.5544 dmean_vs_p1=+0.0077 dmean_vs_p2=-0.0014
+[group stream 1] m_plain_thr          high(n=3): mean=0.8495 dmean_vs_p1=+0.0037 dmean_vs_p2=+0.1027 | mid(n=34): mean=0.7258 dmean_vs_p1=+0.0015 dmean_vs_p2=+0.0620 | low(n=20): mean=0.5569 dmean_vs_p1=+0.0102 dmean_vs_p2=+0.0011
+[group stream 1] m_z                  high(n=3): mean=0.8459 dmean_vs_p1=+0.0001 dmean_vs_p2=+0.0992 | mid(n=34): mean=0.7239 dmean_vs_p1=-0.0004 dmean_vs_p2=+0.0602 | low(n=20): mean=0.5579 dmean_vs_p1=+0.0112 dmean_vs_p2=+0.0021
+[group stream 1] m_z_thr              high(n=3): mean=0.8496 dmean_vs_p1=+0.0038 dmean_vs_p2=+0.1028 | mid(n=34): mean=0.7214 dmean_vs_p1=-0.0029 dmean_vs_p2=+0.0577 | low(n=20): mean=0.5600 dmean_vs_p1=+0.0133 dmean_vs_p2=+0.0042
+[group stream 1] m_pseudo_only        high(n=3): mean=0.8458 dmean_vs_p1=+0.0000 dmean_vs_p2=+0.0991 | mid(n=34): mean=0.7243 dmean_vs_p1=+0.0000 dmean_vs_p2=+0.0606 | low(n=20): mean=0.5467 dmean_vs_p1=+0.0000 dmean_vs_p2=-0.0091
+[group stream 1] m_pseudo_only_thr    high(n=3): mean=0.8495 dmean_vs_p1=+0.0037 dmean_vs_p2=+0.1028 | mid(n=34): mean=0.7244 dmean_vs_p1=+0.0001 dmean_vs_p2=+0.0606 | low(n=20): mean=0.5488 dmean_vs_p1=+0.0022 dmean_vs_p2=-0.0070
+[group stream 1] m_c4_only            high(n=3): mean=0.7467 dmean_vs_p1=-0.0991 dmean_vs_p2=+0.0000 | mid(n=34): mean=0.6638 dmean_vs_p1=-0.0606 dmean_vs_p2=+0.0000 | low(n=20): mean=0.5558 dmean_vs_p1=+0.0091 dmean_vs_p2=+0.0000
+[group stream 1] m_c4_only_thr        high(n=3): mean=0.8095 dmean_vs_p1=-0.0362 dmean_vs_p2=+0.0628 | mid(n=34): mean=0.6863 dmean_vs_p1=-0.0380 dmean_vs_p2=+0.0226 | low(n=20): mean=0.5644 dmean_vs_p1=+0.0177 dmean_vs_p2=+0.0086
+[group stream 1] m_hwf_c4             high(n=3): mean=0.8379 dmean_vs_p1=-0.0079 dmean_vs_p2=+0.0912 | mid(n=34): mean=0.7122 dmean_vs_p1=-0.0121 dmean_vs_p2=+0.0485 | low(n=20): mean=0.5617 dmean_vs_p1=+0.0150 dmean_vs_p2=+0.0059
+[group stream 1] m_hwf_c4_thr         high(n=3): mean=0.8404 dmean_vs_p1=-0.0053 dmean_vs_p2=+0.0937 | mid(n=34): mean=0.7096 dmean_vs_p1=-0.0147 dmean_vs_p2=+0.0459 | low(n=20): mean=0.5620 dmean_vs_p1=+0.0153 dmean_vs_p2=+0.0061
+[boot stream 1] m_plain                vs m_pseudo_only          all    dAUC=+0.0011[-0.0054,+0.0077] dmac=+0.0007[-0.0063,+0.0080] dmic=-0.0001[-0.0067,+0.0069]
+[boot stream 1] m_plain_thr            vs m_pseudo_only_thr      all    dAUC=+0.0050[-0.0014,+0.0118] dmac=+0.0037[-0.0032,+0.0108] dmic=+0.0031[-0.0036,+0.0096]
+[boot stream 1] m_plain                vs m_pseudo_only          mature dAUC=-0.0005[-0.0069,+0.0061] dmac=-0.0039[-0.0116,+0.0033] dmic=-0.0046[-0.0121,+0.0029]
+[boot stream 1] m_plain_thr            vs m_pseudo_only_thr      mature dAUC=+0.0041[-0.0023,+0.0106] dmac=-0.0005[-0.0073,+0.0060] dmic=-0.0008[-0.0078,+0.0054]
+[boot stream 1] m_plain                vs m_c4_only              all    dAUC=+0.0435[+0.0279,+0.0580] dmac=+0.0383[+0.0250,+0.0516] dmic=+0.0391[+0.0255,+0.0521]
+[boot stream 1] m_plain_thr            vs m_c4_only_thr          all    dAUC=+0.0294[+0.0162,+0.0437] dmac=+0.0228[+0.0103,+0.0358] dmic=+0.0240[+0.0115,+0.0365]
+[boot stream 1] m_plain                vs m_c4_only              mature dAUC=+0.0461[+0.0306,+0.0619] dmac=+0.0403[+0.0252,+0.0551] dmic=+0.0414[+0.0265,+0.0556]
+[boot stream 1] m_plain_thr            vs m_c4_only_thr          mature dAUC=+0.0309[+0.0172,+0.0454] dmac=+0.0266[+0.0118,+0.0414] dmic=+0.0276[+0.0140,+0.0415]
+[boot stream 1] m_z                    vs m_pseudo_only          all    dAUC=-0.0000[-0.0085,+0.0088] dmac=+0.0038[-0.0043,+0.0117] dmic=+0.0033[-0.0047,+0.0109]
+[boot stream 1] m_z_thr                vs m_pseudo_only_thr      all    dAUC=-0.0016[-0.0102,+0.0073] dmac=+0.0022[-0.0072,+0.0119] dmic=+0.0017[-0.0074,+0.0108]
+[boot stream 1] m_z                    vs m_pseudo_only          mature dAUC=-0.0011[-0.0099,+0.0078] dmac=+0.0019[-0.0068,+0.0098] dmic=+0.0017[-0.0067,+0.0094]
+[boot stream 1] m_z_thr                vs m_pseudo_only_thr      mature dAUC=-0.0031[-0.0121,+0.0058] dmac=+0.0005[-0.0091,+0.0094] dmic=+0.0002[-0.0089,+0.0089]
+[boot stream 1] m_z                    vs m_c4_only              all    dAUC=+0.0424[+0.0281,+0.0560] dmac=+0.0415[+0.0280,+0.0544] dmic=+0.0425[+0.0294,+0.0553]
+[boot stream 1] m_z_thr                vs m_c4_only_thr          all    dAUC=+0.0228[+0.0104,+0.0357] dmac=+0.0213[+0.0108,+0.0324] dmic=+0.0226[+0.0125,+0.0333]
+[boot stream 1] m_z                    vs m_c4_only              mature dAUC=+0.0455[+0.0306,+0.0606] dmac=+0.0461[+0.0309,+0.0611] dmic=+0.0477[+0.0339,+0.0619]
+[boot stream 1] m_z_thr                vs m_c4_only_thr          mature dAUC=+0.0237[+0.0113,+0.0374] dmac=+0.0276[+0.0152,+0.0401] dmic=+0.0286[+0.0165,+0.0403]
+[boot stream 1] m_hwf_c4               vs m_pseudo_only          all    dAUC=-0.0032[-0.0152,+0.0091] dmac=-0.0022[-0.0139,+0.0091] dmic=-0.0029[-0.0141,+0.0079]
+[boot stream 1] m_hwf_c4_thr           vs m_pseudo_only_thr      all    dAUC=-0.0049[-0.0171,+0.0072] dmac=-0.0046[-0.0162,+0.0076] dmic=-0.0053[-0.0164,+0.0057]
+[boot stream 1] m_hwf_c4               vs m_pseudo_only          mature dAUC=-0.0032[-0.0165,+0.0096] dmac=-0.0052[-0.0176,+0.0070] dmic=-0.0060[-0.0183,+0.0061]
+[boot stream 1] m_hwf_c4_thr           vs m_pseudo_only_thr      mature dAUC=-0.0055[-0.0189,+0.0073] dmac=-0.0102[-0.0234,+0.0022] dmic=-0.0108[-0.0235,+0.0012]
+[boot stream 1] m_hwf_c4               vs m_c4_only              all    dAUC=+0.0392[+0.0264,+0.0514] dmac=+0.0354[+0.0218,+0.0495] dmic=+0.0363[+0.0233,+0.0503]
+[boot stream 1] m_hwf_c4_thr           vs m_c4_only_thr          all    dAUC=+0.0194[+0.0093,+0.0303] dmac=+0.0145[+0.0046,+0.0244] dmic=+0.0156[+0.0062,+0.0258]
+[boot stream 1] m_hwf_c4               vs m_c4_only              mature dAUC=+0.0434[+0.0308,+0.0568] dmac=+0.0391[+0.0245,+0.0541] dmic=+0.0400[+0.0258,+0.0543]
+[boot stream 1] m_hwf_c4_thr           vs m_c4_only_thr          mature dAUC=+0.0213[+0.0106,+0.0329] dmac=+0.0169[+0.0072,+0.0268] dmic=+0.0176[+0.0079,+0.0274]
+[boot stream 1] m_plain                vs m_z                    all    dAUC=+0.0011[-0.0032,+0.0052] dmac=-0.0032[-0.0068,+0.0006] dmic=-0.0034[-0.0070,+0.0005]
+[boot stream 1] m_plain_thr            vs m_z_thr                all    dAUC=+0.0067[+0.0022,+0.0110] dmac=+0.0015[-0.0025,+0.0054] dmic=+0.0014[-0.0024,+0.0054]
+[boot stream 1] m_plain                vs m_z                    mature dAUC=+0.0005[-0.0044,+0.0050] dmac=-0.0058[-0.0110,-0.0006] dmic=-0.0063[-0.0113,-0.0013]
+[boot stream 1] m_plain_thr            vs m_z_thr                mature dAUC=+0.0072[+0.0022,+0.0118] dmac=-0.0009[-0.0058,+0.0039] dmic=-0.0010[-0.0059,+0.0037]
+[s1] done elapsed=79.1s
+[s2] std(L)=0.652 mean(L)=-0.019
+[s2] subjects 8/57 stream_s=0.4 elapsed=79.5s
+[s2] subjects 16/57 stream_s=0.9 elapsed=80.0s
+[s2] subjects 24/57 stream_s=1.3 elapsed=80.4s
+[s2] subjects 32/57 stream_s=1.6 elapsed=80.7s
+[s2] subjects 40/57 stream_s=2.1 elapsed=81.1s
+[s2] subjects 48/57 stream_s=2.4 elapsed=81.5s
+[s2] subjects 56/57 stream_s=2.8 elapsed=81.9s
+[s2] subjects 57/57 stream_s=2.9 elapsed=82.0s
+[s2] pipeline 1 adapted elapsed=82.0s
+[z s2] coverage(both past-z channels available)=0.943
+[check s2] sub-001: isolation / label shuffle / past-only prefix OK (cut=165)
+[check s2] sub-002: isolation / label shuffle / past-only prefix OK (cut=149)
+[check s2] fuse_pseudo_lr_full_thr reproduces v2 mac=0.6691
+[result stream 2] m_plain              all: AUC=0.7176 mac=0.6694 mic=0.6696 | mature: AUC=0.7146 mac=0.6710 mic=0.6707 | subj>=.9=0 max=0.858
+[result stream 2] m_plain_thr          all: AUC=0.7207 mac=0.6725 mic=0.6730 | mature: AUC=0.7173 mac=0.6722 mic=0.6718 | subj>=.9=0 max=0.858
+[result stream 2] m_z                  all: AUC=0.7148 mac=0.6706 mic=0.6712 | mature: AUC=0.7128 mac=0.6714 mic=0.6710 | subj>=.9=0 max=0.851
+[result stream 2] m_z_thr              all: AUC=0.7129 mac=0.6687 mic=0.6692 | mature: AUC=0.7105 mac=0.6692 mic=0.6689 | subj>=.9=0 max=0.841
+[result stream 2] m_pseudo_only        all: AUC=0.7168 mac=0.6688 mic=0.6697 | mature: AUC=0.7132 mac=0.6669 mic=0.6669 | subj>=.9=0 max=0.865
+[result stream 2] m_pseudo_only_thr    all: AUC=0.7169 mac=0.6691 mic=0.6700 | mature: AUC=0.7128 mac=0.6667 mic=0.6665 | subj>=.9=0 max=0.865
+[result stream 2] m_c4_only            all: AUC=0.6743 mac=0.6302 mic=0.6300 | mature: AUC=0.6741 mac=0.6332 mic=0.6328 | subj>=.9=0 max=0.807
+[result stream 2] m_c4_only_thr        all: AUC=0.6918 mac=0.6488 mic=0.6488 | mature: AUC=0.6913 mac=0.6532 mic=0.6527 | subj>=.9=0 max=0.812
+[result stream 2] m_hwf_c4             all: AUC=0.7112 mac=0.6599 mic=0.6607 | mature: AUC=0.7106 mac=0.6621 mic=0.6619 | subj>=.9=0 max=0.859
+[result stream 2] m_hwf_c4_thr         all: AUC=0.7089 mac=0.6591 mic=0.6599 | mature: AUC=0.7080 mac=0.6626 mic=0.6622 | subj>=.9=0 max=0.854
+[group stream 2] m_plain              high(n=3): mean=0.8354 dmean_vs_p1=-0.0232 dmean_vs_p2=+0.0887 | mid(n=34): mean=0.7204 dmean_vs_p1=-0.0025 dmean_vs_p2=+0.0566 | low(n=20): mean=0.5577 dmean_vs_p1=+0.0092 dmean_vs_p2=+0.0019
+[group stream 2] m_plain_thr          high(n=3): mean=0.8480 dmean_vs_p1=-0.0106 dmean_vs_p2=+0.1013 | mid(n=34): mean=0.7262 dmean_vs_p1=+0.0033 dmean_vs_p2=+0.0624 | low(n=20): mean=0.5549 dmean_vs_p1=+0.0064 dmean_vs_p2=-0.0009
+[group stream 2] m_z                  high(n=3): mean=0.8444 dmean_vs_p1=-0.0142 dmean_vs_p2=+0.0977 | mid(n=34): mean=0.7223 dmean_vs_p1=-0.0005 dmean_vs_p2=+0.0586 | low(n=20): mean=0.5566 dmean_vs_p1=+0.0081 dmean_vs_p2=+0.0008
+[group stream 2] m_z_thr              high(n=3): mean=0.8388 dmean_vs_p1=-0.0198 dmean_vs_p2=+0.0921 | mid(n=34): mean=0.7228 dmean_vs_p1=-0.0001 dmean_vs_p2=+0.0591 | low(n=20): mean=0.5512 dmean_vs_p1=+0.0028 dmean_vs_p2=-0.0046
+[group stream 2] m_pseudo_only        high(n=3): mean=0.8586 dmean_vs_p1=+0.0000 dmean_vs_p2=+0.1119 | mid(n=34): mean=0.7229 dmean_vs_p1=+0.0000 dmean_vs_p2=+0.0591 | low(n=20): mean=0.5485 dmean_vs_p1=+0.0000 dmean_vs_p2=-0.0074
+[group stream 2] m_pseudo_only_thr    high(n=3): mean=0.8575 dmean_vs_p1=-0.0011 dmean_vs_p2=+0.1108 | mid(n=34): mean=0.7246 dmean_vs_p1=+0.0018 dmean_vs_p2=+0.0609 | low(n=20): mean=0.5464 dmean_vs_p1=-0.0021 dmean_vs_p2=-0.0094
+[group stream 2] m_c4_only            high(n=3): mean=0.7467 dmean_vs_p1=-0.1119 dmean_vs_p2=+0.0000 | mid(n=34): mean=0.6638 dmean_vs_p1=-0.0591 dmean_vs_p2=+0.0000 | low(n=20): mean=0.5558 dmean_vs_p1=+0.0074 dmean_vs_p2=+0.0000
+[group stream 2] m_c4_only_thr        high(n=3): mean=0.7997 dmean_vs_p1=-0.0589 dmean_vs_p2=+0.0530 | mid(n=34): mean=0.6868 dmean_vs_p1=-0.0360 dmean_vs_p2=+0.0231 | low(n=20): mean=0.5616 dmean_vs_p1=+0.0131 dmean_vs_p2=+0.0058
+[group stream 2] m_hwf_c4             high(n=3): mean=0.8340 dmean_vs_p1=-0.0246 dmean_vs_p2=+0.0873 | mid(n=34): mean=0.7060 dmean_vs_p1=-0.0169 dmean_vs_p2=+0.0422 | low(n=20): mean=0.5554 dmean_vs_p1=+0.0069 dmean_vs_p2=-0.0004
+[group stream 2] m_hwf_c4_thr         high(n=3): mean=0.8288 dmean_vs_p1=-0.0298 dmean_vs_p2=+0.0820 | mid(n=34): mean=0.7048 dmean_vs_p1=-0.0180 dmean_vs_p2=+0.0411 | low(n=20): mean=0.5559 dmean_vs_p1=+0.0075 dmean_vs_p2=+0.0001
+[boot stream 2] m_plain                vs m_pseudo_only          all    dAUC=+0.0010[-0.0050,+0.0076] dmac=+0.0006[-0.0064,+0.0079] dmic=-0.0001[-0.0068,+0.0073]
+[boot stream 2] m_plain_thr            vs m_pseudo_only_thr      all    dAUC=+0.0040[-0.0029,+0.0105] dmac=+0.0035[-0.0021,+0.0096] dmic=+0.0031[-0.0027,+0.0091]
+[boot stream 2] m_plain                vs m_pseudo_only          mature dAUC=+0.0016[-0.0051,+0.0093] dmac=+0.0042[-0.0034,+0.0125] dmic=+0.0039[-0.0039,+0.0121]
+[boot stream 2] m_plain_thr            vs m_pseudo_only_thr      mature dAUC=+0.0046[-0.0029,+0.0119] dmac=+0.0057[-0.0011,+0.0131] dmic=+0.0054[-0.0015,+0.0129]
+[boot stream 2] m_plain                vs m_c4_only              all    dAUC=+0.0426[+0.0291,+0.0567] dmac=+0.0387[+0.0258,+0.0513] dmic=+0.0391[+0.0262,+0.0525]
+[boot stream 2] m_plain_thr            vs m_c4_only_thr          all    dAUC=+0.0287[+0.0167,+0.0407] dmac=+0.0234[+0.0119,+0.0348] dmic=+0.0239[+0.0122,+0.0351]
+[boot stream 2] m_plain                vs m_c4_only              mature dAUC=+0.0399[+0.0250,+0.0541] dmac=+0.0375[+0.0228,+0.0516] dmic=+0.0376[+0.0229,+0.0528]
+[boot stream 2] m_plain_thr            vs m_c4_only_thr          mature dAUC=+0.0258[+0.0127,+0.0393] dmac=+0.0188[+0.0044,+0.0333] dmic=+0.0189[+0.0045,+0.0335]
+[boot stream 2] m_z                    vs m_pseudo_only          all    dAUC=-0.0017[-0.0098,+0.0066] dmac=+0.0019[-0.0065,+0.0115] dmic=+0.0016[-0.0066,+0.0112]
+[boot stream 2] m_z_thr                vs m_pseudo_only_thr      all    dAUC=-0.0036[-0.0120,+0.0042] dmac=-0.0002[-0.0082,+0.0084] dmic=-0.0006[-0.0086,+0.0082]
+[boot stream 2] m_z                    vs m_pseudo_only          mature dAUC=-0.0001[-0.0088,+0.0088] dmac=+0.0047[-0.0044,+0.0148] dmic=+0.0043[-0.0050,+0.0149]
+[boot stream 2] m_z_thr                vs m_pseudo_only_thr      mature dAUC=-0.0020[-0.0107,+0.0066] dmac=+0.0028[-0.0064,+0.0130] dmic=+0.0026[-0.0066,+0.0130]
+[boot stream 2] m_z                    vs m_c4_only              all    dAUC=+0.0400[+0.0267,+0.0534] dmac=+0.0400[+0.0277,+0.0526] dmic=+0.0408[+0.0284,+0.0537]
+[boot stream 2] m_z_thr                vs m_c4_only_thr          all    dAUC=+0.0211[+0.0097,+0.0329] dmac=+0.0197[+0.0107,+0.0295] dmic=+0.0203[+0.0109,+0.0297]
+[boot stream 2] m_z                    vs m_c4_only              mature dAUC=+0.0382[+0.0242,+0.0525] dmac=+0.0379[+0.0251,+0.0516] dmic=+0.0379[+0.0251,+0.0516]
+[boot stream 2] m_z_thr                vs m_c4_only_thr          mature dAUC=+0.0191[+0.0065,+0.0322] dmac=+0.0159[+0.0043,+0.0273] dmic=+0.0160[+0.0042,+0.0274]
+[boot stream 2] m_hwf_c4               vs m_pseudo_only          all    dAUC=-0.0053[-0.0164,+0.0060] dmac=-0.0087[-0.0196,+0.0026] dmic=-0.0088[-0.0201,+0.0028]
+[boot stream 2] m_hwf_c4_thr           vs m_pseudo_only_thr      all    dAUC=-0.0075[-0.0186,+0.0037] dmac=-0.0097[-0.0201,+0.0015] dmic=-0.0099[-0.0205,+0.0014]
+[boot stream 2] m_hwf_c4               vs m_pseudo_only          mature dAUC=-0.0022[-0.0143,+0.0103] dmac=-0.0045[-0.0162,+0.0083] dmic=-0.0047[-0.0168,+0.0087]
+[boot stream 2] m_hwf_c4_thr           vs m_pseudo_only_thr      mature dAUC=-0.0043[-0.0160,+0.0075] dmac=-0.0038[-0.0158,+0.0091] dmic=-0.0040[-0.0163,+0.0093]
+[boot stream 2] m_hwf_c4               vs m_c4_only              all    dAUC=+0.0364[+0.0249,+0.0483] dmac=+0.0294[+0.0182,+0.0419] dmic=+0.0304[+0.0196,+0.0422]
+[boot stream 2] m_hwf_c4_thr           vs m_c4_only_thr          all    dAUC=+0.0172[+0.0066,+0.0294] dmac=+0.0102[+0.0023,+0.0179] dmic=+0.0110[+0.0034,+0.0187]
+[boot stream 2] m_hwf_c4               vs m_c4_only              mature dAUC=+0.0361[+0.0234,+0.0485] dmac=+0.0288[+0.0173,+0.0407] dmic=+0.0290[+0.0177,+0.0412]
+[boot stream 2] m_hwf_c4_thr           vs m_c4_only_thr          mature dAUC=+0.0168[+0.0055,+0.0290] dmac=+0.0094[+0.0007,+0.0184] dmic=+0.0094[+0.0008,+0.0184]
+[boot stream 2] m_plain                vs m_z                    all    dAUC=+0.0027[-0.0013,+0.0065] dmac=-0.0013[-0.0064,+0.0037] dmic=-0.0017[-0.0067,+0.0034]
+[boot stream 2] m_plain_thr            vs m_z_thr                all    dAUC=+0.0076[+0.0028,+0.0119] dmac=+0.0037[-0.0004,+0.0083] dmic=+0.0037[-0.0005,+0.0082]
+[boot stream 2] m_plain                vs m_z                    mature dAUC=+0.0017[-0.0028,+0.0062] dmac=-0.0005[-0.0065,+0.0057] dmic=-0.0003[-0.0062,+0.0055]
+[boot stream 2] m_plain_thr            vs m_z_thr                mature dAUC=+0.0066[+0.0012,+0.0114] dmac=+0.0029[-0.0023,+0.0081] dmic=+0.0029[-0.0024,+0.0082]
+[s2] done elapsed=113.0s
+[done] all checks passed elapsed=113.0s -> depositioned_final_merge.json
