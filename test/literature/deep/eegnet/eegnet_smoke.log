@@ -1,0 +1,20 @@
+[start] method=eegnet rows=16067 subjects=57 X=(16067, 1500) fs=250 device=cuda smoke=True seeds=[0] protocols=['STRICT', 'LIT_WINDOW', 'LIT_SESSION_NORM'] elapsed=2.4s
+[check] derived SGKF folds == depositioned_aperiodic_emg_oof.npz[fold]
+    [determinism a] ep01/1 train_loss=0.7037 val_loss=0.6937 valAUC=0.4962 best=0.4962@1 t=3s elapsed=11.9s
+    [determinism b] ep01/1 train_loss=0.7037 val_loss=0.6937 valAUC=0.4962 best=0.4962@1 t=0s elapsed=12.0s
+[check] determinism max|dp|=0.00e+00
+    [eegnet STRICT s0 fold1/5] ep01/2 train_loss=0.6944 val_loss=0.6912 valAUC=0.5428 best=0.5428@1 t=1s elapsed=12.8s
+    [eegnet STRICT s0 fold1/5] ep02/2 train_loss=0.6939 val_loss=0.6898 valAUC=0.5523 best=0.5523@2 t=1s elapsed=13.5s
+[fold] eegnet STRICT s0 fold1/5 best_ep=2/2 valAUC=0.5523 testAUC=0.5469 params=2361 1s elapsed=13.6s
+[result] eegnet STRICT s0 AUC=0.5469 macro_bACC=0.5207 n>=.9=0/11 elapsed=14.0s
+    vs stream0__resnet_fbank: dAUC=-0.0882 [-0.1353,-0.0429] dmacro=-0.0640 [-0.0898,-0.0388]
+    vs stream0__resnet_whiten_logit_delta: dAUC=-0.1328 [-0.2102,-0.0650] dmacro=-0.1013 [-0.1544,-0.0591]
+    [eegnet LIT_WINDOW s0 fold1/5] ep01/2 train_loss=0.6955 val_loss=0.6917 valAUC=0.5277 best=0.5277@1 t=1s elapsed=14.7s
+    [eegnet LIT_WINDOW s0 fold1/5] ep02/2 train_loss=0.6920 val_loss=0.6883 valAUC=0.5603 best=0.5603@2 t=1s elapsed=15.2s
+[fold] eegnet LIT_WINDOW s0 fold1/5 best_ep=2/2 valAUC=0.5603 testAUC=0.5623 params=2361 1s elapsed=15.4s
+[result] eegnet LIT_WINDOW s0 AUC=0.5623 macro_bACC=0.5387 n>=.9=0/57 elapsed=15.5s
+    [eegnet LIT_SESSION_NORM s0 fold1/5] ep01/2 train_loss=0.6941 val_loss=0.7009 valAUC=0.4801 best=0.4801@1 t=1s elapsed=16.3s
+    [eegnet LIT_SESSION_NORM s0 fold1/5] ep02/2 train_loss=0.6922 val_loss=0.7022 valAUC=0.4746 best=0.4801@1 t=1s elapsed=16.8s
+[fold] eegnet LIT_SESSION_NORM s0 fold1/5 best_ep=1/2 valAUC=0.4801 testAUC=0.5194 params=2361 1s elapsed=16.9s
+[result] eegnet LIT_SESSION_NORM s0 AUC=0.5194 macro_bACC=0.5070 n>=.9=0/11 elapsed=17.0s
+[done] D:\BCIC2026\CogState\test\literature\deep\eegnet\eegnet_smoke.json D:\BCIC2026\CogState\test\literature\deep\eegnet\eegnet_smoke_oof.npz elapsed=17.0s

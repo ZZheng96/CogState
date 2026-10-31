@@ -1,0 +1,20 @@
+[start] method=transformer rows=16067 subjects=57 X=(16067, 1500) fs=250 device=cuda smoke=True seeds=[0] protocols=['STRICT', 'LIT_WINDOW', 'LIT_SESSION_NORM'] elapsed=1.8s
+[check] derived SGKF folds == depositioned_aperiodic_emg_oof.npz[fold]
+    [determinism a] ep01/1 train_loss=0.7231 val_loss=0.7017 valAUC=0.5033 best=0.5033@1 t=2s elapsed=5.4s
+    [determinism b] ep01/1 train_loss=0.7231 val_loss=0.7017 valAUC=0.5033 best=0.5033@1 t=0s elapsed=5.6s
+[check] determinism max|dp|=0.00e+00
+    [transformer STRICT s0 fold1/5] ep01/2 train_loss=0.6986 val_loss=0.6953 valAUC=0.5650 best=0.5650@1 t=1s elapsed=7.2s
+    [transformer STRICT s0 fold1/5] ep02/2 train_loss=0.6913 val_loss=0.6892 valAUC=0.5881 best=0.5881@2 t=3s elapsed=8.5s
+[fold] transformer STRICT s0 fold1/5 best_ep=2/2 valAUC=0.5881 testAUC=0.5878 params=138753 3s elapsed=8.7s
+[result] transformer STRICT s0 AUC=0.5878 macro_bACC=0.5463 n>=.9=0/11 elapsed=8.9s
+    vs stream0__resnet_fbank: dAUC=-0.0427 [-0.0901,-0.0068] dmacro=-0.0335 [-0.0809,+0.0164]
+    vs stream0__resnet_whiten_logit_delta: dAUC=-0.0873 [-0.1368,-0.0301] dmacro=-0.0707 [-0.1099,-0.0277]
+    [transformer LIT_WINDOW s0 fold1/5] ep01/2 train_loss=0.6997 val_loss=0.6929 valAUC=0.5483 best=0.5483@1 t=2s elapsed=10.7s
+    [transformer LIT_WINDOW s0 fold1/5] ep02/2 train_loss=0.6911 val_loss=0.6883 valAUC=0.5602 best=0.5602@2 t=3s elapsed=12.2s
+[fold] transformer LIT_WINDOW s0 fold1/5 best_ep=2/2 valAUC=0.5602 testAUC=0.5956 params=138753 3s elapsed=12.4s
+[result] transformer LIT_WINDOW s0 AUC=0.5956 macro_bACC=0.5735 n>=.9=0/57 elapsed=12.6s
+    [transformer LIT_SESSION_NORM s0 fold1/5] ep01/2 train_loss=0.6989 val_loss=0.7072 valAUC=0.4736 best=0.4736@1 t=1s elapsed=14.4s
+    [transformer LIT_SESSION_NORM s0 fold1/5] ep02/2 train_loss=0.6933 val_loss=0.6945 valAUC=0.4732 best=0.4736@1 t=3s elapsed=15.9s
+[fold] transformer LIT_SESSION_NORM s0 fold1/5 best_ep=1/2 valAUC=0.4736 testAUC=0.4821 params=138753 3s elapsed=16.1s
+[result] transformer LIT_SESSION_NORM s0 AUC=0.4821 macro_bACC=0.4999 n>=.9=0/11 elapsed=16.1s
+[done] D:\BCIC2026\CogState\test\literature\deep\transformer\transformer_smoke.json D:\BCIC2026\CogState\test\literature\deep\transformer\transformer_smoke_oof.npz elapsed=16.1s

@@ -1,0 +1,11 @@
+[start] method=cnn1d rows=16067 subjects=57 X=(16067, 1500) fs=250 device=cuda smoke=True seeds=[0] protocols=['LIT_SESSION_NORM'] elapsed=3.5s
+[check] derived SGKF folds == depositioned_aperiodic_emg_oof.npz[fold]
+[merge] kept ['LIT_WINDOW__s0', 'STRICT__s0'] from previous cnn1d_smoke.json
+    [determinism a] ep01/1 train_loss=0.7045 val_loss=0.6925 valAUC=0.4795 best=0.4795@1 t=3s elapsed=13.6s
+    [determinism b] ep01/1 train_loss=0.7045 val_loss=0.6925 valAUC=0.4795 best=0.4795@1 t=0s elapsed=13.7s
+[check] determinism max|dp|=0.00e+00
+    [cnn1d LIT_SESSION_NORM s0 fold1/5] ep01/2 train_loss=0.6972 val_loss=0.6936 valAUC=0.5228 best=0.5228@1 t=2s elapsed=15.6s
+    [cnn1d LIT_SESSION_NORM s0 fold1/5] ep02/2 train_loss=0.6938 val_loss=0.6939 valAUC=0.5078 best=0.5228@1 t=3s elapsed=17.0s
+[fold] cnn1d LIT_SESSION_NORM s0 fold1/5 best_ep=1/2 valAUC=0.5228 testAUC=0.5056 params=137857 3s elapsed=17.1s
+[result] cnn1d LIT_SESSION_NORM s0 AUC=0.5056 macro_bACC=0.4970 n>=.9=0/11 elapsed=17.2s
+[done] D:\BCIC2026\CogState\test\literature\deep\cnn1d\cnn1d_smoke.json D:\BCIC2026\CogState\test\literature\deep\cnn1d\cnn1d_smoke_oof.npz elapsed=17.3s

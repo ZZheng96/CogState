@@ -1,0 +1,20 @@
+[start] method=cnn1d rows=16067 subjects=57 X=(16067, 1500) fs=250 device=cuda smoke=True seeds=[0] protocols=['STRICT', 'LIT_WINDOW', 'LIT_SESSION_NORM'] elapsed=1.6s
+[check] derived SGKF folds == depositioned_aperiodic_emg_oof.npz[fold]
+    [determinism a] ep01/1 train_loss=0.7045 val_loss=0.6925 valAUC=0.4795 best=0.4795@1 t=3s elapsed=8.9s
+    [determinism b] ep01/1 train_loss=0.7045 val_loss=0.6925 valAUC=0.4795 best=0.4795@1 t=0s elapsed=9.1s
+[check] determinism max|dp|=0.00e+00
+    [cnn1d STRICT s0 fold1/5] ep01/2 train_loss=0.6989 val_loss=0.6922 valAUC=0.5375 best=0.5375@1 t=1s elapsed=10.3s
+    [cnn1d STRICT s0 fold1/5] ep02/2 train_loss=0.6896 val_loss=0.6902 valAUC=0.5638 best=0.5638@2 t=2s elapsed=11.2s
+[fold] cnn1d STRICT s0 fold1/5 best_ep=2/2 valAUC=0.5638 testAUC=0.5764 params=137857 2s elapsed=11.4s
+[result] cnn1d STRICT s0 AUC=0.5764 macro_bACC=0.5482 n>=.9=0/11 elapsed=12.0s
+    vs stream0__resnet_fbank: dAUC=-0.0522 [-0.1013,-0.0097] dmacro=-0.0309 [-0.0749,+0.0034]
+    vs stream0__resnet_whiten_logit_delta: dAUC=-0.0967 [-0.1438,-0.0415] dmacro=-0.0682 [-0.1147,-0.0174]
+    [cnn1d LIT_WINDOW s0 fold1/5] ep01/2 train_loss=0.6977 val_loss=0.6923 valAUC=0.5210 best=0.5210@1 t=2s elapsed=13.8s
+    [cnn1d LIT_WINDOW s0 fold1/5] ep02/2 train_loss=0.6893 val_loss=0.6853 valAUC=0.5682 best=0.5682@2 t=3s elapsed=15.4s
+[fold] cnn1d LIT_WINDOW s0 fold1/5 best_ep=2/2 valAUC=0.5682 testAUC=0.5776 params=137857 3s elapsed=15.6s
+[result] cnn1d LIT_WINDOW s0 AUC=0.5776 macro_bACC=0.5458 n>=.9=0/57 elapsed=16.1s
+    [cnn1d LIT_SESSION_NORM s0 fold1/5] ep01/2 train_loss=0.6973 val_loss=0.6930 valAUC=0.5188 best=0.5188@1 t=1s elapsed=17.9s
+    [cnn1d LIT_SESSION_NORM s0 fold1/5] ep02/2 train_loss=0.6922 val_loss=0.7017 valAUC=0.4698 best=0.5188@1 t=2s elapsed=18.8s
+[fold] cnn1d LIT_SESSION_NORM s0 fold1/5 best_ep=1/2 valAUC=0.5188 testAUC=0.5441 params=137857 2s elapsed=18.9s
+[result] cnn1d LIT_SESSION_NORM s0 AUC=0.5441 macro_bACC=0.5218 n>=.9=0/11 elapsed=19.0s
+[done] D:\BCIC2026\CogState\test\literature\deep\cnn1d\cnn1d_smoke.json D:\BCIC2026\CogState\test\literature\deep\cnn1d\cnn1d_smoke_oof.npz elapsed=19.0s

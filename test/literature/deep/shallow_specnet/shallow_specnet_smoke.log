@@ -1,0 +1,20 @@
+[start] method=shallow_specnet rows=16067 subjects=57 X=(16067, 1500) fs=250 device=cuda smoke=True seeds=[0] protocols=['STRICT', 'LIT_WINDOW', 'LIT_SESSION_NORM'] elapsed=2.9s
+[check] derived SGKF folds == depositioned_aperiodic_emg_oof.npz[fold]
+    [determinism a] ep01/1 train_loss=0.8326 val_loss=0.7121 valAUC=0.5089 best=0.5089@1 t=4s elapsed=15.0s
+    [determinism b] ep01/1 train_loss=0.8326 val_loss=0.7121 valAUC=0.5089 best=0.5089@1 t=0s elapsed=15.1s
+[check] determinism max|dp|=0.00e+00
+    [shallow_specnet STRICT s0 fold1/5] ep01/2 train_loss=0.7539 val_loss=0.6955 valAUC=0.5343 best=0.5343@1 t=1s elapsed=16.2s
+    [shallow_specnet STRICT s0 fold1/5] ep02/2 train_loss=0.7071 val_loss=0.6864 valAUC=0.5791 best=0.5791@2 t=2s elapsed=17.0s
+[fold] shallow_specnet STRICT s0 fold1/5 best_ep=2/2 valAUC=0.5791 testAUC=0.5465 params=7803 2s elapsed=17.1s
+[result] shallow_specnet STRICT s0 AUC=0.5465 macro_bACC=0.5354 n>=.9=0/11 elapsed=17.5s
+    vs stream0__resnet_fbank: dAUC=-0.0836 [-0.1257,-0.0446] dmacro=-0.0471 [-0.0748,-0.0187]
+    vs stream0__resnet_whiten_logit_delta: dAUC=-0.1282 [-0.1922,-0.0588] dmacro=-0.0844 [-0.1401,-0.0320]
+    [shallow_specnet LIT_WINDOW s0 fold1/5] ep01/2 train_loss=0.7512 val_loss=0.6916 valAUC=0.5728 best=0.5728@1 t=1s elapsed=18.6s
+    [shallow_specnet LIT_WINDOW s0 fold1/5] ep02/2 train_loss=0.7142 val_loss=0.7026 valAUC=0.5615 best=0.5728@1 t=2s elapsed=20.0s
+[fold] shallow_specnet LIT_WINDOW s0 fold1/5 best_ep=1/2 valAUC=0.5728 testAUC=0.5878 params=7803 2s elapsed=20.2s
+[result] shallow_specnet LIT_WINDOW s0 AUC=0.5878 macro_bACC=0.5622 n>=.9=0/57 elapsed=20.7s
+    [shallow_specnet LIT_SESSION_NORM s0 fold1/5] ep01/2 train_loss=0.7895 val_loss=0.8988 valAUC=0.4894 best=0.4894@1 t=2s elapsed=22.7s
+    [shallow_specnet LIT_SESSION_NORM s0 fold1/5] ep02/2 train_loss=0.7432 val_loss=0.9672 valAUC=0.5260 best=0.5260@2 t=3s elapsed=24.2s
+[fold] shallow_specnet LIT_SESSION_NORM s0 fold1/5 best_ep=2/2 valAUC=0.5260 testAUC=0.5443 params=7803 3s elapsed=24.4s
+[result] shallow_specnet LIT_SESSION_NORM s0 AUC=0.5443 macro_bACC=0.4997 n>=.9=0/11 elapsed=24.5s
+[done] D:\BCIC2026\CogState\test\literature\deep\shallow_specnet\shallow_specnet_smoke.json D:\BCIC2026\CogState\test\literature\deep\shallow_specnet\shallow_specnet_smoke_oof.npz elapsed=24.6s
