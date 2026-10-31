@@ -1,0 +1,115 @@
+[check stream 0] naive + prefix invariance OK
+[result stream 0] fuseH_wf     all: AUC=0.7140 mac=0.6541 mic=0.6545 | mature: AUC=0.7147 mac=0.6563 mic=0.6561 | subj>=.9=0 max=0.853
+[result stream 0] thr_med64    all: AUC=0.7122 mac=0.6515 mic=0.6525 | mature: AUC=0.7135 mac=0.6530 mic=0.6536 | subj>=.9=0 max=0.834
+[result stream 0] thr_med256   all: AUC=0.7143 mac=0.6535 mic=0.6544 | mature: AUC=0.7166 mac=0.6561 mic=0.6563 | subj>=.9=0 max=0.830
+[result stream 0] thr_medall   all: AUC=0.7144 mac=0.6535 mic=0.6544 | mature: AUC=0.7167 mac=0.6561 mic=0.6563 | subj>=.9=0 max=0.830
+[result stream 0] thr_mean64   all: AUC=0.7145 mac=0.6540 mic=0.6549 | mature: AUC=0.7150 mac=0.6544 mic=0.6546 | subj>=.9=0 max=0.862
+[result stream 0] thr_mean256  all: AUC=0.7161 mac=0.6574 mic=0.6582 | mature: AUC=0.7175 mac=0.6592 mic=0.6594 | subj>=.9=0 max=0.872
+[result stream 0] thr_meanall  all: AUC=0.7161 mac=0.6572 mic=0.6580 | mature: AUC=0.7175 mac=0.6589 mic=0.6590 | subj>=.9=0 max=0.872
+[result stream 0] thr_mix64    all: AUC=0.7142 mac=0.6549 mic=0.6557 | mature: AUC=0.7154 mac=0.6579 mic=0.6579 | subj>=.9=0 max=0.849
+[result stream 0] thr_mix256   all: AUC=0.7149 mac=0.6552 mic=0.6560 | mature: AUC=0.7164 mac=0.6577 mic=0.6578 | subj>=.9=0 max=0.852
+[result stream 0] thr_mixall   all: AUC=0.7149 mac=0.6551 mic=0.6558 | mature: AUC=0.7165 mac=0.6575 mic=0.6575 | subj>=.9=0 max=0.852
+[group stream 0] thr_med64    high(n=3): mean=0.8060 dmean=-0.0086 dmed=-0.0104 | mid(n=34): mean=0.7029 dmean=+0.0028 dmed=-0.0103 | low(n=20): mean=0.5410 dmean=-0.0107 dmed=-0.0104
+[boot stream 0] thr_med64    vs fuseH_wf all    dAUC=-0.0019[-0.0042,+0.0008] dmac=-0.0026[-0.0070,+0.0016]
+[boot stream 0] thr_med64    vs fuseH_wf mature dAUC=-0.0013[-0.0043,+0.0021] dmac=-0.0034[-0.0102,+0.0032]
+[group stream 0] thr_med256   high(n=3): mean=0.8070 dmean=-0.0077 dmed=-0.0023 | mid(n=34): mean=0.7041 dmean=+0.0040 dmed=-0.0001 | low(n=20): mean=0.5445 dmean=-0.0072 dmed=-0.0070
+[boot stream 0] thr_med256   vs fuseH_wf all    dAUC=+0.0002[-0.0020,+0.0027] dmac=-0.0006[-0.0048,+0.0035]
+[boot stream 0] thr_med256   vs fuseH_wf mature dAUC=+0.0018[-0.0005,+0.0047] dmac=-0.0002[-0.0055,+0.0054]
+[group stream 0] thr_medall   high(n=3): mean=0.8070 dmean=-0.0077 dmed=-0.0023 | mid(n=34): mean=0.7042 dmean=+0.0041 dmed=-0.0001 | low(n=20): mean=0.5444 dmean=-0.0074 dmed=-0.0070
+[boot stream 0] thr_medall   vs fuseH_wf all    dAUC=+0.0002[-0.0019,+0.0028] dmac=-0.0006[-0.0048,+0.0035]
+[boot stream 0] thr_medall   vs fuseH_wf mature dAUC=+0.0019[-0.0003,+0.0049] dmac=-0.0003[-0.0054,+0.0053]
+[group stream 0] thr_mean64   high(n=3): mean=0.8184 dmean=+0.0037 dmed=-0.0058 | mid(n=34): mean=0.7015 dmean=+0.0015 dmed=-0.0138 | low(n=20): mean=0.5486 dmean=-0.0032 dmed=-0.0029
+[boot stream 0] thr_mean64   vs fuseH_wf all    dAUC=+0.0004[-0.0019,+0.0030] dmac=-0.0001[-0.0036,+0.0037]
+[boot stream 0] thr_mean64   vs fuseH_wf mature dAUC=+0.0002[-0.0028,+0.0038] dmac=-0.0020[-0.0076,+0.0035]
+[group stream 0] thr_mean256  high(n=3): mean=0.8300 dmean=+0.0154 dmed=+0.0114 | mid(n=34): mean=0.7060 dmean=+0.0059 dmed=-0.0028 | low(n=20): mean=0.5490 dmean=-0.0028 dmed=-0.0092
+[boot stream 0] thr_mean256  vs fuseH_wf all    dAUC=+0.0020[-0.0002,+0.0046] dmac=+0.0033[-0.0006,+0.0073]
+[boot stream 0] thr_mean256  vs fuseH_wf mature dAUC=+0.0026[-0.0004,+0.0060] dmac=+0.0029[-0.0034,+0.0086]
+[group stream 0] thr_meanall  high(n=3): mean=0.8300 dmean=+0.0154 dmed=+0.0114 | mid(n=34): mean=0.7060 dmean=+0.0059 dmed=-0.0028 | low(n=20): mean=0.5485 dmean=-0.0033 dmed=-0.0092
+[boot stream 0] thr_meanall  vs fuseH_wf all    dAUC=+0.0020[-0.0002,+0.0046] dmac=+0.0032[-0.0009,+0.0072]
+[boot stream 0] thr_meanall  vs fuseH_wf mature dAUC=+0.0026[-0.0004,+0.0061] dmac=+0.0026[-0.0037,+0.0083]
+[group stream 0] thr_mix64    high(n=3): mean=0.8166 dmean=+0.0020 dmed=-0.0036 | mid(n=34): mean=0.7035 dmean=+0.0035 dmed=-0.0068 | low(n=20): mean=0.5480 dmean=-0.0037 dmed=-0.0039
+[boot stream 0] thr_mix64    vs fuseH_wf all    dAUC=+0.0001[-0.0011,+0.0017] dmac=+0.0008[-0.0021,+0.0039]
+[boot stream 0] thr_mix64    vs fuseH_wf mature dAUC=+0.0006[-0.0011,+0.0025] dmac=+0.0015[-0.0029,+0.0058]
+[group stream 0] thr_mix256   high(n=3): mean=0.8201 dmean=+0.0055 dmed=+0.0011 | mid(n=34): mean=0.7035 dmean=+0.0034 dmed=+0.0029 | low(n=20): mean=0.5484 dmean=-0.0034 dmed=-0.0028
+[boot stream 0] thr_mix256   vs fuseH_wf all    dAUC=+0.0008[-0.0004,+0.0022] dmac=+0.0011[-0.0015,+0.0037]
+[boot stream 0] thr_mix256   vs fuseH_wf mature dAUC=+0.0016[+0.0003,+0.0033] dmac=+0.0014[-0.0022,+0.0049]
+[group stream 0] thr_mixall   high(n=3): mean=0.8201 dmean=+0.0055 dmed=+0.0011 | mid(n=34): mean=0.7033 dmean=+0.0032 dmed=+0.0012 | low(n=20): mean=0.5484 dmean=-0.0034 dmed=-0.0028
+[boot stream 0] thr_mixall   vs fuseH_wf all    dAUC=+0.0008[-0.0004,+0.0022] dmac=+0.0010[-0.0017,+0.0037]
+[boot stream 0] thr_mixall   vs fuseH_wf mature dAUC=+0.0017[+0.0003,+0.0033] dmac=+0.0012[-0.0025,+0.0048]
+[check stream 1] naive + prefix invariance OK
+[result stream 1] fuseH_wf     all: AUC=0.7106 mac=0.6505 mic=0.6520 | mature: AUC=0.7156 mac=0.6541 mic=0.6548 | subj>=.9=0 max=0.891
+[result stream 1] thr_med64    all: AUC=0.7102 mac=0.6545 mic=0.6563 | mature: AUC=0.7152 mac=0.6603 mic=0.6612 | subj>=.9=0 max=0.877
+[result stream 1] thr_med256   all: AUC=0.7117 mac=0.6552 mic=0.6571 | mature: AUC=0.7176 mac=0.6614 mic=0.6622 | subj>=.9=0 max=0.888
+[result stream 1] thr_medall   all: AUC=0.7117 mac=0.6550 mic=0.6569 | mature: AUC=0.7176 mac=0.6611 mic=0.6618 | subj>=.9=0 max=0.888
+[result stream 1] thr_mean64   all: AUC=0.7126 mac=0.6562 mic=0.6576 | mature: AUC=0.7179 mac=0.6601 mic=0.6607 | subj>=.9=0 max=0.886
+[result stream 1] thr_mean256  all: AUC=0.7134 mac=0.6568 mic=0.6580 | mature: AUC=0.7190 mac=0.6608 mic=0.6614 | subj>=.9=0 max=0.883
+[result stream 1] thr_meanall  all: AUC=0.7134 mac=0.6569 mic=0.6581 | mature: AUC=0.7190 mac=0.6609 mic=0.6615 | subj>=.9=0 max=0.886
+[result stream 1] thr_mix64    all: AUC=0.7115 mac=0.6541 mic=0.6558 | mature: AUC=0.7164 mac=0.6585 mic=0.6591 | subj>=.9=0 max=0.895
+[result stream 1] thr_mix256   all: AUC=0.7121 mac=0.6538 mic=0.6553 | mature: AUC=0.7174 mac=0.6581 mic=0.6586 | subj>=.9=0 max=0.898
+[result stream 1] thr_mixall   all: AUC=0.7121 mac=0.6539 mic=0.6554 | mature: AUC=0.7174 mac=0.6583 mic=0.6588 | subj>=.9=0 max=0.898
+[group stream 1] thr_med64    high(n=3): mean=0.8146 dmean=+0.0000 dmed=+0.0140 | mid(n=34): mean=0.7012 dmean=+0.0054 dmed=+0.0122 | low(n=20): mean=0.5510 dmean=+0.0021 dmed=-0.0018
+[boot stream 1] thr_med64    vs fuseH_wf all    dAUC=-0.0005[-0.0024,+0.0018] dmac=+0.0039[-0.0011,+0.0092]
+[boot stream 1] thr_med64    vs fuseH_wf mature dAUC=-0.0005[-0.0032,+0.0023] dmac=+0.0061[+0.0001,+0.0121]
+[group stream 1] thr_med256   high(n=3): mean=0.8121 dmean=-0.0024 dmed=+0.0103 | mid(n=34): mean=0.7025 dmean=+0.0067 dmed=+0.0055 | low(n=20): mean=0.5513 dmean=+0.0024 dmed=-0.0064
+[boot stream 1] thr_med256   vs fuseH_wf all    dAUC=+0.0011[-0.0007,+0.0029] dmac=+0.0046[-0.0001,+0.0100]
+[boot stream 1] thr_med256   vs fuseH_wf mature dAUC=+0.0020[-0.0002,+0.0043] dmac=+0.0072[+0.0018,+0.0124]
+[group stream 1] thr_medall   high(n=3): mean=0.8121 dmean=-0.0024 dmed=+0.0103 | mid(n=34): mean=0.7024 dmean=+0.0066 dmed=+0.0038 | low(n=20): mean=0.5510 dmean=+0.0020 dmed=-0.0064
+[boot stream 1] thr_medall   vs fuseH_wf all    dAUC=+0.0010[-0.0007,+0.0029] dmac=+0.0044[-0.0004,+0.0098]
+[boot stream 1] thr_medall   vs fuseH_wf mature dAUC=+0.0019[-0.0003,+0.0042] dmac=+0.0069[+0.0015,+0.0122]
+[group stream 1] thr_mean64   high(n=3): mean=0.8104 dmean=-0.0041 dmed=+0.0137 | mid(n=34): mean=0.7030 dmean=+0.0072 dmed=+0.0095 | low(n=20): mean=0.5535 dmean=+0.0045 dmed=+0.0055
+[boot stream 1] thr_mean64   vs fuseH_wf all    dAUC=+0.0020[-0.0000,+0.0043] dmac=+0.0056[+0.0014,+0.0098]
+[boot stream 1] thr_mean64   vs fuseH_wf mature dAUC=+0.0022[-0.0005,+0.0050] dmac=+0.0059[+0.0009,+0.0109]
+[group stream 1] thr_mean256  high(n=3): mean=0.8128 dmean=-0.0018 dmed=+0.0137 | mid(n=34): mean=0.7036 dmean=+0.0078 dmed=+0.0074 | low(n=20): mean=0.5539 dmean=+0.0049 dmed=+0.0027
+[boot stream 1] thr_mean256  vs fuseH_wf all    dAUC=+0.0027[+0.0008,+0.0050] dmac=+0.0062[+0.0021,+0.0105]
+[boot stream 1] thr_mean256  vs fuseH_wf mature dAUC=+0.0033[+0.0010,+0.0060] dmac=+0.0065[+0.0013,+0.0116]
+[group stream 1] thr_meanall  high(n=3): mean=0.8139 dmean=-0.0006 dmed=+0.0137 | mid(n=34): mean=0.7036 dmean=+0.0078 dmed=+0.0074 | low(n=20): mean=0.5539 dmean=+0.0049 dmed=+0.0027
+[boot stream 1] thr_meanall  vs fuseH_wf all    dAUC=+0.0027[+0.0007,+0.0050] dmac=+0.0063[+0.0020,+0.0106]
+[boot stream 1] thr_meanall  vs fuseH_wf mature dAUC=+0.0033[+0.0009,+0.0060] dmac=+0.0066[+0.0015,+0.0116]
+[group stream 1] thr_mix64    high(n=3): mean=0.8158 dmean=+0.0013 dmed=+0.0035 | mid(n=34): mean=0.7001 dmean=+0.0043 dmed=+0.0050 | low(n=20): mean=0.5516 dmean=+0.0027 dmed=-0.0029
+[boot stream 1] thr_mix64    vs fuseH_wf all    dAUC=+0.0008[-0.0002,+0.0019] dmac=+0.0036[+0.0001,+0.0069]
+[boot stream 1] thr_mix64    vs fuseH_wf mature dAUC=+0.0007[-0.0006,+0.0021] dmac=+0.0043[+0.0004,+0.0083]
+[group stream 1] thr_mix256   high(n=3): mean=0.8191 dmean=+0.0046 dmed=+0.0033 | mid(n=34): mean=0.6992 dmean=+0.0034 dmed=+0.0057 | low(n=20): mean=0.5517 dmean=+0.0028 dmed=+0.0022
+[boot stream 1] thr_mix256   vs fuseH_wf all    dAUC=+0.0014[+0.0005,+0.0025] dmac=+0.0032[+0.0001,+0.0064]
+[boot stream 1] thr_mix256   vs fuseH_wf mature dAUC=+0.0017[+0.0006,+0.0030] dmac=+0.0039[+0.0004,+0.0079]
+[group stream 1] thr_mixall   high(n=3): mean=0.8191 dmean=+0.0046 dmed=+0.0033 | mid(n=34): mean=0.6992 dmean=+0.0034 dmed=+0.0057 | low(n=20): mean=0.5521 dmean=+0.0031 dmed=+0.0022
+[boot stream 1] thr_mixall   vs fuseH_wf all    dAUC=+0.0014[+0.0004,+0.0024] dmac=+0.0033[+0.0003,+0.0064]
+[boot stream 1] thr_mixall   vs fuseH_wf mature dAUC=+0.0017[+0.0006,+0.0030] dmac=+0.0041[+0.0007,+0.0081]
+[check stream 2] naive + prefix invariance OK
+[result stream 2] fuseH_wf     all: AUC=0.7097 mac=0.6500 mic=0.6510 | mature: AUC=0.7085 mac=0.6538 mic=0.6534 | subj>=.9=0 max=0.871
+[result stream 2] thr_med64    all: AUC=0.7084 mac=0.6514 mic=0.6527 | mature: AUC=0.7079 mac=0.6546 mic=0.6550 | subj>=.9=0 max=0.864
+[result stream 2] thr_med256   all: AUC=0.7102 mac=0.6510 mic=0.6523 | mature: AUC=0.7104 mac=0.6545 mic=0.6548 | subj>=.9=0 max=0.863
+[result stream 2] thr_medall   all: AUC=0.7103 mac=0.6511 mic=0.6523 | mature: AUC=0.7105 mac=0.6546 mic=0.6548 | subj>=.9=0 max=0.860
+[result stream 2] thr_mean64   all: AUC=0.7100 mac=0.6527 mic=0.6536 | mature: AUC=0.7089 mac=0.6544 mic=0.6545 | subj>=.9=0 max=0.865
+[result stream 2] thr_mean256  all: AUC=0.7116 mac=0.6539 mic=0.6549 | mature: AUC=0.7110 mac=0.6571 mic=0.6575 | subj>=.9=0 max=0.869
+[result stream 2] thr_meanall  all: AUC=0.7116 mac=0.6540 mic=0.6550 | mature: AUC=0.7110 mac=0.6573 mic=0.6577 | subj>=.9=0 max=0.869
+[result stream 2] thr_mix64    all: AUC=0.7102 mac=0.6514 mic=0.6523 | mature: AUC=0.7093 mac=0.6547 mic=0.6546 | subj>=.9=0 max=0.864
+[result stream 2] thr_mix256   all: AUC=0.7108 mac=0.6537 mic=0.6547 | mature: AUC=0.7102 mac=0.6581 mic=0.6582 | subj>=.9=0 max=0.874
+[result stream 2] thr_mixall   all: AUC=0.7109 mac=0.6537 mic=0.6546 | mature: AUC=0.7102 mac=0.6580 mic=0.6581 | subj>=.9=0 max=0.874
+[group stream 2] thr_med64    high(n=3): mean=0.8109 dmean=+0.0067 dmed=+0.0018 | mid(n=34): mean=0.6993 dmean=+0.0052 dmed=+0.0088 | low(n=20): mean=0.5460 dmean=-0.0060 dmed=-0.0073
+[boot stream 2] thr_med64    vs fuseH_wf all    dAUC=-0.0014[-0.0030,+0.0005] dmac=+0.0014[-0.0038,+0.0067]
+[boot stream 2] thr_med64    vs fuseH_wf mature dAUC=-0.0007[-0.0029,+0.0016] dmac=+0.0008[-0.0047,+0.0068]
+[group stream 2] thr_med256   high(n=3): mean=0.8132 dmean=+0.0090 dmed=+0.0086 | mid(n=34): mean=0.6984 dmean=+0.0043 dmed=-0.0018 | low(n=20): mean=0.5461 dmean=-0.0059 dmed=-0.0005
+[boot stream 2] thr_med256   vs fuseH_wf all    dAUC=+0.0005[-0.0014,+0.0026] dmac=+0.0011[-0.0036,+0.0059]
+[boot stream 2] thr_med256   vs fuseH_wf mature dAUC=+0.0019[-0.0003,+0.0040] dmac=+0.0007[-0.0050,+0.0069]
+[group stream 2] thr_medall   high(n=3): mean=0.8131 dmean=+0.0089 dmed=+0.0121 | mid(n=34): mean=0.6986 dmean=+0.0045 dmed=-0.0018 | low(n=20): mean=0.5460 dmean=-0.0060 dmed=-0.0003
+[boot stream 2] thr_medall   vs fuseH_wf all    dAUC=+0.0005[-0.0013,+0.0026] dmac=+0.0012[-0.0035,+0.0061]
+[boot stream 2] thr_medall   vs fuseH_wf mature dAUC=+0.0019[-0.0002,+0.0041] dmac=+0.0008[-0.0048,+0.0070]
+[group stream 2] thr_mean64   high(n=3): mean=0.8088 dmean=+0.0046 dmed=-0.0008 | mid(n=34): mean=0.6981 dmean=+0.0040 dmed=-0.0064 | low(n=20): mean=0.5521 dmean=+0.0001 dmed=+0.0073
+[boot stream 2] thr_mean64   vs fuseH_wf all    dAUC=+0.0002[-0.0016,+0.0020] dmac=+0.0028[-0.0016,+0.0076]
+[boot stream 2] thr_mean64   vs fuseH_wf mature dAUC=+0.0003[-0.0023,+0.0030] dmac=+0.0007[-0.0045,+0.0063]
+[group stream 2] thr_mean256  high(n=3): mean=0.8182 dmean=+0.0140 dmed=+0.0133 | mid(n=34): mean=0.7001 dmean=+0.0060 dmed=-0.0023 | low(n=20): mean=0.5506 dmean=-0.0014 dmed=+0.0067
+[boot stream 2] thr_mean256  vs fuseH_wf all    dAUC=+0.0018[+0.0000,+0.0039] dmac=+0.0039[-0.0010,+0.0089]
+[boot stream 2] thr_mean256  vs fuseH_wf mature dAUC=+0.0024[-0.0000,+0.0053] dmac=+0.0033[-0.0021,+0.0095]
+[group stream 2] thr_meanall  high(n=3): mean=0.8182 dmean=+0.0140 dmed=+0.0133 | mid(n=34): mean=0.7002 dmean=+0.0061 dmed=-0.0023 | low(n=20): mean=0.5508 dmean=-0.0012 dmed=+0.0067
+[boot stream 2] thr_meanall  vs fuseH_wf all    dAUC=+0.0018[+0.0000,+0.0039] dmac=+0.0040[-0.0008,+0.0091]
+[boot stream 2] thr_meanall  vs fuseH_wf mature dAUC=+0.0024[-0.0001,+0.0053] dmac=+0.0035[-0.0020,+0.0098]
+[group stream 2] thr_mix64    high(n=3): mean=0.8086 dmean=+0.0044 dmed=+0.0054 | mid(n=34): mean=0.6977 dmean=+0.0036 dmed=+0.0061 | low(n=20): mean=0.5491 dmean=-0.0029 dmed=+0.0015
+[boot stream 2] thr_mix64    vs fuseH_wf all    dAUC=+0.0004[-0.0006,+0.0015] dmac=+0.0014[-0.0019,+0.0046]
+[boot stream 2] thr_mix64    vs fuseH_wf mature dAUC=+0.0008[-0.0004,+0.0020] dmac=+0.0009[-0.0037,+0.0055]
+[group stream 2] thr_mix256   high(n=3): mean=0.8122 dmean=+0.0080 dmed=-0.0016 | mid(n=34): mean=0.6987 dmean=+0.0046 dmed=+0.0087 | low(n=20): mean=0.5535 dmean=+0.0015 dmed=+0.0121
+[boot stream 2] thr_mix256   vs fuseH_wf all    dAUC=+0.0011[+0.0000,+0.0023] dmac=+0.0038[+0.0008,+0.0068]
+[boot stream 2] thr_mix256   vs fuseH_wf mature dAUC=+0.0017[+0.0006,+0.0028] dmac=+0.0043[-0.0000,+0.0089]
+[group stream 2] thr_mixall   high(n=3): mean=0.8122 dmean=+0.0080 dmed=-0.0016 | mid(n=34): mean=0.6986 dmean=+0.0045 dmed=+0.0087 | low(n=20): mean=0.5536 dmean=+0.0016 dmed=+0.0121
+[boot stream 2] thr_mixall   vs fuseH_wf all    dAUC=+0.0011[+0.0000,+0.0023] dmac=+0.0038[+0.0007,+0.0068]
+[boot stream 2] thr_mixall   vs fuseH_wf mature dAUC=+0.0017[+0.0006,+0.0029] dmac=+0.0043[-0.0001,+0.0088]
+[done]
