@@ -1,0 +1,168 @@
+[check] fold == npz fold (load_all); blocks single-label
+[start] rows=16067 subjects=57 folds=[0] orders=['s0'] boot=100 jobs=16 elapsed=0.6s
+[inner bz f0] best=pc2 C=0.003 withinAUC=0.6688 (none C.01=0.6662) jobs=108 s=108.8 elapsed=117.9s
+[inner bc s0 f0] best=pc2 C=0.003 withinAUC=0.6687 (none C.01=0.6665) jobs=108 s=98.1 elapsed=232.3s
+[emasel s0 f0] h=0 inner macro=0:0.6303 2:0.5752 4:0.5556 8:0.5309 16:0.5144 32:0.5065
+[subjects s0 f0] 11 processed s=13.3 elapsed=247.5s
+[check s0] prefix invariance + isolation ok subject=sub-009 cut=133 outputs=136 elapsed=250.3s
+[inner bz f0] best=pc2 C=0.003 withinAUC=0.6688 (none C.01=0.6662) jobs=108 s=106.7 elapsed=365.2s
+[inner bc s0 f0] best=pc2 C=0.003 withinAUC=0.6687 (none C.01=0.6665) jobs=108 s=99.3 elapsed=480.8s
+[emasel s0 f0] h=0 inner macro=0:0.6303 2:0.5752 4:0.5556 8:0.5309 16:0.5144 32:0.5065
+[subjects s0 f0] 11 processed s=13.7 elapsed=496.4s
+[check s0] test-label + test-block shuffle -> identical outputs elapsed=496.4s
+[check s0] all_prank recomputation == npz max|d|=0.00e+00 s=27.1
+[fold 0] done s=523.0 elapsed=523.5s
+[result s0] a          raw:AUC=0.6196/mac=0.5745/n9=0 thr:AUC=0.6212/mac=0.5729/n9=0 emasel:AUC=0.6212/mac=0.5729/n9=0 | ema mac 2:0.5395 4:0.5321 8:0.5175 16:0.5156 32:0.5019
+[result s0] bc_sel     raw:AUC=0.5709/mac=0.5484/n9=0 thr:AUC=0.5531/mac=0.5376/n9=0 emasel:AUC=0.5531/mac=0.5376/n9=0 | ema mac 2:0.5024 4:0.5048 8:0.4981 16:0.4964 32:0.4930
+[result s0] bz_bm      raw:AUC=0.5507/mac=0.5323/n9=0 thr:AUC=0.5460/mac=0.5309/n9=0 emasel:AUC=0.5460/mac=0.5309/n9=0 | ema mac 2:0.5075 4:0.4996 8:0.5000 16:0.5028 32:0.5065
+[result s0] bz_pc5     raw:AUC=0.5543/mac=0.5310/n9=0 thr:AUC=0.5497/mac=0.5340/n9=0 emasel:AUC=0.5497/mac=0.5340/n9=0 | ema mac 2:0.5160 4:0.5047 8:0.5071 16:0.5050 32:0.5058
+[result s0] bz_scr250  raw:AUC=0.5355/mac=0.5295/n9=0 thr:AUC=0.5277/mac=0.5118/n9=0 emasel:AUC=0.5277/mac=0.5118/n9=0 | ema mac 2:0.5046 4:0.4925 8:0.4974 16:0.4944 32:0.4954
+[result s0] bz_sel     raw:AUC=0.5530/mac=0.5260/n9=0 thr:AUC=0.5479/mac=0.5289/n9=0 emasel:AUC=0.5479/mac=0.5289/n9=0 | ema mac 2:0.5164 4:0.5032 8:0.5088 16:0.5044 32:0.5058
+[result s0] c          raw:AUC=0.5620/mac=0.5446/n9=0 thr:AUC=0.5487/mac=0.5327/n9=0 emasel:AUC=0.5487/mac=0.5327/n9=0 | ema mac 2:0.5037 4:0.5049 8:0.5005 16:0.4948 32:0.4926
+[result s0] r          raw:AUC=0.5515/mac=0.5342/n9=0 thr:AUC=0.5470/mac=0.5300/n9=0 emasel:AUC=0.5470/mac=0.5300/n9=0 | ema mac 2:0.5091 4:0.5022 8:0.5053 16:0.5043 32:0.5044
+[result s0] ana0       raw:AUC=0.5835/mac=0.5599/n9=0 thr:AUC=0.5777/mac=0.5505/n9=0 emasel:AUC=0.5777/mac=0.5505/n9=0 | ema mac 2:0.5335 4:0.5176 8:0.5102 16:0.5027 32:0.5064
+[result s0] ana_bc     raw:AUC=0.5886/mac=0.5655/n9=0 thr:AUC=0.5813/mac=0.5510/n9=0 emasel:AUC=0.5813/mac=0.5510/n9=0 | ema mac 2:0.5260 4:0.5168 8:0.5056 16:0.5109 32:0.5001
+[result s0] ana_c      raw:AUC=0.5835/mac=0.5635/n9=0 thr:AUC=0.5782/mac=0.5517/n9=0 emasel:AUC=0.5782/mac=0.5517/n9=0 | ema mac 2:0.5225 4:0.5107 8:0.5096 16:0.5096 32:0.5012
+[result s0] lrc_ps     raw:AUC=0.5617/mac=0.5485/n9=0 thr:AUC=0.5518/mac=0.5362/n9=0 emasel:AUC=0.5518/mac=0.5362/n9=0 | ema mac 2:0.5119 4:0.5082 8:0.5108 16:0.5021 32:0.4966
+[result s0] v2         raw:AUC=0.6602/mac=0.6118/n9=0 thr:AUC=0.6618/mac=0.6153/n9=0 emasel:AUC=0.6618/mac=0.6153/n9=0 | ema mac 2:0.5736 4:0.5524 8:0.5382 16:0.5213 32:0.5070
+[result s0] v2c_bc     raw:AUC=0.6354/mac=0.6030/n9=0 thr:AUC=0.6302/mac=0.5910/n9=0 emasel:AUC=0.6302/mac=0.5910/n9=0 | ema mac 2:0.5532 4:0.5361 8:0.5303 16:0.5202 32:0.5012
+[result s0] v2c_both   raw:AUC=0.6303/mac=0.5994/n9=0 thr:AUC=0.6260/mac=0.5893/n9=0 emasel:AUC=0.6260/mac=0.5893/n9=0 | ema mac 2:0.5509 4:0.5346 8:0.5289 16:0.5189 32:0.5026
+[result s0] v2c_br     raw:AUC=0.6311/mac=0.5934/n9=0 thr:AUC=0.6285/mac=0.5910/n9=0 emasel:AUC=0.6285/mac=0.5910/n9=0 | ema mac 2:0.5518 4:0.5376 8:0.5288 16:0.5126 32:0.5005
+[result s0] v2c_in     raw:AUC=0.6589/mac=0.6111/n9=0 thr:AUC=0.6593/mac=0.6137/n9=0 emasel:AUC=0.6593/mac=0.6137/n9=0 | ema mac 2:0.5721 4:0.5503 8:0.5303 16:0.5182 32:0.5011
+[check s0] v2 fuse_pseudo_lr_full_thr reproduced mac=0.615289 (ref 0.615289)
+[check] strict_LR889 AUC=0.55150 vs theory 0.55150
+[boot s0] a|raw            vs r|raw          dAUC=+0.0703[+0.0311,+0.1097] dmac=+0.0437[+0.0163,+0.0770]
+[boot s0] a|thr            vs r|raw          dAUC=+0.0715[+0.0344,+0.1099] dmac=+0.0424[+0.0092,+0.0791]
+[boot s0] a|emasel         vs r|raw          dAUC=+0.0715[+0.0344,+0.1099] dmac=+0.0424[+0.0092,+0.0791]
+[boot s0] ana0|raw         vs r|raw          dAUC=+0.0332[-0.0136,+0.0750] dmac=+0.0281[-0.0021,+0.0606]
+[boot s0] ana0|thr         vs r|raw          dAUC=+0.0277[-0.0213,+0.0742] dmac=+0.0188[-0.0210,+0.0590]
+[boot s0] ana0|emasel      vs r|raw          dAUC=+0.0277[-0.0213,+0.0742] dmac=+0.0188[-0.0210,+0.0590]
+[boot s0] ana_bc|raw       vs r|raw          dAUC=+0.0389[-0.0128,+0.0804] dmac=+0.0345[-0.0003,+0.0685]
+[boot s0] ana_bc|thr       vs r|raw          dAUC=+0.0315[-0.0210,+0.0795] dmac=+0.0197[-0.0244,+0.0605]
+[boot s0] ana_bc|emasel    vs r|raw          dAUC=+0.0315[-0.0210,+0.0795] dmac=+0.0197[-0.0244,+0.0605]
+[boot s0] ana_c|raw        vs r|raw          dAUC=+0.0345[-0.0165,+0.0774] dmac=+0.0329[-0.0019,+0.0679]
+[boot s0] ana_c|thr        vs r|raw          dAUC=+0.0289[-0.0215,+0.0754] dmac=+0.0208[-0.0187,+0.0586]
+[boot s0] ana_c|emasel     vs r|raw          dAUC=+0.0289[-0.0215,+0.0754] dmac=+0.0208[-0.0187,+0.0586]
+[boot s0] bc_sel|raw       vs r|raw          dAUC=+0.0190[+0.0013,+0.0326] dmac=+0.0155[-0.0052,+0.0369]
+[boot s0] bc_sel|thr       vs r|raw          dAUC=+0.0017[-0.0192,+0.0235] dmac=+0.0046[-0.0188,+0.0245]
+[boot s0] bc_sel|emasel    vs r|raw          dAUC=+0.0017[-0.0192,+0.0235] dmac=+0.0046[-0.0188,+0.0245]
+[boot s0] bz_bm|raw        vs r|raw          dAUC=-0.0006[-0.0046,+0.0041] dmac=-0.0017[-0.0105,+0.0070]
+[boot s0] bz_bm|thr        vs r|raw          dAUC=-0.0047[-0.0319,+0.0204] dmac=-0.0015[-0.0294,+0.0238]
+[boot s0] bz_bm|emasel     vs r|raw          dAUC=-0.0047[-0.0319,+0.0204] dmac=-0.0015[-0.0294,+0.0238]
+[boot s0] bz_pc5|raw       vs r|raw          dAUC=+0.0029[-0.0015,+0.0067] dmac=-0.0032[-0.0091,+0.0030]
+[boot s0] bz_pc5|thr       vs r|raw          dAUC=-0.0011[-0.0259,+0.0190] dmac=+0.0020[-0.0251,+0.0286]
+[boot s0] bz_pc5|emasel    vs r|raw          dAUC=-0.0011[-0.0259,+0.0190] dmac=+0.0020[-0.0251,+0.0286]
+[boot s0] bz_scr250|raw    vs r|raw          dAUC=-0.0170[-0.0447,+0.0063] dmac=-0.0058[-0.0278,+0.0136]
+[boot s0] bz_scr250|thr    vs r|raw          dAUC=-0.0241[-0.0584,+0.0169] dmac=-0.0218[-0.0571,+0.0049]
+[boot s0] bz_scr250|emasel vs r|raw          dAUC=-0.0241[-0.0584,+0.0169] dmac=-0.0218[-0.0571,+0.0049]
+[boot s0] bz_sel|raw       vs r|raw          dAUC=+0.0017[-0.0060,+0.0108] dmac=-0.0083[-0.0129,-0.0032]
+[boot s0] bz_sel|thr       vs r|raw          dAUC=-0.0029[-0.0346,+0.0220] dmac=-0.0031[-0.0351,+0.0273]
+[boot s0] bz_sel|emasel    vs r|raw          dAUC=-0.0029[-0.0346,+0.0220] dmac=-0.0031[-0.0351,+0.0273]
+[boot s0] c|raw            vs r|raw          dAUC=+0.0112[-0.0019,+0.0214] dmac=+0.0124[-0.0070,+0.0296]
+[boot s0] c|thr            vs r|raw          dAUC=-0.0018[-0.0185,+0.0165] dmac=-0.0003[-0.0187,+0.0159]
+[boot s0] c|emasel         vs r|raw          dAUC=-0.0018[-0.0185,+0.0165] dmac=-0.0003[-0.0187,+0.0159]
+[boot s0] lrc_ps|raw       vs r|raw          dAUC=+0.0121[-0.0180,+0.0370] dmac=+0.0171[-0.0083,+0.0439]
+[boot s0] lrc_ps|thr       vs r|raw          dAUC=+0.0021[-0.0347,+0.0342] dmac=+0.0042[-0.0243,+0.0322]
+[boot s0] lrc_ps|emasel    vs r|raw          dAUC=+0.0021[-0.0347,+0.0342] dmac=+0.0042[-0.0243,+0.0322]
+[boot s0] r|thr            vs r|raw          dAUC=-0.0039[-0.0311,+0.0177] dmac=-0.0022[-0.0279,+0.0248]
+[boot s0] r|emasel         vs r|raw          dAUC=-0.0039[-0.0311,+0.0177] dmac=-0.0022[-0.0279,+0.0248]
+[boot s0] v2|raw           vs r|raw          dAUC=+0.1109[+0.0602,+0.1673] dmac=+0.0809[+0.0445,+0.1283]
+[boot s0] v2|thr           vs r|raw          dAUC=+0.1126[+0.0610,+0.1694] dmac=+0.0850[+0.0467,+0.1414]
+[boot s0] v2|emasel        vs r|raw          dAUC=+0.1126[+0.0610,+0.1694] dmac=+0.0850[+0.0467,+0.1414]
+[boot s0] v2c_bc|raw       vs r|raw          dAUC=+0.0859[+0.0385,+0.1322] dmac=+0.0722[+0.0341,+0.1171]
+[boot s0] v2c_bc|thr       vs r|raw          dAUC=+0.0807[+0.0291,+0.1319] dmac=+0.0607[+0.0194,+0.1124]
+[boot s0] v2c_bc|emasel    vs r|raw          dAUC=+0.0807[+0.0291,+0.1319] dmac=+0.0607[+0.0194,+0.1124]
+[boot s0] v2c_both|raw     vs r|raw          dAUC=+0.0815[+0.0307,+0.1332] dmac=+0.0690[+0.0369,+0.1086]
+[boot s0] v2c_both|thr     vs r|raw          dAUC=+0.0772[+0.0225,+0.1327] dmac=+0.0596[+0.0216,+0.1107]
+[boot s0] v2c_both|emasel  vs r|raw          dAUC=+0.0772[+0.0225,+0.1327] dmac=+0.0596[+0.0216,+0.1107]
+[boot s0] v2c_br|raw       vs r|raw          dAUC=+0.0822[+0.0337,+0.1344] dmac=+0.0629[+0.0287,+0.1034]
+[boot s0] v2c_br|thr       vs r|raw          dAUC=+0.0798[+0.0268,+0.1373] dmac=+0.0610[+0.0218,+0.1132]
+[boot s0] v2c_br|emasel    vs r|raw          dAUC=+0.0798[+0.0268,+0.1373] dmac=+0.0610[+0.0218,+0.1132]
+[boot s0] v2c_in|raw       vs r|raw          dAUC=+0.1097[+0.0586,+0.1660] dmac=+0.0810[+0.0406,+0.1319]
+[boot s0] v2c_in|thr       vs r|raw          dAUC=+0.1100[+0.0589,+0.1670] dmac=+0.0835[+0.0456,+0.1360]
+[boot s0] v2c_in|emasel    vs r|raw          dAUC=+0.1100[+0.0589,+0.1670] dmac=+0.0835[+0.0456,+0.1360]
+[boot s0] ana_c|thr        vs ana0|thr       dAUC=+0.0012[-0.0067,+0.0096] dmac=+0.0020[-0.0117,+0.0148]
+[boot s0] ana_c|emasel     vs ana0|emasel    dAUC=+0.0012[-0.0067,+0.0096] dmac=+0.0020[-0.0117,+0.0148]
+[boot s0] ana_bc|thr       vs ana_c|thr      dAUC=+0.0025[-0.0058,+0.0121] dmac=-0.0011[-0.0092,+0.0060]
+[boot s0] bc_sel|raw       vs c|raw          dAUC=+0.0078[-0.0047,+0.0252] dmac=+0.0030[-0.0112,+0.0191]
+[boot s0] lrc_ps|thr       vs c|thr          dAUC=+0.0039[-0.0232,+0.0251] dmac=+0.0044[-0.0169,+0.0238]
+[boot s0] a|emasel         vs a|thr          dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] ana0|emasel      vs ana0|thr       dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] ana_bc|emasel    vs ana_bc|thr     dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] ana_c|emasel     vs ana_c|thr      dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] bc_sel|emasel    vs bc_sel|thr     dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] bz_bm|emasel     vs bz_bm|thr      dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] bz_pc5|emasel    vs bz_pc5|thr     dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] bz_scr250|emasel vs bz_scr250|thr  dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] bz_sel|emasel    vs bz_sel|thr     dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] c|emasel         vs c|thr          dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] lrc_ps|emasel    vs lrc_ps|thr     dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] r|emasel         vs r|thr          dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] v2|emasel        vs v2|thr         dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] v2c_bc|emasel    vs v2c_bc|thr     dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] v2c_both|emasel  vs v2c_both|thr   dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] v2c_br|emasel    vs v2c_br|thr     dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] v2c_in|emasel    vs v2c_in|thr     dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000]
+[boot s0] v2c_in|thr       vs v2|thr         dAUC=-0.0026[-0.0064,+0.0005] dmac=-0.0014[-0.0122,+0.0088]
+[boot s0] v2c_in|emasel    vs v2|emasel      dAUC=-0.0026[-0.0064,+0.0005] dmac=-0.0014[-0.0122,+0.0088]
+[boot s0] v2c_br|thr       vs v2|thr         dAUC=-0.0328[-0.0490,-0.0160] dmac=-0.0240[-0.0350,-0.0105]
+[boot s0] v2c_br|emasel    vs v2|emasel      dAUC=-0.0328[-0.0490,-0.0160] dmac=-0.0240[-0.0350,-0.0105]
+[boot s0] v2c_both|thr     vs v2|thr         dAUC=-0.0354[-0.0524,-0.0182] dmac=-0.0254[-0.0403,-0.0097]
+[boot s0] v2c_both|emasel  vs v2|emasel      dAUC=-0.0354[-0.0524,-0.0182] dmac=-0.0254[-0.0403,-0.0097]
+[boot s0] v2c_bc|thr       vs v2|thr         dAUC=-0.0319[-0.0481,-0.0130] dmac=-0.0243[-0.0366,-0.0102]
+[boot s0] v2c_bc|emasel    vs v2|emasel      dAUC=-0.0319[-0.0481,-0.0130] dmac=-0.0243[-0.0366,-0.0102]
+[boot s0] v2c_bc|thr       vs v2c_both|thr   dAUC=+0.0035[-0.0059,+0.0169] dmac=+0.0011[-0.0067,+0.0075]
+[boot] 81 comparisons s=4.8 elapsed=531.3s
+[summary] order | output|tier | AUC mac high mid low n>=.9
+[summary] shuffled_mean ana0|emasel        0.5777 0.5505 nan 0.6768 0.3990 0.0
+[summary] shuffled_mean ana0|raw           0.5835 0.5599 nan 0.6715 0.4259 0.0
+[summary] shuffled_mean ana0|thr           0.5777 0.5505 nan 0.6768 0.3990 0.0
+[summary] shuffled_mean ana_bc|emasel      0.5813 0.5510 nan 0.6730 0.4045 0.0
+[summary] shuffled_mean ana_bc|raw         0.5886 0.5655 nan 0.6797 0.4285 0.0
+[summary] shuffled_mean ana_bc|thr         0.5813 0.5510 nan 0.6730 0.4045 0.0
+[summary] shuffled_mean ana_c|emasel       0.5782 0.5517 nan 0.6707 0.4088 0.0
+[summary] shuffled_mean ana_c|raw          0.5835 0.5635 nan 0.6786 0.4254 0.0
+[summary] shuffled_mean ana_c|thr          0.5782 0.5517 nan 0.6707 0.4088 0.0
+[summary] shuffled_mean a|emasel           0.6212 0.5729 nan 0.6790 0.4456 0.0
+[summary] shuffled_mean a|raw              0.6196 0.5745 nan 0.6707 0.4589 0.0
+[summary] shuffled_mean a|thr              0.6212 0.5729 nan 0.6790 0.4456 0.0
+[summary] shuffled_mean bc_sel|emasel      0.5531 0.5376 nan 0.6264 0.4310 0.0
+[summary] shuffled_mean bc_sel|raw         0.5709 0.5484 nan 0.6365 0.4426 0.0
+[summary] shuffled_mean bc_sel|thr         0.5531 0.5376 nan 0.6264 0.4310 0.0
+[summary] shuffled_mean bz_bm|emasel       0.5460 0.5309 nan 0.6173 0.4273 0.0
+[summary] shuffled_mean bz_bm|raw          0.5507 0.5323 nan 0.5957 0.4563 0.0
+[summary] shuffled_mean bz_bm|thr          0.5460 0.5309 nan 0.6173 0.4273 0.0
+[summary] shuffled_mean bz_pc5|emasel      0.5497 0.5340 nan 0.6231 0.4270 0.0
+[summary] shuffled_mean bz_pc5|raw         0.5543 0.5310 nan 0.5976 0.4511 0.0
+[summary] shuffled_mean bz_pc5|thr         0.5497 0.5340 nan 0.6231 0.4270 0.0
+[summary] shuffled_mean bz_scr250|emasel   0.5277 0.5118 nan 0.6048 0.4001 0.0
+[summary] shuffled_mean bz_scr250|raw      0.5355 0.5295 nan 0.6035 0.4408 0.0
+[summary] shuffled_mean bz_scr250|thr      0.5277 0.5118 nan 0.6048 0.4001 0.0
+[summary] shuffled_mean bz_sel|emasel      0.5479 0.5289 nan 0.6221 0.4171 0.0
+[summary] shuffled_mean bz_sel|raw         0.5530 0.5260 nan 0.5977 0.4399 0.0
+[summary] shuffled_mean bz_sel|thr         0.5479 0.5289 nan 0.6221 0.4171 0.0
+[summary] shuffled_mean c|emasel           0.5487 0.5327 nan 0.6152 0.4337 0.0
+[summary] shuffled_mean c|raw              0.5620 0.5446 nan 0.6178 0.4567 0.0
+[summary] shuffled_mean c|thr              0.5487 0.5327 nan 0.6152 0.4337 0.0
+[summary] shuffled_mean lrc_ps|emasel      0.5518 0.5362 nan 0.6361 0.4163 0.0
+[summary] shuffled_mean lrc_ps|raw         0.5617 0.5485 nan 0.6372 0.4420 0.0
+[summary] shuffled_mean lrc_ps|thr         0.5518 0.5362 nan 0.6361 0.4163 0.0
+[summary] shuffled_mean r|emasel           0.5470 0.5300 nan 0.6178 0.4246 0.0
+[summary] shuffled_mean r|raw              0.5515 0.5342 nan 0.6023 0.4525 0.0
+[summary] shuffled_mean r|thr              0.5470 0.5300 nan 0.6178 0.4246 0.0
+[summary] shuffled_mean v2c_bc|emasel      0.6302 0.5910 nan 0.7162 0.4407 0.0
+[summary] shuffled_mean v2c_bc|raw         0.6354 0.6030 nan 0.7228 0.4593 0.0
+[summary] shuffled_mean v2c_bc|thr         0.6302 0.5910 nan 0.7162 0.4407 0.0
+[summary] shuffled_mean v2c_both|emasel    0.6260 0.5893 nan 0.7135 0.4403 0.0
+[summary] shuffled_mean v2c_both|raw       0.6303 0.5994 nan 0.7138 0.4621 0.0
+[summary] shuffled_mean v2c_both|thr       0.6260 0.5893 nan 0.7135 0.4403 0.0
+[summary] shuffled_mean v2c_br|emasel      0.6285 0.5910 nan 0.7106 0.4475 0.0
+[summary] shuffled_mean v2c_br|raw         0.6311 0.5934 nan 0.7116 0.4517 0.0
+[summary] shuffled_mean v2c_br|thr         0.6285 0.5910 nan 0.7106 0.4475 0.0
+[summary] shuffled_mean v2c_in|emasel      0.6593 0.6137 nan 0.7216 0.4841 0.0
+[summary] shuffled_mean v2c_in|raw         0.6589 0.6111 nan 0.7266 0.4724 0.0
+[summary] shuffled_mean v2c_in|thr         0.6593 0.6137 nan 0.7216 0.4841 0.0
+[summary] shuffled_mean v2|emasel          0.6618 0.6153 nan 0.7250 0.4836 0.0
+[summary] shuffled_mean v2|raw             0.6602 0.6118 nan 0.7197 0.4825 0.0
+[summary] shuffled_mean v2|thr             0.6618 0.6153 nan 0.7250 0.4836 0.0
+[done] all checks passed elapsed=531.3s -> realorder_v2_smoke.json
