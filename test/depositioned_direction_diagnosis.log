@@ -1,0 +1,380 @@
+[start] rows=16067 subjects=57 smoke=False sseeds=(0, 1, 2) R=16 MIN=48 PCA=16 pseudo_q=0.3 clip=+-3.0 acc_bad=0.6 jobs=8 (acc_seed / auc_L_true / oracle flip / flipL are LEAKY)
+[check] fold == depositioned_aperiodic_emg_oof.npz fold
+[zz] fold 0 ZZ built (3118 test rows); |d|=1.000 elapsed=1.9s
+[zz] fold 1 ZZ built (3264 test rows); |d|=1.000 elapsed=3.3s
+[zz] fold 2 ZZ built (3141 test rows); |d|=1.000 elapsed=4.6s
+[zz] fold 3 ZZ built (3401 test rows); |d|=1.000 elapsed=6.0s
+[zz] fold 4 ZZ built (3143 test rows); |d|=1.000 elapsed=7.3s
+[s0] std(L)=0.604 mean(L)=-0.017
+[s0] subjects 8/57 stream_s=7.1 elapsed=14.4s
+[s0] subjects 16/57 stream_s=8.7 elapsed=16.0s
+[s0] subjects 24/57 stream_s=10.2 elapsed=17.5s
+[s0] subjects 32/57 stream_s=11.7 elapsed=19.0s
+[s0] subjects 40/57 stream_s=13.1 elapsed=20.4s
+[s0] subjects 48/57 stream_s=14.5 elapsed=21.8s
+[s0] subjects 56/57 stream_s=15.7 elapsed=23.1s
+[s0] subjects 57/57 stream_s=16.0 elapsed=23.3s
+[check s0] sub-001: isolation / prefix (z + 8 refits of statistics) / label shuffle / flip symmetry OK
+[check s0] sub-002: isolation / prefix (z + 7 refits of statistics) / label shuffle / flip symmetry OK
+[subjects s0] n=57 reversed_oracle=6 acc_seed<0.6: 12 (low reversed=6/20)
+[subject s0] sub-001 mid  acc_seed=0.8164 auc_L_true=0.7956 pop_dir=+0.583 branch_L_pos=+1.00 kappa=+0.224 sori=0.247 ashman=2.48 dbic=+1086.4 ac1=-0.03 drift=+0.06
+[subject s0] sub-002 low  acc_seed=0.7000 auc_L_true=0.6935 pop_dir=+0.254 branch_L_pos=+1.00 kappa=+0.097 sori=0.160 ashman=2.25 dbic=+754.7 ac1=+0.04 drift=+0.13
+[subject s0] sub-003 mid  acc_seed=0.7510 auc_L_true=0.7495 pop_dir=+0.733 branch_L_pos=+1.00 kappa=+0.381 sori=0.550 ashman=2.35 dbic=+1016.7 ac1=+0.06 drift=-0.02
+[subject s0] sub-004 low  acc_seed=0.4493 auc_L_true=0.4518 pop_dir=+0.567 branch_L_pos=+1.00 kappa=+0.217 sori=0.166 ashman=2.72 dbic=+951.6 ac1=+0.00 drift=-0.02 REV
+[subject s0] sub-005 low  acc_seed=0.6251 auc_L_true=0.5946 pop_dir=+0.371 branch_L_pos=+1.00 kappa=+0.137 sori=0.322 ashman=3.61 dbic=+137.7 ac1=-0.02 drift=+0.17
+[subject s0] sub-006 mid  acc_seed=0.7715 auc_L_true=0.7463 pop_dir=+0.424 branch_L_pos=+1.00 kappa=+0.210 sori=0.235 ashman=3.35 dbic=+1398.0 ac1=-0.02 drift=+0.03
+[subject s0] sub-007 mid  acc_seed=0.7843 auc_L_true=0.7617 pop_dir=+0.589 branch_L_pos=+1.00 kappa=+0.278 sori=0.395 ashman=3.24 dbic=+1737.4 ac1=-0.04 drift=+0.05
+[subject s0] sub-008 low  acc_seed=0.5570 auc_L_true=0.5608 pop_dir=+0.684 branch_L_pos=+1.00 kappa=+0.509 sori=0.473 ashman=14.35 dbic=+6467.3 ac1=-0.01 drift=+0.05
+[subject s0] sub-009 low  acc_seed=0.4639 auc_L_true=0.4885 pop_dir=+0.144 branch_L_pos=+1.00 kappa=+0.158 sori=0.179 ashman=7.03 dbic=+1581.8 ac1=+0.08 drift=+0.10 REV
+[subject s0] sub-010 low  acc_seed=0.6110 auc_L_true=0.6189 pop_dir=+0.110 branch_L_pos=+1.00 kappa=+0.162 sori=0.074 ashman=3.29 dbic=+680.6 ac1=+0.00 drift=-0.00
+[subject s0] sub-011 mid  acc_seed=0.7366 auc_L_true=0.7380 pop_dir=+0.434 branch_L_pos=+1.00 kappa=+0.074 sori=0.104 ashman=2.36 dbic=+2263.6 ac1=-0.09 drift=+0.02
+[subject s0] sub-012 mid  acc_seed=0.7135 auc_L_true=0.7179 pop_dir=+0.421 branch_L_pos=+1.00 kappa=+0.113 sori=0.256 ashman=2.44 dbic=+341.0 ac1=-0.05 drift=-0.04
+[subject s0] sub-013 mid  acc_seed=0.6988 auc_L_true=0.6998 pop_dir=+0.668 branch_L_pos=+1.00 kappa=+0.178 sori=0.247 ashman=5.04 dbic=+4075.2 ac1=+0.02 drift=+0.15
+[subject s0] sub-014 mid  acc_seed=0.7690 auc_L_true=0.7481 pop_dir=+0.510 branch_L_pos=+1.00 kappa=+0.163 sori=0.108 ashman=2.92 dbic=+1083.2 ac1=+0.06 drift=+0.04
+[subject s0] sub-015 low  acc_seed=0.5906 auc_L_true=0.6025 pop_dir=+0.360 branch_L_pos=+1.00 kappa=+0.071 sori=0.155 ashman=6.12 dbic=+1615.9 ac1=+0.09 drift=+0.09
+[subject s0] sub-016 mid  acc_seed=0.7198 auc_L_true=0.6981 pop_dir=+0.659 branch_L_pos=+1.00 kappa=+0.363 sori=0.545 ashman=2.44 dbic=+1593.6 ac1=-0.10 drift=+0.03
+[subject s0] sub-017 mid  acc_seed=0.8578 auc_L_true=0.8347 pop_dir=+0.576 branch_L_pos=+1.00 kappa=+0.124 sori=0.155 ashman=3.61 dbic=+1259.4 ac1=-0.09 drift=+0.05
+[subject s0] sub-018 mid  acc_seed=0.8097 auc_L_true=0.7954 pop_dir=+0.451 branch_L_pos=+1.00 kappa=+0.330 sori=0.302 ashman=3.04 dbic=+1135.0 ac1=-0.09 drift=+0.09
+[subject s0] sub-019 mid  acc_seed=0.6263 auc_L_true=0.6436 pop_dir=+0.551 branch_L_pos=+1.00 kappa=+0.239 sori=0.299 ashman=3.26 dbic=+507.8 ac1=+0.08 drift=+0.10
+[subject s0] sub-020 mid  acc_seed=0.7393 auc_L_true=0.7275 pop_dir=+0.472 branch_L_pos=+1.00 kappa=+0.198 sori=0.212 ashman=1.97 dbic=+810.3 ac1=-0.05 drift=+0.01
+[subject s0] sub-021 mid  acc_seed=0.7394 auc_L_true=0.7395 pop_dir=+0.577 branch_L_pos=+1.00 kappa=+0.111 sori=0.186 ashman=2.34 dbic=+1417.2 ac1=-0.10 drift=+0.02
+[subject s0] sub-022 mid  acc_seed=0.8584 auc_L_true=0.8267 pop_dir=+0.231 branch_L_pos=+1.00 kappa=+0.052 sori=0.060 ashman=11.47 dbic=+3440.1 ac1=+0.04 drift=-0.02
+[subject s0] sub-023 low  acc_seed=0.4850 auc_L_true=0.4978 pop_dir=+0.545 branch_L_pos=+1.00 kappa=+0.173 sori=0.182 ashman=2.40 dbic=+925.8 ac1=-0.02 drift=-0.07 REV
+[subject s0] sub-024 low  acc_seed=0.5004 auc_L_true=0.4840 pop_dir=+0.413 branch_L_pos=+1.00 kappa=+0.121 sori=0.161 ashman=4.00 dbic=+1423.3 ac1=-0.10 drift=+0.05 REV
+[subject s0] sub-025 mid  acc_seed=0.8702 auc_L_true=0.8436 pop_dir=+0.276 branch_L_pos=+1.00 kappa=+0.217 sori=0.206 ashman=3.05 dbic=+1262.1 ac1=-0.19 drift=+0.06
+[subject s0] sub-026 mid  acc_seed=0.7814 auc_L_true=0.7498 pop_dir=+0.611 branch_L_pos=+1.00 kappa=+0.439 sori=0.568 ashman=3.34 dbic=+1187.0 ac1=-0.01 drift=-0.08
+[subject s0] sub-027 low  acc_seed=0.6339 auc_L_true=0.6084 pop_dir=+0.276 branch_L_pos=+1.00 kappa=+0.064 sori=0.101 ashman=2.96 dbic=+935.7 ac1=-0.08 drift=-0.01
+[subject s0] sub-028 low  acc_seed=0.6111 auc_L_true=0.6026 pop_dir=+0.466 branch_L_pos=+1.00 kappa=+0.139 sori=0.140 ashman=3.85 dbic=+1644.0 ac1=+0.13 drift=+0.18
+[subject s0] sub-029 low  acc_seed=0.4893 auc_L_true=0.4791 pop_dir=+0.076 branch_L_pos=+1.00 kappa=+0.126 sori=0.146 ashman=3.03 dbic=-196.7 ac1=+0.02 drift=+0.02 REV
+[subject s0] sub-030 mid  acc_seed=0.8999 auc_L_true=0.8841 pop_dir=+0.688 branch_L_pos=+1.00 kappa=+0.518 sori=0.344 ashman=3.05 dbic=+851.1 ac1=-0.14 drift=+0.03
+[subject s0] sub-031 mid  acc_seed=0.8109 auc_L_true=0.7806 pop_dir=+0.526 branch_L_pos=+1.00 kappa=+0.163 sori=0.195 ashman=2.24 dbic=-92.6 ac1=-0.01 drift=-0.01
+[subject s0] sub-034 low  acc_seed=0.5960 auc_L_true=0.5921 pop_dir=+0.008 branch_L_pos=+1.00 kappa=+0.509 sori=0.531 ashman=2.93 dbic=+58.7 ac1=-0.09 drift=-0.06
+[subject s0] sub-035 mid  acc_seed=0.8449 auc_L_true=0.8330 pop_dir=+0.716 branch_L_pos=+1.00 kappa=+0.096 sori=0.134 ashman=3.05 dbic=+1289.5 ac1=-0.04 drift=+0.01
+[subject s0] sub-036 high acc_seed=0.8979 auc_L_true=0.8936 pop_dir=+0.575 branch_L_pos=+1.00 kappa=+0.290 sori=0.348 ashman=3.98 dbic=+975.6 ac1=+0.06 drift=+0.09
+[subject s0] sub-037 low  acc_seed=0.5095 auc_L_true=0.5039 pop_dir=+0.100 branch_L_pos=+1.00 kappa=+0.147 sori=0.187 ashman=3.91 dbic=+797.0 ac1=-0.01 drift=-0.09
+[subject s0] sub-038 mid  acc_seed=0.8784 auc_L_true=0.8545 pop_dir=+0.445 branch_L_pos=+1.00 kappa=+0.651 sori=0.618 ashman=4.05 dbic=+1195.4 ac1=-0.07 drift=-0.03
+[subject s0] sub-039 low  acc_seed=0.6759 auc_L_true=0.6796 pop_dir=+0.326 branch_L_pos=+1.00 kappa=+0.126 sori=0.112 ashman=2.29 dbic=+1095.3 ac1=+0.08 drift=+0.04
+[subject s0] sub-040 mid  acc_seed=0.8439 auc_L_true=0.8100 pop_dir=+0.393 branch_L_pos=+1.00 kappa=+0.147 sori=0.220 ashman=2.26 dbic=-261.3 ac1=-0.12 drift=-0.01
+[subject s0] sub-041 mid  acc_seed=0.7343 auc_L_true=0.7314 pop_dir=+0.570 branch_L_pos=+1.00 kappa=+0.196 sori=0.213 ashman=3.14 dbic=+90.9 ac1=-0.02 drift=-0.07
+[subject s0] sub-042 low  acc_seed=0.3609 auc_L_true=0.3810 pop_dir=+0.654 branch_L_pos=+1.00 kappa=+0.213 sori=0.420 ashman=2.99 dbic=+794.2 ac1=+0.09 drift=+0.13 REV
+[subject s0] sub-043 high acc_seed=0.9113 auc_L_true=0.8803 pop_dir=+0.708 branch_L_pos=+1.00 kappa=+0.288 sori=0.422 ashman=3.00 dbic=+972.0 ac1=+0.07 drift=+0.12
+[subject s0] sub-044 low  acc_seed=0.7818 auc_L_true=0.7677 pop_dir=+0.547 branch_L_pos=+1.00 kappa=+0.622 sori=0.543 ashman=4.53 dbic=+741.1 ac1=+0.00 drift=+0.08
+[subject s0] sub-045 mid  acc_seed=0.8970 auc_L_true=0.8727 pop_dir=+0.432 branch_L_pos=+1.00 kappa=+0.176 sori=0.070 ashman=2.51 dbic=+611.4 ac1=-0.07 drift=+0.07
+[subject s0] sub-046 mid  acc_seed=0.8926 auc_L_true=0.8426 pop_dir=+0.657 branch_L_pos=+1.00 kappa=+0.220 sori=0.206 ashman=3.70 dbic=+735.7 ac1=+0.01 drift=+0.01
+[subject s0] sub-047 mid  acc_seed=0.7726 auc_L_true=0.7738 pop_dir=+0.496 branch_L_pos=+1.00 kappa=+0.157 sori=0.202 ashman=4.07 dbic=+4225.9 ac1=+0.06 drift=+0.07
+[subject s0] sub-048 mid  acc_seed=0.8103 auc_L_true=0.8036 pop_dir=+0.658 branch_L_pos=+1.00 kappa=+0.271 sori=0.335 ashman=3.78 dbic=+359.5 ac1=-0.02 drift=+0.08
+[subject s0] sub-049 low  acc_seed=0.5933 auc_L_true=0.6044 pop_dir=-0.052 branch_L_pos=+1.00 kappa=+0.227 sori=0.233 ashman=3.19 dbic=-146.6 ac1=-0.01 drift=+0.06
+[subject s0] sub-050 low  acc_seed=0.5565 auc_L_true=0.5670 pop_dir=+0.437 branch_L_pos=+1.00 kappa=+0.063 sori=0.061 ashman=2.99 dbic=+965.5 ac1=-0.08 drift=+0.02
+[subject s0] sub-051 mid  acc_seed=0.8428 auc_L_true=0.8209 pop_dir=+0.581 branch_L_pos=+1.00 kappa=+0.362 sori=0.309 ashman=3.41 dbic=+983.6 ac1=-0.03 drift=-0.08
+[subject s0] sub-052 low  acc_seed=0.6011 auc_L_true=0.5920 pop_dir=+0.509 branch_L_pos=+1.00 kappa=+0.176 sori=0.190 ashman=4.80 dbic=+1583.0 ac1=-0.05 drift=+0.05
+[subject s0] sub-053 mid  acc_seed=0.6254 auc_L_true=0.6426 pop_dir=+0.360 branch_L_pos=+1.00 kappa=+0.067 sori=0.095 ashman=5.69 dbic=+1684.3 ac1=-0.08 drift=-0.00
+[subject s0] sub-054 high acc_seed=0.8968 auc_L_true=0.8786 pop_dir=+0.517 branch_L_pos=+1.00 kappa=+0.721 sori=0.597 ashman=4.68 dbic=+322.9 ac1=-0.03 drift=+0.10
+[subject s0] sub-055 mid  acc_seed=0.6569 auc_L_true=0.6523 pop_dir=+0.458 branch_L_pos=+1.00 kappa=+0.027 sori=0.043 ashman=4.21 dbic=+1948.3 ac1=+0.04 drift=-0.00
+[subject s0] sub-056 mid  acc_seed=0.8761 auc_L_true=0.8513 pop_dir=+0.725 branch_L_pos=+1.00 kappa=+0.178 sori=0.264 ashman=3.78 dbic=+1903.6 ac1=+0.02 drift=+0.00
+[subject s0] sub-057 mid  acc_seed=0.6818 auc_L_true=0.6641 pop_dir=+0.252 branch_L_pos=+1.00 kappa=+0.168 sori=0.217 ashman=3.42 dbic=-32.7 ac1=-0.00 drift=+0.06
+[subject s0] sub-058 mid  acc_seed=0.8330 auc_L_true=0.8074 pop_dir=+0.607 branch_L_pos=+1.00 kappa=+0.334 sori=0.353 ashman=3.31 dbic=+121.8 ac1=-0.07 drift=+0.05
+[subject s0] sub-059 mid  acc_seed=0.7293 auc_L_true=0.7249 pop_dir=+0.107 branch_L_pos=+1.00 kappa=+0.096 sori=0.103 ashman=3.26 dbic=+1208.3 ac1=+0.02 drift=-0.09
+[detect s0] neg_pop_dir    AUC=0.6963[0.490,0.877] rho(acc_seed)=-0.416
+[detect s0] branch_L_neg   AUC=0.5[0.500,0.500] rho(acc_seed)=+nan
+[detect s0] kappa_gmm      AUC=0.4519[0.275,0.645] rho(acc_seed)=+0.343 (exploratory, direction post hoc: |AUC-.5| -> 0.5481)
+[detect s0] neg_sori_abs   AUC=0.4407[0.256,0.622] rho(acc_seed)=+0.287 (exploratory, direction post hoc: |AUC-.5| -> 0.5593)
+[detect s0] ashman         AUC=0.5556[0.366,0.757] rho(acc_seed)=-0.029 (exploratory, direction post hoc: |AUC-.5| -> 0.5556)
+[detect s0] abs_skew       AUC=0.5519[0.352,0.757] rho(acc_seed)=-0.301 (exploratory, direction post hoc: |AUC-.5| -> 0.5519)
+[detect s0] dbic           AUC=0.4389[0.247,0.639] rho(acc_seed)=-0.002 (exploratory, direction post hoc: |AUC-.5| -> 0.5611)
+[detect s0] branch_r       AUC=0.2815[0.113,0.464] rho(acc_seed)=+0.593 (exploratory, direction post hoc: |AUC-.5| -> 0.7185)
+[detect s0] ac1            AUC=0.5907[0.398,0.761] rho(acc_seed)=-0.227 (exploratory, direction post hoc: |AUC-.5| -> 0.5907)
+[detect s0] drift          AUC=0.4759[0.270,0.674] rho(acc_seed)=+0.015 (exploratory, direction post hoc: |AUC-.5| -> 0.5241)
+[stat-group s0] acc_seed     high=+0.902 mid=+0.785 low=+0.570
+[stat-group s0] auc_L_true   high=+0.884 mid=+0.770 low=+0.569
+[stat-group s0] sori_abs     high=+0.456 mid=+0.253 low=+0.227
+[stat-group s0] kappa_gmm    high=+0.433 mid=+0.221 low=+0.203
+[stat-group s0] ashman       high=+3.887 mid=+3.460 low=+4.163
+[stat-group s0] abs_skew     high=+1.412 mid=+2.222 low=+2.544
+[stat-group s0] dbic         high=+756.835 mid=+1248.139 low=+1140.496
+[stat-group s0] branch_r     high=+0.661 mid=+0.581 low=+0.465
+[stat-group s0] branch_L_pos high=+1.000 mid=+1.000 low=+1.000
+[stat-group s0] ac1          high=+0.032 mid=-0.034 low=+0.003
+[stat-group s0] drift        high=+0.105 mid=+0.019 low=+0.047
+[stat-group s0] pop_dir      high=+0.600 mid=+0.513 low=+0.340
+[legal-flip s0] skipped: best legal detector neg_pop_dir AUC=0.6962962962962963 CI_lo=0.490 <= .5
+[result stream 0] fuseH_wf               all: AUC=0.7140 mac=0.6541 mic=0.6545 | mature: AUC=0.7147 mac=0.6563 mic=0.6561 | subj>=.9=0 max=0.853
+[result stream 0] fuseH_wf_thr           all: AUC=0.7161 mac=0.6574 mic=0.6582 | mature: AUC=0.7175 mac=0.6592 mic=0.6594 | subj>=.9=0 max=0.872
+[result stream 0] fuse_pseudo_lr_full    all: AUC=0.7144 mac=0.6664 mic=0.6674 | mature: AUC=0.7164 mac=0.6667 mic=0.6675 | subj>=.9=0 max=0.856
+[result stream 0] fuse_oracle_flip       all: AUC=0.7269 mac=0.6734 mic=0.6741 | mature: AUC=0.7310 mac=0.6753 mic=0.6769 | subj>=.9=0 max=0.856 [LEAKY]
+[result stream 0] fuse_flipL             all: AUC=0.7199 mac=0.6570 mic=0.6582 | mature: AUC=0.7193 mac=0.6561 mic=0.6576 | subj>=.9=0 max=0.853 [LEAKY]
+[result stream 0] fuse_pseudo_lr_full_thr all: AUC=0.7152 mac=0.6684 mic=0.6695 | mature: AUC=0.7171 mac=0.6687 mic=0.6697 | subj>=.9=0 max=0.868
+[result stream 0] fuse_oracle_flip_thr   all: AUC=0.7279 mac=0.6748 mic=0.6757 | mature: AUC=0.7317 mac=0.6775 mic=0.6788 | subj>=.9=0 max=0.868 [LEAKY]
+[result stream 0] fuse_flipL_thr         all: AUC=0.7218 mac=0.6607 mic=0.6617 | mature: AUC=0.7219 mac=0.6609 mic=0.6623 | subj>=.9=0 max=0.872 [LEAKY]
+[check s0] fuse_pseudo_lr_full(_thr) reproduces v2 mac=0.6664/0.6684
+[group stream 0] fuseH_wf               high(n=3): mean=0.8146 dmean=-0.0407 | mid(n=34): mean=0.7001 dmean=-0.0278 | low(n=20): mean=0.5518 dmean=+0.0125
+[group stream 0] fuseH_wf_thr           high(n=3): mean=0.8300 dmean=-0.0253 | mid(n=34): mean=0.7060 dmean=-0.0219 | low(n=20): mean=0.5490 dmean=+0.0097
+[group stream 0] fuse_pseudo_lr_full    high(n=3): mean=0.8503 dmean=-0.0050 | mid(n=34): mean=0.7247 dmean=-0.0031 | low(n=20): mean=0.5396 dmean=+0.0003
+[group stream 0] fuse_oracle_flip       high(n=3): mean=0.8503 dmean=-0.0050 | mid(n=34): mean=0.7247 dmean=-0.0031 | low(n=20): mean=0.5597 dmean=+0.0204
+[group stream 0] fuse_flipL             high(n=3): mean=0.8146 dmean=-0.0407 | mid(n=34): mean=0.7001 dmean=-0.0278 | low(n=20): mean=0.5602 dmean=+0.0210
+[group stream 0] fuse_pseudo_lr_full_thr high(n=3): mean=0.8553 dmean=+0.0000 | mid(n=34): mean=0.7279 dmean=+0.0000 | low(n=20): mean=0.5393 dmean=+0.0000
+[group stream 0] fuse_oracle_flip_thr   high(n=3): mean=0.8553 dmean=+0.0000 | mid(n=34): mean=0.7279 dmean=+0.0000 | low(n=20): mean=0.5575 dmean=+0.0182
+[group stream 0] fuse_flipL_thr         high(n=3): mean=0.8300 dmean=-0.0253 | mid(n=34): mean=0.7060 dmean=-0.0219 | low(n=20): mean=0.5584 dmean=+0.0192
+[boot stream 0] fuse_oracle_flip       vs fuse_pseudo_lr_full    all    dAUC=+0.0123[+0.0034,+0.0240] dmac=+0.0069[+0.0008,+0.0147] dmic=+0.0066[+0.0008,+0.0143]
+[boot stream 0] fuse_oracle_flip       vs fuse_pseudo_lr_full    mature dAUC=+0.0143[+0.0041,+0.0271] dmac=+0.0085[+0.0009,+0.0177] dmic=+0.0092[+0.0015,+0.0192]
+[boot stream 0] fuse_flipL             vs fuse_pseudo_lr_full    all    dAUC=+0.0056[-0.0074,+0.0192] dmac=-0.0091[-0.0215,+0.0023] dmic=-0.0090[-0.0216,+0.0028]
+[boot stream 0] fuse_flipL             vs fuse_pseudo_lr_full    mature dAUC=+0.0029[-0.0113,+0.0186] dmac=-0.0102[-0.0260,+0.0050] dmic=-0.0095[-0.0249,+0.0052]
+[boot stream 0] fuse_oracle_flip_thr   vs fuse_pseudo_lr_full_thr all    dAUC=+0.0125[+0.0034,+0.0244] dmac=+0.0062[+0.0009,+0.0132] dmic=+0.0061[+0.0008,+0.0128]
+[boot stream 0] fuse_oracle_flip_thr   vs fuse_pseudo_lr_full_thr mature dAUC=+0.0143[+0.0041,+0.0272] dmac=+0.0086[+0.0020,+0.0167] dmic=+0.0089[+0.0022,+0.0174]
+[boot stream 0] fuse_flipL_thr         vs fuse_pseudo_lr_full_thr all    dAUC=+0.0067[-0.0057,+0.0200] dmac=-0.0075[-0.0195,+0.0037] dmic=-0.0076[-0.0197,+0.0041]
+[boot stream 0] fuse_flipL_thr         vs fuse_pseudo_lr_full_thr mature dAUC=+0.0048[-0.0089,+0.0196] dmac=-0.0075[-0.0224,+0.0068] dmic=-0.0072[-0.0217,+0.0073]
+[s0] done elapsed=55.1s
+[s1] std(L)=0.639 mean(L)=-0.024
+[s1] subjects 8/57 stream_s=1.6 elapsed=56.8s
+[s1] subjects 16/57 stream_s=3.0 elapsed=58.2s
+[s1] subjects 24/57 stream_s=4.6 elapsed=59.8s
+[s1] subjects 32/57 stream_s=6.3 elapsed=61.5s
+[s1] subjects 40/57 stream_s=7.8 elapsed=63.0s
+[s1] subjects 48/57 stream_s=9.2 elapsed=64.3s
+[s1] subjects 56/57 stream_s=10.4 elapsed=65.6s
+[s1] subjects 57/57 stream_s=10.6 elapsed=65.7s
+[check s1] sub-001: isolation / prefix (z + 8 refits of statistics) / label shuffle / flip symmetry OK
+[check s1] sub-002: isolation / prefix (z + 7 refits of statistics) / label shuffle / flip symmetry OK
+[subjects s1] n=57 reversed_oracle=5 acc_seed<0.6: 12 (low reversed=5/20)
+[subject s1] sub-001 mid  acc_seed=0.7163 auc_L_true=0.7254 pop_dir=+0.473 branch_L_pos=+1.00 kappa=+0.106 sori=0.211 ashman=2.28 dbic=+1299.0 ac1=+0.03 drift=+0.09
+[subject s1] sub-002 low  acc_seed=0.6853 auc_L_true=0.6652 pop_dir=+0.407 branch_L_pos=+1.00 kappa=+0.100 sori=0.160 ashman=2.35 dbic=+613.7 ac1=-0.06 drift=+0.18
+[subject s1] sub-003 mid  acc_seed=0.7225 auc_L_true=0.7068 pop_dir=+0.683 branch_L_pos=+1.00 kappa=+0.297 sori=0.478 ashman=2.53 dbic=+1094.9 ac1=-0.03 drift=-0.04
+[subject s1] sub-004 low  acc_seed=0.4334 auc_L_true=0.4593 pop_dir=+0.552 branch_L_pos=+1.00 kappa=+0.173 sori=0.172 ashman=2.58 dbic=+900.5 ac1=-0.01 drift=+0.08 REV
+[subject s1] sub-005 low  acc_seed=0.6169 auc_L_true=0.6104 pop_dir=+0.284 branch_L_pos=+1.00 kappa=+0.123 sori=0.159 ashman=4.20 dbic=+134.2 ac1=-0.02 drift=+0.05
+[subject s1] sub-006 mid  acc_seed=0.7966 auc_L_true=0.7746 pop_dir=+0.395 branch_L_pos=+1.00 kappa=+0.329 sori=0.335 ashman=3.83 dbic=+1014.5 ac1=+0.02 drift=-0.02
+[subject s1] sub-007 mid  acc_seed=0.6509 auc_L_true=0.6617 pop_dir=+0.483 branch_L_pos=+1.00 kappa=+0.308 sori=0.309 ashman=3.18 dbic=+1398.0 ac1=-0.02 drift=-0.11
+[subject s1] sub-008 low  acc_seed=0.5729 auc_L_true=0.5915 pop_dir=+0.573 branch_L_pos=+1.00 kappa=+0.430 sori=0.404 ashman=15.56 dbic=+5513.8 ac1=-0.02 drift=-0.12
+[subject s1] sub-009 low  acc_seed=0.5293 auc_L_true=0.5322 pop_dir=+0.005 branch_L_pos=+1.00 kappa=+0.195 sori=0.180 ashman=6.75 dbic=+1804.7 ac1=+0.03 drift=-0.23
+[subject s1] sub-010 low  acc_seed=0.5453 auc_L_true=0.5497 pop_dir=-0.146 branch_L_pos=+1.00 kappa=+0.323 sori=0.116 ashman=3.31 dbic=+877.8 ac1=-0.10 drift=+0.07
+[subject s1] sub-011 mid  acc_seed=0.8119 auc_L_true=0.7917 pop_dir=+0.464 branch_L_pos=+1.00 kappa=+0.085 sori=0.192 ashman=2.23 dbic=+2528.9 ac1=+0.04 drift=+0.19
+[subject s1] sub-012 mid  acc_seed=0.7685 auc_L_true=0.7673 pop_dir=+0.324 branch_L_pos=+1.00 kappa=+0.097 sori=0.181 ashman=2.23 dbic=+476.5 ac1=-0.11 drift=-0.09
+[subject s1] sub-013 mid  acc_seed=0.7005 auc_L_true=0.6858 pop_dir=+0.622 branch_L_pos=+1.00 kappa=+0.116 sori=0.160 ashman=6.24 dbic=+3124.6 ac1=-0.03 drift=-0.03
+[subject s1] sub-014 mid  acc_seed=0.6145 auc_L_true=0.6050 pop_dir=+0.504 branch_L_pos=+1.00 kappa=+0.140 sori=0.136 ashman=2.48 dbic=+1365.6 ac1=+0.06 drift=+0.01
+[subject s1] sub-015 low  acc_seed=0.7381 auc_L_true=0.7159 pop_dir=+0.360 branch_L_pos=+1.00 kappa=+0.067 sori=0.066 ashman=6.08 dbic=+719.3 ac1=+0.12 drift=-0.01
+[subject s1] sub-016 mid  acc_seed=0.7642 auc_L_true=0.7248 pop_dir=+0.697 branch_L_pos=+1.00 kappa=+0.497 sori=0.650 ashman=2.22 dbic=+1812.3 ac1=-0.07 drift=+0.08
+[subject s1] sub-017 mid  acc_seed=0.8793 auc_L_true=0.8551 pop_dir=+0.596 branch_L_pos=+1.00 kappa=+0.116 sori=0.151 ashman=2.54 dbic=+813.5 ac1=+0.02 drift=-0.09
+[subject s1] sub-018 mid  acc_seed=0.7702 auc_L_true=0.7551 pop_dir=+0.386 branch_L_pos=+1.00 kappa=+0.364 sori=0.368 ashman=3.56 dbic=+1023.0 ac1=-0.19 drift=+0.04
+[subject s1] sub-019 mid  acc_seed=0.6574 auc_L_true=0.6574 pop_dir=+0.608 branch_L_pos=+1.00 kappa=+0.375 sori=0.431 ashman=2.85 dbic=+453.0 ac1=-0.02 drift=+0.00
+[subject s1] sub-020 mid  acc_seed=0.7056 auc_L_true=0.7094 pop_dir=+0.446 branch_L_pos=+1.00 kappa=+0.257 sori=0.224 ashman=3.19 dbic=+106.1 ac1=+0.13 drift=-0.05
+[subject s1] sub-021 mid  acc_seed=0.7106 auc_L_true=0.7159 pop_dir=+0.600 branch_L_pos=+1.00 kappa=+0.251 sori=0.255 ashman=2.51 dbic=+1460.1 ac1=-0.05 drift=+0.09
+[subject s1] sub-022 mid  acc_seed=0.8383 auc_L_true=0.8034 pop_dir=+0.059 branch_L_pos=+1.00 kappa=+0.092 sori=0.093 ashman=9.71 dbic=+3498.1 ac1=-0.05 drift=+0.07
+[subject s1] sub-023 low  acc_seed=0.4455 auc_L_true=0.4560 pop_dir=+0.549 branch_L_pos=+1.00 kappa=+0.185 sori=0.166 ashman=2.60 dbic=+1324.9 ac1=-0.11 drift=-0.02 REV
+[subject s1] sub-024 low  acc_seed=0.5205 auc_L_true=0.5180 pop_dir=+0.377 branch_L_pos=+1.00 kappa=+0.177 sori=0.212 ashman=4.03 dbic=+1645.2 ac1=-0.02 drift=-0.02
+[subject s1] sub-025 mid  acc_seed=0.8818 auc_L_true=0.8523 pop_dir=+0.229 branch_L_pos=+1.00 kappa=+0.106 sori=0.127 ashman=2.85 dbic=+1278.8 ac1=+0.11 drift=+0.13
+[subject s1] sub-026 mid  acc_seed=0.7846 auc_L_true=0.7623 pop_dir=+0.561 branch_L_pos=+1.00 kappa=+0.427 sori=0.511 ashman=3.72 dbic=+1038.6 ac1=+0.03 drift=+0.04
+[subject s1] sub-027 low  acc_seed=0.5731 auc_L_true=0.5604 pop_dir=+0.185 branch_L_pos=+1.00 kappa=+0.048 sori=0.095 ashman=3.09 dbic=+1084.3 ac1=+0.05 drift=-0.14
+[subject s1] sub-028 low  acc_seed=0.6029 auc_L_true=0.6013 pop_dir=+0.507 branch_L_pos=+1.00 kappa=+0.255 sori=0.207 ashman=3.90 dbic=+1323.8 ac1=-0.03 drift=-0.07
+[subject s1] sub-029 low  acc_seed=0.4952 auc_L_true=0.5283 pop_dir=+0.032 branch_L_pos=+1.00 kappa=+0.166 sori=0.139 ashman=3.10 dbic=+20.8 ac1=-0.05 drift=+0.10 REV
+[subject s1] sub-030 mid  acc_seed=0.9153 auc_L_true=0.9029 pop_dir=+0.667 branch_L_pos=+1.00 kappa=+0.265 sori=0.279 ashman=3.23 dbic=+919.5 ac1=-0.11 drift=+0.01
+[subject s1] sub-031 mid  acc_seed=0.7654 auc_L_true=0.7447 pop_dir=+0.532 branch_L_pos=+1.00 kappa=+0.175 sori=0.210 ashman=2.09 dbic=+44.1 ac1=-0.04 drift=+0.10
+[subject s1] sub-034 low  acc_seed=0.5922 auc_L_true=0.5894 pop_dir=+0.227 branch_L_pos=+1.00 kappa=+0.308 sori=0.289 ashman=2.57 dbic=+75.3 ac1=-0.04 drift=+0.13
+[subject s1] sub-035 mid  acc_seed=0.8525 auc_L_true=0.8128 pop_dir=+0.729 branch_L_pos=+1.00 kappa=+0.284 sori=0.262 ashman=2.95 dbic=+744.9 ac1=-0.12 drift=-0.01
+[subject s1] sub-036 high acc_seed=0.9124 auc_L_true=0.9120 pop_dir=+0.521 branch_L_pos=+1.00 kappa=+0.195 sori=0.283 ashman=4.42 dbic=+930.2 ac1=-0.11 drift=+0.05
+[subject s1] sub-037 low  acc_seed=0.5779 auc_L_true=0.5669 pop_dir=-0.017 branch_L_pos=+1.00 kappa=+0.162 sori=0.196 ashman=3.46 dbic=+1142.0 ac1=+0.03 drift=+0.13
+[subject s1] sub-038 mid  acc_seed=0.8453 auc_L_true=0.8417 pop_dir=+0.363 branch_L_pos=+1.00 kappa=+0.563 sori=0.536 ashman=3.78 dbic=+1152.4 ac1=-0.10 drift=+0.03
+[subject s1] sub-039 low  acc_seed=0.6322 auc_L_true=0.6402 pop_dir=+0.281 branch_L_pos=+1.00 kappa=+0.067 sori=0.121 ashman=2.70 dbic=+319.3 ac1=-0.07 drift=+0.05
+[subject s1] sub-040 mid  acc_seed=0.7913 auc_L_true=0.7853 pop_dir=+0.353 branch_L_pos=+1.00 kappa=+0.089 sori=0.186 ashman=2.59 dbic=-288.9 ac1=+0.06 drift=+0.06
+[subject s1] sub-041 mid  acc_seed=0.7456 auc_L_true=0.7460 pop_dir=+0.393 branch_L_pos=+1.00 kappa=+0.109 sori=0.183 ashman=2.92 dbic=+125.9 ac1=+0.08 drift=-0.05
+[subject s1] sub-042 low  acc_seed=0.3743 auc_L_true=0.4054 pop_dir=+0.683 branch_L_pos=+1.00 kappa=+0.269 sori=0.515 ashman=2.75 dbic=+744.6 ac1=-0.02 drift=+0.08 REV
+[subject s1] sub-043 high acc_seed=0.8372 auc_L_true=0.8286 pop_dir=+0.740 branch_L_pos=+1.00 kappa=+0.336 sori=0.440 ashman=2.93 dbic=+979.1 ac1=-0.10 drift=-0.04
+[subject s1] sub-044 low  acc_seed=0.7270 auc_L_true=0.7362 pop_dir=+0.509 branch_L_pos=+1.00 kappa=+0.622 sori=0.555 ashman=4.90 dbic=+667.6 ac1=+0.13 drift=-0.08
+[subject s1] sub-045 mid  acc_seed=0.8536 auc_L_true=0.8280 pop_dir=+0.397 branch_L_pos=+1.00 kappa=+0.271 sori=0.104 ashman=2.25 dbic=+862.7 ac1=-0.19 drift=-0.05
+[subject s1] sub-046 mid  acc_seed=0.8109 auc_L_true=0.7986 pop_dir=+0.658 branch_L_pos=+1.00 kappa=+0.281 sori=0.204 ashman=3.25 dbic=+840.3 ac1=-0.09 drift=+0.05
+[subject s1] sub-047 mid  acc_seed=0.7814 auc_L_true=0.7545 pop_dir=+0.562 branch_L_pos=+1.00 kappa=+0.205 sori=0.305 ashman=3.14 dbic=+3163.1 ac1=+0.11 drift=-0.01
+[subject s1] sub-048 mid  acc_seed=0.7470 auc_L_true=0.7390 pop_dir=+0.522 branch_L_pos=+1.00 kappa=+0.286 sori=0.321 ashman=4.42 dbic=+293.2 ac1=-0.07 drift=+0.01
+[subject s1] sub-049 low  acc_seed=0.6387 auc_L_true=0.6548 pop_dir=+0.008 branch_L_pos=+1.00 kappa=+0.155 sori=0.122 ashman=3.42 dbic=-113.0 ac1=+0.11 drift=+0.02
+[subject s1] sub-050 low  acc_seed=0.6145 auc_L_true=0.6268 pop_dir=+0.312 branch_L_pos=+1.00 kappa=+0.142 sori=0.205 ashman=2.80 dbic=+1030.4 ac1=-0.10 drift=+0.07
+[subject s1] sub-051 mid  acc_seed=0.8892 auc_L_true=0.8601 pop_dir=+0.549 branch_L_pos=+1.00 kappa=+0.390 sori=0.296 ashman=3.55 dbic=+1035.7 ac1=-0.00 drift=-0.03
+[subject s1] sub-052 low  acc_seed=0.4494 auc_L_true=0.4732 pop_dir=+0.580 branch_L_pos=+1.00 kappa=+0.319 sori=0.319 ashman=5.08 dbic=+1746.0 ac1=+0.09 drift=+0.08 REV
+[subject s1] sub-053 mid  acc_seed=0.6444 auc_L_true=0.6446 pop_dir=+0.340 branch_L_pos=+1.00 kappa=+0.182 sori=0.105 ashman=6.89 dbic=+1500.9 ac1=+0.03 drift=-0.06
+[subject s1] sub-054 high acc_seed=0.7847 auc_L_true=0.7873 pop_dir=+0.470 branch_L_pos=+1.00 kappa=+0.656 sori=0.618 ashman=4.45 dbic=+405.8 ac1=-0.05 drift=+0.04
+[subject s1] sub-055 mid  acc_seed=0.7915 auc_L_true=0.7672 pop_dir=+0.365 branch_L_pos=+1.00 kappa=+0.117 sori=0.178 ashman=4.23 dbic=+1723.1 ac1=+0.14 drift=-0.02
+[subject s1] sub-056 mid  acc_seed=0.9100 auc_L_true=0.8751 pop_dir=+0.726 branch_L_pos=+1.00 kappa=+0.170 sori=0.236 ashman=3.45 dbic=+1981.6 ac1=+0.07 drift=+0.04
+[subject s1] sub-057 mid  acc_seed=0.7023 auc_L_true=0.6763 pop_dir=+0.175 branch_L_pos=+1.00 kappa=+0.220 sori=0.234 ashman=2.83 dbic=+6.6 ac1=-0.16 drift=+0.08
+[subject s1] sub-058 mid  acc_seed=0.8057 auc_L_true=0.7851 pop_dir=+0.592 branch_L_pos=+1.00 kappa=+0.319 sori=0.364 ashman=2.92 dbic=+324.6 ac1=+0.04 drift=+0.05
+[subject s1] sub-059 mid  acc_seed=0.7371 auc_L_true=0.7048 pop_dir=+0.065 branch_L_pos=+1.00 kappa=+0.040 sori=0.075 ashman=3.04 dbic=+938.1 ac1=-0.08 drift=-0.01
+[detect s1] neg_pop_dir    AUC=0.6463[0.440,0.844] rho(acc_seed)=-0.283
+[detect s1] branch_L_neg   AUC=0.5[0.500,0.500] rho(acc_seed)=+nan
+[detect s1] kappa_gmm      AUC=0.537[0.373,0.706] rho(acc_seed)=+0.083 (exploratory, direction post hoc: |AUC-.5| -> 0.537)
+[detect s1] neg_sori_abs   AUC=0.4426[0.268,0.621] rho(acc_seed)=+0.172 (exploratory, direction post hoc: |AUC-.5| -> 0.5574)
+[detect s1] ashman         AUC=0.5759[0.397,0.770] rho(acc_seed)=-0.030 (exploratory, direction post hoc: |AUC-.5| -> 0.5759)
+[detect s1] abs_skew       AUC=0.5204[0.360,0.703] rho(acc_seed)=-0.089 (exploratory, direction post hoc: |AUC-.5| -> 0.5204)
+[detect s1] dbic           AUC=0.587[0.404,0.783] rho(acc_seed)=-0.002 (exploratory, direction post hoc: |AUC-.5| -> 0.587)
+[detect s1] branch_r       AUC=0.3148[0.155,0.489] rho(acc_seed)=+0.446 (exploratory, direction post hoc: |AUC-.5| -> 0.6852)
+[detect s1] ac1            AUC=0.513[0.344,0.674] rho(acc_seed)=-0.086 (exploratory, direction post hoc: |AUC-.5| -> 0.513)
+[detect s1] drift          AUC=0.5593[0.322,0.769] rho(acc_seed)=-0.026 (exploratory, direction post hoc: |AUC-.5| -> 0.5593)
+[stat-group s1] acc_seed     high=+0.845 mid=+0.775 low=+0.568
+[stat-group s1] auc_L_true   high=+0.843 mid=+0.759 low=+0.574
+[stat-group s1] sori_abs     high=+0.447 mid=+0.261 low=+0.220
+[stat-group s1] kappa_gmm    high=+0.395 mid=+0.233 low=+0.214
+[stat-group s1] ashman       high=+3.930 mid=+3.403 low=+4.261
+[stat-group s1] abs_skew     high=+1.864 mid=+2.264 low=+2.445
+[stat-group s1] dbic         high=+771.720 mid=+1151.568 low=+1078.760
+[stat-group s1] branch_r     high=+0.599 mid=+0.513 low=+0.397
+[stat-group s1] branch_L_pos high=+1.000 mid=+1.000 low=+1.000
+[stat-group s1] ac1          high=-0.087 mid=-0.016 low=-0.005
+[stat-group s1] drift        high=+0.018 mid=+0.015 low=+0.017
+[stat-group s1] pop_dir      high=+0.577 mid=+0.474 low=+0.313
+[legal-flip s1] skipped: best legal detector neg_pop_dir AUC=0.6462962962962964 CI_lo=0.440 <= .5
+[result stream 1] fuseH_wf               all: AUC=0.7106 mac=0.6505 mic=0.6520 | mature: AUC=0.7156 mac=0.6541 mic=0.6548 | subj>=.9=0 max=0.891
+[result stream 1] fuseH_wf_thr           all: AUC=0.7134 mac=0.6568 mic=0.6580 | mature: AUC=0.7190 mac=0.6608 mic=0.6614 | subj>=.9=0 max=0.883
+[result stream 1] fuse_pseudo_lr_full    all: AUC=0.7176 mac=0.6684 mic=0.6698 | mature: AUC=0.7266 mac=0.6763 mic=0.6777 | subj>=.9=0 max=0.856
+[result stream 1] fuse_oracle_flip       all: AUC=0.7327 mac=0.6787 mic=0.6803 | mature: AUC=0.7413 mac=0.6862 mic=0.6877 | subj>=.9=0 max=0.856 [LEAKY]
+[result stream 1] fuse_flipL             all: AUC=0.7156 mac=0.6536 mic=0.6553 | mature: AUC=0.7194 mac=0.6550 mic=0.6560 | subj>=.9=0 max=0.891 [LEAKY]
+[result stream 1] fuse_pseudo_lr_full_thr all: AUC=0.7179 mac=0.6694 mic=0.6709 | mature: AUC=0.7267 mac=0.6761 mic=0.6778 | subj>=.9=0 max=0.858
+[result stream 1] fuse_oracle_flip_thr   all: AUC=0.7330 mac=0.6790 mic=0.6808 | mature: AUC=0.7413 mac=0.6850 mic=0.6868 | subj>=.9=0 max=0.858 [LEAKY]
+[result stream 1] fuse_flipL_thr         all: AUC=0.7172 mac=0.6582 mic=0.6593 | mature: AUC=0.7218 mac=0.6613 mic=0.6619 | subj>=.9=0 max=0.883 [LEAKY]
+[check s1] fuse_pseudo_lr_full(_thr) reproduces v2 mac=0.6684/0.6694
+[group stream 1] fuseH_wf               high(n=3): mean=0.8145 dmean=-0.0350 | mid(n=34): mean=0.6958 dmean=-0.0286 | low(n=20): mean=0.5490 dmean=+0.0002
+[group stream 1] fuseH_wf_thr           high(n=3): mean=0.8128 dmean=-0.0368 | mid(n=34): mean=0.7036 dmean=-0.0208 | low(n=20): mean=0.5539 dmean=+0.0051
+[group stream 1] fuse_pseudo_lr_full    high(n=3): mean=0.8458 dmean=-0.0037 | mid(n=34): mean=0.7243 dmean=-0.0001 | low(n=20): mean=0.5467 dmean=-0.0022
+[group stream 1] fuse_oracle_flip       high(n=3): mean=0.8458 dmean=-0.0037 | mid(n=34): mean=0.7243 dmean=-0.0001 | low(n=20): mean=0.5760 dmean=+0.0272
+[group stream 1] fuse_flipL             high(n=3): mean=0.8145 dmean=-0.0350 | mid(n=34): mean=0.6958 dmean=-0.0286 | low(n=20): mean=0.5578 dmean=+0.0090
+[group stream 1] fuse_pseudo_lr_full_thr high(n=3): mean=0.8495 dmean=+0.0000 | mid(n=34): mean=0.7244 dmean=+0.0000 | low(n=20): mean=0.5488 dmean=+0.0000
+[group stream 1] fuse_oracle_flip_thr   high(n=3): mean=0.8495 dmean=+0.0000 | mid(n=34): mean=0.7244 dmean=+0.0000 | low(n=20): mean=0.5764 dmean=+0.0276
+[group stream 1] fuse_flipL_thr         high(n=3): mean=0.8128 dmean=-0.0368 | mid(n=34): mean=0.7036 dmean=-0.0208 | low(n=20): mean=0.5579 dmean=+0.0091
+[boot stream 1] fuse_oracle_flip       vs fuse_pseudo_lr_full    all    dAUC=+0.0149[+0.0032,+0.0293] dmac=+0.0101[+0.0017,+0.0208] dmic=+0.0104[+0.0018,+0.0210]
+[boot stream 1] fuse_oracle_flip       vs fuse_pseudo_lr_full    mature dAUC=+0.0143[+0.0033,+0.0270] dmac=+0.0098[+0.0019,+0.0193] dmic=+0.0099[+0.0019,+0.0197]
+[boot stream 1] fuse_flipL             vs fuse_pseudo_lr_full    all    dAUC=-0.0019[-0.0157,+0.0126] dmac=-0.0146[-0.0269,-0.0016] dmic=-0.0143[-0.0268,-0.0010]
+[boot stream 1] fuse_flipL             vs fuse_pseudo_lr_full    mature dAUC=-0.0072[-0.0221,+0.0075] dmac=-0.0211[-0.0350,-0.0070] dmic=-0.0215[-0.0357,-0.0074]
+[boot stream 1] fuse_oracle_flip_thr   vs fuse_pseudo_lr_full_thr all    dAUC=+0.0148[+0.0033,+0.0289] dmac=+0.0096[+0.0018,+0.0199] dmic=+0.0098[+0.0019,+0.0204]
+[boot stream 1] fuse_oracle_flip_thr   vs fuse_pseudo_lr_full_thr mature dAUC=+0.0143[+0.0034,+0.0271] dmac=+0.0087[+0.0017,+0.0176] dmic=+0.0089[+0.0017,+0.0182]
+[boot stream 1] fuse_flipL_thr         vs fuse_pseudo_lr_full_thr all    dAUC=-0.0006[-0.0145,+0.0134] dmac=-0.0111[-0.0227,+0.0005] dmic=-0.0114[-0.0231,+0.0003]
+[boot stream 1] fuse_flipL_thr         vs fuse_pseudo_lr_full_thr mature dAUC=-0.0049[-0.0197,+0.0093] dmac=-0.0147[-0.0282,-0.0011] dmic=-0.0158[-0.0293,-0.0023]
+[s1] done elapsed=96.3s
+[s2] std(L)=0.652 mean(L)=-0.019
+[s2] subjects 8/57 stream_s=1.5 elapsed=97.8s
+[s2] subjects 16/57 stream_s=3.0 elapsed=99.3s
+[s2] subjects 24/57 stream_s=4.5 elapsed=100.8s
+[s2] subjects 32/57 stream_s=6.0 elapsed=102.3s
+[s2] subjects 40/57 stream_s=7.4 elapsed=103.7s
+[s2] subjects 48/57 stream_s=8.8 elapsed=105.1s
+[s2] subjects 56/57 stream_s=10.2 elapsed=106.5s
+[s2] subjects 57/57 stream_s=10.2 elapsed=106.5s
+[check s2] sub-001: isolation / prefix (z + 8 refits of statistics) / label shuffle / flip symmetry OK
+[check s2] sub-002: isolation / prefix (z + 7 refits of statistics) / label shuffle / flip symmetry OK
+[subjects s2] n=57 reversed_oracle=4 acc_seed<0.6: 14 (low reversed=4/20)
+[subject s2] sub-001 mid  acc_seed=0.8153 auc_L_true=0.8149 pop_dir=+0.537 branch_L_pos=+1.00 kappa=+0.164 sori=0.210 ashman=2.65 dbic=+1468.0 ac1=+0.01 drift=-0.03
+[subject s2] sub-002 low  acc_seed=0.7092 auc_L_true=0.6812 pop_dir=+0.395 branch_L_pos=+1.00 kappa=+0.200 sori=0.238 ashman=2.29 dbic=+717.4 ac1=+0.11 drift=+0.06
+[subject s2] sub-003 mid  acc_seed=0.7009 auc_L_true=0.6761 pop_dir=+0.617 branch_L_pos=+1.00 kappa=+0.353 sori=0.442 ashman=2.46 dbic=+843.1 ac1=+0.01 drift=-0.05
+[subject s2] sub-004 low  acc_seed=0.4693 auc_L_true=0.4614 pop_dir=+0.539 branch_L_pos=+1.00 kappa=+0.112 sori=0.105 ashman=2.93 dbic=+1368.5 ac1=+0.00 drift=-0.10 REV
+[subject s2] sub-005 low  acc_seed=0.6572 auc_L_true=0.6450 pop_dir=+0.347 branch_L_pos=+1.00 kappa=+0.080 sori=0.170 ashman=3.42 dbic=+168.1 ac1=-0.16 drift=-0.02
+[subject s2] sub-006 mid  acc_seed=0.7830 auc_L_true=0.7552 pop_dir=+0.387 branch_L_pos=+1.00 kappa=+0.360 sori=0.302 ashman=3.55 dbic=+936.9 ac1=-0.01 drift=+0.01
+[subject s2] sub-007 mid  acc_seed=0.7057 auc_L_true=0.7044 pop_dir=+0.453 branch_L_pos=+1.00 kappa=+0.092 sori=0.183 ashman=2.76 dbic=+2059.5 ac1=-0.03 drift=-0.02
+[subject s2] sub-008 low  acc_seed=0.5088 auc_L_true=0.5417 pop_dir=+0.625 branch_L_pos=+1.00 kappa=+0.433 sori=0.398 ashman=16.23 dbic=+6163.4 ac1=+0.05 drift=+0.12
+[subject s2] sub-009 low  acc_seed=0.6682 auc_L_true=0.6557 pop_dir=+0.331 branch_L_pos=+1.00 kappa=+0.064 sori=0.099 ashman=7.46 dbic=+1217.3 ac1=-0.09 drift=-0.09
+[subject s2] sub-010 low  acc_seed=0.5199 auc_L_true=0.5247 pop_dir=+0.061 branch_L_pos=+1.00 kappa=+0.115 sori=0.090 ashman=3.45 dbic=+1624.0 ac1=+0.06 drift=-0.07
+[subject s2] sub-011 mid  acc_seed=0.7927 auc_L_true=0.7776 pop_dir=+0.554 branch_L_pos=+1.00 kappa=+0.162 sori=0.342 ashman=1.76 dbic=+3008.1 ac1=+0.00 drift=+0.06
+[subject s2] sub-012 mid  acc_seed=0.7656 auc_L_true=0.7759 pop_dir=+0.399 branch_L_pos=+1.00 kappa=+0.127 sori=0.264 ashman=2.31 dbic=+359.8 ac1=-0.06 drift=-0.00
+[subject s2] sub-013 mid  acc_seed=0.6367 auc_L_true=0.6249 pop_dir=+0.517 branch_L_pos=+1.00 kappa=+0.059 sori=0.055 ashman=4.91 dbic=+3864.7 ac1=+0.16 drift=-0.29
+[subject s2] sub-014 mid  acc_seed=0.6384 auc_L_true=0.6395 pop_dir=+0.548 branch_L_pos=+1.00 kappa=+0.131 sori=0.137 ashman=3.91 dbic=+1435.7 ac1=-0.04 drift=+0.03
+[subject s2] sub-015 low  acc_seed=0.6607 auc_L_true=0.6696 pop_dir=+0.432 branch_L_pos=+1.00 kappa=+0.062 sori=0.159 ashman=17.05 dbic=+1232.9 ac1=-0.02 drift=+0.10
+[subject s2] sub-016 mid  acc_seed=0.7452 auc_L_true=0.7449 pop_dir=+0.691 branch_L_pos=+1.00 kappa=+0.467 sori=0.617 ashman=2.41 dbic=+1611.4 ac1=+0.00 drift=-0.03
+[subject s2] sub-017 mid  acc_seed=0.8172 auc_L_true=0.8005 pop_dir=+0.568 branch_L_pos=+1.00 kappa=+0.103 sori=0.127 ashman=2.79 dbic=+1408.6 ac1=-0.00 drift=-0.12
+[subject s2] sub-018 mid  acc_seed=0.8549 auc_L_true=0.8385 pop_dir=+0.409 branch_L_pos=+1.00 kappa=+0.345 sori=0.339 ashman=2.78 dbic=+1220.6 ac1=-0.11 drift=+0.09
+[subject s2] sub-019 mid  acc_seed=0.6711 auc_L_true=0.6689 pop_dir=+0.560 branch_L_pos=+1.00 kappa=+0.311 sori=0.371 ashman=2.74 dbic=+423.6 ac1=-0.11 drift=-0.06
+[subject s2] sub-020 mid  acc_seed=0.7267 auc_L_true=0.7030 pop_dir=+0.562 branch_L_pos=+1.00 kappa=+0.206 sori=0.247 ashman=2.25 dbic=+678.0 ac1=-0.06 drift=+0.06
+[subject s2] sub-021 mid  acc_seed=0.7242 auc_L_true=0.7038 pop_dir=+0.564 branch_L_pos=+1.00 kappa=+0.298 sori=0.304 ashman=2.50 dbic=+1233.0 ac1=+0.02 drift=+0.04
+[subject s2] sub-022 mid  acc_seed=0.7347 auc_L_true=0.7110 pop_dir=-0.024 branch_L_pos=+1.00 kappa=+0.078 sori=0.162 ashman=16.04 dbic=+3757.2 ac1=-0.11 drift=+0.01
+[subject s2] sub-023 low  acc_seed=0.4855 auc_L_true=0.4899 pop_dir=+0.521 branch_L_pos=+1.00 kappa=+0.161 sori=0.193 ashman=2.97 dbic=+1314.7 ac1=-0.07 drift=+0.07 REV
+[subject s2] sub-024 low  acc_seed=0.5088 auc_L_true=0.5057 pop_dir=+0.284 branch_L_pos=+1.00 kappa=+0.087 sori=0.144 ashman=3.68 dbic=+1549.5 ac1=-0.02 drift=-0.02
+[subject s2] sub-025 mid  acc_seed=0.8294 auc_L_true=0.8193 pop_dir=+0.220 branch_L_pos=+1.00 kappa=+0.075 sori=0.055 ashman=3.14 dbic=+1258.5 ac1=-0.03 drift=+0.02
+[subject s2] sub-026 mid  acc_seed=0.7443 auc_L_true=0.7283 pop_dir=+0.575 branch_L_pos=+1.00 kappa=+0.621 sori=0.600 ashman=3.85 dbic=+1066.7 ac1=-0.02 drift=-0.03
+[subject s2] sub-027 low  acc_seed=0.5866 auc_L_true=0.5795 pop_dir=+0.205 branch_L_pos=+1.00 kappa=+0.049 sori=0.110 ashman=3.32 dbic=+849.0 ac1=-0.01 drift=-0.14
+[subject s2] sub-028 low  acc_seed=0.5881 auc_L_true=0.5762 pop_dir=+0.537 branch_L_pos=+1.00 kappa=+0.112 sori=0.101 ashman=3.54 dbic=+1445.9 ac1=-0.16 drift=+0.04
+[subject s2] sub-029 low  acc_seed=0.4571 auc_L_true=0.4773 pop_dir=+0.074 branch_L_pos=+1.00 kappa=+0.168 sori=0.199 ashman=2.57 dbic=-97.9 ac1=+0.10 drift=+0.02 REV
+[subject s2] sub-030 mid  acc_seed=0.9192 auc_L_true=0.8913 pop_dir=+0.630 branch_L_pos=+1.00 kappa=+0.175 sori=0.285 ashman=3.11 dbic=+1133.0 ac1=-0.05 drift=+0.08
+[subject s2] sub-031 mid  acc_seed=0.7766 auc_L_true=0.7766 pop_dir=+0.502 branch_L_pos=+1.00 kappa=+0.182 sori=0.217 ashman=2.42 dbic=+82.1 ac1=+0.04 drift=+0.04
+[subject s2] sub-034 low  acc_seed=0.5466 auc_L_true=0.5485 pop_dir=+0.152 branch_L_pos=+1.00 kappa=+0.341 sori=0.353 ashman=2.71 dbic=+201.0 ac1=-0.05 drift=+0.05
+[subject s2] sub-035 mid  acc_seed=0.8835 auc_L_true=0.8566 pop_dir=+0.691 branch_L_pos=+1.00 kappa=+0.159 sori=0.184 ashman=3.64 dbic=+762.1 ac1=+0.01 drift=-0.08
+[subject s2] sub-036 high acc_seed=0.9072 auc_L_true=0.8923 pop_dir=+0.481 branch_L_pos=+1.00 kappa=+0.244 sori=0.291 ashman=4.55 dbic=+1012.1 ac1=+0.07 drift=-0.01
+[subject s2] sub-037 low  acc_seed=0.5410 auc_L_true=0.5512 pop_dir=-0.013 branch_L_pos=+1.00 kappa=+0.042 sori=0.068 ashman=4.44 dbic=+1049.1 ac1=-0.08 drift=+0.09
+[subject s2] sub-038 mid  acc_seed=0.9166 auc_L_true=0.8955 pop_dir=+0.517 branch_L_pos=+1.00 kappa=+0.832 sori=0.707 ashman=4.32 dbic=+1194.2 ac1=-0.04 drift=-0.07
+[subject s2] sub-039 low  acc_seed=0.5947 auc_L_true=0.6118 pop_dir=+0.383 branch_L_pos=+1.00 kappa=+0.081 sori=0.066 ashman=2.42 dbic=+852.9 ac1=+0.13 drift=+0.01
+[subject s2] sub-040 mid  acc_seed=0.8232 auc_L_true=0.8041 pop_dir=+0.314 branch_L_pos=+1.00 kappa=+0.080 sori=0.092 ashman=2.42 dbic=-276.5 ac1=+0.04 drift=+0.05
+[subject s2] sub-041 mid  acc_seed=0.7282 auc_L_true=0.7334 pop_dir=+0.500 branch_L_pos=+1.00 kappa=+0.154 sori=0.219 ashman=2.74 dbic=+273.8 ac1=-0.10 drift=+0.01
+[subject s2] sub-042 low  acc_seed=0.3856 auc_L_true=0.3983 pop_dir=+0.663 branch_L_pos=+1.00 kappa=+0.301 sori=0.462 ashman=2.91 dbic=+785.9 ac1=-0.07 drift=+0.05 REV
+[subject s2] sub-043 high acc_seed=0.8606 auc_L_true=0.8311 pop_dir=+0.688 branch_L_pos=+1.00 kappa=+0.268 sori=0.424 ashman=3.38 dbic=+1010.1 ac1=-0.02 drift=-0.02
+[subject s2] sub-044 low  acc_seed=0.7605 auc_L_true=0.7566 pop_dir=+0.534 branch_L_pos=+1.00 kappa=+0.738 sori=0.613 ashman=4.58 dbic=+682.4 ac1=-0.04 drift=-0.02
+[subject s2] sub-045 mid  acc_seed=0.8943 auc_L_true=0.8817 pop_dir=+0.470 branch_L_pos=+1.00 kappa=+0.210 sori=0.062 ashman=2.63 dbic=+686.2 ac1=-0.10 drift=+0.01
+[subject s2] sub-046 mid  acc_seed=0.8252 auc_L_true=0.8085 pop_dir=+0.673 branch_L_pos=+1.00 kappa=+0.228 sori=0.176 ashman=3.18 dbic=+909.6 ac1=-0.07 drift=+0.04
+[subject s2] sub-047 mid  acc_seed=0.7827 auc_L_true=0.7746 pop_dir=+0.594 branch_L_pos=+1.00 kappa=+0.145 sori=0.298 ashman=4.54 dbic=+3239.9 ac1=+0.14 drift=-0.10
+[subject s2] sub-048 mid  acc_seed=0.8295 auc_L_true=0.8054 pop_dir=+0.652 branch_L_pos=+1.00 kappa=+0.371 sori=0.398 ashman=4.43 dbic=+245.8 ac1=+0.12 drift=-0.13
+[subject s2] sub-049 low  acc_seed=0.6094 auc_L_true=0.5906 pop_dir=+0.029 branch_L_pos=+1.00 kappa=+0.265 sori=0.222 ashman=3.28 dbic=-78.6 ac1=+0.03 drift=+0.06
+[subject s2] sub-050 low  acc_seed=0.5946 auc_L_true=0.6022 pop_dir=+0.316 branch_L_pos=+1.00 kappa=+0.208 sori=0.220 ashman=3.05 dbic=+1059.6 ac1=-0.13 drift=+0.02
+[subject s2] sub-051 mid  acc_seed=0.8451 auc_L_true=0.8243 pop_dir=+0.492 branch_L_pos=+1.00 kappa=+0.273 sori=0.183 ashman=3.35 dbic=+903.9 ac1=-0.11 drift=-0.04
+[subject s2] sub-052 low  acc_seed=0.5130 auc_L_true=0.5229 pop_dir=+0.557 branch_L_pos=+1.00 kappa=+0.159 sori=0.218 ashman=4.76 dbic=+1459.1 ac1=+0.07 drift=+0.11
+[subject s2] sub-053 mid  acc_seed=0.6196 auc_L_true=0.6309 pop_dir=+0.334 branch_L_pos=+1.00 kappa=+0.086 sori=0.187 ashman=1.72 dbic=+1393.1 ac1=-0.06 drift=+0.08
+[subject s2] sub-054 high acc_seed=0.8464 auc_L_true=0.8448 pop_dir=+0.475 branch_L_pos=+1.00 kappa=+0.673 sori=0.537 ashman=4.17 dbic=+534.0 ac1=-0.04 drift=+0.09
+[subject s2] sub-055 mid  acc_seed=0.7742 auc_L_true=0.7436 pop_dir=+0.423 branch_L_pos=+1.00 kappa=+0.069 sori=0.106 ashman=5.14 dbic=+1912.4 ac1=-0.02 drift=+0.02
+[subject s2] sub-056 mid  acc_seed=0.8913 auc_L_true=0.8609 pop_dir=+0.672 branch_L_pos=+1.00 kappa=+0.273 sori=0.232 ashman=3.04 dbic=+1592.6 ac1=+0.06 drift=+0.05
+[subject s2] sub-057 mid  acc_seed=0.7549 auc_L_true=0.7151 pop_dir=+0.222 branch_L_pos=+1.00 kappa=+0.307 sori=0.272 ashman=2.60 dbic=+5.2 ac1=-0.05 drift=-0.01
+[subject s2] sub-058 mid  acc_seed=0.7846 auc_L_true=0.7884 pop_dir=+0.583 branch_L_pos=+1.00 kappa=+0.295 sori=0.422 ashman=2.77 dbic=+196.3 ac1=-0.09 drift=+0.07
+[subject s2] sub-059 mid  acc_seed=0.7627 auc_L_true=0.7404 pop_dir=-0.024 branch_L_pos=+1.00 kappa=+0.094 sori=0.092 ashman=3.13 dbic=+1110.8 ac1=-0.06 drift=+0.16
+[detect s2] neg_pop_dir    AUC=0.6495[0.468,0.819] rho(acc_seed)=-0.307
+[detect s2] branch_L_neg   AUC=0.5[0.500,0.500] rho(acc_seed)=+nan
+[detect s2] kappa_gmm      AUC=0.387[0.221,0.572] rho(acc_seed)=+0.300 (exploratory, direction post hoc: |AUC-.5| -> 0.613)
+[detect s2] neg_sori_abs   AUC=0.3588[0.197,0.539] rho(acc_seed)=+0.229 (exploratory, direction post hoc: |AUC-.5| -> 0.6412)
+[detect s2] ashman         AUC=0.5532[0.395,0.715] rho(acc_seed)=-0.020 (exploratory, direction post hoc: |AUC-.5| -> 0.5532)
+[detect s2] abs_skew       AUC=0.6113[0.463,0.764] rho(acc_seed)=-0.298 (exploratory, direction post hoc: |AUC-.5| -> 0.6113)
+[detect s2] dbic           AUC=0.5748[0.414,0.752] rho(acc_seed)=-0.107 (exploratory, direction post hoc: |AUC-.5| -> 0.5748)
+[detect s2] branch_r       AUC=0.3754[0.228,0.531] rho(acc_seed)=+0.509 (exploratory, direction post hoc: |AUC-.5| -> 0.6246)
+[detect s2] ac1            AUC=0.5282[0.317,0.731] rho(acc_seed)=-0.004 (exploratory, direction post hoc: |AUC-.5| -> 0.5282)
+[detect s2] drift          AUC=0.5814[0.409,0.763] rho(acc_seed)=-0.102 (exploratory, direction post hoc: |AUC-.5| -> 0.5814)
+[stat-group s2] acc_seed     high=+0.871 mid=+0.779 low=+0.568
+[stat-group s2] auc_L_true   high=+0.856 mid=+0.765 low=+0.570
+[stat-group s2] sori_abs     high=+0.417 mid=+0.261 low=+0.211
+[stat-group s2] kappa_gmm    high=+0.395 mid=+0.232 low=+0.189
+[stat-group s2] ashman       high=+4.034 mid=+3.470 low=+4.852
+[stat-group s2] abs_skew     high=+1.514 mid=+1.963 low=+2.644
+[stat-group s2] dbic         high=+852.099 mid=+1235.229 low=+1178.222
+[stat-group s2] branch_r     high=+0.615 mid=+0.502 low=+0.387
+[stat-group s2] branch_L_pos high=+1.000 mid=+1.000 low=+1.000
+[stat-group s2] ac1          high=+0.002 mid=-0.022 low=-0.017
+[stat-group s2] drift        high=+0.021 mid=-0.005 low=+0.018
+[stat-group s2] pop_dir      high=+0.548 mid=+0.482 low=+0.349
+[legal-flip s2] skipped: best legal detector neg_pop_dir AUC=0.6495016611295681 CI_lo=0.468 <= .5
+[result stream 2] fuseH_wf               all: AUC=0.7097 mac=0.6500 mic=0.6510 | mature: AUC=0.7085 mac=0.6538 mic=0.6534 | subj>=.9=0 max=0.871
+[result stream 2] fuseH_wf_thr           all: AUC=0.7116 mac=0.6539 mic=0.6549 | mature: AUC=0.7110 mac=0.6571 mic=0.6575 | subj>=.9=0 max=0.869
+[result stream 2] fuse_pseudo_lr_full    all: AUC=0.7168 mac=0.6688 mic=0.6697 | mature: AUC=0.7187 mac=0.6729 mic=0.6729 | subj>=.9=0 max=0.865
+[result stream 2] fuse_oracle_flip       all: AUC=0.7266 mac=0.6744 mic=0.6755 | mature: AUC=0.7298 mac=0.6795 mic=0.6800 | subj>=.9=0 max=0.865 [LEAKY]
+[result stream 2] fuse_flipL             all: AUC=0.7143 mac=0.6514 mic=0.6525 | mature: AUC=0.7124 mac=0.6536 mic=0.6540 | subj>=.9=0 max=0.871 [LEAKY]
+[result stream 2] fuse_pseudo_lr_full_thr all: AUC=0.7169 mac=0.6691 mic=0.6700 | mature: AUC=0.7187 mac=0.6738 mic=0.6741 | subj>=.9=0 max=0.865
+[result stream 2] fuse_oracle_flip_thr   all: AUC=0.7264 mac=0.6748 mic=0.6758 | mature: AUC=0.7296 mac=0.6806 mic=0.6813 | subj>=.9=0 max=0.865 [LEAKY]
+[result stream 2] fuse_flipL_thr         all: AUC=0.7160 mac=0.6556 mic=0.6566 | mature: AUC=0.7144 mac=0.6585 mic=0.6591 | subj>=.9=0 max=0.869 [LEAKY]
+[check s2] fuse_pseudo_lr_full(_thr) reproduces v2 mac=0.6688/0.6691
+[group stream 2] fuseH_wf               high(n=3): mean=0.8042 dmean=-0.0533 | mid(n=34): mean=0.6941 dmean=-0.0306 | low(n=20): mean=0.5520 dmean=+0.0056
+[group stream 2] fuseH_wf_thr           high(n=3): mean=0.8182 dmean=-0.0393 | mid(n=34): mean=0.7001 dmean=-0.0245 | low(n=20): mean=0.5506 dmean=+0.0042
+[group stream 2] fuse_pseudo_lr_full    high(n=3): mean=0.8586 dmean=+0.0011 | mid(n=34): mean=0.7229 dmean=-0.0018 | low(n=20): mean=0.5485 dmean=+0.0021
+[group stream 2] fuse_oracle_flip       high(n=3): mean=0.8586 dmean=+0.0011 | mid(n=34): mean=0.7229 dmean=-0.0018 | low(n=20): mean=0.5644 dmean=+0.0180
+[group stream 2] fuse_flipL             high(n=3): mean=0.8042 dmean=-0.0533 | mid(n=34): mean=0.6941 dmean=-0.0306 | low(n=20): mean=0.5559 dmean=+0.0095
+[group stream 2] fuse_pseudo_lr_full_thr high(n=3): mean=0.8575 dmean=+0.0000 | mid(n=34): mean=0.7246 dmean=+0.0000 | low(n=20): mean=0.5464 dmean=+0.0000
+[group stream 2] fuse_oracle_flip_thr   high(n=3): mean=0.8575 dmean=+0.0000 | mid(n=34): mean=0.7246 dmean=+0.0000 | low(n=20): mean=0.5627 dmean=+0.0163
+[group stream 2] fuse_flipL_thr         high(n=3): mean=0.8182 dmean=-0.0393 | mid(n=34): mean=0.7001 dmean=-0.0245 | low(n=20): mean=0.5556 dmean=+0.0092
+[boot stream 2] fuse_oracle_flip       vs fuse_pseudo_lr_full    all    dAUC=+0.0095[+0.0013,+0.0192] dmac=+0.0054[+0.0008,+0.0115] dmic=+0.0055[+0.0008,+0.0118]
+[boot stream 2] fuse_oracle_flip       vs fuse_pseudo_lr_full    mature dAUC=+0.0109[+0.0015,+0.0226] dmac=+0.0064[+0.0007,+0.0135] dmic=+0.0070[+0.0013,+0.0144]
+[boot stream 2] fuse_flipL             vs fuse_pseudo_lr_full    all    dAUC=-0.0024[-0.0157,+0.0118] dmac=-0.0174[-0.0295,-0.0052] dmic=-0.0172[-0.0297,-0.0048]
+[boot stream 2] fuse_flipL             vs fuse_pseudo_lr_full    mature dAUC=-0.0060[-0.0209,+0.0098] dmac=-0.0191[-0.0350,-0.0031] dmic=-0.0187[-0.0347,-0.0024]
+[boot stream 2] fuse_oracle_flip_thr   vs fuse_pseudo_lr_full_thr all    dAUC=+0.0093[+0.0013,+0.0191] dmac=+0.0055[+0.0008,+0.0115] dmic=+0.0056[+0.0008,+0.0117]
+[boot stream 2] fuse_oracle_flip_thr   vs fuse_pseudo_lr_full_thr mature dAUC=+0.0107[+0.0014,+0.0223] dmac=+0.0066[+0.0007,+0.0145] dmic=+0.0071[+0.0013,+0.0158]
+[boot stream 2] fuse_flipL_thr         vs fuse_pseudo_lr_full_thr all    dAUC=-0.0007[-0.0137,+0.0130] dmac=-0.0133[-0.0247,-0.0018] dmic=-0.0133[-0.0248,-0.0016]
+[boot stream 2] fuse_flipL_thr         vs fuse_pseudo_lr_full_thr mature dAUC=-0.0042[-0.0191,+0.0114] dmac=-0.0151[-0.0298,+0.0001] dmic=-0.0148[-0.0297,+0.0014]
+[s2] done elapsed=137.4s
+[summary] fuseH_wf               mac=0.6515 AUC=0.7114 mature_mac=0.6547
+[summary] fuseH_wf_thr           mac=0.6560 AUC=0.7137 mature_mac=0.6590
+[summary] fuse_pseudo_lr_full    mac=0.6679 AUC=0.7163 mature_mac=0.6720
+[summary] fuse_oracle_flip       mac=0.6755 AUC=0.7288 mature_mac=0.6803 dmac=[0.007488527074136234, 0.001094109153794079, 0.015697301534443524] dAUC=[0.012245054242318344, 0.0026450860884683195, 0.02417978259418636] low_dmac=+0.0219
+[summary] fuse_flipL             mac=0.6540 AUC=0.7166 mature_mac=0.6549 dmac=[-0.013694178968392553, -0.025943299913398197, -0.001468919437652761] dAUC=[0.00043416490442207923, -0.01292641325260376, 0.014545129356492693] low_dmac=+0.0132
+[summary] fuse_pseudo_lr_full_thr mac=0.6690 AUC=0.7166 mature_mac=0.6729
+[summary] fuse_oracle_flip_thr   mac=0.6762 AUC=0.7291 mature_mac=0.6810 dmac=[0.007112764961760221, 0.0011804023811896333, 0.014884394097778376] dAUC=[0.012203160041719742, 0.002680235557917151, 0.024123473048627313] low_dmac=+0.0207
+[summary] fuse_flipL_thr         mac=0.6582 AUC=0.7184 mature_mac=0.6603 dmac=[-0.010664624080960165, -0.022271064179849323, 0.000813601263432793] dAUC=[0.0017685238565918835, -0.01130106374778509, 0.015455829613150895] low_dmac=+0.0125
+[summary-detect] neg_pop_dir    AUC=0.6640 abs=0.6640 [0.466,0.847] rho=-0.3353858784893268
+[summary-detect] branch_L_neg   AUC=0.5000 abs=0.5000 [0.500,0.500] rho=None
+[summary-detect] kappa_gmm      AUC=0.4586 abs=0.5660 [0.290,0.641] rho=0.24215711693025668
+[summary-detect] neg_sori_abs   AUC=0.4140 abs=0.5860 [0.240,0.594] rho=0.22947454844006568
+[summary-detect] ashman         AUC=0.5615 abs=0.5615 [0.386,0.747] rho=-0.026315789473684213
+[summary-detect] abs_skew       AUC=0.5612 abs=0.5612 [0.392,0.741] rho=-0.22945294270158156
+[summary-detect] dbic           AUC=0.5336 abs=0.5743 [0.355,0.725] rho=-0.03720508166969148
+[summary-detect] branch_r       AUC=0.3239 abs=0.6761 [0.165,0.495] rho=0.5161826981246219
+[summary-detect] ac1            AUC=0.5440 abs=0.5440 [0.353,0.722] rho=-0.10582490709532454
+[summary-detect] drift          AUC=0.5389 abs=0.5549 [0.334,0.735] rho=-0.03781004234724743
+[done] all checks passed elapsed=137.4s -> depositioned_direction_diagnosis.json
