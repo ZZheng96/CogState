@@ -1,0 +1,20 @@
+[start] rows=16067 subjects=57 folds=[0, 1, 2, 3, 4] elapsed=0.5s
+[diag high] n=3 sign-consistency=0.697 |d|=0.451 best-single-feature AUC=0.876 frac(best AUC>=.65)=1.00
+[diag mid] n=34 sign-consistency=0.662 |d|=0.275 best-single-feature AUC=0.781 frac(best AUC>=.65)=0.94
+[diag low] n=20 sign-consistency=0.504 |d|=0.264 best-single-feature AUC=0.705 frac(best AUC>=.65)=0.85
+[fold 0] anchor sizes ok, oracle |idx|=64 elapsed=12.0s
+[fold 1] anchor sizes ok, oracle |idx|=64 elapsed=16.3s
+[fold 2] anchor sizes ok, oracle |idx|=64 elapsed=20.5s
+[fold 3] anchor sizes ok, oracle |idx|=64 elapsed=24.7s
+[fold 4] anchor sizes ok, oracle |idx|=64 elapsed=29.2s
+[check fold0] test-label independence + determinism OK
+[check fold1] test-label independence + determinism OK
+[result] xs_full          AUC=0.6323 mac=0.5707 | high: bacc=0.635 auc=0.834 mid: bacc=0.59 auc=0.698 low: bacc=0.527 auc=0.522
+[result] anchor_16        AUC=0.5973 mac=0.5126 | high: bacc=0.506 auc=0.713 mid: bacc=0.519 auc=0.688 low: bacc=0.503 auc=0.471
+[result] anchor_32        AUC=0.5993 mac=0.5168 | high: bacc=0.507 auc=0.767 mid: bacc=0.526 auc=0.685 low: bacc=0.502 auc=0.456
+[result] anchor_64        AUC=0.6069 mac=0.5349 | high: bacc=0.562 auc=0.731 mid: bacc=0.55 auc=0.688 low: bacc=0.505 auc=0.53
+[result] anchor_128       AUC=0.6054 mac=0.5388 | high: bacc=0.58 auc=0.747 mid: bacc=0.559 auc=0.672 low: bacc=0.499 auc=0.501
+[result] anchor_oracle_64 AUC=0.6141 mac=0.5363 | high: bacc=0.559 auc=0.818 mid: bacc=0.552 auc=0.674 low: bacc=0.506 auc=0.547
+[result] anchor_dir_64    AUC=0.5897 mac=0.5685 | high: bacc=0.609 auc=0.809 mid: bacc=0.611 auc=0.684 low: bacc=0.489 auc=0.485
+[boot] xs_full:-0.098[-0.123,-0.074] anchor_16:-0.156[-0.187,-0.123] anchor_32:-0.152[-0.182,-0.122] anchor_64:-0.133[-0.161,-0.103] anchor_128:-0.130[-0.157,-0.104] anchor_oracle_64:-0.132[-0.161,-0.104] anchor_dir_64:-0.100[-0.126,-0.077]
+[done] elapsed=34.6s
