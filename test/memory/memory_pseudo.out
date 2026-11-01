@@ -1,0 +1,32 @@
+﻿[load] rows=16067 folds=[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4)] median step=6.00s (assumed 6.0s) elapsed=1.1s
+[start] REFIT=10 MINPAST=20 QS=(0.0, 0.3, 0.6) LAMS=(100.0, 1000.0) WS=(0.0, 0.25, 0.5, 1.0, 2.0) boot=1000 jobs=12 elapsed=1.1s
+[fold 0] inner adapt done (46 subjects) elapsed=4.4s
+[select f0] q=0.6 lam=100.0 w=0.5 inner=0.7708 seed=0.7691 elapsed=4.4s
+[check] prefix invariance ok subject=sub-009 cut=108 max|d|=0.0e+00
+[check] test-label permutation -> identical inner scores / selection
+[fold 0] done s=5.1 elapsed=6.2s
+[fold 1] inner adapt done (45 subjects) elapsed=8.5s
+[select f1] q=0.6 lam=100.0 w=0.5 inner=0.7528 seed=0.7524 elapsed=8.5s
+[fold 1] done s=3.9 elapsed=10.1s
+[fold 2] inner adapt done (46 subjects) elapsed=12.4s
+[select f2] q=0.0 lam=1000.0 w=0.0 inner=0.7566 seed=0.7566 elapsed=12.5s
+[fold 2] done s=3.9 elapsed=14.1s
+[fold 3] inner adapt done (45 subjects) elapsed=16.3s
+[select f3] q=0.3 lam=100.0 w=0.5 inner=0.7703 seed=0.7591 elapsed=16.4s
+[fold 3] done s=4.1 elapsed=18.2s
+[fold 4] inner adapt done (46 subjects) elapsed=20.5s
+[select f4] q=0.0 lam=1000.0 w=0.0 inner=0.7638 seed=0.7638 elapsed=20.6s
+[fold 4] done s=4.1 elapsed=22.3s
+[result] ana_bc_raw   AUC=0.7675 mac=0.7118 high=0.8428 mid=0.7584 low=0.6129 n9=1 | vs raw dmac=+0.0000[+0.0000,+0.0000] dAUC=+0.0000[+0.0000,+0.0000]
+[result] pos_only     AUC=0.9768 mac=0.9236 high=0.9357 mid=0.9458 low=0.8840 n9=46 | vs raw dmac=+0.2117[+0.1771,+0.2450] dAUC=+0.2093[+0.1760,+0.2429]
+[result] seed         AUC=0.8583 mac=0.7758 high=0.8857 mid=0.8335 low=0.6611 n9=4 | vs raw dmac=+0.0644[+0.0494,+0.0777] dAUC=+0.0907[+0.0765,+0.1045]
+[result] pseudo       AUC=0.8496 mac=0.7752 high=0.8949 mid=0.8290 low=0.6658 n9=5 | vs raw dmac=+0.0638[+0.0515,+0.0763] dAUC=+0.0822[+0.0690,+0.0950]
+[result] pseudo       AUC=0.8496 mac=0.7752 high=0.8949 mid=0.8290 low=0.6658 n9=5 | vs seed dmac=-0.0006[-0.0074,+0.0073] dAUC=-0.0085[-0.0135,-0.0037]
+[control] rotated random     seed AUC=0.8030 mac=0.7313 high=0.8639 mid=0.7937 low=0.6053 n9=1 | pseudo AUC=0.8000 mac=0.7384 high=0.8661 mid=0.7971 low=0.6195 n9=1
+[control] rotated same_phase seed AUC=0.8005 mac=0.7175 high=0.8158 mid=0.7768 low=0.6020 n9=1 | pseudo AUC=0.7942 mac=0.7121 high=0.8170 mid=0.7729 low=0.5929 n9=1
+[control] rotated flip_phase seed AUC=0.8123 mac=0.7458 high=0.8722 mid=0.8079 low=0.6147 n9=4 | pseudo AUC=0.8048 mac=0.7410 high=0.8803 mid=0.8018 low=0.6103 n9=3
+[diag] seed pseudo-label acc high: all=0.8853 conf=0.9802 min=0.8794 n=3
+[diag] seed pseudo-label acc mid: all=0.8335 conf=0.9004 min=0.5052 n=34
+[diag] seed pseudo-label acc low: all=0.6594 conf=0.6860 min=0.4634 n=20
+[check] label shuffle pseudo: AUC=0.4976 mac=0.4959 (expect ~.5)
+[done] elapsed=30.0s -> memory_pseudo.json

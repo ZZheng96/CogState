@@ -1,0 +1,33 @@
+[load] rows=16067 folds=[np.int64(0)] median step=6.00s (assumed 6.0s) elapsed=0.6s
+[start] cands={'ana': ['ana_bc'], 'br3': ['a', 'bc_sel', 'c'], 'br4': ['a', 'bc_sel', 'c', 'ana_bc']} HS=[0, 1, 2, 4, 8, 16, 32, 64, 128, 256] boot=100 elapsed=0.6s
+[select f0] best=br4 nested inner ana:0.7682 br3:0.7672 br4:0.7691 elapsed=2.4s
+[check] prefix invariance ok subject=sub-009 cut=108 max|d|=0.0e+00
+[check] test-label permutation -> identical selection elapsed=4.3s
+[result] ana_bc_raw       AUC=0.7030 mac=0.6558 high=nan mid=0.7398 low=0.5550 n9=0 | vs raw dmac=+0.0000[+0.0000,+0.0000] dAUC=+0.0000[+0.0000,+0.0000]
+[result] smooth_stack     AUC=0.7912 mac=0.7186 high=nan mid=0.7948 low=0.6272 n9=0 | vs raw dmac=+0.0635[+0.0463,+0.0808] dAUC=+0.0896[+0.0693,+0.1125]
+[result] pos_only         AUC=0.9774 mac=0.9277 high=nan mid=0.9484 low=0.9029 n9=10 | vs raw dmac=+0.2715[+0.2220,+0.3108] dAUC=+0.2746[+0.2120,+0.3319]
+[result] ana              AUC=0.7905 mac=0.7179 high=nan mid=0.7948 low=0.6257 n9=0 | vs raw dmac=+0.0629[+0.0470,+0.0771] dAUC=+0.0889[+0.0687,+0.1116]
+[result] br3              AUC=0.7841 mac=0.6890 high=nan mid=0.7970 low=0.5593 n9=0 | vs raw dmac=+0.0365[-0.0045,+0.0726] dAUC=+0.0842[+0.0397,+0.1208]
+[result] br4              AUC=0.8015 mac=0.7191 high=nan mid=0.8012 low=0.6205 n9=0 | vs raw dmac=+0.0643[+0.0326,+0.0947] dAUC=+0.0999[+0.0743,+0.1262]
+[result] br4short         AUC=0.7701 mac=0.7036 high=nan mid=0.7969 low=0.5915 n9=0 | vs raw dmac=+0.0486[+0.0219,+0.0745] dAUC=+0.0683[+0.0407,+0.0935]
+[result] auto             AUC=0.8015 mac=0.7191 high=nan mid=0.8012 low=0.6205 n9=0 | vs raw dmac=+0.0643[+0.0326,+0.0947] dAUC=+0.0999[+0.0743,+0.1262]
+[result] auto             AUC=0.8015 mac=0.7191 high=nan mid=0.8012 low=0.6205 n9=0 | vs smooth_stack dmac=+0.0008[-0.0188,+0.0201] dAUC=+0.0104[-0.0042,+0.0220]
+[control] rotated random     auto       AUC=0.7200 mac=0.6433 high=nan mid=0.7195 low=0.5517 n9=0 (subjects=11)
+[control] rotated random     ana        AUC=0.7607 mac=0.6886 high=nan mid=0.7858 low=0.5719 n9=0 (subjects=11)
+[control] rotated random     br4short   AUC=0.7539 mac=0.6940 high=nan mid=0.7571 low=0.6183 n9=0 (subjects=11)
+[control] rotated random     pos_only   AUC=0.8028 mac=0.7428 high=nan mid=0.7723 low=0.7074 n9=4 (subjects=11)
+[control] rotated random     ana_bc_raw AUC=0.7030 mac=0.6558 high=nan mid=0.7398 low=0.5550 n9=0 (subjects=11)
+[control] rotated same_phase auto       AUC=0.7225 mac=0.6303 high=nan mid=0.6981 low=0.5489 n9=0 (subjects=11)
+[control] rotated same_phase ana        AUC=0.7618 mac=0.6820 high=nan mid=0.7911 low=0.5510 n9=0 (subjects=11)
+[control] rotated same_phase br4short   AUC=0.7686 mac=0.6898 high=nan mid=0.8049 low=0.5516 n9=0 (subjects=11)
+[control] rotated same_phase pos_only   AUC=0.9626 mac=0.9120 high=nan mid=0.9496 low=0.8670 n9=10 (subjects=11)
+[control] rotated same_phase ana_bc_raw AUC=0.7030 mac=0.6558 high=nan mid=0.7398 low=0.5550 n9=0 (subjects=11)
+[control] rotated flip_phase auto       AUC=0.7151 mac=0.6552 high=nan mid=0.7434 low=0.5493 n9=0 (subjects=11)
+[control] rotated flip_phase ana        AUC=0.7826 mac=0.6986 high=nan mid=0.7989 low=0.5783 n9=1 (subjects=11)
+[control] rotated flip_phase br4short   AUC=0.7583 mac=0.6973 high=nan mid=0.7711 low=0.6086 n9=1 (subjects=11)
+[control] rotated flip_phase pos_only   AUC=0.0464 mac=0.1032 high=nan mid=0.0454 low=0.1726 n9=0 (subjects=11)
+[control] rotated flip_phase ana_bc_raw AUC=0.7030 mac=0.6558 high=nan mid=0.7398 low=0.5550 n9=0 (subjects=11)
+[check] label shuffle auto: AUC=0.4985 mac=0.4935 (expect ~.5)
+[check] label shuffle br4: AUC=0.4985 mac=0.4935 (expect ~.5)
+[check] label shuffle br3: AUC=0.5018 mac=0.4985 (expect ~.5)
+[done] elapsed=5.1s -> memory_branchstack_smoke.json
