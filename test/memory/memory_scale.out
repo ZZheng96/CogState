@@ -1,0 +1,78 @@
+﻿[load] rows=16067 folds=[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4)] median step=6.00s (assumed 6.0s) elapsed=4.8s
+[start] variants=['c_win64', 'mad_win64', 'mad_win128', 'mad_all', 'std_win64'] topk=2 prior=16 floor=0.1*s0 boot=1000 h=0 only elapsed=4.9s
+[fold 0] reused bc_sel=bm_pc5 C=0.03 test subj=11 elapsed=6.1s
+[fold 0 s1 c_win64   ] inner h0=0.7368 s=48.4 elapsed=54.4s
+[check c_win64] prefix invariance centre/scale max|d|=0.0e+00 full chain max|d|=0.0e+00 (chain vs run 1.2e-14)
+[fold 0 s1 mad_win64 ] inner h0=0.7370 s=42.4 elapsed=98.0s
+[check mad_win64] prefix invariance centre/scale max|d|=0.0e+00 full chain max|d|=0.0e+00 (chain vs run 7.1e-15)
+[fold 0 s1 mad_win128] inner h0=0.7096 s=54.7 elapsed=154.2s
+[check mad_win128] prefix invariance centre/scale max|d|=0.0e+00 full chain max|d|=0.0e+00 (chain vs run 5.3e-15)
+[fold 0 s1 mad_all   ] inner h0=0.7145 s=81.9 elapsed=238.4s
+[check mad_all] prefix invariance centre/scale max|d|=0.0e+00 full chain max|d|=0.0e+00 (chain vs run 3.6e-15)
+[fold 0 s1 std_win64 ] inner h0=0.7295 s=40.9 elapsed=282.5s
+[check std_win64] prefix invariance centre/scale max|d|=0.0e+00 full chain max|d|=0.0e+00 (chain vs run 1.8e-15)
+[check f0] c_win64 vs memory_center win64 mean|d|=2.08e-16 sign agree=1.0000
+[inner mad_win64 f0] best=bm C=0.003 withinAUC=0.7405 (none C.01=0.7397) jobs=108 s=85.8 elapsed=369.4s
+[fold 0 s2 mad_win64 ] re-searched bc_sel=bm C=0.003 inner h0=0.7294 (reused 0.7370) s=109.4 elapsed=393.0s
+[inner c_win64 f0] best=bm_pc5 C=0.03 withinAUC=0.7688 (none C.01=0.7658) jobs=108 s=93.0 elapsed=486.0s
+[fold 0 s2 c_win64   ] re-searched bc_sel=bm_pc5 C=0.03 inner h0=0.7368 (reused 0.7368) s=116.9 elapsed=509.8s
+[select f0] top=['mad_win64', 'c_win64'] final=mad_win64|reuse cfg=['bm_pc5', 0.03] inner h0=0.7370 fold s=505.0 elapsed=509.8s
+[check] test-label permutation -> identical inner scores / selection
+[fold 1] reused bc_sel=pc10 C=0.03 test subj=12 elapsed=511.1s
+[fold 1 s1 c_win64   ] inner h0=0.7081 s=38.3 elapsed=549.4s
+[fold 1 s1 mad_win64 ] inner h0=0.6974 s=40.9 elapsed=590.3s
+[fold 1 s1 mad_win128] inner h0=0.6869 s=54.2 elapsed=644.6s
+[fold 1 s1 mad_all   ] inner h0=0.6917 s=79.9 elapsed=724.5s
+[fold 1 s1 std_win64 ] inner h0=0.6908 s=39.8 elapsed=764.2s
+[check f1] c_win64 vs memory_center win64 mean|d|=1.86e-16 sign agree=1.0000
+[inner c_win64 f1] best=pc10 C=0.03 withinAUC=0.7088 (none C.01=0.6937) jobs=108 s=95.2 elapsed=859.4s
+[fold 1 s2 c_win64   ] re-searched bc_sel=pc10 C=0.03 inner h0=0.7081 (reused 0.7081) s=118.6 elapsed=882.8s
+[inner mad_win64 f1] best=pc10 C=0.01 withinAUC=0.6803 (none C.01=0.6774) jobs=108 s=84.4 elapsed=967.2s
+[fold 1 s2 mad_win64 ] re-searched bc_sel=pc10 C=0.01 inner h0=0.6990 (reused 0.6974) s=107.6 elapsed=990.4s
+[select f1] top=['c_win64', 'mad_win64'] final=c_win64|reuse cfg=['pc10', 0.03] inner h0=0.7081 fold s=480.6 elapsed=990.4s
+[fold 2] reused bc_sel=none C=0.03 test subj=11 elapsed=991.6s
+[fold 2 s1 c_win64   ] inner h0=0.7094 s=43.9 elapsed=1035.5s
+[fold 2 s1 mad_win64 ] inner h0=0.7046 s=45.1 elapsed=1080.6s
+[fold 2 s1 mad_win128] inner h0=0.6890 s=57.8 elapsed=1138.4s
+[fold 2 s1 mad_all   ] inner h0=0.6855 s=84.1 elapsed=1222.5s
+[fold 2 s1 std_win64 ] inner h0=0.7081 s=45.0 elapsed=1267.5s
+[check f2] c_win64 vs memory_center win64 mean|d|=5.66e-19 sign agree=1.0000
+[inner c_win64 f2] best=pc10 C=0.03 withinAUC=0.7229 (none C.01=0.7152) jobs=108 s=97.3 elapsed=1364.8s
+[fold 2 s2 c_win64   ] re-searched bc_sel=pc10 C=0.03 inner h0=0.7116 (reused 0.7094) s=120.5 elapsed=1388.0s
+[inner std_win64 f2] best=pc5 C=0.03 withinAUC=0.7059 (none C.01=0.7022) jobs=108 s=92.4 elapsed=1480.4s
+[fold 2 s2 std_win64 ] re-searched bc_sel=pc5 C=0.03 inner h0=0.7115 (reused 0.7081) s=115.9 elapsed=1503.9s
+[select f2] top=['c_win64', 'std_win64'] final=c_win64|research cfg=['pc10', 0.03] inner h0=0.7116 fold s=513.5 elapsed=1503.9s
+[fold 3] reused bc_sel=none C=0.03 test subj=12 elapsed=1505.2s
+[fold 3 s1 c_win64   ] inner h0=0.7187 s=42.9 elapsed=1548.1s
+[fold 3 s1 mad_win64 ] inner h0=0.7204 s=45.1 elapsed=1593.2s
+[fold 3 s1 mad_win128] inner h0=0.6875 s=57.8 elapsed=1651.1s
+[fold 3 s1 mad_all   ] inner h0=0.6913 s=84.3 elapsed=1735.3s
+[fold 3 s1 std_win64 ] inner h0=0.7278 s=44.5 elapsed=1779.8s
+[check f3] c_win64 vs memory_center win64 mean|d|=4.73e-19 sign agree=1.0000
+[inner std_win64 f3] best=bm C=0.01 withinAUC=0.7425 (none C.01=0.7396) jobs=108 s=89.4 elapsed=1869.3s
+[fold 3 s2 std_win64 ] re-searched bc_sel=bm C=0.01 inner h0=0.7333 (reused 0.7278) s=113.5 elapsed=1893.4s
+[inner mad_win64 f3] best=bm C=0.01 withinAUC=0.7279 (none C.01=0.7262) jobs=108 s=86.4 elapsed=1979.8s
+[fold 3 s2 mad_win64 ] re-searched bc_sel=bm C=0.01 inner h0=0.7208 (reused 0.7204) s=110.1 elapsed=2003.5s
+[select f3] top=['std_win64', 'mad_win64'] final=std_win64|research cfg=['bm', 0.01] inner h0=0.7333 fold s=499.6 elapsed=2003.5s
+[fold 4] reused bc_sel=bm_pc5 C=0.03 test subj=11 elapsed=2004.7s
+[fold 4 s1 c_win64   ] inner h0=0.7237 s=40.0 elapsed=2044.8s
+[fold 4 s1 mad_win64 ] inner h0=0.7060 s=42.7 elapsed=2087.4s
+[fold 4 s1 mad_win128] inner h0=0.6869 s=55.0 elapsed=2142.4s
+[fold 4 s1 mad_all   ] inner h0=0.6843 s=81.5 elapsed=2223.9s
+[fold 4 s1 std_win64 ] inner h0=0.7083 s=40.5 elapsed=2264.3s
+[check f4] c_win64 vs memory_center win64 mean|d|=1.99e-16 sign agree=1.0000
+[inner c_win64 f4] best=bm_pc5 C=0.03 withinAUC=0.7437 (none C.01=0.7380) jobs=108 s=96.8 elapsed=2361.1s
+[fold 4 s2 c_win64   ] re-searched bc_sel=bm_pc5 C=0.03 inner h0=0.7237 (reused 0.7237) s=120.5 elapsed=2384.8s
+[inner std_win64 f4] best=bm C=0.003 withinAUC=0.7248 (none C.01=0.7189) jobs=108 s=90.8 elapsed=2475.6s
+[fold 4 s2 std_win64 ] re-searched bc_sel=bm C=0.003 inner h0=0.7207 (reused 0.7083) s=114.7 elapsed=2499.5s
+[select f4] top=['c_win64', 'std_win64'] final=c_win64|reuse cfg=['bm_pc5', 0.03] inner h0=0.7237 fold s=496.0 elapsed=2499.5s
+[result] c_win64      AUC=0.8036 mac=0.7333 high=0.8644 mid=0.7857 low=0.6245 n9=0 | vs ana_bc dmac=+0.0217[+0.0119,+0.0300] dAUC=+0.0362[+0.0275,+0.0443] | vs c_win64 dmac=+0.0000[+0.0000,+0.0000] dAUC=+0.0000[+0.0000,+0.0000]
+[result] mad_win64    AUC=0.7850 mac=0.7287 high=0.8734 mid=0.7760 low=0.6266 n9=0 | vs ana_bc dmac=+0.0172[+0.0050,+0.0305] dAUC=+0.0177[+0.0045,+0.0324] | vs c_win64 dmac=-0.0045[-0.0135,+0.0045] dAUC=-0.0185[-0.0293,-0.0073]
+[result] mad_win128   AUC=0.7506 mac=0.7050 high=0.8345 mid=0.7476 low=0.6131 n9=0 | vs ana_bc dmac=-0.0066[-0.0174,+0.0041] dAUC=-0.0168[-0.0285,-0.0045] | vs c_win64 dmac=-0.0284[-0.0401,-0.0163] dAUC=-0.0530[-0.0658,-0.0407]
+[result] mad_all      AUC=0.7587 mac=0.7084 high=0.8423 mid=0.7435 low=0.6284 n9=0 | vs ana_bc dmac=-0.0033[-0.0139,+0.0084] dAUC=-0.0087[-0.0230,+0.0080] | vs c_win64 dmac=-0.0250[-0.0380,-0.0114] dAUC=-0.0449[-0.0606,-0.0285]
+[result] std_win64    AUC=0.7947 mac=0.7300 high=0.8843 mid=0.7761 low=0.6285 n9=1 | vs ana_bc dmac=+0.0184[+0.0030,+0.0328] dAUC=+0.0272[+0.0108,+0.0429] | vs c_win64 dmac=-0.0033[-0.0153,+0.0085] dAUC=-0.0090[-0.0221,+0.0048]
+[result] top1_research AUC=0.7998 mac=0.7332 high=0.8770 mid=0.7770 low=0.6373 n9=1 | vs ana_bc dmac=+0.0215[+0.0073,+0.0350] dAUC=+0.0323[+0.0168,+0.0479] | vs c_win64 dmac=-0.0002[-0.0107,+0.0097] dAUC=-0.0039[-0.0149,+0.0068]
+[result] final        AUC=0.8019 mac=0.7334 high=0.8770 mid=0.7792 low=0.6342 n9=1 | vs ana_bc dmac=+0.0218[+0.0101,+0.0338] dAUC=+0.0345[+0.0215,+0.0482] | vs c_win64 dmac=+0.0000[-0.0076,+0.0075] dAUC=-0.0017[-0.0103,+0.0068]
+[check] label shuffle top1_research: AUC=0.4963 mac=0.4997 (expect ~.5)
+[check] label shuffle final: AUC=0.4951 mac=0.4979 (expect ~.5)
+[done] elapsed=2514.5s -> memory_scale.json

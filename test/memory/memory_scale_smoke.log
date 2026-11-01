@@ -1,0 +1,19 @@
+[load] rows=16067 folds=[np.int64(0)] median step=6.00s (assumed 6.0s) elapsed=0.5s
+[start] variants=['c_win64', 'mad_win64'] topk=1 prior=16 floor=0.1*s0 boot=100 h=0 only elapsed=0.6s
+[fold 0] reused bc_sel=bm_pc5 C=0.03 test subj=11 elapsed=1.8s
+[fold 0 s1 c_win64   ] inner h0=0.7368 s=48.9 elapsed=50.7s
+[check c_win64] prefix invariance centre/scale max|d|=0.0e+00 full chain max|d|=0.0e+00 (chain vs run 1.2e-14)
+[fold 0 s1 mad_win64 ] inner h0=0.7370 s=42.2 elapsed=94.0s
+[check mad_win64] prefix invariance centre/scale max|d|=0.0e+00 full chain max|d|=0.0e+00 (chain vs run 7.1e-15)
+[check f0] c_win64 vs memory_center win64 mean|d|=2.08e-16 sign agree=1.0000
+[inner mad_win64 f0] best=bm C=0.003 withinAUC=0.7405 (none C.01=0.7397) jobs=108 s=85.5 elapsed=181.0s
+[fold 0 s2 mad_win64 ] re-searched bc_sel=bm C=0.003 inner h0=0.7294 (reused 0.7370) s=109.4 elapsed=204.9s
+[select f0] top=['mad_win64'] final=mad_win64|reuse cfg=['bm_pc5', 0.03] inner h0=0.7370 fold s=204.4 elapsed=204.9s
+[check] test-label permutation -> identical inner scores / selection
+[result] c_win64      AUC=0.7250 mac=0.6712 high=nan mid=0.7715 low=0.5509 n9=0 | vs ana_bc dmac=+0.0177[-0.0091,+0.0441] dAUC=+0.0238[+0.0013,+0.0488] | vs c_win64 dmac=+0.0000[+0.0000,+0.0000] dAUC=+0.0000[+0.0000,+0.0000]
+[result] mad_win64    AUC=0.7097 mac=0.6619 high=nan mid=0.7441 low=0.5633 n9=0 | vs ana_bc dmac=+0.0092[-0.0284,+0.0417] dAUC=+0.0096[-0.0322,+0.0486] | vs c_win64 dmac=-0.0085[-0.0382,+0.0169] dAUC=-0.0142[-0.0477,+0.0214]
+[result] top1_research AUC=0.6948 mac=0.6609 high=nan mid=0.7318 low=0.5759 n9=0 | vs ana_bc dmac=+0.0085[-0.0387,+0.0565] dAUC=-0.0045[-0.0591,+0.0467] | vs c_win64 dmac=-0.0092[-0.0487,+0.0307] dAUC=-0.0283[-0.0752,+0.0177]
+[result] final        AUC=0.7097 mac=0.6619 high=nan mid=0.7441 low=0.5633 n9=0 | vs ana_bc dmac=+0.0092[-0.0284,+0.0417] dAUC=+0.0096[-0.0322,+0.0486] | vs c_win64 dmac=-0.0085[-0.0382,+0.0169] dAUC=-0.0142[-0.0477,+0.0214]
+[check] label shuffle top1_research: AUC=0.4959 mac=0.4919 (expect ~.5)
+[check] label shuffle final: AUC=0.4955 mac=0.4937 (expect ~.5)
+[done] elapsed=205.3s -> memory_scale_smoke.json
