@@ -34,7 +34,7 @@ CACHE = OUT / "broadband_shape_window6_oof.npz"
 RES = OUT / "theory_p0_p1_observation_state_results.json"
 N_SPLITS = 5
 SEED = 0
-# Minimal registered run: K=8 Student-t was the stable candidate in the prior smoke results.
+# One fixed exploratory finite-history setting; selection was not preregistered.
 KS = (8,)
 KINDS = ("student_t",)
 START = time.perf_counter()
@@ -44,6 +44,21 @@ def log(msg):
     print(f"[{time.perf_counter() - START:7.1f}s] {msg}", flush=True)
 
 
+def aligned_times(groups, y, rt):
+    rt_groups = np.array([str(s).replace("sub-", "") for s in rt["groups"]])
+    assert np.array_equal(np.sort(np.unique(groups)), np.sort(np.unique(rt_groups)))
+    out = np.full(len(y), np.nan)
+    for s in np.unique(groups):
+        for c in (0, 1):
+            hi = np.flatnonzero((groups == s) & (y == c))
+            ri = np.flatnonzero((rt_groups == s) & (rt["y"] == c))
+            assert len(hi) == len(ri)
+            perm = np.random.default_rng(0).permutation(len(ri))
+            out[hi] = rt["t_end"][ri[perm]]
+    assert np.isfinite(out).all() and len(np.unique(out)) == len(out)
+    return out
+
+
 def stationary(T):
     vals, vecs = np.linalg.eig(T.T)
     p = np.real(vecs[:, np.argmin(np.abs(vals - 1.0))])
@@ -51,12 +66,12 @@ def stationary(T):
     return p / p.sum()
 
 
-def fit_params(y, groups, tr, score):
+def fit_params(y, groups, tr, score, order):
     tr = tr & np.isfinite(score)
     train_groups = np.unique(groups[tr])
     counts = np.ones((2, 2), float)
     for s in train_groups:
-        ix = np.flatnonzero((groups == s) & tr & np.isfinite(score))
+        ix = order[(groups[order] == s) & tr[order] & np.isfinite(score[order])]
         if len(ix) > 1:
             np.add.at(counts, (y[ix[:-1]], y[ix[1:]]), 1.)
     T = counts / counts.sum(1, keepdims=True)
@@ -137,10 +152,11 @@ def metrics(y, g, p):
         q = ok & (g == s)
         if np.unique(y[q]).size == 2:
             subs.append(balanced_accuracy_score(y[q], p[q] >= .5))
+    classes = np.unique(y[ok])
     return {
-        "auc": float(roc_auc_score(y[ok], p[ok])),
-        "bacc": float(balanced_accuracy_score(y[ok], hard)),
-        "subject_macro_bacc": float(np.mean(subs)),
+        "auc": float(roc_auc_score(y[ok], p[ok])) if len(classes) == 2 else None,
+        "bacc": float(balanced_accuracy_score(y[ok], hard)) if len(classes) == 2 else None,
+        "subject_macro_bacc": float(np.mean(subs)) if subs else None,
         "n_subjects": len(subs),
         "n_eval": int(ok.sum()),
     }
@@ -149,13 +165,23 @@ def metrics(y, g, p):
 def main():
     d = np.load(CACHE, allow_pickle=False)
     y = d["y"].astype(int); groups = d["groups"]; fold_id = d["fold_id"].astype(int)
+    feat = np.load(OUT / "broadband_shape_features.npz", allow_pickle=False)
+    X = feat["X"]
     assert np.array_equal(y, d["y"]) and len(np.unique(fold_id)) == N_SPLITS
-    # Pre-registered minimal comparison: one linear and one nonlinear observation model.
+    assert np.array_equal(y, feat["y"]) and np.array_equal(groups, feat["groups"])
+    rt = np.load(OUT / "audit" / "literature_protocol" / "real_time.npz", allow_pickle=False)
+    time_end = aligned_times(groups.astype(str), y, rt)
+    chronological = np.concatenate([
+        ix[np.argsort(time_end[ix], kind="stable")]
+        for s in np.unique(groups)
+        for ix in [np.flatnonzero(groups == s)]
+    ])
+    # One fixed exploratory comparison of linear and nonlinear observation models.
     names = [k for k in ("logreg__all_new", "hgb__all_new") if k in d.files]
     feat = np.load(OUT / "broadband_shape_features.npz", allow_pickle=False)
     X = feat["X"]
     fitters = {"logreg__all_new": fit_logreg, "hgb__all_new": fit_hgb}
-    result = {"protocol": {"P0": "outer-test stored current 6-second OOF base score", "P1": "causal finite-memory two-state filter", "K": list(KS), "K_interpretation": "历史8窗/约48秒，不是strict6s", "emissions": list(KINDS), "outer": "same stored StratifiedGroupKFold(5), subject-disjoint", "inner_oof": "outer-train subjects only, StratifiedGroupKFold(4, shuffle=True, random_state=0), per base model", "test_history": False, "labels_used_for_test": False}, "variants": {}}
+    result = {"protocol": {"P0": "strict current 6-second observation", "P1": "causal finite-memory two-state filter", "K": list(KS), "K_interpretation": "current plus seven preceding chronological windows; exploratory effective history is up to about 48 seconds", "emissions": list(KINDS), "outer": "same stored StratifiedGroupKFold(5), subject-disjoint", "inner_oof": "outer-train subjects only, StratifiedGroupKFold(4, shuffle=True, random_state=0), per base model", "chronology": "real_time.npz exact float32 replay alignment, per-subject t_end order", "test_history": True, "labels_used_for_test": False}, "variants": {}}
     RES.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     for name in names:
         base = d[name].astype(float)
@@ -164,9 +190,9 @@ def main():
             fold_value = fold + 1 if np.min(fold_id) == 1 else fold
             tr = fold_id != fold_value; te = fold_id == fold_value
             inner = inner_oof_scores(X, y, groups, np.flatnonzero(tr), fitters[name], name)
-            T, pi, em = fit_params(y, groups, tr, inner)
+            T, pi, em = fit_params(y, groups, tr, inner, chronological)
             for s in np.unique(groups[te]):
-                ix = np.flatnonzero((groups == s) & te)
+                ix = chronological[(groups[chronological] == s) & te[chronological]]
                 p0[ix] = base[ix]
                 vals = np.log(np.clip(base[ix], 1e-5, 1 - 1e-5) / np.clip(1 - base[ix], 1e-5, 1 - 1e-5))
                 for kind in KINDS:

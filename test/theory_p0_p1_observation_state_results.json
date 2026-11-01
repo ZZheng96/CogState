@@ -1,17 +1,18 @@
 {
   "protocol": {
-    "P0": "outer-test stored current 6-second OOF base score",
+    "P0": "strict current 6-second observation",
     "P1": "causal finite-memory two-state filter",
     "K": [
       8
     ],
-    "K_interpretation": "历史8窗/约48秒，不是strict6s",
+    "K_interpretation": "current plus seven preceding chronological windows; exploratory effective history is up to about 48 seconds",
     "emissions": [
       "student_t"
     ],
     "outer": "same stored StratifiedGroupKFold(5), subject-disjoint",
     "inner_oof": "outer-train subjects only, StratifiedGroupKFold(4, shuffle=True, random_state=0), per base model",
-    "test_history": false,
+    "chronology": "real_time.npz exact float32 replay alignment, per-subject t_end order",
+    "test_history": true,
     "labels_used_for_test": false
   },
   "variants": {
@@ -25,9 +26,9 @@
       },
       "P1": {
         "student_t_K8": {
-          "auc": 0.6653125990715976,
-          "bacc": 0.6129577049695476,
-          "subject_macro_bacc": 0.6152696228458315,
+          "auc": 0.7203820588174225,
+          "bacc": 0.6492363565142665,
+          "subject_macro_bacc": 0.6501671638363818,
           "n_subjects": 57,
           "n_eval": 16067
         }
@@ -43,14 +44,14 @@
       },
       "P1": {
         "student_t_K8": {
-          "auc": 0.6520138321381986,
-          "bacc": 0.6089934542630498,
-          "subject_macro_bacc": 0.6099255825709655,
+          "auc": 0.7096257692914384,
+          "bacc": 0.6320516122154447,
+          "subject_macro_bacc": 0.6333375308777837,
           "n_subjects": 57,
           "n_eval": 16067
         }
       }
     }
   },
-  "elapsed_seconds": 188.36625249998178
+  "elapsed_seconds": 189.5484812000068
 }

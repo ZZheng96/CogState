@@ -40,10 +40,23 @@ def main():
     y, g = d["y"].astype(int), d["groups"]
     fold = d["fold_id"].astype(int)
     rt_path = OUT / "audit" / "literature_protocol" / "real_time.npz"
-    t_end = np.load(rt_path, allow_pickle=False)["t_end"] if rt_path.exists() else None
+    if not rt_path.exists():
+        raise FileNotFoundError(f"required chronology cache missing: {rt_path}")
+    rt = np.load(rt_path, allow_pickle=False)
+    rt_groups = np.array([str(s).replace("sub-", "") for s in rt["groups"]])
+    assert np.array_equal(np.sort(np.unique(g)), np.sort(np.unique(rt_groups)))
+    t_end = np.full(len(y), np.nan)
+    for s in np.unique(g):
+        for c in (0, 1):
+            hi = np.flatnonzero((g == s) & (y == c))
+            ri = np.flatnonzero((rt_groups == s) & (rt["y"] == c))
+            assert len(hi) == len(ri)
+            perm = np.random.default_rng(0).permutation(len(ri))
+            t_end[hi] = rt["t_end"][ri[perm]]
+    assert np.isfinite(t_end).all() and len(np.unique(t_end)) == len(t_end)
     names = [k for k in d.files if k.startswith("logreg__") or k.startswith("hgb__")]
     names = [k for k in names if k not in ("logreg__orig856", "hgb__orig856")]
-    result = {"protocol": {"calibration": "per subject, time-sorted first m class-0 and first m class-1 windows", "evaluation": "t_end strictly greater than calibration maximum; same-mask frozen baseline", "score": "frozen strict current-window OOF score", "labels_after_calibration": False, "m_values": list(MS), "real_time": bool(t_end is not None)}, "variants": {}}
+    result = {"protocol": {"calibration": "per subject, time-sorted first m class-0 and first m class-1 windows", "evaluation": "t_end strictly greater than calibration maximum; same-mask frozen baseline", "score": "frozen strict current-window OOF score", "labels_after_calibration": False, "m_values": list(MS), "real_time": True, "alignment": "real_time.npz y/groups exact equality asserted"}, "variants": {}}
     for name in names:
         base = d[name].astype(float)
         result["variants"][name] = {}
@@ -57,10 +70,8 @@ def main():
                     hit = order[y[order] == c]
                     cal.extend(hit[:m].tolist())
                 cal = np.asarray(sorted(cal), dtype=int)
-                if t_end is not None and len(cal):
-                    eval_ix = ix[t_end[ix] > np.max(t_end[cal])]
-                else:
-                    eval_ix = np.setdiff1d(ix, cal, assume_unique=False)
+                assert len(cal) > 0
+                eval_ix = ix[t_end[ix] > np.max(t_end[cal])]
                 eval_mask[eval_ix] = True
                 same_mask[eval_ix] = True
                 ncal.append(len(cal))
