@@ -1,0 +1,39 @@
+[load] rows=16067 folds=[np.int64(0)] median step=6.00s (assumed 6.0s) elapsed=6.6s
+[start] scales=[50, 100, 200, 400, 800] (50win=300s=5.0min 100win=600s=10.0min 200win=1200s=20.0min 400win=2400s=40.0min 800win=4800s=80.0min) P0=16 Q=100000 boot=100 elapsed=6.7s
+[check] history-feature prefix invariance max|d|=0.0e+00
+[fold 0 d50] fitted elapsed=16.9s
+[fold 0 d100] fitted elapsed=24.5s
+[fold 0 d200] fitted elapsed=32.1s
+[fold 0 d400] fitted elapsed=39.7s
+[fold 0 d800] fitted elapsed=47.4s
+[fold 0] done s=40.7 elapsed=47.4s
+[result all  ] d50                  AUC=0.7747 mac=0.6951 high=nan mid=0.7273 low=0.6566 n9=0 bAmed=0.6753 | vs raw dmac=+0.0407[-0.0094,+0.0855] dAUC=+0.0741[+0.0125,+0.1327]
+[result ev120] d50                  AUC=0.6591 mac=0.5873 high=nan mid=0.6450 low=0.5179 n9=0 bAmed=0.6066 | vs raw dmac=+0.0293[-0.0400,+0.0930] dAUC=+0.0656[-0.0210,+0.1581]
+[result all  ] d100                 AUC=0.8223 mac=0.7190 high=nan mid=0.7599 low=0.6700 n9=0 bAmed=0.6690 | vs raw dmac=+0.0642[+0.0180,+0.1053] dAUC=+0.1223[+0.0710,+0.1841]
+[result ev120] d100                 AUC=0.6267 mac=0.5944 high=nan mid=0.6601 low=0.5157 n9=0 bAmed=0.6307 | vs raw dmac=+0.0339[-0.0209,+0.0797] dAUC=+0.0334[-0.0413,+0.1135]
+[result all  ] d200                 AUC=0.9292 mac=0.8361 high=nan mid=0.8681 low=0.7977 n9=3 bAmed=0.7380 | vs raw dmac=+0.1815[+0.1364,+0.2177] dAUC=+0.2280[+0.1666,+0.2875]
+[result ev120] d200                 AUC=0.8279 mac=0.7276 high=nan mid=0.7968 low=0.6446 n9=1 bAmed=0.7218 | vs raw dmac=+0.1684[+0.1128,+0.2117] dAUC=+0.2321[+0.1463,+0.2991]
+[result all  ] d400                 AUC=0.9765 mac=0.9189 high=nan mid=0.9421 low=0.8910 n9=9 bAmed=0.8216 | vs raw dmac=+0.2637[+0.2080,+0.3092] dAUC=+0.2741[+0.2091,+0.3420]
+[result ev120] d400                 AUC=0.9577 mac=0.8715 high=nan mid=0.9238 low=0.8089 n9=7 bAmed=0.8070 | vs raw dmac=+0.3120[+0.2311,+0.3697] dAUC=+0.3583[+0.2553,+0.4557]
+[result all  ] d800                 AUC=0.9765 mac=0.9189 high=nan mid=0.9421 low=0.8910 n9=9 bAmed=0.8216 | vs raw dmac=+0.2637[+0.2080,+0.3092] dAUC=+0.2741[+0.2091,+0.3420]
+[result ev120] d800                 AUC=0.9577 mac=0.8715 high=nan mid=0.9238 low=0.8089 n9=7 bAmed=0.8070 | vs raw dmac=+0.3120[+0.2311,+0.3697] dAUC=+0.3583[+0.2553,+0.4557]
+[result all  ] D_hgb                AUC=0.9667 mac=0.9097 high=nan mid=0.9256 low=0.8906 n9=8 bAmed=0.7906 | vs raw dmac=+0.2551[+0.1914,+0.3059] dAUC=+0.2643[+0.2021,+0.3271]
+[result ev120] D_hgb                AUC=0.9350 mac=0.8563 high=nan mid=0.8976 low=0.8067 n9=7 bAmed=0.8291 | vs raw dmac=+0.2973[+0.1994,+0.3634] dAUC=+0.3370[+0.2448,+0.4161]
+[result all  ] pos_only             AUC=0.9724 mac=0.9400 high=nan mid=0.9587 low=0.9175 n9=10 bAmed=0.8420 | vs raw dmac=+0.2831[+0.2372,+0.3221] dAUC=+0.2693[+0.2115,+0.3203]
+[result ev120] pos_only             AUC=0.9614 mac=0.9107 high=nan mid=0.9558 low=0.8566 n9=9 bAmed=0.8014 | vs raw dmac=+0.3481[+0.2900,+0.3983] dAUC=+0.3611[+0.2735,+0.4394]
+[result all  ] ana_bc_raw           AUC=0.7030 mac=0.6558 high=nan mid=0.7398 low=0.5550 n9=0 bAmed=0.6040 | vs raw dmac=+0.0000[+0.0000,+0.0000] dAUC=+0.0000[+0.0000,+0.0000]
+[result ev120] ana_bc_raw           AUC=0.5995 mac=0.5610 high=nan mid=0.6782 low=0.4203 n9=0 bAmed=0.5585 | vs raw dmac=+0.0000[+0.0000,+0.0000] dAUC=+0.0000[+0.0000,+0.0000]
+[result all  ] smooth_auto          AUC=0.7912 mac=0.7186 high=nan mid=0.7948 low=0.6272 n9=0 bAmed=0.6576 | vs raw dmac=+0.0635[+0.0463,+0.0808] dAUC=+0.0896[+0.0693,+0.1125]
+[result ev120] smooth_auto          AUC=0.7236 mac=0.6499 high=nan mid=0.7606 low=0.5171 n9=0 bAmed=0.6830 | vs raw dmac=+0.0905[+0.0622,+0.1176] dAUC=+0.1252[+0.0886,+0.1660]
+[result all  ] center_smooth        AUC=0.7574 mac=0.6914 high=nan mid=0.8049 low=0.5551 n9=0 bAmed=0.6323 | vs raw dmac=+0.0373[+0.0060,+0.0604] dAUC=+0.0556[+0.0110,+0.0872]
+[result ev120] center_smooth        AUC=0.6450 mac=0.5954 high=nan mid=0.7602 low=0.3977 n9=0 bAmed=0.5934 | vs raw dmac=+0.0370[-0.0041,+0.0762] dAUC=+0.0480[-0.0227,+0.1030]
+[result all  ] D_hgb+smooth         AUC=0.9373 mac=0.8589 high=nan mid=0.9100 low=0.7977 n9=3 bAmed=0.7502 | vs raw dmac=+0.2038[+0.1731,+0.2345] dAUC=+0.2352[+0.1859,+0.2817]
+[result ev120] D_hgb+smooth         AUC=0.8849 mac=0.7761 high=nan mid=0.8667 low=0.6675 n9=2 bAmed=0.8089 | vs raw dmac=+0.2159[+0.1739,+0.2561] dAUC=+0.2870[+0.2288,+0.3490]
+[result all  ] D_hgb+center_smooth  AUC=0.9268 mac=0.8202 high=nan mid=0.8792 low=0.7495 n9=2 bAmed=0.7475 | vs raw dmac=+0.1646[+0.1463,+0.1890] dAUC=+0.2245[+0.1839,+0.2583]
+[result ev120] D_hgb+center_smooth  AUC=0.8593 mac=0.7241 high=nan mid=0.8310 low=0.5958 n9=1 bAmed=0.7670 | vs raw dmac=+0.1637[+0.1403,+0.2001] dAUC=+0.2622[+0.2060,+0.3225]
+[result all  ] D_hgb+ana_bc_raw     AUC=0.8895 mac=0.7843 high=nan mid=0.8391 low=0.7185 n9=0 bAmed=0.7107 | vs raw dmac=+0.1285[+0.1074,+0.1490] dAUC=+0.1868[+0.1499,+0.2196]
+[result ev120] D_hgb+ana_bc_raw     AUC=0.7988 mac=0.6764 high=nan mid=0.7751 low=0.5580 n9=0 bAmed=0.6983 | vs raw dmac=+0.1161[+0.0912,+0.1448] dAUC=+0.2016[+0.1468,+0.2525]
+[check] label shuffle D_hgb: AUC=0.4981 mac=0.5019 (expect ~.5)
+[check] label shuffle D_hgb+smooth: AUC=0.4964 mac=0.5038 (expect ~.5)
+[check] label shuffle D_hgb+center_smooth: AUC=0.4932 mac=0.4995 (expect ~.5)
+[done] elapsed=50.4s -> memory_multiscale_smoke.json

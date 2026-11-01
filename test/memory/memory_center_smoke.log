@@ -1,0 +1,17 @@
+[load] rows=16067 folds=[np.int64(0)] median step=6.00s (assumed 6.0s) elapsed=5.2s
+[start] variants=['all', 'emed64', 'win64'] HS=[0, 1, 2, 4, 8, 16, 32, 64, 128, 256] boot=100 emed64:64win=384s=6.4min win64:64win=384s=6.4min elapsed=5.2s
+[fold 0 all     ] inner h0=0.7118 best h=2 s=125.0 elapsed=131.4s
+[fold 0 emed64  ] inner h0=0.7186 best h=2 s=199.8 elapsed=331.2s
+[fold 0 win64   ] inner h0=0.7368 best h=2 s=158.9 elapsed=490.1s
+[check] all==center_median, centring prefix invariance ok (max|d|=0.0e+00)
+[check f0] variant all reproduces ana_bc raw max|d|=3.24e-05 inner max|d|=0.00e+00
+[select f0] center=win64 inner=0.7368 | joint=win64+h2 (2win=12s=0.2min) inner=0.7597 elapsed=496.2s
+[check] test-label permutation -> identical inner scores / selection
+[result] all            AUC=0.7030 mac=0.6558 high=nan mid=0.7398 low=0.5550 n9=0 | vs raw dmac=+0.0000[+0.0000,+0.0000] dAUC=+0.0000[+0.0000,+0.0000]
+[result] emed64         AUC=0.6895 mac=0.6479 high=nan mid=0.7362 low=0.5420 n9=0 | vs raw dmac=-0.0074[-0.0225,+0.0065] dAUC=-0.0123[-0.0278,+0.0043]
+[result] win64          AUC=0.7250 mac=0.6712 high=nan mid=0.7715 low=0.5509 n9=0 | vs raw dmac=+0.0177[-0.0091,+0.0441] dAUC=+0.0238[+0.0013,+0.0488]
+[result] center         AUC=0.7250 mac=0.6712 high=nan mid=0.7715 low=0.5509 n9=0 | vs raw dmac=+0.0177[-0.0091,+0.0441] dAUC=+0.0238[+0.0013,+0.0488]
+[result] center+smooth  AUC=0.7574 mac=0.6914 high=nan mid=0.8049 low=0.5551 n9=0 | vs raw dmac=+0.0373[+0.0060,+0.0604] dAUC=+0.0556[+0.0110,+0.0872]
+[check] label shuffle center: AUC=0.4904 mac=0.4906 (expect ~.5)
+[check] label shuffle center+smooth: AUC=0.4880 mac=0.4962 (expect ~.5)
+[done] elapsed=496.8s -> memory_center_smoke.json

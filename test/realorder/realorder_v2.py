@@ -148,7 +148,11 @@ def fit_T(cfg, X, y, g, blk, rows):
         return ('cols', np.argsort(-scr_scores(X, y, g, blk, rows), kind='stable')[:int(cfg[3:])]), None
     Dm, Dr = drift(X, y, g, blk, rows)
     if cfg == 'bm': return ('none',), Dr
-    K = int(cfg.split('pc')[1]); V = np.linalg.svd(Dm, full_matrices=False)[2][:K].T
+    K = int(cfg.split('pc')[1])
+    try: Vt = np.linalg.svd(Dm, full_matrices=False)[2]
+    except np.linalg.LinAlgError:
+        import scipy.linalg; Vt = scipy.linalg.svd(Dm, full_matrices=False, lapack_driver='gesvd')[2]
+    V = Vt[:K].T
     return ('proj', V), (Dr if cfg.startswith('bm') else None)
 
 
@@ -186,7 +190,34 @@ def inner_select(X, y, g, blk, rows, tag):
             if v > bv: best, bv = (cfg, C), v
     print(f'[inner {tag}] best={best[0]} C={best[1]} withinAUC={bv:.4f} (none C.01={crit["none|C0.01"]:.4f}) '
           f'jobs={len(jobs)} s={time.perf_counter() - t1:.1f} {el()}', flush=True)
+    INNER_BEST[tag] = oof[best]
     return best, crit, oof[('none', .01)]
+
+
+def _inner_hgb(Fp, y, itr, iva):
+    with threadpool_limits(limits=4): return logit(make_clf('hgb').fit(Fp[itr], y[itr]).predict_proba(Fp[iva])[:, 1])
+
+
+def _adapt1(X, L):
+    with threadpool_limits(limits=1): return adapt(X, L)
+
+
+def inner_oof(Fp, Zc, y, g, tr, order_tr, bc_oof, c_oof):
+    """--save-oof: inner SGKF(4, shuffle, rs0) OOF on TRAINING subjects only (same split as inner_select):
+    a (all_prank HGB), bc_sel (selected cfg), c, ana_bc = pseudo-adapted mean(a, bc_sel) on Zc. Used by test/memory/*
+    to select memory hyper-parameters without touching test subjects."""
+    t1 = time.perf_counter()
+    spl = [(tr[a_], tr[b_]) for a_, b_ in StratifiedGroupKFold(4, shuffle=True, random_state=0).split(tr, y[tr], g[tr])]
+    res = Parallel(n_jobs=4, backend='loky')(delayed(_inner_hgb)(Fp, y, a_, b_) for a_, b_ in spl)
+    a = np.full(len(y), np.nan)
+    for (_, b_), v in zip(spl, res): a[b_] = v
+    L = (a + bc_oof) / 2
+    zs = Parallel(n_jobs=NJ, backend='loky')(delayed(_adapt1)(Zc[loc], L[loc]) for loc in order_tr)
+    ab = np.full(len(y), np.nan)
+    for loc, z in zip(order_tr, zs): ab[loc] = np.where(np.isfinite(z), L[loc] + z, L[loc])
+    print(f'[inner-oof] a/bc_sel/c/ana_bc on {len(order_tr)} training subjects s={time.perf_counter() - t1:.1f} {el()}',
+          flush=True)
+    return {'a': a, 'bc_sel': bc_oof.copy(), 'c': c_oof.copy(), 'ana_bc': ab}
 
 
 def select_h(l, order_tr):
@@ -256,9 +287,10 @@ def fold_order(D, FC, k, oname, order, y, blk, stored):
     hsel, hsc = select_h(oof_c, order_tr)
     print(f'[emasel {oname} f{k}] h={hsel} inner macro=' + ' '.join(f'{h}:{v:.4f}' for h, v in hsc.items()), flush=True)
     ctx = dict(mu0=mu0, cmu=cmu, csd=csd, mr=FC['mr'], mc=mc, bz=FC['bz'], bc_sel=bc, hsel=hsel)
-    hgb = None
+    hgb = None; inner = None
     if stored is None:  # real order: recompute all_prank in this order
         t1 = time.perf_counter(); Fp = a_feats(Z, order)
+        if SAVE_OOF: inner = inner_oof(Fp, Zc, y, g, tr, order_tr, INNER_BEST[f'bc {oname} f{k}'], oof_c)
         with threadpool_limits(limits=8): hgb = make_clf('hgb').fit(Fp[tr], y[tr])
         a_te = np.full(len(y), np.nan); te = np.flatnonzero(D['fold'] == k)
         a_te[te] = logit(hgb.predict_proba(Fp[te])[:, 1]); del Fp
@@ -270,7 +302,7 @@ def fold_order(D, FC, k, oname, order, y, blk, stored):
     outs = Parallel(n_jobs=NJ, backend='loky')(delayed(process_subject)(ctx, Z[order[j]], ext_of(order[j]))
                                                for j in te_subs)
     print(f'[subjects {oname} f{k}] {len(te_subs)} processed s={time.perf_counter() - t1:.1f} {el()}', flush=True)
-    info = {'bc_sel': [cfg, C], 'bc_crit': crit, 'hsel': hsel, 'h_inner_macro': hsc}
+    info = {'bc_sel': [cfg, C], 'bc_crit': crit, 'hsel': hsel, 'h_inner_macro': hsc, 'inner': inner}
     return {j: o for j, o in zip(te_subs, outs)}, info, ctx, hgb
 
 
@@ -304,9 +336,13 @@ def evaluate(y, g, l, ev, grp_of):
 def main():
     global Y_GLOBAL
     warnings.filterwarnings('ignore')
+    global SAVE_OOF
     ap = argparse.ArgumentParser(); ap.add_argument('--smoke', action='store_true'); ap.add_argument('--orders', default='')
-    args = ap.parse_args()
-    stem = 'realorder_v2' + ('_smoke' if args.smoke else ''); tee = open_log(HERE, stem)
+    ap.add_argument('--save-oof', action='store_true',
+                    help='write raw-tier OOF logits (+ training-subject inner OOF) to test/memory/realorder_oof*.npz')
+    args = ap.parse_args(); SAVE_OOF = args.save_oof
+    stem = 'realorder_v2' + ('_saveoof' if SAVE_OOF else '') + ('_smoke' if args.smoke else '')
+    tee = open_log(TEST / 'memory' if SAVE_OOF else HERE, stem)
     D = load_all(); y, g, fold, subs, grp_of = D['y'], D['g'], D['fold'], D['subs'], D['grp_of']; Y_GLOBAL = y
     RT = np.load(TEST / 'audit' / 'literature_protocol' / 'real_time.npz')
     assert np.array_equal(RT['y'], y) and np.array_equal(RT['groups'], g)
@@ -371,6 +407,18 @@ def main():
                           flush=True)
         del FC
         print(f'[fold {k}] done s={time.perf_counter() - tk:.1f} {el()}', flush=True)
+    if SAVE_OOF and 'real' in onames:
+        o = 'real'; arr = {f'oof__{nm}': v for (nm, t), v in OUT[o].items() if t == 'raw'}
+        for k_, inf in INFO[o].items():
+            for nm, v in inf['inner'].items(): arr[f'inner{k_}__{nm}'] = v
+        pos = np.full(len(y), -1)
+        for loc in orders[o]: pos[loc] = np.arange(len(loc))
+        p_npz = TEST / 'memory' / ('realorder_oof' + ('_smoke' if args.smoke else '') + '.npz')
+        np.savez(p_npz, y=y, g=g, fold=fold, pos=pos, t=tt, folds=np.array(folds),
+                 hsel=np.array([INFO[o][k_]['hsel'] for k_ in folds]), **arr)
+        print(f'[save-oof] {len(arr)} arrays -> {p_npz.name} {el()}', flush=True)
+    for o in onames:
+        for inf in INFO[o].values(): inf.pop('inner', None)
     res['info'].update({o: {str(k): v for k, v in INFO[o].items()} for o in onames})
     # ---------------- metrics
     for o in onames:
@@ -438,11 +486,13 @@ def main():
             print(f'[summary] {o:13s} {mk:18s} {m["AUC"]:.4f} {m["subject_macro_bACC"]:.4f} ' +
                   ' '.join(f'{m["groups"].get(G, float("nan")):.4f}' for G in GROUPS) + f' {m["n_ge_0.9"]}', flush=True)
     res['seconds'] = time.perf_counter() - T0
-    save(HERE, stem, res)
+    save(TEST / 'memory' if SAVE_OOF else HERE, stem, res)
     print(f'[done] all checks passed {el()} -> {stem}.json', flush=True)
     sys.stdout = tee.stream; tee.f.close()
 
 
 Y_GLOBAL = None
+SAVE_OOF = False
+INNER_BEST = {}
 if __name__ == '__main__':
     main()

@@ -1,0 +1,63 @@
+[load] rows=16067 folds=[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4)] median step=6.00s (assumed 6.0s) elapsed=1.6s
+[start] scales=[50, 100, 200, 400, 800] (50win=300s=5.0min 100win=600s=10.0min 200win=1200s=20.0min 400win=2400s=40.0min 800win=4800s=80.0min) P0=16 Q=100000 boot=1000 elapsed=1.6s
+[check] history-feature prefix invariance max|d|=0.0e+00
+[fold 0 d50] fitted elapsed=12.6s
+[fold 0 d100] fitted elapsed=20.8s
+[fold 0 d200] fitted elapsed=28.9s
+[fold 0 d400] fitted elapsed=37.0s
+[fold 0 d800] fitted elapsed=45.5s
+[fold 0] done s=43.9 elapsed=45.5s
+[fold 1 d50] fitted elapsed=54.8s
+[fold 1 d100] fitted elapsed=62.9s
+[fold 1 d200] fitted elapsed=71.0s
+[fold 1 d400] fitted elapsed=79.0s
+[fold 1 d800] fitted elapsed=87.0s
+[fold 1] done s=41.5 elapsed=87.0s
+[fold 2 d50] fitted elapsed=96.4s
+[fold 2 d100] fitted elapsed=104.7s
+[fold 2 d200] fitted elapsed=112.9s
+[fold 2 d400] fitted elapsed=120.9s
+[fold 2 d800] fitted elapsed=129.1s
+[fold 2] done s=42.0 elapsed=129.1s
+[fold 3 d50] fitted elapsed=138.3s
+[fold 3 d100] fitted elapsed=146.3s
+[fold 3 d200] fitted elapsed=154.4s
+[fold 3 d400] fitted elapsed=162.4s
+[fold 3 d800] fitted elapsed=170.3s
+[fold 3] done s=41.3 elapsed=170.3s
+[fold 4 d50] fitted elapsed=179.7s
+[fold 4 d100] fitted elapsed=187.8s
+[fold 4 d200] fitted elapsed=195.8s
+[fold 4 d400] fitted elapsed=203.9s
+[fold 4 d800] fitted elapsed=212.2s
+[fold 4] done s=41.9 elapsed=212.2s
+[result all  ] d50                  AUC=0.8209 mac=0.7440 high=0.8377 mid=0.7798 low=0.6692 n9=1 bAmed=0.6867 | vs raw dmac=+0.0325[+0.0177,+0.0472] dAUC=+0.0537[+0.0330,+0.0755]
+[result ev120] d50                  AUC=0.7436 mac=0.6651 high=0.7821 mid=0.7133 low=0.5605 n9=0 bAmed=0.6618 | vs raw dmac=+0.0208[-0.0020,+0.0434] dAUC=+0.0529[+0.0225,+0.0844]
+[result all  ] d100                 AUC=0.8426 mac=0.7462 high=0.8221 mid=0.7802 low=0.6772 n9=0 bAmed=0.6884 | vs raw dmac=+0.0347[+0.0120,+0.0562] dAUC=+0.0754[+0.0511,+0.1000]
+[result ev120] d100                 AUC=0.6809 mac=0.6379 high=0.7189 mid=0.6837 low=0.5433 n9=0 bAmed=0.6669 | vs raw dmac=-0.0064[-0.0327,+0.0200] dAUC=-0.0095[-0.0428,+0.0241]
+[result all  ] d200                 AUC=0.9283 mac=0.8368 high=0.8939 mid=0.8627 low=0.7842 n9=15 bAmed=0.7479 | vs raw dmac=+0.1250[+0.0933,+0.1512] dAUC=+0.1610[+0.1273,+0.1940]
+[result ev120] d200                 AUC=0.8442 mac=0.7475 high=0.8070 mid=0.7786 low=0.6823 n9=3 bAmed=0.7654 | vs raw dmac=+0.1029[+0.0695,+0.1346] dAUC=+0.1536[+0.1107,+0.1952]
+[result all  ] d400                 AUC=0.9779 mac=0.9229 high=0.9581 mid=0.9413 low=0.8863 n9=45 bAmed=0.8354 | vs raw dmac=+0.2112[+0.1737,+0.2460] dAUC=+0.2104[+0.1760,+0.2447]
+[result ev120] d400                 AUC=0.9714 mac=0.9061 high=0.9431 mid=0.9220 low=0.8717 n9=39 bAmed=0.8658 | vs raw dmac=+0.2617[+0.2161,+0.3045] dAUC=+0.2804[+0.2345,+0.3302]
+[result all  ] d800                 AUC=0.9779 mac=0.9229 high=0.9581 mid=0.9413 low=0.8863 n9=45 bAmed=0.8354 | vs raw dmac=+0.2112[+0.1737,+0.2460] dAUC=+0.2104[+0.1760,+0.2447]
+[result ev120] d800                 AUC=0.9714 mac=0.9061 high=0.9431 mid=0.9220 low=0.8717 n9=39 bAmed=0.8658 | vs raw dmac=+0.2617[+0.2161,+0.3045] dAUC=+0.2804[+0.2345,+0.3302]
+[result all  ] D_hgb                AUC=0.9669 mac=0.9161 high=0.9592 mid=0.9355 low=0.8766 n9=43 bAmed=0.7965 | vs raw dmac=+0.2045[+0.1691,+0.2379] dAUC=+0.1995[+0.1657,+0.2321]
+[result ev120] D_hgb                AUC=0.9500 mac=0.8915 high=0.9366 mid=0.9094 low=0.8525 n9=40 bAmed=0.8708 | vs raw dmac=+0.2472[+0.2049,+0.2860] dAUC=+0.2592[+0.2121,+0.3072]
+[result all  ] pos_only             AUC=0.9787 mac=0.9353 high=0.9592 mid=0.9575 low=0.8941 n9=47 bAmed=0.8449 | vs raw dmac=+0.2235[+0.1905,+0.2575] dAUC=+0.2113[+0.1771,+0.2452]
+[result ev120] pos_only             AUC=0.9784 mac=0.9279 high=0.9456 mid=0.9476 low=0.8900 n9=42 bAmed=0.8687 | vs raw dmac=+0.2834[+0.2450,+0.3234] dAUC=+0.2876[+0.2436,+0.3355]
+[result all  ] ana_bc_raw           AUC=0.7675 mac=0.7118 high=0.8428 mid=0.7584 low=0.6129 n9=1 bAmed=0.6618 | vs raw dmac=+0.0000[+0.0000,+0.0000] dAUC=+0.0000[+0.0000,+0.0000]
+[result ev120] ana_bc_raw           AUC=0.6913 mac=0.6449 high=0.8180 mid=0.7099 low=0.5012 n9=0 bAmed=0.6418 | vs raw dmac=+0.0000[+0.0000,+0.0000] dAUC=+0.0000[+0.0000,+0.0000]
+[result all  ] smooth_auto          AUC=0.8516 mac=0.7732 high=0.8915 mid=0.8304 low=0.6583 n9=4 bAmed=0.7172 | vs raw dmac=+0.0618[+0.0498,+0.0731] dAUC=+0.0841[+0.0729,+0.0947]
+[result ev120] smooth_auto          AUC=0.8064 mac=0.7180 high=0.8706 mid=0.8003 low=0.5464 n9=3 bAmed=0.7497 | vs raw dmac=+0.0733[+0.0555,+0.0895] dAUC=+0.1149[+0.1001,+0.1298]
+[result all  ] center_smooth        AUC=0.8357 mac=0.7588 high=0.8781 mid=0.8172 low=0.6416 n9=4 bAmed=0.6963 | vs raw dmac=+0.0475[+0.0351,+0.0592] dAUC=+0.0684[+0.0582,+0.0786]
+[result ev120] center_smooth        AUC=0.7799 mac=0.6976 high=0.8672 mid=0.7821 low=0.5197 n9=2 bAmed=0.7045 | vs raw dmac=+0.0534[+0.0350,+0.0717] dAUC=+0.0886[+0.0713,+0.1052]
+[result all  ] D_hgb+smooth         AUC=0.9490 mac=0.8707 high=0.9418 mid=0.9138 low=0.7867 n9=28 bAmed=0.7755 | vs raw dmac=+0.1589[+0.1333,+0.1807] dAUC=+0.1815[+0.1573,+0.2067]
+[result ev120] D_hgb+smooth         AUC=0.9115 mac=0.8173 high=0.9161 mid=0.8750 low=0.6985 n9=17 bAmed=0.8492 | vs raw dmac=+0.1728[+0.1511,+0.1946] dAUC=+0.2204[+0.1885,+0.2518]
+[result all  ] D_hgb+center_smooth  AUC=0.9415 mac=0.8520 high=0.9406 mid=0.8894 low=0.7752 n9=23 bAmed=0.7696 | vs raw dmac=+0.1405[+0.1218,+0.1578] dAUC=+0.1741[+0.1499,+0.1978]
+[result ev120] D_hgb+center_smooth  AUC=0.9033 mac=0.7955 high=0.9170 mid=0.8497 low=0.6793 n9=14 bAmed=0.8264 | vs raw dmac=+0.1513[+0.1327,+0.1689] dAUC=+0.2123[+0.1819,+0.2412]
+[result all  ] D_hgb+ana_bc_raw     AUC=0.9135 mac=0.8238 high=0.9205 mid=0.8632 low=0.7422 n9=11 bAmed=0.7417 | vs raw dmac=+0.1122[+0.0955,+0.1286] dAUC=+0.1460[+0.1253,+0.1667]
+[result ev120] D_hgb+ana_bc_raw     AUC=0.8533 mac=0.7555 high=0.8901 mid=0.8119 low=0.6335 n9=5 bAmed=0.7764 | vs raw dmac=+0.1111[+0.0977,+0.1251] dAUC=+0.1622[+0.1378,+0.1874]
+[check] label shuffle D_hgb: AUC=0.4958 mac=0.4926 (expect ~.5)
+[check] label shuffle D_hgb+smooth: AUC=0.4964 mac=0.4956 (expect ~.5)
+[check] label shuffle D_hgb+center_smooth: AUC=0.4953 mac=0.4956 (expect ~.5)
+[done] elapsed=246.4s -> memory_multiscale.json

@@ -1,0 +1,91 @@
+[load] rows=16067 folds=[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4)] median step=6.00s (assumed 6.0s) elapsed=1.4s
+[start] variants=['all', 'emed32', 'emed64', 'emed128', 'emed256', 'emean32', 'emean64', 'emean128', 'emean256', 'win64', 'win128', 'win256'] HS=[0, 1, 2, 4, 8, 16, 32, 64, 128, 256] boot=1000 emed32:32win=192s=3.2min emed64:64win=384s=6.4min emed128:128win=768s=12.8min emed256:256win=1536s=25.6min emean32:32win=192s=3.2min emean64:64win=384s=6.4min emean128:128win=768s=12.8min emean256:256win=1536s=25.6min win64:64win=384s=6.4min win128:128win=768s=12.8min win256:256win=1536s=25.6min elapsed=1.4s
+[fold 0 all     ] inner h0=0.7118 best h=2 s=74.0 elapsed=76.3s
+[fold 0 emed32  ] inner h0=0.7153 best h=4 s=73.0 elapsed=149.3s
+[fold 0 emed64  ] inner h0=0.7186 best h=2 s=72.6 elapsed=221.8s
+[fold 0 emed128 ] inner h0=0.7167 best h=2 s=73.0 elapsed=294.9s
+[fold 0 emed256 ] inner h0=0.7129 best h=2 s=73.3 elapsed=368.2s
+[fold 0 emean32 ] inner h0=0.7026 best h=4 s=35.3 elapsed=403.5s
+[fold 0 emean64 ] inner h0=0.7011 best h=2 s=35.2 elapsed=438.7s
+[fold 0 emean128] inner h0=0.6983 best h=2 s=34.9 elapsed=473.6s
+[fold 0 emean256] inner h0=0.6961 best h=2 s=35.1 elapsed=508.7s
+[fold 0 win64   ] inner h0=0.7368 best h=2 s=43.9 elapsed=552.6s
+[fold 0 win128  ] inner h0=0.7137 best h=2 s=53.5 elapsed=606.0s
+[fold 0 win256  ] inner h0=0.7140 best h=2 s=72.3 elapsed=678.3s
+[check] all==center_median, centring prefix invariance ok (max|d|=0.0e+00)
+[check f0] variant all reproduces ana_bc raw max|d|=3.24e-05 mean|d|=1.15e-06 sign agree=1.0000 inner max|d|=0.00e+00
+[select f0] center=win64 inner=0.7368 | joint=win64+h2 (2win=12s=0.2min) inner=0.7597 elapsed=689.2s
+[check] test-label permutation -> identical inner scores / selection
+[fold 1 all     ] inner h0=0.6931 best h=2 s=71.5 elapsed=761.7s
+[fold 1 emed32  ] inner h0=0.6863 best h=2 s=71.3 elapsed=833.0s
+[fold 1 emed64  ] inner h0=0.6948 best h=2 s=71.2 elapsed=904.2s
+[fold 1 emed128 ] inner h0=0.6958 best h=2 s=71.9 elapsed=976.2s
+[fold 1 emed256 ] inner h0=0.6968 best h=2 s=71.2 elapsed=1047.4s
+[fold 1 emean32 ] inner h0=0.6770 best h=2 s=33.5 elapsed=1080.9s
+[fold 1 emean64 ] inner h0=0.6815 best h=2 s=33.4 elapsed=1114.2s
+[fold 1 emean128] inner h0=0.6814 best h=2 s=33.0 elapsed=1147.3s
+[fold 1 emean256] inner h0=0.6809 best h=2 s=33.0 elapsed=1180.3s
+[fold 1 win64   ] inner h0=0.7081 best h=2 s=42.3 elapsed=1222.6s
+[fold 1 win128  ] inner h0=0.6937 best h=2 s=52.9 elapsed=1275.5s
+[fold 1 win256  ] inner h0=0.6950 best h=2 s=70.1 elapsed=1345.6s
+[check f1] variant all reproduces ana_bc raw max|d|=9.69e-11 mean|d|=1.43e-11 sign agree=1.0000 inner max|d|=0.00e+00
+[select f1] center=win64 inner=0.7081 | joint=win64+h2 (2win=12s=0.2min) inner=0.7313 elapsed=1345.6s
+[fold 2 all     ] inner h0=0.6899 best h=2 s=79.2 elapsed=1425.6s
+[fold 2 emed32  ] inner h0=0.6840 best h=4 s=78.7 elapsed=1504.3s
+[fold 2 emed64  ] inner h0=0.6903 best h=2 s=78.3 elapsed=1582.6s
+[fold 2 emed128 ] inner h0=0.6902 best h=2 s=78.7 elapsed=1661.3s
+[fold 2 emed256 ] inner h0=0.6896 best h=2 s=78.3 elapsed=1739.6s
+[fold 2 emean32 ] inner h0=0.6725 best h=2 s=39.5 elapsed=1779.1s
+[fold 2 emean64 ] inner h0=0.6748 best h=2 s=39.9 elapsed=1818.9s
+[fold 2 emean128] inner h0=0.6759 best h=2 s=40.3 elapsed=1859.2s
+[fold 2 emean256] inner h0=0.6746 best h=2 s=40.3 elapsed=1899.5s
+[fold 2 win64   ] inner h0=0.7094 best h=2 s=49.2 elapsed=1948.7s
+[fold 2 win128  ] inner h0=0.6843 best h=2 s=59.4 elapsed=2008.0s
+[fold 2 win256  ] inner h0=0.6926 best h=2 s=77.5 elapsed=2085.5s
+[check f2] variant all reproduces ana_bc raw max|d|=1.52e-01 mean|d|=1.97e-03 sign agree=0.9997 inner max|d|=0.00e+00
+[select f2] center=win64 inner=0.7094 | joint=win64+h2 (2win=12s=0.2min) inner=0.7359 elapsed=2085.5s
+[fold 3 all     ] inner h0=0.6998 best h=2 s=78.6 elapsed=2165.0s
+[fold 3 emed32  ] inner h0=0.6932 best h=4 s=77.1 elapsed=2242.1s
+[fold 3 emed64  ] inner h0=0.6976 best h=2 s=77.5 elapsed=2319.6s
+[fold 3 emed128 ] inner h0=0.6961 best h=2 s=77.7 elapsed=2397.3s
+[fold 3 emed256 ] inner h0=0.6993 best h=2 s=77.6 elapsed=2474.9s
+[fold 3 emean32 ] inner h0=0.6773 best h=4 s=38.8 elapsed=2513.7s
+[fold 3 emean64 ] inner h0=0.6800 best h=2 s=38.5 elapsed=2552.2s
+[fold 3 emean128] inner h0=0.6803 best h=2 s=38.6 elapsed=2590.7s
+[fold 3 emean256] inner h0=0.6793 best h=2 s=38.5 elapsed=2629.3s
+[fold 3 win64   ] inner h0=0.7187 best h=2 s=47.4 elapsed=2676.7s
+[fold 3 win128  ] inner h0=0.6955 best h=4 s=58.4 elapsed=2735.0s
+[fold 3 win256  ] inner h0=0.7049 best h=2 s=75.6 elapsed=2810.7s
+[check f3] variant all reproduces ana_bc raw max|d|=2.07e-01 mean|d|=1.15e-03 sign agree=0.9994 inner max|d|=0.00e+00
+[select f3] center=win64 inner=0.7187 | joint=win64+h2 (2win=12s=0.2min) inner=0.7521 elapsed=2810.7s
+[fold 4 all     ] inner h0=0.7031 best h=2 s=73.3 elapsed=2884.9s
+[fold 4 emed32  ] inner h0=0.7062 best h=4 s=73.3 elapsed=2958.2s
+[fold 4 emed64  ] inner h0=0.7091 best h=4 s=73.4 elapsed=3031.6s
+[fold 4 emed128 ] inner h0=0.7081 best h=2 s=73.9 elapsed=3105.5s
+[fold 4 emed256 ] inner h0=0.7043 best h=2 s=74.0 elapsed=3179.5s
+[fold 4 emean32 ] inner h0=0.6837 best h=2 s=35.4 elapsed=3214.9s
+[fold 4 emean64 ] inner h0=0.6837 best h=2 s=35.5 elapsed=3250.5s
+[fold 4 emean128] inner h0=0.6824 best h=2 s=35.4 elapsed=3285.9s
+[fold 4 emean256] inner h0=0.6834 best h=2 s=35.3 elapsed=3321.2s
+[fold 4 win64   ] inner h0=0.7237 best h=2 s=43.7 elapsed=3364.9s
+[fold 4 win128  ] inner h0=0.7052 best h=2 s=54.2 elapsed=3419.1s
+[fold 4 win256  ] inner h0=0.7051 best h=2 s=72.0 elapsed=3491.1s
+[check f4] variant all reproduces ana_bc raw max|d|=3.30e-07 mean|d|=7.18e-09 sign agree=1.0000 inner max|d|=0.00e+00
+[select f4] center=win64 inner=0.7237 | joint=win64+h2 (2win=12s=0.2min) inner=0.7481 elapsed=3491.1s
+[result] all            AUC=0.7675 mac=0.7118 high=0.8428 mid=0.7585 low=0.6129 n9=1 | vs raw dmac=+0.0001[+0.0000,+0.0002] dAUC=+0.0000[-0.0000,+0.0000]
+[result] emed32         AUC=0.7686 mac=0.7112 high=0.8333 mid=0.7559 low=0.6167 n9=0 | vs raw dmac=-0.0005[-0.0089,+0.0071] dAUC=+0.0012[-0.0075,+0.0095]
+[result] emed64         AUC=0.7714 mac=0.7163 high=0.8446 mid=0.7640 low=0.6161 n9=0 | vs raw dmac=+0.0047[-0.0015,+0.0110] dAUC=+0.0040[-0.0021,+0.0093]
+[result] emed128        AUC=0.7711 mac=0.7140 high=0.8409 mid=0.7591 low=0.6182 n9=0 | vs raw dmac=+0.0023[-0.0024,+0.0071] dAUC=+0.0036[-0.0008,+0.0072]
+[result] emed256        AUC=0.7685 mac=0.7120 high=0.8372 mid=0.7588 low=0.6137 n9=0 | vs raw dmac=+0.0003[-0.0031,+0.0035] dAUC=+0.0011[-0.0014,+0.0036]
+[result] emean32        AUC=0.7545 mac=0.6957 high=0.8535 mid=0.7450 low=0.5882 n9=1 | vs raw dmac=-0.0161[-0.0261,-0.0067] dAUC=-0.0131[-0.0235,-0.0034]
+[result] emean64        AUC=0.7534 mac=0.6965 high=0.8666 mid=0.7447 low=0.5891 n9=1 | vs raw dmac=-0.0153[-0.0245,-0.0058] dAUC=-0.0142[-0.0240,-0.0056]
+[result] emean128       AUC=0.7515 mac=0.6959 high=0.8630 mid=0.7446 low=0.5880 n9=1 | vs raw dmac=-0.0159[-0.0256,-0.0058] dAUC=-0.0161[-0.0259,-0.0076]
+[result] emean256       AUC=0.7501 mac=0.6961 high=0.8619 mid=0.7456 low=0.5872 n9=1 | vs raw dmac=-0.0156[-0.0251,-0.0062] dAUC=-0.0175[-0.0278,-0.0090]
+[result] win64          AUC=0.8036 mac=0.7333 high=0.8644 mid=0.7857 low=0.6245 n9=0 | vs raw dmac=+0.0217[+0.0119,+0.0300] dAUC=+0.0362[+0.0275,+0.0443]
+[result] win128         AUC=0.7626 mac=0.7100 high=0.8316 mid=0.7557 low=0.6140 n9=0 | vs raw dmac=-0.0017[-0.0079,+0.0038] dAUC=-0.0048[-0.0100,+0.0001]
+[result] win256         AUC=0.7706 mac=0.7159 high=0.8429 mid=0.7625 low=0.6178 n9=1 | vs raw dmac=+0.0042[+0.0019,+0.0065] dAUC=+0.0032[+0.0015,+0.0048]
+[result] center         AUC=0.8036 mac=0.7333 high=0.8644 mid=0.7857 low=0.6245 n9=0 | vs raw dmac=+0.0217[+0.0119,+0.0300] dAUC=+0.0362[+0.0275,+0.0443]
+[result] center+smooth  AUC=0.8357 mac=0.7588 high=0.8781 mid=0.8172 low=0.6416 n9=4 | vs raw dmac=+0.0475[+0.0351,+0.0592] dAUC=+0.0684[+0.0582,+0.0786]
+[check] label shuffle center: AUC=0.4973 mac=0.4996 (expect ~.5)
+[check] label shuffle center+smooth: AUC=0.4957 mac=0.4960 (expect ~.5)
+[done] elapsed=3509.7s -> memory_center.json

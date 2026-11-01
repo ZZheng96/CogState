@@ -1,0 +1,22 @@
+[load] rows=16067 folds=[np.int64(0)] median step=6.00s (assumed 6.0s) elapsed=5.0s
+[start] base=ana_bc HS=[0, 1, 2, 4, 8, 16, 32, 64, 128, 256] boot=100 block=300s 1win=6s=0.1min 2win=12s=0.2min 4win=24s=0.4min 8win=48s=0.8min 16win=96s=1.6min 32win=192s=3.2min 64win=384s=6.4min 128win=768s=12.8min 256win=1536s=25.6min elapsed=5.0s
+[select f0] h=2win=12s=0.2min mode=stack stack_inner=0.7695 inner 0:0.7118 1:0.7317 2:0.7371 4:0.7282 8:0.6899 16:0.6292 32:0.5599 64:0.5506 128:0.5317 256:0.5056 elapsed=5.3s
+[check] prefix invariance ok subject=sub-009 cut=108 max|d|=0.0e+00
+[check] test-label permutation -> identical selection elapsed=5.6s
+[result] h0           AUC=0.7030 mac=0.6558 high=nan mid=0.7398 low=0.5550 n9=0 | vs raw dmac=+0.0000[+0.0000,+0.0000] dAUC=+0.0000[+0.0000,+0.0000]
+[result] h1           AUC=0.7233 mac=0.6691 high=nan mid=0.7625 low=0.5569 n9=0 | vs raw dmac=+0.0132[+0.0027,+0.0227] dAUC=+0.0202[+0.0107,+0.0314]
+[result] h2           AUC=0.7284 mac=0.6645 high=nan mid=0.7636 low=0.5456 n9=0 | vs raw dmac=+0.0091[-0.0071,+0.0246] dAUC=+0.0252[+0.0096,+0.0433]
+[result] h4           AUC=0.7196 mac=0.6553 high=nan mid=0.7495 low=0.5423 n9=0 | vs raw dmac=-0.0008[-0.0157,+0.0138] dAUC=+0.0160[-0.0055,+0.0408]
+[result] h8           AUC=0.6822 mac=0.6414 high=nan mid=0.7075 low=0.5622 n9=0 | vs raw dmac=-0.0165[-0.0405,+0.0052] dAUC=-0.0225[-0.0565,+0.0140]
+[result] h16          AUC=0.6174 mac=0.6046 high=nan mid=0.6409 low=0.5611 n9=0 | vs raw dmac=-0.0529[-0.0872,-0.0168] dAUC=-0.0884[-0.1296,-0.0382]
+[result] h32          AUC=0.5820 mac=0.5523 high=nan mid=0.5730 low=0.5276 n9=0 | vs raw dmac=-0.1032[-0.1514,-0.0418] dAUC=-0.1229[-0.1719,-0.0619]
+[result] h64          AUC=0.6057 mac=0.5474 high=nan mid=0.5889 low=0.4976 n9=0 | vs raw dmac=-0.1100[-0.1481,-0.0711] dAUC=-0.0984[-0.1532,-0.0307]
+[result] h128         AUC=0.6089 mac=0.5201 high=nan mid=0.5251 low=0.5141 n9=0 | vs raw dmac=-0.1365[-0.1847,-0.0817] dAUC=-0.0909[-0.1539,-0.0189]
+[result] h256         AUC=0.5960 mac=0.5057 high=nan mid=0.5105 low=0.5000 n9=0 | vs raw dmac=-0.1511[-0.2094,-0.0952] dAUC=-0.1007[-0.1682,-0.0239]
+[result] single       AUC=0.7284 mac=0.6645 high=nan mid=0.7636 low=0.5456 n9=0 | vs raw dmac=+0.0091[-0.0071,+0.0246] dAUC=+0.0252[+0.0096,+0.0433]
+[result] stack        AUC=0.7912 mac=0.7186 high=nan mid=0.7948 low=0.6272 n9=0 | vs raw dmac=+0.0635[+0.0463,+0.0808] dAUC=+0.0896[+0.0693,+0.1125]
+[result] auto         AUC=0.7912 mac=0.7186 high=nan mid=0.7948 low=0.6272 n9=0 | vs raw dmac=+0.0635[+0.0463,+0.0808] dAUC=+0.0896[+0.0693,+0.1125]
+[check] label shuffle auto: AUC=0.4983 mac=0.4969 (expect ~.5)
+[check] label shuffle single: AUC=0.4890 mac=0.4929 (expect ~.5)
+[check] label shuffle stack: AUC=0.4983 mac=0.4969 (expect ~.5)
+[done] elapsed=7.2s -> memory_smooth_smoke.json
