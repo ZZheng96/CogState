@@ -1,0 +1,69 @@
+[start] rows=16067 subjects=57 dims=858+31 smoke=True sseeds=(0,) groups={'high': 3, 'mid': 34, 'low': 20} (ORACLE, leaky)
+[check] fold == depositioned_aperiodic_emg_oof.npz fold
+[s0 fold 1/5] hp built dim=2667 s=14.4 isolation ok elapsed=15.5s
+[s0 fold 1/5] all_prank reproduced (maxabs 0.0e+00) fit_s=12.4 elapsed=28.0s
+[s0 fold 1/5] train subjects per group {'high': 3, 'mid': 28, 'low': 15, 'rand': 15, 'rand_of_which_low': 5, 'test': {'high': 0, 'mid': 6, 'low': 5}}
+[s0 fold 1/5] expert_high n_subj=3 rows=855 fit_s=14.3 shuffle ok elapsed=42.2s
+[s0 fold 1/5] expert_mid  n_subj=28 rows=8019 fit_s=19.1 shuffle ok elapsed=61.3s
+[s0 fold 1/5] expert_low  n_subj=15 rows=4075 fit_s=16.2 shuffle ok elapsed=77.5s
+[s0 fold 1/5] expert_rand n_subj=15 rows=4285 fit_s=16.7 shuffle ok elapsed=94.2s
+[s0 fold 1/5] done fold_s=93.7 elapsed=94.3s
+[result stream 0] all_prank        all: AUC=0.6196 mac=0.5745 mic=0.5748 | mature: AUC=0.6346 mac=0.5844 mic=0.5835 | subj>=.9=0 max=0.761
+[result stream 0] expert_high      all: AUC=0.5575 mac=0.5417 mic=0.5412 | mature: AUC=0.5744 mac=0.5567 mic=0.5530 | subj>=.9=0 max=0.677
+[result stream 0] expert_mid       all: AUC=0.6235 mac=0.5780 mic=0.5774 | mature: AUC=0.6275 mac=0.5845 mic=0.5770 | subj>=.9=0 max=0.768
+[result stream 0] expert_low       all: AUC=0.5729 mac=0.5622 mic=0.5598 | mature: AUC=0.5789 mac=0.5676 mic=0.5627 | subj>=.9=0 max=0.625
+[result stream 0] expert_rand      all: AUC=0.5589 mac=0.5509 mic=0.5520 | mature: AUC=0.5544 mac=0.5484 mic=0.5474 | subj>=.9=0 max=0.795
+[result stream 0] exp_oracle       all: AUC=0.6528 mac=0.6103 mic=0.6098 | mature: AUC=0.6521 mac=0.6086 mic=0.6064 | subj>=.9=0 max=0.768
+[result stream 0] mix_oracle       all: AUC=0.6502 mac=0.6027 mic=0.6031 | mature: AUC=0.6561 mac=0.6024 mic=0.6014 | subj>=.9=0 max=0.765
+[result stream 0] low_only         all: AUC=0.6510 mac=0.6147 mic=0.6139 | mature: AUC=0.6567 mac=0.6177 mic=0.6163 | subj>=.9=0 max=0.761
+[result stream 0] rand_low_only    all: AUC=0.5989 mac=0.5751 mic=0.5769 | mature: AUC=0.6019 mac=0.5739 mic=0.5750 | subj>=.9=0 max=0.761
+[result stream 0] fuseH_wf         all: AUC=0.6706 mac=0.6143 mic=0.6149 | mature: AUC=0.6810 mac=0.6241 mic=0.6236 | subj>=.9=0 max=0.779
+[result stream 0] fuseX_wf         all: AUC=0.6918 mac=0.6271 mic=0.6275 | mature: AUC=0.6936 mac=0.6282 mic=0.6289 | subj>=.9=0 max=0.782
+[result stream 0] fuseM_wf         all: AUC=0.6857 mac=0.6182 mic=0.6185 | mature: AUC=0.6919 mac=0.6247 mic=0.6243 | subj>=.9=0 max=0.771
+[result stream 0] fuseL_wf         all: AUC=0.6913 mac=0.6310 mic=0.6313 | mature: AUC=0.6964 mac=0.6327 mic=0.6337 | subj>=.9=0 max=0.779
+[result stream 0] fuseR_wf         all: AUC=0.6650 mac=0.6110 mic=0.6122 | mature: AUC=0.6684 mac=0.6123 mic=0.6123 | subj>=.9=0 max=0.779
+[result stream 0] fuseX_wf_thr     all: AUC=0.6996 mac=0.6445 mic=0.6456 | mature: AUC=0.7062 mac=0.6460 mic=0.6479 | subj>=.9=0 max=0.853
+[group stream 0] all_prank        mid(n=6): mean=0.6707 dmean=-0.0301 dmed=-0.0542 | low(n=5): mean=0.4589 dmean=-0.0516 dmed=-0.0220
+[group stream 0] expert_high      mid(n=6): mean=0.5738 dmean=-0.1270 dmed=-0.1537 | low(n=5): mean=0.5031 dmean=-0.0074 dmed=+0.0296
+[group stream 0] expert_mid       mid(n=6): mean=0.6627 dmean=-0.0381 dmed=-0.0562 | low(n=5): mean=0.4763 dmean=-0.0343 dmed=-0.0374
+[group stream 0] expert_low       mid(n=6): mean=0.5745 dmean=-0.1263 dmed=-0.1151 | low(n=5): mean=0.5474 dmean=+0.0368 dmed=+0.0629
+[group stream 0] expert_rand      mid(n=6): mean=0.6263 dmean=-0.0745 dmed=-0.1208 | low(n=5): mean=0.4603 dmean=-0.0503 dmed=-0.0457
+[group stream 0] exp_oracle       mid(n=6): mean=0.6627 dmean=-0.0381 dmed=-0.0562 | low(n=5): mean=0.5474 dmean=+0.0368 dmed=+0.0629
+[group stream 0] mix_oracle       mid(n=6): mean=0.6744 dmean=-0.0264 dmed=-0.0457 | low(n=5): mean=0.5166 dmean=+0.0061 dmed=+0.0183
+[group stream 0] low_only         mid(n=6): mean=0.6707 dmean=-0.0301 dmed=-0.0542 | low(n=5): mean=0.5474 dmean=+0.0368 dmed=+0.0629
+[group stream 0] rand_low_only    mid(n=6): mean=0.6707 dmean=-0.0301 dmed=-0.0542 | low(n=5): mean=0.4603 dmean=-0.0503 dmed=-0.0457
+[group stream 0] fuseH_wf         mid(n=6): mean=0.7008 dmean=+0.0000 dmed=+0.0000 | low(n=5): mean=0.5106 dmean=+0.0000 dmed=+0.0000
+[group stream 0] fuseX_wf         mid(n=6): mean=0.6936 dmean=-0.0072 dmed=-0.0003 | low(n=5): mean=0.5473 dmean=+0.0368 dmed=+0.0392
+[group stream 0] fuseM_wf         mid(n=6): mean=0.6937 dmean=-0.0071 dmed=+0.0016 | low(n=5): mean=0.5276 dmean=+0.0170 dmed=+0.0331
+[group stream 0] fuseL_wf         mid(n=6): mean=0.7008 dmean=+0.0000 dmed=+0.0000 | low(n=5): mean=0.5473 dmean=+0.0368 dmed=+0.0392
+[group stream 0] fuseR_wf         mid(n=6): mean=0.7008 dmean=+0.0000 dmed=+0.0000 | low(n=5): mean=0.5031 dmean=-0.0074 dmed=+0.0266
+[group stream 0] fuseX_wf_thr     mid(n=6): mean=0.7092 dmean=+0.0084 dmed=-0.0019 | low(n=5): mean=0.5670 dmean=+0.0564 dmed=+0.0540
+[boot stream 0] all_prank      vs fuseH_wf all    dAUC=-0.0507[-0.0661,-0.0339] dmac=-0.0392[-0.0566,-0.0239] dmic=-0.0394[-0.0571,-0.0236]
+[boot stream 0] all_prank      vs fuseH_wf mature dAUC=-0.0459[-0.0622,-0.0282] dmac=-0.0393[-0.0662,-0.0193] dmic=-0.0398[-0.0684,-0.0195]
+[boot stream 0] expert_high    vs fuseH_wf all    dAUC=-0.1166[-0.1817,-0.0438] dmac=-0.0764[-0.1202,-0.0268] dmic=-0.0774[-0.1202,-0.0276]
+[boot stream 0] expert_high    vs fuseH_wf mature dAUC=-0.1084[-0.1675,-0.0413] dmac=-0.0701[-0.1033,-0.0346] dmic=-0.0730[-0.1079,-0.0366]
+[boot stream 0] expert_mid     vs fuseH_wf all    dAUC=-0.0470[-0.0778,-0.0066] dmac=-0.0365[-0.0644,-0.0068] dmic=-0.0376[-0.0631,-0.0097]
+[boot stream 0] expert_mid     vs fuseH_wf mature dAUC=-0.0529[-0.0886,-0.0133] dmac=-0.0394[-0.0724,-0.0024] dmic=-0.0461[-0.0730,-0.0170]
+[boot stream 0] expert_low     vs fuseH_wf all    dAUC=-0.0992[-0.1662,-0.0247] dmac=-0.0539[-0.1043,-0.0039] dmic=-0.0566[-0.1080,-0.0089]
+[boot stream 0] expert_low     vs fuseH_wf mature dAUC=-0.1034[-0.1711,-0.0366] dmac=-0.0582[-0.1083,-0.0126] dmic=-0.0621[-0.1139,-0.0156]
+[boot stream 0] expert_rand    vs fuseH_wf all    dAUC=-0.1101[-0.1574,-0.0658] dmac=-0.0625[-0.0947,-0.0294] dmic=-0.0620[-0.0936,-0.0294]
+[boot stream 0] expert_rand    vs fuseH_wf mature dAUC=-0.1245[-0.1721,-0.0834] dmac=-0.0745[-0.1090,-0.0429] dmic=-0.0750[-0.1126,-0.0398]
+[boot stream 0] exp_oracle     vs fuseH_wf all    dAUC=-0.0178[-0.0621,+0.0311] dmac=-0.0056[-0.0412,+0.0217] dmic=-0.0066[-0.0416,+0.0194]
+[boot stream 0] exp_oracle     vs fuseH_wf mature dAUC=-0.0282[-0.0727,+0.0241] dmac=-0.0168[-0.0515,+0.0166] dmic=-0.0180[-0.0533,+0.0158]
+[boot stream 0] mix_oracle     vs fuseH_wf all    dAUC=-0.0208[-0.0522,+0.0107] dmac=-0.0124[-0.0375,+0.0090] dmic=-0.0125[-0.0377,+0.0085]
+[boot stream 0] mix_oracle     vs fuseH_wf mature dAUC=-0.0247[-0.0571,+0.0124] dmac=-0.0221[-0.0461,+0.0035] dmic=-0.0223[-0.0468,+0.0026]
+[boot stream 0] low_only       vs fuseH_wf all    dAUC=-0.0188[-0.0565,+0.0187] dmac=-0.0003[-0.0223,+0.0256] dmic=-0.0015[-0.0225,+0.0232]
+[boot stream 0] low_only       vs fuseH_wf mature dAUC=-0.0230[-0.0624,+0.0189] dmac=-0.0073[-0.0291,+0.0215] dmic=-0.0078[-0.0288,+0.0207]
+[boot stream 0] rand_low_only  vs fuseH_wf all    dAUC=-0.0695[-0.1162,-0.0358] dmac=-0.0386[-0.0680,-0.0090] dmic=-0.0375[-0.0670,-0.0070]
+[boot stream 0] rand_low_only  vs fuseH_wf mature dAUC=-0.0762[-0.1246,-0.0383] dmac=-0.0496[-0.0907,-0.0145] dmic=-0.0481[-0.0911,-0.0126]
+[boot stream 0] fuseX_wf       vs fuseH_wf all    dAUC=+0.0210[-0.0039,+0.0441] dmac=+0.0121[-0.0123,+0.0326] dmic=+0.0119[-0.0130,+0.0322]
+[boot stream 0] fuseX_wf       vs fuseH_wf mature dAUC=+0.0124[-0.0111,+0.0380] dmac=+0.0031[-0.0233,+0.0295] dmic=+0.0044[-0.0218,+0.0288]
+[boot stream 0] fuseM_wf       vs fuseH_wf all    dAUC=+0.0148[+0.0026,+0.0269] dmac=+0.0034[-0.0089,+0.0156] dmic=+0.0031[-0.0097,+0.0153]
+[boot stream 0] fuseM_wf       vs fuseH_wf mature dAUC=+0.0105[-0.0024,+0.0241] dmac=-0.0002[-0.0143,+0.0132] dmic=-0.0000[-0.0126,+0.0115]
+[boot stream 0] fuseL_wf       vs fuseH_wf all    dAUC=+0.0209[+0.0029,+0.0422] dmac=+0.0162[+0.0045,+0.0310] dmic=+0.0158[+0.0041,+0.0312]
+[boot stream 0] fuseL_wf       vs fuseH_wf mature dAUC=+0.0157[-0.0046,+0.0377] dmac=+0.0081[-0.0144,+0.0329] dmic=+0.0097[-0.0074,+0.0295]
+[boot stream 0] fuseR_wf       vs fuseH_wf all    dAUC=-0.0048[-0.0284,+0.0192] dmac=-0.0033[-0.0217,+0.0169] dmic=-0.0028[-0.0208,+0.0185]
+[boot stream 0] fuseR_wf       vs fuseH_wf mature dAUC=-0.0116[-0.0387,+0.0140] dmac=-0.0115[-0.0406,+0.0123] dmic=-0.0111[-0.0427,+0.0144]
+[boot stream 0] fuseX_wf_thr   vs fuseH_wf all    dAUC=+0.0287[+0.0025,+0.0547] dmac=+0.0308[+0.0015,+0.0657] dmic=+0.0311[+0.0014,+0.0670]
+[boot stream 0] fuseX_wf_thr   vs fuseH_wf mature dAUC=+0.0248[-0.0017,+0.0526] dmac=+0.0228[-0.0085,+0.0623] dmic=+0.0251[-0.0072,+0.0670]
+[done] all checks passed elapsed=96.0s -> depositioned_group_expert_oracle_smoke.json

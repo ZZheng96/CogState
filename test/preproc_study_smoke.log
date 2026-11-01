@@ -1,0 +1,63 @@
+[start] smoke=True rows=1661 subjects=6 seeds=(0,) folds=[1] elapsed=1.2s
+[eval P0-full s0 fold 1/5] dim=2667 fit_s=27.1 elapsed=28.3s
+[check] full-data P0 all_prank s0 fold1 reproduced max|d|=0.0e+00 elapsed=28.3s
+[feat P0r 1/13] var_s=11.9 elapsed=40.2s
+[feat P0r 11/13] var_s=17.3 elapsed=45.7s
+[feat P0r 13/13] var_s=17.3 elapsed=45.7s
+[feat P1 1/13] var_s=5.7 elapsed=51.6s
+[feat P1 11/13] var_s=10.7 elapsed=56.5s
+[feat P1 13/13] var_s=10.7 elapsed=56.5s
+[feat P2 1/13] var_s=6.6 elapsed=63.3s
+[feat P2 11/13] var_s=12.2 elapsed=68.9s
+[feat P2 13/13] var_s=12.2 elapsed=68.9s
+[feat P3 1/13] var_s=6.6 elapsed=75.7s
+[feat P3 11/13] var_s=12.1 elapsed=81.2s
+[feat P3 13/13] var_s=12.1 elapsed=81.2s
+[diag] dc_over_std      per-subject median: median=177 min=119 max=399
+[diag] transient_P0     per-subject median: median=218 min=218 max=219
+[diag] transient_P1     per-subject median: median=5.64 min=3.11 max=18.1
+[diag] transient_P2     per-subject median: median=0.751 min=0.432 max=1.23
+[diag] transient_P3     per-subject median: median=0.764 min=0.485 max=1.25
+[diag] line50_dB_raw    per-subject median: median=7.08 min=1.49 max=30.1
+[diag] line50_dB_P2     per-subject median: median=-8.66 min=-9.2 max=-4.86
+[diag sub-001] |DC|/std=126.5 transient P0=218 P1=3.8 P2=0.67 P3=0.68 line50 raw=+1.5dB P2=-9.2dB
+[diag sub-002] |DC|/std=155.2 transient P0=218 P1=3.1 P2=0.83 P3=0.84 line50 raw=+3.9dB P2=-8.8dB
+[diag sub-003] |DC|/std=118.9 transient P0=218 P1=5.8 P2=0.43 P3=0.49 line50 raw=+5.5dB P2=-8.8dB
+[diag sub-004] |DC|/std=398.7 transient P0=219 P1=18.1 P2=1.23 P3=1.25 line50 raw=+30.1dB P2=-4.9dB
+[diag sub-005] |DC|/std=226.7 transient P0=219 P1=6.8 P2=0.78 P3=0.78 line50 raw=+8.7dB P2=-8.5dB
+[diag sub-006] |DC|/std=197.9 transient P0=219 P1=5.5 P2=0.73 P3=0.74 line50 raw=+19.5dB P2=-7.9dB
+[diag label] window_mean            within_mean_AUC=0.5792 within_mean_absdev=0.1246 within_median_absdev=0.0996 cross_subject_AUC=0.5200
+[diag label] first1s_logenergy_P0   within_mean_AUC=0.4931 within_mean_absdev=0.1203 within_median_absdev=0.0905 cross_subject_AUC=0.4975
+[verify] P0r vs stored f on 1661 windows (6 subjects): allclose=False frac_close=0.999256 mismatch_cols=[79, 80] max_rel={79: 0.03329133299520803, 80: 0.11682425921960995} win_frac={79: 0.3034316676700783, 80: 0.3347381095725467} allclose_excl=True | float32 +-0.5ulp sensitivity max_rel={'low_freq_drift': 7.975007260134858e-06, 'high_freq_ratio': 0.000161058054354786} median={'low_freq_drift': 3.4425706434412813e-07, 'high_freq_ratio': 8.282339329169895e-06}
+[eval P0 s0 fold 2/5] dim=2667 fit_s=9.1 elapsed=91.4s
+[eval P0r s0 fold 2/5] dim=2667 fit_s=9.1 elapsed=100.6s
+[eval P1 s0 fold 2/5] dim=2667 fit_s=8.7 elapsed=109.3s
+[eval P2 s0 fold 2/5] dim=2667 fit_s=8.9 elapsed=118.2s
+[eval P3 s0 fold 2/5] dim=2667 fit_s=8.7 elapsed=126.9s
+[eval P2+P0 s0 fold 2/5] dim=5241 fit_s=18.1 elapsed=145.0s
+[result s0] all_prank|P0       AUC=0.6158 mac=0.5894 mic=0.5894 n>=.9=0 max=0.589 groups=mid:0.5894
+[result s0] fuseH_wf|P0        AUC=0.7019 mac=0.6502 mic=0.6502 n>=.9=0 max=0.650 groups=mid:0.6502
+[result s0] all_prank|P0r      AUC=0.6054 mac=0.5889 mic=0.5889 n>=.9=0 max=0.589 groups=mid:0.5889 | vs P0 dAUC=-0.0104[-0.0104,-0.0104] dmac=-0.0005[-0.0005,-0.0005] dmic=-0.0005[-0.0005,-0.0005]
+[result s0] fuseH_wf|P0r       AUC=0.6950 mac=0.6496 mic=0.6496 n>=.9=0 max=0.650 groups=mid:0.6496 | vs P0 dAUC=-0.0069[-0.0069,-0.0069] dmac=-0.0007[-0.0007,-0.0007] dmic=-0.0007[-0.0007,-0.0007]
+[result s0] all_prank|P1       AUC=0.5153 mac=0.5534 mic=0.5534 n>=.9=0 max=0.553 groups=mid:0.5534 | vs P0 dAUC=-0.1005[-0.1005,-0.1005] dmac=-0.0360[-0.0360,-0.0360] dmic=-0.0360[-0.0360,-0.0360]
+[result s0] fuseH_wf|P1        AUC=0.6394 mac=0.5820 mic=0.5820 n>=.9=0 max=0.582 groups=mid:0.5820 | vs P0 dAUC=-0.0625[-0.0625,-0.0625] dmac=-0.0682[-0.0682,-0.0682] dmic=-0.0682[-0.0682,-0.0682]
+[result s0] all_prank|P2       AUC=0.5805 mac=0.5275 mic=0.5275 n>=.9=0 max=0.527 groups=mid:0.5275 | vs P0 dAUC=-0.0353[-0.0353,-0.0353] dmac=-0.0619[-0.0619,-0.0619] dmic=-0.0619[-0.0619,-0.0619]
+[result s0] fuseH_wf|P2        AUC=0.6777 mac=0.6222 mic=0.6222 n>=.9=0 max=0.622 groups=mid:0.6222 | vs P0 dAUC=-0.0242[-0.0242,-0.0242] dmac=-0.0281[-0.0281,-0.0281] dmic=-0.0281[-0.0281,-0.0281]
+[result s0] all_prank|P3       AUC=0.5607 mac=0.5358 mic=0.5358 n>=.9=0 max=0.536 groups=mid:0.5358 | vs P0 dAUC=-0.0551[-0.0551,-0.0551] dmac=-0.0536[-0.0536,-0.0536] dmic=-0.0536[-0.0536,-0.0536]
+[result s0] fuseH_wf|P3        AUC=0.6697 mac=0.6149 mic=0.6149 n>=.9=0 max=0.615 groups=mid:0.6149 | vs P0 dAUC=-0.0322[-0.0322,-0.0322] dmac=-0.0354[-0.0354,-0.0354] dmic=-0.0354[-0.0354,-0.0354]
+[result s0] all_prank|P2+P0    AUC=0.5970 mac=0.5623 mic=0.5623 n>=.9=0 max=0.562 groups=mid:0.5623 | vs P0 dAUC=-0.0188[-0.0188,-0.0188] dmac=-0.0271[-0.0271,-0.0271] dmic=-0.0271[-0.0271,-0.0271]
+[result s0] fuseH_wf|P2+P0     AUC=0.6865 mac=0.6297 mic=0.6297 n>=.9=0 max=0.630 groups=mid:0.6297 | vs P0 dAUC=-0.0154[-0.0154,-0.0154] dmac=-0.0206[-0.0206,-0.0206] dmic=-0.0206[-0.0206,-0.0206]
+[summary] mean over seeds
+[summary] all_prank|P0       AUC=0.6158 mac=0.5894 mic=0.5894 n>=.9=0.00 max=0.589 mid:0.5894
+[summary] fuseH_wf|P0        AUC=0.7019 mac=0.6502 mic=0.6502 n>=.9=0.00 max=0.650 mid:0.6502
+[summary] all_prank|P0r      AUC=0.6054 mac=0.5889 mic=0.5889 n>=.9=0.00 max=0.589 mid:0.5889 | dAUC=-0.0104[-0.0104,-0.0104] dmac=-0.0005[-0.0005,-0.0005] dmic=-0.0005[-0.0005,-0.0005]
+[summary] fuseH_wf|P0r       AUC=0.6950 mac=0.6496 mic=0.6496 n>=.9=0.00 max=0.650 mid:0.6496 | dAUC=-0.0069[-0.0069,-0.0069] dmac=-0.0007[-0.0007,-0.0007] dmic=-0.0007[-0.0007,-0.0007]
+[summary] all_prank|P1       AUC=0.5153 mac=0.5534 mic=0.5534 n>=.9=0.00 max=0.553 mid:0.5534 | dAUC=-0.1005[-0.1005,-0.1005] dmac=-0.0360[-0.0360,-0.0360] dmic=-0.0360[-0.0360,-0.0360]
+[summary] fuseH_wf|P1        AUC=0.6394 mac=0.5820 mic=0.5820 n>=.9=0.00 max=0.582 mid:0.5820 | dAUC=-0.0625[-0.0625,-0.0625] dmac=-0.0682[-0.0682,-0.0682] dmic=-0.0682[-0.0682,-0.0682]
+[summary] all_prank|P2       AUC=0.5805 mac=0.5275 mic=0.5275 n>=.9=0.00 max=0.527 mid:0.5275 | dAUC=-0.0353[-0.0353,-0.0353] dmac=-0.0619[-0.0619,-0.0619] dmic=-0.0619[-0.0619,-0.0619]
+[summary] fuseH_wf|P2        AUC=0.6777 mac=0.6222 mic=0.6222 n>=.9=0.00 max=0.622 mid:0.6222 | dAUC=-0.0242[-0.0242,-0.0242] dmac=-0.0281[-0.0281,-0.0281] dmic=-0.0281[-0.0281,-0.0281]
+[summary] all_prank|P3       AUC=0.5607 mac=0.5358 mic=0.5358 n>=.9=0.00 max=0.536 mid:0.5358 | dAUC=-0.0551[-0.0551,-0.0551] dmac=-0.0536[-0.0536,-0.0536] dmic=-0.0536[-0.0536,-0.0536]
+[summary] fuseH_wf|P3        AUC=0.6697 mac=0.6149 mic=0.6149 n>=.9=0.00 max=0.615 mid:0.6149 | dAUC=-0.0322[-0.0322,-0.0322] dmac=-0.0354[-0.0354,-0.0354] dmic=-0.0354[-0.0354,-0.0354]
+[summary] all_prank|P2+P0    AUC=0.5970 mac=0.5623 mic=0.5623 n>=.9=0.00 max=0.562 mid:0.5623 | dAUC=-0.0188[-0.0188,-0.0188] dmac=-0.0271[-0.0271,-0.0271] dmic=-0.0271[-0.0271,-0.0271]
+[summary] fuseH_wf|P2+P0     AUC=0.6865 mac=0.6297 mic=0.6297 n>=.9=0.00 max=0.630 mid:0.6297 | dAUC=-0.0154[-0.0154,-0.0154] dmac=-0.0206[-0.0206,-0.0206] dmic=-0.0206[-0.0206,-0.0206]
+[done] elapsed=145.1s -> preproc_study_smoke_results.json

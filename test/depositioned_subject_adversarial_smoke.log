@@ -1,0 +1,146 @@
+[start] rows=16067 subjects=57 device=cuda smoke=True variants=('plain', 'mixup', 'adv', 'adv_mixup') net_seeds=(0,) stream_seeds=(0,) adv_lambda=1.0 ramp=10 mix_alpha=0.4
+[check] fold == depositioned_aperiodic_emg_oof.npz fold; folds=[0]
+[data] normalised raw (16067, 1500) flat_windows=82
+    [plain rs0 fold1/5] ep01/2 loss=0.7030 valAUC=0.5042 best=0.5042@1 t=4s elapsed=5.9s
+    [plain rs0 fold1/5] ep02/2 loss=0.6866 valAUC=0.5640 best=0.5640@2 t=6s elapsed=8.2s
+[check] plain fold0: embedding isolation=0.0e+00 prefix=0.0e+00 future_changed=1.99e+00
+[probe] plain: subject-id accuracy=0.2333 (chance=0.0217, 46 classes)
+[progress] fold 1/5 plain done (1 seeds) elapsed=38.1s
+    [mixup rs0 fold1/5] ep01/2 loss=0.6982 valAUC=0.5208 best=0.5208@1 t=3s elapsed=40.6s
+    [mixup rs0 fold1/5] ep02/2 loss=0.6842 valAUC=0.5913 best=0.5913@2 t=5s elapsed=43.0s
+[check] mixup fold0: embedding isolation=0.0e+00 prefix=0.0e+00 future_changed=3.73e+00
+[probe] mixup: subject-id accuracy=0.2162 (chance=0.0217, 46 classes)
+[progress] fold 1/5 mixup done (1 seeds) elapsed=74.1s
+    [adv rs0 fold1/5] ep01/2 loss=4.3316 subjCE=3.6263 lam=0.10 valAUC=0.5111 best=0.5111@1 t=3s elapsed=76.8s
+    [adv rs0 fold1/5] ep02/2 loss=4.4546 subjCE=3.7594 lam=0.20 valAUC=0.5300 best=0.5300@2 t=5s elapsed=79.1s
+[check] adv fold0: embedding isolation=0.0e+00 prefix=0.0e+00 future_changed=1.97e+00
+[probe] adv: subject-id accuracy=0.2379 (chance=0.0217, 46 classes)
+[progress] fold 1/5 adv done (1 seeds) elapsed=113.8s
+    [adv_mixup rs0 fold1/5] ep01/2 loss=4.2591 subjCE=3.5605 lam=0.10 valAUC=0.5332 best=0.5332@1 t=3s elapsed=116.6s
+    [adv_mixup rs0 fold1/5] ep02/2 loss=4.2994 subjCE=3.6112 lam=0.20 valAUC=0.5727 best=0.5727@2 t=5s elapsed=119.0s
+[check] adv_mixup fold0: embedding isolation=0.0e+00 prefix=0.0e+00 future_changed=4.93e+00
+[probe] adv_mixup: subject-id accuracy=0.2274 (chance=0.0217, 46 classes)
+[progress] fold 1/5 adv_mixup done (1 seeds) elapsed=152.7s
+[stream 0] assembling scores elapsed=152.7s
+[check s0] fuseH_wf + fuse_pseudo_lr_full(_thr) reproduce the parents elapsed=155.0s
+[scores s0] plain branch/fusions/adapted assembled elapsed=157.6s
+[scores s0] mixup branch/fusions/adapted assembled elapsed=159.2s
+[scores s0] adv branch/fusions/adapted assembled elapsed=160.9s
+[scores s0] adv_mixup branch/fusions/adapted assembled elapsed=162.6s
+[check s0] sub-009: delta-head / pipeline prefix + isolation OK (cut=133)
+[check s0] sub-022: delta-head / pipeline prefix + isolation OK (cut=165)
+[check s0] test-label shuffle leaves the legal pipeline identical
+[result s0] fuseH_wf                   all: AUC=0.6706 mac=0.6143 mic=0.6149 | mature: AUC=0.6810 mac=0.6241 mic=0.6236 | subj>=.9=0 max=0.779
+[result s0] fuseH_wf_thr               all: AUC=0.6788 mac=0.6218 mic=0.6234 | mature: AUC=0.6906 mac=0.6272 mic=0.6283 | subj>=.9=0 max=0.839
+[result s0] fuse_pseudo_lr_full        all: AUC=0.6602 mac=0.6118 mic=0.6143 | mature: AUC=0.6654 mac=0.6171 mic=0.6176 | subj>=.9=0 max=0.808
+[result s0] fuse_pseudo_lr_full_thr    all: AUC=0.6618 mac=0.6153 mic=0.6181 | mature: AUC=0.6671 mac=0.6206 mic=0.6230 | subj>=.9=0 max=0.842
+[result s0] resnet_plain_current       all: AUC=0.5753 mac=0.5443 mic=0.5436 | mature: AUC=0.5785 mac=0.5450 mic=0.5432 | subj>=.9=0 max=0.666
+[result s0] resnet_plain_logit_delta   all: AUC=0.5812 mac=0.5590 mic=0.5604 | mature: AUC=0.5844 mac=0.5635 mic=0.5660 | subj>=.9=0 max=0.661
+[result s0] HN_plain                   all: AUC=0.6667 mac=0.6084 mic=0.6095 | mature: AUC=0.6779 mac=0.6213 mic=0.6215 | subj>=.9=0 max=0.786
+[result s0] HN_plain_thr               all: AUC=0.6731 mac=0.6140 mic=0.6154 | mature: AUC=0.6854 mac=0.6183 mic=0.6196 | subj>=.9=0 max=0.825
+[result s0] F4_plain                   all: AUC=0.6698 mac=0.6130 mic=0.6140 | mature: AUC=0.6802 mac=0.6250 mic=0.6248 | subj>=.9=0 max=0.793
+[result s0] F4_plain_thr               all: AUC=0.6769 mac=0.6195 mic=0.6211 | mature: AUC=0.6886 mac=0.6277 mic=0.6283 | subj>=.9=0 max=0.832
+[result s0] P_plain                    all: AUC=0.6433 mac=0.6057 mic=0.6085 | mature: AUC=0.6480 mac=0.6133 mic=0.6142 | subj>=.9=0 max=0.818
+[result s0] P_plain_thr                all: AUC=0.6444 mac=0.6059 mic=0.6088 | mature: AUC=0.6493 mac=0.6105 mic=0.6131 | subj>=.9=0 max=0.831
+[result s0] resnet_mixup_current       all: AUC=0.5882 mac=0.5597 mic=0.5579 | mature: AUC=0.5898 mac=0.5606 mic=0.5571 | subj>=.9=0 max=0.664
+[result s0] resnet_mixup_logit_delta   all: AUC=0.5971 mac=0.5669 mic=0.5664 | mature: AUC=0.6023 mac=0.5707 mic=0.5696 | subj>=.9=0 max=0.660
+[result s0] HN_mixup                   all: AUC=0.6681 mac=0.6170 mic=0.6178 | mature: AUC=0.6789 mac=0.6295 mic=0.6287 | subj>=.9=0 max=0.795
+[result s0] HN_mixup_thr               all: AUC=0.6740 mac=0.6149 mic=0.6164 | mature: AUC=0.6858 mac=0.6212 mic=0.6217 | subj>=.9=0 max=0.808
+[result s0] F4_mixup                   all: AUC=0.6710 mac=0.6148 mic=0.6155 | mature: AUC=0.6810 mac=0.6286 mic=0.6275 | subj>=.9=0 max=0.776
+[result s0] F4_mixup_thr               all: AUC=0.6778 mac=0.6224 mic=0.6237 | mature: AUC=0.6891 mac=0.6285 mic=0.6283 | subj>=.9=0 max=0.829
+[result s0] P_mixup                    all: AUC=0.6546 mac=0.6096 mic=0.6127 | mature: AUC=0.6612 mac=0.6207 mic=0.6219 | subj>=.9=0 max=0.835
+[result s0] P_mixup_thr                all: AUC=0.6554 mac=0.6156 mic=0.6184 | mature: AUC=0.6625 mac=0.6236 mic=0.6264 | subj>=.9=0 max=0.828
+[result s0] resnet_adv_current         all: AUC=0.5491 mac=0.5463 mic=0.5421 | mature: AUC=0.5492 mac=0.5444 mic=0.5407 | subj>=.9=0 max=0.704
+[result s0] resnet_adv_logit_delta     all: AUC=0.5481 mac=0.5170 mic=0.5140 | mature: AUC=0.5480 mac=0.5195 mic=0.5154 | subj>=.9=0 max=0.643
+[result s0] HN_adv                     all: AUC=0.6674 mac=0.6079 mic=0.6083 | mature: AUC=0.6786 mac=0.6186 mic=0.6183 | subj>=.9=0 max=0.794
+[result s0] HN_adv_thr                 all: AUC=0.6752 mac=0.6146 mic=0.6165 | mature: AUC=0.6876 mac=0.6175 mic=0.6202 | subj>=.9=0 max=0.843
+[result s0] F4_adv                     all: AUC=0.6707 mac=0.6140 mic=0.6143 | mature: AUC=0.6811 mac=0.6204 mic=0.6193 | subj>=.9=0 max=0.787
+[result s0] F4_adv_thr                 all: AUC=0.6790 mac=0.6213 mic=0.6224 | mature: AUC=0.6907 mac=0.6264 mic=0.6267 | subj>=.9=0 max=0.846
+[result s0] P_adv                      all: AUC=0.6358 mac=0.5933 mic=0.5960 | mature: AUC=0.6402 mac=0.5968 mic=0.5969 | subj>=.9=0 max=0.816
+[result s0] P_adv_thr                  all: AUC=0.6374 mac=0.5979 mic=0.6008 | mature: AUC=0.6421 mac=0.5974 mic=0.5991 | subj>=.9=0 max=0.845
+[result s0] resnet_adv_mixup_current   all: AUC=0.5749 mac=0.5519 mic=0.5498 | mature: AUC=0.5759 mac=0.5586 mic=0.5519 | subj>=.9=0 max=0.668
+[result s0] resnet_adv_mixup_logit_delta all: AUC=0.5830 mac=0.5533 mic=0.5517 | mature: AUC=0.5860 mac=0.5557 mic=0.5513 | subj>=.9=0 max=0.646
+[result s0] HN_adv_mixup               all: AUC=0.6688 mac=0.6120 mic=0.6133 | mature: AUC=0.6795 mac=0.6230 mic=0.6232 | subj>=.9=0 max=0.795
+[result s0] HN_adv_mixup_thr           all: AUC=0.6745 mac=0.6130 mic=0.6145 | mature: AUC=0.6864 mac=0.6204 mic=0.6218 | subj>=.9=0 max=0.811
+[result s0] F4_adv_mixup               all: AUC=0.6718 mac=0.6164 mic=0.6171 | mature: AUC=0.6818 mac=0.6301 mic=0.6292 | subj>=.9=0 max=0.774
+[result s0] F4_adv_mixup_thr           all: AUC=0.6784 mac=0.6241 mic=0.6256 | mature: AUC=0.6897 mac=0.6336 mic=0.6339 | subj>=.9=0 max=0.829
+[result s0] P_adv_mixup                all: AUC=0.6527 mac=0.6043 mic=0.6076 | mature: AUC=0.6592 mac=0.6098 mic=0.6114 | subj>=.9=0 max=0.829
+[result s0] P_adv_mixup_thr            all: AUC=0.6540 mac=0.6118 mic=0.6145 | mature: AUC=0.6609 mac=0.6175 mic=0.6197 | subj>=.9=0 max=0.839
+[group s0] fuseH_wf                   mid(n=6): mean=0.7008 d_best=-0.0242 d_plain=-0.0191 | low(n=5): mean=0.5106 d_best=+0.0270 d_plain=+0.0414
+[group s0] fuseH_wf_thr               mid(n=6): mean=0.7166 d_best=-0.0084 d_plain=-0.0033 | low(n=5): mean=0.5080 d_best=+0.0244 d_plain=+0.0389
+[group s0] fuse_pseudo_lr_full        mid(n=6): mean=0.7197 d_best=-0.0054 d_plain=-0.0002 | low(n=5): mean=0.4825 d_best=-0.0011 d_plain=+0.0133
+[group s0] fuse_pseudo_lr_full_thr    mid(n=6): mean=0.7250 d_best=+0.0000 d_plain=+0.0051 | low(n=5): mean=0.4836 d_best=+0.0000 d_plain=+0.0145
+[group s0] resnet_plain_current       mid(n=6): mean=0.5742 d_best=-0.1508 d_plain=-0.1457 | low(n=5): mean=0.5083 d_best=+0.0247 d_plain=+0.0392
+[group s0] resnet_plain_logit_delta   mid(n=6): mean=0.5935 d_best=-0.1315 d_plain=-0.1264 | low(n=5): mean=0.5175 d_best=+0.0339 d_plain=+0.0484
+[group s0] HN_plain                   mid(n=6): mean=0.7013 d_best=-0.0237 d_plain=-0.0186 | low(n=5): mean=0.4969 d_best=+0.0134 d_plain=+0.0278
+[group s0] HN_plain_thr               mid(n=6): mean=0.7102 d_best=-0.0148 d_plain=-0.0097 | low(n=5): mean=0.4985 d_best=+0.0149 d_plain=+0.0294
+[group s0] F4_plain                   mid(n=6): mean=0.6961 d_best=-0.0289 d_plain=-0.0238 | low(n=5): mean=0.5131 d_best=+0.0295 d_plain=+0.0440
+[group s0] F4_plain_thr               mid(n=6): mean=0.7073 d_best=-0.0178 d_plain=-0.0126 | low(n=5): mean=0.5141 d_best=+0.0305 d_plain=+0.0450
+[group s0] P_plain                    mid(n=6): mean=0.7139 d_best=-0.0111 d_plain=-0.0060 | low(n=5): mean=0.4758 d_best=-0.0078 d_plain=+0.0067
+[group s0] P_plain_thr                mid(n=6): mean=0.7199 d_best=-0.0051 d_plain=+0.0000 | low(n=5): mean=0.4691 d_best=-0.0145 d_plain=+0.0000
+[group s0] resnet_mixup_current       mid(n=6): mean=0.5674 d_best=-0.1577 d_plain=-0.1526 | low(n=5): mean=0.5504 d_best=+0.0668 d_plain=+0.0813
+[group s0] resnet_mixup_logit_delta   mid(n=6): mean=0.5878 d_best=-0.1372 d_plain=-0.1321 | low(n=5): mean=0.5419 d_best=+0.0583 d_plain=+0.0727
+[group s0] HN_mixup                   mid(n=6): mean=0.7013 d_best=-0.0237 d_plain=-0.0186 | low(n=5): mean=0.5157 d_best=+0.0321 d_plain=+0.0466
+[group s0] HN_mixup_thr               mid(n=6): mean=0.7039 d_best=-0.0211 d_plain=-0.0160 | low(n=5): mean=0.5081 d_best=+0.0245 d_plain=+0.0390
+[group s0] F4_mixup                   mid(n=6): mean=0.6927 d_best=-0.0324 d_plain=-0.0272 | low(n=5): mean=0.5214 d_best=+0.0378 d_plain=+0.0523
+[group s0] F4_mixup_thr               mid(n=6): mean=0.7057 d_best=-0.0193 d_plain=-0.0142 | low(n=5): mean=0.5225 d_best=+0.0389 d_plain=+0.0534
+[group s0] P_mixup                    mid(n=6): mean=0.7172 d_best=-0.0078 d_plain=-0.0027 | low(n=5): mean=0.4805 d_best=-0.0030 d_plain=+0.0114
+[group s0] P_mixup_thr                mid(n=6): mean=0.7215 d_best=-0.0035 d_plain=+0.0016 | low(n=5): mean=0.4886 d_best=+0.0050 d_plain=+0.0195
+[group s0] resnet_adv_current         mid(n=6): mean=0.5632 d_best=-0.1619 d_plain=-0.1568 | low(n=5): mean=0.5262 d_best=+0.0426 d_plain=+0.0571
+[group s0] resnet_adv_logit_delta     mid(n=6): mean=0.5313 d_best=-0.1938 d_plain=-0.1886 | low(n=5): mean=0.4999 d_best=+0.0164 d_plain=+0.0308
+[group s0] HN_adv                     mid(n=6): mean=0.7049 d_best=-0.0202 d_plain=-0.0150 | low(n=5): mean=0.4914 d_best=+0.0079 d_plain=+0.0223
+[group s0] HN_adv_thr                 mid(n=6): mean=0.7195 d_best=-0.0055 d_plain=-0.0004 | low(n=5): mean=0.4886 d_best=+0.0050 d_plain=+0.0195
+[group s0] F4_adv                     mid(n=6): mean=0.6975 d_best=-0.0276 d_plain=-0.0225 | low(n=5): mean=0.5139 d_best=+0.0304 d_plain=+0.0448
+[group s0] F4_adv_thr                 mid(n=6): mean=0.7131 d_best=-0.0119 d_plain=-0.0068 | low(n=5): mean=0.5112 d_best=+0.0276 d_plain=+0.0421
+[group s0] P_adv                      mid(n=6): mean=0.7187 d_best=-0.0064 d_plain=-0.0013 | low(n=5): mean=0.4428 d_best=-0.0408 d_plain=-0.0263
+[group s0] P_adv_thr                  mid(n=6): mean=0.7262 d_best=+0.0012 d_plain=+0.0063 | low(n=5): mean=0.4439 d_best=-0.0397 d_plain=-0.0252
+[group s0] resnet_adv_mixup_current   mid(n=6): mean=0.5620 d_best=-0.1630 d_plain=-0.1579 | low(n=5): mean=0.5398 d_best=+0.0562 d_plain=+0.0707
+[group s0] resnet_adv_mixup_logit_delta mid(n=6): mean=0.5622 d_best=-0.1628 d_plain=-0.1577 | low(n=5): mean=0.5425 d_best=+0.0590 d_plain=+0.0734
+[group s0] HN_adv_mixup               mid(n=6): mean=0.6973 d_best=-0.0277 d_plain=-0.0226 | low(n=5): mean=0.5097 d_best=+0.0261 d_plain=+0.0406
+[group s0] HN_adv_mixup_thr           mid(n=6): mean=0.7045 d_best=-0.0206 d_plain=-0.0155 | low(n=5): mean=0.5033 d_best=+0.0197 d_plain=+0.0342
+[group s0] F4_adv_mixup               mid(n=6): mean=0.6972 d_best=-0.0278 d_plain=-0.0227 | low(n=5): mean=0.5194 d_best=+0.0358 d_plain=+0.0503
+[group s0] F4_adv_mixup_thr           mid(n=6): mean=0.7126 d_best=-0.0124 d_plain=-0.0073 | low(n=5): mean=0.5178 d_best=+0.0342 d_plain=+0.0487
+[group s0] P_adv_mixup                mid(n=6): mean=0.7133 d_best=-0.0118 d_plain=-0.0067 | low(n=5): mean=0.4735 d_best=-0.0100 d_plain=+0.0044
+[group s0] P_adv_mixup_thr            mid(n=6): mean=0.7211 d_best=-0.0040 d_plain=+0.0011 | low(n=5): mean=0.4808 d_best=-0.0028 d_plain=+0.0117
+[boot s0] P_plain_thr              vs fuse_pseudo_lr_full_thr  all    dAUC=-0.0175[-0.0289,-0.0068] dmac=-0.0099[-0.0236,+0.0013] dmic=-0.0098[-0.0236,+0.0016]
+[boot s0] P_plain_thr              vs fuse_pseudo_lr_full_thr  mature dAUC=-0.0178[-0.0305,-0.0064] dmac=-0.0103[-0.0256,+0.0024] dmic=-0.0101[-0.0258,+0.0034]
+[boot s0] P_plain_thr              vs P_plain_thr              all    dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000] dmic=+0.0000[+0.0000,+0.0000]
+[boot s0] P_plain_thr              vs P_plain_thr              mature dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000] dmic=+0.0000[+0.0000,+0.0000]
+[boot s0] HN_plain_thr             vs fuseH_wf_thr             all    dAUC=-0.0057[-0.0150,+0.0025] dmac=-0.0081[-0.0149,-0.0019] dmic=-0.0082[-0.0149,-0.0019]
+[boot s0] HN_plain_thr             vs fuseH_wf_thr             mature dAUC=-0.0053[-0.0134,+0.0011] dmac=-0.0092[-0.0202,+0.0012] dmic=-0.0091[-0.0204,+0.0014]
+[boot s0] HN_plain_thr             vs HN_plain_thr             all    dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000] dmic=+0.0000[+0.0000,+0.0000]
+[boot s0] HN_plain_thr             vs HN_plain_thr             mature dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000] dmic=+0.0000[+0.0000,+0.0000]
+[boot s0] resnet_plain_logit_delta vs resnet_plain_logit_delta all    dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000] dmic=+0.0000[+0.0000,+0.0000]
+[boot s0] resnet_plain_logit_delta vs resnet_plain_logit_delta mature dAUC=+0.0000[+0.0000,+0.0000] dmac=+0.0000[+0.0000,+0.0000] dmic=+0.0000[+0.0000,+0.0000]
+[boot s0] P_mixup_thr              vs fuse_pseudo_lr_full_thr  all    dAUC=-0.0070[-0.0201,+0.0042] dmac=-0.0007[-0.0157,+0.0121] dmic=-0.0007[-0.0159,+0.0122]
+[boot s0] P_mixup_thr              vs fuse_pseudo_lr_full_thr  mature dAUC=-0.0056[-0.0245,+0.0129] dmac=+0.0019[-0.0164,+0.0216] dmic=+0.0022[-0.0172,+0.0229]
+[boot s0] P_mixup_thr              vs P_plain_thr              all    dAUC=+0.0105[+0.0027,+0.0189] dmac=+0.0091[+0.0024,+0.0162] dmic=+0.0090[+0.0025,+0.0161]
+[boot s0] P_mixup_thr              vs P_plain_thr              mature dAUC=+0.0123[+0.0010,+0.0261] dmac=+0.0122[+0.0040,+0.0210] dmic=+0.0123[+0.0036,+0.0215]
+[boot s0] HN_mixup_thr             vs fuseH_wf_thr             all    dAUC=-0.0052[-0.0167,+0.0054] dmac=-0.0074[-0.0132,-0.0015] dmic=-0.0076[-0.0133,-0.0015]
+[boot s0] HN_mixup_thr             vs fuseH_wf_thr             mature dAUC=-0.0053[-0.0171,+0.0041] dmac=-0.0066[-0.0163,+0.0015] dmic=-0.0072[-0.0158,+0.0009]
+[boot s0] HN_mixup_thr             vs HN_plain_thr             all    dAUC=+0.0005[-0.0070,+0.0080] dmac=+0.0006[-0.0052,+0.0072] dmic=+0.0006[-0.0052,+0.0072]
+[boot s0] HN_mixup_thr             vs HN_plain_thr             mature dAUC=-0.0001[-0.0083,+0.0086] dmac=+0.0027[-0.0040,+0.0102] dmic=+0.0020[-0.0045,+0.0092]
+[boot s0] resnet_mixup_logit_delta vs resnet_plain_logit_delta all    dAUC=+0.0150[-0.0092,+0.0446] dmac=+0.0075[-0.0179,+0.0324] dmic=+0.0056[-0.0175,+0.0299]
+[boot s0] resnet_mixup_logit_delta vs resnet_plain_logit_delta mature dAUC=+0.0166[-0.0107,+0.0441] dmac=+0.0056[-0.0170,+0.0275] dmic=+0.0023[-0.0183,+0.0253]
+[boot s0] P_adv_thr                vs fuse_pseudo_lr_full_thr  all    dAUC=-0.0242[-0.0439,-0.0075] dmac=-0.0169[-0.0301,-0.0019] dmic=-0.0168[-0.0300,-0.0015]
+[boot s0] P_adv_thr                vs fuse_pseudo_lr_full_thr  mature dAUC=-0.0249[-0.0464,-0.0097] dmac=-0.0231[-0.0391,-0.0077] dmic=-0.0237[-0.0404,-0.0079]
+[boot s0] P_adv_thr                vs P_plain_thr              all    dAUC=-0.0067[-0.0286,+0.0084] dmac=-0.0070[-0.0256,+0.0059] dmic=-0.0071[-0.0256,+0.0060]
+[boot s0] P_adv_thr                vs P_plain_thr              mature dAUC=-0.0071[-0.0326,+0.0090] dmac=-0.0128[-0.0329,+0.0023] dmic=-0.0136[-0.0338,+0.0025]
+[boot s0] HN_adv_thr               vs fuseH_wf_thr             all    dAUC=-0.0033[-0.0142,+0.0064] dmac=-0.0067[-0.0144,+0.0013] dmic=-0.0064[-0.0141,+0.0014]
+[boot s0] HN_adv_thr               vs fuseH_wf_thr             mature dAUC=-0.0029[-0.0121,+0.0037] dmac=-0.0097[-0.0229,+0.0034] dmic=-0.0082[-0.0214,+0.0036]
+[boot s0] HN_adv_thr               vs HN_plain_thr             all    dAUC=+0.0025[-0.0064,+0.0089] dmac=+0.0014[-0.0086,+0.0120] dmic=+0.0018[-0.0080,+0.0120]
+[boot s0] HN_adv_thr               vs HN_plain_thr             mature dAUC=+0.0024[-0.0055,+0.0085] dmac=-0.0004[-0.0120,+0.0099] dmic=+0.0009[-0.0104,+0.0107]
+[boot s0] resnet_adv_logit_delta   vs resnet_plain_logit_delta all    dAUC=-0.0272[-0.0729,+0.0324] dmac=-0.0387[-0.0831,+0.0103] dmic=-0.0428[-0.0864,+0.0073]
+[boot s0] resnet_adv_logit_delta   vs resnet_plain_logit_delta mature dAUC=-0.0306[-0.0796,+0.0254] dmac=-0.0417[-0.0896,+0.0117] dmic=-0.0477[-0.1012,+0.0099]
+[boot s0] P_adv_mixup_thr          vs fuse_pseudo_lr_full_thr  all    dAUC=-0.0083[-0.0207,+0.0029] dmac=-0.0041[-0.0213,+0.0097] dmic=-0.0041[-0.0218,+0.0099]
+[boot s0] P_adv_mixup_thr          vs fuse_pseudo_lr_full_thr  mature dAUC=-0.0071[-0.0244,+0.0108] dmac=-0.0037[-0.0265,+0.0123] dmic=-0.0040[-0.0276,+0.0132]
+[boot s0] P_adv_mixup_thr          vs P_plain_thr              all    dAUC=+0.0091[+0.0017,+0.0184] dmac=+0.0058[-0.0017,+0.0150] dmic=+0.0056[-0.0017,+0.0151]
+[boot s0] P_adv_mixup_thr          vs P_plain_thr              mature dAUC=+0.0107[-0.0003,+0.0256] dmac=+0.0066[-0.0031,+0.0172] dmic=+0.0062[-0.0030,+0.0172]
+[boot s0] HN_adv_mixup_thr         vs fuseH_wf_thr             all    dAUC=-0.0046[-0.0135,+0.0064] dmac=-0.0094[-0.0165,-0.0032] dmic=-0.0096[-0.0171,-0.0034]
+[boot s0] HN_adv_mixup_thr         vs fuseH_wf_thr             mature dAUC=-0.0048[-0.0153,+0.0047] dmac=-0.0076[-0.0187,+0.0026] dmic=-0.0074[-0.0189,+0.0031]
+[boot s0] HN_adv_mixup_thr         vs HN_plain_thr             all    dAUC=+0.0011[-0.0055,+0.0084] dmac=-0.0013[-0.0072,+0.0055] dmic=-0.0013[-0.0073,+0.0056]
+[boot s0] HN_adv_mixup_thr         vs HN_plain_thr             mature dAUC=+0.0004[-0.0077,+0.0087] dmac=+0.0017[-0.0060,+0.0104] dmic=+0.0017[-0.0064,+0.0107]
+[boot s0] resnet_adv_mixup_logit_delta vs resnet_plain_logit_delta all    dAUC=+0.0003[-0.0327,+0.0415] dmac=-0.0054[-0.0431,+0.0311] dmic=-0.0082[-0.0431,+0.0271]
+[boot s0] resnet_adv_mixup_logit_delta vs resnet_plain_logit_delta mature dAUC=-0.0009[-0.0362,+0.0400] dmac=-0.0085[-0.0441,+0.0309] dmic=-0.0149[-0.0469,+0.0244]
+[stream 0] done elapsed=166.8s
+[done] all checks passed elapsed=166.8s -> depositioned_subject_adversarial_smoke.json

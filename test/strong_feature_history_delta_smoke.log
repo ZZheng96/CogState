@@ -1,0 +1,36 @@
+[start] rows=16067 subjects=57 dim=858 pca=0 smoke=True
+[fold 1/5] built features + checks ok ntr=1385 nte=217 build_s=0.2 elapsed=1.0s
+[fold 1/5] current_only__hgb      dim=858 fit_s=6.5 thr=0.07 elapsed=7.5s
+[fold 1/5] current_only__lr       dim=858 fit_s=0.2 thr=0.35 elapsed=7.8s
+[fold 1/5] delta_k8__hgb          dim=1716 fit_s=10.3 thr=0.09 elapsed=18.1s
+[fold 1/5] delta_k8__lr           dim=1716 fit_s=0.5 thr=0.09 elapsed=18.6s
+[fold 1/5] delta_k32__hgb         dim=1716 fit_s=10.7 thr=0.34 elapsed=29.3s
+[fold 1/5] delta_k32__lr          dim=1716 fit_s=0.5 thr=0.23 elapsed=29.8s
+[fold 1/5] delta_all__hgb         dim=1716 fit_s=10.7 thr=0.09 elapsed=40.6s
+[fold 1/5] delta_all__lr          dim=1716 fit_s=0.6 thr=0.26 elapsed=41.1s
+[fold 1/5] delta_multi__hgb       dim=2574 fit_s=16.0 thr=0.12 elapsed=57.1s
+[fold 1/5] delta_multi__lr        dim=2574 fit_s=1.0 thr=0.06 elapsed=58.1s
+[result] baseline_merge_best                all: AUC=0.7394 mac=0.6813 mic=0.6813 | switching: AUC=0.2333 mac=0.3333 mic=0.3333 | steady: AUC=0.8246 mac=0.7274 mic=0.7274 | history_comparable: AUC=0.7216 mac=0.7140 mic=0.7140
+[result] current_only__hgb                  all: AUC=0.4506 mac=0.4515 mic=0.4515 | switching: AUC=0.1267 mac=0.2333 mic=0.2333 | steady: AUC=0.4843 mac=0.4743 mic=0.4743 | history_comparable: AUC=0.4072 mac=0.4059 mic=0.4059
+[result] current_only__lr                   all: AUC=0.3487 mac=0.4659 mic=0.4659 | switching: AUC=0.4500 mac=0.4833 mic=0.4833 | steady: AUC=0.3444 mac=0.4670 mic=0.4670 | history_comparable: AUC=0.1559 mac=0.3930 mic=0.3930
+[result] delta_k8__hgb                      all: AUC=0.5761 mac=0.5657 mic=0.5657 | switching: AUC=0.3667 mac=0.3667 mic=0.3667 | steady: AUC=0.5993 mac=0.5879 mic=0.5879 | history_comparable: AUC=0.5932 mac=0.5435 mic=0.5435
+[result] delta_k8__lr                       all: AUC=0.3843 mac=0.4237 mic=0.4237 | switching: AUC=0.4633 mac=0.5000 mic=0.5000 | steady: AUC=0.3830 mac=0.4184 mic=0.4184 | history_comparable: AUC=0.1727 mac=0.2912 mic=0.2912
+[result] delta_k32__hgb                     all: AUC=0.4218 mac=0.4649 mic=0.4649 | switching: AUC=0.5600 mac=0.5000 mic=0.5000 | steady: AUC=0.4053 mac=0.4552 mic=0.4552 | history_comparable: AUC=0.4162 mac=0.4840 mic=0.4840
+[result] delta_k32__lr                      all: AUC=0.3122 mac=0.4049 mic=0.4049 | switching: AUC=0.5900 mac=0.5667 mic=0.5667 | steady: AUC=0.2754 mac=0.3884 mic=0.3884 | history_comparable: AUC=0.1649 mac=0.2435 mic=0.2435
+[result] delta_all__hgb                     all: AUC=0.5227 mac=0.5200 mic=0.5200 | switching: AUC=0.2267 mac=0.4000 mic=0.4000 | steady: AUC=0.5496 mac=0.5288 mic=0.5288 | history_comparable: AUC=0.3761 mac=0.4029 mic=0.4029
+[result] delta_all__lr                      all: AUC=0.3553 mac=0.4809 mic=0.4809 | switching: AUC=0.4700 mac=0.5167 mic=0.5167 | steady: AUC=0.3506 mac=0.4771 mic=0.4771 | history_comparable: AUC=0.1502 mac=0.4459 mic=0.4459
+[result] delta_multi__hgb                   all: AUC=0.4811 mac=0.5104 mic=0.5104 | switching: AUC=0.2533 mac=0.5000 mic=0.5000 | steady: AUC=0.5045 mac=0.5046 mic=0.5046 | history_comparable: AUC=0.3838 mac=0.4124 mic=0.4124
+[result] delta_multi__lr                    all: AUC=0.3570 mac=0.4710 mic=0.4710 | switching: AUC=0.4633 mac=0.4667 mic=0.4667 | steady: AUC=0.3577 mac=0.4750 mic=0.4750 | history_comparable: AUC=0.1408 mac=0.4356 mic=0.4356
+[result] current_only__hgb__innerthr        all: AUC=0.4506 mac=0.5185 mic=0.5185 | switching: AUC=0.1267 mac=0.5000 mic=0.5000 | steady: AUC=0.4843 mac=0.5204 mic=0.5204 | history_comparable: AUC=0.4072 mac=0.5000 mic=0.5000
+[result] current_only__lr__innerthr         all: AUC=0.3627 mac=0.4379 mic=0.4379 | switching: AUC=0.5033 mac=0.4667 mic=0.4667 | steady: AUC=0.3529 mac=0.4375 mic=0.4375 | history_comparable: AUC=0.2302 mac=0.3473 mic=0.3473
+[result] delta_k8__hgb__innerthr            all: AUC=0.5761 mac=0.5278 mic=0.5278 | switching: AUC=0.3667 mac=0.5000 mic=0.5000 | steady: AUC=0.5993 mac=0.5306 mic=0.5306 | history_comparable: AUC=0.5932 mac=0.5000 mic=0.5000
+[result] delta_k8__lr__innerthr             all: AUC=0.3833 mac=0.3492 mic=0.3492 | switching: AUC=0.4500 mac=0.5500 mic=0.5500 | steady: AUC=0.3830 mac=0.3278 mic=0.3278 | history_comparable: AUC=0.1673 mac=0.2113 mic=0.2113
+[result] delta_k32__hgb__innerthr           all: AUC=0.4218 mac=0.4643 mic=0.4643 | switching: AUC=0.5600 mac=0.5500 mic=0.5500 | steady: AUC=0.4053 mac=0.4471 mic=0.4471 | history_comparable: AUC=0.4162 mac=0.4561 mic=0.4561
+[result] delta_k32__lr__innerthr            all: AUC=0.3129 mac=0.4001 mic=0.4001 | switching: AUC=0.5933 mac=0.5667 mic=0.5667 | steady: AUC=0.2754 mac=0.3844 mic=0.3844 | history_comparable: AUC=0.1685 mac=0.2383 mic=0.2383
+[result] delta_all__hgb__innerthr           all: AUC=0.5227 mac=0.5833 mic=0.5833 | switching: AUC=0.2267 mac=0.5000 mic=0.5000 | steady: AUC=0.5496 mac=0.5918 mic=0.5918 | history_comparable: AUC=0.3761 mac=0.5000 mic=0.5000
+[result] delta_all__lr__innerthr            all: AUC=0.3695 mac=0.4664 mic=0.4664 | switching: AUC=0.5233 mac=0.4500 mic=0.4500 | steady: AUC=0.3591 mac=0.4697 mic=0.4697 | history_comparable: AUC=0.2257 mac=0.4273 mic=0.4273
+[result] delta_multi__hgb__innerthr         all: AUC=0.4811 mac=0.5787 mic=0.5787 | switching: AUC=0.2533 mac=0.5000 mic=0.5000 | steady: AUC=0.5045 mac=0.5867 mic=0.5867 | history_comparable: AUC=0.3838 mac=0.5000 mic=0.5000
+[result] delta_multi__lr__innerthr          all: AUC=0.3561 mac=0.4190 mic=0.4190 | switching: AUC=0.4500 mac=0.5000 mic=0.5000 | steady: AUC=0.3577 mac=0.4135 mic=0.4135 | history_comparable: AUC=0.1363 mac=0.3369 mic=0.3369
+[subject] delta_k8__hgb: n_subj=1 >=0.9: 0 mean=0.5435 009:0.543
+[subject] baseline_merge_best: n_subj=1 >=0.9: 0 mean=0.7140 009:0.714
+[done] elapsed=58.4s

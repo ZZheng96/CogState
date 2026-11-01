@@ -1,0 +1,22 @@
+[start] rows=16067 subjects=57 smoke=True sseeds=(0,) variants=('tta_pseudo', 'tta_pseudo_full', 'tta_cotrain')
+[fold 1/5] z + PCA(z) ready evr=0.852 elapsed=1.6s
+[s0 fold 1/5] prank feats 2574 + PCA evr=0.798 14.6s elapsed=16.2s
+[s0 fold 1/5] tta_pseudo       subjects=11 fit_s=16.1 checks ok (isolation 7.1e-15, prefix) elapsed=32.3s
+[s0 fold 1/5] tta_pseudo_full  subjects=11 fit_s=18.5 checks ok (isolation 1.4e-14, prefix) elapsed=50.8s
+[s0 fold 1/5] tta_cotrain      subjects=11 fit_s=17.6 checks ok (isolation 1.4e-14, prefix) elapsed=68.3s
+[sanity s0] position_only__lr AUC=0.4936
+[sanity s0] position_only__hgb AUC=0.4977
+[sanity s0] raw t AUC=0.4936
+[result s0] fusionM_prank              all: AUC=0.6597 mac=0.5953 mic=0.5970 | mature: AUC=0.6709 mac=0.6059 mic=0.6054 | subj>=.9=0 max=0.784
+[result s0] hgb_prank                  all: AUC=0.6046 mac=0.5645 mic=0.5655 | mature: AUC=0.6193 mac=0.5783 mic=0.5768 | subj>=.9=0 max=0.713
+[result s0] resnet_whiten_logit_delta  all: AUC=0.6729 mac=0.6163 mic=0.6192 | mature: AUC=0.6813 mac=0.6214 mic=0.6278 | subj>=.9=0 max=0.784
+[result s0] tta_pseudo                 all: AUC=0.6206 mac=0.5846 mic=0.5883 | mature: AUC=0.6326 mac=0.5954 mic=0.5975 | subj>=.9=0 max=0.778
+[result s0] tta_pseudo_full            all: AUC=0.6196 mac=0.5825 mic=0.5858 | mature: AUC=0.6318 mac=0.5942 mic=0.5954 | subj>=.9=0 max=0.781
+[result s0] tta_cotrain                all: AUC=0.6370 mac=0.5819 mic=0.5853 | mature: AUC=0.6461 mac=0.5859 mic=0.5872 | subj>=.9=0 max=0.785
+[boot s0] tta_pseudo       vs fusionM_prank all    dAUC=-0.0421[-0.0691,-0.0117] dmac=-0.0120[-0.0305,+0.0077] dmic=-0.0101[-0.0285,+0.0093]
+[boot s0] tta_pseudo       vs fusionM_prank mature dAUC=-0.0415[-0.0739,-0.0070] dmac=-0.0117[-0.0294,+0.0140] dmic=-0.0092[-0.0281,+0.0155]
+[boot s0] tta_pseudo_full  vs fusionM_prank all    dAUC=-0.0426[-0.0689,-0.0160] dmac=-0.0139[-0.0311,+0.0058] dmic=-0.0125[-0.0298,+0.0070]
+[boot s0] tta_pseudo_full  vs fusionM_prank mature dAUC=-0.0415[-0.0717,-0.0153] dmac=-0.0126[-0.0288,+0.0071] dmic=-0.0111[-0.0284,+0.0088]
+[boot s0] tta_cotrain      vs fusionM_prank all    dAUC=-0.0240[-0.0443,+0.0004] dmac=-0.0139[-0.0318,+0.0112] dmic=-0.0123[-0.0300,+0.0122]
+[boot s0] tta_cotrain      vs fusionM_prank mature dAUC=-0.0263[-0.0546,+0.0063] dmac=-0.0200[-0.0413,+0.0110] dmic=-0.0182[-0.0412,+0.0128]
+[done] elapsed=69.4s -> depositioned_tta_selftrain_smoke.json

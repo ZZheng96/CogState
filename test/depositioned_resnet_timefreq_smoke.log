@@ -1,0 +1,48 @@
+[start] rows=16067 subjects=57 device=cuda smoke=True sseeds=(0,) variants=('resnet_fbank', 'cnn_stft_hist') stft frames=86 crop_frames=55 bins=24
+[params] {'resnet_fbank': 306273, 'cnn_stft_hist': 60609}
+[stream 0] baselines loaded & aligned (position recomputed, fusionM_prank recomputed) elapsed=3.7s
+[stream 0 resnet_fbank fold 1/5] inputs built (16067, 7, 1500) (20.9s) ch std=[0.996999979019165, 0.8709999918937683, 0.996999979019165, 0.996999979019165, 0.9900000095367432, 0.9549999833106995, 0.9810000061988831] clip_frac=0.0007 elapsed=27.0s
+    [s0 resnet_fbank rs0 fold1/5] ep01/2 loss=0.7000 valAUC=0.4892 best=0.4892@1 t=5s elapsed=32.0s
+    [s0 resnet_fbank rs0 fold1/5] ep02/2 loss=0.6785 valAUC=0.6380 best=0.6380@2 t=8s elapsed=34.7s
+[net] s0 resnet_fbank rs0 fold1/5 best_ep=2/2 valAUC=0.6380 testAUC=0.5870 8s elapsed=36.3s
+[check] s0 resnet_fbank fold1: isolation + prefix invariance ok elapsed=38.4s
+[progress] stream 0 resnet_fbank fold 1/5 done; stream time 35s elapsed=38.5s
+[stream 0 cnn_stft_hist fold 1/5] inputs built (16067, 2, 24, 86) (15.6s) ch std=[1.0080000162124634, 0.8970000147819519] clip_frac=0.0003 elapsed=55.3s
+    [s0 cnn_stft_hist rs0 fold1/5] ep01/2 loss=0.6643 valAUC=0.6547 best=0.6547@1 t=1s elapsed=56.5s
+    [s0 cnn_stft_hist rs0 fold1/5] ep02/2 loss=0.6431 valAUC=0.6625 best=0.6625@2 t=2s elapsed=57.3s
+[net] s0 cnn_stft_hist rs0 fold1/5 best_ep=2/2 valAUC=0.6625 testAUC=0.5639 2s elapsed=57.9s
+[check] s0 cnn_stft_hist fold1: isolation + prefix invariance ok elapsed=58.9s
+[progress] stream 0 cnn_stft_hist fold 1/5 done; stream time 55s elapsed=59.0s
+[result stream 0] position_only__lr              all: AUC=0.4936 mac=0.5000 mic=0.5000 | mature: AUC=0.4924 mac=0.5000 mic=0.5000 | subj>=.9=0 max=0.500
+[result stream 0] position_only__hgb             all: AUC=0.4977 mac=0.4984 mic=0.4982 | mature: AUC=0.4960 mac=0.5036 mic=0.5036 | subj>=.9=0 max=0.535
+[result stream 0] resnet_fbank                   all: AUC=0.5870 mac=0.5445 mic=0.5436 | mature: AUC=0.5953 mac=0.5492 mic=0.5478 | subj>=.9=0 max=0.603
+[result stream 0] resnet_fbank_logit_delta       all: AUC=0.6038 mac=0.5683 mic=0.5666 | mature: AUC=0.6113 mac=0.5698 mic=0.5671 | subj>=.9=0 max=0.671
+[result stream 0] cnn_stft_hist                  all: AUC=0.5639 mac=0.5459 mic=0.5476 | mature: AUC=0.5626 mac=0.5470 mic=0.5469 | subj>=.9=0 max=0.711
+[result stream 0] cnn_stft_hist_logit_delta      all: AUC=0.5628 mac=0.5342 mic=0.5356 | mature: AUC=0.5617 mac=0.5296 mic=0.5284 | subj>=.9=0 max=0.675
+[result stream 0] hgb_prank                      all: AUC=0.6046 mac=0.5645 mic=0.5655 | mature: AUC=0.6193 mac=0.5783 mic=0.5768 | subj>=.9=0 max=0.713
+[result stream 0] resnet_whiten_logit_delta      all: AUC=0.6729 mac=0.6163 mic=0.6192 | mature: AUC=0.6813 mac=0.6214 mic=0.6278 | subj>=.9=0 max=0.784
+[result stream 0] fusionM_prank                  all: AUC=0.6597 mac=0.5953 mic=0.5970 | mature: AUC=0.6709 mac=0.6059 mic=0.6054 | subj>=.9=0 max=0.784
+[result stream 0] fusionT_resnet_fbank           all: AUC=0.6180 mac=0.5760 mic=0.5762 | mature: AUC=0.6306 mac=0.5874 mic=0.5837 | subj>=.9=0 max=0.723
+[result stream 0] fusion3_resnet_fbank           all: AUC=0.6547 mac=0.6005 mic=0.6018 | mature: AUC=0.6660 mac=0.6107 mic=0.6086 | subj>=.9=0 max=0.743
+[result stream 0] fusionT_cnn_stft_hist          all: AUC=0.5949 mac=0.5566 mic=0.5585 | mature: AUC=0.6034 mac=0.5632 mic=0.5636 | subj>=.9=0 max=0.710
+[result stream 0] fusion3_cnn_stft_hist          all: AUC=0.6398 mac=0.5782 mic=0.5802 | mature: AUC=0.6467 mac=0.5836 mic=0.5834 | subj>=.9=0 max=0.774
+[sanity stream 0] position_only__lr AUC=0.4936 -> OK
+[sanity stream 0] position_only__hgb AUC=0.4977 -> OK
+[boot stream 0] resnet_fbank                     vs fusionM_prank all    dAUC=-0.0747[-0.1327,-0.0167] dmac=-0.0543[-0.1048,-0.0048] dmic=-0.0566[-0.1066,-0.0080]
+[boot stream 0] resnet_fbank                     vs fusionM_prank mature dAUC=-0.0780[-0.1357,-0.0165] dmac=-0.0605[-0.1105,-0.0063] dmic=-0.0616[-0.1134,-0.0057]
+[boot stream 0] resnet_fbank_logit_delta         vs fusionM_prank all    dAUC=-0.0582[-0.1137,+0.0004] dmac=-0.0281[-0.0702,+0.0178] dmic=-0.0312[-0.0705,+0.0134]
+[boot stream 0] resnet_fbank_logit_delta         vs fusionM_prank mature dAUC=-0.0618[-0.1037,-0.0106] dmac=-0.0370[-0.0753,+0.0024] dmic=-0.0390[-0.0768,+0.0011]
+[boot stream 0] fusionT_resnet_fbank             vs fusionM_prank all    dAUC=-0.0431[-0.0713,-0.0178] dmac=-0.0209[-0.0413,+0.0017] dmic=-0.0223[-0.0414,-0.0007]
+[boot stream 0] fusionT_resnet_fbank             vs fusionM_prank mature dAUC=-0.0412[-0.0621,-0.0212] dmac=-0.0199[-0.0411,+0.0009] dmic=-0.0228[-0.0409,-0.0053]
+[boot stream 0] fusion3_resnet_fbank             vs fusionM_prank all    dAUC=-0.0059[-0.0244,+0.0108] dmac=+0.0042[-0.0128,+0.0206] dmic=+0.0038[-0.0133,+0.0200]
+[boot stream 0] fusion3_resnet_fbank             vs fusionM_prank mature dAUC=-0.0055[-0.0199,+0.0066] dmac=+0.0037[-0.0140,+0.0181] dmic=+0.0022[-0.0139,+0.0164]
+[boot stream 0] cnn_stft_hist                    vs fusionM_prank all    dAUC=-0.1000[-0.1578,-0.0469] dmac=-0.0518[-0.0815,-0.0224] dmic=-0.0518[-0.0813,-0.0211]
+[boot stream 0] cnn_stft_hist                    vs fusionM_prank mature dAUC=-0.1123[-0.1652,-0.0539] dmac=-0.0618[-0.0882,-0.0317] dmic=-0.0613[-0.0885,-0.0290]
+[boot stream 0] cnn_stft_hist_logit_delta        vs fusionM_prank all    dAUC=-0.1012[-0.1586,-0.0494] dmac=-0.0625[-0.0947,-0.0323] dmic=-0.0628[-0.0949,-0.0313]
+[boot stream 0] cnn_stft_hist_logit_delta        vs fusionM_prank mature dAUC=-0.1130[-0.1644,-0.0589] dmac=-0.0778[-0.1074,-0.0483] dmic=-0.0784[-0.1080,-0.0477]
+[boot stream 0] fusionT_cnn_stft_hist            vs fusionM_prank all    dAUC=-0.0670[-0.0973,-0.0423] dmac=-0.0394[-0.0642,-0.0169] dmic=-0.0392[-0.0651,-0.0164]
+[boot stream 0] fusionT_cnn_stft_hist            vs fusionM_prank mature dAUC=-0.0690[-0.0987,-0.0447] dmac=-0.0440[-0.0659,-0.0193] dmic=-0.0431[-0.0663,-0.0184]
+[boot stream 0] fusion3_cnn_stft_hist            vs fusionM_prank all    dAUC=-0.0209[-0.0453,+0.0020] dmac=-0.0173[-0.0437,+0.0043] dmic=-0.0171[-0.0440,+0.0052]
+[boot stream 0] fusion3_cnn_stft_hist            vs fusionM_prank mature dAUC=-0.0250[-0.0489,-0.0025] dmac=-0.0226[-0.0453,-0.0022] dmic=-0.0222[-0.0463,-0.0016]
+[progress] stream 0 finished in 57s elapsed=61.0s
+[done] elapsed=61.1s -> depositioned_resnet_timefreq_smoke.json

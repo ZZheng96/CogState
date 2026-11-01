@@ -1,0 +1,21 @@
+[start] rows=16067 subjects=57 folds=[0] sseeds=(0,) elapsed=0.5s
+[s0] adapted 10/11 11.9s elapsed=15.8s
+[s0] adapted 11/11 11.9s elapsed=15.8s
+[check s0] sub-009: isolation + prefix invariance OK (cut=133)
+[check s0] sub-022: isolation + prefix invariance OK (cut=165)
+[result s0] exp      all: AUC=0.8157 mac=0.7333 | high:nan mid:0.772 low:0.687 | cos_exp=-0.0011887077561024964 cos_xs=None
+[result s0] last16   all: AUC=0.7022 mac=0.6411 | high:nan mid:0.727 low:0.538 | cos_exp=0.40881530708926367 cos_xs=0.007398224649032875
+[result s0] last32   all: AUC=0.7816 mac=0.7050 | high:nan mid:0.758 low:0.642 | cos_exp=0.6037044675273097 cos_xs=0.007979978498580233
+[result s0] last64   all: AUC=0.8007 mac=0.7258 | high:nan mid:0.765 low:0.678 | cos_exp=0.7693897136376991 cos_xs=0.009554054330741869
+[result s0] last128  all: AUC=0.8108 mac=0.7285 | high:nan mid:0.769 low:0.680 | cos_exp=0.9171876358454378 cos_xs=0.00802673647090433
+[result s0] last256  all: AUC=0.8158 mac=0.7329 | high:nan mid:0.773 low:0.685 | cos_exp=0.9974578485497205 cos_xs=-0.0012592306611327597
+[result s0] tau64    all: AUC=0.8111 mac=0.7290 | high:nan mid:0.769 low:0.681 | cos_exp=0.9045372917445464 cos_xs=0.005418070030831218
+[result s0] tau256   all: AUC=0.8155 mac=0.7325 | high:nan mid:0.772 low:0.685 | cos_exp=0.9912097228040249 cos_xs=0.0009007984297615254
+[result s0] md32     all: AUC=0.7603 mac=0.6861 | high:nan mid:0.737 low:0.625 | cos_exp=0.45921228067832914 cos_xs=0.00017550119973463877
+[result s0] md64     all: AUC=0.7719 mac=0.6927 | high:nan mid:0.738 low:0.638 | cos_exp=0.5177368330599779 cos_xs=-0.0010076250626579325
+[result s0] md128    all: AUC=0.7799 mac=0.7011 | high:nan mid:0.740 low:0.655 | cos_exp=0.5451428604634923 cos_xs=-0.002803983403174938
+[result s0] md256    all: AUC=0.7812 mac=0.7006 | high:nan mid:0.743 low:0.649 | cos_exp=0.5589616213705584 cos_xs=-0.005324390085273152
+[boot s0] exp:+0.118[+0.068,+0.168] last16:+0.026[+0.004,+0.049] last32:+0.090[+0.044,+0.133] last64:+0.111[+0.063,+0.157] last128:+0.113[+0.065,+0.160] last256:+0.118[+0.069,+0.166] tau64:+0.114[+0.066,+0.161] tau256:+0.117[+0.068,+0.166] md32:+0.071[+0.023,+0.119] md64:+0.077[+0.027,+0.126] md128:+0.086[+0.032,+0.140] md256:+0.085[+0.034,+0.135]
+[rule] low-group recovery fraction of the oracle gap: exp:0.94 last16:-0.01 last32:0.66 last64:0.89 last128:0.90 last256:0.93 tau64:0.90 tau256:0.93 md32:0.55 md64:0.63 md128:0.74 md256:0.70
+[rule] R1 hits=['last64', 'last128'] -> locality <=128 labels is the lever
+[done] elapsed=20.2s

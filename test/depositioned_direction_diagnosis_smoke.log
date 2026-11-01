@@ -1,0 +1,88 @@
+[start] rows=16067 subjects=57 smoke=True sseeds=(0,) R=16 MIN=48 PCA=16 pseudo_q=0.3 clip=+-3.0 acc_bad=0.6 jobs=8 (acc_seed / auc_L_true / oracle flip / flipL are LEAKY)
+[check] fold == depositioned_aperiodic_emg_oof.npz fold
+[zz] fold 0 ZZ built (3118 test rows); |d|=1.000 elapsed=1.8s
+[s0] std(L)=0.586 mean(L)=+0.079
+[s0] subjects 8/11 stream_s=7.1 elapsed=8.9s
+[s0] subjects 11/11 stream_s=8.1 elapsed=9.9s
+[check s0] sub-009: isolation / prefix (z + 6 refits of statistics) / label shuffle / flip symmetry OK
+[check s0] sub-022: isolation / prefix (z + 8 refits of statistics) / label shuffle / flip symmetry OK
+[subjects s0] n=11 reversed_oracle=4 acc_seed<0.6: 5 (low reversed=4/5)
+[subject s0] sub-009 low  acc_seed=0.4639 auc_L_true=0.4885 pop_dir=+0.144 branch_L_pos=+1.00 kappa=+0.158 sori=0.179 ashman=7.03 dbic=+1581.8 ac1=+0.08 drift=+0.10 REV
+[subject s0] sub-022 mid  acc_seed=0.8584 auc_L_true=0.8267 pop_dir=+0.231 branch_L_pos=+1.00 kappa=+0.052 sori=0.060 ashman=11.47 dbic=+3440.1 ac1=+0.04 drift=-0.02
+[subject s0] sub-023 low  acc_seed=0.4850 auc_L_true=0.4978 pop_dir=+0.545 branch_L_pos=+1.00 kappa=+0.173 sori=0.182 ashman=2.40 dbic=+925.8 ac1=-0.02 drift=-0.07 REV
+[subject s0] sub-024 low  acc_seed=0.5004 auc_L_true=0.4840 pop_dir=+0.413 branch_L_pos=+1.00 kappa=+0.121 sori=0.161 ashman=4.00 dbic=+1423.3 ac1=-0.10 drift=+0.05 REV
+[subject s0] sub-029 low  acc_seed=0.4893 auc_L_true=0.4791 pop_dir=+0.076 branch_L_pos=+1.00 kappa=+0.126 sori=0.146 ashman=3.03 dbic=-196.7 ac1=+0.02 drift=+0.02 REV
+[subject s0] sub-037 low  acc_seed=0.5095 auc_L_true=0.5039 pop_dir=+0.100 branch_L_pos=+1.00 kappa=+0.147 sori=0.187 ashman=3.91 dbic=+797.0 ac1=-0.01 drift=-0.09
+[subject s0] sub-045 mid  acc_seed=0.8970 auc_L_true=0.8727 pop_dir=+0.432 branch_L_pos=+1.00 kappa=+0.176 sori=0.070 ashman=2.51 dbic=+611.4 ac1=-0.07 drift=+0.07
+[subject s0] sub-048 mid  acc_seed=0.8103 auc_L_true=0.8036 pop_dir=+0.658 branch_L_pos=+1.00 kappa=+0.271 sori=0.335 ashman=3.78 dbic=+359.5 ac1=-0.02 drift=+0.08
+[subject s0] sub-051 mid  acc_seed=0.8428 auc_L_true=0.8209 pop_dir=+0.581 branch_L_pos=+1.00 kappa=+0.362 sori=0.309 ashman=3.41 dbic=+983.6 ac1=-0.03 drift=-0.08
+[subject s0] sub-053 mid  acc_seed=0.6254 auc_L_true=0.6426 pop_dir=+0.360 branch_L_pos=+1.00 kappa=+0.067 sori=0.095 ashman=5.69 dbic=+1684.3 ac1=-0.08 drift=-0.00
+[subject s0] sub-055 mid  acc_seed=0.6569 auc_L_true=0.6523 pop_dir=+0.458 branch_L_pos=+1.00 kappa=+0.027 sori=0.043 ashman=4.21 dbic=+1948.3 ac1=+0.04 drift=-0.00
+[detect s0] neg_pop_dir    AUC=0.8[0.397,1.000] rho(acc_seed)=-0.391
+[detect s0] branch_L_neg   AUC=0.5[0.500,0.500] rho(acc_seed)=+nan
+[detect s0] kappa_gmm      AUC=0.5[0.143,1.000] rho(acc_seed)=+0.100 (exploratory, direction post hoc: |AUC-.5| -> 0.5)
+[detect s0] neg_sori_abs   AUC=0.6667[0.308,1.000] rho(acc_seed)=-0.245 (exploratory, direction post hoc: |AUC-.5| -> 0.6667)
+[detect s0] ashman         AUC=0.4[0.067,0.750] rho(acc_seed)=+0.009 (exploratory, direction post hoc: |AUC-.5| -> 0.6)
+[detect s0] abs_skew       AUC=0.4667[0.091,0.871] rho(acc_seed)=-0.100 (exploratory, direction post hoc: |AUC-.5| -> 0.5333)
+[detect s0] dbic           AUC=0.3333[0.000,0.710] rho(acc_seed)=+0.091 (exploratory, direction post hoc: |AUC-.5| -> 0.6667)
+[detect s0] branch_r       AUC=0.0667[0.000,0.222] rho(acc_seed)=+0.873 (exploratory, direction post hoc: |AUC-.5| -> 0.9333)
+[detect s0] ac1            AUC=0.6[0.211,1.000] rho(acc_seed)=-0.236 (exploratory, direction post hoc: |AUC-.5| -> 0.6)
+[detect s0] drift          AUC=0.5[0.116,0.909] rho(acc_seed)=-0.109 (exploratory, direction post hoc: |AUC-.5| -> 0.5)
+[stat-group s0] acc_seed     high=NA mid=+0.782 low=+0.490
+[stat-group s0] auc_L_true   high=NA mid=+0.770 low=+0.491
+[stat-group s0] sori_abs     high=NA mid=+0.152 low=+0.171
+[stat-group s0] kappa_gmm    high=NA mid=+0.159 low=+0.145
+[stat-group s0] ashman       high=NA mid=+5.177 low=+4.075
+[stat-group s0] abs_skew     high=NA mid=+2.814 low=+2.563
+[stat-group s0] dbic         high=NA mid=+1504.547 low=+906.252
+[stat-group s0] branch_r     high=NA mid=+0.590 low=+0.362
+[stat-group s0] branch_L_pos high=NA mid=+1.000 low=+1.000
+[stat-group s0] ac1          high=NA mid=-0.022 low=-0.004
+[stat-group s0] drift        high=NA mid=+0.008 low=+0.001
+[stat-group s0] pop_dir      high=NA mid=+0.454 low=+0.256
+[legal-flip s0] skipped: best legal detector neg_pop_dir AUC=0.8 CI_lo=0.397 <= .5
+[result stream 0] fuseH_wf               all: AUC=0.6706 mac=0.6143 mic=0.6149 | mature: AUC=0.6810 mac=0.6241 mic=0.6236 | subj>=.9=0 max=0.779
+[result stream 0] fuseH_wf_thr           all: AUC=0.6788 mac=0.6218 mic=0.6234 | mature: AUC=0.6906 mac=0.6272 mic=0.6283 | subj>=.9=0 max=0.839
+[result stream 0] fuse_pseudo_lr_full    all: AUC=0.6602 mac=0.6118 mic=0.6143 | mature: AUC=0.6654 mac=0.6171 mic=0.6176 | subj>=.9=0 max=0.808
+[result stream 0] fuse_oracle_flip       all: AUC=0.6997 mac=0.6361 mic=0.6366 | mature: AUC=0.7126 mac=0.6453 mic=0.6492 | subj>=.9=0 max=0.808 [LEAKY]
+[result stream 0] fuse_flipL             all: AUC=0.6753 mac=0.6108 mic=0.6150 | mature: AUC=0.6796 mac=0.6069 mic=0.6149 | subj>=.9=0 max=0.779 [LEAKY]
+[result stream 0] fuse_pseudo_lr_full_thr all: AUC=0.6618 mac=0.6153 mic=0.6181 | mature: AUC=0.6671 mac=0.6206 mic=0.6230 | subj>=.9=0 max=0.842
+[result stream 0] fuse_oracle_flip_thr   all: AUC=0.7000 mac=0.6372 mic=0.6384 | mature: AUC=0.7124 mac=0.6516 mic=0.6544 | subj>=.9=0 max=0.842 [LEAKY]
+[result stream 0] fuse_flipL_thr         all: AUC=0.6807 mac=0.6180 mic=0.6209 | mature: AUC=0.6881 mac=0.6163 mic=0.6240 | subj>=.9=0 max=0.839 [LEAKY]
+[check s0] fuse_pseudo_lr_full(_thr) reproduces v2 mac=0.6118/0.6153
+[group stream 0] fuseH_wf               mid(n=6): mean=0.7008 dmean=-0.0242 | low(n=5): mean=0.5106 dmean=+0.0270
+[group stream 0] fuseH_wf_thr           mid(n=6): mean=0.7166 dmean=-0.0084 | low(n=5): mean=0.5080 dmean=+0.0244
+[group stream 0] fuse_pseudo_lr_full    mid(n=6): mean=0.7197 dmean=-0.0054 | low(n=5): mean=0.4825 dmean=-0.0011
+[group stream 0] fuse_oracle_flip       mid(n=6): mean=0.7197 dmean=-0.0054 | low(n=5): mean=0.5358 dmean=+0.0523
+[group stream 0] fuse_flipL             mid(n=6): mean=0.7008 dmean=-0.0242 | low(n=5): mean=0.5027 dmean=+0.0191
+[group stream 0] fuse_pseudo_lr_full_thr mid(n=6): mean=0.7250 dmean=+0.0000 | low(n=5): mean=0.4836 dmean=+0.0000
+[group stream 0] fuse_oracle_flip_thr   mid(n=6): mean=0.7250 dmean=+0.0000 | low(n=5): mean=0.5317 dmean=+0.0482
+[group stream 0] fuse_flipL_thr         mid(n=6): mean=0.7166 dmean=-0.0084 | low(n=5): mean=0.4996 dmean=+0.0160
+[boot stream 0] fuse_oracle_flip       vs fuse_pseudo_lr_full    all    dAUC=+0.0382[+0.0078,+0.0813] dmac=+0.0237[-0.0020,+0.0541] dmic=+0.0219[-0.0020,+0.0516]
+[boot stream 0] fuse_oracle_flip       vs fuse_pseudo_lr_full    mature dAUC=+0.0456[+0.0140,+0.0833] dmac=+0.0271[+0.0061,+0.0542] dmic=+0.0302[+0.0067,+0.0585]
+[boot stream 0] fuse_flipL             vs fuse_pseudo_lr_full    all    dAUC=+0.0144[-0.0060,+0.0360] dmac=-0.0019[-0.0217,+0.0207] dmic=-0.0002[-0.0208,+0.0228]
+[boot stream 0] fuse_flipL             vs fuse_pseudo_lr_full    mature dAUC=+0.0134[-0.0101,+0.0422] dmac=-0.0111[-0.0426,+0.0201] dmic=-0.0041[-0.0304,+0.0230]
+[boot stream 0] fuse_oracle_flip_thr   vs fuse_pseudo_lr_full_thr all    dAUC=+0.0370[+0.0072,+0.0782] dmac=+0.0214[-0.0014,+0.0467] dmic=+0.0200[-0.0014,+0.0444]
+[boot stream 0] fuse_oracle_flip_thr   vs fuse_pseudo_lr_full_thr mature dAUC=+0.0438[+0.0145,+0.0787] dmac=+0.0300[+0.0089,+0.0556] dmic=+0.0304[+0.0085,+0.0587]
+[boot stream 0] fuse_flipL_thr         vs fuse_pseudo_lr_full_thr all    dAUC=+0.0182[-0.0013,+0.0369] dmac=+0.0027[-0.0101,+0.0207] dmic=+0.0028[-0.0102,+0.0207]
+[boot stream 0] fuse_flipL_thr         vs fuse_pseudo_lr_full_thr mature dAUC=+0.0200[-0.0046,+0.0488] dmac=-0.0049[-0.0282,+0.0228] dmic=+0.0002[-0.0211,+0.0264]
+[s0] done elapsed=17.2s
+[summary] fuseH_wf               mac=0.6143 AUC=0.6706 mature_mac=0.6241
+[summary] fuseH_wf_thr           mac=0.6218 AUC=0.6788 mature_mac=0.6272
+[summary] fuse_pseudo_lr_full    mac=0.6118 AUC=0.6602 mature_mac=0.6171
+[summary] fuse_oracle_flip       mac=0.6361 AUC=0.6997 mature_mac=0.6453 dmac=[0.023725381000054602, -0.0019970109255824653, 0.05409518486810981] dAUC=[0.03824610669375272, 0.007766641759410417, 0.08134320609621933] low_dmac=+0.0523
+[summary] fuse_flipL             mac=0.6108 AUC=0.6753 mature_mac=0.6069 dmac=[-0.0018525495141885917, -0.021660583246354073, 0.02074177968900435] dAUC=[0.014381656621792343, -0.005986927610384191, 0.036004434041573025] low_dmac=+0.0191
+[summary] fuse_pseudo_lr_full_thr mac=0.6153 AUC=0.6618 mature_mac=0.6206
+[summary] fuse_oracle_flip_thr   mac=0.6372 AUC=0.7000 mature_mac=0.6516 dmac=[0.02143458519132862, -0.0013528138528138278, 0.04669401060131219] dAUC=[0.03701295863385544, 0.00717036969881002, 0.07821351463331791] low_dmac=+0.0482
+[summary] fuse_flipL_thr         mac=0.6180 AUC=0.6807 mature_mac=0.6163 dmac=[0.0026727306470977906, -0.010129687528799822, 0.020726222495182092] dAUC=[0.018171799803555808, -0.0013486468008613221, 0.03692425631342468] low_dmac=+0.0160
+[summary-detect] neg_pop_dir    AUC=0.8000 abs=0.8000 [0.397,1.000] rho=-0.39090909090909093
+[summary-detect] branch_L_neg   AUC=0.5000 abs=0.5000 [0.500,0.500] rho=None
+[summary-detect] kappa_gmm      AUC=0.5000 abs=0.5000 [0.143,1.000] rho=0.10000000000000002
+[summary-detect] neg_sori_abs   AUC=0.6667 abs=0.6667 [0.308,1.000] rho=-0.24545454545454545
+[summary-detect] ashman         AUC=0.4000 abs=0.6000 [0.067,0.750] rho=0.009090909090909092
+[summary-detect] abs_skew       AUC=0.4667 abs=0.5333 [0.091,0.871] rho=-0.10000000000000002
+[summary-detect] dbic           AUC=0.3333 abs=0.6667 [0.000,0.710] rho=0.09090909090909091
+[summary-detect] branch_r       AUC=0.0667 abs=0.9333 [0.000,0.222] rho=0.8727272727272729
+[summary-detect] ac1            AUC=0.6000 abs=0.6000 [0.211,1.000] rho=-0.23636363636363636
+[summary-detect] drift          AUC=0.5000 abs=0.5000 [0.116,0.909] rho=-0.10909090909090911
+[done] all checks passed elapsed=17.2s -> depositioned_direction_diagnosis_smoke.json

@@ -1,0 +1,596 @@
+{
+  "meta": {
+    "P_k": 8.0,
+    "P_all": 32.0,
+    "pca": 0,
+    "variants": [
+      "current_only",
+      "delta_k8",
+      "delta_k32",
+      "delta_all",
+      "delta_multi"
+    ],
+    "threshold": 0.5,
+    "inner_threshold": true,
+    "baseline": "merge_best_window6_oof combo__C4_bb_resnet_eq"
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "test_subjects": [
+        "009"
+      ],
+      "thresholds": {
+        "current_only__hgb": 0.07,
+        "current_only__lr": 0.3499999999999999,
+        "delta_k8__hgb": 0.09,
+        "delta_k8__lr": 0.09,
+        "delta_k32__hgb": 0.33999999999999997,
+        "delta_k32__lr": 0.22999999999999998,
+        "delta_all__hgb": 0.09,
+        "delta_all__lr": 0.25999999999999995,
+        "delta_multi__hgb": 0.12,
+        "delta_multi__lr": 0.06
+      }
+    }
+  ],
+  "methods": {
+    "baseline_merge_best": {
+      "all": {
+        "n": 217,
+        "AUC": 0.7393815834182806,
+        "subject_macro_bACC": 0.6813200815494393,
+        "micro_bACC": 0.6813200815494393
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.2333333333333333,
+        "subject_macro_bACC": 0.33333333333333337,
+        "micro_bACC": 0.33333333333333337
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.824576639166305,
+        "subject_macro_bACC": 0.7274207555362571,
+        "micro_bACC": 0.7274207555362571
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.7216216216216217,
+        "subject_macro_bACC": 0.713963963963964,
+        "micro_bACC": 0.713963963963964
+      }
+    },
+    "current_only__hgb": {
+      "all": {
+        "n": 217,
+        "AUC": 0.4505606523955148,
+        "subject_macro_bACC": 0.4514525993883792,
+        "micro_bACC": 0.4514525993883792
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.12666666666666668,
+        "subject_macro_bACC": 0.23333333333333334,
+        "micro_bACC": 0.23333333333333334
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.484259661311333,
+        "subject_macro_bACC": 0.47427268779852366,
+        "micro_bACC": 0.47427268779852366
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.40720720720720716,
+        "subject_macro_bACC": 0.4058558558558559,
+        "micro_bACC": 0.4058558558558559
+      }
+    },
+    "current_only__lr": {
+      "all": {
+        "n": 217,
+        "AUC": 0.348708800543663,
+        "subject_macro_bACC": 0.4658936459395175,
+        "micro_bACC": 0.4658936459395175
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.44999999999999996,
+        "subject_macro_bACC": 0.4833333333333333,
+        "micro_bACC": 0.4833333333333333
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.34444203213200175,
+        "subject_macro_bACC": 0.4669995657837603,
+        "micro_bACC": 0.4669995657837603
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.15585585585585582,
+        "subject_macro_bACC": 0.39301801801801806,
+        "micro_bACC": 0.39301801801801806
+      }
+    },
+    "delta_k8__hgb": {
+      "all": {
+        "n": 217,
+        "AUC": 0.5761128100577643,
+        "subject_macro_bACC": 0.5657492354740061,
+        "micro_bACC": 0.5657492354740061
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.3666666666666667,
+        "subject_macro_bACC": 0.36666666666666664,
+        "micro_bACC": 0.36666666666666664
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.5993269648284847,
+        "subject_macro_bACC": 0.5879287885366913,
+        "micro_bACC": 0.5879287885366913
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.5932432432432433,
+        "subject_macro_bACC": 0.5434684684684685,
+        "micro_bACC": 0.5434684684684685
+      }
+    },
+    "delta_k8__lr": {
+      "all": {
+        "n": 217,
+        "AUC": 0.38434420659191304,
+        "subject_macro_bACC": 0.42367482161060144,
+        "micro_bACC": 0.42367482161060144
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.46333333333333326,
+        "subject_macro_bACC": 0.5,
+        "micro_bACC": 0.5
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.3829787234042553,
+        "subject_macro_bACC": 0.41836734693877553,
+        "micro_bACC": 0.41836734693877553
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.17274774774774773,
+        "subject_macro_bACC": 0.29121621621621624,
+        "micro_bACC": 0.29121621621621624
+      }
+    },
+    "delta_k32__hgb": {
+      "all": {
+        "n": 217,
+        "AUC": 0.42184845395854575,
+        "subject_macro_bACC": 0.46487427794767244,
+        "micro_bACC": 0.46487427794767244
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.56,
+        "subject_macro_bACC": 0.5,
+        "micro_bACC": 0.5
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.4053408597481546,
+        "subject_macro_bACC": 0.4551671732522796,
+        "micro_bACC": 0.4551671732522796
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.41621621621621624,
+        "subject_macro_bACC": 0.484009009009009,
+        "micro_bACC": 0.484009009009009
+      }
+    },
+    "delta_k32__lr": {
+      "all": {
+        "n": 217,
+        "AUC": 0.31218144750254845,
+        "subject_macro_bACC": 0.40494393476044854,
+        "micro_bACC": 0.40494393476044854
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.59,
+        "subject_macro_bACC": 0.5666666666666667,
+        "micro_bACC": 0.5666666666666667
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.2754016500217108,
+        "subject_macro_bACC": 0.3884064264003474,
+        "micro_bACC": 0.3884064264003474
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.16486486486486482,
+        "subject_macro_bACC": 0.24346846846846848,
+        "micro_bACC": 0.24346846846846848
+      }
+    },
+    "delta_all__hgb": {
+      "all": {
+        "n": 217,
+        "AUC": 0.5226809378185525,
+        "subject_macro_bACC": 0.5200050968399592,
+        "micro_bACC": 0.5200050968399592
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.22666666666666668,
+        "subject_macro_bACC": 0.4,
+        "micro_bACC": 0.4
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.5496092053842814,
+        "subject_macro_bACC": 0.5287668258792879,
+        "micro_bACC": 0.5287668258792879
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.37612612612612606,
+        "subject_macro_bACC": 0.402927927927928,
+        "micro_bACC": 0.402927927927928
+      }
+    },
+    "delta_all__lr": {
+      "all": {
+        "n": 217,
+        "AUC": 0.35529221882432893,
+        "subject_macro_bACC": 0.4808868501529052,
+        "micro_bACC": 0.4808868501529052
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.47,
+        "subject_macro_bACC": 0.5166666666666667,
+        "micro_bACC": 0.5166666666666667
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.3506296135475467,
+        "subject_macro_bACC": 0.47709509335649153,
+        "micro_bACC": 0.47709509335649153
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.1502252252252252,
+        "subject_macro_bACC": 0.44594594594594594,
+        "micro_bACC": 0.44594594594594594
+      }
+    },
+    "delta_multi__hgb": {
+      "all": {
+        "n": 217,
+        "AUC": 0.4811416921508665,
+        "subject_macro_bACC": 0.510363574583758,
+        "micro_bACC": 0.510363574583758
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.25333333333333335,
+        "subject_macro_bACC": 0.5,
+        "micro_bACC": 0.5
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.5044507164567955,
+        "subject_macro_bACC": 0.5045592705167173,
+        "micro_bACC": 0.5045592705167173
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.38378378378378375,
+        "subject_macro_bACC": 0.4123873873873874,
+        "micro_bACC": 0.4123873873873874
+      }
+    },
+    "delta_multi__lr": {
+      "all": {
+        "n": 217,
+        "AUC": 0.35699116547740406,
+        "subject_macro_bACC": 0.4710329595650697,
+        "micro_bACC": 0.4710329595650697
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.4633333333333334,
+        "subject_macro_bACC": 0.4666666666666667,
+        "micro_bACC": 0.4666666666666667
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.35768562744246635,
+        "subject_macro_bACC": 0.4750325662179765,
+        "micro_bACC": 0.4750325662179765
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.14076576576576574,
+        "subject_macro_bACC": 0.4355855855855856,
+        "micro_bACC": 0.4355855855855856
+      }
+    },
+    "current_only__hgb__innerthr": {
+      "all": {
+        "n": 217,
+        "AUC": 0.4505606523955148,
+        "subject_macro_bACC": 0.5185185185185185,
+        "micro_bACC": 0.5185185185185185
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.12666666666666668,
+        "subject_macro_bACC": 0.5,
+        "micro_bACC": 0.5
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.484259661311333,
+        "subject_macro_bACC": 0.5204081632653061,
+        "micro_bACC": 0.5204081632653061
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.40720720720720716,
+        "subject_macro_bACC": 0.5,
+        "micro_bACC": 0.5
+      }
+    },
+    "current_only__lr__innerthr": {
+      "all": {
+        "n": 217,
+        "AUC": 0.3627251104315325,
+        "subject_macro_bACC": 0.4378610261637785,
+        "micro_bACC": 0.4378610261637785
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.5033333333333333,
+        "subject_macro_bACC": 0.4666666666666667,
+        "micro_bACC": 0.4666666666666667
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.35290924880590535,
+        "subject_macro_bACC": 0.4374728614850195,
+        "micro_bACC": 0.4374728614850195
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.23018018018018016,
+        "subject_macro_bACC": 0.3472972972972973,
+        "micro_bACC": 0.3472972972972973
+      }
+    },
+    "delta_k8__hgb__innerthr": {
+      "all": {
+        "n": 217,
+        "AUC": 0.5761128100577643,
+        "subject_macro_bACC": 0.5277777777777778,
+        "micro_bACC": 0.5277777777777778
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.3666666666666667,
+        "subject_macro_bACC": 0.5,
+        "micro_bACC": 0.5
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.5993269648284847,
+        "subject_macro_bACC": 0.5306122448979592,
+        "micro_bACC": 0.5306122448979592
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.5932432432432433,
+        "subject_macro_bACC": 0.5,
+        "micro_bACC": 0.5
+      }
+    },
+    "delta_k8__lr__innerthr": {
+      "all": {
+        "n": 217,
+        "AUC": 0.38332483860006805,
+        "subject_macro_bACC": 0.3492184845395855,
+        "micro_bACC": 0.3492184845395855
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.44999999999999996,
+        "subject_macro_bACC": 0.55,
+        "micro_bACC": 0.55
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.3829787234042553,
+        "subject_macro_bACC": 0.32783326096396004,
+        "micro_bACC": 0.32783326096396004
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.16734234234234233,
+        "subject_macro_bACC": 0.21126126126126127,
+        "micro_bACC": 0.21126126126126127
+      }
+    },
+    "delta_k32__hgb__innerthr": {
+      "all": {
+        "n": 217,
+        "AUC": 0.42184845395854575,
+        "subject_macro_bACC": 0.464322120285423,
+        "micro_bACC": 0.464322120285423
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.56,
+        "subject_macro_bACC": 0.55,
+        "micro_bACC": 0.55
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.4053408597481546,
+        "subject_macro_bACC": 0.4471341728180634,
+        "micro_bACC": 0.4471341728180634
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.41621621621621624,
+        "subject_macro_bACC": 0.4560810810810811,
+        "micro_bACC": 0.4560810810810811
+      }
+    },
+    "delta_k32__lr__innerthr": {
+      "all": {
+        "n": 217,
+        "AUC": 0.3128610261637785,
+        "subject_macro_bACC": 0.4001019367991845,
+        "micro_bACC": 0.4001019367991845
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.5933333333333333,
+        "subject_macro_bACC": 0.5666666666666667,
+        "micro_bACC": 0.5666666666666667
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.2754016500217108,
+        "subject_macro_bACC": 0.38438992618323925,
+        "micro_bACC": 0.38438992618323925
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.16846846846846847,
+        "subject_macro_bACC": 0.2382882882882883,
+        "micro_bACC": 0.2382882882882883
+      }
+    },
+    "delta_all__hgb__innerthr": {
+      "all": {
+        "n": 217,
+        "AUC": 0.5226809378185525,
+        "subject_macro_bACC": 0.5833333333333334,
+        "micro_bACC": 0.5833333333333334
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.22666666666666668,
+        "subject_macro_bACC": 0.5,
+        "micro_bACC": 0.5
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.5496092053842814,
+        "subject_macro_bACC": 0.5918367346938775,
+        "micro_bACC": 0.5918367346938775
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.37612612612612606,
+        "subject_macro_bACC": 0.5,
+        "micro_bACC": 0.5
+      }
+    },
+    "delta_all__lr__innerthr": {
+      "all": {
+        "n": 217,
+        "AUC": 0.3695208970438329,
+        "subject_macro_bACC": 0.46640332993544004,
+        "micro_bACC": 0.46640332993544004
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.5233333333333333,
+        "subject_macro_bACC": 0.44999999999999996,
+        "micro_bACC": 0.44999999999999996
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.35909683022145034,
+        "subject_macro_bACC": 0.4697134172818063,
+        "micro_bACC": 0.4697134172818063
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.22567567567567565,
+        "subject_macro_bACC": 0.4272522522522523,
+        "micro_bACC": 0.4272522522522523
+      }
+    },
+    "delta_multi__hgb__innerthr": {
+      "all": {
+        "n": 217,
+        "AUC": 0.4811416921508665,
+        "subject_macro_bACC": 0.5787037037037037,
+        "micro_bACC": 0.5787037037037037
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.25333333333333335,
+        "subject_macro_bACC": 0.5,
+        "micro_bACC": 0.5
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.5044507164567955,
+        "subject_macro_bACC": 0.5867346938775511,
+        "micro_bACC": 0.5867346938775511
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.38378378378378375,
+        "subject_macro_bACC": 0.5,
+        "micro_bACC": 0.5
+      }
+    },
+    "delta_multi__lr__innerthr": {
+      "all": {
+        "n": 217,
+        "AUC": 0.3561416921508665,
+        "subject_macro_bACC": 0.419002718314645,
+        "micro_bACC": 0.419002718314645
+      },
+      "switching": {
+        "n": 25,
+        "AUC": 0.45,
+        "subject_macro_bACC": 0.5,
+        "micro_bACC": 0.5
+      },
+      "steady": {
+        "n": 192,
+        "AUC": 0.35768562744246635,
+        "subject_macro_bACC": 0.41348241424229265,
+        "micro_bACC": 0.41348241424229265
+      },
+      "history_comparable": {
+        "n": 97,
+        "AUC": 0.13626126126126126,
+        "subject_macro_bACC": 0.33693693693693694,
+        "micro_bACC": 0.33693693693693694
+      }
+    }
+  },
+  "bootstrap": {},
+  "per_subject_history_comparable": {
+    "delta_k8__hgb": {
+      "009": 0.5434684684684685
+    },
+    "baseline_merge_best": {
+      "009": 0.713963963963964
+    }
+  },
+  "best_history_comparable": "delta_k8__hgb",
+  "seconds": 58.42834650000441
+}

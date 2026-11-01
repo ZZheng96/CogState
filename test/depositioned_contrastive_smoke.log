@@ -1,0 +1,33 @@
+[start] rows=16067 subjects=57 device=cuda smoke=True sseeds=(0,) epochs=3 groups={'low': 20, 'mid': 34, 'high': 3}
+    [encoder fold1/5] ep01/3 nce=3.4445 pos_top1=0.031 (chance 0.032) t=5s elapsed=6.9s
+    [encoder fold1/5] ep02/3 nce=3.4337 pos_top1=0.036 (chance 0.032) t=8s elapsed=10.0s
+    [encoder fold1/5] ep03/3 nce=3.4336 pos_top1=0.036 (chance 0.032) t=11s elapsed=13.1s
+[encoder] fold1/5 done 11s final nce=3.4336 pos_top1=0.036 iso=0.0e+00 elapsed=14.5s
+[stream 0 fold 1/5] heads fit; testAUC lr=0.5523 hgb=0.5486; checks ok (naive/label-shuffle/isolation/prefix) elapsed=15.9s
+[result stream 0] position_only__lr  all: AUC=0.4936 mac=0.5000 mic=0.5000 | mature: AUC=0.4924 mac=0.5000 mic=0.5000 | subj>=.9=0 max=0.500
+[result stream 0] position_only__hgb all: AUC=0.4977 mac=0.4984 mic=0.4982 | mature: AUC=0.4960 mac=0.5036 mic=0.5036 | subj>=.9=0 max=0.535
+[result stream 0] contrastive_lr     all: AUC=0.5523 mac=0.5297 mic=0.5332 | mature: AUC=0.5514 mac=0.5329 mic=0.5396 | subj>=.9=0 max=0.625
+[result stream 0] contrastive_hgb    all: AUC=0.5486 mac=0.5418 mic=0.5425 | mature: AUC=0.5362 mac=0.5379 mic=0.5398 | subj>=.9=0 max=0.607
+[result stream 0] fusionM_prank      all: AUC=0.6597 mac=0.5953 mic=0.5970 | mature: AUC=0.6709 mac=0.6059 mic=0.6054 | subj>=.9=0 max=0.784
+[result stream 0] fusionF            all: AUC=0.6486 mac=0.5997 mic=0.6019 | mature: AUC=0.6556 mac=0.6017 mic=0.6027 | subj>=.9=0 max=0.768
+[result stream 0] fusionF_hgb        all: AUC=0.6518 mac=0.5996 mic=0.6013 | mature: AUC=0.6567 mac=0.6039 mic=0.6044 | subj>=.9=0 max=0.752
+[sanity stream 0] position_only__lr AUC=0.4936 -> OK
+[sanity stream 0] position_only__hgb AUC=0.4977 -> OK
+[boot stream 0] contrastive_lr   vs fusionM_prank all    dAUC=-0.1098[-0.1664,-0.0398] dmac=-0.0678[-0.1118,-0.0220] dmic=-0.0662[-0.1119,-0.0168]
+[boot stream 0] contrastive_lr   vs fusionM_prank mature dAUC=-0.1224[-0.1762,-0.0538] dmac=-0.0754[-0.1189,-0.0243] dmic=-0.0687[-0.1154,-0.0183]
+[group stream 0] contrastive_lr   low  n= 5 medAUC=0.4979 medbACC=0.4947 med dAUC=+0.0482 med dbACC=+0.0441
+[group stream 0] contrastive_lr   mid  n= 6 medAUC=0.6197 medbACC=0.5839 med dAUC=-0.1927 med dbACC=-0.1172
+[boot stream 0] contrastive_hgb  vs fusionM_prank all    dAUC=-0.1127[-0.1752,-0.0403] dmac=-0.0552[-0.1018,-0.0070] dmic=-0.0560[-0.1026,-0.0070]
+[boot stream 0] contrastive_hgb  vs fusionM_prank mature dAUC=-0.1376[-0.2032,-0.0600] dmac=-0.0714[-0.1224,-0.0191] dmic=-0.0689[-0.1216,-0.0145]
+[group stream 0] contrastive_hgb  low  n= 5 medAUC=0.5102 medbACC=0.5153 med dAUC=+0.0154 med dbACC=+0.0466
+[group stream 0] contrastive_hgb  mid  n= 6 medAUC=0.5859 medbACC=0.5797 med dAUC=-0.2227 med dbACC=-0.1377
+[boot stream 0] fusionF          vs fusionM_prank all    dAUC=-0.0110[-0.0268,+0.0082] dmac=+0.0046[-0.0135,+0.0207] dmic=+0.0050[-0.0136,+0.0212]
+[boot stream 0] fusionF          vs fusionM_prank mature dAUC=-0.0154[-0.0320,+0.0035] dmac=-0.0041[-0.0180,+0.0129] dmic=-0.0026[-0.0177,+0.0152]
+[group stream 0] fusionF          low  n= 5 medAUC=0.4654 medbACC=0.4927 med dAUC=+0.0158 med dbACC=+0.0169
+[group stream 0] fusionF          mid  n= 6 medAUC=0.7811 medbACC=0.7173 med dAUC=-0.0230 med dbACC=+0.0071
+[boot stream 0] fusionF_hgb      vs fusionM_prank all    dAUC=-0.0072[-0.0215,+0.0061] dmac=+0.0045[-0.0105,+0.0167] dmic=+0.0045[-0.0109,+0.0172]
+[boot stream 0] fusionF_hgb      vs fusionM_prank mature dAUC=-0.0134[-0.0282,+0.0015] dmac=-0.0022[-0.0158,+0.0128] dmic=-0.0010[-0.0133,+0.0136]
+[group stream 0] fusionF_hgb      low  n= 5 medAUC=0.5005 medbACC=0.5118 med dAUC=+0.0091 med dbACC=+0.0245
+[group stream 0] fusionF_hgb      mid  n= 6 medAUC=0.7676 medbACC=0.6970 med dAUC=-0.0134 med dbACC=-0.0109
+[progress] stream 0 finished in 2s elapsed=16.6s
+[done] elapsed=16.7s -> depositioned_contrastive_smoke.json

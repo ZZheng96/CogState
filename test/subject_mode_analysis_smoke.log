@@ -1,0 +1,60 @@
+[17:16:40 +    0.9s] [feat] (3308, 54)
+[17:16:40 +    0.9s]   001 grp=mid    ceil=0.7560226735947095 mbAUC=0.8300897496457251 max|d|=1.53 (hf52-60) band=hf52-100 off=+1.23 alpha=+0.79 theta=+0.81
+[17:16:40 +    0.9s]   002 grp=bottom ceil=0.5148517549596686 mbAUC=0.5984848484848485 max|d|=0.61 (lp38Hz) band=gamma31-45 off=+0.23 alpha=+0.12 theta=-0.22
+[17:16:40 +    0.9s]   003 grp=top    ceil=0.7622443862483981 mbAUC=0.6275700674207388 max|d|=1.25 (sub_logvar_mean) band=subwin off=+0.97 alpha=+0.94 theta=+0.90
+[17:16:40 +    0.9s]   004 grp=bottom ceil=0.27188600872811397 mbAUC=0.49445291550554704 max|d|=0.60 (sub_logvar_mean) band=subwin off=-0.15 alpha=-0.09 theta=-0.03
+[17:16:40 +    0.9s]   005 grp=bottom ceil=0.35810185185185184 mbAUC=0.6422839506172839 max|d|=0.57 (sub_spent_std) band=subwin off=+0.35 alpha=+0.30 theta=+0.23
+[17:16:40 +    0.9s]   006 grp=mid    ceil=0.7764991554054055 mbAUC=0.7326858108108107 max|d|=1.48 (lp28Hz) band=beta13-30 off=-0.68 alpha=+0.24 theta=+0.26
+[17:16:40 +    0.9s]   007 grp=top    ceil=0.6067751335599806 mbAUC=0.7333171442447791 max|d|=0.88 (lp38Hz) band=gamma31-45 off=+0.74 alpha=+0.65 theta=+0.73
+[17:16:40 +    0.9s]   008 grp=mid    ceil=0.5277914654577708 mbAUC=0.5182812653986401 max|d|=1.09 (lp26Hz) band=beta13-30 off=-1.02 alpha=-0.98 theta=-0.93
+[17:16:40 +    0.9s]   009 grp=bottom ceil=0.49842847434590554 mbAUC=0.7393815834182806 max|d|=1.03 (lp23Hz) band=beta13-30 off=+0.96 alpha=+0.92 theta=+0.89
+[17:16:40 +    0.9s]   010 grp=mid    ceil=0.5724410197869102 mbAUC=0.680222602739726 max|d|=1.41 (hf60-70) band=hf52-100 off=+0.97 alpha=+0.55 theta=+0.60
+[17:16:40 +    0.9s]   011 grp=mid    ceil=0.6301369863013699 mbAUC=0.7598458904109588 max|d|=0.48 (lp2Hz) band=delta1-3 off=+0.25 alpha=+0.36 theta=+0.38
+[17:16:40 +    0.9s]   012 grp=mid    ceil=0.6223021582733812 mbAUC=0.6152890637130584 max|d|=0.54 (lp37Hz) band=gamma31-45 off=+0.29 alpha=+0.01 theta=+0.05
+[17:16:40 +    0.9s] [group top] n=2 band_mean_d={"delta1-3": 0.85, "theta4-7": 0.81, "alpha8-12": 0.8, "beta13-30": 0.85, "gamma31-45": 0.9, "hf52-100": 1.0, "subwin": 0.12} frac+={"delta1-3": 1.0, "theta4-7": 1.0, "alpha8-12": 1.0, "beta13-30": 1.0, "gamma31-45": 1.0, "hf52-100": 1.0, "subwin": 1.0} main_band={'delta1-3': 0, 'theta4-7': 0, 'alpha8-12': 0, 'beta13-30': 0, 'gamma31-45': 1, 'hf52-100': 0, 'subwin': 1} med max|d|=1.07
+[17:16:40 +    0.9s] [group bottom] n=4 band_mean_d={"delta1-3": 0.16, "theta4-7": 0.22, "alpha8-12": 0.31, "beta13-30": 0.35, "gamma31-45": 0.43, "hf52-100": 0.35, "subwin": 0.15} frac+={"delta1-3": 0.5, "theta4-7": 0.5, "alpha8-12": 0.75, "beta13-30": 0.75, "gamma31-45": 0.75, "hf52-100": 0.75, "subwin": 1.0} main_band={'delta1-3': 0, 'theta4-7': 0, 'alpha8-12': 0, 'beta13-30': 1, 'gamma31-45': 1, 'hf52-100': 0, 'subwin': 2} med max|d|=0.61
+[17:16:40 +    0.9s] [group flip] n=1 band_mean_d={"delta1-3": -0.21, "theta4-7": -0.03, "alpha8-12": -0.09, "beta13-30": -0.14, "gamma31-45": -0.19, "hf52-100": -0.41, "subwin": 0.03} frac+={"delta1-3": 0.0, "theta4-7": 0.0, "alpha8-12": 0.0, "beta13-30": 0.0, "gamma31-45": 0.0, "hf52-100": 0.0, "subwin": 1.0} main_band={'delta1-3': 0, 'theta4-7': 0, 'alpha8-12': 0, 'beta13-30': 0, 'gamma31-45': 0, 'hf52-100': 0, 'subwin': 1} med max|d|=0.60
+[17:16:40 +    0.9s] [group all] n=12 band_mean_d={"delta1-3": 0.29, "theta4-7": 0.31, "alpha8-12": 0.32, "beta13-30": 0.34, "gamma31-45": 0.38, "hf52-100": 0.36, "subwin": 0.1} frac+={"delta1-3": 0.75, "theta4-7": 0.75, "alpha8-12": 0.83, "beta13-30": 0.75, "gamma31-45": 0.75, "hf52-100": 0.75, "subwin": 0.75} main_band={'delta1-3': 1, 'theta4-7': 0, 'alpha8-12': 0, 'beta13-30': 3, 'gamma31-45': 3, 'hf52-100': 2, 'subwin': 3} med max|d|=0.96
+[17:16:40 +    0.9s] [consistency] median pairwise corr of d-vectors all=0.090 frac<0=0.470
+[17:16:40 +    0.9s] [consistency] top: median pairwise corr=0.772
+[17:16:40 +    0.9s] [consistency] bottom: median pairwise corr=0.097
+[17:16:40 +    0.9s] [cluster] variant=raw_d
+[17:16:41 +    2.6s]   k=2 silhouette=0.526 null mean=0.497 q95=0.586 p=0.355
+[17:16:42 +    2.9s]   k=3 silhouette=0.524 null mean=0.446 q95=0.569 p=0.194
+[17:16:42 +    3.2s]   k=4 silhouette=0.458 null mean=0.412 q95=0.532 p=0.258
+[17:16:42 +    3.5s]   k=5 silhouette=0.378 null mean=0.373 q95=0.463 p=0.387
+[17:16:42 +    3.8s]   k=6 silhouette=0.317 null mean=0.314 q95=0.390 p=0.484
+[17:16:42 +    3.8s] [cluster] variant=unit_d
+[17:16:43 +    4.0s]   k=2 silhouette=0.708 null mean=0.437 q95=0.539 p=0.032
+[17:16:43 +    4.3s]   k=3 silhouette=0.406 null mean=0.382 q95=0.485 p=0.355
+[17:16:43 +    4.6s]   k=4 silhouette=0.396 null mean=0.348 q95=0.445 p=0.226
+[17:16:44 +    4.9s]   k=5 silhouette=0.266 null mean=0.298 q95=0.412 p=0.677
+[17:16:44 +    5.2s]   k=6 silhouette=0.249 null mean=0.251 q95=0.333 p=0.452
+[17:16:44 +    5.2s] [cluster] variant=shape_unit_d
+[17:16:44 +    5.4s]   k=2 silhouette=0.493 null mean=0.361 q95=0.437 p=0.065
+[17:16:44 +    5.7s]   k=3 silhouette=0.396 null mean=0.324 q95=0.457 p=0.194
+[17:16:45 +    6.0s]   k=4 silhouette=0.249 null mean=0.292 q95=0.402 p=0.774
+[17:16:45 +    6.3s]   k=5 silhouette=0.206 null mean=0.253 q95=0.344 p=0.839
+[17:16:45 +    6.6s]   k=6 silhouette=0.208 null mean=0.219 q95=0.287 p=0.484
+[17:16:45 +    6.6s] [hier cosine] sizes k=2:[3, 9] k=3:[3, 8, 1] k=4:[2, 1, 8, 1] k=5:[2, 1, 7, 1, 1] k=6:[1, 1, 1, 7, 1, 1]
+[17:16:45 +    6.6s] [describe] raw_d k=3 (max silhouette excess over null)
+[17:16:45 +    6.6s]   c0 n=5 ceil_med=0.6067751335599806 mbAUC_med=0.7333171442447791 top/bot/flip=2/1/0 bands={"delta1-3": 0.77, "theta4-7": 0.78, "alpha8-12": 0.77, "beta13-30": 1.0, "gamma31-45": 1.11, "hf52-100": 1.14, "subwin": 0.23} feat=['hf60-70', 'hf52-60', 'hf70-80', 'hf80-90', 'lp45Hz'] wcos=0.9773240454778453
+[17:16:45 +    6.6s]   c1 n=2 ceil_med=0.6521453104315882 mbAUC_med=0.6254835381047255 top/bot/flip=0/0/0 bands={"delta1-3": -0.34, "theta4-7": -0.33, "alpha8-12": -0.37, "beta13-30": -0.94, "gamma31-45": -1.15, "hf52-100": -1.22, "subwin": -0.28} feat=['lp28Hz', 'lp29Hz', 'hf60-70', 'hf70-80', 'lp34Hz'] wcos=0.7390644985158344
+[17:16:45 +    6.6s]   c2 n=5 ceil_med=0.5148517549596686 mbAUC_med=0.6152890637130584 top/bot/flip=0/3/1 bands={"delta1-3": 0.07, "theta4-7": 0.08, "alpha8-12": 0.14, "beta13-30": 0.2, "gamma31-45": 0.26, "hf52-100": 0.21, "subwin": 0.12} feat=['sub_spent_std', 'lp37Hz', 'lp34Hz', 'lp38Hz', 'lp19Hz'] wcos=0.4874001472612226
+[17:16:45 +    6.6s] [describe] unit_d k=2 (max silhouette excess over null)
+[17:16:45 +    6.6s]   c0 n=9 ceil_med=0.6067751335599806 mbAUC_med=0.680222602739726 top/bot/flip=2/3/0 bands={"delta1-3": 0.49, "theta4-7": 0.49, "alpha8-12": 0.51, "beta13-30": 0.68, "gamma31-45": 0.78, "hf52-100": 0.79, "subwin": 0.19} feat=['lp37Hz', 'lp38Hz', 'hf60-70', 'hf80-90', 'hf70-80'] wcos=0.8803682939746167
+[17:16:45 +    6.6s]   c1 n=3 ceil_med=0.5277914654577708 mbAUC_med=0.5182812653986401 top/bot/flip=0/1/1 bands={"delta1-3": -0.3, "theta4-7": -0.23, "alpha8-12": -0.28, "beta13-30": -0.67, "gamma31-45": -0.83, "hf52-100": -0.95, "subwin": -0.18} feat=['hf70-80', 'hf80-90', 'hf60-70', 'hf52-60', 'hf90-100'] wcos=0.7390644985158344
+[17:16:45 +    6.6s] [describe] shape_unit_d k=2 (max silhouette excess over null)
+[17:16:45 +    6.6s]   c0 n=8 ceil_med=0.5896080766734454 mbAUC_med=0.661253276678505 top/bot/flip=2/3/0 bands={"delta1-3": 0.49, "theta4-7": 0.5, "alpha8-12": 0.53, "beta13-30": 0.73, "gamma31-45": 0.86, "hf52-100": 0.88, "subwin": 0.2} feat=['lp37Hz', 'hf60-70', 'lp38Hz', 'hf80-90', 'lp36Hz'] wcos=0.921657990961311
+[17:16:45 +    6.6s]   c1 n=4 ceil_med=0.5789642258795704 mbAUC_med=0.6254835381047255 top/bot/flip=0/1/1 bands={"delta1-3": -0.11, "theta4-7": -0.08, "alpha8-12": -0.12, "beta13-30": -0.44, "gamma31-45": -0.59, "hf52-100": -0.68, "subwin": -0.09} feat=['hf70-80', 'hf80-90', 'hf90-100', 'hf60-70', 'hf52-60'] wcos=0.1803746328222905
+[17:16:45 +    6.6s] [describe] unit_d fixed k=3
+[17:16:45 +    6.6s]   c0 n=2 ceil_med=0.5685769566165249 mbAUC_med=0.6068869560989534 top/bot/flip=0/1/0 bands={"delta1-3": -0.05, "theta4-7": -0.09, "alpha8-12": 0.06, "beta13-30": 0.26, "gamma31-45": 0.47, "hf52-100": 0.49, "subwin": 0.07} feat=['lp37Hz', 'lp34Hz', 'lp38Hz', 'hf90-100', 'lp35Hz'] wcos=0.84243856684974
+[17:16:45 +    6.6s]   c1 n=3 ceil_med=0.5277914654577708 mbAUC_med=0.5182812653986401 top/bot/flip=0/1/1 bands={"delta1-3": -0.3, "theta4-7": -0.23, "alpha8-12": -0.28, "beta13-30": -0.67, "gamma31-45": -0.83, "hf52-100": -0.95, "subwin": -0.18} feat=['hf70-80', 'hf80-90', 'hf60-70', 'hf52-60', 'hf90-100'] wcos=0.7390644985158344
+[17:16:45 +    6.6s]   c2 n=7 ceil_med=0.6067751335599806 mbAUC_med=0.7333171442447791 top/bot/flip=2/2/0 bands={"delta1-3": 0.64, "theta4-7": 0.65, "alpha8-12": 0.64, "beta13-30": 0.8, "gamma31-45": 0.87, "hf52-100": 0.88, "subwin": 0.23} feat=['hf60-70', 'hf80-90', 'lp45Hz', 'lp38Hz', 'hf70-80'] wcos=0.9275708634225373
+[17:16:45 +    6.6s] [describe] unit_d fixed k=4
+[17:16:45 +    6.6s]   c0 n=7 ceil_med=0.6067751335599806 mbAUC_med=0.680222602739726 top/bot/flip=2/2/0 bands={"delta1-3": 0.59, "theta4-7": 0.6, "alpha8-12": 0.59, "beta13-30": 0.81, "gamma31-45": 0.91, "hf52-100": 0.93, "subwin": 0.2} feat=['hf60-70', 'hf80-90', 'hf52-60', 'lp37Hz', 'hf70-80'] wcos=0.9345796937526739
+[17:16:45 +    6.6s]   c1 n=3 ceil_med=0.5277914654577708 mbAUC_med=0.5182812653986401 top/bot/flip=0/1/1 bands={"delta1-3": -0.3, "theta4-7": -0.23, "alpha8-12": -0.28, "beta13-30": -0.67, "gamma31-45": -0.83, "hf52-100": -0.95, "subwin": -0.18} feat=['hf70-80', 'hf80-90', 'hf60-70', 'hf52-60', 'hf90-100'] wcos=0.7390644985158344
+[17:16:45 +    6.6s]   c2 n=1 ceil_med=0.5148517549596686 mbAUC_med=0.5984848484848485 top/bot/flip=0/1/0 bands={"delta1-3": -0.19, "theta4-7": -0.22, "alpha8-12": 0.12, "beta13-30": 0.2, "gamma31-45": 0.5, "hf52-100": 0.47, "subwin": 0.13} feat=['lp38Hz', 'lp34Hz', 'lp37Hz', 'lp33Hz', 'lp35Hz'] wcos=None
+[17:16:45 +    6.6s]   c3 n=1 ceil_med=0.6301369863013699 mbAUC_med=0.7598458904109588 top/bot/flip=0/0/0 bands={"delta1-3": 0.44, "theta4-7": 0.38, "alpha8-12": 0.36, "beta13-30": 0.24, "gamma31-45": 0.15, "hf52-100": 0.11, "subwin": 0.17} feat=['lp2Hz', 'sub_spent_std', 'lp3Hz', 'lp1Hz', 'lp4Hz'] wcos=None
+[17:16:45 +    6.6s] [sign-free |cos| hier] sizes k=2:[11, 1] k=3:[3, 8, 1] k=4:[3, 7, 1, 1] k=5:[2, 1, 7, 1, 1] k=6:[1, 1, 1, 7, 1, 1]
+[17:16:45 +    6.6s] [done] -> subject_mode_analysis_smoke_results.json

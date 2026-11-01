@@ -1,0 +1,125 @@
+[start] rows=16067 subjects=57 smoke=True sseeds=(0,) folds=[0]
+[diag] loading raw windows for RMS / band power
+[diag  1/57] sub-001 AUC=0.831 bACC=0.780 within=0.883 dtop10=1.68 dir=+0.72 elapsed=4.0s
+[diag  2/57] sub-002 AUC=0.602 bACC=0.574 within=0.836 dtop10=0.76 dir=-0.11 elapsed=4.1s
+[diag  3/57] sub-003 AUC=0.693 bACC=0.665 within=0.836 dtop10=1.31 dir=+0.62 elapsed=4.2s
+[diag  4/57] sub-004 AUC=0.441 bACC=0.449 within=0.802 dtop10=0.82 dir=-0.27 elapsed=4.4s
+[diag  5/57] sub-005 AUC=0.578 bACC=0.553 within=0.784 dtop10=0.50 dir=+0.53 elapsed=4.5s
+[diag  6/57] sub-006 AUC=0.729 bACC=0.659 within=0.794 dtop10=1.47 dir=-0.16 elapsed=4.6s
+[diag  7/57] sub-007 AUC=0.711 bACC=0.668 within=0.717 dtop10=0.90 dir=+0.71 elapsed=4.8s
+[diag  8/57] sub-008 AUC=0.562 bACC=0.553 within=0.942 dtop10=1.42 dir=-0.28 elapsed=4.9s
+[diag  9/57] sub-009 AUC=0.555 bACC=0.522 within=0.848 dtop10=1.21 dir=+0.76 elapsed=5.0s
+[diag 10/57] sub-010 AUC=0.576 bACC=0.549 within=0.878 dtop10=1.58 dir=+0.55 elapsed=5.1s
+[diag 11/57] sub-011 AUC=0.779 bACC=0.710 within=0.730 dtop10=0.66 dir=+0.73 elapsed=5.3s
+[diag 12/57] sub-012 AUC=0.774 bACC=0.699 within=0.831 dtop10=1.25 dir=+0.11 elapsed=5.4s
+[diag 13/57] sub-013 AUC=0.686 bACC=0.639 within=0.816 dtop10=0.85 dir=+0.77 elapsed=5.5s
+[diag 14/57] sub-014 AUC=0.666 bACC=0.635 within=0.820 dtop10=0.93 dir=+0.41 elapsed=5.7s
+[diag 15/57] sub-015 AUC=0.620 bACC=0.564 within=0.797 dtop10=0.74 dir=-0.14 elapsed=5.8s
+[diag 16/57] sub-016 AUC=0.730 bACC=0.693 within=0.819 dtop10=1.29 dir=+0.25 elapsed=5.9s
+[diag 17/57] sub-017 AUC=0.782 bACC=0.713 within=0.853 dtop10=0.86 dir=+0.77 elapsed=6.1s
+[diag 18/57] sub-018 AUC=0.778 bACC=0.726 within=0.897 dtop10=1.82 dir=+0.28 elapsed=6.2s
+[diag 19/57] sub-019 AUC=0.677 bACC=0.604 within=0.694 dtop10=0.63 dir=+0.06 elapsed=6.3s
+[diag 20/57] sub-020 AUC=0.727 bACC=0.682 within=0.792 dtop10=0.90 dir=+0.72 elapsed=6.5s
+[diag 21/57] sub-021 AUC=0.641 bACC=0.602 within=0.853 dtop10=1.19 dir=-0.05 elapsed=6.6s
+[diag 22/57] sub-022 AUC=0.793 bACC=0.698 within=0.803 dtop10=0.81 dir=+0.34 elapsed=6.7s
+[diag 23/57] sub-023 AUC=0.486 bACC=0.472 within=0.881 dtop10=0.95 dir=-0.58 elapsed=6.9s
+[diag 24/57] sub-024 AUC=0.466 bACC=0.477 within=0.846 dtop10=0.98 dir=-0.30 elapsed=7.0s
+[diag 25/57] sub-025 AUC=0.826 bACC=0.740 within=0.876 dtop10=1.62 dir=+0.35 elapsed=7.1s
+[diag 26/57] sub-026 AUC=0.742 bACC=0.612 within=0.922 dtop10=1.44 dir=+0.80 elapsed=7.3s
+[diag 27/57] sub-027 AUC=0.584 bACC=0.579 within=0.815 dtop10=0.67 dir=+0.10 elapsed=7.4s
+[diag 28/57] sub-028 AUC=0.614 bACC=0.583 within=0.794 dtop10=0.68 dir=-0.42 elapsed=7.5s
+[diag 29/57] sub-029 AUC=0.474 bACC=0.473 within=0.668 dtop10=0.76 dir=-0.35 elapsed=7.7s
+[diag 30/57] sub-030 AUC=0.875 bACC=0.797 within=0.903 dtop10=1.50 dir=+0.33 elapsed=7.8s
+[diag 31/57] sub-031 AUC=0.769 bACC=0.720 within=0.852 dtop10=1.23 dir=+0.32 elapsed=7.9s
+[diag 32/57] sub-034 AUC=0.588 bACC=0.560 within=0.892 dtop10=1.03 dir=+0.37 elapsed=8.0s
+[diag 33/57] sub-035 AUC=0.850 bACC=0.782 within=0.813 dtop10=1.02 dir=+0.79 elapsed=8.2s
+[diag 34/57] sub-036 AUC=0.916 bACC=0.871 within=0.893 dtop10=1.17 dir=+0.54 elapsed=8.3s
+[diag 35/57] sub-037 AUC=0.549 bACC=0.547 within=0.897 dtop10=0.94 dir=-0.65 elapsed=8.4s
+[diag 36/57] sub-038 AUC=0.861 bACC=0.757 within=0.922 dtop10=1.63 dir=+0.35 elapsed=8.5s
+[diag 37/57] sub-039 AUC=0.636 bACC=0.580 within=0.733 dtop10=0.86 dir=-0.14 elapsed=8.7s
+[diag 38/57] sub-040 AUC=0.791 bACC=0.711 within=0.810 dtop10=0.77 dir=+0.20 elapsed=8.8s
+[diag 39/57] sub-041 AUC=0.724 bACC=0.652 within=0.702 dtop10=0.56 dir=+0.58 elapsed=8.9s
+[diag 40/57] sub-042 AUC=0.381 bACC=0.420 within=0.701 dtop10=0.55 dir=-0.43 elapsed=9.1s
+[diag 41/57] sub-043 AUC=0.858 bACC=0.811 within=0.905 dtop10=1.52 dir=+0.82 elapsed=9.2s
+[diag 42/57] sub-044 AUC=0.591 bACC=0.568 within=0.894 dtop10=1.88 dir=-0.13 elapsed=9.3s
+[diag 43/57] sub-045 AUC=0.853 bACC=0.745 within=0.876 dtop10=1.00 dir=+0.76 elapsed=9.4s
+[diag 44/57] sub-046 AUC=0.779 bACC=0.689 within=0.896 dtop10=1.32 dir=+0.51 elapsed=9.5s
+[diag 45/57] sub-047 AUC=0.763 bACC=0.691 within=0.884 dtop10=1.00 dir=+0.20 elapsed=9.7s
+[diag 46/57] sub-048 AUC=0.819 bACC=0.726 within=0.873 dtop10=1.19 dir=+0.68 elapsed=9.8s
+[diag 47/57] sub-049 AUC=0.562 bACC=0.550 within=0.784 dtop10=0.86 dir=+0.14 elapsed=9.9s
+[diag 48/57] sub-050 AUC=0.532 bACC=0.505 within=0.873 dtop10=1.34 dir=-0.29 elapsed=10.1s
+[diag 49/57] sub-051 AUC=0.865 bACC=0.779 within=0.907 dtop10=1.76 dir=+0.65 elapsed=10.2s
+[diag 50/57] sub-052 AUC=0.539 bACC=0.505 within=0.811 dtop10=0.86 dir=-0.20 elapsed=10.3s
+[diag 51/57] sub-053 AUC=0.651 bACC=0.606 within=0.673 dtop10=0.60 dir=+0.43 elapsed=10.5s
+[diag 52/57] sub-054 AUC=0.850 bACC=0.802 within=0.893 dtop10=1.86 dir=+0.23 elapsed=10.6s
+[diag 53/57] sub-055 AUC=0.698 bACC=0.630 within=0.828 dtop10=0.90 dir=-0.24 elapsed=10.7s
+[diag 54/57] sub-056 AUC=0.822 bACC=0.759 within=0.866 dtop10=1.54 dir=+0.88 elapsed=10.9s
+[diag 55/57] sub-057 AUC=0.699 bACC=0.646 within=0.802 dtop10=1.22 dir=+0.71 elapsed=11.0s
+[diag 56/57] sub-058 AUC=0.811 bACC=0.731 within=0.858 dtop10=0.96 dir=+0.77 elapsed=11.1s
+[diag 57/57] sub-059 AUC=0.660 bACC=0.628 within=0.934 dtop10=1.43 dir=-0.49 elapsed=11.2s
+[spearman] n_windows          vs AUC rho=+0.201 (p=0.134)  vs bACC rho=+0.188 (p=0.16)
+[spearman] rms                vs AUC rho=-0.229 (p=0.086)  vs bACC rho=-0.230 (p=0.0846)
+[spearman] rel_delta          vs AUC rho=+nan (p=nan)  vs bACC rho=+nan (p=nan)
+[spearman] rel_theta          vs AUC rho=+nan (p=nan)  vs bACC rho=+nan (p=nan)
+[spearman] rel_alpha          vs AUC rho=+nan (p=nan)  vs bACC rho=+nan (p=nan)
+[spearman] rel_beta           vs AUC rho=+nan (p=nan)  vs bACC rho=+nan (p=nan)
+[spearman] rel_gamma          vs AUC rho=+nan (p=nan)  vs bACC rho=+nan (p=nan)
+[spearman] feat_var           vs AUC rho=+0.006 (p=0.966)  vs bACC rho=-0.031 (p=0.822)
+[spearman] score_std          vs AUC rho=+0.576 (p=2.82e-06)  vs bACC rho=+0.581 (p=2.19e-06)
+[spearman] score_bimodality   vs AUC rho=+0.262 (p=0.0489)  vs bACC rho=+0.277 (p=0.0371)
+[spearman] score_offset       vs AUC rho=+0.175 (p=0.192)  vs bACC rho=+0.103 (p=0.445)
+[spearman] d_max              vs AUC rho=+0.404 (p=0.00181)  vs bACC rho=+0.417 (p=0.00123)
+[spearman] d_top10            vs AUC rho=+0.424 (p=0.00101)  vs bACC rho=+0.436 (p=0.000692)
+[spearman] n_d_ge_0.5         vs AUC rho=+0.287 (p=0.0306)  vs bACC rho=+0.267 (p=0.0446)
+[spearman] within_AUC         vs AUC rho=+0.346 (p=0.00846)  vs bACC rho=+0.330 (p=0.0123)
+[spearman] dir_consistency    vs AUC rho=+0.622 (p=2.36e-07)  vs bACC rho=+0.614 (p=3.72e-07)
+[spearman] bACC_median_thr    vs AUC rho=+0.963 (p=4.88e-33)  vs bACC rho=+0.971 (p=7.54e-36)
+[groups] median per group: high(n=3) mid(n=34) low(n=20)
+  n_windows            high=284 mid=288 low=285
+  rms                  high=7.877e-05 mid=0.0003057 low=0.0002445
+  rel_delta            high=0.7654 mid=nan low=nan
+  rel_theta            high=0.06901 mid=nan low=nan
+  rel_alpha            high=0.0274 mid=nan low=nan
+  rel_beta             high=0.08063 mid=nan low=nan
+  rel_gamma            high=0.05904 mid=nan low=nan
+  feat_var             high=0.7211 mid=0.3512 low=0.4117
+  score_std            high=0.8357 mid=0.608 low=0.5145
+  score_bimodality     high=0.4532 mid=0.387 low=0.3342
+  score_offset         high=0.02803 mid=0.01746 low=0.01858
+  d_max                high=1.769 mid=1.253 low=0.9846
+  d_top10              high=1.518 mid=1.19 low=0.863
+  n_d_ge_0.5           high=367 mid=188 low=186
+  within_AUC           high=0.8932 mid=0.844 low=0.8255
+  dir_consistency      high=0.5371 mid=0.4714 low=-0.1687
+  bACC_median_thr      high=0.827 mid=0.7002 low=0.5333
+  fusionM_prank_AUC    high=0.8578 mid=0.7714 low=0.5625
+  fusionM_prank_bACC   high=0.8114 mid=0.6958 low=0.5496
+  hgb_prank_AUC        high=0.8376 mid=0.7217 low=0.4986
+[diag summary] {"n_within_AUC_lt_0.65": 0, "n_within_ge_0.85_but_cross_lt_0.65": 8, "n_cross_AUC_lt_0.5": 5, "median_within_AUC": 0.8462301587301587, "median_cross_AUC": 0.6985140155352921, "n_dir_consistency_lt_0": 18, "n_bACC_ge_0.9": 0, "low_group": {"n": 20, "n_within_lt_0.65": 0, "n_within_ge_0.85": 7, "n_dir_consistency_lt_0.2": 16}}
+[s0 fold 1/5] hgb_prank reproduced maxabs=0.0e+00 elapsed=43.5s
+[s0 fold 1/5] inner 1/4 done elapsed=57.5s
+[s0 fold 1/5] inner 2/4 done elapsed=71.3s
+[s0 fold 1/5] inner 3/4 done elapsed=87.9s
+[s0 fold 1/5] inner 4/4 done elapsed=102.6s
+[s0 fold 1/5] inner 1/4 done elapsed=119.0s
+[s0 fold 1/5] inner 2/4 done elapsed=132.8s
+[s0 fold 1/5] inner 3/4 done elapsed=145.7s
+[s0 fold 1/5] inner 4/4 done elapsed=158.6s
+[s0 fold 1/5] clean fit done; weights mean=0.634 n_min=11 n_full=19 fold_s=409.5 checks ok elapsed=420.8s
+[result stream 0] position_only__lr    all: AUC=0.4936 mac=0.5000 mic=0.5000 | mature: AUC=0.4924 mac=0.5000 mic=0.5000 | subj>=.9=0 >=.8=0 max=0.500
+[result stream 0] position_only__hgb   all: AUC=0.4977 mac=0.4984 mic=0.4982 | mature: AUC=0.4960 mac=0.5036 mic=0.5036 | subj>=.9=0 >=.8=0 max=0.535
+[result stream 0] hgb_prank_clean      all: AUC=0.5871 mac=0.5537 mic=0.5543 | mature: AUC=0.5874 mac=0.5534 mic=0.5531 | subj>=.9=0 >=.8=0 max=0.744
+[result stream 0] fusionM_clean        all: AUC=0.6415 mac=0.5924 mic=0.5934 | mature: AUC=0.6425 mac=0.5989 mic=0.5986 | subj>=.9=0 >=.8=0 max=0.795
+[result stream 0] hgb_prank            all: AUC=0.6046 mac=0.5645 mic=0.5655 | mature: AUC=0.6193 mac=0.5783 mic=0.5768 | subj>=.9=0 >=.8=0 max=0.713
+[result stream 0] fusionM_prank        all: AUC=0.6597 mac=0.5953 mic=0.5970 | mature: AUC=0.6709 mac=0.6059 mic=0.6054 | subj>=.9=0 >=.8=0 max=0.784
+[sanity stream 0] position_only__lr AUC=0.4936 -> OK
+[sanity stream 0] position_only__hgb AUC=0.4977 -> OK
+[boot stream 0] hgb_prank_clean  vs hgb_prank      all    dAUC=-0.0159[-0.0356,+0.0018] dmac=-0.0102[-0.0264,+0.0052]
+[boot stream 0] hgb_prank_clean  vs hgb_prank      mature dAUC=-0.0304[-0.0516,-0.0136] dmac=-0.0242[-0.0416,-0.0098]
+[boot stream 0] hgb_prank_clean  vs fusionM_prank  all    dAUC=-0.0715[-0.0941,-0.0441] dmac=-0.0411[-0.0604,-0.0259]
+[boot stream 0] hgb_prank_clean  vs fusionM_prank  mature dAUC=-0.0817[-0.1032,-0.0519] dmac=-0.0524[-0.0691,-0.0375]
+[boot stream 0] fusionM_clean    vs hgb_prank      all    dAUC=+0.0387[+0.0154,+0.0602] dmac=+0.0282[+0.0143,+0.0422]
+[boot stream 0] fusionM_clean    vs hgb_prank      mature dAUC=+0.0241[+0.0033,+0.0433] dmac=+0.0209[-0.0022,+0.0416]
+[boot stream 0] fusionM_clean    vs fusionM_prank  all    dAUC=-0.0169[-0.0337,-0.0012] dmac=-0.0027[-0.0161,+0.0072]
+[boot stream 0] fusionM_clean    vs fusionM_prank  mature dAUC=-0.0272[-0.0475,-0.0119] dmac=-0.0073[-0.0263,+0.0098]
+[done] elapsed=421.6s -> depositioned_subject_diagnosis_smoke.json

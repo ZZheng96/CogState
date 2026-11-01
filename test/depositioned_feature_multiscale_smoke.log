@@ -1,0 +1,44 @@
+[start] rows=16067 subjects=57 smoke=True sseeds=(0,) variants=('hgb_ms', 'hgb_prank', 'hgb_zs') whiten scores reused from depositioned_resnet_histcontext_oof.npz
+[s0 fold 1/5] hgb_delta32 reproduced (maxabs 0.0e+00) fit_s=8.3 elapsed=10.9s
+[s0 fold 1/5] hgb_ms     dim=4290 build_s=3.7 fit_s=18.6 checks ok (naive/prefix/isolation) elapsed=33.5s
+[s0 fold 1/5] hgb_prank  dim=2574 build_s=12.7 fit_s=11.3 checks ok (naive/prefix/isolation) elapsed=58.7s
+[s0 fold 1/5] hgb_zs     dim=1716 build_s=1.4 fit_s=7.4 checks ok (naive/prefix/isolation) elapsed=67.6s
+[result stream 0] position_only__lr          all: AUC=0.4936 mac=0.5000 mic=0.5000 | mature: AUC=0.4924 mac=0.5000 mic=0.5000 | subj>=.9=0 max=0.500
+[result stream 0] position_only__hgb         all: AUC=0.4977 mac=0.4984 mic=0.4982 | mature: AUC=0.4960 mac=0.5036 mic=0.5036 | subj>=.9=0 max=0.535
+[result stream 0] hgb_delta32                all: AUC=0.6005 mac=0.5591 mic=0.5570 | mature: AUC=0.6138 mac=0.5733 mic=0.5677 | subj>=.9=0 max=0.714
+[result stream 0] hgb_ms                     all: AUC=0.6060 mac=0.5647 mic=0.5622 | mature: AUC=0.6187 mac=0.5677 mic=0.5650 | subj>=.9=0 max=0.741
+[result stream 0] hgb_prank                  all: AUC=0.6046 mac=0.5645 mic=0.5655 | mature: AUC=0.6193 mac=0.5783 mic=0.5768 | subj>=.9=0 max=0.713
+[result stream 0] hgb_zs                     all: AUC=0.6161 mac=0.5785 mic=0.5777 | mature: AUC=0.6210 mac=0.5796 mic=0.5756 | subj>=.9=0 max=0.747
+[result stream 0] resnet_whiten_logit_delta  all: AUC=0.6729 mac=0.6163 mic=0.6192 | mature: AUC=0.6813 mac=0.6214 mic=0.6278 | subj>=.9=0 max=0.784
+[result stream 0] fusionH_whiten             all: AUC=0.6581 mac=0.6003 mic=0.5993 | mature: AUC=0.6682 mac=0.6104 mic=0.6061 | subj>=.9=0 max=0.778
+[result stream 0] hgb_current                all: AUC=0.5441 mac=0.5214 mic=0.5212 | mature: AUC=0.5457 mac=0.5255 mic=0.5222 | subj>=.9=0 max=0.648
+[result stream 0] fusionM_ms                 all: AUC=0.6635 mac=0.6104 mic=0.6098 | mature: AUC=0.6737 mac=0.6186 mic=0.6181 | subj>=.9=0 max=0.772
+[result stream 0] fusionM_prank              all: AUC=0.6597 mac=0.5953 mic=0.5970 | mature: AUC=0.6709 mac=0.6059 mic=0.6054 | subj>=.9=0 max=0.784
+[result stream 0] fusionM_zs                 all: AUC=0.6682 mac=0.6075 mic=0.6073 | mature: AUC=0.6728 mac=0.6177 mic=0.6153 | subj>=.9=0 max=0.764
+[sanity stream 0] position_only__lr AUC=0.4936 -> OK
+[sanity stream 0] position_only__hgb AUC=0.4977 -> OK
+[boot stream 0] hgb_ms           vs hgb_delta32     all    dAUC=+0.0053[-0.0077,+0.0208] dmac=+0.0054[-0.0081,+0.0165] dmic=+0.0050[-0.0081,+0.0159]
+[boot stream 0] hgb_ms           vs hgb_delta32     mature dAUC=+0.0042[-0.0062,+0.0178] dmac=-0.0057[-0.0216,+0.0086] dmic=-0.0033[-0.0193,+0.0107]
+[boot stream 0] hgb_ms           vs fusionH_whiten  all    dAUC=-0.0523[-0.0744,-0.0238] dmac=-0.0372[-0.0562,-0.0165] dmic=-0.0386[-0.0565,-0.0196]
+[boot stream 0] hgb_ms           vs fusionH_whiten  mature dAUC=-0.0496[-0.0688,-0.0257] dmac=-0.0444[-0.0604,-0.0300] dmic=-0.0430[-0.0601,-0.0275]
+[boot stream 0] hgb_prank        vs hgb_delta32     all    dAUC=+0.0025[-0.0121,+0.0192] dmac=+0.0054[-0.0168,+0.0246] dmic=+0.0083[-0.0114,+0.0248]
+[boot stream 0] hgb_prank        vs hgb_delta32     mature dAUC=+0.0040[-0.0108,+0.0210] dmac=+0.0047[-0.0180,+0.0257] dmic=+0.0084[-0.0110,+0.0260]
+[boot stream 0] hgb_prank        vs fusionH_whiten  all    dAUC=-0.0551[-0.0741,-0.0360] dmac=-0.0371[-0.0474,-0.0223] dmic=-0.0353[-0.0445,-0.0218]
+[boot stream 0] hgb_prank        vs fusionH_whiten  mature dAUC=-0.0498[-0.0643,-0.0342] dmac=-0.0340[-0.0479,-0.0168] dmic=-0.0313[-0.0453,-0.0157]
+[boot stream 0] hgb_zs           vs hgb_delta32     all    dAUC=+0.0159[+0.0021,+0.0312] dmac=+0.0203[-0.0012,+0.0358] dmic=+0.0215[+0.0043,+0.0363]
+[boot stream 0] hgb_zs           vs hgb_delta32     mature dAUC=+0.0071[-0.0088,+0.0210] dmac=+0.0067[-0.0125,+0.0263] dmic=+0.0081[-0.0112,+0.0276]
+[boot stream 0] hgb_zs           vs fusionH_whiten  all    dAUC=-0.0418[-0.0662,-0.0132] dmac=-0.0222[-0.0395,-0.0022] dmic=-0.0221[-0.0383,-0.0038]
+[boot stream 0] hgb_zs           vs fusionH_whiten  mature dAUC=-0.0467[-0.0665,-0.0241] dmac=-0.0319[-0.0487,-0.0181] dmic=-0.0316[-0.0487,-0.0174]
+[boot stream 0] fusionM_ms       vs hgb_delta32     all    dAUC=+0.0624[+0.0433,+0.0784] dmac=+0.0511[+0.0295,+0.0746] dmic=+0.0524[+0.0319,+0.0756]
+[boot stream 0] fusionM_ms       vs hgb_delta32     mature dAUC=+0.0581[+0.0378,+0.0803] dmac=+0.0451[+0.0156,+0.0794] dmic=+0.0495[+0.0216,+0.0810]
+[boot stream 0] fusionM_ms       vs fusionH_whiten  all    dAUC=+0.0048[-0.0058,+0.0151] dmac=+0.0085[-0.0093,+0.0283] dmic=+0.0088[-0.0098,+0.0292]
+[boot stream 0] fusionM_ms       vs fusionH_whiten  mature dAUC=+0.0043[-0.0061,+0.0139] dmac=+0.0064[-0.0174,+0.0309] dmic=+0.0098[-0.0154,+0.0332]
+[boot stream 0] fusionM_prank    vs hgb_delta32     all    dAUC=+0.0581[+0.0346,+0.0780] dmac=+0.0363[+0.0107,+0.0585] dmic=+0.0398[+0.0166,+0.0591]
+[boot stream 0] fusionM_prank    vs hgb_delta32     mature dAUC=+0.0553[+0.0277,+0.0781] dmac=+0.0329[+0.0031,+0.0605] dmic=+0.0374[+0.0083,+0.0615]
+[boot stream 0] fusionM_prank    vs fusionH_whiten  all    dAUC=+0.0005[-0.0100,+0.0110] dmac=-0.0062[-0.0191,+0.0074] dmic=-0.0037[-0.0155,+0.0091]
+[boot stream 0] fusionM_prank    vs fusionH_whiten  mature dAUC=+0.0015[-0.0091,+0.0135] dmac=-0.0058[-0.0230,+0.0096] dmic=-0.0023[-0.0190,+0.0117]
+[boot stream 0] fusionM_zs       vs hgb_delta32     all    dAUC=+0.0677[+0.0533,+0.0829] dmac=+0.0491[+0.0299,+0.0679] dmic=+0.0508[+0.0321,+0.0687]
+[boot stream 0] fusionM_zs       vs hgb_delta32     mature dAUC=+0.0580[+0.0366,+0.0766] dmac=+0.0449[+0.0207,+0.0694] dmic=+0.0477[+0.0233,+0.0721]
+[boot stream 0] fusionM_zs       vs fusionH_whiten  all    dAUC=+0.0101[+0.0021,+0.0208] dmac=+0.0065[-0.0027,+0.0176] dmic=+0.0072[-0.0027,+0.0177]
+[boot stream 0] fusionM_zs       vs fusionH_whiten  mature dAUC=+0.0042[-0.0036,+0.0119] dmac=+0.0063[-0.0035,+0.0198] dmic=+0.0080[-0.0029,+0.0231]
+[done] elapsed=69.1s -> depositioned_feature_multiscale_smoke.json

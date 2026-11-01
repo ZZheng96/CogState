@@ -1,0 +1,14 @@
+[start] rows=16067 subjects=57 folds=[0] elapsed=0.5s
+[diag mid] n=6 sign-consistency=0.646 |d|=0.281 best-single-feature AUC=0.781 frac(best AUC>=.65)=0.94
+[diag low] n=5 sign-consistency=0.573 |d|=0.282 best-single-feature AUC=0.705 frac(best AUC>=.65)=0.85
+[fold 0] anchor sizes ok, oracle |idx|=64 elapsed=8.5s
+[check fold0] test-label independence + determinism OK
+[result] xs_full          AUC=0.5515 mac=0.5519 | high: bacc=None auc=None mid: bacc=0.602 auc=0.645 low: bacc=0.492 auc=0.408
+[result] anchor_16        AUC=0.5427 mac=0.5189 | high: bacc=None auc=None mid: bacc=0.514 auc=0.66 low: bacc=0.525 auc=0.396
+[result] anchor_32        AUC=0.5515 mac=0.5231 | high: bacc=None auc=None mid: bacc=0.53 auc=0.676 low: bacc=0.515 auc=0.409
+[result] anchor_64        AUC=0.5578 mac=0.5443 | high: bacc=None auc=None mid: bacc=0.566 auc=0.669 low: bacc=0.519 auc=0.405
+[result] anchor_128       AUC=0.5385 mac=0.5421 | high: bacc=None auc=None mid: bacc=0.597 auc=0.675 low: bacc=0.476 auc=0.385
+[result] anchor_oracle_64 AUC=0.5655 mac=0.5515 | high: bacc=None auc=None mid: bacc=0.565 auc=0.635 low: bacc=0.535 auc=0.508
+[result] anchor_dir_64    AUC=0.5629 mac=0.5770 | high: bacc=None auc=None mid: bacc=0.651 auc=0.712 low: bacc=0.488 auc=0.349
+[boot] xs_full:-0.063[-0.123,-0.024] anchor_16:-0.096[-0.172,-0.011] anchor_32:-0.092[-0.163,-0.026] anchor_64:-0.071[-0.123,-0.004] anchor_128:-0.073[-0.107,-0.021] anchor_oracle_64:-0.064[-0.134,+0.012] anchor_dir_64:-0.038[-0.071,+0.016]
+[done] elapsed=10.2s

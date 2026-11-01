@@ -1,0 +1,44 @@
+[start] rows=16067 subjects=57 device=cuda smoke=True rseeds=(0,) sseeds=(0,)
+[check] stream_order == depositioned_history_delta.arrange(independent) for all stream seeds
+[raw-delta evidence] {'rms_ratio_pastmean_over_x': 0.2883971103678306, 'mean_corr_x_vs_delta': nan} flat_windows=82
+    [resnet rs0 fold1/5] ep01/2 loss=0.7030 valAUC=0.5042 best=0.5042@1 t=4s elapsed=8.1s
+    [resnet rs0 fold1/5] ep02/2 loss=0.6866 valAUC=0.5640 best=0.5640@2 t=6s elapsed=10.4s
+[resnet] resnet rs0 fold1/5 best_ep=2/2 valAUC=0.5640 testAUC=0.5753 6s elapsed=12.0s
+[check] embedding subject isolation + per-window locality ok {'emb_fold0': {'subject': 'sub-009', 'max_abs_alone_vs_pooled': 0.0, 'max_abs_past_after_future_change': 0.0, 'max_abs_future_changed': 18.08392459154129}} elapsed=12.0s
+[stream 0 fold 1/5] hgb current/delta32 fit_s=11.2 elapsed=25.8s
+[stream 0 fold 1/5] resnet heads + prefix/isolation checks ok elapsed=28.5s
+[result stream 0] position_only__lr          all: AUC=0.4936 mac=0.5000 mic=0.5000 | mature: AUC=0.4924 mac=0.5000 mic=0.5000 | subj>=.9=0 max=0.500
+[result stream 0] position_only__hgb         all: AUC=0.4977 mac=0.4984 mic=0.4982 | mature: AUC=0.4960 mac=0.5036 mic=0.5036 | subj>=.9=0 max=0.535
+[result stream 0] hgb_current                all: AUC=0.5441 mac=0.5214 mic=0.5212 | mature: AUC=0.5457 mac=0.5255 mic=0.5222 | subj>=.9=0 max=0.648
+[result stream 0] hgb_delta32                all: AUC=0.6005 mac=0.5591 mic=0.5570 | mature: AUC=0.6138 mac=0.5733 mic=0.5677 | subj>=.9=0 max=0.714
+[result stream 0] resnet_current             all: AUC=0.5753 mac=0.5443 mic=0.5436 | mature: AUC=0.5785 mac=0.5450 mic=0.5432 | subj>=.9=0 max=0.666
+[result stream 0] resnet_logit_delta         all: AUC=0.5812 mac=0.5590 mic=0.5604 | mature: AUC=0.5844 mac=0.5635 mic=0.5660 | subj>=.9=0 max=0.661
+[result stream 0] resnet_emb_current__lr     all: AUC=0.5487 mac=0.5168 mic=0.5161 | mature: AUC=0.5597 mac=0.5291 mic=0.5285 | subj>=.9=0 max=0.613
+[result stream 0] resnet_emb_delta__lr       all: AUC=0.5580 mac=0.5348 mic=0.5338 | mature: AUC=0.5729 mac=0.5473 mic=0.5436 | subj>=.9=0 max=0.633
+[result stream 0] resnet_emb_current__hgb    all: AUC=0.5491 mac=0.5370 mic=0.5360 | mature: AUC=0.5442 mac=0.5401 mic=0.5380 | subj>=.9=0 max=0.598
+[result stream 0] resnet_emb_delta__hgb      all: AUC=0.5653 mac=0.5482 mic=0.5472 | mature: AUC=0.5632 mac=0.5500 mic=0.5475 | subj>=.9=0 max=0.646
+[result stream 0] fusion_current             all: AUC=0.5583 mac=0.5420 mic=0.5417 | mature: AUC=0.5614 mac=0.5425 mic=0.5429 | subj>=.9=0 max=0.650
+[result stream 0] fusion_delta               all: AUC=0.6160 mac=0.5901 mic=0.5892 | mature: AUC=0.6302 mac=0.6055 mic=0.5985 | subj>=.9=0 max=0.744
+[result stream 0] fusionR_current            all: AUC=0.5552 mac=0.5323 mic=0.5313 | mature: AUC=0.5565 mac=0.5315 mic=0.5303 | subj>=.9=0 max=0.678
+[result stream 0] fusionR_delta              all: AUC=0.6064 mac=0.5636 mic=0.5618 | mature: AUC=0.6168 mac=0.5766 mic=0.5704 | subj>=.9=0 max=0.692
+[sanity stream 0] position_only__lr AUC=0.4936 -> OK
+[sanity stream 0] position_only__hgb AUC=0.4977 -> OK
+[boot stream 0] resnet_logit_delta       vs resnet_current           all    dAUC=+0.0058[+0.0028,+0.0090] dmac=+0.0137[-0.0010,+0.0306] elapsed=29.6s
+[boot stream 0] resnet_logit_delta       vs resnet_current           mature dAUC=+0.0058[+0.0027,+0.0093] dmac=+0.0181[-0.0003,+0.0375] elapsed=29.6s
+[boot stream 0] resnet_emb_delta__lr     vs resnet_emb_current__lr   all    dAUC=+0.0094[-0.0082,+0.0283] dmac=+0.0181[+0.0008,+0.0336] elapsed=29.6s
+[boot stream 0] resnet_emb_delta__lr     vs resnet_emb_current__lr   mature dAUC=+0.0127[-0.0060,+0.0318] dmac=+0.0169[-0.0101,+0.0509] elapsed=29.7s
+[boot stream 0] resnet_emb_delta__hgb    vs resnet_emb_current__hgb  all    dAUC=+0.0165[-0.0054,+0.0371] dmac=+0.0103[-0.0126,+0.0338] elapsed=29.7s
+[boot stream 0] resnet_emb_delta__hgb    vs resnet_emb_current__hgb  mature dAUC=+0.0180[-0.0031,+0.0390] dmac=+0.0081[-0.0172,+0.0366] elapsed=29.7s
+[boot stream 0] hgb_delta32              vs hgb_current              all    dAUC=+0.0567[+0.0320,+0.0829] dmac=+0.0382[+0.0104,+0.0632] elapsed=29.7s
+[boot stream 0] hgb_delta32              vs hgb_current              mature dAUC=+0.0686[+0.0380,+0.0960] dmac=+0.0484[+0.0186,+0.0839] elapsed=29.7s
+[boot stream 0] fusion_delta             vs fusion_current           all    dAUC=+0.0574[+0.0336,+0.0792] dmac=+0.0503[+0.0266,+0.0727] elapsed=29.8s
+[boot stream 0] fusion_delta             vs fusion_current           mature dAUC=+0.0688[+0.0417,+0.0974] dmac=+0.0650[+0.0271,+0.1082] elapsed=29.8s
+[boot stream 0] fusionR_delta            vs fusionR_current          all    dAUC=+0.0515[+0.0282,+0.0751] dmac=+0.0312[+0.0153,+0.0444] elapsed=29.8s
+[boot stream 0] fusionR_delta            vs fusionR_current          mature dAUC=+0.0609[+0.0320,+0.0873] dmac=+0.0453[+0.0154,+0.0831] elapsed=29.8s
+[boot stream 0] fusion_current           vs hgb_current              all    dAUC=+0.0140[-0.0066,+0.0433] dmac=+0.0197[-0.0007,+0.0510] elapsed=29.8s
+[boot stream 0] fusion_current           vs hgb_current              mature dAUC=+0.0153[-0.0058,+0.0518] dmac=+0.0163[-0.0044,+0.0500] elapsed=29.8s
+[boot stream 0] fusion_delta             vs hgb_delta32              all    dAUC=+0.0147[-0.0096,+0.0483] dmac=+0.0318[+0.0096,+0.0521] elapsed=29.9s
+[boot stream 0] fusion_delta             vs hgb_delta32              mature dAUC=+0.0155[-0.0098,+0.0517] dmac=+0.0329[+0.0137,+0.0520] elapsed=29.9s
+[boot stream 0] resnet_emb_current__lr   vs resnet_current           all    dAUC=-0.0290[-0.0777,+0.0196] dmac=-0.0295[-0.0714,+0.0164] elapsed=29.9s
+[boot stream 0] resnet_emb_current__lr   vs resnet_current           mature dAUC=-0.0200[-0.0623,+0.0317] dmac=-0.0161[-0.0530,+0.0202] elapsed=29.9s
+[done] elapsed=30.0s -> depositioned_resnet_history_delta_smoke_results.json

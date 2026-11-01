@@ -1,0 +1,104 @@
+[start] rows=2517 subjects=9 smoke=True
+[families] dwt_energy=23 stft_abs_band=25 stft_rel_band=25 time_qc=9 stft_ms_log=195 stft_ms_rel=195 dwt_stats=234 hilbert_env=65 hilbert_freq=65 hjorth=6 entropy_zc=6 autocorr=10 total=858
+[within  1/9] sub-036 grp=high full=0.893 (prev 0.893) hgb=0.941 best_fam=hilbert_env:0.872 elapsed=61.8s
+[within  2/9] sub-001 grp=mid  full=0.883 (prev 0.883) hgb=0.910 best_fam=stft_ms_log:0.902 elapsed=63.1s
+[within  3/9] sub-002 grp=low  full=0.836 (prev 0.836) hgb=0.885 best_fam=dwt_stats:0.828 elapsed=63.1s
+[within  4/9] sub-004 grp=low  full=0.802 (prev 0.802) hgb=0.907 best_fam=hilbert_env:0.762 elapsed=63.1s
+[within  5/9] sub-005 grp=low  full=0.784 (prev 0.784) hgb=0.879 best_fam=stft_ms_log:0.708 elapsed=63.1s
+[within  6/9] sub-008 grp=low  full=0.942 (prev 0.942) hgb=0.976 best_fam=hilbert_env:0.904 elapsed=63.1s
+[within  7/9] sub-003 grp=mid  full=0.836 (prev 0.836) hgb=0.887 best_fam=time_qc:0.860 elapsed=63.1s
+[within  8/9] sub-006 grp=mid  full=0.794 (prev 0.794) hgb=0.857 best_fam=hilbert_env:0.836 elapsed=63.1s
+[within  9/9] sub-007 grp=mid  full=0.717 (prev 0.717) hgb=0.825 best_fam=time_qc:0.736 elapsed=72.2s
+[cross globalZ] full           median AUC=0.501 elapsed=72.9s
+[cross globalZ] dwt_energy     median AUC=0.521 elapsed=73.0s
+[cross globalZ] stft_abs_band  median AUC=0.541 elapsed=73.0s
+[cross globalZ] stft_rel_band  median AUC=0.562 elapsed=73.1s
+[cross globalZ] time_qc        median AUC=0.474 elapsed=73.2s
+[cross globalZ] stft_ms_log    median AUC=0.499 elapsed=73.4s
+[cross globalZ] stft_ms_rel    median AUC=0.504 elapsed=73.6s
+[cross globalZ] dwt_stats      median AUC=0.454 elapsed=73.8s
+[cross globalZ] hilbert_env    median AUC=0.482 elapsed=74.0s
+[cross globalZ] hilbert_freq   median AUC=0.510 elapsed=74.1s
+[cross globalZ] hjorth         median AUC=0.439 elapsed=74.1s
+[cross globalZ] entropy_zc     median AUC=0.479 elapsed=74.2s
+[cross globalZ] autocorr       median AUC=0.496 elapsed=74.3s
+[cross subjZ] full           median AUC=0.582 elapsed=75.0s
+[cross subjZ] dwt_energy     median AUC=0.454 elapsed=75.1s
+[cross subjZ] stft_abs_band  median AUC=0.551 elapsed=75.1s
+[cross subjZ] stft_rel_band  median AUC=0.524 elapsed=75.2s
+[cross subjZ] time_qc        median AUC=0.512 elapsed=75.3s
+[cross subjZ] stft_ms_log    median AUC=0.612 elapsed=75.5s
+[cross subjZ] stft_ms_rel    median AUC=0.557 elapsed=75.7s
+[cross subjZ] dwt_stats      median AUC=0.495 elapsed=76.0s
+[cross subjZ] hilbert_env    median AUC=0.556 elapsed=76.1s
+[cross subjZ] hilbert_freq   median AUC=0.521 elapsed=76.2s
+[cross subjZ] hjorth         median AUC=0.461 elapsed=76.3s
+[cross subjZ] entropy_zc     median AUC=0.527 elapsed=76.4s
+[cross subjZ] autocorr       median AUC=0.533 elapsed=76.4s
+
+[table] per group medians: within(fam only) | drop=full-LOFO | cross globalZ | cross subjZ | dir_consistency
+== high n=1 within_full=0.893 hgb=0.941 cross_gZ=0.603 cross_sZ=0.736 dir=+0.606
+  dwt_energy     dim= 23 within=0.556 drop=-0.0002 cross_gZ=0.541 cross_sZ=0.534 dir=+0.684 n_best=0
+  stft_abs_band  dim= 25 within=0.858 drop=+0.0001 cross_gZ=0.676 cross_sZ=0.631 dir=+0.665 n_best=0
+  stft_rel_band  dim= 25 within=0.799 drop=-0.0008 cross_gZ=0.771 cross_sZ=0.763 dir=+0.553 n_best=0
+  time_qc        dim=  9 within=0.796 drop=+0.0026 cross_gZ=0.674 cross_sZ=0.512 dir=+0.345 n_best=0
+  stft_ms_log    dim=195 within=0.855 drop=-0.0082 cross_gZ=0.771 cross_sZ=0.666 dir=+0.721 n_best=0
+  stft_ms_rel    dim=195 within=0.828 drop=-0.0006 cross_gZ=0.595 cross_sZ=0.767 dir=+0.498 n_best=0
+  dwt_stats      dim=234 within=0.861 drop=-0.0116 cross_gZ=0.744 cross_sZ=0.786 dir=+0.681 n_best=0
+  hilbert_env    dim= 65 within=0.872 drop=+0.0014 cross_gZ=0.833 cross_sZ=0.835 dir=+0.711 n_best=1
+  hilbert_freq   dim= 65 within=0.811 drop=+0.0008 cross_gZ=0.646 cross_sZ=0.663 dir=+0.560 n_best=0
+  hjorth         dim=  6 within=0.641 drop=+0.0024 cross_gZ=0.524 cross_sZ=0.474 dir=+0.111 n_best=0
+  entropy_zc     dim=  6 within=0.787 drop=+0.0064 cross_gZ=0.725 cross_sZ=0.654 dir=+0.795 n_best=0
+  autocorr       dim= 10 within=0.796 drop=+0.0003 cross_gZ=0.482 cross_sZ=0.605 dir=+0.371 n_best=0
+== mid n=4 within_full=0.815 hgb=0.872 cross_gZ=0.422 cross_sZ=0.511 dir=+0.260
+  dwt_energy     dim= 23 within=0.660 drop=-0.0001 cross_gZ=0.548 cross_sZ=0.468 dir=-0.164 n_best=0
+  stft_abs_band  dim= 25 within=0.840 drop=+0.0011 cross_gZ=0.464 cross_sZ=0.510 dir=+0.204 n_best=0
+  stft_rel_band  dim= 25 within=0.780 drop=-0.0012 cross_gZ=0.510 cross_sZ=0.534 dir=+0.050 n_best=0
+  time_qc        dim=  9 within=0.782 drop=+0.0026 cross_gZ=0.580 cross_sZ=0.537 dir=+0.058 n_best=2
+  stft_ms_log    dim=195 within=0.835 drop=+0.0056 cross_gZ=0.505 cross_sZ=0.543 dir=+0.478 n_best=1
+  stft_ms_rel    dim=195 within=0.783 drop=-0.0025 cross_gZ=0.526 cross_sZ=0.567 dir=+0.160 n_best=0
+  dwt_stats      dim=234 within=0.824 drop=-0.0043 cross_gZ=0.392 cross_sZ=0.462 dir=+0.226 n_best=0
+  hilbert_env    dim= 65 within=0.834 drop=-0.0008 cross_gZ=0.386 cross_sZ=0.453 dir=-0.273 n_best=1
+  hilbert_freq   dim= 65 within=0.760 drop=-0.0007 cross_gZ=0.515 cross_sZ=0.514 dir=-0.172 n_best=0
+  hjorth         dim=  6 within=0.546 drop=+0.0002 cross_gZ=0.391 cross_sZ=0.430 dir=-0.358 n_best=0
+  entropy_zc     dim=  6 within=0.707 drop=+0.0000 cross_gZ=0.573 cross_sZ=0.596 dir=+0.325 n_best=0
+  autocorr       dim= 10 within=0.579 drop=-0.0005 cross_gZ=0.520 cross_sZ=0.528 dir=+0.183 n_best=0
+== low n=4 within_full=0.819 hgb=0.896 cross_gZ=0.516 cross_sZ=0.600 dir=-0.110
+  dwt_energy     dim= 23 within=0.587 drop=-0.0010 cross_gZ=0.454 cross_sZ=0.444 dir=+0.047 n_best=0
+  stft_abs_band  dim= 25 within=0.743 drop=+0.0010 cross_gZ=0.553 cross_sZ=0.537 dir=-0.006 n_best=0
+  stft_rel_band  dim= 25 within=0.665 drop=-0.0002 cross_gZ=0.549 cross_sZ=0.513 dir=+0.546 n_best=0
+  time_qc        dim=  9 within=0.705 drop=+0.0034 cross_gZ=0.454 cross_sZ=0.401 dir=-0.632 n_best=0
+  stft_ms_log    dim=195 within=0.765 drop=+0.0117 cross_gZ=0.483 cross_sZ=0.568 dir=+0.026 n_best=1
+  stft_ms_rel    dim=195 within=0.692 drop=-0.0030 cross_gZ=0.498 cross_sZ=0.527 dir=+0.463 n_best=0
+  dwt_stats      dim=234 within=0.779 drop=+0.0082 cross_gZ=0.538 cross_sZ=0.576 dir=-0.112 n_best=1
+  hilbert_env    dim= 65 within=0.780 drop=+0.0049 cross_gZ=0.583 cross_sZ=0.567 dir=-0.117 n_best=2
+  hilbert_freq   dim= 65 within=0.684 drop=+0.0046 cross_gZ=0.465 cross_sZ=0.515 dir=-0.155 n_best=0
+  hjorth         dim=  6 within=0.579 drop=+0.0001 cross_gZ=0.469 cross_sZ=0.482 dir=+0.160 n_best=0
+  entropy_zc     dim=  6 within=0.682 drop=+0.0018 cross_gZ=0.476 cross_sZ=0.483 dir=+0.273 n_best=0
+  autocorr       dim= 10 within=0.574 drop=-0.0027 cross_gZ=0.476 cross_sZ=0.521 dir=+0.083 n_best=0
+
+[cohen d] {"top50_jaccard_groupmean": {"high_vs_mid": 0.17647058823529413, "high_vs_low": 0.02040816326530612, "mid_vs_low": 0.041666666666666664}, "corr_groupmean_d": {"high_vs_mid": 0.6045224230744232, "high_vs_low": 0.07715858556677622, "mid_vs_low": -0.13104641201936895}, "top50_jaccard_within_group_pairwise_median": {"high": null, "mid": 0.27240717029449424, "low": 0.0545010545010545}, "top50_family_share_groupmean": {"high": {"dwt_energy": 0, "stft_abs_band": 4, "stft_rel_band": 2, "time_qc": 0, "stft_ms_log": 25, "stft_ms_rel": 11, "dwt_stats": 2, "hilbert_env": 2, "hilbert_freq": 3, "hjorth": 0, "entropy_zc": 0, "autocorr": 1}, "mid": {"dwt_energy": 0, "stft_abs_band": 4, "stft_rel_band": 0, "time_qc": 1, "stft_ms_log": 42, "stft_ms_rel": 0, "dwt_stats": 1, "hilbert_env": 2, "hilbert_freq": 0, "hjorth": 0, "entropy_zc": 0, "autocorr": 0}, "low": {"dwt_energy": 0, "stft_abs_band": 2, "stft_rel_band": 0, "time_qc": 1, "stft_ms_log": 17, "stft_ms_rel": 0, "dwt_stats": 25, "hilbert_env": 4, "hilbert_freq": 0, "hjorth": 0, "entropy_zc": 0, "autocorr": 1}}, "top50_jaccard_cross_group_pairwise_median": {"high_vs_mid": 0.01525458668315811, "high_vs_low": 0.02631578947368421, "mid_vs_low": 0.162947937795808}}
+[cohen d corr by family] high_vs_mid: dwt_energy=+0.56 stft_abs_band=+0.54 stft_rel_band=+0.70 time_qc=+0.54 stft_ms_log=+0.67 stft_ms_rel=+0.68 dwt_stats=+0.69 hilbert_env=+0.68 hilbert_freq=+0.37 hjorth=-0.93 entropy_zc=+0.68 autocorr=+0.04
+[cohen d corr by family] high_vs_low: dwt_energy=+0.13 stft_abs_band=+0.04 stft_rel_band=+0.18 time_qc=-0.61 stft_ms_log=+0.17 stft_ms_rel=+0.08 dwt_stats=+0.07 hilbert_env=-0.11 hilbert_freq=+0.31 hjorth=+0.66 entropy_zc=+0.80 autocorr=+0.40
+[cohen d corr by family] mid_vs_low: dwt_energy=-0.46 stft_abs_band=-0.54 stft_rel_band=+0.62 time_qc=-0.83 stft_ms_log=-0.15 stft_ms_rel=+0.47 dwt_stats=-0.15 hilbert_env=-0.53 hilbert_freq=-0.26 hjorth=-0.58 entropy_zc=+0.58 autocorr=-0.15
+[low-hi] sub-008 within=0.942 cross=0.448 dir=-0.29 opp_sign=10/10 fams={'hilbert_env': 3, 'dwt_stats': 6, 'stft_ms_log': 1}
+    hilbert_envelope_4_q10           hilbert_env    d=-1.61 others=+0.13 OPP
+    hilbert_envelope_4_q25           hilbert_env    d=-1.59 others=+0.17 OPP
+    hilbert_envelope_4_q50           hilbert_env    d=-1.50 others=+0.24 OPP
+    dwt_db4_4_q25                    dwt_stats      d=+1.38 others=-0.16 OPP
+    stft_0.5_log_4_q75               stft_ms_log    d=-1.38 others=+0.35 OPP
+    dwt_sym5_4_q25                   dwt_stats      d=+1.37 others=-0.19 OPP
+    dwt_db4_4_q75                    dwt_stats      d=-1.37 others=+0.17 OPP
+    dwt_coif2_4_q75                  dwt_stats      d=-1.37 others=+0.16 OPP
+    dwt_coif2_4_q25                  dwt_stats      d=+1.36 others=-0.19 OPP
+    dwt_sym5_4_q75                   dwt_stats      d=-1.32 others=+0.16 OPP
+
+[summary]
+  low group: within_full=0.819 vs cross_full=0.516 (subjZ 0.600); dir_full=-0.110
+  low: top within families (within, cross_gZ, dir): hilbert_env 0.780/0.583/-0.12; dwt_stats 0.779/0.538/-0.11; stft_ms_log 0.765/0.483/+0.03; stft_abs_band 0.743/0.553/-0.01
+  low: within>=.7 but cross<.6 or dir<.2: ['stft_abs_band', 'time_qc', 'stft_ms_log', 'dwt_stats', 'hilbert_env']
+  low: largest LOFO drop: ['stft_ms_log', 'dwt_stats', 'hilbert_env'] (small drops => redundancy across families)
+  most transferable families (all subjects, cross_gZ): ['stft_rel_band', 'stft_abs_band', 'dwt_energy', 'hilbert_freq']
+  low hi-within subjects n=1, median frac top10 opposite sign=1.0
+  subject z-scoring gain on low cross AUC: +0.084
+[done] elapsed=76.5s -> depositioned_lowgroup_diagnosis_smoke.json

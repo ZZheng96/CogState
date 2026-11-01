@@ -1,0 +1,22 @@
+[start] rows=16067 subjects=57 folds=[0] sseeds=(0,) elapsed=2.2s
+[fold 0] cross-subject LR + causal-z LR + within-subject rand/block ceilings for 11 subjects elapsed=26.9s
+[s0] adapted 11/11 10.5s elapsed=38.2s
+[check s0] sub-009: isolation / label shuffle / prefix OK (cut=133)
+[check s0] sub-022: isolation / label shuffle / prefix OK (cut=165)
+[check s0] sub-023: isolation / label shuffle / prefix OK (cut=165)
+[result s0] pipeline       all: AUC=0.6618 mac=0.6153
+[result s0] oracle_past    all: AUC=0.8157 mac=0.7333
+[result s0] fuseH_wf       all: AUC=0.6706 mac=0.6143
+[result s0] fuseH_wf_thr   all: AUC=0.6788 mac=0.6218
+[group s0] pipeline       mid(n=6): mean=0.7250 med=0.7532 | low(n=5): mean=0.4836 med=0.4746
+[group s0] oracle_past    mid(n=6): mean=0.7722 med=0.7787 | low(n=5): mean=0.6865 med=0.7143
+[group s0] fuseH_wf       mid(n=6): mean=0.7008 med=0.7242 | low(n=5): mean=0.5106 med=0.4966
+[group s0] fuseH_wf_thr   mid(n=6): mean=0.7166 med=0.7291 | low(n=5): mean=0.5080 med=0.5000
+[order-free mid] n=6 AUC_L=0.813 AUC_xs=0.645 AUC_xs_or=0.645 AUC_xs_cz=0.625 AUC_ws_rand=0.857 bACC_ws_rand=0.784 AUC_ws_block=0.613 bACC_ws_block=0.615 cos=0.072 frac_cos<0=0.00 frac_xs<.5=0.00
+[attribution mid] -> (a) {'label': 'a', 'recovery_frac': 0.0, 'AUC_ws_rand': 0.8574278583251138, 'AUC_xs': 0.6453400203400204, 'AUC_xs_oriented': 0.6453400203400204, 'AUC_ws_block': 0.6129269113886395, 'median_cos': 0.0716719965890927, 'frac_cos_neg': 0.0}
+[order-free low] n=5 AUC_L=0.521 AUC_xs=0.408 AUC_xs_or=0.592 AUC_xs_cz=0.393 AUC_ws_rand=0.867 bACC_ws_rand=0.765 AUC_ws_block=0.407 bACC_ws_block=0.430 cos=0.017 frac_cos<0=0.40 frac_xs<.5=1.00
+[attribution low] -> (a) {'label': 'a', 'recovery_frac': 0.4008371320971842, 'AUC_ws_rand': 0.8673700772826137, 'AUC_xs': 0.40791709140332993, 'AUC_xs_oriented': 0.5920829085966701, 'AUC_ws_block': 0.40738639050456327, 'median_cos': 0.016806125084314942, 'frac_cos_neg': 0.4}
+[ref per_subject_ceiling] {"high": {"lr": 0.8337883141762452, "hgb": 0.7732487922705313, "cnn": 0.4501915708812261, "mean3": 0.7809970703609911, "n": 3}, "mid": {"lr": 0.6734449374155257, "hgb": 0.6310675819640612, "cnn": 0.48568811915528964, "mean3": 0.6257769502236303, "n": 34}, "low": {"lr": 0.5259054325955734, "hgb": 0.4697964231354642, "cnn": 0.3833333333333333, "mean3": 0.4874429223744292, "n": 20}}
+[ladder mid] pipeline=0.725 oracle_past=0.772 xs_lr=0.602 ws_rand=0.771 ws_block=0.574
+[ladder low] pipeline=0.484 oracle_past=0.687 xs_lr=0.492 ws_rand=0.749 ws_block=0.429
+[done] all checks passed elapsed=40.8s -> depositioned_transfer_ceiling_smoke.json

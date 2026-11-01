@@ -1,0 +1,48 @@
+[start] rows=16067 subjects=57 smoke=True
+[diag] merge_best lag(bACC>0.5)=7 lag(>=0.9 steady)=10 halfway R->T=4 T->R=7 bACC rel0..9=0.34 0.33 0.33 0.35 0.40 0.49 0.49 0.53 0.57 0.59
+[diag] hist_best_d100_200_400_s5 lag(bACC>0.5)=9 lag(>=0.9 steady)=12 halfway R->T=5 T->R=8 bACC rel0..9=0.23 0.25 0.28 0.29 0.30 0.36 0.39 0.45 0.50 0.55
+[diag] single-window jump AUC (switch vs non-switch) = 0.5610
+[diag] logbp_gamma1   step_d=+0.083 pre=-0.303 post=+0.168 halfway_lag=7
+[diag] logbp_alpha    step_d=+0.082 pre=-0.282 post=+0.209 halfway_lag=8
+[diag] logbp_theta    step_d=+0.078 pre=-0.283 post=+0.200 halfway_lag=4
+[diag] logbp_beta2    step_d=+0.077 pre=-0.278 post=+0.166 halfway_lag=7
+[diag] logbp_beta1    step_d=+0.076 pre=-0.328 post=+0.223 halfway_lag=8
+[diag] logbp_hgamma   step_d=+0.071 pre=-0.286 post=+0.152 halfway_lag=8
+[diag] flatness       step_d=-0.070 pre=+0.061 post=-0.060 halfway_lag=4
+[diag] spec_entropy   step_d=-0.068 pre=+0.053 post=-0.018 halfway_lag=0
+[diag] rel_beta1      step_d=-0.066 pre=+0.055 post=-0.030 halfway_lag=2
+[diag] logbp_delta    step_d=+0.064 pre=-0.221 post=+0.133 halfway_lag=4
+[diag] rel_hgamma     step_d=-0.062 pre=+0.070 post=-0.091 halfway_lag=4
+[diag] rel_gamma1     step_d=-0.054 pre=+0.060 post=-0.073 halfway_lag=2
+[diag] rel_delta      step_d=+0.037 pre=-0.082 post=+0.012 halfway_lag=4
+[diag] rel_beta2      step_d=-0.026 pre=+0.089 post=-0.079 halfway_lag=4
+[diag] rel_theta      step_d=+0.017 pre=-0.098 post=+0.089 halfway_lag=6
+[diag] rel_alpha      step_d=-0.017 pre=+0.048 post=+0.002 halfway_lag=0
+[fold 1/5] h=2.6435 trainF1=0.276 P=0.211 R=0.400 elapsed=6.3s
+[fold 1/5] method=cpd_dual dim=65 fold_s=1.5 elapsed=7.8s
+[fold 1/5] method=no_reset dim=48 fold_s=0.2 elapsed=8.0s
+[fold 1/5] method=current_only dim=16 fold_s=0.1 elapsed=8.1s
+[result] cpd_dual                     all: AUC=0.6743 mac=0.6089 mic=0.5962 | switching: AUC=0.5667 mac=0.5333 mic=0.5333 | steady: AUC=0.6864 mac=0.6198 mic=0.6038 | history_comparable: AUC=0.7003 mac=0.6490 mic=0.6350
+[result] no_reset                     all: AUC=0.6849 mac=0.5903 mic=0.6030 | switching: AUC=0.2650 mac=0.4167 mic=0.4167 | steady: AUC=0.7260 mac=0.6061 mic=0.6213 | history_comparable: AUC=0.7216 mac=0.5993 mic=0.6277
+[result] current_only                 all: AUC=0.5579 mac=0.5191 mic=0.5306 | switching: AUC=0.3650 mac=0.3667 mic=0.3667 | steady: AUC=0.5769 mac=0.5323 mic=0.5458 | history_comparable: AUC=0.5535 mac=0.4752 mic=0.5021
+[result] merge_best                   all: AUC=0.7153 mac=0.6571 mic=0.6533 | switching: AUC=0.1867 mac=0.3500 mic=0.3500 | steady: AUC=0.7718 mac=0.6920 mic=0.6863 | history_comparable: AUC=0.6399 mac=0.6569 mic=0.6342
+[result] hist_best_d100_200_400_s5    all: AUC=0.8610 mac=0.7674 mic=0.7750 | switching: AUC=0.6017 mac=0.5917 mic=0.5917 | steady: AUC=0.8768 mac=0.7856 mic=0.7938 | history_comparable: AUC=0.9823 mac=0.8434 mic=0.8667
+[diag] cpd_dual lag(bACC>0.5)=2 bACC rel0..9=0.33 0.46 0.62 0.62 0.62 0.71 0.62 0.62 0.62 0.58
+[diag] no_reset lag(bACC>0.5)=5 bACC rel0..9=0.33 0.38 0.46 0.46 0.46 0.54 0.46 0.38 0.38 0.33
+[boot] cpd_dual_vs_merge_best__all dAUC=-0.0419[-0.1240,+0.0782] dmac=-0.0543[-0.1071,+0.0108]
+[boot] cpd_dual_vs_merge_best__switching dAUC=+0.3619[+0.1533,+0.6333] dmac=+0.1798[+0.1500,+0.2167]
+[boot] cpd_dual_vs_merge_best__steady dAUC=-0.0855[-0.1465,+0.0052] dmac=-0.0785[-0.1323,-0.0120]
+[boot] cpd_dual_vs_merge_best__history_comparable dAUC=+0.0604[+0.0599,+0.0608] dmac=-0.0074[-0.0126,-0.0031]
+[boot] cpd_dual_vs_hist_best_d100_200_400_s5__all dAUC=-0.1797[-0.3031,+0.0190] dmac=-0.1724[-0.2913,-0.0256]
+[boot] cpd_dual_vs_hist_best_d100_200_400_s5__switching dAUC=-0.0712[-0.3867,+0.3200] dmac=-0.0592[-0.0667,-0.0500]
+[boot] cpd_dual_vs_hist_best_d100_200_400_s5__steady dAUC=-0.1847[-0.3002,-0.0008] dmac=-0.1812[-0.3123,-0.0193]
+[boot] cpd_dual_vs_hist_best_d100_200_400_s5__history_comparable dAUC=-0.2699[-0.3316,-0.1518] dmac=-0.2074[-0.3178,-0.0709]
+[boot] cpd_dual_vs_no_reset__all dAUC=-0.0116[-0.2219,+0.2994] dmac=+0.0011[-0.1481,+0.1854]
+[boot] cpd_dual_vs_no_reset__switching dAUC=+0.3034[+0.1200,+0.5800] dmac=+0.1167[+0.1167,+0.1167]
+[boot] cpd_dual_vs_no_reset__steady dAUC=-0.0393[-0.2581,+0.2868] dmac=-0.0056[-0.1710,+0.1985]
+[boot] cpd_dual_vs_no_reset__history_comparable dAUC=-0.0163[-0.2352,+0.3203] dmac=+0.0311[-0.1266,+0.2259]
+[boot] cpd_dual_vs_current_only__all dAUC=+0.1148[-0.0814,+0.4034] dmac=+0.0730[-0.0697,+0.2493]
+[boot] cpd_dual_vs_current_only__switching dAUC=+0.1709[-0.1800,+0.6267] dmac=+0.1579[+0.0833,+0.2500]
+[boot] cpd_dual_vs_current_only__steady dAUC=+0.1089[-0.0838,+0.3946] dmac=+0.0695[-0.0842,+0.2592]
+[boot] cpd_dual_vs_current_only__history_comparable dAUC=+0.1627[-0.0007,+0.4401] dmac=+0.1554[-0.0011,+0.3486]
+[done] elapsed=38.5s

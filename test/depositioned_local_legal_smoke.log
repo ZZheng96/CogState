@@ -1,0 +1,18 @@
+[start] rows=16067 subjects=57 folds=[0] sseeds=(0,) elapsed=0.5s
+[s0] adapted 10/11 17.0s elapsed=18.2s
+[s0] adapted 11/11 17.0s elapsed=18.2s
+[check s0] sub-009: isolation / label-shuffle / prefix invariance OK (cut=133)
+[check s0] sub-022: isolation / label-shuffle / prefix invariance OK (cut=165)
+[result s0] ref        all: AUC=0.6618 mac=0.6153 | high:nan mid:0.725 low:0.484
+[result s0] rec64      all: AUC=0.6641 mac=0.6177 | high:nan mid:0.728 low:0.485
+[result s0] last128    all: AUC=0.6648 mac=0.6168 | high:nan mid:0.729 low:0.482
+[result s0] last64     all: AUC=0.6650 mac=0.6194 | high:nan mid:0.729 low:0.488
+[result s0] md64       all: AUC=0.6567 mac=0.6179 | high:nan mid:0.721 low:0.494
+[result s0] md128      all: AUC=0.6536 mac=0.6116 | high:nan mid:0.714 low:0.489
+[result s0] pca_rec64  all: AUC=0.6650 mac=0.6232 | high:nan mid:0.731 low:0.493
+[result s0] em2        all: AUC=0.6612 mac=0.6192 | high:nan mid:0.728 low:0.488
+[boot s0] ref:+0.000[+0.000,+0.000] rec64:+0.002[-0.004,+0.008] last128:+0.001[-0.002,+0.007] last64:+0.004[-0.004,+0.010] md64:+0.003[-0.015,+0.018] md128:-0.004[-0.017,+0.006] pca_rec64:+0.008[+0.000,+0.018] em2:+0.004[-0.004,+0.012]
+[pseudo-acc s0] last128: high=nan mid=0.784 low=0.496 | last64: high=nan mid=0.780 low=0.507 | ref: high=nan mid=0.782 low=0.490 | ref_128: high=nan mid=0.784 low=0.496 | ref_64: high=nan mid=0.780 low=0.507
+[rule] low-group recovery fraction: ref:-0.36 rec64:-0.34 last128:-0.37 last64:-0.33 md64:-0.29 md128:-0.32 pca_rec64:-0.29 em2:-0.33
+[rule] closes >=50% of the locality gap with CI>0: []
+[done] elapsed=25.5s
