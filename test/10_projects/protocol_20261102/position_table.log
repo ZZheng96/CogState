@@ -1,0 +1,12 @@
+﻿[fold 0] bw=0.6 train_bACC=0.9939 elapsed=1.5s
+[fold 1] bw=0.6 train_bACC=0.9929 elapsed=3.6s
+[fold 2] bw=0.6 train_bACC=0.9933 elapsed=5.7s
+[fold 3] bw=0.6 train_bACC=0.9926 elapsed=7.7s
+[fold 4] bw=0.6 train_bACC=0.9934 elapsed=9.8s
+[result] assume0   AUC=0.9020 bACC=0.8641 F1m=0.8640 macro=0.8654 n>=.9=7/57
+[result] assume9   AUC=0.9914 bACC=0.9860 F1m=0.9860 macro=0.9847 n>=.9=54/57
+[result] assume10  AUC=0.9888 bACC=0.9808 F1m=0.9808 macro=0.9795 n>=.9=53/57
+[result] auto      AUC=0.9914 bACC=0.9860 F1m=0.9860 macro=0.9847 n>=.9=54/57
+[result] prior     AUC=0.9888 bACC=0.9808 F1m=0.9808 macro=0.9795 n>=.9=53/57
+[result] oracle    AUC=0.9992 bACC=0.9935 F1m=0.9935 macro=0.9936 n>=.9=57/57
+[done] -> position_table.json elapsed=11.5s
