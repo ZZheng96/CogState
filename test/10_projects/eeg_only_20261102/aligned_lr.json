@@ -1,0 +1,56 @@
+{
+ "protocol": "cross-subject SGKF(5,rs0); sign-aligned feature subset; selection only on train folds",
+ "grid": {
+  "tau": [
+   0.6,
+   0.7,
+   0.8
+  ],
+  "eff": [
+   0.05,
+   0.15,
+   0.3
+  ]
+ },
+ "methods": {
+  "lr": {
+   "AUC": 0.6073542619032345,
+   "bACC": 0.5816521493365167,
+   "F1_macro": 0.58115907767106,
+   "F1_task": 0.5681248795529004,
+   "subject_macro_bACC": 0.5817035437490584,
+   "n_ge_0.9": 0,
+   "n_subj": 57
+  }
+ },
+ "chosen": {
+  "lr": {
+   "0": {
+    "tau": 0.6,
+    "eff": 0.05,
+    "inner_bACC": 0.5839980910476288
+   },
+   "1": {
+    "tau": 0.6,
+    "eff": 0.3,
+    "inner_bACC": 0.5653287417278015
+   },
+   "2": {
+    "tau": 0.6,
+    "eff": 0.05,
+    "inner_bACC": 0.5666325131877892
+   },
+   "3": {
+    "tau": 0.7,
+    "eff": 0.05,
+    "inner_bACC": 0.5729543080867034
+   },
+   "4": {
+    "tau": 0.8,
+    "eff": 0.15,
+    "inner_bACC": 0.54352902236969
+   }
+  }
+ },
+ "seconds": 30.454729000000953
+}

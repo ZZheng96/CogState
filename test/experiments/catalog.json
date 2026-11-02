@@ -21,13 +21,13 @@
     },
     {
       "path": "README.md",
-      "size": 52271,
-      "sha256": "1bf20a86575fe9b3488ef7bb57d5863850f62296b74a248e144f167f85f32437"
+      "size": 53594,
+      "sha256": "10cc6529499b82852f0e1579ac7325de966479e2c3f01d5fa65cb28183bdb8cd"
     },
     {
       "path": "test/experiments/实验方法索引.md",
-      "size": 56548,
-      "sha256": "2f49235285cf9ab856bbee6d10062cdbf3a8156d67fa07d3765d8b78f176fc06"
+      "size": 57865,
+      "sha256": "77409a8cd32a1a13cdb6bcb7a112d3a167a5453876f5a17a9b23b8303fa180cf"
     },
     {
       "path": "test/reports/卡尔曼深度学习实验报告.md",
@@ -46,8 +46,8 @@
     },
     {
       "path": "研究报告.md",
-      "size": 268190,
-      "sha256": "5c11e9ca2eecb4813ac024482363bd18cdb051bad0c9348ed17989d5ff04da17"
+      "size": 270226,
+      "sha256": "78ebc52e37221396580f866a4ede6e9516e26fab3d9556c73283e078c8be754d"
     },
     {
       "path": "认知状态解码理论.md",
@@ -4061,9 +4061,70 @@
       "name": "10 新假设实验",
       "dirs": [
         "test/10_projects",
+        "test/10_projects/eeg_only_20261102",
         "test/10_projects/protocol_20261102"
       ],
       "scripts": [
+        {
+          "id": "test/10_projects/eeg_only_20261102/aligned_lr.py",
+          "path": "test/10_projects/eeg_only_20261102/aligned_lr.py",
+          "summary": "内层：在训练被试上 4 折选 tau/eff",
+          "artifacts": [
+            {
+              "path": "test/10_projects/eeg_only_20261102/aligned_lr.json",
+              "kind": "result",
+              "size": 981,
+              "sha256": "ec97b5a6565c2d8fef4880dfdaf8755f1c815871bff5e7d41ba48d11f2347dec"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/aligned_lr.log",
+              "kind": "log",
+              "size": 461,
+              "sha256": "040ce458737c1e9466f372bbb6db60e563619fecfc0920c299a22012b461c23f"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/10_projects/eeg_only_20261102/feature_probe.py",
+          "path": "test/10_projects/eeg_only_20261102/feature_probe.py",
+          "summary": "工频",
+          "artifacts": [
+            {
+              "path": "test/10_projects/eeg_only_20261102/feature_probe.json",
+              "kind": "result",
+              "size": 2064,
+              "sha256": "0d71ffbf3dc6514acdfd9179f76148dedfaaf8ae0b803c4c5a781983815dc4f8"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/feature_probe.log",
+              "kind": "log",
+              "size": 849,
+              "sha256": "2ae68e7562aa4ef99936d71d887305affd14df81ced15a27c86b5306e9e2b502"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/10_projects/eeg_only_20261102/sign_consistency.py",
+          "path": "test/10_projects/eeg_only_20261102/sign_consistency.py",
+          "summary": "E2：是否存在\"方向一致\"的单特征？——跨被试是否为每个特征都发生符号翻转。 背景：跨被试 AUC 只有 0.645，主要原因是约 1/3 被试的判别方向相反；而无标签数据里无法定符号 （label switching）。本诊断回答一个更具",
+          "artifacts": [
+            {
+              "path": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+              "kind": "result",
+              "size": 2623,
+              "sha256": "f4ef9031be954e7faebc3b2cfcc7cc7cc93e95b6bf7e0abfeeea1252a3db0bc5"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/sign_consistency.log",
+              "kind": "log",
+              "size": 1445,
+              "sha256": "ca2981aefeb2c47c630f91131807343f4a86bddf94d2b692ab9cf9afd043caf3"
+            }
+          ],
+          "status": "has_result_json"
+        },
         {
           "id": "test/10_projects/protocol_20261102/boundary_refine.py",
           "path": "test/10_projects/protocol_20261102/boundary_refine.py",
@@ -4255,6 +4316,13 @@
           "kind": "other",
           "size": 528,
           "sha256": "d194bce96f2a171cbe9e093e8c42dbfe212727dc20217fa8ff978d452e344c80",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/报告_E1_纯EEG天花板.md",
+          "kind": "other",
+          "size": 6596,
+          "sha256": "b38a739b591887142338e854005202f99ec5b1dd79dd51061e879a7f315be082",
           "suggested_script": null
         },
         {
@@ -37860,6 +37928,281 @@
       "value": 0.5935139448301164
     },
     {
+      "file": "test/10_projects/eeg_only_20261102/aligned_lr.json",
+      "key": "chosen.lr.0.inner_bACC",
+      "value": 0.5839980910476288
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/aligned_lr.json",
+      "key": "chosen.lr.1.inner_bACC",
+      "value": 0.5653287417278015
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/aligned_lr.json",
+      "key": "chosen.lr.2.inner_bACC",
+      "value": 0.5666325131877892
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/aligned_lr.json",
+      "key": "chosen.lr.3.inner_bACC",
+      "value": 0.5729543080867034
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/aligned_lr.json",
+      "key": "chosen.lr.4.inner_bACC",
+      "value": 0.54352902236969
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/aligned_lr.json",
+      "key": "methods.lr.AUC",
+      "value": 0.6073542619032345
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/aligned_lr.json",
+      "key": "methods.lr.F1_macro",
+      "value": 0.58115907767106
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/aligned_lr.json",
+      "key": "methods.lr.bACC",
+      "value": 0.5816521493365167
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/aligned_lr.json",
+      "key": "methods.lr.subject_macro_bACC",
+      "value": 0.5817035437490584
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "ceiling.all_908.auc_mean",
+      "value": 0.8011800276963837
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "ceiling.all_908.auc_median",
+      "value": 0.8086626589139647
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "ceiling.base_878.auc_mean",
+      "value": 0.7987226153294876
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "ceiling.base_878.auc_median",
+      "value": 0.8056075687395289
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "ceiling.new_only.auc_mean",
+      "value": 0.7870031321436993
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "ceiling.new_only.auc_median",
+      "value": 0.8004860146796271
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.all_908_hgb.AUC",
+      "value": 0.6305600181354287
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.all_908_hgb.F1_macro",
+      "value": 0.5928201802906745
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.all_908_hgb.bACC",
+      "value": 0.5928474296624585
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.all_908_hgb.subject_macro_bACC",
+      "value": 0.5935076979682139
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.all_908_lr.AUC",
+      "value": 0.6449755921673046
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.all_908_lr.F1_macro",
+      "value": 0.6029714984941574
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.all_908_lr.bACC",
+      "value": 0.6029873563335939
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.all_908_lr.subject_macro_bACC",
+      "value": 0.6018684807918985
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.base_878_hgb.AUC",
+      "value": 0.6280886940848813
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.base_878_hgb.F1_macro",
+      "value": 0.5956035008804539
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.base_878_hgb.bACC",
+      "value": 0.5956570498070399
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.base_878_hgb.subject_macro_bACC",
+      "value": 0.5963792503083818
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.base_878_lr.AUC",
+      "value": 0.6371063593932503
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.base_878_lr.F1_macro",
+      "value": 0.5977461805292665
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.base_878_lr.bACC",
+      "value": 0.5977548807143103
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.base_878_lr.subject_macro_bACC",
+      "value": 0.5973710785050895
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.new_only_hgb.AUC",
+      "value": 0.5769160350101787
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.new_only_hgb.F1_macro",
+      "value": 0.5571898509749309
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.new_only_hgb.bACC",
+      "value": 0.5574690028892106
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.new_only_hgb.subject_macro_bACC",
+      "value": 0.5586619468981895
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.new_only_lr.AUC",
+      "value": 0.5933121190343597
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.new_only_lr.F1_macro",
+      "value": 0.5727218186932483
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.new_only_lr.bACC",
+      "value": 0.5729692162563107
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
+      "key": "methods.new_only_lr.subject_macro_bACC",
+      "value": 0.5733126515692195
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+      "key": "best_single.AUC",
+      "value": 0.41773036441613187
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+      "key": "top_by_effect[0].AUC",
+      "value": 0.6073104805857632
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+      "key": "top_by_effect[10].AUC",
+      "value": 0.5959770772147179
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+      "key": "top_by_effect[11].AUC",
+      "value": 0.5953953303440247
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+      "key": "top_by_effect[12].AUC",
+      "value": 0.5950849718594051
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+      "key": "top_by_effect[13].AUC",
+      "value": 0.5939498031041581
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+      "key": "top_by_effect[14].AUC",
+      "value": 0.5935892870811721
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+      "key": "top_by_effect[1].AUC",
+      "value": 0.6056467130465072
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+      "key": "top_by_effect[2].AUC",
+      "value": 0.6021143951360358
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+      "key": "top_by_effect[3].AUC",
+      "value": 0.6014046280052299
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+      "key": "top_by_effect[4].AUC",
+      "value": 0.6004386963936466
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+      "key": "top_by_effect[5].AUC",
+      "value": 0.5996756727106732
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+      "key": "top_by_effect[6].AUC",
+      "value": 0.5987865733987473
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+      "key": "top_by_effect[7].AUC",
+      "value": 0.5978744871519536
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+      "key": "top_by_effect[8].AUC",
+      "value": 0.5973904444388662
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
+      "key": "top_by_effect[9].AUC",
+      "value": 0.59611397614937
+    },
+    {
       "file": "test/10_projects/protocol_20261102/boundary_refine.json",
       "key": "methods.cross_score.AUC",
       "value": 0.7255129727589374
@@ -50169,6 +50512,9 @@
     "test/09_database/database_explore_results.json": 36,
     "test/09_database/database_models_results.json": 62,
     "test/09_database/database_training_results.json": 24,
+    "test/10_projects/eeg_only_20261102/aligned_lr.json": 9,
+    "test/10_projects/eeg_only_20261102/feature_probe.json": 30,
+    "test/10_projects/eeg_only_20261102/sign_consistency.json": 16,
     "test/10_projects/protocol_20261102/boundary_refine.json": 20,
     "test/10_projects/protocol_20261102/boundary_refine_smoke.json": 20,
     "test/10_projects/protocol_20261102/eval_stream_bdf.json": 118,
@@ -52214,6 +52560,18 @@
       "reference": "*/*.npz"
     },
     {
+      "script": "test/10_projects/eeg_only_20261102/aligned_lr.py",
+      "reference": "sub-*.npz"
+    },
+    {
+      "script": "test/10_projects/eeg_only_20261102/feature_probe.py",
+      "reference": "sub-*.npz"
+    },
+    {
+      "script": "test/10_projects/eeg_only_20261102/sign_consistency.py",
+      "reference": "sub-*.npz"
+    },
+    {
       "script": "test/10_projects/protocol_20261102/build_realorder.py",
       "reference": "sub-*.npz"
     },
@@ -52343,11 +52701,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 936,
-    "py_scripts": 228,
-    "json_results": 268,
-    "metrics_entries": 8850,
-    "missing_reference_count": 525,
+    "files_scanned": 946,
+    "py_scripts": 231,
+    "json_results": 271,
+    "metrics_entries": 8905,
+    "missing_reference_count": 528,
     "database_window_files": 116
   }
 }

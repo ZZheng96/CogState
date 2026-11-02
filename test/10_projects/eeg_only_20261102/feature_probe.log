@@ -1,0 +1,12 @@
+﻿[data] windows=16067 dim_f=858 dim_e=20 subs=57 elapsed=4.5s
+[feat] raw features dim=28 elapsed=13.9s
+[base_878 HGB] AUC=0.6281 bACC=0.5957 F1m=0.5956 macro=0.5964 n>=.9=0/57
+[base_878 LR] AUC=0.6371 bACC=0.5978 F1m=0.5977 macro=0.5974 n>=.9=0/57
+[new-only HGB] AUC=0.5769 bACC=0.5575 F1m=0.5572 macro=0.5587 n>=.9=0/57
+[new-only LR] AUC=0.5933 bACC=0.5730 F1m=0.5727 macro=0.5733 n>=.9=0/57
+[all908 HGB] AUC=0.6306 bACC=0.5928 F1m=0.5928 macro=0.5935 n>=.9=0/57
+[all908 LR] AUC=0.6450 bACC=0.6030 F1m=0.6030 macro=0.6019 n>=.9=0/57
+[ceiling base_878] within-subject oracle-direction AUC mean=0.7987 median=0.8056 n=57
+[ceiling new_only] within-subject oracle-direction AUC mean=0.7870 median=0.8005 n=57
+[ceiling all_908] within-subject oracle-direction AUC mean=0.8012 median=0.8087 n=57
+[done] -> feature_probe.json elapsed=194.2s

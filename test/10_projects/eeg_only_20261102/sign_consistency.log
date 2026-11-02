@@ -1,0 +1,20 @@
+﻿[data] windows=16067 subs=57 dim=878
+[top] |AUC-.5| 最大的 15 个单特征：
+  stft_2.0_log_1_q75                           AUC=0.607 cons=0.77 medD=+0.41
+  stft_1.0_log_2_q75                           AUC=0.606 cons=0.79 medD=+0.40
+  stft_2.0_log_2_q75                           AUC=0.602 cons=0.77 medD=+0.38
+  hilbert_envelope_2_q75                       AUC=0.601 cons=0.70 medD=+0.15
+  stft_2.0_log_1_q50                           AUC=0.600 cons=0.72 medD=+0.44
+  hilbert_envelope_1_q50                       AUC=0.600 cons=0.65 medD=+0.16
+  stft_1.0_log_1_q50                           AUC=0.599 cons=0.75 medD=+0.36
+  stft_2.0_log_1_mean                          AUC=0.598 cons=0.74 medD=+0.42
+  stft_2.0_log_2_mean                          AUC=0.597 cons=0.77 medD=+0.38
+  stft_1.0_log_2_q90                           AUC=0.596 cons=0.77 medD=+0.31
+  stft_1.0_log_1_q75                           AUC=0.596 cons=0.81 medD=+0.43
+  stft_0.5_log_2_q50                           AUC=0.595 cons=0.79 medD=+0.40
+  stft_2.0_log_2_q50                           AUC=0.595 cons=0.79 medD=+0.33
+  stft_2.0_log_2_q90                           AUC=0.594 cons=0.81 medD=+0.30
+  dwt_sym5_2_q90                               AUC=0.594 cons=0.72 medD=+0.16
+[best] 高效应特征里符号最一致：stft_1.0_log_1_skew AUC=0.418 cons=0.825
+[summary] mean_consistency=0.609 max_consistency(|AUC-.5|>0.08)=0.825 n=49
+[done] 5.6s

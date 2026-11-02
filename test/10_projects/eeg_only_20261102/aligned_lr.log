@@ -1,0 +1,8 @@
+﻿[data] windows=16067 subs=57 dim=878
+[lr fold 0] tau=0.6 eff=0.05 n_feat=505 inner=0.5840 elapsed=7.3s
+[lr fold 1] tau=0.6 eff=0.3 n_feat=82 inner=0.5653 elapsed=12.6s
+[lr fold 2] tau=0.6 eff=0.05 n_feat=339 inner=0.5666 elapsed=18.0s
+[lr fold 3] tau=0.7 eff=0.05 n_feat=159 inner=0.5730 elapsed=24.3s
+[lr fold 4] tau=0.8 eff=0.15 n_feat=4 inner=0.5435 elapsed=30.3s
+[result lr] AUC=0.6074 bACC=0.5817 F1m=0.5812 macro=0.5817 n>=.9=0/57
+[done] 30.5s
