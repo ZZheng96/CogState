@@ -1,0 +1,84 @@
+﻿cands ['alpha', 'bandmix', 'beta', 'brel', 'bt', 'cent', 'delta', 'emg', 'eng', 'glb', 'own_k', 'sf_h10_k200', 'sf_h10_k50', 'sf_h20_k200', 'sf_h20_k50', 'sf_h30_k200', 'sf_h30_k50', 'sf_h5_k200', 'sf_h5_k50', 'slope', 'tha', 'theta']
+001 max=0.799 worst=0.849 lcb0.5=0.799 lcb1.0=0.844 top5=0.835 top20=0.846 top50=0.847 prior0.25=0.838 prior0.5=0.859 prior1.0=0.870 prior2.0=0.868 priortop20_0.5=0.863 priortop20_1.0=0.861
+002 max=0.748 worst=0.747 lcb0.5=0.767 lcb1.0=0.767 top5=0.776 top20=0.731 top50=0.723 prior0.25=0.721 prior0.5=0.696 prior1.0=0.718 prior2.0=0.722 priortop20_0.5=0.731 priortop20_1.0=0.707
+003 max=0.902 worst=0.898 lcb0.5=0.895 lcb1.0=0.849 top5=0.866 top20=0.876 top50=0.909 prior0.25=0.888 prior0.5=0.888 prior1.0=0.852 prior2.0=0.848 priortop20_0.5=0.865 priortop20_1.0=0.858
+004 max=0.642 worst=0.517 lcb0.5=0.659 lcb1.0=0.558 top5=0.636 top20=0.643 top50=0.658 prior0.25=0.642 prior0.5=0.628 prior1.0=0.617 prior2.0=0.647 priortop20_0.5=0.641 priortop20_1.0=0.621
+005 max=0.598 worst=0.667 lcb0.5=0.632 lcb1.0=0.653 top5=0.621 top20=0.641 top50=0.663 prior0.25=0.637 prior0.5=0.654 prior1.0=0.674 prior2.0=0.663 priortop20_0.5=0.637 priortop20_1.0=0.660
+006 max=0.826 worst=0.804 lcb0.5=0.836 lcb1.0=0.834 top5=0.842 top20=0.854 top50=0.851 prior0.25=0.829 prior0.5=0.849 prior1.0=0.849 prior2.0=0.848 priortop20_0.5=0.862 priortop20_1.0=0.859
+007 max=0.830 worst=0.827 lcb0.5=0.811 lcb1.0=0.829 top5=0.835 top20=0.834 top50=0.832 prior0.25=0.828 prior0.5=0.832 prior1.0=0.823 prior2.0=0.834 priortop20_0.5=0.819 priortop20_1.0=0.818
+008 max=0.741 worst=0.842 lcb0.5=0.781 lcb1.0=0.761 top5=0.749 top20=0.779 top50=0.831 prior0.25=0.784 prior0.5=0.784 prior1.0=0.814 prior2.0=0.783 priortop20_0.5=0.802 priortop20_1.0=0.812
+009 max=0.641 worst=0.401 lcb0.5=0.583 lcb1.0=0.434 top5=0.679 top20=0.537 top50=0.531 prior0.25=0.637 prior0.5=0.638 prior1.0=0.472 prior2.0=0.445 priortop20_0.5=0.524 priortop20_1.0=0.555
+010 max=0.825 worst=0.854 lcb0.5=0.931 lcb1.0=0.903 top5=0.866 top20=0.867 top50=0.879 prior0.25=0.824 prior0.5=0.823 prior1.0=0.872 prior2.0=0.870 priortop20_0.5=0.877 priortop20_1.0=0.877
+011 max=0.708 worst=0.493 lcb0.5=0.558 lcb1.0=0.544 top5=0.661 top20=0.602 top50=0.529 prior0.25=0.708 prior0.5=0.701 prior1.0=0.585 prior2.0=0.542 priortop20_0.5=0.544 priortop20_1.0=0.555
+012 max=0.591 worst=0.692 lcb0.5=0.570 lcb1.0=0.629 top5=0.618 top20=0.596 top50=0.607 prior0.25=0.593 prior0.5=0.626 prior1.0=0.678 prior2.0=0.704 priortop20_0.5=0.649 priortop20_1.0=0.677
+013 max=0.816 worst=0.851 lcb0.5=0.815 lcb1.0=0.836 top5=0.843 top20=0.844 top50=0.845 prior0.25=0.840 prior0.5=0.840 prior1.0=0.849 prior2.0=0.847 priortop20_0.5=0.841 priortop20_1.0=0.837
+014 max=0.776 worst=0.745 lcb0.5=0.743 lcb1.0=0.715 top5=0.774 top20=0.747 top50=0.749 prior0.25=0.778 prior0.5=0.713 prior1.0=0.670 prior2.0=0.697 priortop20_0.5=0.738 priortop20_1.0=0.678
+015 max=0.641 worst=0.664 lcb0.5=0.624 lcb1.0=0.660 top5=0.662 top20=0.655 top50=0.660 prior0.25=0.661 prior0.5=0.656 prior1.0=0.748 prior2.0=0.789 priortop20_0.5=0.768 priortop20_1.0=0.779
+016 max=0.784 worst=0.770 lcb0.5=0.732 lcb1.0=0.762 top5=0.736 top20=0.744 top50=0.766 prior0.25=0.737 prior0.5=0.742 prior1.0=0.758 prior2.0=0.811 priortop20_0.5=0.754 priortop20_1.0=0.783
+017 max=0.728 worst=0.761 lcb0.5=0.786 lcb1.0=0.783 top5=0.738 top20=0.775 top50=0.771 prior0.25=0.797 prior0.5=0.752 prior1.0=0.763 prior2.0=0.763 priortop20_0.5=0.743 priortop20_1.0=0.757
+018 max=0.932 worst=0.825 lcb0.5=0.925 lcb1.0=0.921 top5=0.930 top20=0.924 top50=0.928 prior0.25=0.936 prior0.5=0.927 prior1.0=0.925 prior2.0=0.925 priortop20_0.5=0.925 priortop20_1.0=0.927
+019 max=0.777 worst=0.776 lcb0.5=0.789 lcb1.0=0.811 top5=0.760 top20=0.775 top50=0.819 prior0.25=0.771 prior0.5=0.815 prior1.0=0.836 prior2.0=0.831 priortop20_0.5=0.820 priortop20_1.0=0.835
+020 max=0.795 worst=0.719 lcb0.5=0.785 lcb1.0=0.742 top5=0.768 top20=0.770 top50=0.731 prior0.25=0.795 prior0.5=0.736 prior1.0=0.713 prior2.0=0.744 priortop20_0.5=0.728 priortop20_1.0=0.723
+021 max=0.769 worst=0.754 lcb0.5=0.761 lcb1.0=0.772 top5=0.768 top20=0.779 top50=0.790 prior0.25=0.774 prior0.5=0.800 prior1.0=0.796 prior2.0=0.811 priortop20_0.5=0.803 priortop20_1.0=0.813
+022 max=0.896 worst=0.769 lcb0.5=0.904 lcb1.0=0.812 top5=0.894 top20=0.882 top50=0.887 prior0.25=0.896 prior0.5=0.901 prior1.0=0.905 prior2.0=0.901 priortop20_0.5=0.886 priortop20_1.0=0.892
+023 max=0.735 worst=0.784 lcb0.5=0.774 lcb1.0=0.757 top5=0.700 top20=0.720 top50=0.764 prior0.25=0.736 prior0.5=0.739 prior1.0=0.611 prior2.0=0.650 priortop20_0.5=0.734 priortop20_1.0=0.824
+024 max=0.641 worst=0.640 lcb0.5=0.674 lcb1.0=0.676 top5=0.638 top20=0.678 top50=0.714 prior0.25=0.642 prior0.5=0.629 prior1.0=0.711 prior2.0=0.684 priortop20_0.5=0.688 priortop20_1.0=0.725
+025 max=0.836 worst=0.838 lcb0.5=0.851 lcb1.0=0.890 top5=0.883 top20=0.873 top50=0.880 prior0.25=0.838 prior0.5=0.906 prior1.0=0.908 prior2.0=0.915 priortop20_0.5=0.903 priortop20_1.0=0.912
+026 max=0.892 worst=0.888 lcb0.5=0.911 lcb1.0=0.920 top5=0.893 top20=0.897 top50=0.910 prior0.25=0.887 prior0.5=0.890 prior1.0=0.919 prior2.0=0.922 priortop20_0.5=0.900 priortop20_1.0=0.907
+027 max=0.450 worst=0.734 lcb0.5=0.636 lcb1.0=0.674 top5=0.450 top20=0.613 top50=0.630 prior0.25=0.452 prior0.5=0.473 prior1.0=0.494 prior2.0=0.490 priortop20_0.5=0.532 priortop20_1.0=0.530
+028 max=0.668 worst=0.518 lcb0.5=0.502 lcb1.0=0.533 top5=0.657 top20=0.557 top50=0.563 prior0.25=0.607 prior0.5=0.599 prior1.0=0.644 prior2.0=0.582 priortop20_0.5=0.590 priortop20_1.0=0.611
+029 max=0.663 worst=0.726 lcb0.5=0.749 lcb1.0=0.671 top5=0.748 top20=0.646 top50=0.636 prior0.25=0.770 prior0.5=0.792 prior1.0=0.815 prior2.0=0.717 priortop20_0.5=0.718 priortop20_1.0=0.750
+030 max=0.852 worst=0.864 lcb0.5=0.860 lcb1.0=0.866 top5=0.856 top20=0.891 top50=0.903 prior0.25=0.883 prior0.5=0.895 prior1.0=0.895 prior2.0=0.920 priortop20_0.5=0.906 priortop20_1.0=0.907
+031 max=0.840 worst=0.862 lcb0.5=0.868 lcb1.0=0.842 top5=0.841 top20=0.842 top50=0.842 prior0.25=0.841 prior0.5=0.840 prior1.0=0.819 prior2.0=0.840 priortop20_0.5=0.832 priortop20_1.0=0.824
+.venv\Scripts\python.exe : D:\WORK\BCIC2026\CogState\test\15_nested_select\nested_select.py:70: RuntimeWarning: Mean of
+ empty slice
+所在位置 行:15 字符: 3576
++ ... M = 'dumb'; .venv\Scripts\python.exe test/15_nested_select/nested_sel ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (D:\WORK\BCIC202... of empty slice:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  a0 = acc[:, mask & (cls == 0)].mean(1)
+D:\WORK\BCIC2026\CogState\.venv\Lib\site-packages\numpy\_core\_methods.py:134: RuntimeWarning: invalid value encountere
+d in divide
+  ret = um.true_divide(
+034 max=0.275 worst=0.275 lcb0.5=0.275 lcb1.0=0.275 top5=0.294 top20=0.783 top50=0.773 prior0.25=0.289 prior0.5=0.289 prior1.0=0.309 prior2.0=0.289 priortop20_0.5=0.782 priortop20_1.0=0.775
+035 max=0.830 worst=0.757 lcb0.5=0.786 lcb1.0=0.796 top5=0.824 top20=0.830 top50=0.848 prior0.25=0.816 prior0.5=0.816 prior1.0=0.855 prior2.0=0.868 priortop20_0.5=0.850 priortop20_1.0=0.857
+036 max=0.879 worst=0.920 lcb0.5=0.907 lcb1.0=0.904 top5=0.878 top20=0.882 top50=0.891 prior0.25=0.888 prior0.5=0.896 prior1.0=0.898 prior2.0=0.904 priortop20_0.5=0.898 priortop20_1.0=0.901
+037 max=0.598 worst=0.673 lcb0.5=0.606 lcb1.0=0.625 top5=0.586 top20=0.608 top50=0.623 prior0.25=0.596 prior0.5=0.596 prior1.0=0.611 prior2.0=0.675 priortop20_0.5=0.610 priortop20_1.0=0.648
+038 max=0.787 worst=0.777 lcb0.5=0.766 lcb1.0=0.890 top5=0.793 top20=0.783 top50=0.775 prior0.25=0.770 prior0.5=0.786 prior1.0=0.783 prior2.0=0.783 priortop20_0.5=0.798 priortop20_1.0=0.795
+039 max=0.821 worst=0.790 lcb0.5=0.818 lcb1.0=0.878 top5=0.811 top20=0.883 top50=0.879 prior0.25=0.876 prior0.5=0.868 prior1.0=0.877 prior2.0=0.880 priortop20_0.5=0.886 priortop20_1.0=0.887
+040 max=0.743 worst=0.867 lcb0.5=0.823 lcb1.0=0.851 top5=0.775 top20=0.764 top50=0.767 prior0.25=0.758 prior0.5=0.768 prior1.0=0.817 prior2.0=0.799 priortop20_0.5=0.767 priortop20_1.0=0.787
+041 max=0.813 worst=0.857 lcb0.5=0.830 lcb1.0=0.818 top5=0.791 top20=0.801 top50=0.827 prior0.25=0.752 prior0.5=0.755 prior1.0=0.816 prior2.0=0.759 priortop20_0.5=0.818 priortop20_1.0=0.805
+042 max=0.805 worst=0.698 lcb0.5=0.775 lcb1.0=0.765 top5=0.779 top20=0.790 top50=0.775 prior0.25=0.801 prior0.5=0.710 prior1.0=0.710 prior2.0=0.681 priortop20_0.5=0.700 priortop20_1.0=0.685
+043 max=0.840 worst=0.910 lcb0.5=0.888 lcb1.0=0.916 top5=0.854 top20=0.884 top50=0.888 prior0.25=0.879 prior0.5=0.879 prior1.0=0.909 prior2.0=0.885 priortop20_0.5=0.903 priortop20_1.0=0.901
+044 max=0.948 worst=0.880 lcb0.5=0.929 lcb1.0=0.936 top5=0.947 top20=0.941 top50=0.937 prior0.25=0.943 prior0.5=0.945 prior1.0=0.948 prior2.0=0.949 priortop20_0.5=0.949 priortop20_1.0=0.948
+045 max=0.683 worst=0.724 lcb0.5=0.713 lcb1.0=0.672 top5=0.708 top20=0.733 top50=0.760 prior0.25=0.733 prior0.5=0.754 prior1.0=0.755 prior2.0=0.840 priortop20_0.5=0.759 priortop20_1.0=0.769
+046 max=0.728 worst=0.818 lcb0.5=0.735 lcb1.0=0.827 top5=0.780 top20=0.796 top50=0.806 prior0.25=0.767 prior0.5=0.764 prior1.0=0.775 prior2.0=0.758 priortop20_0.5=0.777 priortop20_1.0=0.771
+047 max=0.731 worst=0.749 lcb0.5=0.746 lcb1.0=0.736 top5=0.799 top20=0.784 top50=0.791 prior0.25=0.815 prior0.5=0.815 prior1.0=0.815 prior2.0=0.798 priortop20_0.5=0.845 priortop20_1.0=0.844
+048 max=0.897 worst=0.887 lcb0.5=0.870 lcb1.0=0.851 top5=0.890 top20=0.885 top50=0.857 prior0.25=0.836 prior0.5=0.848 prior1.0=0.873 prior2.0=0.876 priortop20_0.5=0.847 priortop20_1.0=0.880
+049 max=0.711 worst=0.628 lcb0.5=0.713 lcb1.0=0.673 top5=0.717 top20=0.652 top50=0.642 prior0.25=0.639 prior0.5=0.639 prior1.0=0.642 prior2.0=0.648 priortop20_0.5=0.641 priortop20_1.0=0.644
+050 max=0.653 worst=0.664 lcb0.5=0.652 lcb1.0=0.648 top5=0.658 top20=0.714 top50=0.746 prior0.25=0.660 prior0.5=0.665 prior1.0=0.630 prior2.0=0.716 priortop20_0.5=0.752 priortop20_1.0=0.727
+051 max=0.880 worst=0.879 lcb0.5=0.874 lcb1.0=0.894 top5=0.874 top20=0.871 top50=0.872 prior0.25=0.872 prior0.5=0.868 prior1.0=0.881 prior2.0=0.875 priortop20_0.5=0.874 priortop20_1.0=0.873
+052 max=0.582 worst=0.649 lcb0.5=0.612 lcb1.0=0.632 top5=0.572 top20=0.598 top50=0.586 prior0.25=0.548 prior0.5=0.583 prior1.0=0.601 prior2.0=0.568 priortop20_0.5=0.585 priortop20_1.0=0.572
+053 max=0.659 worst=0.625 lcb0.5=0.630 lcb1.0=0.630 top5=0.672 top20=0.678 top50=0.653 prior0.25=0.659 prior0.5=0.644 prior1.0=0.649 prior2.0=0.670 priortop20_0.5=0.623 priortop20_1.0=0.638
+054 max=0.922 worst=0.897 lcb0.5=0.918 lcb1.0=0.911 top5=0.904 top20=0.911 top50=0.923 prior0.25=0.906 prior0.5=0.933 prior1.0=0.908 prior2.0=0.900 priortop20_0.5=0.912 priortop20_1.0=0.907
+055 max=0.761 worst=0.709 lcb0.5=0.735 lcb1.0=0.743 top5=0.740 top20=0.696 top50=0.665 prior0.25=0.740 prior0.5=0.736 prior1.0=0.739 prior2.0=0.758 priortop20_0.5=0.711 priortop20_1.0=0.728
+056 max=0.897 worst=0.910 lcb0.5=0.909 lcb1.0=0.915 top5=0.906 top20=0.913 top50=0.916 prior0.25=0.934 prior0.5=0.935 prior1.0=0.935 prior2.0=0.935 priortop20_0.5=0.935 priortop20_1.0=0.934
+057 max=0.841 worst=0.846 lcb0.5=0.878 lcb1.0=0.881 top5=0.841 top20=0.879 top50=0.891 prior0.25=0.885 prior0.5=0.897 prior1.0=0.898 prior2.0=0.897 priortop20_0.5=0.897 priortop20_1.0=0.897
+058 max=0.913 worst=0.927 lcb0.5=0.924 lcb1.0=0.917 top5=0.924 top20=0.930 top50=0.931 prior0.25=0.922 prior0.5=0.933 prior1.0=0.934 prior2.0=0.933 priortop20_0.5=0.942 priortop20_1.0=0.942
+059 max=0.808 worst=0.756 lcb0.5=0.754 lcb1.0=0.740 top5=0.792 top20=0.776 top50=0.784 prior0.25=0.794 prior0.5=0.744 prior1.0=0.770 prior2.0=0.780 priortop20_0.5=0.757 priortop20_1.0=0.783
+[max           ] mean=0.760 med=0.784 ge90=5 ge85=12
+[worst         ] mean=0.757 med=0.770 ge90=4 ge85=16
+[lcb0.5        ] mean=0.765 med=0.781 ge90=9 ge85=17
+[lcb1.0        ] mean=0.764 med=0.783 ge90=9 ge85=17
+[top5          ] mean=0.765 med=0.779 ge90=5 ge85=15
+[top20         ] mean=0.775 med=0.783 ge90=5 ge85=18
+[top50         ] mean=0.780 med=0.790 ge90=8 ge85=18
+[prior0.25     ] mean=0.766 med=0.784 ge90=5 ge85=14
+[prior0.5      ] mean=0.766 med=0.784 ge90=7 ge85=16
+[prior1.0      ] mean=0.771 med=0.814 ge90=9 ge85=19
+[prior2.0      ] mean=0.773 med=0.798 ge90=10 ge85=18
+[priortop20_0.5] mean=0.780 med=0.798 ge90=8 ge85=19
+[priortop20_1.0] mean=0.786 med=0.805 ge90=10 ge85=20
+[best          ] mean=0.889 med=0.894 ge90=26 ge85=46
