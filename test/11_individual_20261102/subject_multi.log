@@ -1,0 +1,62 @@
+﻿001  best 0.923 (beta_h20) nested 0.860 | own 0.839 beta 0.881 eng 0.716 mix 0.857 glb 0.780
+002  best 0.830 (tha_h8) nested 0.752 | own 0.641 beta 0.758 eng 0.800 mix 0.771 glb 0.708
+003  best 0.916 (beta_h4) nested 0.855 | own 0.885 beta 0.916 eng 0.765 mix 0.868 glb 0.749
+004  best 0.727 (own_k_h1) nested 0.727 | own 0.718 beta 0.446 eng 0.598 mix 0.584 glb 0.382
+005  best 0.771 (bandmix_h4) nested 0.621 | own 0.553 beta 0.741 eng 0.696 mix 0.771 glb 0.636
+006  best 0.867 (eng_h2) nested 0.815 | own 0.829 beta 0.859 eng 0.860 mix 0.852 glb 0.701
+007  best 0.867 (brel_h4) nested 0.814 | own 0.853 beta 0.831 eng 0.842 mix 0.855 glb 0.746
+008  best 0.881 (emg_h12) nested 0.723 | own 0.580 beta 0.849 eng 0.865 mix 0.806 glb 0.776
+009  best 0.829 (theta_h12) nested 0.719 | own 0.542 beta 0.778 eng 0.395 mix 0.697 glb 0.491
+010  best 0.930 (beta_h20) nested 0.814 | own 0.848 beta 0.863 eng 0.818 mix 0.872 glb 0.529
+011  best 0.785 (glb_D90) nested 0.502 | own 0.576 beta 0.611 eng 0.328 mix 0.540 glb 0.779
+012  best 0.810 (emg_h30) nested 0.577 | own 0.745 beta 0.694 eng 0.658 mix 0.747 glb 0.607
+013  best 0.858 (beta_h4) nested 0.810 | own 0.821 beta 0.858 eng 0.654 mix 0.824 glb 0.708
+014  best 0.845 (bandmix_h30) nested 0.595 | own 0.682 beta 0.833 eng 0.772 mix 0.796 glb 0.772
+015  best 0.821 (bandmix_h30) nested 0.653 | own 0.767 beta 0.667 eng 0.762 mix 0.725 glb 0.530
+016  best 0.873 (brel_h30) nested 0.769 | own 0.813 beta 0.687 eng 0.697 mix 0.825 glb 0.729
+017  best 0.853 (glb_D60) nested 0.661 | own 0.733 beta 0.812 eng 0.710 mix 0.755 glb 0.853
+018  best 0.938 (bandmix_h2) nested 0.938 | own 0.784 beta 0.927 eng 0.896 mix 0.932 glb 0.924
+019  best 0.829 (emg_h12) nested 0.711 | own 0.805 beta 0.823 eng 0.733 mix 0.763 glb 0.599
+020  best 0.864 (beta_h4) nested 0.786 | own 0.824 beta 0.864 eng 0.766 mix 0.858 glb 0.781
+021  best 0.860 (eng_h4) nested 0.764 | own 0.765 beta 0.790 eng 0.860 mix 0.829 glb 0.736
+022  best 0.866 (own_k_h30) nested 0.758 | own 0.768 beta 0.597 eng 0.537 mix 0.618 glb 0.705
+023  best 0.740 (tha_h12) nested 0.479 | own 0.461 beta 0.345 eng 0.569 mix 0.316 glb 0.613
+024  best 0.750 (eng_h4) nested 0.642 | own 0.641 beta 0.634 eng 0.750 mix 0.569 glb 0.610
+025  best 0.926 (bandmix_h4) nested 0.898 | own 0.912 beta 0.911 eng 0.881 mix 0.926 glb 0.838
+026  best 0.922 (delta_h4) nested 0.891 | own 0.914 beta 0.897 eng 0.555 mix 0.802 glb 0.834
+027  best 0.839 (emg_h12) nested 0.669 | own 0.575 beta 0.801 eng 0.733 mix 0.721 glb 0.485
+028  best 0.762 (glb_D30) nested 0.553 | own 0.573 beta 0.628 eng 0.590 mix 0.598 glb 0.753
+029  best 0.852 (beta_h30) nested 0.731 | own 0.561 beta 0.773 eng 0.716 mix 0.609 glb 0.334
+030  best 0.920 (alpha_h12) nested 0.890 | own 0.811 beta 0.215 eng 0.778 mix 0.752 glb 0.811
+031  best 0.879 (emg_h12) nested 0.797 | own 0.817 beta 0.827 eng 0.570 mix 0.818 glb 0.856
+034  best 0.979 (eng_h30) nested 0.467 | own 0.658 beta 0.121 eng 0.881 mix 0.716 glb 0.686
+035  best 0.875 (beta_h8) nested 0.797 | own 0.831 beta 0.870 eng 0.481 mix 0.802 glb 0.833
+036  best 0.923 (alpha_h4) nested 0.850 | own 0.852 beta 0.562 eng 0.799 mix 0.849 glb 0.906
+037  best 0.791 (tha_h12) nested 0.546 | own 0.476 beta 0.665 eng 0.448 mix 0.709 glb 0.286
+038  best 0.885 (glb_D90) nested 0.695 | own 0.744 beta 0.869 eng 0.865 mix 0.766 glb 0.868
+039  best 0.909 (own_k_h1) nested 0.909 | own 0.901 beta 0.683 eng 0.831 mix 0.831 glb 0.489
+040  best 0.882 (emg_h8) nested 0.656 | own 0.756 beta 0.823 eng 0.828 mix 0.820 glb 0.830
+041  best 0.865 (tha_h30) nested 0.865 | own 0.573 beta 0.334 eng 0.648 mix 0.507 glb 0.611
+042  best 0.861 (brel_h8) nested 0.711 | own 0.616 beta 0.209 eng 0.706 mix 0.659 glb 0.524
+043  best 0.924 (own_k_h1) nested 0.852 | own 0.923 beta 0.914 eng 0.637 mix 0.851 glb 0.830
+044  best 0.938 (bandmix_h2) nested 0.938 | own 0.918 beta 0.852 eng 0.931 mix 0.931 glb 0.894
+045  best 0.879 (theta_h12) nested 0.731 | own 0.801 beta 0.750 eng 0.459 mix 0.702 glb 0.720
+046  best 0.888 (alpha_h8) nested 0.875 | own 0.593 beta 0.737 eng 0.710 mix 0.821 glb 0.842
+047  best 0.877 (eng_h12) nested 0.765 | own 0.791 beta 0.604 eng 0.860 mix 0.840 glb 0.733
+048  best 0.892 (own_k_h4) nested 0.783 | own 0.877 beta 0.873 eng 0.597 mix 0.801 glb 0.765
+049  best 0.812 (bandmix_h12) nested 0.675 | own 0.712 beta 0.591 eng 0.661 mix 0.769 glb 0.730
+050  best 0.842 (eng_h30) nested 0.691 | own 0.790 beta 0.772 eng 0.742 mix 0.748 glb 0.622
+051  best 0.927 (own_k_h1) nested 0.927 | own 0.910 beta 0.904 eng 0.793 mix 0.893 glb 0.716
+052  best 0.831 (tha_h20) nested 0.805 | own 0.431 beta 0.709 eng 0.701 mix 0.685 glb 0.666
+053  best 0.753 (tha_h8) nested 0.545 | own 0.619 beta 0.347 eng 0.591 mix 0.603 glb 0.625
+054  best 0.920 (glb_D90) nested 0.727 | own 0.901 beta 0.892 eng 0.873 mix 0.892 glb 0.897
+055  best 0.838 (tha_h8) nested 0.838 | own 0.615 beta 0.583 eng 0.454 mix 0.662 glb 0.710
+056  best 0.936 (theta_h8) nested 0.892 | own 0.826 beta 0.887 eng 0.666 mix 0.840 glb 0.886
+057  best 0.908 (bandmix_h8) nested 0.819 | own 0.861 beta 0.908 eng 0.679 mix 0.890 glb 0.754
+058  best 0.927 (theta_h12) nested 0.908 | own 0.822 beta 0.723 eng 0.584 mix 0.682 glb 0.868
+059  best 0.859 (eng_h4) nested 0.780 | own 0.791 beta 0.755 eng 0.859 mix 0.459 glb 0.718
+
+[per-subject best] n=57 mean=0.864 median=0.867 n>=.90=17 n>=.85=38 n<.7=0
+[nested select]  n=57 mean=0.751 median=0.765 n>=.90=5 n>=.85=14 n<.7=17
+[worst 10] [('004', 0.727, 'own_k_h1'), ('023', 0.74, 'tha_h12'), ('024', 0.75, 'eng_h4'), ('053', 0.753, 'tha_h8'), ('028', 0.762, 'glb_D30'), ('005', 0.771, 'bandmix_h4'), ('011', 0.785, 'glb_D90'), ('037', 0.791, 'tha_h12'), ('012', 0.81, 'emg_h30'), ('049', 0.812, 'bandmix_h12')]
+[done] subject_multi.json

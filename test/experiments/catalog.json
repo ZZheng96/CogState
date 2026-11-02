@@ -21,13 +21,13 @@
     },
     {
       "path": "README.md",
-      "size": 59020,
-      "sha256": "334960d891f8dbcf45cfd4f629382611640de5405db242d799cc72e2c5801514"
+      "size": 60313,
+      "sha256": "fe9fc8c1d22cda777265e30c48071f0176a25c9b31250361c3863df8f80ce762"
     },
     {
       "path": "test/experiments/实验方法索引.md",
-      "size": 61194,
-      "sha256": "275b78d8041221fb32c7e11b21656d3177a090b59b36c15be76b6668fbebdbb9"
+      "size": 62303,
+      "sha256": "ac49e443b51aa98b005a8b47e28ff920073cf0b2f34849cb01bf2b7d1802cce0"
     },
     {
       "path": "test/reports/卡尔曼深度学习实验报告.md",
@@ -41,8 +41,8 @@
     },
     {
       "path": "理论框架.md",
-      "size": 20293,
-      "sha256": "62b4b9b6992bbfe4f07893b2c3980b7a54efc7d03659aba78821a19f9c051a5a"
+      "size": 22628,
+      "sha256": "be846069b1f4e3d99b93aa6a4dcf1e9119fd7db5b9bc9466b4acb8967905e62e"
     },
     {
       "path": "研究报告.md",
@@ -4861,6 +4861,26 @@
           "status": "has_result_json"
         },
         {
+          "id": "test/11_individual_20261102/feat_cstd.py",
+          "path": "test/11_individual_20261102/feat_cstd.py",
+          "summary": "E18b：本人标注为什么在留一块下失效？——块偏移主导，先做特征级因果标准化再训练。 E18 的发现：逐被试留一块（LOBO）本人 LR 的 AUC 常常只有 0.1–0.5，即**块间几乎不迁移**。 这与 D1（留一块 .33）一致：模",
+          "artifacts": [
+            {
+              "path": "test/11_individual_20261102/feat_cstd.json",
+              "kind": "result",
+              "size": 1731,
+              "sha256": "68057d225652ca22c1234b058d27859e5ba18559e16ec85b0a3224a8c11d627e"
+            },
+            {
+              "path": "test/11_individual_20261102/feat_cstd.log",
+              "kind": "log",
+              "size": 509,
+              "sha256": "9914807fa5e179cde5804d07face5a8b3c213e54e64e28fd22277e5251b813b1"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
           "id": "test/11_individual_20261102/final_control.py",
           "path": "test/11_individual_20261102/final_control.py",
           "summary": "E16：对最终方法做零假设控制——bACC 0.928 是 EEG 还是\"块交替 + 持久先验\"？ 最终方法（018, D=60 s）： raw score → 因果中位数/MAD 标准化（过去 300 s）→ 两态 HMM 前向滤波（p_",
@@ -4936,12 +4956,80 @@
               "kind": "log",
               "size": 4454,
               "sha256": "7246c9802dcde205a7d44705e8766ec8fd34114bdcf57be91163000f0d9c8cbf"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/11_individual_20261102/subject_best.py",
+          "path": "test/11_individual_20261102/subject_best.py",
+          "summary": "E20：逐被试最优模型（特征级因果标准化 + 折内选特征数 + 个体记忆长度）。 对每个被试完全独立： 1. 特征：过去 300 s 的因果均值/标准差标准化（去掉块级偏移，见 feat_cstd.py）； 2. 留一块（LOBO）训练本人",
+          "artifacts": [
+            {
+              "path": "test/11_individual_20261102/subject_best.log",
+              "kind": "log",
+              "size": 5179,
+              "sha256": "15d2e6db0a37974c43f78297364c6da468d0a8e420cfd347b178e53b2a35da1b"
+            }
+          ],
+          "status": "artifacts_only"
+        },
+        {
+          "id": "test/11_individual_20261102/subject_final.py",
+          "path": "test/11_individual_20261102/subject_final.py",
+          "summary": "E19：逐被试最终方案——特征级因果标准化 + 本人留一块模型 + 全局方向融合 + 个体记忆。 E18 发现（见 feat_cstd.json）：本人留一块 LOBO 在原始特征上 AUC 只有 0.1–0.5， 原因是块级偏移被模型当成",
+          "artifacts": [
+            {
+              "path": "test/11_individual_20261102/subject_final.json",
+              "kind": "result",
+              "size": 123883,
+              "sha256": "ac872f18ea2a8fb09928ac7e4095e3f8d61572a54d9a9f5dc1ceedb495f8379b"
             },
             {
-              "path": "test/11_individual_20261102/stream_eval_partial.log",
+              "path": "test/11_individual_20261102/subject_final.log",
               "kind": "log",
-              "size": 1914,
-              "sha256": "efdb1fb95a43bb1c3f1398f32a041d930400f39d593ffaf7cf2c2637a4dac6c8"
+              "size": 4969,
+              "sha256": "1e15f190f7e76859c3e3a2ed0a362bd392ce0fb5e3dff65c87d3b3263b418906"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/11_individual_20261102/subject_multi.py",
+          "path": "test/11_individual_20261102/subject_multi.py",
+          "summary": "E21：逐被试多候选 + 本人标注定符号 → 每人在\"最适合的方法\"下的成绩。 候选（都只用当前窗特征，决策只用过去数据）： own_k      本人 LR（特征级因果标准化，折内选 k∈{50,100,200,全}） eng      ",
+          "artifacts": [
+            {
+              "path": "test/11_individual_20261102/subject_multi.json",
+              "kind": "result",
+              "size": 486905,
+              "sha256": "e6e39e7b8d86fa92a9648b595f418b704cea70ec6a80473396b4d6c69131a62f"
+            },
+            {
+              "path": "test/11_individual_20261102/subject_multi.log",
+              "kind": "log",
+              "size": 5811,
+              "sha256": "0551e4274963f2131758d7ab51c3a96f0dffaa279bd245d43e43339eddbb864d"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/11_individual_20261102/subject_own.py",
+          "path": "test/11_individual_20261102/subject_own.py",
+          "summary": "E18：逐被试本人标注（留一块交叉拟合）→ 与全局方向融合 → 个体记忆。 口径（用户 2026-11-02 确认）：允许使用该被试自己的标注，但必须严格交叉拟合。 本脚本每个被试完全独立地： 1. 留一块（LOBO，6 块）训练本人 LR",
+          "artifacts": [
+            {
+              "path": "test/11_individual_20261102/subject_own.json",
+              "kind": "result",
+              "size": 60536,
+              "sha256": "19b4d2da607439dd980b083bd5775585e90f165b5bcfa6e87da932df188590d6"
+            },
+            {
+              "path": "test/11_individual_20261102/subject_own.log",
+              "kind": "log",
+              "size": 4032,
+              "sha256": "1f014c1448cec299d0ca0b7b7b0239ea7d2005ee46741582a972dc91975b0047"
             }
           ],
           "status": "has_result_json"
@@ -6661,6 +6749,13 @@
           "kind": "other",
           "size": 7729,
           "sha256": "727cd1a3b53e3527df247beb412e83bda07f8a3fbe5cfc5a6daf747a73632d70",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/报告_E12_逐个体最优方法.md",
+          "kind": "other",
+          "size": 9382,
+          "sha256": "c84d3075e9aeddb9b1085ef2508e5ba6b625420f14fc8e455d55e7a097cad6e2",
           "suggested_script": null
         }
       ]
@@ -43092,6 +43187,156 @@
       "value": 0.8487029421069282
     },
     {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "004.cstd_lobo_auc",
+      "value": 0.6469655743523011
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "004.cstd_lobo_bacc",
+      "value": 0.5996510114752158
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "004.raw_lobo_auc",
+      "value": 0.2863894475334201
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "018.cstd_lobo_auc",
+      "value": 0.7611580474483701
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "018.cstd_lobo_bacc",
+      "value": 0.735860428400751
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "018.raw_lobo_auc",
+      "value": 0.4292434715821813
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "024.cstd_lobo_auc",
+      "value": 0.22720783515110796
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "024.cstd_lobo_bacc",
+      "value": 0.29749220578818636
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "024.raw_lobo_auc",
+      "value": 0.34607875040676866
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "029.cstd_lobo_auc",
+      "value": 0.2663540683128757
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "029.cstd_lobo_bacc",
+      "value": 0.35981084065485625
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "029.raw_lobo_auc",
+      "value": 0.07693333546711048
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "036.cstd_lobo_auc",
+      "value": 0.7446734194900454
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "036.cstd_lobo_bacc",
+      "value": 0.6785395494791233
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "036.raw_lobo_auc",
+      "value": 0.33195283003176823
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "037.cstd_lobo_auc",
+      "value": 0.35969292289926974
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "037.cstd_lobo_bacc",
+      "value": 0.4038058528553252
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "037.raw_lobo_auc",
+      "value": 0.2460679803693051
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "044.cstd_lobo_auc",
+      "value": 0.9028024417314096
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "044.cstd_lobo_bacc",
+      "value": 0.7820061043285238
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "044.raw_lobo_auc",
+      "value": 0.6625804661487238
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "048.cstd_lobo_auc",
+      "value": 0.7977611535751072
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "048.cstd_lobo_bacc",
+      "value": 0.7473166368515205
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "048.raw_lobo_auc",
+      "value": 0.4785168320052041
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "054.cstd_lobo_auc",
+      "value": 0.8887783229212121
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "054.cstd_lobo_bacc",
+      "value": 0.8442545311352583
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "054.raw_lobo_auc",
+      "value": 0.7381519992337245
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "056.cstd_lobo_auc",
+      "value": 0.7275862068965517
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "056.cstd_lobo_bacc",
+      "value": 0.6865944321417272
+    },
+    {
+      "file": "test/11_individual_20261102/feat_cstd.json",
+      "key": "056.raw_lobo_auc",
+      "value": 0.23761995149214388
+    },
+    {
       "file": "test/11_individual_20261102/final_control.json",
       "key": "[0].real_AUC",
       "value": 0.9751717443249701
@@ -43730,6 +43975,606 @@
       "file": "test/11_individual_20261102/stream_eval.json",
       "key": "summary.4.mean_bacc_cmed",
       "value": 0.5279805316537222
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "001.best_bACC",
+      "value": 0.8770958557418538
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "001.fixed_bACC",
+      "value": 0.8598597490245703
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "002.best_bACC",
+      "value": 0.6697994987468672
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "002.fixed_bACC",
+      "value": 0.6473057644110276
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "003.best_bACC",
+      "value": 0.9044872866402927
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "003.fixed_bACC",
+      "value": 0.9010048104604298
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "004.best_bACC",
+      "value": 0.7474565243108955
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "004.fixed_bACC",
+      "value": 0.7459984620844671
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "005.best_bACC",
+      "value": 0.6342259866850031
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "005.fixed_bACC",
+      "value": 0.6082922394397805
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "006.best_bACC",
+      "value": 0.8033389438374658
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "006.fixed_bACC",
+      "value": 0.8028661151323029
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "007.best_bACC",
+      "value": 0.828355119825708
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "007.fixed_bACC",
+      "value": 0.796952614379085
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "008.best_bACC",
+      "value": 0.685978780944456
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "008.fixed_bACC",
+      "value": 0.4800291241938839
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "009.best_bACC",
+      "value": 0.5255611332294732
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "009.fixed_bACC",
+      "value": 0.4910997634296924
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "010.best_bACC",
+      "value": 0.8450614655952318
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "010.fixed_bACC",
+      "value": 0.8415730935022085
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "011.best_bACC",
+      "value": 0.7505104091310988
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "011.fixed_bACC",
+      "value": 0.6136001929105377
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "012.best_bACC",
+      "value": 0.7674669971753041
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "012.fixed_bACC",
+      "value": 0.7626736611517841
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "013.best_bACC",
+      "value": 0.8386424465797903
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "013.fixed_bACC",
+      "value": 0.8164023079285683
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "014.best_bACC",
+      "value": 0.742120473463479
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "014.fixed_bACC",
+      "value": 0.620976411981351
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "015.best_bACC",
+      "value": 0.7588516746411483
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "015.fixed_bACC",
+      "value": 0.7324675324675325
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "016.best_bACC",
+      "value": 0.8001428963131696
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "016.fixed_bACC",
+      "value": 0.797588163334177
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "017.best_bACC",
+      "value": 0.8583782104391051
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "017.fixed_bACC",
+      "value": 0.7707815520574427
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "018.best_bACC",
+      "value": 0.9122823860727087
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "018.fixed_bACC",
+      "value": 0.7797619047619048
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "019.best_bACC",
+      "value": 0.8165054267720755
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "019.fixed_bACC",
+      "value": 0.8114993970253249
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "020.best_bACC",
+      "value": 0.774710055173967
+    },
+    {
+      "file": "test/11_individual_20261102/subject_final.json",
+      "key": "020.fixed_bACC",
+      "value": 0.6730323161806102
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "001.best_F1",
+      "value": 0.9236031927023945
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "001.best_bACC",
+      "value": 0.9230860487187599
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "001.nested_F1",
+      "value": 0.8544152744630071
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "001.nested_bACC",
+      "value": 0.8598887482864073
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "002.best_F1",
+      "value": 0.8378063010501751
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "002.best_bACC",
+      "value": 0.8296365914786967
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "002.nested_F1",
+      "value": 0.7672811059907834
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "002.nested_bACC",
+      "value": 0.7523182957393484
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "003.best_F1",
+      "value": 0.9154228855721394
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "003.best_bACC",
+      "value": 0.9158819487008043
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "003.nested_F1",
+      "value": 0.8553770086526576
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "003.nested_bACC",
+      "value": 0.8550454114893854
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "004.best_F1",
+      "value": 0.7
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "004.best_bACC",
+      "value": 0.7272033597539336
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "004.nested_F1",
+      "value": 0.7
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "004.nested_bACC",
+      "value": 0.7272033597539336
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "005.best_F1",
+      "value": 0.7777777777777778
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "005.best_bACC",
+      "value": 0.7710902301066236
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "005.nested_F1",
+      "value": 0.6069651741293532
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "005.nested_bACC",
+      "value": 0.6205973910891944
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "006.best_F1",
+      "value": 0.881243063263041
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "006.best_bACC",
+      "value": 0.8673076122447766
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "006.nested_F1",
+      "value": 0.8293785310734463
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "006.nested_bACC",
+      "value": 0.8148622849224145
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "007.best_F1",
+      "value": 0.868663594470046
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "007.best_bACC",
+      "value": 0.867140522875817
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "007.nested_F1",
+      "value": 0.8091236494597839
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "007.nested_bACC",
+      "value": 0.8142946623093682
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "008.best_F1",
+      "value": 0.8729559748427673
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "008.best_bACC",
+      "value": 0.8807468275431662
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "008.nested_F1",
+      "value": 0.7313769751693002
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "008.nested_bACC",
+      "value": 0.7228000832119825
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "009.best_F1",
+      "value": 0.8128161888701517
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "009.best_bACC",
+      "value": 0.8291933529513589
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "009.nested_F1",
+      "value": 0.6946308724832215
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "009.nested_bACC",
+      "value": 0.7190294847383302
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "010.best_F1",
+      "value": 0.9301260022909508
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "010.best_bACC",
+      "value": 0.9297589271459741
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "010.nested_F1",
+      "value": 0.7979924717691342
+    },
+    {
+      "file": "test/11_individual_20261102/subject_multi.json",
+      "key": "010.nested_bACC",
+      "value": 0.8137033686339206
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.001.AUC",
+      "value": 0.7433934408942316
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.001.F1",
+      "value": 0.7070707070707071
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.001.bACC",
+      "value": 0.6672071074554466
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.002.AUC",
+      "value": 0.5988781477503281
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.002.F1",
+      "value": 0.4599406528189911
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.002.bACC",
+      "value": 0.5604636591478697
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.003.AUC",
+      "value": 0.6039511400853129
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.003.F1",
+      "value": 0.6354166666666666
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.003.bACC",
+      "value": 0.5693059192808454
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.004.AUC",
+      "value": 0.4346977404471785
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.004.F1",
+      "value": 0.5171673819742489
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.004.bACC",
+      "value": 0.44863066366970306
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.005.AUC",
+      "value": 0.6135946463815316
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.005.F1",
+      "value": 0.6349848331648129
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.005.bACC",
+      "value": 0.5719320555386129
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.006.AUC",
+      "value": 0.6662602520563587
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.006.F1",
+      "value": 0.3981042654028436
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.006.bACC",
+      "value": 0.5547351267121454
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.007.AUC",
+      "value": 0.6713834422657952
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.007.F1",
+      "value": 0.6129032258064516
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.007.bACC",
+      "value": 0.635495642701525
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.008.AUC",
+      "value": 0.5111952963331984
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.008.F1",
+      "value": 0.5446224256292906
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.008.bACC",
+      "value": 0.5352610775951737
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.009.AUC",
+      "value": 0.4093435654799684
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.009.F1",
+      "value": 0.478125
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.009.bACC",
+      "value": 0.4823726270844152
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.010.AUC",
+      "value": 0.621494332393167
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.010.F1",
+      "value": 0.6568457538994801
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.010.bACC",
+      "value": 0.5459608323133415
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.011.AUC",
+      "value": 0.7371915440880958
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.011.F1",
+      "value": 0.7453874538745388
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.011.bACC",
+      "value": 0.6788200305441685
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.012.AUC",
+      "value": 0.5807517149939472
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.012.F1",
+      "value": 0.5171974522292994
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.012.bACC",
+      "value": 0.5448175477027728
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.013.AUC",
+      "value": 0.675968584090211
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.013.F1",
+      "value": 0.6695095948827292
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.013.bACC",
+      "value": 0.6367754815497346
+    },
+    {
+      "file": "test/11_individual_20261102/subject_own.json",
+      "key": "global.014.AUC",
+      "value": 0.6134694398910012
     },
     {
       "file": "test/_orphans/causal_covariance_transport_results.json",
@@ -54319,12 +55164,16 @@
     "test/10_projects/protocol_20261102/sweep_u.json": 52,
     "test/11_individual_20261102/causal_memory_scan.json": 2562,
     "test/11_individual_20261102/decide_scan.json": 1833,
+    "test/11_individual_20261102/feat_cstd.json": 30,
     "test/11_individual_20261102/final_control.json": 12,
     "test/11_individual_20261102/final_eval.json": 855,
     "test/11_individual_20261102/memory_controls.json": 36,
     "test/11_individual_20261102/scores/meta.json": 0,
     "test/11_individual_20261102/sliding/manifest.json": 0,
     "test/11_individual_20261102/stream_eval.json": 1593,
+    "test/11_individual_20261102/subject_final.json": 3192,
+    "test/11_individual_20261102/subject_multi.json": 12711,
+    "test/11_individual_20261102/subject_own.json": 1539,
     "test/_orphans/causal_covariance_transport_results.json": 48,
     "test/_orphans/causal_covariance_transport_smoke_results.json": 48,
     "test/audit/direction_scoring/direction_scoring.json": 312,
@@ -56422,6 +57271,10 @@
       "reference": "sub-*.npz"
     },
     {
+      "script": "test/11_individual_20261102/feat_cstd.py",
+      "reference": "realorder.npz"
+    },
+    {
       "script": "test/11_individual_20261102/final_eval.py",
       "reference": "sub-*.npz"
     },
@@ -56440,6 +57293,34 @@
     {
       "script": "test/11_individual_20261102/stream_eval.py",
       "reference": "realorder.npz"
+    },
+    {
+      "script": "test/11_individual_20261102/subject_best.py",
+      "reference": "realorder.npz"
+    },
+    {
+      "script": "test/11_individual_20261102/subject_best.py",
+      "reference": "sub-*.npz"
+    },
+    {
+      "script": "test/11_individual_20261102/subject_final.py",
+      "reference": "realorder.npz"
+    },
+    {
+      "script": "test/11_individual_20261102/subject_final.py",
+      "reference": "sub-*.npz"
+    },
+    {
+      "script": "test/11_individual_20261102/subject_multi.py",
+      "reference": "realorder.npz"
+    },
+    {
+      "script": "test/11_individual_20261102/subject_multi.py",
+      "reference": "sub-*.npz"
+    },
+    {
+      "script": "test/11_individual_20261102/subject_own.py",
+      "reference": "sub-*.npz"
     },
     {
       "script": "test/audit/common.py",
@@ -56563,11 +57444,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 1145,
-    "py_scripts": 250,
-    "json_results": 290,
-    "metrics_entries": 9381,
-    "missing_reference_count": 544,
+    "files_scanned": 1159,
+    "py_scripts": 255,
+    "json_results": 294,
+    "metrics_entries": 9531,
+    "missing_reference_count": 552,
     "database_window_files": 116
   }
 }
