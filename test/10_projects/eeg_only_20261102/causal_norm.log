@@ -1,0 +1,20 @@
+﻿[data] windows=16067 subs=57 dim=878 elapsed=0.3s
+[lr fold 0] elapsed=6.3s
+[lr fold 1] elapsed=12.5s
+[lr fold 2] elapsed=18.7s
+[lr fold 3] elapsed=25.2s
+[lr fold 4] elapsed=31.5s
+[result lr|none  ] AUC=0.6371 bACC=0.5979 F1m=0.5979 macro=0.5976 n>=.9=0/57
+[result lr|cum   ] AUC=0.6105 bACC=0.5832 F1m=0.5829 macro=0.5833 n>=.9=0/57
+[result lr|win64 ] AUC=0.5388 bACC=0.5463 F1m=0.5438 macro=0.5454 n>=.9=0/57
+[result lr|rank64] AUC=0.5882 bACC=0.5657 F1m=0.5628 macro=0.5664 n>=.9=0/57
+[hgb fold 0] elapsed=41.5s
+[hgb fold 1] elapsed=51.0s
+[hgb fold 2] elapsed=60.3s
+[hgb fold 3] elapsed=70.1s
+[hgb fold 4] elapsed=79.7s
+[result hgb|none  ] AUC=0.6324 bACC=0.5993 F1m=0.5992 macro=0.5999 n>=.9=0/57
+[result hgb|cum   ] AUC=0.5960 bACC=0.5506 F1m=0.5247 macro=0.5503 n>=.9=0/57
+[result hgb|win64 ] AUC=0.6397 bACC=0.5823 F1m=0.5665 macro=0.5825 n>=.9=0/57
+[result hgb|rank64] AUC=0.6441 bACC=0.5984 F1m=0.5885 macro=0.5974 n>=.9=0/57
+[done] 80.1s

@@ -21,8 +21,8 @@
     },
     {
       "path": "README.md",
-      "size": 53594,
-      "sha256": "10cc6529499b82852f0e1579ac7325de966479e2c3f01d5fa65cb28183bdb8cd"
+      "size": 53956,
+      "sha256": "7d73cf8f78210e3a77b3fc346d93116429e2269d976223940fc9a660d8698ac0"
     },
     {
       "path": "test/experiments/实验方法索引.md",
@@ -46,8 +46,8 @@
     },
     {
       "path": "研究报告.md",
-      "size": 270226,
-      "sha256": "78ebc52e37221396580f866a4ede6e9516e26fab3d9556c73283e078c8be754d"
+      "size": 270907,
+      "sha256": "232d771c336a4355a4b56ea8bbd92feb4a14e69b5113e05ddc474980196e9e39"
     },
     {
       "path": "认知状态解码理论.md",
@@ -4086,6 +4086,26 @@
           "status": "has_result_json"
         },
         {
+          "id": "test/10_projects/eeg_only_20261102/causal_norm.py",
+          "path": "test/10_projects/eeg_only_20261102/causal_norm.py",
+          "summary": "E4：因果被试标准化（只用本人已到达的无标签窗）能否把跨被试 0.645 拉近被试内 0.80？ 规范： * 每个判断仍只用当前 6 s 窗的特征；不使用时间表、窗序号、块序号； * 标准化用的参考统计量**只来自本人更早到达的窗**（先预",
+          "artifacts": [
+            {
+              "path": "test/10_projects/eeg_only_20261102/causal_norm.json",
+              "kind": "result",
+              "size": 2139,
+              "sha256": "4186872fa7aa3f1ecff0c9f2b8648632406149d8a6b350c2027fa1d85d2c053f"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/causal_norm.log",
+              "kind": "log",
+              "size": 970,
+              "sha256": "e7731e5a13d6621c04f12923a335e8838876713d4c60c35ad317a820a8b02de1"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
           "id": "test/10_projects/eeg_only_20261102/feature_probe.py",
           "path": "test/10_projects/eeg_only_20261102/feature_probe.py",
           "summary": "工频",
@@ -4321,8 +4341,8 @@
         {
           "path": "test/10_projects/eeg_only_20261102/报告_E1_纯EEG天花板.md",
           "kind": "other",
-          "size": 6596,
-          "sha256": "b38a739b591887142338e854005202f99ec5b1dd79dd51061e879a7f315be082",
+          "size": 7746,
+          "sha256": "29092ced36f8d797b93075ed9e53504668f44166076e2f45b3db9498c3d95263",
           "suggested_script": null
         },
         {
@@ -37973,6 +37993,166 @@
       "value": 0.5817035437490584
     },
     {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.hgb|cum.AUC",
+      "value": 0.5960231285597984
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.hgb|cum.F1_macro",
+      "value": 0.5247084530927637
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.hgb|cum.bACC",
+      "value": 0.5506307577739535
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.hgb|cum.subject_macro_bACC",
+      "value": 0.5503019416969653
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.hgb|none.AUC",
+      "value": 0.632420309634865
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.hgb|none.F1_macro",
+      "value": 0.5992075851696559
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.hgb|none.bACC",
+      "value": 0.5992692912834349
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.hgb|none.subject_macro_bACC",
+      "value": 0.5998812822560874
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.hgb|rank64.AUC",
+      "value": 0.6441091543937973
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.hgb|rank64.F1_macro",
+      "value": 0.5885020245643573
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.hgb|rank64.bACC",
+      "value": 0.59844677428302
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.hgb|rank64.subject_macro_bACC",
+      "value": 0.5973747597910828
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.hgb|win64.AUC",
+      "value": 0.6397106233883192
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.hgb|win64.F1_macro",
+      "value": 0.5665190271617432
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.hgb|win64.bACC",
+      "value": 0.5823205368855469
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.hgb|win64.subject_macro_bACC",
+      "value": 0.582524723906549
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.lr|cum.AUC",
+      "value": 0.6105240726743528
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.lr|cum.F1_macro",
+      "value": 0.5828867128145674
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.lr|cum.bACC",
+      "value": 0.5831708830298934
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.lr|cum.subject_macro_bACC",
+      "value": 0.5832559420227221
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.lr|none.AUC",
+      "value": 0.6371211726792183
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.lr|none.F1_macro",
+      "value": 0.5978698183226397
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.lr|none.bACC",
+      "value": 0.5978810260710734
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.lr|none.subject_macro_bACC",
+      "value": 0.5976074238649665
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.lr|rank64.AUC",
+      "value": 0.5882481832806346
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.lr|rank64.F1_macro",
+      "value": 0.5628241112690466
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.lr|rank64.bACC",
+      "value": 0.5657206307236848
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.lr|rank64.subject_macro_bACC",
+      "value": 0.5664173310221716
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.lr|win64.AUC",
+      "value": 0.5388277840842709
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.lr|win64.F1_macro",
+      "value": 0.543750881847086
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.lr|win64.bACC",
+      "value": 0.5462837246303109
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
+      "key": "methods.lr|win64.subject_macro_bACC",
+      "value": 0.545367392701216
+    },
+    {
       "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
       "key": "ceiling.all_908.auc_mean",
       "value": 0.8011800276963837
@@ -50513,6 +50693,7 @@
     "test/09_database/database_models_results.json": 62,
     "test/09_database/database_training_results.json": 24,
     "test/10_projects/eeg_only_20261102/aligned_lr.json": 9,
+    "test/10_projects/eeg_only_20261102/causal_norm.json": 32,
     "test/10_projects/eeg_only_20261102/feature_probe.json": 30,
     "test/10_projects/eeg_only_20261102/sign_consistency.json": 16,
     "test/10_projects/protocol_20261102/boundary_refine.json": 20,
@@ -52564,6 +52745,10 @@
       "reference": "sub-*.npz"
     },
     {
+      "script": "test/10_projects/eeg_only_20261102/causal_norm.py",
+      "reference": "realorder.npz"
+    },
+    {
       "script": "test/10_projects/eeg_only_20261102/feature_probe.py",
       "reference": "sub-*.npz"
     },
@@ -52701,11 +52886,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 946,
-    "py_scripts": 231,
-    "json_results": 271,
-    "metrics_entries": 8905,
-    "missing_reference_count": 528,
+    "files_scanned": 949,
+    "py_scripts": 232,
+    "json_results": 272,
+    "metrics_entries": 8937,
+    "missing_reference_count": 529,
     "database_window_files": 116
   }
 }

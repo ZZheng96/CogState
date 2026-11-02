@@ -97,17 +97,32 @@
 
 **对齐反而更差**：被保留下来的"一致"特征恰恰是效应最弱的那些；把强特征按多数符号翻转，只是把约 1/3 被试的错误固定下来。
 
-## 7. 复现
+**E4 `causal_norm.py`**：只用本人**更早到达**的无标签窗做因果标准化（先预测、后更新），这是规则第 2 条唯一还可能被允许的杠杆。
+
+| 模型 | 不做标准化 | 累计均值/标准差 | 过去 64 窗中位数/MAD | 过去 64 窗经验分位 |
+|---|---:|---:|---:|---:|
+| LR | **0.6371** | 0.6105 | 0.5388 | 0.5882 |
+| HGB | 0.6324 | 0.5960 | 0.6397 | 0.6441 |
+
+**没有一档带来稳定增益**（最好的 HGB+rank64 0.6441 也只是与基线持平）。原因与 E2 一致：被试差异不是简单的增益/偏移，而是判别方向的符号不一致；逐特征标准化改不了符号。
+
+## 7. 需要更正的一个表述
+
+E1 里 0.6450 是"本轮新特征 + LR"的结果，它**没有超过**项目历史严格 6 s 的最好成绩 `merge_best_window6` 的 **0.6743 / 0.6300**（AUC/bACC，F1 当时未记录）。
+因此纯 EEG 的对外口径应写成：**跨被试严格 6 s 最好 AUC 0.674 / bACC 0.630**；E1 的价值在于证明"再加新特征族也上不去"，而不是刷新纪录。
+
+## 8. 复现
 
 ```powershell
 py -3.11 test/10_projects/eeg_only_20261102/feature_probe.py      # 194 s
 py -3.11 test/10_projects/eeg_only_20261102/sign_consistency.py   # 6 s
 py -3.11 test/10_projects/eeg_only_20261102/aligned_lr.py         # 31 s
+py -3.11 test/10_projects/eeg_only_20261102/causal_norm.py        # 80 s
 ```
 
-产物：`feature_probe.json/.log`、`sign_consistency.json/.log`、`aligned_lr.json/.log`。
+产物：`feature_probe.json/.log`、`sign_consistency.json/.log`、`aligned_lr.json/.log`、`causal_norm.json/.log`。
 
-## 8. 本轮定位
+## 9. 本轮定位
 
 - 上一轮（P3–P6）的 0.98 **不计入达标**：它复述的是范式时间表，用户已明确排除。
 - 本轮把"纯 EEG 还能不能再挤出信号"这件事做到了新特征族的上限检验：**不能**。跨被试 0.645，被试内 oracle 0.80。
