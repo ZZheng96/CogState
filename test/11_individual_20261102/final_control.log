@@ -1,0 +1,5 @@
+﻿018: real AUC=0.975 bACC=0.924 F1=0.924 | shift 0.448 | shuffle 0.507 | ar1 0.501 (p95 0.636) | label_shift 0.455
+054: real AUC=0.970 bACC=0.897 F1=0.898 | shift 0.464 | shuffle 0.510 | ar1 0.495 (p95 0.621) | label_shift 0.473
+036: real AUC=0.962 bACC=0.906 F1=0.913 | shift 0.495 | shuffle 0.506 | ar1 0.498 (p95 0.647) | label_shift 0.497
+044: real AUC=0.949 bACC=0.894 F1=0.895 | shift 0.506 | shuffle 0.486 | ar1 0.510 (p95 0.634) | label_shift 0.485
+[done] final_control.json

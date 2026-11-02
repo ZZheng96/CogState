@@ -1,0 +1,41 @@
+﻿[load] 13 subjects: ['001', '018', '025', '030', '035', '036', '038', '043', '044', '048', '054', '056', '057']
+001: staticAUC=0.743 best=lr_cstd_hmm_D90 AUC=0.915 bACC=0.802 F1=0.826
+018: staticAUC=0.818 best=lr_cstd_hmm_D60 AUC=0.968 bACC=0.928 F1=0.928
+025: staticAUC=0.703 best=lr_cstd_hmm_D90 AUC=0.937 bACC=0.880 F1=0.883
+030: staticAUC=0.747 best=lr_cstd_hmm_D90 AUC=0.900 bACC=0.807 F1=0.800
+035: staticAUC=0.777 best=lr_cstd_hmm_D45 AUC=0.915 bACC=0.852 F1=0.856
+036: staticAUC=0.844 best=lr_cstd_hmm_D45 AUC=0.962 bACC=0.905 F1=0.912
+038: staticAUC=0.828 best=lr_cstd_hmm_D90 AUC=0.963 bACC=0.878 F1=0.880
+043: staticAUC=0.715 best=lr_cstd_hmm_D90 AUC=0.897 bACC=0.833 F1=0.839
+044: staticAUC=0.838 best=lr_cstd_hmm_D30 AUC=0.948 bACC=0.902 F1=0.903
+048: staticAUC=0.757 best=lr_cstd_hmm_D90 AUC=0.846 bACC=0.773 F1=0.787
+054: staticAUC=0.856 best=lr_cstd_hmm_D90 AUC=0.975 bACC=0.919 F1=0.920
+056: staticAUC=0.752 best=lr_cstd_hmm_D45 AUC=0.943 bACC=0.894 F1=0.895
+057: staticAUC=0.741 best=lda_hmm_D90 AUC=0.885 bACC=0.818 F1=0.839
+
+[rule summary] 按最好被试 bACC 排序（前 12）
+  lr_cstd_hmm_D60    meanAUC=0.922 meanBACC=0.848 best=018: bACC=0.928 F1=0.928 AUC=0.968
+  lr_cstd_hmm_D45    meanAUC=0.917 meanBACC=0.843 best=018: bACC=0.923 F1=0.923 AUC=0.966
+  lr_cstd_hmm_D90    meanAUC=0.927 meanBACC=0.854 best=018: bACC=0.921 F1=0.921 AUC=0.970
+  lr_cstd_hmm_D30    meanAUC=0.908 meanBACC=0.832 best=018: bACC=0.910 F1=0.912 AUC=0.959
+  cons_hmm_D20       meanAUC=0.849 meanBACC=0.722 best=054: bACC=0.881 F1=0.883 AUC=0.889
+  cons_hmm_D30       meanAUC=0.853 meanBACC=0.718 best=054: bACC=0.878 F1=0.881 AUC=0.887
+  cons_ema0_h4       meanAUC=0.851 meanBACC=0.728 best=054: bACC=0.866 F1=0.867 AUC=0.878
+  cons_hmm_D45       meanAUC=0.852 meanBACC=0.712 best=054: bACC=0.865 F1=0.868 AUC=0.882
+  cons_ema0_h6       meanAUC=0.848 meanBACC=0.722 best=054: bACC=0.864 F1=0.866 AUC=0.870
+  lr_hmm_D30         meanAUC=0.850 meanBACC=0.729 best=018: bACC=0.857 F1=0.856 AUC=0.902
+  lda_ema0_h4        meanAUC=0.852 meanBACC=0.728 best=018: bACC=0.857 F1=0.851 AUC=0.903
+  lda_hmm_D30        meanAUC=0.854 meanBACC=0.731 best=018: bACC=0.856 F1=0.851 AUC=0.902
+
+[≥0.90] 10 条
+   ('lr_cstd_hmm_D60', '018', 0.9284060846560847, 0.9282407407407407, 0.9682272998805257)
+   ('lr_cstd_hmm_D45', '018', 0.9226617170165557, 0.9234285714285714, 0.9655924645844001)
+   ('lr_cstd_hmm_D90', '018', 0.9214723075610173, 0.9211136890951276, 0.9700940860215054)
+   ('lr_cstd_hmm_D90', '054', 0.9192590542884813, 0.9195402298850575, 0.9749523738572385)
+   ('lr_cstd_hmm_D30', '018', 0.9099835722819594, 0.9117647058823529, 0.9589947089947091)
+   ('lr_cstd_hmm_D45', '036', 0.904772993141837, 0.911504424778761, 0.9615177774451262)
+   ('lr_cstd_hmm_D60', '054', 0.9042714530496696, 0.9040462427745665, 0.9705090409850896)
+   ('lr_cstd_hmm_D30', '044', 0.9022336293007769, 0.902696365767878, 0.9480521642619312)
+   ('lr_cstd_hmm_D60', '036', 0.9013716325976193, 0.9078801331853497, 0.9624824664992322)
+   ('lr_cstd_hmm_D60', '044', 0.9010543840177581, 0.9016393442622951, 0.9502830188679245)
+[done] decide_scan.json

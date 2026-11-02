@@ -1,0 +1,27 @@
+﻿[018] lr: n=866 static-AUC=0.8178 mu=(-0.18,0.12) sd=1.30
+[018] lda: n=866 static-AUC=0.8172 mu=(-0.19,0.17) sd=1.13
+[036] lr: n=850 static-AUC=0.8437 mu=(-0.22,0.07) sd=1.28
+[036] lda: n=850 static-AUC=0.8380 mu=(-0.22,0.11) sd=1.31
+[048] lr: n=859 static-AUC=0.7573 mu=(-0.30,0.20) sd=1.27
+[048] lda: n=859 static-AUC=0.7608 mu=(-0.30,0.23) sd=1.20
+[054] lr: n=867 static-AUC=0.8563 mu=(-0.23,0.11) sd=1.86
+[054] lda: n=867 static-AUC=0.8541 mu=(-0.23,0.15) sd=1.87
+[025] lr: n=845 static-AUC=0.7026 mu=(-0.22,0.09) sd=1.28
+[025] lda: n=845 static-AUC=0.7172 mu=(-0.19,0.13) sd=1.09
+[044] lr: n=849 static-AUC=0.8383 mu=(-0.18,0.12) sd=1.30
+[044] lda: n=849 static-AUC=0.8397 mu=(-0.19,0.17) sd=1.13
+[057] lr: n=839 static-AUC=0.7413 mu=(-0.22,0.09) sd=1.28
+[057] lda: n=839 static-AUC=0.7458 mu=(-0.19,0.13) sd=1.09
+[038] lr: n=866 static-AUC=0.8275 mu=(-0.22,0.07) sd=1.28
+[038] lda: n=866 static-AUC=0.8358 mu=(-0.22,0.11) sd=1.31
+[030] lr: n=884 static-AUC=0.7470 mu=(-0.18,0.12) sd=1.30
+[030] lda: n=884 static-AUC=0.7545 mu=(-0.19,0.17) sd=1.13
+[043] lr: n=848 static-AUC=0.7155 mu=(-0.23,0.11) sd=1.86
+[043] lda: n=848 static-AUC=0.7193 mu=(-0.23,0.15) sd=1.87
+[035] lr: n=875 static-AUC=0.7772 mu=(-0.22,0.07) sd=1.28
+[035] lda: n=875 static-AUC=0.7808 mu=(-0.22,0.11) sd=1.31
+[056] lr: n=871 static-AUC=0.7521 mu=(-0.23,0.11) sd=1.86
+[056] lda: n=871 static-AUC=0.7566 mu=(-0.23,0.15) sd=1.87
+[001] lr: n=871 static-AUC=0.7434 mu=(-0.22,0.09) sd=1.28
+[001] lda: n=871 static-AUC=0.7533 mu=(-0.19,0.13) sd=1.09
+[done]

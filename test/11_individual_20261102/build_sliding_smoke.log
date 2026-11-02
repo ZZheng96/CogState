@@ -1,0 +1,3 @@
+﻿[build] 1 subjects stride=2.0s workers=1
+[1/1] 036 rows=850 trials=6 31.0s elapsed=34s
+[done] 34s -> D:\WORK\BCIC2026\CogState\test\11_individual_20261102\sliding
