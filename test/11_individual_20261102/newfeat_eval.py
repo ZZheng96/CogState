@@ -22,6 +22,7 @@
 from __future__ import annotations
 
 import json
+import time
 import warnings
 from pathlib import Path
 
@@ -102,6 +103,7 @@ def main():
     subs = sorted(p.stem.replace("sub-", "") for p in NEW.glob("sub-*.npz"))
     out, rows = {}, []
     lines = []
+    t0 = time.perf_counter()
 
     def log(msg):
         print(msg, flush=True)
@@ -165,8 +167,10 @@ def main():
     out["summary"] = {"new19": s19, "new19_pow": sall, "pow5": spw, "nonpow14": snp,
                       "baseline": sbase,
                       "baseline_claim_ge90": 23, "changes": changes,
+                      "runtime_s": round(time.perf_counter() - t0, 1),
                       "params": {"ks": list(KS), "hs": list(HS), "C": C_REG, "cstd_w": CSTD_W,
                                  "protocol": "LOBO by blk; train-fold mean/std + train-fold polarity"}}
+    log(f"[done] {out['summary']['runtime_s']:.0f}s -> newfeat_eval.json")
     (HERE / "newfeat_eval.json").write_text(json.dumps(out, ensure_ascii=False, indent=1),
                                             encoding="utf-8")
     (HERE / "newfeat_eval.log").write_text("\n".join(lines) + "\n", encoding="utf-8")
