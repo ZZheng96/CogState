@@ -21,13 +21,13 @@
     },
     {
       "path": "README.md",
-      "size": 54882,
-      "sha256": "dab0f334735692f618ad9624877ea708a8b2efcbfe5c6a046e13160d6d3083f0"
+      "size": 55936,
+      "sha256": "e85e9b505a150869e2aa4fdeab5888dbfde613b490deb29ca6e83361b9e5ee5b"
     },
     {
       "path": "test/experiments/实验方法索引.md",
-      "size": 57865,
-      "sha256": "77409a8cd32a1a13cdb6bcb7a112d3a167a5453876f5a17a9b23b8303fa180cf"
+      "size": 58666,
+      "sha256": "41f4877784e498d7476c5db5482f147aae72aafda95097b36cfa3282821f092b"
     },
     {
       "path": "test/reports/卡尔曼深度学习实验报告.md",
@@ -46,8 +46,8 @@
     },
     {
       "path": "研究报告.md",
-      "size": 272101,
-      "sha256": "604e77bb58551e1e0cf8922a0143c94050f6d4718d29aa5caf23431b951ce780"
+      "size": 273855,
+      "sha256": "d0ff3e94632fab6d7824a7c63e77586e1596879f619b9e0f919f221f93f36871"
     },
     {
       "path": "认知状态解码理论.md",
@@ -4106,6 +4106,26 @@
           "status": "has_result_json"
         },
         {
+          "id": "test/10_projects/eeg_only_20261102/calibration_curve.py",
+          "path": "test/10_projects/eeg_only_20261102/calibration_curve.py",
+          "summary": "E9：每被试校准标签预算曲线（诊断，使用测试被试真标签，规则不允许）。 E7/E8 结论：个体差异真实存在（逐被试 AUC 0.33–0.85），但 * 无法用无标签信号属性识别谁好谁坏（可靠性预测 r=+0.055）； * 即使把\"本人方",
+          "artifacts": [
+            {
+              "path": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+              "kind": "result",
+              "size": 2784,
+              "sha256": "cfca252827b4884d2708693db4e4aebae3e1296333b4b60cdc8b5181cdaf35f9"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/calibration_curve.log",
+              "kind": "log",
+              "size": 2034,
+              "sha256": "8b16a0ace1110bc54b8c99f21e2d46fe8df2be896a661c12d0611fb78fa33b9e"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
           "id": "test/10_projects/eeg_only_20261102/causal_norm.py",
           "path": "test/10_projects/eeg_only_20261102/causal_norm.py",
           "summary": "E4：因果被试标准化（只用本人已到达的无标签窗）能否把跨被试 0.645 拉近被试内 0.80？ 规范： * 每个判断仍只用当前 6 s 窗的特征；不使用时间表、窗序号、块序号； * 标准化用的参考统计量**只来自本人更早到达的窗**（先预",
@@ -4146,6 +4166,26 @@
           "status": "has_result_json"
         },
         {
+          "id": "test/10_projects/eeg_only_20261102/direction_groups.py",
+          "path": "test/10_projects/eeg_only_20261102/direction_groups.py",
+          "summary": "E8：本人方向能否分组？分组已知时的上界是多少？ E7 结论：按无标签信号属性分组，各组逐被试 AUC 几乎相同（0.638–0.686）， 可靠性预测 r=+0.055，弃权/加权都无增益 → 表现差异不可由\"可观测属性\"识别。 本脚本追",
+          "artifacts": [
+            {
+              "path": "test/10_projects/eeg_only_20261102/direction_groups.json",
+              "kind": "result",
+              "size": 1884,
+              "sha256": "ae42fa5aa3419b2067226fa75b83b96ad6fd47b2f2c0898eecd41bff58de682b"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/direction_groups.log",
+              "kind": "log",
+              "size": 652,
+              "sha256": "cf683ff539b358b4c2250d95c660a0ca23506116c97e8f7b5c886784ba5dc9c7"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
           "id": "test/10_projects/eeg_only_20261102/feature_probe.py",
           "path": "test/10_projects/eeg_only_20261102/feature_probe.py",
           "summary": "工频",
@@ -4181,6 +4221,26 @@
               "kind": "log",
               "size": 377,
               "sha256": "441f759ba428f4fa695bccacd2ce48e8277c58b980bc9720a7e240b6b2868e18"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/10_projects/eeg_only_20261102/per_subject_audit.py",
+          "path": "test/10_projects/eeg_only_20261102/per_subject_audit.py",
+          "summary": "E7：逐被试审计 → 按信号属性分组 → 分组能否提升指标？ 背景（E6）：跨被试 LR 的逐被试卷级 AUC 中位 0.669、最低 0.333、9/57 低于 0.5； 而给每人自己的方向（oracle）后中位 0.806。个体差异是主",
+          "artifacts": [
+            {
+              "path": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+              "kind": "result",
+              "size": 9352,
+              "sha256": "79875efc3953be4d4b0a17b94fa3d144889ea21ce552f741c703aa5eb8d9faf2"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/per_subject_audit.log",
+              "kind": "log",
+              "size": 2649,
+              "sha256": "1996ee1ffe5caa622c692a2dd7bc19c92751af3c4ad3110a79b24928e9aff67a"
             }
           ],
           "status": "has_result_json"
@@ -4403,6 +4463,13 @@
           "kind": "other",
           "size": 10604,
           "sha256": "f850aa72be8908d47f870fa1ecca138a53ba5b7229c4d253f265254dc0fc04df",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/报告_E7_E8_个体差异与分组.md",
+          "kind": "other",
+          "size": 6544,
+          "sha256": "a29954c8128ee542a1a3177f13198689e44222c570f4f7a09df1693a2df29286",
           "suggested_script": null
         },
         {
@@ -38113,6 +38180,206 @@
       "value": 0.5405580192347232
     },
     {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=0.AUC",
+      "value": 0.6371211571841493
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=0.F1_macro",
+      "value": 0.5978698183226397
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=0.bACC",
+      "value": 0.5978810260710734
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=0.subject_macro_bACC",
+      "value": 0.5976074238649665
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=10|direction.AUC",
+      "value": 0.7311661394992798
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=10|direction.F1_macro",
+      "value": 0.6738521039651604
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=10|direction.bACC",
+      "value": 0.6739031139408621
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=10|direction.subject_macro_bACC",
+      "value": 0.6734347761082362
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=10|shrunk0.5.AUC",
+      "value": 0.7363474597676944
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=10|shrunk0.5.F1_macro",
+      "value": 0.6790849559334089
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=10|shrunk0.5.bACC",
+      "value": 0.6791814929689173
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=10|shrunk0.5.subject_macro_bACC",
+      "value": 0.6785000425035435
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=1|direction.AUC",
+      "value": 0.6265259118047897
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=1|direction.F1_macro",
+      "value": 0.5923299853005961
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=1|direction.bACC",
+      "value": 0.5923443698762528
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=1|direction.subject_macro_bACC",
+      "value": 0.5915204549221427
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=1|shrunk0.5.AUC",
+      "value": 0.6358376049071979
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=1|shrunk0.5.F1_macro",
+      "value": 0.5984763047043999
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=1|shrunk0.5.bACC",
+      "value": 0.5984884734697188
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=1|shrunk0.5.subject_macro_bACC",
+      "value": 0.5975178061296962
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=20|direction.AUC",
+      "value": 0.7685496049232448
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=20|direction.F1_macro",
+      "value": 0.7100430050962001
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=20|direction.bACC",
+      "value": 0.7101055389870513
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=20|direction.subject_macro_bACC",
+      "value": 0.7085941964279772
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=20|shrunk0.5.AUC",
+      "value": 0.7727208275778474
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=20|shrunk0.5.F1_macro",
+      "value": 0.713370529911553
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=20|shrunk0.5.bACC",
+      "value": 0.7134393331801343
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=20|shrunk0.5.subject_macro_bACC",
+      "value": 0.7119303029958555
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=2|direction.AUC",
+      "value": 0.6486818987168887
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=2|direction.F1_macro",
+      "value": 0.6139177976729797
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=2|direction.bACC",
+      "value": 0.6139184596043836
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=2|direction.subject_macro_bACC",
+      "value": 0.6110071126405199
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=50|direction.AUC",
+      "value": 0.7798750177452326
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=50|direction.F1_macro",
+      "value": 0.7166839781004778
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=50|direction.bACC",
+      "value": 0.7167436665567066
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=50|direction.subject_macro_bACC",
+      "value": 0.711077529592382
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=5|direction.AUC",
+      "value": 0.7175072149188882
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=5|direction.F1_macro",
+      "value": 0.6637256363450544
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=5|direction.bACC",
+      "value": 0.6637654589641131
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/calibration_curve.json",
+      "key": "budget.m=5|direction.subject_macro_bACC",
+      "value": 0.6617125815879124
+    },
+    {
       "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
       "key": "methods.hgb|cum.AUC",
       "value": 0.5960231285597984
@@ -38473,6 +38740,126 @@
       "value": 0.6110398677464162
     },
     {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "baseline_oof.AUC",
+      "value": 0.6371211571841493
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "baseline_oof.F1_macro",
+      "value": 0.5978698183226397
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "baseline_oof.bACC",
+      "value": 0.5978810260710734
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "baseline_oof.subject_macro_bACC",
+      "value": 0.5976074238649665
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.2.AUC",
+      "value": 0.6312372533688605
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.2.F1_macro",
+      "value": 0.5958537822333433
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.2.bACC",
+      "value": 0.5959568638972019
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.2.subject_macro_bACC",
+      "value": 0.5942041903104516
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.3.AUC",
+      "value": 0.6157665581082132
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.3.F1_macro",
+      "value": 0.5838238385243828
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.3.bACC",
+      "value": 0.58394241350575
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.3.subject_macro_bACC",
+      "value": 0.5821420687632556
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.4.AUC",
+      "value": 0.5944632089730085
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.4.F1_macro",
+      "value": 0.5683454291029884
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.4.bACC",
+      "value": 0.5688928122403607
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.4.subject_macro_bACC",
+      "value": 0.5679576819596881
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.5.AUC",
+      "value": 0.5808828811407346
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.5.F1_macro",
+      "value": 0.557919655634262
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.5.bACC",
+      "value": 0.558326368299816
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.5.subject_macro_bACC",
+      "value": 0.5561436729509024
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.6.AUC",
+      "value": 0.595123376387932
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.6.F1_macro",
+      "value": 0.5705196261741663
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.6.bACC",
+      "value": 0.5707883240316434
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/direction_groups.json",
+      "key": "kmeans.6.subject_macro_bACC",
+      "value": 0.5695742062872857
+    },
+    {
       "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
       "key": "ceiling.all_908.auc_mean",
       "value": 0.8011800276963837
@@ -38661,6 +39048,206 @@
       "file": "test/10_projects/eeg_only_20261102/hp_check.json",
       "key": "rows[3].delta_rel.AUC",
       "value": 0.4736613422510554
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "abstain_25pct.AUC",
+      "value": 0.6089670894031392
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "abstain_25pct.F1_macro",
+      "value": 0.56612473797622
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "abstain_25pct.bACC",
+      "value": 0.5704028841901642
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "abstain_25pct.subject_macro_bACC",
+      "value": 0.5683603989360726
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "base.AUC",
+      "value": 0.6371211571841493
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "base.F1_macro",
+      "value": 0.5978698183226397
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "base.bACC",
+      "value": 0.5978810260710734
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "base.subject_macro_bACC",
+      "value": 0.5976074238649665
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.001.auc",
+      "value": 0.7237600377893245
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.001.bacc",
+      "value": 0.6396079357581483
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.002.auc",
+      "value": 0.5910725964682799
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.002.bacc",
+      "value": 0.5622411161979507
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.003.auc",
+      "value": 0.5988744636986683
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.003.bacc",
+      "value": 0.5644954588510614
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.004.auc",
+      "value": 0.4187917345812082
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.004.bacc",
+      "value": 0.437615016562385
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.005.auc",
+      "value": 0.6150720164609053
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.005.bacc",
+      "value": 0.5548611111111111
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.006.auc",
+      "value": 0.6465899493243243
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.006.bacc",
+      "value": 0.5538429054054054
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.007.auc",
+      "value": 0.6836328314715882
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.007.bacc",
+      "value": 0.6335599805730938
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.008.auc",
+      "value": 0.49748694195328663
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.008.bacc",
+      "value": 0.5514684143096482
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.009.auc",
+      "value": 0.41938498131158686
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.009.bacc",
+      "value": 0.49783384301732925
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.010.auc",
+      "value": 0.6090658295281584
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.010.bacc",
+      "value": 0.5230213089802132
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.011.auc",
+      "value": 0.7573249619482497
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.011.bacc",
+      "value": 0.6914954337899544
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.012.auc",
+      "value": 0.5828890844159205
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.012.bacc",
+      "value": 0.539568345323741
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.013.auc",
+      "value": 0.7030027386541471
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.013.bacc",
+      "value": 0.6545383411580594
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.014.auc",
+      "value": 0.594198790627362
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "per_subject.014.bacc",
+      "value": 0.589781746031746
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "weighted_train.AUC",
+      "value": 0.6377399217746935
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "weighted_train.F1_macro",
+      "value": 0.5989911008018347
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "weighted_train.bACC",
+      "value": 0.5989993439387784
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
+      "key": "weighted_train.subject_macro_bACC",
+      "value": 0.5985494459316435
     },
     {
       "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
@@ -51054,10 +51641,13 @@
     "test/09_database/database_training_results.json": 24,
     "test/10_projects/eeg_only_20261102/aligned_lr.json": 9,
     "test/10_projects/eeg_only_20261102/anchor_features.json": 12,
+    "test/10_projects/eeg_only_20261102/calibration_curve.json": 52,
     "test/10_projects/eeg_only_20261102/causal_norm.json": 32,
     "test/10_projects/eeg_only_20261102/ceiling_audit.json": 40,
+    "test/10_projects/eeg_only_20261102/direction_groups.json": 24,
     "test/10_projects/eeg_only_20261102/feature_probe.json": 30,
     "test/10_projects/eeg_only_20261102/hp_check.json": 8,
+    "test/10_projects/eeg_only_20261102/per_subject_audit.json": 139,
     "test/10_projects/eeg_only_20261102/sign_consistency.json": 16,
     "test/10_projects/protocol_20261102/boundary_refine.json": 20,
     "test/10_projects/protocol_20261102/boundary_refine_smoke.json": 20,
@@ -53112,11 +53702,19 @@
       "reference": "sub-*.npz"
     },
     {
+      "script": "test/10_projects/eeg_only_20261102/calibration_curve.py",
+      "reference": "realorder.npz"
+    },
+    {
       "script": "test/10_projects/eeg_only_20261102/causal_norm.py",
       "reference": "realorder.npz"
     },
     {
       "script": "test/10_projects/eeg_only_20261102/ceiling_audit.py",
+      "reference": "realorder.npz"
+    },
+    {
+      "script": "test/10_projects/eeg_only_20261102/direction_groups.py",
       "reference": "realorder.npz"
     },
     {
@@ -53126,6 +53724,10 @@
     {
       "script": "test/10_projects/eeg_only_20261102/hp_check.py",
       "reference": "sub-*.npz"
+    },
+    {
+      "script": "test/10_projects/eeg_only_20261102/per_subject_audit.py",
+      "reference": "realorder.npz"
     },
     {
       "script": "test/10_projects/eeg_only_20261102/sign_consistency.py",
@@ -53261,11 +53863,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 958,
-    "py_scripts": 235,
-    "json_results": 275,
-    "metrics_entries": 8997,
-    "missing_reference_count": 532,
+    "files_scanned": 968,
+    "py_scripts": 238,
+    "json_results": 278,
+    "metrics_entries": 9101,
+    "missing_reference_count": 535,
     "database_window_files": 116
   }
 }

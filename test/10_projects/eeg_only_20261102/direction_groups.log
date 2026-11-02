@@ -1,0 +1,9 @@
+﻿[data] windows=16067 subs=57 dim=878 elapsed=0.3s
+[directions] |cos| 中位=0.353 90分位=0.680 最大=0.933 | 第一奇异值能量占比=0.329
+[global_oof            ] AUC=0.6371 bACC=0.5979 F1m=0.5979 macro=0.5976 n>=.9=0
+[within_cluster k=2    ] AUC=0.6312 bACC=0.5960 F1m=0.5959 macro=0.5942 n>=.9=0
+[within_cluster k=3    ] AUC=0.6158 bACC=0.5839 F1m=0.5838 macro=0.5821 n>=.9=0
+[within_cluster k=4    ] AUC=0.5945 bACC=0.5689 F1m=0.5683 macro=0.5680 n>=.9=0
+[within_cluster k=5    ] AUC=0.5809 bACC=0.5583 F1m=0.5579 macro=0.5561 n>=.9=0
+[within_cluster k=6    ] AUC=0.5951 bACC=0.5708 F1m=0.5705 macro=0.5696 n>=.9=0
+[done] 130.2s

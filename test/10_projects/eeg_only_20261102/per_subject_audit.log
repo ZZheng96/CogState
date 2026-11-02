@@ -1,0 +1,36 @@
+﻿[data] windows=16067 subs=57 dim=878 elapsed=0.4s
+[attrs] 10 个无标签个体属性 elapsed=0.5s
+[base] AUC=0.6371 bACC=0.5979 F1m=0.5979
+[tiers] 按逐被试 AUC 分三档：
+  low   n=19 AUC=0.512 bACC=0.506 subs=[np.str_('029'), np.str_('042'), np.str_('024'), np.str_('004'), np.str_('009'), np.str_('037'), np.str_('052'), np.str_('023'), np.str_('008'), np.str_('027'), np.str_('019'), np.str_('039'), np.str_('012'), np.str_('002'), np.str_('014'), np.str_('003'), np.str_('015'), np.str_('010'), np.str_('005')]
+  mid   n=19 AUC=0.668 bACC=0.609 subs=[np.str_('050'), np.str_('053'), np.str_('016'), np.str_('006'), np.str_('055'), np.str_('041'), np.str_('059'), np.str_('022'), np.str_('045'), np.str_('034'), np.str_('047'), np.str_('049'), np.str_('051'), np.str_('028'), np.str_('007'), np.str_('021'), np.str_('020'), np.str_('013'), np.str_('026')]
+  high  n=19 AUC=0.773 bACC=0.677 subs=[np.str_('025'), np.str_('046'), np.str_('043'), np.str_('001'), np.str_('030'), np.str_('011'), np.str_('056'), np.str_('040'), np.str_('017'), np.str_('057'), np.str_('031'), np.str_('048'), np.str_('035'), np.str_('058'), np.str_('018'), np.str_('044'), np.str_('038'), np.str_('036'), np.str_('054')]
+py : C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Lib\site-packages\numpy\lib\_function_base_impl.py:
+3023: RuntimeWarning: invalid value encountered in divide
+所在位置 行:15 字符: 3612
++ ... NG='utf-8'; py -3.11 test/10_projects/eeg_only_20261102/per_subject_a ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\Admini...tered in divide:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  c /= stddev[:, None]
+C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Lib\site-packages\numpy\lib\_function_base_impl.py:3024:
+ RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+[attr-corr] 与逐被试 AUC 的相关：
+  log_abs_power    r=-0.203
+  spec_entropy     r=+0.139
+  dispersion       r=-0.098
+  crest_mean       r=-0.094
+  n_windows        r=+0.071
+  alpha_rel        r=-0.060
+  hf_rel           r=-0.028
+  kurtosis_mean    r=+nan
+  bad_flat         r=+nan
+  bad_spike        r=+nan
+[km=3] c0:n=11,AUC=0.686 | c1:n=23,AUC=0.647 | c2:n=23,AUC=0.638
+[km=4] c0:n=23,AUC=0.638 | c1:n=22,AUC=0.646 | c2:n=1,AUC=0.669 | c3:n=11,AUC=0.686
+[reliab] 留一被试预测逐被试 AUC 的 r=+0.055；预测>0.5 的比例=0.98
+[abstain 25%] AUC=0.6090 bACC=0.5704 F1m=0.5661
+[weighted]    AUC=0.6377 bACC=0.5990 F1m=0.5990
+[done] 18.8s

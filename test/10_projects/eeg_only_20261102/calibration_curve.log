@@ -1,0 +1,28 @@
+﻿[data] windows=16067 subs=57 elapsed=0.4s
+[global m=0                ] AUC=0.6371 bACC=0.5979 F1m=0.5979 macro=0.5976 n>=.9=0
+[gdir] 全局方向就绪 elapsed=127.8s
+[m=1 direction             ] AUC=0.6265 bACC=0.5923 F1m=0.5923 macro=0.5915 n>=.9=0
+[m=1 shrunk0.5             ] AUC=0.6358 bACC=0.5985 F1m=0.5985 macro=0.5975 n>=.9=0
+[m=2 direction             ] AUC=0.6487 bACC=0.6139 F1m=0.6139 macro=0.6110 n>=.9=0
+[m=2 shrunk0.5             ] AUC=0.6566 bACC=0.6190 F1m=0.6189 macro=0.6160 n>=.9=0
+[m=5 direction             ] AUC=0.7175 bACC=0.6638 F1m=0.6637 macro=0.6617 n>=.9=0
+[m=5 shrunk0.5             ] AUC=0.7242 bACC=0.6711 F1m=0.6710 macro=0.6692 n>=.9=0
+[m=10 direction            ] AUC=0.7312 bACC=0.6739 F1m=0.6739 macro=0.6734 n>=.9=0
+[m=10 shrunk0.5            ] AUC=0.7363 bACC=0.6792 F1m=0.6791 macro=0.6785 n>=.9=0
+[m=20 direction            ] AUC=0.7685 bACC=0.7101 F1m=0.7100 macro=0.7086 n>=.9=0
+[m=20 shrunk0.5            ] AUC=0.7727 bACC=0.7134 F1m=0.7134 macro=0.7119 n>=.9=0
+py : C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.p
+y:2939: UserWarning: y_pred contains classes not in y_true
+所在位置 行:15 字符: 3612
++ ... NG='utf-8'; py -3.11 test/10_projects/eeg_only_20261102/calibration_c ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\Admini...s not in y_true:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  warnings.warn("y_pred contains classes not in y_true")
+[m=50 direction            ] AUC=0.7799 bACC=0.7167 F1m=0.7167 macro=0.7111 n>=.9=0
+C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:293
+9: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+[m=50 shrunk0.5            ] AUC=0.7837 bACC=0.7193 F1m=0.7193 macro=0.7137 n>=.9=0
+[done] 130.1s
