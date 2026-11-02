@@ -1,0 +1,92 @@
+{
+ "meta": {
+  "protocol": "real-order SGKF(5,rs0) subject-disjoint",
+  "n_windows": 16067,
+  "n_subjects": 57,
+  "iters": 5,
+  "note": "oracle_dir 用真实块估方向，仅诊断；iter_* 不用任何真实块信息"
+ },
+ "methods": {
+  "oracle_dir": {
+   "AUC": 0.7940798046784995,
+   "bACC": 0.7940798046784996,
+   "F1_macro": 0.7939174533292517,
+   "F1_task": 0.800340570455513,
+   "subject_macro_bACC": 0.7923431498434658,
+   "n_ge_0.9": 2,
+   "n_subj": 56,
+   "evaluated_windows": 15946
+  },
+  "cross_score": {
+   "AUC": 0.7255129727589374,
+   "bACC": 0.7255129727589374,
+   "F1_macro": 0.7249020173041091,
+   "F1_task": 0.7384964742440541,
+   "subject_macro_bACC": 0.7237567697915696,
+   "n_ge_0.9": 1,
+   "n_subj": 56,
+   "evaluated_windows": 15946
+  },
+  "iter_clock": {
+   "AUC": 0.7695630497237875,
+   "bACC": 0.7695630497237875,
+   "F1_macro": 0.7694121191788997,
+   "F1_task": 0.7759482863763874,
+   "subject_macro_bACC": 0.7686845070853687,
+   "n_ge_0.9": 2,
+   "n_subj": 56,
+   "evaluated_windows": 15946
+  },
+  "iter_uniform": {
+   "AUC": 0.7218605658460874,
+   "bACC": 0.7218605658460874,
+   "F1_macro": 0.72183718902742,
+   "F1_task": 0.7250294500589001,
+   "subject_macro_bACC": 0.7215477819050777,
+   "n_ge_0.9": 1,
+   "n_subj": 56,
+   "evaluated_windows": 15946
+  },
+  "single": {
+   "AUC": 0.632420309634865,
+   "bACC": 0.5677647557217866,
+   "F1_macro": 0.5354875508959306,
+   "F1_task": 0.41437952517258797,
+   "subject_macro_bACC": 0.5676571143269037,
+   "n_ge_0.9": 0,
+   "n_subj": 57,
+   "evaluated_windows": 16067
+  }
+ },
+ "boundary": {
+  "oracle_dir": {
+   "parity_acc_mean": 0.7924396364816914,
+   "cut_abs_err_mean": 3.8392857142857144,
+   "cut_abs_err_median": 4.0,
+   "cut_abs_err_p90": 7.0,
+   "n_cuts": 280
+  },
+  "cross_score": {
+   "parity_acc_mean": 0.7239560625482505,
+   "cut_abs_err_mean": 5.375,
+   "cut_abs_err_median": 4.0,
+   "cut_abs_err_p90": 11.0,
+   "n_cuts": 280
+  },
+  "iter_clock": {
+   "parity_acc_mean": 0.7686551962929224,
+   "cut_abs_err_mean": 4.553571428571429,
+   "cut_abs_err_median": 4.0,
+   "cut_abs_err_p90": 8.0,
+   "n_cuts": 280
+  },
+  "iter_uniform": {
+   "parity_acc_mean": 0.7214130140243576,
+   "cut_abs_err_mean": 5.410714285714286,
+   "cut_abs_err_median": 4.5,
+   "cut_abs_err_p90": 10.0,
+   "n_cuts": 280
+  }
+ },
+ "seconds": 61.42296260000148
+}

@@ -1,13 +1,13 @@
 ﻿[data] rows=16067 subs=57 dim=878 pos_windows=16067 elapsed=0.2s
 [folds] f0:11sub f1:12sub f2:11sub f3:12sub f4:11sub
-[fold 0] singleAUC=0.5794 posAUC=0.9966 dpACC=0.7326 hsmmAUC=0.7327 s=5.8s elapsed=6.1s
-[fold 1] singleAUC=0.6839 posAUC=0.9985 dpACC=0.7270 hsmmAUC=0.8072 s=5.5s elapsed=11.6s
-[fold 2] singleAUC=0.6764 posAUC=0.9994 dpACC=0.7511 hsmmAUC=0.8471 s=5.6s elapsed=17.1s
-[fold 3] singleAUC=0.6195 posAUC=0.9959 dpACC=0.6990 hsmmAUC=0.7341 s=5.6s elapsed=22.8s
-[fold 4] singleAUC=0.6285 posAUC=0.9991 dpACC=0.7123 hsmmAUC=0.7572 s=5.7s elapsed=28.4s
+[fold 0] singleAUC=0.5794 posAUC=0.9966 dpACC=0.7326 hsmmAUC=0.7327 s=5.6s elapsed=5.8s
+[fold 1] singleAUC=0.6839 posAUC=0.9985 dpACC=0.7270 hsmmAUC=0.8072 s=5.6s elapsed=11.5s
+[fold 2] singleAUC=0.6764 posAUC=0.9994 dpACC=0.7511 hsmmAUC=0.8471 s=5.5s elapsed=17.0s
+[fold 3] singleAUC=0.6195 posAUC=0.9959 dpACC=0.6990 hsmmAUC=0.7341 s=5.8s elapsed=22.8s
+[fold 4] singleAUC=0.6285 posAUC=0.9991 dpACC=0.7123 hsmmAUC=0.7572 s=5.8s elapsed=28.5s
 [result] single    AUC=0.6324 bACC=0.5678 F1m=0.5355 F1task=0.4144 macro_bACC=0.5677 n>=.9=0/57 n=16067 | blk>=2 AUC=0.6104 bACC=0.5580 | blk>=4 AUC=0.6004 bACC=0.5506
 [result] position  AUC=0.9976 bACC=0.9858 F1m=0.9858 F1task=0.9858 macro_bACC=0.9843 n>=.9=55/57 n=16067 | blk>=2 AUC=0.9968 bACC=0.9817 | blk>=4 AUC=0.9984 bACC=0.9818
-[result] position_marg AUC=0.8511 bACC=0.7982 F1m=0.7978 F1task=0.7904 macro_bACC=0.7940 n>=.9=0/57 n=16067 | blk>=2 AUC=0.9293 bACC=0.8604 | blk>=4 AUC=0.9973 bACC=0.8005
+[result] position_marg AUC=0.9864 bACC=0.9294 F1m=0.9291 F1task=0.9253 macro_bACC=0.9297 n>=.9=56/57 n=16067 | blk>=2 AUC=0.9892 bACC=0.9438 | blk>=4 AUC=0.9992 bACC=0.9883
 [result] dp_mag    AUC=0.7255 bACC=0.7255 F1m=0.7249 F1task=0.7385 macro_bACC=0.7238 n>=.9=1/56 n=15946 | blk>=2 AUC=0.7092 bACC=0.7092 | blk>=4 AUC=0.7475 bACC=0.7475
 [result] hsmm      AUC=0.7719 bACC=0.6892 F1m=0.6892 F1task=0.6900 macro_bACC=0.6843 n>=.9=2/57 n=16067 | blk>=2 AUC=0.7224 bACC=0.6380 | blk>=4 AUC=0.7458 bACC=0.6369
 [result] blockdir  AUC=0.5545 bACC=0.5175 F1m=0.4874 F1task=0.3646 macro_bACC=0.5185 n>=.9=0/57 n=16067 | blk>=2 AUC=0.5395 bACC=0.5272 | blk>=4 AUC=0.5376 bACC=0.5247

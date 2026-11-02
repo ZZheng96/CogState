@@ -1,0 +1,16 @@
+﻿[data] rows=16067 dim=878 subs=57 folds=[0, 1, 2, 3, 4] elapsed=0.2s
+[fold 0] elapsed=12.6s s=12.3
+[fold 1] elapsed=24.4s s=11.8
+[fold 2] elapsed=36.4s s=12.1
+[fold 3] elapsed=48.7s s=12.3
+[fold 4] elapsed=61.1s s=12.3
+[result] oracle_dir   AUC=0.7941 bACC=0.7941 F1m=0.7939 macro=0.7923 n>=.9=2/56
+[result] cross_score  AUC=0.7255 bACC=0.7255 F1m=0.7249 macro=0.7238 n>=.9=1/56
+[result] iter_clock   AUC=0.7696 bACC=0.7696 F1m=0.7694 macro=0.7687 n>=.9=2/56
+[result] iter_uniform AUC=0.7219 bACC=0.7219 F1m=0.7218 macro=0.7215 n>=.9=1/56
+[result] single       AUC=0.6324 bACC=0.5678 F1m=0.5355 macro=0.5677 n>=.9=0/57
+[boundary] oracle_dir   parity=0.7924 |err| mean=3.84 med=4.0 p90=7.0
+[boundary] cross_score  parity=0.7240 |err| mean=5.38 med=4.0 p90=11.0
+[boundary] iter_clock   parity=0.7687 |err| mean=4.55 med=4.0 p90=8.0
+[boundary] iter_uniform parity=0.7214 |err| mean=5.41 med=4.5 p90=10.0
+[done] -> boundary_refine.json elapsed=61.4s

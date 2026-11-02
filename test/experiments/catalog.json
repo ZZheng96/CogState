@@ -21,13 +21,13 @@
     },
     {
       "path": "README.md",
-      "size": 49387,
-      "sha256": "98936e5b5376ba13eb2604d156f5a8fbe285aa6697694b8f220ae2bd6c7c7107"
+      "size": 50731,
+      "sha256": "1148bc87423c6caf9517c5708562e9f650f6177f89cc4ca3cecada33b8fc7a0d"
     },
     {
       "path": "test/experiments/实验方法索引.md",
-      "size": 54925,
-      "sha256": "6d5f159e850d6570a4a5292e03c31e83ddd89a0ad2b0b63681c5265f456254c9"
+      "size": 55484,
+      "sha256": "66e55ba1b4ac1a73a34f02ef6ba1cfa5821209110bfa9e11b00418ced93759ec"
     },
     {
       "path": "test/reports/卡尔曼深度学习实验报告.md",
@@ -46,8 +46,8 @@
     },
     {
       "path": "研究报告.md",
-      "size": 263852,
-      "sha256": "6b5c4f605ef1314f78d664f6adb48e2a55722e47bbca6323d21be684f5d60eda"
+      "size": 265881,
+      "sha256": "ef58407a867f38ea1b81a151e096146c6c5dca89dbf224fe794f331a0247a36a"
     },
     {
       "path": "认知状态解码理论.md",
@@ -4065,11 +4065,57 @@
       ],
       "scripts": [
         {
+          "id": "test/10_projects/protocol_20261102/boundary_refine.py",
+          "path": "test/10_projects/protocol_20261102/boundary_refine.py",
+          "summary": "块长先验（训练折被试）",
+          "artifacts": [
+            {
+              "path": "test/10_projects/protocol_20261102/boundary_refine.json",
+              "kind": "result",
+              "size": 2410,
+              "sha256": "4e66f7c65fe811f2a1955a8ed0bc9c763588fe2b13938bfc4d476ebcf987ea67"
+            },
+            {
+              "path": "test/10_projects/protocol_20261102/boundary_refine.log",
+              "kind": "log",
+              "size": 965,
+              "sha256": "ea5483accb8e7f38cb28f1eb93e062665203c20983f7eba5de605b19e88effbe"
+            },
+            {
+              "path": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+              "kind": "result",
+              "size": 2410,
+              "sha256": "e8f2c20a717acc5cf807172ef685fe832dfd471933870384ed1a8b558de33049"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
           "id": "test/10_projects/protocol_20261102/build_realorder.py",
           "path": "test/10_projects/protocol_20261102/build_realorder.py",
           "summary": "重建\"真实采集顺序\"数据集：从 BDF 重新切 6 秒窗，并把 database/windows 里已算好的 858 维 EEG 特征 + 20 维肌电特征按原始波形哈希精确对齐回来。 产物（同目录）： realorder.npz F   ",
           "artifacts": [],
           "status": "script_only"
+        },
+        {
+          "id": "test/10_projects/protocol_20261102/position_deploy.py",
+          "path": "test/10_projects/protocol_20261102/position_deploy.py",
+          "summary": "P5：把\"起点偏移\"当作部署约束来评估协议时间表模型。 P3 发现：只用\"已到达窗数\"的模型在流起点恰好对齐第一块时 bACC=0.9858；真实 BDF 前面有 ≤60 s 无标签段。 本脚本从 BDF 直接量出每个被试真实的 pre-r",
+          "artifacts": [
+            {
+              "path": "test/10_projects/protocol_20261102/position_deploy.json",
+              "kind": "result",
+              "size": 14034,
+              "sha256": "bbd8f94918ccf6b52d274e43cc96a75dcec27fb77b9b262641069166cbd6c9d6"
+            },
+            {
+              "path": "test/10_projects/protocol_20261102/position_deploy.log",
+              "kind": "log",
+              "size": 2025,
+              "sha256": "06de5b0410576b1d8e8da5f40427958240ebbdae62d68497ba67519c67ee9307"
+            }
+          ],
+          "status": "has_result_json"
         },
         {
           "id": "test/10_projects/protocol_20261102/protocol_segment.py",
@@ -4079,26 +4125,26 @@
             {
               "path": "test/10_projects/protocol_20261102/protocol_segment.json",
               "kind": "result",
-              "size": 110905,
-              "sha256": "a96f44657a24dcc8d47218e8e4bb1109b3e3ef32a407aa337fe360cf3762b202"
+              "size": 110613,
+              "sha256": "6be06c2edf6bc527a0f677fccfe22712a7c3e189c18a04a3ebba3855f224916b"
             },
             {
               "path": "test/10_projects/protocol_20261102/protocol_segment.log",
               "kind": "log",
-              "size": 1638,
-              "sha256": "5d7d91449fc0db82e2c4bcf46089a958a39826d7e0e3b418982850f13fdf98cc"
+              "size": 1639,
+              "sha256": "0c4101263ef4449fd909447486b6f053b98dbf048f650a7a2bb64522fdc5acfd"
             },
             {
               "path": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
               "kind": "result",
-              "size": 110337,
-              "sha256": "6cd1f5e5b8f09d7eabef814dd5761d3ec220d907eb4485bc0a5c2a7de4d0ab68"
+              "size": 112330,
+              "sha256": "e42b2f826ae390f833318b839ed19fb8383c56ebe38b70498b1e41da3be80cd4"
             },
             {
               "path": "test/10_projects/protocol_20261102/protocol_segment_off10.log",
               "kind": "log",
-              "size": 1643,
-              "sha256": "3b1f3a7ff21c3870f04c9c7720bf1535ae884e5b6ab6b82e14ae2f40fa601b9b"
+              "size": 1644,
+              "sha256": "5bb688c6bdbadc91a371e3adc3d57c93ec943ee54b6224ac78009112df30a624"
             },
             {
               "path": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
@@ -4135,8 +4181,15 @@
         {
           "path": "test/10_projects/protocol_20261102/报告_P3_协议结构定标.md",
           "kind": "other",
-          "size": 12001,
-          "sha256": "c78ccc8f88918f1474faf77ab408c95fa1b4198be63eb7173f5c0f3a37f9fdfe",
+          "size": 15158,
+          "sha256": "8731d3edb49c7e6a08a827f4c50d2200d82a115f5b894f37612f487d4ffea31a",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/protocol_20261102/报告_P5_起点偏移与部署评估.md",
+          "kind": "other",
+          "size": 5863,
+          "sha256": "a519627dc413b880f64ffc3b35bde22f23ce18968549552b2bc3164ec32446bb",
           "suggested_script": null
         }
       ]
@@ -37693,6 +37746,406 @@
       "value": 0.5935139448301164
     },
     {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.cross_score.AUC",
+      "value": 0.7255129727589374
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.cross_score.F1_macro",
+      "value": 0.7249020173041091
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.cross_score.bACC",
+      "value": 0.7255129727589374
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.cross_score.subject_macro_bACC",
+      "value": 0.7237567697915696
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.iter_clock.AUC",
+      "value": 0.7695630497237875
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.iter_clock.F1_macro",
+      "value": 0.7694121191788997
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.iter_clock.bACC",
+      "value": 0.7695630497237875
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.iter_clock.subject_macro_bACC",
+      "value": 0.7686845070853687
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.iter_uniform.AUC",
+      "value": 0.7218605658460874
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.iter_uniform.F1_macro",
+      "value": 0.72183718902742
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.iter_uniform.bACC",
+      "value": 0.7218605658460874
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.iter_uniform.subject_macro_bACC",
+      "value": 0.7215477819050777
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.oracle_dir.AUC",
+      "value": 0.7940798046784995
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.oracle_dir.F1_macro",
+      "value": 0.7939174533292517
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.oracle_dir.bACC",
+      "value": 0.7940798046784996
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.oracle_dir.subject_macro_bACC",
+      "value": 0.7923431498434658
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.single.AUC",
+      "value": 0.632420309634865
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.single.F1_macro",
+      "value": 0.5354875508959306
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.single.bACC",
+      "value": 0.5677647557217866
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine.json",
+      "key": "methods.single.subject_macro_bACC",
+      "value": 0.5676571143269037
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.cross_score.AUC",
+      "value": 0.6057325490686583
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.cross_score.F1_macro",
+      "value": 0.604619895078361
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.cross_score.bACC",
+      "value": 0.6057325490686583
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.cross_score.subject_macro_bACC",
+      "value": 0.6130786384700059
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.iter_clock.AUC",
+      "value": 0.622125661188444
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.iter_clock.F1_macro",
+      "value": 0.6216879968622695
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.iter_clock.bACC",
+      "value": 0.622125661188444
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.iter_clock.subject_macro_bACC",
+      "value": 0.6361026689738617
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.iter_uniform.AUC",
+      "value": 0.608699873933952
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.iter_uniform.F1_macro",
+      "value": 0.6086525324686014
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.iter_uniform.bACC",
+      "value": 0.608699873933952
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.iter_uniform.subject_macro_bACC",
+      "value": 0.6185099466805427
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.oracle_dir.AUC",
+      "value": 0.6102226234245858
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.oracle_dir.F1_macro",
+      "value": 0.6091238181612764
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.oracle_dir.bACC",
+      "value": 0.6102226234245858
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.oracle_dir.subject_macro_bACC",
+      "value": 0.6243476716441855
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.single.AUC",
+      "value": 0.5220356375222591
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.single.F1_macro",
+      "value": 0.4929722850678733
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.single.bACC",
+      "value": 0.5135352310168559
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/boundary_refine_smoke.json",
+      "key": "methods.single.subject_macro_bACC",
+      "value": 0.5165103864459847
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.assume0.AUC",
+      "value": 0.8770326508995043
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.assume0.F1_macro",
+      "value": 0.8503384583911135
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.assume0.bACC",
+      "value": 0.8503755849775926
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.assume0.subject_macro_bACC",
+      "value": 0.8506486477507996
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.assume10.AUC",
+      "value": 0.989913794733102
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.assume10.F1_macro",
+      "value": 0.9717433063287029
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.assume10.bACC",
+      "value": 0.9717524504676877
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.assume10.subject_macro_bACC",
+      "value": 0.968920050237381
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.assume9.AUC",
+      "value": 0.989601514859926
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.assume9.F1_macro",
+      "value": 0.9680707565742276
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.assume9.bACC",
+      "value": 0.9680881300643696
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.assume9.subject_macro_bACC",
+      "value": 0.9655149867678875
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.oracle.AUC",
+      "value": 0.9976025719335335
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.oracle.F1_macro",
+      "value": 0.98512473093625
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.oracle.bACC",
+      "value": 0.9851265156889123
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.oracle.subject_macro_bACC",
+      "value": 0.9836362879482865
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.prior.AUC",
+      "value": 0.9921373061450656
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.prior.F1_macro",
+      "value": 0.9709342089297742
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.prior.bACC",
+      "value": 0.9709421668242515
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "methods.prior.subject_macro_bACC",
+      "value": 0.9679557063972234
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume0|pre60.AUC",
+      "value": 0.8598890543776656
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume0|pre60.F1_macro",
+      "value": 0.8366698615633035
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume0|pre60.bACC",
+      "value": 0.8368291442005052
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume0|pre60.subject_macro_bACC",
+      "value": 0.8368090087710348
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume0|pre_lt60.AUC",
+      "value": 0.9670419942249219
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume0|pre_lt60.F1_macro",
+      "value": 0.9189804969925269
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume0|pre_lt60.bACC",
+      "value": 0.9190535376291571
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume0|pre_lt60.subject_macro_bACC",
+      "value": 0.9156949509556934
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume10|pre60.AUC",
+      "value": 0.9991259396124105
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume10|pre60.F1_macro",
+      "value": 0.9956716416946234
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume10|pre60.bACC",
+      "value": 0.9956736388853809
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume10|pre60.subject_macro_bACC",
+      "value": 0.9957319466376165
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume10|pre_lt60.AUC",
+      "value": 0.9391563119622437
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume10|pre_lt60.F1_macro",
+      "value": 0.8515138631601324
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume10|pre_lt60.bACC",
+      "value": 0.8520929594011564
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume10|pre_lt60.subject_macro_bACC",
+      "value": 0.842904137156274
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume9|pre60.AUC",
+      "value": 0.9976063890870464
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume9|pre60.F1_macro",
+      "value": 0.9887312573685194
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume9|pre60.bACC",
+      "value": 0.9887294182909976
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/position_deploy.json",
+      "key": "subgroups.assume9|pre60.subject_macro_bACC",
+      "value": 0.9887633248853427
+    },
+    {
       "file": "test/10_projects/protocol_20261102/protocol_segment.json",
       "key": "methods.blockdir.AUC",
       "value": 0.5545325091196228
@@ -37845,27 +38298,27 @@
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment.json",
       "key": "methods.position_marg.AUC",
-      "value": 0.8510738470196629
+      "value": 0.9864376077100984
     },
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment.json",
       "key": "methods.position_marg.F1_macro",
-      "value": 0.7978219234870574
+      "value": 0.9290962256053199
     },
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment.json",
       "key": "methods.position_marg.bACC",
-      "value": 0.7981996356799376
+      "value": 0.9294448147765937
     },
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment.json",
       "key": "methods.position_marg.subject_macro_AUC",
-      "value": 0.84726535068605
+      "value": 0.9867255025753056
     },
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment.json",
       "key": "methods.position_marg.subject_macro_bACC",
-      "value": 0.7940463824305224
+      "value": 0.9296656378190585
     },
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment.json",
@@ -38020,52 +38473,52 @@
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
       "key": "methods.position.AUC",
-      "value": 0.7941756049972217
+      "value": 0.872956967404263
     },
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
       "key": "methods.position.F1_macro",
-      "value": 0.33392753503026285
+      "value": 0.8452565945281397
     },
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
       "key": "methods.position.bACC",
-      "value": 0.5
+      "value": 0.8453687485531479
     },
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
       "key": "methods.position.subject_macro_AUC",
-      "value": 0.822500013117849
+      "value": 0.8752128666126565
     },
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
       "key": "methods.position.subject_macro_bACC",
-      "value": 0.5
+      "value": 0.8470860493853908
     },
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
       "key": "methods.position_marg.AUC",
-      "value": 0.8510738470196629
+      "value": 0.9864376077100984
     },
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
       "key": "methods.position_marg.F1_macro",
-      "value": 0.7978219234870574
+      "value": 0.9290962256053199
     },
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
       "key": "methods.position_marg.bACC",
-      "value": 0.7981996356799376
+      "value": 0.9294448147765937
     },
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
       "key": "methods.position_marg.subject_macro_AUC",
-      "value": 0.84726535068605
+      "value": 0.9867255025753056
     },
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
       "key": "methods.position_marg.subject_macro_bACC",
-      "value": 0.7940463824305224
+      "value": 0.9296656378190585
     },
     {
       "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
@@ -48851,6 +49304,9 @@
     "test/09_database/database_explore_results.json": 36,
     "test/09_database/database_models_results.json": 62,
     "test/09_database/database_training_results.json": 24,
+    "test/10_projects/protocol_20261102/boundary_refine.json": 20,
+    "test/10_projects/protocol_20261102/boundary_refine_smoke.json": 20,
+    "test/10_projects/protocol_20261102/position_deploy.json": 60,
     "test/10_projects/protocol_20261102/protocol_segment.json": 2136,
     "test/10_projects/protocol_20261102/protocol_segment_off10.json": 2136,
     "test/10_projects/protocol_20261102/protocol_segment_smoke.json": 270,
@@ -51013,10 +51469,10 @@
     }
   ],
   "summary": {
-    "files_scanned": 911,
-    "py_scripts": 220,
-    "json_results": 259,
-    "metrics_entries": 8620,
+    "files_scanned": 919,
+    "py_scripts": 222,
+    "json_results": 262,
+    "metrics_entries": 8700,
     "missing_reference_count": 524,
     "database_window_files": 116
   }

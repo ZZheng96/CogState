@@ -269,17 +269,17 @@ def main():
         mpos = HistGradientBoostingClassifier(max_iter=200, learning_rate=0.06, max_depth=3,
                                               min_samples_leaf=40, random_state=0).fit(Pos, y[tr])
         p_pos = mpos.predict_proba(np.column_stack([pos[te] + args.pos_offset,
-                                                   t[te] / 60.0 + 6.0 * args.pos_offset]))[:, 1]
+                                                   (t[te] + 6.0 * args.pos_offset) / 60.0]))[:, 1]
 
         # B2 位置先验 + 未知起始偏移（真实记录开头最多 60 s 无标签段 = 10 窗）：对偏移后验均匀边缘化
         pu = []
         for u in range(0, 11):
-            pu.append(mpos.predict_proba(np.column_stack([pos[te] + u, t[te] / 60.0 + 6.0 * u]))[:, 1])
+            pu.append(mpos.predict_proba(np.column_stack([pos[te] + u, (t[te] + 6.0 * u) / 60.0]))[:, 1])
         p_posm = np.mean(pu, 0)
         # 阈值必须在训练折上定（不能用测试标签）：同样做偏移边缘化后最大化训练 macro bACC
         ptu = []
         for u in range(0, 11):
-            ptu.append(mpos.predict_proba(np.column_stack([pos[tr] + u, t[tr] / 60.0 + 6.0 * u]))[:, 1])
+            ptu.append(mpos.predict_proba(np.column_stack([pos[tr] + u, (t[tr] + 6.0 * u) / 60.0]))[:, 1])
         p_tr_marg = np.mean(ptu, 0)
         cand = np.unique(np.quantile(p_tr_marg, np.linspace(0.01, 0.99, 197)))
         sc = [balanced_accuracy_score(y[tr], (p_tr_marg >= th).astype(int)) for th in cand]
