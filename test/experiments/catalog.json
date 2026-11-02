@@ -21,13 +21,13 @@
     },
     {
       "path": "README.md",
-      "size": 60313,
-      "sha256": "fe9fc8c1d22cda777265e30c48071f0176a25c9b31250361c3863df8f80ce762"
+      "size": 61386,
+      "sha256": "49524aa565802a19ed87f1db0107aa57b4b1667c202fea60e04e65163c48f085"
     },
     {
       "path": "test/experiments/实验方法索引.md",
-      "size": 62733,
-      "sha256": "22c2ebb4a5a36c021843ea598b233aae45b79d8b2efad232d2678ef28d592a41"
+      "size": 63693,
+      "sha256": "1be1b4aa0a74601512a6d9ee90fcddd65a35370205beac47d0af2831e8b1d702"
     },
     {
       "path": "test/reports/卡尔曼深度学习实验报告.md",
@@ -5046,6 +5046,52 @@
             }
           ],
           "status": "has_result_json"
+        },
+        {
+          "id": "test/11_individual_20261102/workup.py",
+          "path": "test/11_individual_20261102/workup.py",
+          "summary": "E24-2：逐被试微调（从 ≥0.85 的 33 人开始，一个一个来）。 对每个被试，用缓存好的候选分数（cache_scores1.py）做三件事： 1. 诊断：最优候选在每个块上的 bACC，指出\"拖后腿的是哪一块\"； 2. 阈值校准：",
+          "artifacts": [
+            {
+              "path": "test/11_individual_20261102/workup.json",
+              "kind": "result",
+              "size": 23296,
+              "sha256": "327d3ce0bb2bb16cbfd9c591b61ec7d352edd4ae80c79d1d0c875941298edb9f"
+            },
+            {
+              "path": "test/11_individual_20261102/workup.log",
+              "kind": "log",
+              "size": 5950,
+              "sha256": "aaf81017a64ab139fb8b38e24f5c232da16b4b9dc924fbdec368ece7029e3c9c"
+            },
+            {
+              "path": "test/11_individual_20261102/workup_fine.json",
+              "kind": "result",
+              "size": 3523,
+              "sha256": "8b8ad781d46ad6ab5ddb11fe4800fd52bbdb0dde0426fb46f3bc2776327b7070"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/11_individual_20261102/workup2.py",
+          "path": "test/11_individual_20261102/workup2.py",
+          "summary": "E25：逐被试细搜（14 档记忆 × 单候选/等权二候选），并给出嵌套口径。 配置空间：候选 ∈ 13 个（8 指数 + slope/cent/bt + own_k + bandmix + glb）；h ∈ {1..6,8,10,12,15",
+          "artifacts": [
+            {
+              "path": "test/11_individual_20261102/workup2.json",
+              "kind": "result",
+              "size": 13048,
+              "sha256": "54a99b821412c961a7701857a006800412bf9ad4a1c48b5450f4fc81c269568b"
+            },
+            {
+              "path": "test/11_individual_20261102/workup2.log",
+              "kind": "log",
+              "size": 2740,
+              "sha256": "792757b4cf2d697b5949832ba43fb9de7b5f1aaa8a19488285dd7601d9652b71"
+            }
+          ],
+          "status": "has_result_json"
         }
       ],
       "unassigned": []
@@ -5941,6 +5987,7 @@
       "dirs": [
         "test/11_individual_20261102",
         "test/11_individual_20261102/scores",
+        "test/11_individual_20261102/scores1",
         "test/11_individual_20261102/sliding",
         "test/11_individual_20261102/sliding1"
       ],
@@ -6357,6 +6404,405 @@
           "kind": "array",
           "size": 5873,
           "sha256": "10c2b13a8558cd2f6a873f3219303b77aa7380f8a9dbe8a38e24aef94291bbe3",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-001.npz",
+          "kind": "array",
+          "size": 96245,
+          "sha256": "6f994ce6db80d93dbecec8032e643096e7540a8b0ef41af8e279657704e3e983",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-002.npz",
+          "kind": "array",
+          "size": 90766,
+          "sha256": "c74cb16a23e1aee8672bd3d36bb2ef709a289c42afa2377ede2ed63db66e2fdc",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-003.npz",
+          "kind": "array",
+          "size": 89261,
+          "sha256": "d4fdc1ac101a382f649a00a4c5d5ea0bff57ed53f85e3a199604ce46bb1326d1",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-004.npz",
+          "kind": "array",
+          "size": 91302,
+          "sha256": "7381923530b4ad7aa72a716a6ddb10057f9a6371aeffacfde99dbe08c4a64c3c",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-005.npz",
+          "kind": "array",
+          "size": 92394,
+          "sha256": "4d5e0d86839aad8eb0ff965218eb45c92364d1ce58ba8526d10cfba7af30a9e1",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-006.npz",
+          "kind": "array",
+          "size": 91170,
+          "sha256": "96e8911498afc00eacb3120270de20c98e6e10053e5957ec12bf2b3232a6b16d",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-007.npz",
+          "kind": "array",
+          "size": 94397,
+          "sha256": "fcfe21e9bf2af4e9277bfd51e521a42ebd8c8d6593d029a09c36a2927c043a09",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-008.npz",
+          "kind": "array",
+          "size": 93471,
+          "sha256": "623542e1d473002ea4eaffb5145fde9ff21a7d6350be04e9e97ea02d5719ac20",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-009.npz",
+          "kind": "array",
+          "size": 72650,
+          "sha256": "631f093b5a8d71fad534cb7f6af3641eadba2a731cfa55d77bc3cfbde9b35ae2",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-010.npz",
+          "kind": "array",
+          "size": 95487,
+          "sha256": "dea7c0c588a774b19dba60aa78ae3788aea9369e325d01a909100f0976208a76",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-011.npz",
+          "kind": "array",
+          "size": 95919,
+          "sha256": "f5a24acc5c1735a8cbab12292a1a5f6c48d262c17cc331223ff76f5076cd5c75",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-012.npz",
+          "kind": "array",
+          "size": 92343,
+          "sha256": "6704f930f57fcba004a8937831bc14cd3a93414a502e3d9488947329008a7523",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-013.npz",
+          "kind": "array",
+          "size": 94384,
+          "sha256": "24ce4e73df405b692991178ffb73aa0cf753526a23a637982c14b28bd270defd",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-014.npz",
+          "kind": "array",
+          "size": 95825,
+          "sha256": "8242fdeac9e0c1805bfd8328a386b485ac1497a47da33358ca467eef5d83678a",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-015.npz",
+          "kind": "array",
+          "size": 89197,
+          "sha256": "fb0c97f9c07cc244405f5894dd39888c5077a4063be01e954a7d16fed7929206",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-016.npz",
+          "kind": "array",
+          "size": 96182,
+          "sha256": "3d7b2022f64389d998d6172656b0e722eaaa1fca68677da72858559785db16c2",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-017.npz",
+          "kind": "array",
+          "size": 92193,
+          "sha256": "76768139bf526dd8145d75f11957138d6a69b05b2fb91a98060f0b10ae8d5e7c",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-018.npz",
+          "kind": "array",
+          "size": 95667,
+          "sha256": "fb5902a389844d38c682ec837c58d5f2f34f07f01c5bfbc2b3c1bdc9ce5c64f3",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-019.npz",
+          "kind": "array",
+          "size": 95626,
+          "sha256": "fb9a82627912e852ec38073f396a83d6e64b4e088f193efcf741b8b3a4b70571",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-020.npz",
+          "kind": "array",
+          "size": 87800,
+          "sha256": "db55506339e6d5b8a0a7f1e8815c2d069b6e7a5b97a86e17553e483f8dce3d83",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-021.npz",
+          "kind": "array",
+          "size": 95068,
+          "sha256": "ebef31c58ade6f3b2a930a8b7d858513ea9a8a7adaae8b75b53d7b06c777a546",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-022.npz",
+          "kind": "array",
+          "size": 96787,
+          "sha256": "09953e01e6caf47a63cb4624252a2e686961a3fc380669fbd1f99181ce788f50",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-023.npz",
+          "kind": "array",
+          "size": 96807,
+          "sha256": "0eaefc2ee4eaccfb9d64aeb198b15935cb085f330bb21308a9c6156502fe6ed9",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-024.npz",
+          "kind": "array",
+          "size": 96432,
+          "sha256": "5da7c60d85708c54f6000770a0f325d6f2178b142acb192d4c23cc7306fedae0",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-025.npz",
+          "kind": "array",
+          "size": 93124,
+          "sha256": "ebca43c16a8a3b4a1bb2a12493594a9b16668641f6020e82b8aadd62bac83621",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-026.npz",
+          "kind": "array",
+          "size": 96233,
+          "sha256": "2c2d4837347af6ddba8cc0eaa3b8860bf5cc1819ce82c358b362477b827aa081",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-027.npz",
+          "kind": "array",
+          "size": 93776,
+          "sha256": "6e7ccb34f264f0a290f03dfafef1dbc099cb547ae715f774d6543e421f0ac508",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-028.npz",
+          "kind": "array",
+          "size": 95179,
+          "sha256": "be79c6eace56f1c3dcab23d7ced6a03c3fe880dcda60cbbf6d89565a75b37e5a",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-029.npz",
+          "kind": "array",
+          "size": 95970,
+          "sha256": "dee0c816c35c62e9369b01d468b47ade2c3ea75d38efb8797bad67598af52766",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-030.npz",
+          "kind": "array",
+          "size": 97729,
+          "sha256": "27747aabd1a8988ecb8cc16a8ac821757944d4b2751858f78544356b7138601b",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-031.npz",
+          "kind": "array",
+          "size": 96500,
+          "sha256": "e9955b46e88da8f43a75c693a3962a2339f261ea751a7113249319d2b200b048",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-034.npz",
+          "kind": "array",
+          "size": 28498,
+          "sha256": "81e8a3d80357daa699cdfdfd1890f8e481d4dfe43f9b187b797db90280184d34",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-035.npz",
+          "kind": "array",
+          "size": 96680,
+          "sha256": "9dc4dcfb81186fe1b320fed33c1e135ed221939a052ce037a7cac9fae25c4ac5",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-036.npz",
+          "kind": "array",
+          "size": 93842,
+          "sha256": "4a9c97dc8e83dfb8db36cce192576454079385bd1cc816ca7d54ef772a8017f3",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-037.npz",
+          "kind": "array",
+          "size": 95812,
+          "sha256": "e67721cee89fda5c3e47d1b6c727eee210a58308f223b9685dbcafad11850fed",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-038.npz",
+          "kind": "array",
+          "size": 95622,
+          "sha256": "d3b6f6af979506d359ed4e5d2ef9c66a37f94bdf5583521592ff1e6ae731f6a2",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-039.npz",
+          "kind": "array",
+          "size": 96863,
+          "sha256": "119a3298e326dffa2b3b37477d978e0eed7d096510d69fd8ac6e46f4bcde1e85",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-040.npz",
+          "kind": "array",
+          "size": 93111,
+          "sha256": "519a259a6236a2c7eba71d0c2536e22d32d2e6d518672e1cd51bb371e66a533b",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-041.npz",
+          "kind": "array",
+          "size": 95768,
+          "sha256": "30df0478388ccec4ac7439f57bf2c58c424d11477dc8efc4d828810912e57d6e",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-042.npz",
+          "kind": "array",
+          "size": 94054,
+          "sha256": "28f71a7f58bcdf22abe4375ef52969ac924229cb2badfe6d46d6f2796d79df1e",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-043.npz",
+          "kind": "array",
+          "size": 94322,
+          "sha256": "b1d896598536c38b2361bbdc0c1fab54ba86cc72b8315a47f35bfdd7b525a6bf",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-044.npz",
+          "kind": "array",
+          "size": 93642,
+          "sha256": "8442796b0fd09422adca97f722addc74efc04e9f2090bf92d9664d87136b4d3c",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-045.npz",
+          "kind": "array",
+          "size": 94829,
+          "sha256": "43511f6c75bcce44ec1254c0a35380f16e9842462b36772b3b54c0fc1ecae02a",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-046.npz",
+          "kind": "array",
+          "size": 94348,
+          "sha256": "d63ff38f2e2bab27d68e4f66d82ea49164fe8d2d88f779bd70fcc92f77463b5f",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-047.npz",
+          "kind": "array",
+          "size": 95604,
+          "sha256": "8cec7639ab9f3425d7752fbcfa5571274d90190ed2645bb1c9b53f6bbde463d6",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-048.npz",
+          "kind": "array",
+          "size": 94837,
+          "sha256": "79a2a77aa1345244775e182c0c08d1004d027c954e24aad2394885f09f05bf3f",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-049.npz",
+          "kind": "array",
+          "size": 93620,
+          "sha256": "2b5b040ae2fb65957464becd9e1ab0c90cedc8f4591b010aafd3f3971997c6e2",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-050.npz",
+          "kind": "array",
+          "size": 94952,
+          "sha256": "953502f54b3b5a565f1fb4c840ee17bac182231617cd7afd5c1841e93ddf0726",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-051.npz",
+          "kind": "array",
+          "size": 95691,
+          "sha256": "e96de2e9ac004773e9de9b82c007b1a0772996c6e4396a27822ee6f8f3fea5b2",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-052.npz",
+          "kind": "array",
+          "size": 96009,
+          "sha256": "ad3c84af98b8e629ae1107b488b320868da728a997a8c166e07f7cd7cf6f6050",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-053.npz",
+          "kind": "array",
+          "size": 96717,
+          "sha256": "1f9ab77329d72c060ff3a96fcf916e8e7322df6bab1f19ac20b48e2af93574c7",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-054.npz",
+          "kind": "array",
+          "size": 96046,
+          "sha256": "9c0e5a0836ff5bb55edac5a2eebb11fba09dec380aa1ed90a726fb1951c0ce62",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-055.npz",
+          "kind": "array",
+          "size": 95857,
+          "sha256": "4f524f2c3b86c1f98c7c408948991922453cee9d9d79db98f7d8d914db62a563",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-056.npz",
+          "kind": "array",
+          "size": 95839,
+          "sha256": "21acc66751e4a00bfbc9d20aae31d21038b749a8f409227e2ffe9b0b7bf55d35",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-057.npz",
+          "kind": "array",
+          "size": 92770,
+          "sha256": "aae756ec5819d2a71a8e98b98b8fd2f20e2b8fee6e7ea56b4aa13b02c8413972",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-058.npz",
+          "kind": "array",
+          "size": 95642,
+          "sha256": "0d1f8f9fd818c92a6346953eb458b72956d7b4eed54916220aa934ddd13a2229",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/scores1/sub-059.npz",
+          "kind": "array",
+          "size": 96200,
+          "sha256": "d0dad985fed372a1b7378281718bef679ed144ba8167d7a518c2994aa1a84523",
           "suggested_script": null
         },
         {
@@ -7184,6 +7630,13 @@
           "size": 10371,
           "sha256": "967843dd935338fafada1694f857b09b75f61ae3490152bffd09182d40d2cd39",
           "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/报告_E13_逐被试细搜与坏块诊断.md",
+          "kind": "other",
+          "size": 6667,
+          "sha256": "e3f8e34bb17e8eb7722331f081e3eb3880f4ee04344ac9796a963cc13f4ace3d",
+          "suggested_script": null
         }
       ]
     },
@@ -7193,6 +7646,20 @@
         "test/11_individual_20261102"
       ],
       "scripts": [
+        {
+          "id": "test/11_individual_20261102/cache_scores1.py",
+          "path": "test/11_individual_20261102/cache_scores1.py",
+          "summary": "E24-1：把步长 1 s 的逐被试候选分数缓存下来，供逐人微调（workup.py）反复使用。 对每个被试保存： y, blk, t score__<cand>   11 个候选（频带指数已按\"其余块\"定极性并标准化，块间可比） scor",
+          "artifacts": [
+            {
+              "path": "test/11_individual_20261102/cache_scores1.log",
+              "kind": "log",
+              "size": 2062,
+              "sha256": "de584160ddd9e6338c91164bc37859d8abbdab0887fccc9df9413aec91687ede"
+            }
+          ],
+          "status": "artifacts_only"
+        },
         {
           "id": "test/11_individual_20261102/causal_memory_scan.py",
           "path": "test/11_individual_20261102/causal_memory_scan.py",
@@ -45204,6 +45671,406 @@
       "value": 0.6134694398910012
     },
     {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "001.best_AUC",
+      "value": 0.9653715006920397
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "001.best_bACC",
+      "value": 0.9193979254718332
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "001.ens_F1",
+      "value": 0.8614097968936678
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "001.ens_bACC",
+      "value": 0.8664157912320427
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "001.nested_bACC",
+      "value": 0.7696886616853951
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "002.best_AUC",
+      "value": 0.8893663739021329
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "002.best_bACC",
+      "value": 0.8396949871542092
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "002.ens_F1",
+      "value": 0.7515997673065736
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "002.ens_bACC",
+      "value": 0.7383506602138974
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "002.nested_bACC",
+      "value": 0.696878920953576
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "003.best_AUC",
+      "value": 0.9723158319369453
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "003.best_bACC",
+      "value": 0.9131043256997455
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "003.ens_F1",
+      "value": 0.9095574085952534
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "003.ens_bACC",
+      "value": 0.9119934214609322
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "003.nested_bACC",
+      "value": 0.8784599391795445
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "004.best_AUC",
+      "value": 0.7828865571407899
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "004.best_bACC",
+      "value": 0.7249594667627455
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "004.ens_F1",
+      "value": 0.6180371352785146
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "004.ens_bACC",
+      "value": 0.6542965231489821
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "004.nested_bACC",
+      "value": 0.612817510358494
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "005.best_AUC",
+      "value": 0.8580434625658797
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "005.best_bACC",
+      "value": 0.7748862897985704
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "005.ens_F1",
+      "value": 0.7706528018486424
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "005.ens_bACC",
+      "value": 0.763190383365822
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "005.nested_bACC",
+      "value": 0.5291098115659519
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "006.best_AUC",
+      "value": 0.9478517380769529
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "006.best_bACC",
+      "value": 0.881812850874843
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "006.ens_F1",
+      "value": 0.8633818589025756
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "006.ens_bACC",
+      "value": 0.8494557160972299
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "006.nested_bACC",
+      "value": 0.8485545295970185
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "007.best_AUC",
+      "value": 0.9236107682940876
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "007.best_bACC",
+      "value": 0.8689177403695842
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "007.ens_F1",
+      "value": 0.8388235294117647
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "007.ens_bACC",
+      "value": 0.8396082561309397
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "007.nested_bACC",
+      "value": 0.8049919643689698
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "008.best_AUC",
+      "value": 0.915539837736634
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "008.best_bACC",
+      "value": 0.8809288537549407
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "008.ens_F1",
+      "value": 0.8795518207282913
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "008.ens_bACC",
+      "value": 0.8756760973580195
+    },
+    {
+      "file": "test/11_individual_20261102/workup.json",
+      "key": "008.nested_bACC",
+      "value": 0.5377054295818599
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "001.best_AUC",
+      "value": 0.9577749730873455
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "001.best_F1",
+      "value": 0.9378407851690295
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "001.best_bACC",
+      "value": 0.9344020618010002
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "001.nested_F1",
+      "value": 0.8325942350332595
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "001.nested_bACC",
+      "value": 0.8261594979132749
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "002.best_AUC",
+      "value": 0.9367927346597359
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "002.best_F1",
+      "value": 0.876504116529449
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "002.best_bACC",
+      "value": 0.8824191910139212
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "002.nested_F1",
+      "value": 0.7625145518044237
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "002.nested_bACC",
+      "value": 0.7499813287924957
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "003.best_AUC",
+      "value": 0.9647768882268977
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "003.best_F1",
+      "value": 0.934640522875817
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "003.best_bACC",
+      "value": 0.9371516787686961
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "003.nested_F1",
+      "value": 0.8667481662591687
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "003.nested_bACC",
+      "value": 0.865042201948737
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "004.best_AUC",
+      "value": 0.7703751502461527
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "004.best_F1",
+      "value": 0.7644787644787645
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "004.best_bACC",
+      "value": 0.7809403711043055
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "004.nested_F1",
+      "value": 0.5926430517711172
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "004.nested_bACC",
+      "value": 0.6418212934606378
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "005.best_AUC",
+      "value": 0.8709320626669554
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "005.best_F1",
+      "value": 0.7848396501457726
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "005.best_bACC",
+      "value": 0.779759584145549
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "005.nested_F1",
+      "value": 0.6321070234113713
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "005.nested_bACC",
+      "value": 0.606140350877193
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "006.best_AUC",
+      "value": 0.9396465503384474
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "006.best_F1",
+      "value": 0.8955399061032864
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "006.best_bACC",
+      "value": 0.8931294017490906
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "006.nested_F1",
+      "value": 0.8538681948424068
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "006.nested_bACC",
+      "value": 0.8443938906848125
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "007.best_AUC",
+      "value": 0.9459363841305886
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "007.best_F1",
+      "value": 0.8841354723707665
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "007.best_bACC",
+      "value": 0.8857719965114941
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "007.nested_F1",
+      "value": 0.8260609683203826
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "007.nested_bACC",
+      "value": 0.8295061240833073
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "008.best_AUC",
+      "value": 0.9643762385994109
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "008.best_F1",
+      "value": 0.927860696517413
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "008.best_bACC",
+      "value": 0.9312981069273976
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "008.nested_F1",
+      "value": 0.7216867469879518
+    },
+    {
+      "file": "test/11_individual_20261102/workup2.json",
+      "key": "008.nested_bACC",
+      "value": 0.7295350530476389
+    },
+    {
       "file": "test/_orphans/causal_covariance_transport_results.json",
       "key": "methods.diagonal.all.AUC",
       "value": 0.660426461487161
@@ -55803,6 +56670,9 @@
     "test/11_individual_20261102/subject_multi.json": 12711,
     "test/11_individual_20261102/subject_multi1.json": 16245,
     "test/11_individual_20261102/subject_own.json": 1539,
+    "test/11_individual_20261102/workup.json": 624,
+    "test/11_individual_20261102/workup2.json": 285,
+    "test/11_individual_20261102/workup_fine.json": 0,
     "test/_orphans/causal_covariance_transport_results.json": 48,
     "test/_orphans/causal_covariance_transport_smoke_results.json": 48,
     "test/audit/direction_scoring/direction_scoring.json": 312,
@@ -57888,6 +58758,14 @@
       "reference": "fold tables from realorder.npz"
     },
     {
+      "script": "test/11_individual_20261102/cache_scores1.py",
+      "reference": "realorder.npz"
+    },
+    {
+      "script": "test/11_individual_20261102/cache_scores1.py",
+      "reference": "sub-*.npz"
+    },
+    {
       "script": "test/11_individual_20261102/causal_memory_scan.py",
       "reference": "method_bank_scores.npz"
     },
@@ -57957,6 +58835,14 @@
     },
     {
       "script": "test/11_individual_20261102/subject_own.py",
+      "reference": "sub-*.npz"
+    },
+    {
+      "script": "test/11_individual_20261102/workup.py",
+      "reference": "sub-*.npz"
+    },
+    {
+      "script": "test/11_individual_20261102/workup2.py",
       "reference": "sub-*.npz"
     },
     {
@@ -58081,11 +58967,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 1220,
-    "py_scripts": 256,
-    "json_results": 296,
-    "metrics_entries": 9571,
-    "missing_reference_count": 554,
+    "files_scanned": 1287,
+    "py_scripts": 259,
+    "json_results": 299,
+    "metrics_entries": 9651,
+    "missing_reference_count": 558,
     "database_window_files": 116
   }
 }
