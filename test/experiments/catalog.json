@@ -4941,6 +4941,46 @@
           "status": "has_result_json"
         },
         {
+          "id": "test/11_individual_20261102/newfeat.py",
+          "path": "test/11_individual_20261102/newfeat.py",
+          "summary": "E14：窗内 19 维「新判别特征」——跨带协方差（log-Euclidean）、相位-幅值耦合、相位一致性。 与已有 878 维特征（功率/谱形/肌电）互补，考察相位与跨带耦合是否携带新的状态信息。 窗口枚举与 `build_slidin",
+          "artifacts": [
+            {
+              "path": "test/11_individual_20261102/newfeat.log",
+              "kind": "log",
+              "size": 2406,
+              "sha256": "cb794cca3d1c8d0643cc187787124a841ca6dcee9e1e4c30c8172a3a0ff41fa1"
+            },
+            {
+              "path": "test/11_individual_20261102/newfeat_verify.json",
+              "kind": "result",
+              "size": 3291,
+              "sha256": "8829325e773df35eb7954d067f8741976b93109feeccc8b8c09087cb0a7002b6"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/11_individual_20261102/newfeat_eval.py",
+          "path": "test/11_individual_20261102/newfeat_eval.py",
+          "summary": "E14 评估：19 维新特征（跨带 log-Euclidean 协方差 + PAC + 相位一致性）在逐人协议下的 bACC。 协议与 `subject_multi1.py` / `workup2.py` 一致（关键：不另创新协议）： - ",
+          "artifacts": [
+            {
+              "path": "test/11_individual_20261102/newfeat_eval.json",
+              "kind": "result",
+              "size": 307079,
+              "sha256": "efc49fdb00d0afdca72966ce6a5ccc60f270fcc0192f5df4569142018f85849c"
+            },
+            {
+              "path": "test/11_individual_20261102/newfeat_eval.log",
+              "kind": "log",
+              "size": 4034,
+              "sha256": "c4af0b2a509cf79401c14568d14063a593be77d2c170412e331be1a2381336b2"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
           "id": "test/11_individual_20261102/stream_eval.py",
           "path": "test/11_individual_20261102/stream_eval.py",
           "summary": "E13：滑窗 + 个体记忆（因果）→ 逐被试 bACC / AUC，目标：至少 1 人 bACC ≥ 0.90。 协议： - 训练：其余被试的 6 s 窗（realorder.npz），标准化只在训练集拟合，被试完全隔离； - 推理：目标被",
@@ -5986,6 +6026,7 @@
       "name": "未归组产物",
       "dirs": [
         "test/11_individual_20261102",
+        "test/11_individual_20261102/newfeat",
         "test/11_individual_20261102/scores",
         "test/11_individual_20261102/scores1",
         "test/11_individual_20261102/sliding",
@@ -5998,6 +6039,412 @@
           "kind": "log",
           "size": 3037,
           "sha256": "48be708c267c8f3a2239e0db7287056ad748ae0f3af12d73494d24eb9edca369",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/manifest.json",
+          "kind": "result",
+          "size": 2123,
+          "sha256": "3441bfe110b0149a2d9830a6d4b312d48cf58ddb13980f3c05aea8dab0a5a821",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-001.npz",
+          "kind": "array",
+          "size": 126849,
+          "sha256": "bc2126ef5e9d2d0b6e63cf94403a3f7e7417bac72442637fe5b35495d65a7254",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-002.npz",
+          "kind": "array",
+          "size": 119563,
+          "sha256": "8af70ea39730ccbecce6a5887c23a7878c807e2f393bb514c656b27035b1c375",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-003.npz",
+          "kind": "array",
+          "size": 117511,
+          "sha256": "a37d42fba8d3a4091d82683771975d50a8c394d46e65eb65a8ab4da92ce3c3d7",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-004.npz",
+          "kind": "array",
+          "size": 120156,
+          "sha256": "88e92933986eae9a8456ef8f97954c0b95c6009287cd8b6f414a6c440ee8c259",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-005.npz",
+          "kind": "array",
+          "size": 121759,
+          "sha256": "354ed6163b3efc7d5ddfc47ad2acb41b7db3d9ccc2aeb0594b8905792ebec048",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-006.npz",
+          "kind": "array",
+          "size": 120218,
+          "sha256": "1ab8f63036a0b8483fc41bf29cdaf97845b2ec6873b6b7da3f08d76150223876",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-007.npz",
+          "kind": "array",
+          "size": 122620,
+          "sha256": "5c57442813bc52917874acdea35b5637bc4580767501c35c9da133cd0cd906dc",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-008.npz",
+          "kind": "array",
+          "size": 106835,
+          "sha256": "171323d5883ce5571318ee5bf90081f540488db7cb302c1ef99a34e9bb164bbc",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-009.npz",
+          "kind": "array",
+          "size": 92189,
+          "sha256": "2af3c004c8fcd0b7330487879d486d52a725b878c4d371f7a2a8e21717b6e451",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-010.npz",
+          "kind": "array",
+          "size": 126109,
+          "sha256": "477f54bf56aec4d9eb97d48102cdc3837b86bfdc240808b3f00dda6ed9feaa2d",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-011.npz",
+          "kind": "array",
+          "size": 126500,
+          "sha256": "6f3643bc6bb3e44ea9873f6546b96102b9ac84205c6c95de55f1cd9db39c85b5",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-012.npz",
+          "kind": "array",
+          "size": 121539,
+          "sha256": "24ad1963734de7163db1b6e3a9d0c363f47ff7a8bf84807a5315e49e8861393d",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-013.npz",
+          "kind": "array",
+          "size": 123337,
+          "sha256": "5b0e1d892385ed420cbf7b2b4fea5ddf165ac45ef44dc35cb7fae4602151f6f2",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-014.npz",
+          "kind": "array",
+          "size": 126228,
+          "sha256": "a1237e326bb6da40d093e551d51116773a2872fb8388bb5ba87bf0f3776fe78f",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-015.npz",
+          "kind": "array",
+          "size": 116029,
+          "sha256": "aed86c9791ebe500f0eb3cc2b8dffa14e6c652687b3c22f41cc1412744ef7170",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-016.npz",
+          "kind": "array",
+          "size": 126947,
+          "sha256": "b3d0b285697c1e1e4a562d3bb8578f887de4b328ecc9a6816326839fd934e5ac",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-017.npz",
+          "kind": "array",
+          "size": 121747,
+          "sha256": "bcddb6a3877c1163c4090646a5abfbcc41d3a67b34b4317700b420945d8480df",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-018.npz",
+          "kind": "array",
+          "size": 126334,
+          "sha256": "803dcb49d545919a4de7200a34a3d5603a4726cd555cce272ddd254f11e65684",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-019.npz",
+          "kind": "array",
+          "size": 126228,
+          "sha256": "57d9da3bb1898a587a64b3a69711937e75b56888f006bd6bfc4d4c2210c14148",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-020.npz",
+          "kind": "array",
+          "size": 122260,
+          "sha256": "6862769c82aea33ff1d7e4850e98b89ce661223d00729400373ec80ea2a1484d",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-021.npz",
+          "kind": "array",
+          "size": 125520,
+          "sha256": "891fb00e2cd4c867a89bde9d5c15428a0c81975679674ba3cb5ba838f3224faf",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-022.npz",
+          "kind": "array",
+          "size": 120319,
+          "sha256": "e9b1be96117a8ee4cd2d4e5e41b140d69c612a961b5ebb8318a848fb15adbc76",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-023.npz",
+          "kind": "array",
+          "size": 127095,
+          "sha256": "48401d0399a2a42a156958384b65e589a06277cd14f112ee9116634d143a6b1d",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-024.npz",
+          "kind": "array",
+          "size": 126182,
+          "sha256": "6751c6a601bc8d9d986036872b56b99fc4ffbbadff772650a0c6a9ecaa7673dc",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-025.npz",
+          "kind": "array",
+          "size": 122989,
+          "sha256": "ccad2b08f24c700e89f70ad158d02d01979ca8805f8b6e5303975034f5eaea1b",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-026.npz",
+          "kind": "array",
+          "size": 126979,
+          "sha256": "7889f489de6abec32cc1e242ea909a6ea5ed47875ee1645ed6a1ac33cdbcef1c",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-027.npz",
+          "kind": "array",
+          "size": 123096,
+          "sha256": "f717b82807618caea14a99e5a6bd1e80fa49bd1d3d95eaa28a1e884701156364",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-028.npz",
+          "kind": "array",
+          "size": 125259,
+          "sha256": "66580682e14e6af99a2a1e62dbc91ac02701d6e334209ed65706e63e9099f715",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-029.npz",
+          "kind": "array",
+          "size": 126655,
+          "sha256": "4ca8cd48ff18d90fbd9e4c1bf041564a04b20251d25596cf5d916b6313eee00b",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-030.npz",
+          "kind": "array",
+          "size": 128970,
+          "sha256": "2f04b6a0e7490746583a2bb9888dd29d918e128fbc88198308755dc771ecefa2",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-031.npz",
+          "kind": "array",
+          "size": 127411,
+          "sha256": "24968329ba70a83f3882e0b115d046a705aab5281641c3892edbc2aecc41c6ca",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-034.npz",
+          "kind": "array",
+          "size": 53381,
+          "sha256": "bb9f2fc7b44be60c76edcba3b353d0ad704290c9c24976df1d23c4f34fb6b444",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-035.npz",
+          "kind": "array",
+          "size": 128143,
+          "sha256": "28f5bea319bd65b4e42974072c84a2f99a2c76f5b573e248eb1c6a32e0874d88",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-036.npz",
+          "kind": "array",
+          "size": 123712,
+          "sha256": "efd95511916b95d33341b2283d9f8d5a5f144dc67d2b72c98d90a6b8443a0cc0",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-037.npz",
+          "kind": "array",
+          "size": 125717,
+          "sha256": "dea4df4dbf606e6d790db241f8e0d25b4915310861971d4696f177e824c44194",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-038.npz",
+          "kind": "array",
+          "size": 124036,
+          "sha256": "d48db40e1e9c1483b697c12995f7599c914f17e194af53b76e94553fc96698d7",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-039.npz",
+          "kind": "array",
+          "size": 128175,
+          "sha256": "5b13b31bf68dbd8852dd6c953f059737a2a70862c487ed24658894b7e3a5feb8",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-040.npz",
+          "kind": "array",
+          "size": 122622,
+          "sha256": "40c48ea3291b8e9b8396f065a4406b38a271673ea34204752d65160019eae0d6",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-041.npz",
+          "kind": "array",
+          "size": 125522,
+          "sha256": "de0345df460f6f4001d7f2a7399b82c089acd1540c420385339312795e7e171b",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-042.npz",
+          "kind": "array",
+          "size": 123887,
+          "sha256": "3c46728ca9178cefbece682d719f34f34f745d25612836809f95a42753c41f84",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-043.npz",
+          "kind": "array",
+          "size": 123660,
+          "sha256": "47984dbb37d4acd3f58e92590e3b9ce0ad46d44523773bab8e558b7ab064f54c",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-044.npz",
+          "kind": "array",
+          "size": 123967,
+          "sha256": "7872cecc1913602b7c1fe69375a61756adda0ca96bfe8bff572f02ca6e05eb19",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-045.npz",
+          "kind": "array",
+          "size": 125274,
+          "sha256": "7c7e487a221f2fadf50e8104d7017342375021b86462ecf26b3bf85aa8ee4881",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-046.npz",
+          "kind": "array",
+          "size": 124108,
+          "sha256": "a29a478e555fde133f9f9d806bb390c76f7bded731c7b42d0850615ad25b5e48",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-047.npz",
+          "kind": "array",
+          "size": 125478,
+          "sha256": "ac70dc59c25757ec56b56a2acc56e0cb4988d27eb73bf57a3563a24e99cd51d0",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-048.npz",
+          "kind": "array",
+          "size": 125235,
+          "sha256": "fcf074e47a8949b45ac61a79544916c47eaa672139861d38a66b36e1e2a5ec6f",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-049.npz",
+          "kind": "array",
+          "size": 123889,
+          "sha256": "d731d9be966cab9bf582f086a02d58c5282e3becdd74c5795108e98e2e304641",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-050.npz",
+          "kind": "array",
+          "size": 124755,
+          "sha256": "090f444739c4999f170a270bd8c90c75320ccd8976cf9a3cf39baca46673d353",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-051.npz",
+          "kind": "array",
+          "size": 126691,
+          "sha256": "a2d1aaa936266343b3d0eec45b57658e18115a5fc45e2bf41a97d1fa48126cc4",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-052.npz",
+          "kind": "array",
+          "size": 126411,
+          "sha256": "adbbe3d16f0f13fd71e95e9438e2c6e101450812a512dc85512ab78a5c3195fa",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-053.npz",
+          "kind": "array",
+          "size": 127570,
+          "sha256": "8a6c10da7011700fff9e762b49f35e5c129910caf2bf5cdd0d30490cb2534d9c",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-054.npz",
+          "kind": "array",
+          "size": 98459,
+          "sha256": "b1b8d52b3fc00fb27a6a5c7c05a68912a1cbc22d1561c9b5c72a5b6c916f412d",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-055.npz",
+          "kind": "array",
+          "size": 126202,
+          "sha256": "09749637398e6cbd532d14253d58630dc6ef02baa470d3587bb6498d3afc57fd",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-056.npz",
+          "kind": "array",
+          "size": 126693,
+          "sha256": "3aab72a89e13fdfc8f45c43dbf920b6cb19be1c398c43914b16cb00cf255de19",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-057.npz",
+          "kind": "array",
+          "size": 120597,
+          "sha256": "5991e5ff272d6e102c3ba3112c47200642135c35bc8fb64b5df61bd112be5af1",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-058.npz",
+          "kind": "array",
+          "size": 126228,
+          "sha256": "eae1b356a239e5c5e6ca0cddd644e5a00627d4b78401c1cb2ccf84fd6068429f",
+          "suggested_script": null
+        },
+        {
+          "path": "test/11_individual_20261102/newfeat/sub-059.npz",
+          "kind": "array",
+          "size": 126892,
+          "sha256": "79c4a8d9ff8607ad3ea938910a2fddf1a8716e1c1e80693a29afbc831041c769",
           "suggested_script": null
         },
         {
@@ -7634,8 +8081,8 @@
         {
           "path": "test/11_individual_20261102/报告_E13_逐被试细搜与坏块诊断.md",
           "kind": "other",
-          "size": 8907,
-          "sha256": "152d1d2cee1da6a047f476e6e55fa96bc39a88b5d7c7e248d2c2e5a1102e993c",
+          "size": 10454,
+          "sha256": "981542933d8673a49975237ffdcdf5f66f695a9c8dad3e4a6b7a0077ad154e54",
           "suggested_script": null
         }
       ]
@@ -44671,6 +45118,206 @@
       "value": 0.5079705189207652
     },
     {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "001.baseline_bACC",
+      "value": 0.9344020618010002
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "002.baseline_bACC",
+      "value": 0.8824191910139212
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "003.baseline_bACC",
+      "value": 0.9371516787686961
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "004.baseline_bACC",
+      "value": 0.7809403711043055
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "005.baseline_bACC",
+      "value": 0.779759584145549
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "006.baseline_bACC",
+      "value": 0.8931294017490906
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "007.baseline_bACC",
+      "value": 0.8857719965114941
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "008.baseline_bACC",
+      "value": 0.9312981069273976
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "009.baseline_bACC",
+      "value": 0.8564277883561249
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "010.baseline_bACC",
+      "value": 0.9543075902815458
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "011.baseline_bACC",
+      "value": 0.8283284716461048
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "012.baseline_bACC",
+      "value": 0.8306594272324315
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "013.baseline_bACC",
+      "value": 0.859177900436662
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "014.baseline_bACC",
+      "value": 0.8837688342797259
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "015.baseline_bACC",
+      "value": 0.8635483896021188
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "016.baseline_bACC",
+      "value": 0.8563325705325833
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "017.baseline_bACC",
+      "value": 0.8689468918342158
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "018.baseline_bACC",
+      "value": 0.9393510793095623
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "019.baseline_bACC",
+      "value": 0.8521733021077283
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "020.baseline_bACC",
+      "value": 0.8716795996401259
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "021.baseline_bACC",
+      "value": 0.8819432599920405
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "022.baseline_bACC",
+      "value": 0.8619515471485919
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "023.baseline_bACC",
+      "value": 0.892200328407225
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "024.baseline_bACC",
+      "value": 0.7838757022915219
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "025.baseline_bACC",
+      "value": 0.9270781381640307
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "026.baseline_bACC",
+      "value": 0.9297905476273718
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "027.baseline_bACC",
+      "value": 0.8333704421349304
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "028.baseline_bACC",
+      "value": 0.7811912033376054
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "029.baseline_bACC",
+      "value": 0.8729774244082491
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "030.baseline_bACC",
+      "value": 0.9269707883153262
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "031.baseline_bACC",
+      "value": 0.9317869472299852
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "034.baseline_bACC",
+      "value": 0.9767981438515081
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "035.baseline_bACC",
+      "value": 0.8916044912588692
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "036.baseline_bACC",
+      "value": 0.9376626371779038
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "037.baseline_bACC",
+      "value": 0.8497198114949542
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "038.baseline_bACC",
+      "value": 0.9221545422902888
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "039.baseline_bACC",
+      "value": 0.9088843537414966
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "040.baseline_bACC",
+      "value": 0.8958333333333333
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "041.baseline_bACC",
+      "value": 0.8397750301036742
+    },
+    {
+      "file": "test/11_individual_20261102/newfeat_eval.json",
+      "key": "042.baseline_bACC",
+      "value": 0.8755375013211546
+    },
+    {
       "file": "test/11_individual_20261102/stream_eval.json",
       "key": "summary.1.best_auc",
       "value": 0.8383129855715872
@@ -56662,6 +57309,9 @@
     "test/11_individual_20261102/final_control.json": 12,
     "test/11_individual_20261102/final_eval.json": 855,
     "test/11_individual_20261102/memory_controls.json": 36,
+    "test/11_individual_20261102/newfeat/manifest.json": 0,
+    "test/11_individual_20261102/newfeat_eval.json": 7581,
+    "test/11_individual_20261102/newfeat_verify.json": 0,
     "test/11_individual_20261102/scores/meta.json": 0,
     "test/11_individual_20261102/sliding/manifest.json": 0,
     "test/11_individual_20261102/sliding1/manifest.json": 0,
@@ -58794,6 +59444,10 @@
       "reference": "realorder.npz"
     },
     {
+      "script": "test/11_individual_20261102/newfeat_eval.py",
+      "reference": "sub-*.npz"
+    },
+    {
       "script": "test/11_individual_20261102/score_cache.py",
       "reference": "realorder.npz"
     },
@@ -58967,11 +59621,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 1287,
-    "py_scripts": 259,
-    "json_results": 299,
-    "metrics_entries": 9651,
-    "missing_reference_count": 558,
+    "files_scanned": 1351,
+    "py_scripts": 261,
+    "json_results": 302,
+    "metrics_entries": 9691,
+    "missing_reference_count": 559,
     "database_window_files": 116
   }
 }
