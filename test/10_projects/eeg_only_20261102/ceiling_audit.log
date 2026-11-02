@@ -1,0 +1,7 @@
+﻿[data] windows=16067 subs=57 dim=878 elapsed=0.3s
+[cross_subject_lr      ] AUC=0.6371 bACC=0.5979 F1m=0.5979 macro=0.5976 n>=.9=0 | subjAUC med=0.669 [0.333,0.851] flip=9/57
+[oracle_polarity       ] AUC=0.6534 bACC=0.6105 F1m=0.6102 macro=0.6110 n>=.9=0 | subjAUC med=0.669 [0.503,0.851] flip=0/57
+[oracle_direction      ] AUC=0.8018 bACC=0.7325 F1m=0.7324 macro=0.7328 n>=.9=0 | subjAUC med=0.806 [0.660,0.900] flip=0/57
+[lr_no_bad             ] AUC=0.6437 bACC=0.6003 F1m=0.6003 macro=0.5998 n>=.9=0 | subjAUC med=0.673 [0.333,0.851] flip=7/54
+[oracle_dir_no_bad     ] AUC=0.8014 bACC=0.7343 F1m=0.7341 macro=0.7342 n>=.9=0 | subjAUC med=0.805 [0.660,0.900] flip=0/54
+[done] 9.5s

@@ -21,8 +21,8 @@
     },
     {
       "path": "README.md",
-      "size": 53956,
-      "sha256": "7d73cf8f78210e3a77b3fc346d93116429e2269d976223940fc9a660d8698ac0"
+      "size": 54882,
+      "sha256": "dab0f334735692f618ad9624877ea708a8b2efcbfe5c6a046e13160d6d3083f0"
     },
     {
       "path": "test/experiments/实验方法索引.md",
@@ -46,8 +46,8 @@
     },
     {
       "path": "研究报告.md",
-      "size": 270907,
-      "sha256": "232d771c336a4355a4b56ea8bbd92feb4a14e69b5113e05ddc474980196e9e39"
+      "size": 272101,
+      "sha256": "604e77bb58551e1e0cf8922a0143c94050f6d4718d29aa5caf23431b951ce780"
     },
     {
       "path": "认知状态解码理论.md",
@@ -4126,6 +4126,26 @@
           "status": "has_result_json"
         },
         {
+          "id": "test/10_projects/eeg_only_20261102/ceiling_audit.py",
+          "path": "test/10_projects/eeg_only_20261102/ceiling_audit.py",
+          "summary": "E6：天花板审计——四种口径测同一条上限，并检查是否被少数坏记录拖累。 四种口径（同一批 57 人、16 067 窗、真实顺序，全部不使用次序/位置）： 1. 跨被试 LR（严格可部署） 2. oracle polarity：若某被试本人的",
+          "artifacts": [
+            {
+              "path": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+              "kind": "result",
+              "size": 1983,
+              "sha256": "877abd8db1961617065d95aa9b2b2ad72dc6c1aca82debe86050369a1704ba28"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/ceiling_audit.log",
+              "kind": "log",
+              "size": 692,
+              "sha256": "50a96675a250b9a14dc0289c7a579af17264580cdad12d6b83e2e0c00df5b19b"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
           "id": "test/10_projects/eeg_only_20261102/feature_probe.py",
           "path": "test/10_projects/eeg_only_20261102/feature_probe.py",
           "summary": "工频",
@@ -4381,8 +4401,8 @@
         {
           "path": "test/10_projects/eeg_only_20261102/报告_E1_纯EEG天花板.md",
           "kind": "other",
-          "size": 8737,
-          "sha256": "01db7f9e6e22a9ad54266c79dbbf6826ac0fe8094f77cb382272b1cb6eac4f2b",
+          "size": 10604,
+          "sha256": "f850aa72be8908d47f870fa1ecca138a53ba5b7229c4d253f265254dc0fc04df",
           "suggested_script": null
         },
         {
@@ -38253,6 +38273,206 @@
       "value": 0.545367392701216
     },
     {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.cross_subject_lr.AUC",
+      "value": 0.6371211571841493
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.cross_subject_lr.F1_macro",
+      "value": 0.5978698183226397
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.cross_subject_lr.bACC",
+      "value": 0.5978810260710734
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.cross_subject_lr.n_subject_auc_below_0.5",
+      "value": 9.0
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.cross_subject_lr.subject_auc_max",
+      "value": 0.8508620689655172
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.cross_subject_lr.subject_auc_median",
+      "value": 0.66921768707483
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.cross_subject_lr.subject_auc_min",
+      "value": 0.33257672483094525
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.cross_subject_lr.subject_macro_bACC",
+      "value": 0.5976074238649665
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.cross_subject_lr_no_bad.AUC",
+      "value": 0.6436904773783746
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.cross_subject_lr_no_bad.F1_macro",
+      "value": 0.600297567090898
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.cross_subject_lr_no_bad.bACC",
+      "value": 0.6003009687465595
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.cross_subject_lr_no_bad.n_subject_auc_below_0.5",
+      "value": 7.0
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.cross_subject_lr_no_bad.subject_auc_max",
+      "value": 0.8508620689655172
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.cross_subject_lr_no_bad.subject_auc_median",
+      "value": 0.6728022862041
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.cross_subject_lr_no_bad.subject_auc_min",
+      "value": 0.33257672483094525
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.cross_subject_lr_no_bad.subject_macro_bACC",
+      "value": 0.5997786183846672
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_direction.AUC",
+      "value": 0.8017828471445533
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_direction.F1_macro",
+      "value": 0.7324155117698996
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_direction.bACC",
+      "value": 0.7325010311968423
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_direction.n_subject_auc_below_0.5",
+      "value": 0.0
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_direction.subject_auc_max",
+      "value": 0.900179601096512
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_direction.subject_auc_median",
+      "value": 0.8056568443875036
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_direction.subject_auc_min",
+      "value": 0.6604292259464672
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_direction.subject_macro_bACC",
+      "value": 0.7327625204038567
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_direction_no_bad.AUC",
+      "value": 0.8014128500817094
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_direction_no_bad.F1_macro",
+      "value": 0.7341052794764055
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_direction_no_bad.bACC",
+      "value": 0.734341722160391
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_direction_no_bad.n_subject_auc_below_0.5",
+      "value": 0.0
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_direction_no_bad.subject_auc_max",
+      "value": 0.900179601096512
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_direction_no_bad.subject_auc_median",
+      "value": 0.8047921002590324
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_direction_no_bad.subject_auc_min",
+      "value": 0.6604292259464672
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_direction_no_bad.subject_macro_bACC",
+      "value": 0.734176312656343
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_polarity.AUC",
+      "value": 0.6534206062104856
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_polarity.F1_macro",
+      "value": 0.610165330760497
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_polarity.bACC",
+      "value": 0.6105424110885194
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_polarity.n_subject_auc_below_0.5",
+      "value": 0.0
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_polarity.subject_auc_max",
+      "value": 0.8508620689655172
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_polarity.subject_auc_median",
+      "value": 0.66921768707483
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_polarity.subject_auc_min",
+      "value": 0.5025130580467133
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/ceiling_audit.json",
+      "key": "results.oracle_polarity.subject_macro_bACC",
+      "value": 0.6110398677464162
+    },
+    {
       "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
       "key": "ceiling.all_908.auc_mean",
       "value": 0.8011800276963837
@@ -50835,6 +51055,7 @@
     "test/10_projects/eeg_only_20261102/aligned_lr.json": 9,
     "test/10_projects/eeg_only_20261102/anchor_features.json": 12,
     "test/10_projects/eeg_only_20261102/causal_norm.json": 32,
+    "test/10_projects/eeg_only_20261102/ceiling_audit.json": 40,
     "test/10_projects/eeg_only_20261102/feature_probe.json": 30,
     "test/10_projects/eeg_only_20261102/hp_check.json": 8,
     "test/10_projects/eeg_only_20261102/sign_consistency.json": 16,
@@ -52895,6 +53116,10 @@
       "reference": "realorder.npz"
     },
     {
+      "script": "test/10_projects/eeg_only_20261102/ceiling_audit.py",
+      "reference": "realorder.npz"
+    },
+    {
       "script": "test/10_projects/eeg_only_20261102/feature_probe.py",
       "reference": "sub-*.npz"
     },
@@ -53036,11 +53261,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 955,
-    "py_scripts": 234,
-    "json_results": 274,
-    "metrics_entries": 8957,
-    "missing_reference_count": 531,
+    "files_scanned": 958,
+    "py_scripts": 235,
+    "json_results": 275,
+    "metrics_entries": 8997,
+    "missing_reference_count": 532,
     "database_window_files": 116
   }
 }
