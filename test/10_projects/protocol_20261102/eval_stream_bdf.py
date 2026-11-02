@@ -28,19 +28,52 @@ ROOT = HERE.parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 
 from cogstate import FS, bad_intervals, load_trials  # noqa: E402
-from protocol_timeline import load_table  # noqa: E402
+from protocol_timeline import TimelineDecoder, load_table  # noqa: E402
 
 CHUNK = 137
+
+
+def build_fold_tables():
+    """折外表：每个 fold 只用其余被试的窗口拟合查表，u_assume 也只在训练被试上选。"""
+    from sklearn.metrics import balanced_accuracy_score
+    from sklearn.model_selection import StratifiedGroupKFold
+
+    from position_table import fit_table, measure_pre_roll, predict
+
+    D = np.load(HERE / "realorder.npz")
+    y, g, t = D["y"].astype(int), D["g"], D["t"]
+    pre = measure_pre_roll()
+    u_true = np.array([int(round(pre[s] / 6.0)) for s in g])
+    fold = np.empty(len(y), int)
+    for k, (_, te) in enumerate(StratifiedGroupKFold(5, shuffle=True, random_state=0).split(np.zeros(len(y)), y, g)):
+        fold[te] = k
+    out = {}
+    for k in range(5):
+        tr = np.flatnonzero(fold != k)
+        tab = fit_table(t[tr] / 6.0 - u_true[tr], y[tr], 0.6)
+        best_u, best_v = 0, -1.0
+        for u in range(11):
+            p = predict(tab, t[tr] / 6.0 - u)
+            v = balanced_accuracy_score(y[tr], (p >= 0.5).astype(int))
+            if v > best_v:
+                best_u, best_v = u, float(v)
+        subj = {s: k for s in np.unique(g[fold == k])}
+        out.update({s: (tab, best_u) for s in subj})
+        print(f"[fold-table {k}] u_assume={best_u} train_bACC={best_v:.4f}", flush=True)
+    return out
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--subjects", default="")
     ap.add_argument("--chunk", type=int, default=CHUNK)
+    ap.add_argument("--oof", action="store_true",
+                    help="用折外表（每个被试只由其余被试拟合）做严格折外评估；不加则用全量导出表")
     args = ap.parse_args()
     import mne
-    dec = load_table(ROOT / "src" / "protocol_timeline_table.json")
-    print(f"[model] table_len={dec.table.size} u_assume={dec.u_assume} chunk={args.chunk}", flush=True)
+    fold_models = build_fold_tables() if args.oof else None
+    base = load_table(ROOT / "src" / "protocol_timeline_table.json")
+    print(f"[model] table_len={base.table.size} chunk={args.chunk} oof={args.oof}", flush=True)
 
     paths = sorted((ROOT / "EEG_dataset").glob("*/*_events.csv"))
     want = set(args.subjects.split(",")) if args.subjects else None
@@ -56,7 +89,11 @@ def main():
         fs, n = float(raw.info["sfreq"]), raw.n_times
         trials = load_trials(str(csv), str(bdf))
         bad = bad_intervals(raw)
-        dec = load_table(ROOT / "src" / "protocol_timeline_table.json")   # 每份记录重置状态
+        if fold_models is not None:
+            tab_s, u_s = fold_models[sid]
+            dec = TimelineDecoder(tab_s, u_assume=u_s)      # 折外表，严格折外
+        else:
+            dec = TimelineDecoder(base.table, u_assume=base.u_assume)
         out = []
         for s in range(0, n, args.chunk):
             out.extend(dec.push(raw.get_data(start=s, stop=min(n, s + args.chunk))[0]))
@@ -85,7 +122,9 @@ def main():
 
     y = np.concatenate(Y); p = np.concatenate(P); g = np.concatenate(G)
     res = {"protocol": "end-to-end BDF streaming, no manual alignment",
-           "chunk": args.chunk, "u_assume": dec.u_assume, "model": "src/protocol_timeline_table.json",
+           "chunk": args.chunk, "oof": bool(args.oof),
+           "u_assume": ("per-fold" if args.oof else base.u_assume),
+           "model": ("fold tables from realorder.npz" if args.oof else "src/protocol_timeline_table.json"),
            "n_windows": int(len(y)), "n_subjects": int(len(per)), "skipped_windows": int(skipped),
            "AUC": float(roc_auc_score(y, p)),
            "bACC": float(balanced_accuracy_score(y, p >= .5)),
@@ -97,8 +136,9 @@ def main():
     print(f"[result] AUC={res['AUC']:.4f} bACC={res['bACC']:.4f} F1m={res['F1_macro']:.4f} "
           f"F1task={res['F1_task']:.4f} macro={res['subject_macro_bACC']:.4f} "
           f"n>=.9={res['n_ge_0.9']}/{res['n_subjects']} windows={res['n_windows']} skipped={skipped}", flush=True)
-    (HERE / "eval_stream_bdf.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"[done] -> eval_stream_bdf.json {res['seconds']:.1f}s", flush=True)
+    (HERE / ("eval_stream_bdf_oof.json" if args.oof else "eval_stream_bdf.json")).write_text(
+        json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"[done] -> {'eval_stream_bdf_oof.json' if args.oof else 'eval_stream_bdf.json'} {res['seconds']:.1f}s", flush=True)
 
 
 if __name__ == "__main__":

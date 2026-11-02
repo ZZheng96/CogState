@@ -21,13 +21,13 @@
     },
     {
       "path": "README.md",
-      "size": 52256,
-      "sha256": "5cbfa53fc87ce17a8a0e81178b2e95169b5f83121a39d69f663e079a11178301"
+      "size": 52271,
+      "sha256": "1bf20a86575fe9b3488ef7bb57d5863850f62296b74a248e144f167f85f32437"
     },
     {
       "path": "test/experiments/实验方法索引.md",
-      "size": 56470,
-      "sha256": "c9083af12eb3f237e9f36ca62cd6d0638ecba770947ea2a72edc9e928af999ee"
+      "size": 56548,
+      "sha256": "2f49235285cf9ab856bbee6d10062cdbf3a8156d67fa07d3765d8b78f176fc06"
     },
     {
       "path": "test/reports/卡尔曼深度学习实验报告.md",
@@ -46,8 +46,8 @@
     },
     {
       "path": "研究报告.md",
-      "size": 268021,
-      "sha256": "7b2e9625a0ac20a4a640bb3ac7459bb0495b83d44dbea8ec98d8e22c6a50f0bc"
+      "size": 268190,
+      "sha256": "5c11e9ca2eecb4813ac024482363bd18cdb051bad0c9348ed17989d5ff04da17"
     },
     {
       "path": "认知状态解码理论.md",
@@ -4113,6 +4113,18 @@
               "kind": "log",
               "size": 3804,
               "sha256": "3ac4fcfbeb3e84bd3ec6e4da9169c0ae912c0ca66659a9a3c239c1f776a7c5cb"
+            },
+            {
+              "path": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+              "kind": "result",
+              "size": 5229,
+              "sha256": "47e57909dec40c971c394b22901762b0af2d96bf0dc693b526cdbb348fe37665"
+            },
+            {
+              "path": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.log",
+              "kind": "log",
+              "size": 4033,
+              "sha256": "f3bff0224d2fec83fd5142d1ade689a9b44f8775787253645f6043a78646e7c5"
             }
           ],
           "status": "has_result_json"
@@ -4276,8 +4288,8 @@
         {
           "path": "test/10_projects/protocol_20261102/报告_P6_流式部署与端到端验证.md",
           "kind": "other",
-          "size": 7850,
-          "sha256": "c209b526dbe35bc585d996dbd905ab1e38b87d23fb4e39ddd52cc51502411c6c",
+          "size": 9832,
+          "sha256": "8c57dc3b2f5c2b741c7f9beb8a37dd686a00c191779f863d34a7da59c82d08b2",
           "suggested_script": null
         }
       ]
@@ -38248,6 +38260,206 @@
       "value": 0.9827559218702462
     },
     {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "AUC",
+      "value": 0.9912477340078071
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "F1_macro",
+      "value": 0.9839940782364349
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "bACC",
+      "value": 0.9839955281671864
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.001.AUC",
+      "value": 0.9998602180598266
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.001.bACC",
+      "value": 0.9965753424657534
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.002.AUC",
+      "value": 0.9999462943071965
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.002.bACC",
+      "value": 0.9962406015037594
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.003.AUC",
+      "value": 1.0
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.003.bACC",
+      "value": 1.0
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.004.AUC",
+      "value": 0.8357272491573762
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.004.bACC",
+      "value": 0.8392273787918071
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.005.AUC",
+      "value": 0.9967478072336651
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.005.bACC",
+      "value": 0.9647186360500641
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.006.AUC",
+      "value": 1.0
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.006.bACC",
+      "value": 1.0
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.007.AUC",
+      "value": 0.9999041870269234
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.007.bACC",
+      "value": 0.9965986394557823
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.008.AUC",
+      "value": 0.9998069498069497
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.008.bACC",
+      "value": 0.9966216216216216
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.009.AUC",
+      "value": 0.9999158320006734
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.009.bACC",
+      "value": 0.9954128440366973
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.010.AUC",
+      "value": 1.0
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.010.bACC",
+      "value": 1.0
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.011.AUC",
+      "value": 1.0
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.011.bACC",
+      "value": 1.0
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.012.AUC",
+      "value": 0.9997959079544875
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.012.bACC",
+      "value": 0.9964028776978417
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.013.AUC",
+      "value": 0.9995177236556547
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.013.bACC",
+      "value": 0.9896069447793585
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.014.AUC",
+      "value": 0.9991726420297848
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.014.bACC",
+      "value": 0.9830391616105902
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.015.AUC",
+      "value": 0.999888461323964
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.015.bACC",
+      "value": 0.9961240310077519
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.016.AUC",
+      "value": 0.9995403144249333
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.016.bACC",
+      "value": 0.9932196377677669
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.017.AUC",
+      "value": 1.0
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.017.bACC",
+      "value": 1.0
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.018.AUC",
+      "value": 1.0
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "per_subject.018.bACC",
+      "value": 1.0
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json",
+      "key": "subject_macro_bACC",
+      "value": 0.9827559218702462
+    },
+    {
       "file": "test/10_projects/protocol_20261102/export_table.json",
       "key": "train_bACC_at_u_assume",
       "value": 0.9866
@@ -49960,6 +50172,7 @@
     "test/10_projects/protocol_20261102/boundary_refine.json": 20,
     "test/10_projects/protocol_20261102/boundary_refine_smoke.json": 20,
     "test/10_projects/protocol_20261102/eval_stream_bdf.json": 118,
+    "test/10_projects/protocol_20261102/eval_stream_bdf_oof.json": 118,
     "test/10_projects/protocol_20261102/export_table.json": 1,
     "test/10_projects/protocol_20261102/position_deploy.json": 60,
     "test/10_projects/protocol_20261102/position_table.json": 29,
@@ -52005,6 +52218,10 @@
       "reference": "sub-*.npz"
     },
     {
+      "script": "test/10_projects/protocol_20261102/eval_stream_bdf.py",
+      "reference": "fold tables from realorder.npz"
+    },
+    {
       "script": "test/audit/common.py",
       "reference": "depositioned_aperiodic_emg_oof.npz"
     },
@@ -52126,11 +52343,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 934,
+    "files_scanned": 936,
     "py_scripts": 228,
-    "json_results": 267,
-    "metrics_entries": 8810,
-    "missing_reference_count": 524,
+    "json_results": 268,
+    "metrics_entries": 8850,
+    "missing_reference_count": 525,
     "database_window_files": 116
   }
 }
