@@ -1,4 +1,23 @@
-# CogState 基线
+# CogState：单通道认知状态解码
+
+## 项目入口（2026-11-02 整理）
+
+- [实验方法与证据索引](实验方法索引.md)：先按验证协议读结论，再找方法族。
+- [全量实验文件目录](experiments/实验文件目录.md)：按方法族检索脚本及结果、日志、模型；由 [目录生成器](tools/build_experiment_catalog.py) 重建。
+- [机器可读目录](experiments/catalog.json)：产物路径、哈希及原始 JSON 指标位置，不混合协议排名。
+- [整理记录与后续研究入口](experiments/整理与研究入口.md)：保留/清理策略、缺失依赖、理论假设与下一步。
+- 规则原文：[赛题要求和操作细则](赛题要求和操作细则.md)、[数据说明](EEG_dataset/README.txt)。
+- 历史原文：[(1) Solve Project with C....md]((1)%20Solve%20Project%20with%20C....md)；旧机器绝对路径仅作历史记录，不代表本机可运行路径。
+
+目录职责：`src/` 是推理/训练源码；`EEG_dataset/` 是不可修改的原始记录；`database/` 是派生窗口；`test/` 保留旧实验的运行路径及证据，已有 `audit/`、`theory/`、`realorder/`、`memory/`、`literature/` 分类；`vis/` 是可视化；`experiments/` 是统一检索入口；`tools/` 是管理工具。新实验放入独立方法子目录，不继续堆入 `test/` 根目录。
+
+**阅读警告：以下为累计历史记录，不是统一的当前排行榜或已验证提交包。** 不同阶段的窗口、划分、真实/随机顺序、历史自适应和 oracle 结果不能直接比较；后面的旧“最佳”“合法”描述必须结合对应结果和规则重新判断。官方指标为 **AUC + bACC**，项目报告另需 **F1**；未保存的 F1 标为“未记录”，不能用 AUC/bACC 换算。历史单次运行输出不保证在当前环境复现。
+
+重建目录（项目根目录）：`py -3.11 tools/build_experiment_catalog.py`。
+
+---
+
+## 历史基线记录
 
 ## 任务理解与约束
 
@@ -107,7 +126,7 @@ BIOT 重采样已明确拆为：完整离线窗口使用抗混叠 `resample_poly
 
 ### 卡尔曼 + 深度学习实验
 
-`src/kalman_deep.py` 与 `test/train_kalman_deep.py` 已完成真实重跑。当前定义为：`no_kalman=causal_features(raw)`，`kalman=causal_features(Kalman(raw))`，Q=1e-10、R=1e-8、P0=1e-8（均为 V²，Q 为每时间步过程方差），窗口内 reset、单向递推；实际训练 device 为 NVIDIA GeForce GTX 1660 SUPER CUDA。57 名受试者、16,067 个 6 秒窗口使用 subject-disjoint 五折，固定 24 epochs/full-batch（每折仅 24 optimizer steps）；raw CNN 输入为窗口内 6 点块平均到 250 点，未做幅值规范化。最新 OOF 指标为：no_kalman MLP bACC/AUC=0.552594/0.576365，kalman MLP=0.541790/0.563675，raw CNN=0.501161/0.496074，raw+Kalman CNN=0.499004/0.497447。推荐候选为 no_kalman MLP；CNN 结果接近随机，不能声称充分检验 DL 潜力。真实 OOF、正确 fold ID、逐 subject 指标、checkpoint、曲线和图表保存到 `test/kalman_deep_*`；另有正式回归测试 `test/test_kalman_deep.py`。旧错误 `test/kalman_deep_final.pt` 已弃用，不可作为可用 checkpoint；只使用四个新命名 checkpoint。详细结构、参数、测试和指标见 `卡尔曼深度学习实验报告.md`。现有传统模型不替换。
+`src/kalman_deep.py` 与 `test/train_kalman_deep.py` 已完成真实重跑。当前定义为：`no_kalman=causal_features(raw)`，`kalman=causal_features(Kalman(raw))`，Q=1e-10、R=1e-8、P0=1e-8（均为 V²，Q 为每时间步过程方差），窗口内 reset、单向递推；实际训练 device 为 NVIDIA GeForce GTX 1660 SUPER CUDA。57 名受试者、16,067 个 6 秒窗口使用 subject-disjoint 五折，固定 24 epochs/full-batch（每折仅 24 optimizer steps）；raw CNN 输入为窗口内 6 点块平均到 250 点，未做幅值规范化。最新 OOF 指标为：no_kalman MLP bACC/AUC=0.552594/0.576365，kalman MLP=0.541790/0.563675，raw CNN=0.501161/0.496074，raw+Kalman CNN=0.499004/0.497447。推荐候选为 no_kalman MLP；CNN 结果接近随机，不能声称充分检验 DL 潜力。真实 OOF、正确 fold ID、逐 subject 指标、checkpoint、曲线和图表保存到 `test/kalman_deep_*`；另有正式回归测试 `test/test_kalman_deep.py`。旧错误 `test/kalman_deep_final.pt` 已于 2026-11-02 整理时删除（git 历史可恢复），不可作为可用 checkpoint；只使用四个新命名 checkpoint。详细结构、参数、测试和指标见 `卡尔曼深度学习实验报告.md`。现有传统模型不替换。
 
 ### BIOT 官方预训练迁移实验
 

@@ -4,3 +4,10 @@
 *.pkl
 __pycache__/
 *.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+# 仅忽略编辑器临时文件；实验日志、失败记录、权重继续保留
+*.tmp
+*.swp
+~$*
