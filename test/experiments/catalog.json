@@ -21,13 +21,13 @@
     },
     {
       "path": "README.md",
-      "size": 47796,
-      "sha256": "b05814a68a108bba5ea1f9c58dbdbfdd6b8e5dc3d38353d0763d02bbb333bd50"
+      "size": 49387,
+      "sha256": "98936e5b5376ba13eb2604d156f5a8fbe285aa6697694b8f220ae2bd6c7c7107"
     },
     {
       "path": "test/experiments/实验方法索引.md",
-      "size": 53922,
-      "sha256": "a4a0ac4507f4fd17c5054b5309fbb1562f9ad9ce0193f893ecdedfe1f1e714e1"
+      "size": 54925,
+      "sha256": "6d5f159e850d6570a4a5292e03c31e83ddd89a0ad2b0b63681c5265f456254c9"
     },
     {
       "path": "test/reports/卡尔曼深度学习实验报告.md",
@@ -46,8 +46,8 @@
     },
     {
       "path": "研究报告.md",
-      "size": 261654,
-      "sha256": "cfcc1c61b18c71b08a0c0315d2bdc98477dc06e9588b5d3dc2f8a9884be12921"
+      "size": 263852,
+      "sha256": "6b5c4f605ef1314f78d664f6adb48e2a55722e47bbca6323d21be684f5d60eda"
     },
     {
       "path": "认知状态解码理论.md",
@@ -4060,15 +4060,83 @@
     {
       "name": "10 新假设实验",
       "dirs": [
-        "test/10_projects"
+        "test/10_projects",
+        "test/10_projects/protocol_20261102"
       ],
-      "scripts": [],
+      "scripts": [
+        {
+          "id": "test/10_projects/protocol_20261102/build_realorder.py",
+          "path": "test/10_projects/protocol_20261102/build_realorder.py",
+          "summary": "重建\"真实采集顺序\"数据集：从 BDF 重新切 6 秒窗，并把 database/windows 里已算好的 858 维 EEG 特征 + 20 维肌电特征按原始波形哈希精确对齐回来。 产物（同目录）： realorder.npz F   ",
+          "artifacts": [],
+          "status": "script_only"
+        },
+        {
+          "id": "test/10_projects/protocol_20261102/protocol_segment.py",
+          "path": "test/10_projects/protocol_20261102/protocol_segment.py",
+          "summary": "P3：把\"范式块结构\"当作唯一可用的定向约束，研究单通道跨被试解码的可达上限。 背景（见 理论框架.md / 整理与研究入口.md）： * 严格未知被试、6 s 单窗、无历史：AUC≈0.67 / bACC≈0.63。 * 跨被试判别方向几",
+          "artifacts": [
+            {
+              "path": "test/10_projects/protocol_20261102/protocol_segment.json",
+              "kind": "result",
+              "size": 110905,
+              "sha256": "a96f44657a24dcc8d47218e8e4bb1109b3e3ef32a407aa337fe360cf3762b202"
+            },
+            {
+              "path": "test/10_projects/protocol_20261102/protocol_segment.log",
+              "kind": "log",
+              "size": 1638,
+              "sha256": "5d7d91449fc0db82e2c4bcf46089a958a39826d7e0e3b418982850f13fdf98cc"
+            },
+            {
+              "path": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+              "kind": "result",
+              "size": 110337,
+              "sha256": "6cd1f5e5b8f09d7eabef814dd5761d3ec220d907eb4485bc0a5c2a7de4d0ab68"
+            },
+            {
+              "path": "test/10_projects/protocol_20261102/protocol_segment_off10.log",
+              "kind": "log",
+              "size": 1643,
+              "sha256": "3b1f3a7ff21c3870f04c9c7720bf1535ae884e5b6ab6b82e14ae2f40fa601b9b"
+            },
+            {
+              "path": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+              "kind": "result",
+              "size": 16543,
+              "sha256": "448333c060e18aced2c5f0992f99dfdc854d8d0985d99d11f072b5fc70c5081b"
+            }
+          ],
+          "status": "has_result_json"
+        }
+      ],
       "unassigned": [
         {
           "path": "test/10_projects/README.md",
           "kind": "other",
           "size": 528,
           "sha256": "d194bce96f2a171cbe9e093e8c42dbfe212727dc20217fa8ff978d452e344c80",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/protocol_20261102/realorder.npz",
+          "kind": "array",
+          "size": 53354488,
+          "sha256": "9bd9634aa051cf2c80566360b2d8cbb3978ac413d957c6aae5f04fb7e4930730",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/protocol_20261102/realorder_manifest.json",
+          "kind": "result",
+          "size": 13675,
+          "sha256": "651589e4d1396c472467a7b1803f8bbf1181aee20f18e6f0c3171f099d26a1aa",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/protocol_20261102/报告_P3_协议结构定标.md",
+          "kind": "other",
+          "size": 12001,
+          "sha256": "c78ccc8f88918f1474faf77ab408c95fa1b4198be63eb7173f5c0f3a37f9fdfe",
           "suggested_script": null
         }
       ]
@@ -37625,6 +37693,606 @@
       "value": 0.5935139448301164
     },
     {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.blockdir.AUC",
+      "value": 0.5545325091196228
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.blockdir.F1_macro",
+      "value": 0.48740320952728156
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.blockdir.bACC",
+      "value": 0.5174807543495433
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.blockdir.subject_macro_AUC",
+      "value": 0.5583565974529995
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.blockdir.subject_macro_bACC",
+      "value": 0.5185485580116533
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.blockdir.subset_blk_ge2.AUC",
+      "value": 0.539524813786157
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.blockdir.subset_blk_ge2.F1_macro",
+      "value": 0.5212680442911279
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.blockdir.subset_blk_ge2.bACC",
+      "value": 0.5272358002653788
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.blockdir.subset_blk_ge2.subject_macro_AUC",
+      "value": 0.550516295088217
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.blockdir.subset_blk_ge2.subject_macro_bACC",
+      "value": 0.5302984267412357
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.blockdir.subset_blk_ge4.AUC",
+      "value": 0.5376053325064171
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.blockdir.subset_blk_ge4.F1_macro",
+      "value": 0.5185127510430083
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.blockdir.subset_blk_ge4.bACC",
+      "value": 0.5247091355120075
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.blockdir.subset_blk_ge4.subject_macro_AUC",
+      "value": 0.5529104254886087
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.blockdir.subset_blk_ge4.subject_macro_bACC",
+      "value": 0.5280491086525869
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.dp_mag.AUC",
+      "value": 0.7255129727589374
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.dp_mag.F1_macro",
+      "value": 0.7249020173041091
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.dp_mag.bACC",
+      "value": 0.7255129727589374
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.dp_mag.subject_macro_AUC",
+      "value": 0.7237567697915696
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.dp_mag.subject_macro_bACC",
+      "value": 0.7237567697915696
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.hsmm.AUC",
+      "value": 0.771893796487144
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.hsmm.F1_macro",
+      "value": 0.6891741348818166
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.hsmm.bACC",
+      "value": 0.6891740136536351
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.hsmm.subject_macro_AUC",
+      "value": 0.7855570489967599
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.hsmm.subject_macro_bACC",
+      "value": 0.6842670203617066
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.position.AUC",
+      "value": 0.9976021923043431
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.position.F1_macro",
+      "value": 0.9858093306348379
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.position.bACC",
+      "value": 0.9858096545436346
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.position.subject_macro_AUC",
+      "value": 0.9975095370782978
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.position.subject_macro_bACC",
+      "value": 0.9843142907491924
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.position_marg.AUC",
+      "value": 0.8510738470196629
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.position_marg.F1_macro",
+      "value": 0.7978219234870574
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.position_marg.bACC",
+      "value": 0.7981996356799376
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.position_marg.subject_macro_AUC",
+      "value": 0.84726535068605
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.position_marg.subject_macro_bACC",
+      "value": 0.7940463824305224
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.single.AUC",
+      "value": 0.632420309634865
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.single.F1_macro",
+      "value": 0.5354875508959306
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.single.bACC",
+      "value": 0.5677647557217866
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.single.subject_macro_AUC",
+      "value": 0.644354043987177
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment.json",
+      "key": "methods.single.subject_macro_bACC",
+      "value": 0.5676571143269037
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.blockdir.AUC",
+      "value": 0.5545325091196228
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.blockdir.F1_macro",
+      "value": 0.48740320952728156
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.blockdir.bACC",
+      "value": 0.5174807543495433
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.blockdir.subject_macro_AUC",
+      "value": 0.5583565974529995
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.blockdir.subject_macro_bACC",
+      "value": 0.5185485580116533
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.blockdir.subset_blk_ge2.AUC",
+      "value": 0.539524813786157
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.blockdir.subset_blk_ge2.F1_macro",
+      "value": 0.5212680442911279
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.blockdir.subset_blk_ge2.bACC",
+      "value": 0.5272358002653788
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.blockdir.subset_blk_ge2.subject_macro_AUC",
+      "value": 0.550516295088217
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.blockdir.subset_blk_ge2.subject_macro_bACC",
+      "value": 0.5302984267412357
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.blockdir.subset_blk_ge4.AUC",
+      "value": 0.5376053325064171
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.blockdir.subset_blk_ge4.F1_macro",
+      "value": 0.5185127510430083
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.blockdir.subset_blk_ge4.bACC",
+      "value": 0.5247091355120075
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.blockdir.subset_blk_ge4.subject_macro_AUC",
+      "value": 0.5529104254886087
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.blockdir.subset_blk_ge4.subject_macro_bACC",
+      "value": 0.5280491086525869
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.dp_mag.AUC",
+      "value": 0.7255129727589374
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.dp_mag.F1_macro",
+      "value": 0.7249020173041091
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.dp_mag.bACC",
+      "value": 0.7255129727589374
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.dp_mag.subject_macro_AUC",
+      "value": 0.7237567697915696
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.dp_mag.subject_macro_bACC",
+      "value": 0.7237567697915696
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.hsmm.AUC",
+      "value": 0.771893796487144
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.hsmm.F1_macro",
+      "value": 0.6891741348818166
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.hsmm.bACC",
+      "value": 0.6891740136536351
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.hsmm.subject_macro_AUC",
+      "value": 0.7855570489967599
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.hsmm.subject_macro_bACC",
+      "value": 0.6842670203617066
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.position.AUC",
+      "value": 0.7941756049972217
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.position.F1_macro",
+      "value": 0.33392753503026285
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.position.bACC",
+      "value": 0.5
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.position.subject_macro_AUC",
+      "value": 0.822500013117849
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.position.subject_macro_bACC",
+      "value": 0.5
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.position_marg.AUC",
+      "value": 0.8510738470196629
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.position_marg.F1_macro",
+      "value": 0.7978219234870574
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.position_marg.bACC",
+      "value": 0.7981996356799376
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.position_marg.subject_macro_AUC",
+      "value": 0.84726535068605
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.position_marg.subject_macro_bACC",
+      "value": 0.7940463824305224
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.single.AUC",
+      "value": 0.632420309634865
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.single.F1_macro",
+      "value": 0.5354875508959306
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.single.bACC",
+      "value": 0.5677647557217866
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.single.subject_macro_AUC",
+      "value": 0.644354043987177
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_off10.json",
+      "key": "methods.single.subject_macro_bACC",
+      "value": 0.5676571143269037
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.blockdir.AUC",
+      "value": 0.42155769976921653
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.blockdir.F1_macro",
+      "value": 0.3901523825100861
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.blockdir.bACC",
+      "value": 0.4461580049843299
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.blockdir.subject_macro_AUC",
+      "value": 0.4304392518544169
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.blockdir.subject_macro_bACC",
+      "value": 0.45083917408341423
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.blockdir.subset_blk_ge2.AUC",
+      "value": 0.37311019376659654
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.blockdir.subset_blk_ge2.F1_macro",
+      "value": 0.395739313522962
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.blockdir.subset_blk_ge2.bACC",
+      "value": 0.41983934331222594
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.blockdir.subset_blk_ge2.subject_macro_AUC",
+      "value": 0.3872624035683339
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.blockdir.subset_blk_ge2.subject_macro_bACC",
+      "value": 0.43224328726749023
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.dp_mag.AUC",
+      "value": 0.737296932995449
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.dp_mag.F1_macro",
+      "value": 0.736299052774019
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.dp_mag.bACC",
+      "value": 0.737296932995449
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.dp_mag.subject_macro_AUC",
+      "value": 0.7332647973506343
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.dp_mag.subject_macro_bACC",
+      "value": 0.7332647973506343
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.dp_mag.subset_blk_ge2.AUC",
+      "value": 0.7298796737462651
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.dp_mag.subset_blk_ge2.F1_macro",
+      "value": 0.7248876228025519
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.dp_mag.subset_blk_ge2.bACC",
+      "value": 0.7298796737462651
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.dp_mag.subset_blk_ge2.subject_macro_AUC",
+      "value": 0.7269683972756621
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.dp_mag.subset_blk_ge2.subject_macro_bACC",
+      "value": 0.726968397275662
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.hsmm.AUC",
+      "value": 0.7326841443258504
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.hsmm.F1_macro",
+      "value": 0.6631958694092721
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.hsmm.bACC",
+      "value": 0.6683490940032102
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.hsmm.subject_macro_AUC",
+      "value": 0.7587707487633281
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.hsmm.subject_macro_bACC",
+      "value": 0.6693410100631674
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.hsmm.subset_blk_ge2.AUC",
+      "value": 0.6881754397632428
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.hsmm.subset_blk_ge2.F1_macro",
+      "value": 0.59776016173011
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.hsmm.subset_blk_ge2.bACC",
+      "value": 0.6062614305190703
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.hsmm.subset_blk_ge2.subject_macro_AUC",
+      "value": 0.71720187285481
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.hsmm.subset_blk_ge2.subject_macro_bACC",
+      "value": 0.6066146194706362
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.position.AUC",
+      "value": 0.9965773363171835
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.position.F1_macro",
+      "value": 0.9846055100227116
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.position.bACC",
+      "value": 0.9846347355206946
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.position.subject_macro_AUC",
+      "value": 0.9967257250971183
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.position.subject_macro_bACC",
+      "value": 0.984981343281936
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.single.AUC",
+      "value": 0.5794120926573506
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.single.F1_macro",
+      "value": 0.5447386531934878
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.single.bACC",
+      "value": 0.5624752871626557
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.single.subject_macro_AUC",
+      "value": 0.583692625703338
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/protocol_segment_smoke.json",
+      "key": "methods.single.subject_macro_bACC",
+      "value": 0.5610621192325085
+    },
+    {
       "file": "test/_orphans/causal_covariance_transport_results.json",
       "key": "methods.diagonal.all.AUC",
       "value": 0.660426461487161
@@ -48183,6 +48851,10 @@
     "test/09_database/database_explore_results.json": 36,
     "test/09_database/database_models_results.json": 62,
     "test/09_database/database_training_results.json": 24,
+    "test/10_projects/protocol_20261102/protocol_segment.json": 2136,
+    "test/10_projects/protocol_20261102/protocol_segment_off10.json": 2136,
+    "test/10_projects/protocol_20261102/protocol_segment_smoke.json": 270,
+    "test/10_projects/protocol_20261102/realorder_manifest.json": 0,
     "test/_orphans/causal_covariance_transport_results.json": 48,
     "test/_orphans/causal_covariance_transport_smoke_results.json": 48,
     "test/audit/direction_scoring/direction_scoring.json": 312,
@@ -50216,6 +50888,10 @@
       "reference": "*/*.npz"
     },
     {
+      "script": "test/10_projects/protocol_20261102/build_realorder.py",
+      "reference": "sub-*.npz"
+    },
+    {
       "script": "test/audit/common.py",
       "reference": "depositioned_aperiodic_emg_oof.npz"
     },
@@ -50337,11 +51013,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 901,
-    "py_scripts": 218,
-    "json_results": 255,
-    "metrics_entries": 8500,
-    "missing_reference_count": 523,
+    "files_scanned": 911,
+    "py_scripts": 220,
+    "json_results": 259,
+    "metrics_entries": 8620,
+    "missing_reference_count": 524,
     "database_window_files": 116
   }
 }
