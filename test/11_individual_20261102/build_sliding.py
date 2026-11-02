@@ -54,7 +54,7 @@ def _paths():
 
 
 def build_one(args):
-    sid, stride = args
+    sid, stride, outdir = args
     _install_torch_shim()
     _paths()
     import mne
@@ -86,8 +86,9 @@ def build_one(args):
             end += stride
     raw.close()
     F = np.asarray(F, dtype=np.float32)
-    OUT.mkdir(parents=True, exist_ok=True)
-    np.savez_compressed(OUT / f"sub-{sid}.npz", F=F, y=np.asarray(Y, dtype=np.int8),
+    out = Path(outdir)
+    out.mkdir(parents=True, exist_ok=True)
+    np.savez_compressed(out / f"sub-{sid}.npz", F=F, y=np.asarray(Y, dtype=np.int8),
                         t=np.asarray(T, dtype=np.float32), blk=np.asarray(B, dtype=np.int16))
     return sid, F.shape[0], int(sum(1 for _ in trials)), round(time.perf_counter() - t0, 1)
 
@@ -97,6 +98,7 @@ def main():
     ap.add_argument("--stride", type=float, default=2.0)
     ap.add_argument("--subjects", default="")
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--out", default=str(OUT))
     a = ap.parse_args()
     _install_torch_shim()
     _paths()
@@ -104,18 +106,18 @@ def main():
         subs = [s.strip().zfill(3) for s in a.subjects.split(",")]
     else:
         subs = sorted(p.name for p in (ROOT / "EEG_dataset").iterdir() if p.is_dir())
-    print(f"[build] {len(subs)} subjects stride={a.stride}s workers={a.workers}", flush=True)
+    print(f"[build] {len(subs)} subjects stride={a.stride}s workers={a.workers} out={a.out}", flush=True)
     t0 = time.perf_counter()
     with Pool(a.workers) as pool:
         for i, (sid, n, ntr, sec) in enumerate(pool.imap_unordered(
-                build_one, [(s, a.stride) for s in subs]), 1):
+                build_one, [(s, a.stride, a.out) for s in subs]), 1):
             print(f"[{i}/{len(subs)}] {sid} rows={n} trials={ntr} {sec}s "
                   f"elapsed={time.perf_counter() - t0:.0f}s", flush=True)
     meta = {"stride_s": a.stride, "window_s": WIN, "subjects": subs,
-            "notes": "6 s 窗、2 s 步长滑窗；特征函数与 database/realorder 完全一致"}
-    (OUT / "manifest.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1),
-                                       encoding="utf-8")
-    print(f"[done] {time.perf_counter() - t0:.0f}s -> {OUT}", flush=True)
+            "notes": "6 s 窗、指定步长滑窗；特征函数与 database/realorder 完全一致"}
+    (Path(a.out) / "manifest.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1),
+                                               encoding="utf-8")
+    print(f"[done] {time.perf_counter() - t0:.0f}s -> {a.out}", flush=True)
 
 
 if __name__ == "__main__":
