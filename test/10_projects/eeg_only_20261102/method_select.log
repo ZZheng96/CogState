@@ -1,0 +1,11 @@
+﻿[load] 17 个方法 × 16067 窗 ['lr_c001', 'lr_c1', 'lda_shrink', 'nystroem_svc', 'ridge', 'hgb', 'extratrees', 'rf', 'knn50_pca32', 'pca16_lr', 'pca64_lr', 'gnb_pca32', 'mlp256', 'lr_emg', 'lr_stft', 'lr_dwt', 'lr_hilbert']
+rule               AUC    bACC     F1m   smACC  top10Δ  bot10Δ
+consensus       0.6419  0.6010  0.6008  0.6006 +0.000 +0.000
+median          0.6391  0.5984  0.5980  0.5982 -0.005 -0.002
+bimodality      0.5671  0.5494  0.5458  0.5503 -0.118 +0.014
+otsu_sep        0.6355  0.6061  0.6059  0.6063 -0.084 +0.064
+agreement       0.6340  0.5951  0.5951  0.5946 -0.010 +0.004
+top3_agree      0.6338  0.5943  0.5943  0.5937 -0.017 -0.005
+diverge         0.5404  0.5253  0.5201  0.5268 -0.295 +0.123
+oracle_rule     0.6860  0.6407  0.6407  0.6407   （每人挑最优规则，诊断上界）
+[done] method_select.json

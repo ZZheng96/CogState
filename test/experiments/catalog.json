@@ -21,13 +21,13 @@
     },
     {
       "path": "README.md",
-      "size": 55936,
-      "sha256": "e85e9b505a150869e2aa4fdeab5888dbfde613b490deb29ca6e83361b9e5ee5b"
+      "size": 57707,
+      "sha256": "82b95ac232abee77549f3b494376790fe26eb7107a92a496f042ec37fd847e89"
     },
     {
       "path": "test/experiments/实验方法索引.md",
-      "size": 58666,
-      "sha256": "41f4877784e498d7476c5db5482f147aae72aafda95097b36cfa3282821f092b"
+      "size": 59973,
+      "sha256": "5a8d8b647436d2ec63b06e1c67e4af15ae0fc1a139d97061616cd0ab8382c09b"
     },
     {
       "path": "test/reports/卡尔曼深度学习实验报告.md",
@@ -46,8 +46,8 @@
     },
     {
       "path": "研究报告.md",
-      "size": 273855,
-      "sha256": "d0ff3e94632fab6d7824a7c63e77586e1596879f619b9e0f919f221f93f36871"
+      "size": 273981,
+      "sha256": "a4bb899dcb8c7bcaa10ce295c23cf426dd4d2092dc5be108ebfcaccc564e163f"
     },
     {
       "path": "认知状态解码理论.md",
@@ -4226,6 +4226,90 @@
           "status": "has_result_json"
         },
         {
+          "id": "test/10_projects/eeg_only_20261102/method_bank.py",
+          "path": "test/10_projects/eeg_only_20261102/method_bank.py",
+          "summary": "E9：同一协议下的方法银行 → 方法 × 57 被试矩阵。 目的：用户要求「每一种方法 × 每一个被试」的 n×57 效果表，并从中找规律。 历史 JSON 的列协议不完全一致（有的含历史/融合/时间表），不能直接横比。 因此在 realo",
+          "artifacts": [
+            {
+              "path": "test/10_projects/eeg_only_20261102/method_bank.json",
+              "kind": "result",
+              "size": 140447,
+              "sha256": "995c06f41233b6f898e9062b0ea577a290f30d1fae4893bc2ac058826f57c6b9"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/method_bank.log",
+              "kind": "log",
+              "size": 1305,
+              "sha256": "b5d1cbf54c4153337dfcdd7c286bf4da55a1bf8137f2930fb0037b0d5e505f05"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+              "kind": "result",
+              "size": 99133,
+              "sha256": "342f91cd970a2d617653c45b0a637dd86efab2b8b264a88874ae45b01008143e"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/method_bank_scores.npz",
+              "kind": "array",
+              "size": 1404539,
+              "sha256": "3366c7ba04f4f1e9792b2f2a2cfa729fa9ec058794b865655f1bbd3e8fd1418d"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/10_projects/eeg_only_20261102/method_select.py",
+          "path": "test/10_projects/eeg_only_20261102/method_select.py",
+          "summary": "E11：能否用**无标签**的逐被试判据，为每个人挑方法/做集成？ E10 的矩阵显示：同一被试在不同方法上的 AUC 差异很大（被试×方法占 34% 方差）， 逐被试取最优方法的 oracle 均值 0.743，比跨方法均值高 +0.13",
+          "artifacts": [
+            {
+              "path": "test/10_projects/eeg_only_20261102/method_select.json",
+              "kind": "result",
+              "size": 16731,
+              "sha256": "1cb19af4f9b5a0faad86527da3458f1a6c2086f646007189342019001fd1a1f3"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/method_select.log",
+              "kind": "log",
+              "size": 851,
+              "sha256": "1cee005fafdd9299e8998bbbb445f06a48192f12f01de1a4dcc269c3cf7e4c69"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/10_projects/eeg_only_20261102/method_subject_matrix.py",
+          "path": "test/10_projects/eeg_only_20261102/method_subject_matrix.py",
+          "summary": "E10：把历史每次实验的逐被试结果汇成「方法 × 57 被试」矩阵，并找规律。 用户要求：不再用整体指标盲目尝试，而是看清每种方法在每个人身上的效果。 做法： 1. 从所有历史 JSON 抽取逐被试卷级 AUC / bACC，统一被试键为 ",
+          "artifacts": [
+            {
+              "path": "test/10_projects/eeg_only_20261102/method_subject_matrix.csv",
+              "kind": "other",
+              "size": 26301,
+              "sha256": "f994c402d5259038d75a6221101118959b24e95fc31e2f2846146b177a80c867"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/method_subject_matrix.json",
+              "kind": "result",
+              "size": 124650,
+              "sha256": "fceb83d87d9d80ceac4cb6af95c69786a88c7979709044573a0cbd3842d11de8"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/method_subject_matrix.log",
+              "kind": "log",
+              "size": 1400,
+              "sha256": "37db0acc1c36245dd321d0b2036cc1445a5f5571f3b27b52b20fff02f0c73756"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/method_subject_matrix.md",
+              "kind": "other",
+              "size": 5951,
+              "sha256": "54d8256d17cced8b705a7e41e8a6c4d33f1dc87465c679cae7842e9bf52519e8"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
           "id": "test/10_projects/eeg_only_20261102/per_subject_audit.py",
           "path": "test/10_projects/eeg_only_20261102/per_subject_audit.py",
           "summary": "E7：逐被试审计 → 按信号属性分组 → 分组能否提升指标？ 背景（E6）：跨被试 LR 的逐被试卷级 AUC 中位 0.669、最低 0.333、9/57 低于 0.5； 而给每人自己的方向（oracle）后中位 0.806。个体差异是主",
@@ -4261,6 +4345,26 @@
               "kind": "log",
               "size": 1445,
               "sha256": "ca2981aefeb2c47c630f91131807343f4a86bddf94d2b692ab9cf9afd043caf3"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/10_projects/eeg_only_20261102/subject_why_good.py",
+          "path": "test/10_projects/eeg_only_20261102/subject_why_good.py",
+          "summary": "E12：效果好的被试为什么好？拆成「本人可分性」×「方向可迁移性」。 可用量（均为逐被试，来自 test/audit/direction_scoring 与 test/theory）： auc_own_cv   同人交叉拟合（用本人标签训练",
+          "artifacts": [
+            {
+              "path": "test/10_projects/eeg_only_20261102/subject_why_good.json",
+              "kind": "result",
+              "size": 17809,
+              "sha256": "55671eda4eb067ba6e4ddf80cca07e772a6819e3f48779e8a6e6c0e76d24b831"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/subject_why_good.log",
+              "kind": "log",
+              "size": 3585,
+              "sha256": "018372356525ea699059964aa0f210b4e4695ace5ee20bc2dd08d2d1de1168cf"
             }
           ],
           "status": "has_result_json"
@@ -4459,10 +4563,150 @@
           "suggested_script": null
         },
         {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_extratrees.npz",
+          "kind": "array",
+          "size": 122730,
+          "sha256": "f8b5f82c76dc7993528081b75710fab4e7ab3644ef6b6cf8b70bd2ea8aa94a0b",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_gnb_pca32.npz",
+          "kind": "array",
+          "size": 69085,
+          "sha256": "34f75779a8d09ab72fdc1070bfb82c58232abd87ad55775919ee564e462b2b60",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_hgb.npz",
+          "kind": "array",
+          "size": 122753,
+          "sha256": "3726a867a7532e0043e8c8341b063fb65b45a4037df8994c23826080aaa3cbaa",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_knn50_pca32.npz",
+          "kind": "array",
+          "size": 122787,
+          "sha256": "5a9cbbd9e94bddf8d84fe714be28399fb2fc2e8effdfc29a46d373ebc06df7e6",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_lda_shrink.npz",
+          "kind": "array",
+          "size": 70328,
+          "sha256": "c80a943d8cfa34210e6ac5e2410659f6f3fa17f34fba871247763f14a26c0432",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_lr_c001.npz",
+          "kind": "array",
+          "size": 70339,
+          "sha256": "3df8bf6222eaeeba4b361018c69007daa463748bad55ed854a2c049dd7c28626",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_lr_c1.npz",
+          "kind": "array",
+          "size": 70566,
+          "sha256": "9e58e2b11fc99d91a65c090059177091b072ea2d236a9e9633674df8bdefc59b",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_lr_dwt.npz",
+          "kind": "array",
+          "size": 70450,
+          "sha256": "8200de1947cd9c9cb2cc61046b6b7c370ce924f39c4d37eb2c5909f18660bea0",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_lr_emg.npz",
+          "kind": "array",
+          "size": 70070,
+          "sha256": "c6dbd65992154d1eb1846a5c96b343a21c49e9507867c3d11c5294de8a45018f",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_lr_hilbert.npz",
+          "kind": "array",
+          "size": 70396,
+          "sha256": "5476c32c48b2af20d181bc93e4f069ae35cc5b40511b33e7843190778fa8efd6",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_lr_stft.npz",
+          "kind": "array",
+          "size": 70334,
+          "sha256": "35b5af8168b55c1b8270ccc59290c4425cf4b5a72abdc6620c64b9e54aad017c",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_mlp256.npz",
+          "kind": "array",
+          "size": 69232,
+          "sha256": "87e65ca0cc48a2179544201bc38d0548f5746635270b16d78fb6c6f843214055",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_nystroem_svc.npz",
+          "kind": "array",
+          "size": 69550,
+          "sha256": "0e9913bdc0825ab23ad2fb9f340eed4dc40708dcbd6f96d72b26bdf9ecc38204",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_pca16_lr.npz",
+          "kind": "array",
+          "size": 70209,
+          "sha256": "6b48e1c38254b3c2fab3cb9fef116f1550d93fe4e2e74837a836e9e741c9f0fc",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_pca64_lr.npz",
+          "kind": "array",
+          "size": 70382,
+          "sha256": "0062b0fd3003d0e16b934aeb8c269314d28b1e664be079a7093f44fc5cd596f4",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_rf.npz",
+          "kind": "array",
+          "size": 122756,
+          "sha256": "941af9550f4a0f0e337b5130f5991f123074a75a3035e2ae2824bc77e582bd72",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/mb_scores_ridge.npz",
+          "kind": "array",
+          "size": 70291,
+          "sha256": "2a900633e909d34c3e42e49a676f8cf03e71f731b2c39b319522bcca8cdb056b",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/subject_summary.csv",
+          "kind": "other",
+          "size": 7923,
+          "sha256": "ada7486ff5039ca84bf6123dd51ee2488980cd6056bef622b2ec2e947bd10369",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/subject_summary.md",
+          "kind": "other",
+          "size": 5130,
+          "sha256": "08dfa915f56abae376d13ead9f29b7fa5361a7633fa769eeb75d6575f8563d3e",
+          "suggested_script": null
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/报告_E10_方法被试矩阵与个体规律.md",
+          "kind": "other",
+          "size": 12720,
+          "sha256": "d7b9fed12488fd30031f59842594fcc7e6c5948282e4ef95adcf4776c4e2fa97",
+          "suggested_script": null
+        },
+        {
           "path": "test/10_projects/eeg_only_20261102/报告_E1_纯EEG天花板.md",
           "kind": "other",
-          "size": 10604,
-          "sha256": "f850aa72be8908d47f870fa1ecca138a53ba5b7229c4d253f265254dc0fc04df",
+          "size": 10821,
+          "sha256": "a23258792c2533b987639cb7d126cdd2723275e6726494eac7ca1820d6265154",
           "suggested_script": null
         },
         {
@@ -39050,6 +39294,566 @@
       "value": 0.4736613422510554
     },
     {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.consensus_all.AUC",
+      "value": 0.6419348165833187
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.consensus_all.F1_macro",
+      "value": 0.6007982528367097
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.consensus_all.bACC",
+      "value": 0.6010453205976263
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.consensus_all.subject_macro_bACC",
+      "value": 0.600612927831391
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.extratrees.AUC",
+      "value": 0.6007840349965431
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.extratrees.F1_macro",
+      "value": 0.5705595435223731
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.extratrees.bACC",
+      "value": 0.5721378438239599
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.extratrees.subject_macro_bACC",
+      "value": 0.5721830981688693
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.gnb_pca32.AUC",
+      "value": 0.5672103653954202
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.gnb_pca32.F1_macro",
+      "value": 0.5494437081732012
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.gnb_pca32.bACC",
+      "value": 0.5494624450661065
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.gnb_pca32.subject_macro_bACC",
+      "value": 0.5484859440996916
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.hgb.AUC",
+      "value": 0.6347885140011894
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.hgb.F1_macro",
+      "value": 0.5999023247987776
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.hgb.bACC",
+      "value": 0.6004559036677758
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.hgb.subject_macro_bACC",
+      "value": 0.6013078222826437
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.knn50_pca32.AUC",
+      "value": 0.5500340426666023
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.knn50_pca32.F1_macro",
+      "value": 0.4848534203288
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.knn50_pca32.bACC",
+      "value": 0.5328985804347482
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.knn50_pca32.subject_macro_bACC",
+      "value": 0.5316322929743987
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lda_shrink.AUC",
+      "value": 0.6383529841798445
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lda_shrink.F1_macro",
+      "value": 0.6001090318645471
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lda_shrink.bACC",
+      "value": 0.6001090000629099
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lda_shrink.subject_macro_bACC",
+      "value": 0.5997421898752737
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lr_c001.AUC",
+      "value": 0.6371346069040449
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lr_c001.F1_macro",
+      "value": 0.5981813012683346
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lr_c001.bACC",
+      "value": 0.5981917254472109
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lr_c001.subject_macro_bACC",
+      "value": 0.5979113839755226
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lr_c1.AUC",
+      "value": 0.6340212989020504
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lr_c1.F1_macro",
+      "value": 0.6011376147096072
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lr_c1.bACC",
+      "value": 0.6011985590825432
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lr_c1.subject_macro_bACC",
+      "value": 0.6012206962079298
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lr_dwt.AUC",
+      "value": 0.5701382361591072
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lr_dwt.F1_macro",
+      "value": 0.5422802062066839
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lr_dwt.bACC",
+      "value": 0.5465289108546987
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lr_dwt.subject_macro_bACC",
+      "value": 0.5478239336966002
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lr_emg.AUC",
+      "value": 0.5785499048137912
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lr_emg.F1_macro",
+      "value": 0.5514974336033949
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lr_emg.bACC",
+      "value": 0.5518587574876048
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank.json",
+      "key": "methods.lr_emg.subject_macro_bACC",
+      "value": 0.5534077487893315
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "extratrees.pooled.AUC",
+      "value": 0.6007840349965431
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "extratrees.pooled.F1_macro",
+      "value": 0.5705595435223731
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "extratrees.pooled.bACC",
+      "value": 0.5721378438239599
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "extratrees.pooled.subject_macro_bACC",
+      "value": 0.5721830981688693
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "gnb_pca32.pooled.AUC",
+      "value": 0.5672103653954202
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "gnb_pca32.pooled.F1_macro",
+      "value": 0.5494437081732012
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "gnb_pca32.pooled.bACC",
+      "value": 0.5494624450661065
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "gnb_pca32.pooled.subject_macro_bACC",
+      "value": 0.5484859440996916
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "hgb.pooled.AUC",
+      "value": 0.6347885140011894
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "hgb.pooled.F1_macro",
+      "value": 0.5999023247987776
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "hgb.pooled.bACC",
+      "value": 0.6004559036677758
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "hgb.pooled.subject_macro_bACC",
+      "value": 0.6013078222826437
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "knn50_pca32.pooled.AUC",
+      "value": 0.5500340426666023
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "knn50_pca32.pooled.F1_macro",
+      "value": 0.4848534203288
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "knn50_pca32.pooled.bACC",
+      "value": 0.5328985804347482
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "knn50_pca32.pooled.subject_macro_bACC",
+      "value": 0.5316322929743987
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lda_shrink.pooled.AUC",
+      "value": 0.6383529841798445
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lda_shrink.pooled.F1_macro",
+      "value": 0.6001090318645471
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lda_shrink.pooled.bACC",
+      "value": 0.6001090000629099
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lda_shrink.pooled.subject_macro_bACC",
+      "value": 0.5997421898752737
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_c001.pooled.AUC",
+      "value": 0.6371346069040449
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_c001.pooled.F1_macro",
+      "value": 0.5981813012683346
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_c001.pooled.bACC",
+      "value": 0.5981917254472109
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_c001.pooled.subject_macro_bACC",
+      "value": 0.5979113839755226
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_c1.pooled.AUC",
+      "value": 0.6340212989020504
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_c1.pooled.F1_macro",
+      "value": 0.6011376147096072
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_c1.pooled.bACC",
+      "value": 0.6011985590825432
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_c1.pooled.subject_macro_bACC",
+      "value": 0.6012206962079298
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_dwt.pooled.AUC",
+      "value": 0.5701382361591072
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_dwt.pooled.F1_macro",
+      "value": 0.5422802062066839
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_dwt.pooled.bACC",
+      "value": 0.5465289108546987
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_dwt.pooled.subject_macro_bACC",
+      "value": 0.5478239336966002
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_emg.pooled.AUC",
+      "value": 0.5785499048137912
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_emg.pooled.F1_macro",
+      "value": 0.5514974336033949
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_emg.pooled.bACC",
+      "value": 0.5518587574876048
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_emg.pooled.subject_macro_bACC",
+      "value": 0.5534077487893315
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_hilbert.pooled.AUC",
+      "value": 0.5896248969190534
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_hilbert.pooled.F1_macro",
+      "value": 0.5651276840267012
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_hilbert.pooled.bACC",
+      "value": 0.5651663101251289
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_bank_partial.json",
+      "key": "lr_hilbert.pooled.subject_macro_bACC",
+      "value": 0.5661510275779026
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "oracle_rule.AUC",
+      "value": 0.6859710434348478
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "oracle_rule.F1_macro",
+      "value": 0.6407107377130603
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "oracle_rule.bACC",
+      "value": 0.6407294474179481
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "oracle_rule.subject_macro_bACC",
+      "value": 0.6407239952014253
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.agreement.AUC",
+      "value": 0.633979679146705
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.agreement.F1_macro",
+      "value": 0.5950593083018296
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.agreement.bACC",
+      "value": 0.5950890625576223
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.agreement.subject_macro_bACC",
+      "value": 0.5946016184516877
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.bimodality.AUC",
+      "value": 0.5671070985080418
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.bimodality.F1_macro",
+      "value": 0.5457920793624748
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.bimodality.bACC",
+      "value": 0.5493716207191386
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.bimodality.subject_macro_bACC",
+      "value": 0.5503333049092678
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.consensus.AUC",
+      "value": 0.6419348165833187
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.consensus.F1_macro",
+      "value": 0.6007982528367097
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.consensus.bACC",
+      "value": 0.6010453205976263
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.consensus.subject_macro_bACC",
+      "value": 0.600612927831391
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.diverge.AUC",
+      "value": 0.5404141150161783
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.diverge.F1_macro",
+      "value": 0.520063165489955
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.diverge.bACC",
+      "value": 0.5253279531354736
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.diverge.subject_macro_bACC",
+      "value": 0.5268409987269217
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.median.AUC",
+      "value": 0.6390666405729705
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.median.F1_macro",
+      "value": 0.5979875188064601
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.median.bACC",
+      "value": 0.5983868316085772
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.median.subject_macro_bACC",
+      "value": 0.5981837423639518
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.otsu_sep.AUC",
+      "value": 0.6355329978340993
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.otsu_sep.F1_macro",
+      "value": 0.6058827492991972
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.otsu_sep.bACC",
+      "value": 0.6060799164381919
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.otsu_sep.subject_macro_bACC",
+      "value": 0.6062855972976997
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.top3_agree.AUC",
+      "value": 0.6337809858768644
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.top3_agree.F1_macro",
+      "value": 0.5942509612886546
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.top3_agree.bACC",
+      "value": 0.5942794452021534
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/method_select.json",
+      "key": "rules.top3_agree.subject_macro_bACC",
+      "value": 0.593744459440786
+    },
+    {
       "file": "test/10_projects/eeg_only_20261102/per_subject_audit.json",
       "key": "abstain_25pct.AUC",
       "value": 0.6089670894031392
@@ -51647,8 +52451,13 @@
     "test/10_projects/eeg_only_20261102/direction_groups.json": 24,
     "test/10_projects/eeg_only_20261102/feature_probe.json": 30,
     "test/10_projects/eeg_only_20261102/hp_check.json": 8,
+    "test/10_projects/eeg_only_20261102/method_bank.json": 3150,
+    "test/10_projects/eeg_only_20261102/method_bank_partial.json": 2975,
+    "test/10_projects/eeg_only_20261102/method_select.json": 32,
+    "test/10_projects/eeg_only_20261102/method_subject_matrix.json": 0,
     "test/10_projects/eeg_only_20261102/per_subject_audit.json": 139,
     "test/10_projects/eeg_only_20261102/sign_consistency.json": 16,
+    "test/10_projects/eeg_only_20261102/subject_why_good.json": 0,
     "test/10_projects/protocol_20261102/boundary_refine.json": 20,
     "test/10_projects/protocol_20261102/boundary_refine_smoke.json": 20,
     "test/10_projects/protocol_20261102/eval_stream_bdf.json": 118,
@@ -53726,6 +54535,10 @@
       "reference": "sub-*.npz"
     },
     {
+      "script": "test/10_projects/eeg_only_20261102/method_bank.py",
+      "reference": "realorder.npz"
+    },
+    {
       "script": "test/10_projects/eeg_only_20261102/per_subject_audit.py",
       "reference": "realorder.npz"
     },
@@ -53863,11 +54676,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 968,
-    "py_scripts": 238,
-    "json_results": 278,
-    "metrics_entries": 9101,
-    "missing_reference_count": 535,
+    "files_scanned": 1004,
+    "py_scripts": 242,
+    "json_results": 283,
+    "metrics_entries": 9213,
+    "missing_reference_count": 536,
     "database_window_files": 116
   }
 }

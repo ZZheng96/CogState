@@ -1,0 +1,25 @@
+﻿[data] n=16067 subs=57 dim=878 elapsed=0.3s
+  subset emg: 18
+  subset stft: 440
+  subset dwt: 257
+  subset hilbert: 130
+[lr_c001       ] (cached) AUC=0.6371 bACC=0.5982
+[lr_c1         ] (cached) AUC=0.6340 bACC=0.6012
+[lda_shrink    ] (cached) AUC=0.6384 bACC=0.6001
+[nystroem_svc  ] (cached) AUC=0.6151 bACC=0.5827
+[ridge         ] (cached) AUC=0.6369 bACC=0.5981
+[hgb           ] (cached) AUC=0.6348 bACC=0.6005
+[extratrees    ] AUC=0.6008 bACC=0.5721 F1m=0.5706 smACC=0.5722 (30.9s) elapsed=31.3s
+[rf            ] AUC=0.6145 bACC=0.5844 F1m=0.5840 smACC=0.5850 (53.8s) elapsed=85.1s
+[knn50_pca32   ] AUC=0.5500 bACC=0.5329 F1m=0.4849 smACC=0.5316 (4.3s) elapsed=89.4s
+[pca16_lr      ] (cached) AUC=0.5963 bACC=0.5740
+[pca64_lr      ] (cached) AUC=0.6016 bACC=0.5755
+[gnb_pca32     ] AUC=0.5672 bACC=0.5495 F1m=0.5494 smACC=0.5485 (2.5s) elapsed=92.0s
+[mlp256        ] AUC=0.6253 bACC=0.5881 F1m=0.5877 smACC=0.5888 (28.1s) elapsed=120.1s
+[lr_emg        ] (cached) AUC=0.5785 bACC=0.5519
+[lr_stft       ] (cached) AUC=0.6155 bACC=0.5854
+[lr_dwt        ] (cached) AUC=0.5701 bACC=0.5465
+[lr_hilbert    ] (cached) AUC=0.5896 bACC=0.5652
+[consensus_all ] AUC=0.6419 bACC=0.6010 F1m=0.6008
+[oracle] 逐被试选方法 AUC 均值=0.7404 中位=0.7704 elapsed=120.6s
+[done] 120.6s
