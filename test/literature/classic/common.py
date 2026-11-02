@@ -8,6 +8,22 @@ Protocols
           normalisation / alignment (uses future unlabelled windows of the same subject).
 Baseline for all paired bootstraps: plain LR(C=.01) on 889 features (858 + 31), STRICT folds, threshold .5.
 """
+# --- test layout bootstrap (generated 2026-11-02): locate test/ root, shared modules and cache ---
+import sys as _sys
+from pathlib import Path as _Path
+_HERE = _Path(__file__).resolve().parent
+_TEST = _HERE
+while _TEST.name != "test" and _TEST.parent != _TEST:
+    _TEST = _TEST.parent
+CACHE_DIR = _TEST / "cache"
+if str(_TEST) not in _sys.path:
+    _sys.path.append(str(_TEST))
+for _d in sorted(_TEST.iterdir()):
+    if _d.is_dir() and _d.name not in {"cache", "results", "pretrained_cache", "reports", "experiments", "_orphans", "__pycache__"}:
+        if str(_d) not in _sys.path:
+            _sys.path.append(str(_d))
+# --- end bootstrap ---
+
 import json, sys, time, warnings
 from pathlib import Path
 
@@ -61,7 +77,7 @@ def setup():
     man, subs, data = load_db()
     Fc = np.vstack([data[s][0] for s in subs]); y = np.concatenate([data[s][1] for s in subs])
     g = np.concatenate([np.full(len(data[s][1]), s) for s in subs])
-    A_ = np.load(TEST / 'depositioned_aperiodic_emg_oof.npz')
+    A_ = np.load(CACHE_DIR / 'depositioned_aperiodic_emg_oof.npz')
     assert np.array_equal(A_['y'], y) and np.array_equal(A_['groups'], g)
     Fn = A_['new_features']; fold = A_['fold']
     Xa, ya, ga, _ = arrange(subs, data, 0, 'independent'); fold_of = {}

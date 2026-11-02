@@ -3,6 +3,22 @@
 load(): audit loading (889 = 858 + 31 features, strict SGKF folds asserted == npz, high/mid/low groups) + real recording
 time / block (trial id 0..5, alternating relax/task 5-min blocks) from audit/literature_protocol/real_time.npz.
 """
+# --- test layout bootstrap (generated 2026-11-02): locate test/ root, shared modules and cache ---
+import sys as _sys
+from pathlib import Path as _Path
+_HERE = _Path(__file__).resolve().parent
+_TEST = _HERE
+while _TEST.name != "test" and _TEST.parent != _TEST:
+    _TEST = _TEST.parent
+CACHE_DIR = _TEST / "cache"
+if str(_TEST) not in _sys.path:
+    _sys.path.append(str(_TEST))
+for _d in sorted(_TEST.iterdir()):
+    if _d.is_dir() and _d.name not in {"cache", "results", "pretrained_cache", "reports", "experiments", "_orphans", "__pycache__"}:
+        if str(_d) not in _sys.path:
+            _sys.path.append(str(_d))
+# --- end bootstrap ---
+
 import json, re, sys, time, warnings
 from pathlib import Path
 
@@ -45,7 +61,7 @@ def load():
             assert np.unique(D['y'][q & (D['block'] == b)]).size == 1
     D['F'] = np.hstack([D['Fc'], D['Fn']])
     man = json.loads((TEST.parent / 'database' / 'manifest.json').read_text(encoding='utf-8'))
-    ap = json.loads((TEST / 'depositioned_aperiodic_emg.json').read_text(encoding='utf-8'))
+    ap = json.loads((TEST / '07_depositioned/depositioned_aperiodic_emg.json').read_text(encoding='utf-8'))
     D['names'] = list(man['feature_names']) + list(ap['meta']['new_feature_names'])
     assert len(D['names']) == 889
     print(f'[load] rows={len(D["y"])} subjects={len(D["subs"])} real time/block loaded {el()}', flush=True)

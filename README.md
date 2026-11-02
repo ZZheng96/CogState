@@ -2,18 +2,18 @@
 
 ## 项目入口（2026-11-02 整理）
 
-- [实验方法与证据索引](实验方法索引.md)：先按验证协议读结论，再找方法族。
-- [全量实验文件目录](experiments/实验文件目录.md)：按方法族检索脚本及结果、日志、模型；由 [目录生成器](tools/build_experiment_catalog.py) 重建。
-- [机器可读目录](experiments/catalog.json)：产物路径、哈希及原始 JSON 指标位置，不混合协议排名。
-- [整理记录与后续研究入口](experiments/整理与研究入口.md)：保留/清理策略、缺失依赖、理论假设与下一步。
+- [实验方法与证据索引](test/experiments/实验方法索引.md)：先按验证协议读结论，再找方法族。
+- [全量实验文件目录](test/experiments/实验文件目录.md)：按方法族检索脚本及结果、日志、模型；由 [目录生成器](test/experiments/build_catalog.py) 重建。
+- [机器可读目录](test/experiments/catalog.json)：产物路径、哈希及原始 JSON 指标位置，不混合协议排名。
+- [整理记录与后续研究入口](test/experiments/整理与研究入口.md)：保留/清理策略、缺失依赖、理论假设与下一步。
 - 规则原文：[赛题要求和操作细则](赛题要求和操作细则.md)、[数据说明](EEG_dataset/README.txt)。
-- 历史原文：[(1) Solve Project with C....md]((1)%20Solve%20Project%20with%20C....md)；旧机器绝对路径仅作历史记录，不代表本机可运行路径。
+- 历史原文：[(1) Solve Project with C....md](<(1) Solve Project with C....md>)；旧机器绝对路径仅作历史记录，不代表本机可运行路径。
 
-目录职责：`src/` 是推理/训练源码；`EEG_dataset/` 是不可修改的原始记录；`database/` 是派生窗口；`test/` 保留旧实验的运行路径及证据，已有 `audit/`、`theory/`、`realorder/`、`memory/`、`literature/` 分类；`vis/` 是可视化；`experiments/` 是统一检索入口；`tools/` 是管理工具。新实验放入独立方法子目录，不继续堆入 `test/` 根目录。
+目录职责：`src/` 是推理/训练源码；`EEG_dataset/` 是不可修改的原始记录；`database/` 是派生窗口；`test/` 按方法族组织实验——`00_baseline`、`01_features`、`02_models`、`03_deep`、`04_temporal`、`05_history`、`06_adaptive`、`07_depositioned`、`08_diagnostics`、`09_database`，另有 `audit/`、`literature/`、`memory/`、`realorder/`、`theory/`；共享数组在 `test/cache/`，历史报告在 `test/reports/`，检索入口在 `test/experiments/`，无脚本产物在 `test/_orphans/`；`vis/` 是可视化。新假设实验放入 `test/10_projects/`。
 
 **阅读警告：以下为累计历史记录，不是统一的当前排行榜或已验证提交包。** 不同阶段的窗口、划分、真实/随机顺序、历史自适应和 oracle 结果不能直接比较；后面的旧“最佳”“合法”描述必须结合对应结果和规则重新判断。官方指标为 **AUC + bACC**，项目报告另需 **F1**；未保存的 F1 标为“未记录”，不能用 AUC/bACC 换算。历史单次运行输出不保证在当前环境复现。
 
-重建目录（项目根目录）：`py -3.11 tools/build_experiment_catalog.py`。
+重建目录（项目根目录）：`py -3.11 test/experiments/build_catalog.py`。
 
 ---
 
@@ -41,11 +41,11 @@ EEG 是脑电电位随时间的记录；BDF+C 是 BioSemi 常见的 24-bit EDF �
 ```powershell
 python -m pip install numpy scipy pandas scikit-learn mne matplotlib joblib
 python src/train.py
-python test/plot_results.py
-python test/test_causal.py
+python test/00_baseline/plot_results.py
+python test/00_baseline/test_causal.py
 ```
 
-训练脚本按受试者打印进度，输出模型与结果到 `test/`。图表由 `test/plot_results.py` 从 `test/results.json` 读取真实结果生成，不包含折级指标（结果文件未保存折级指标）。
+训练脚本按受试者打印进度，模型与结果写入 `test/00_baseline/`，特征缓存写入 `test/cache/features.npz`。图表由 `test/00_baseline/plot_results.py` 从 `test/00_baseline/results.json` 读取真实结果生成，不包含折级指标（结果文件未保存折级指标）。
 
 ### 流式最小示例
 
@@ -57,7 +57,7 @@ import numpy as np
 sys.path.insert(0, "src")
 from cogstate import StreamingInference, load_bundle
 
-bundle = load_bundle("test/logistic.joblib")
+bundle = load_bundle("test/00_baseline/logistic.joblib")
 stream = StreamingInference(bundle["model"], sfreq=bundle["fs"], window=bundle["window"])
 probability = None
 for chunk in np.array_split(np.zeros(1500), 5):
@@ -77,42 +77,42 @@ print(f"task_probability={probability:.6f}")
 |校准 LinearSVC|0.5694|0.5866|0.5695|0.5976|
 |HistGradientBoosting|0.5401|0.5566|0.5412|0.5576|
 
-结果真实运行生成于 `test/results.json`，其中包含每折 subject 列表、折级指标和 subject/trial 汇总指标；没有使用官方保留测试集。正式训练/推理仍以 `src/train.py` 生成并保存的 Logistic bundle 为准；优化实验没有替换 `test/logistic.joblib` 或正式推理路径。
+结果真实运行生成于 `test/00_baseline/results.json`，其中包含每折 subject 列表、折级指标和 subject/trial 汇总指标；没有使用官方保留测试集。正式训练/推理仍以 `src/train.py` 生成并保存的 Logistic bundle 为准；优化实验没有替换 `test/00_baseline/logistic.joblib` 或正式推理路径。
 
 ### 真实优化实验与核查
 
-`test/optimize_real.py` 基于现有 `test/features.npz`，重新读取 57 份真实记录核查事件时间映射、坏段、窗口和特征缓存，并用 `StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=0)` 做 subject-disjoint 探索。缓存核查结果为 16,067×44，labels/groups/features 均与重新提取结果一致。候选包括正则化 Logistic、RobustScaler、特征选择、LDA、RBF，以及 6 秒窗口偏移 2 秒的轻量特征方案。
+`test/00_baseline/optimize_real.py` 基于现有 `test/cache/features.npz`，重新读取 57 份真实记录核查事件时间映射、坏段、窗口和特征缓存，并用 `StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=0)` 做 subject-disjoint 探索。缓存核查结果为 16,067×44，labels/groups/features 均与重新提取结果一致。候选包括正则化 Logistic、RobustScaler、特征选择、LDA、RBF，以及 6 秒窗口偏移 2 秒的轻量特征方案。
 
 最佳探索候选为 `new_offset2_logistic_C01`：AUC=`0.606779`（约 `0.6068`），bACC=`0.584658`（约 `0.5847`），样本数 16,004；这是在同一组交叉验证上进行候选比较得到的开发集估计，不是官方保留测试集成绩。重复使用这组 CV 做模型选择会使结果偏乐观，因此不能把 0.6068/0.5847 当作无偏泛化性能。
 
 核查还显示受试者间振幅差异明显（subject median log-variance 的标准差约 1.0903），而单个受试者内部 task/relax 振幅差异的中位绝对值约 0.5872；这提示模型可能利用 subject/session 振幅差异。当前每个 subject 只有一份记录，无法将 subject effect 与 session effect 分离。对未见 subject 使用其全记录统计量做归一化也会引入未来/测试数据，因此没有把该方案作为正式目标方案。
 
-因此，现有真实实验没有证据表明在“未见受试者、严格因果、最多 6 秒”的约束下能够达到 AUC 或 bACC 0.9；0.9 不是由当前数据和实验推导出的可达结论。正式模型尚未替换，当前已保存的 `test/logistic.joblib` 仍来自 `src/train.py` 的正式训练流程。
+因此，现有真实实验没有证据表明在“未见受试者、严格因果、最多 6 秒”的约束下能够达到 AUC 或 bACC 0.9；0.9 不是由当前数据和实验推导出的可达结论。正式模型尚未替换，当前已保存的 `test/00_baseline/logistic.joblib` 仍来自 `src/train.py` 的正式训练流程。
 
 实验图表：
 
-![真实优化候选对比](test/optimization_comparison.png)
+![真实优化候选对比](test/00_baseline/optimization_comparison.png)
 
-![受试者振幅差异核查](test/optimization_amplitude.png)
+![受试者振幅差异核查](test/00_baseline/optimization_amplitude.png)
 
 复现实验与测试命令：
 
 ```powershell
-python test/optimize_real.py
-python test/test_causal.py
+python test/00_baseline/optimize_real.py
+python test/00_baseline/test_causal.py
 python src/train.py
-python test/plot_results.py
+python test/00_baseline/plot_results.py
 ```
 
 ### 结果可视化
 
-![受试者分组交叉验证结果](test/results_comparison.png)
+![受试者分组交叉验证结果](test/00_baseline/results_comparison.png)
 
 图中包含 bACC/AUC 的 0.5 参考线。这里的指标是开发集的受试者分组五折交叉验证估计，不是官方保留测试集成绩；没有折级结果写入 `results.json`，因此未添加折散点。
 
 ##### 测试与局限
 
-`test/test_causal.py` 已验证同一窗口特征重复计算一致，以及不同分块到达方式的流式概率一致。当前基线未做在线自适应、伪迹检测或更丰富时频模型，且单通道频谱特征区分度有限；正式提交前应在不触碰保留测试集的前提下继续优化并确认截止日期/晋级名额冲突。
+`test/00_baseline/test_causal.py` 已验证同一窗口特征重复计算一致，以及不同分块到达方式的流式概率一致。当前基线未做在线自适应、伪迹检测或更丰富时频模型，且单通道频谱特征区分度有限；正式提交前应在不触碰保留测试集的前提下继续优化并确认截止日期/晋级名额冲突。
 
 ### 单通道严格因果预处理与伪迹消融
 
@@ -120,17 +120,17 @@ python test/plot_results.py
 
 BIOT 重采样已明确拆为：完整离线窗口使用抗混叠 `resample_poly`，严格在线使用显式历史/固定延迟接口；现有 BIOT FFT/resample 实验仍仅是离线完整窗口，不能声称满足实时因果。
 
-使用 `python test/artifact_ablation.py` 在真实 57 subject、16,067 窗口上运行 `StratifiedGroupKFold(5)`，结果写入 `test/artifact_ablation_results.json` 和 `test/artifact_ablation_results.png`，不覆盖正式 `test/logistic.joblib` 或既有结果。实际 OOF：原始 44 维 AUC/bACC=`0.588562/0.567966`；预处理 44 维=`0.580634/0.564832`；增强质量特征 53 维=`0.593261/0.575114`；质量剔除=`0.586284/0.566944`，保留 14,612/16,067（90.95%，剔除 9.05%）。增强质量特征有小幅收益，单独滤波和剔除未超过原始基线；无折出现缺类，所有结果均可评分。具体每折保留数、剔除率与 subject 宏指标见 JSON。该实验是同一 CV 上的消融比较，不能当作无偏最终泛化估计。
+使用 `python test/08_diagnostics/artifact_ablation.py` 在真实 57 subject、16,067 窗口上运行 `StratifiedGroupKFold(5)`，结果写入 `test/08_diagnostics/artifact_ablation_results.json` 和 `test/08_diagnostics/artifact_ablation_results.png`，不覆盖正式 `test/00_baseline/logistic.joblib` 或既有结果。实际 OOF：原始 44 维 AUC/bACC=`0.588562/0.567966`；预处理 44 维=`0.580634/0.564832`；增强质量特征 53 维=`0.593261/0.575114`；质量剔除=`0.586284/0.566944`，保留 14,612/16,067（90.95%，剔除 9.05%）。增强质量特征有小幅收益，单独滤波和剔除未超过原始基线；无折出现缺类，所有结果均可评分。具体每折保留数、剔除率与 subject 宏指标见 JSON。该实验是同一 CV 上的消融比较，不能当作无偏最终泛化估计。
 
-测试：`python test/test_preprocessing.py`（因果前缀/分块一致、窗口外不影响、NaN/坏段、固定阈值、polyphase 形状与抗混叠）已通过。正式模型和推理路径保持不变。
+测试：`python test/00_baseline/test_preprocessing.py`（因果前缀/分块一致、窗口外不影响、NaN/坏段、固定阈值、polyphase 形状与抗混叠）已通过。正式模型和推理路径保持不变。
 
 ### 卡尔曼 + 深度学习实验
 
-`src/kalman_deep.py` 与 `test/train_kalman_deep.py` 已完成真实重跑。当前定义为：`no_kalman=causal_features(raw)`，`kalman=causal_features(Kalman(raw))`，Q=1e-10、R=1e-8、P0=1e-8（均为 V²，Q 为每时间步过程方差），窗口内 reset、单向递推；实际训练 device 为 NVIDIA GeForce GTX 1660 SUPER CUDA。57 名受试者、16,067 个 6 秒窗口使用 subject-disjoint 五折，固定 24 epochs/full-batch（每折仅 24 optimizer steps）；raw CNN 输入为窗口内 6 点块平均到 250 点，未做幅值规范化。最新 OOF 指标为：no_kalman MLP bACC/AUC=0.552594/0.576365，kalman MLP=0.541790/0.563675，raw CNN=0.501161/0.496074，raw+Kalman CNN=0.499004/0.497447。推荐候选为 no_kalman MLP；CNN 结果接近随机，不能声称充分检验 DL 潜力。真实 OOF、正确 fold ID、逐 subject 指标、checkpoint、曲线和图表保存到 `test/kalman_deep_*`；另有正式回归测试 `test/test_kalman_deep.py`。旧错误 `test/kalman_deep_final.pt` 已于 2026-11-02 整理时删除（git 历史可恢复），不可作为可用 checkpoint；只使用四个新命名 checkpoint。详细结构、参数、测试和指标见 `卡尔曼深度学习实验报告.md`。现有传统模型不替换。
+`src/kalman_deep.py` 与 `test/03_deep/train_kalman_deep.py` 已完成真实重跑。当前定义为：`no_kalman=causal_features(raw)`，`kalman=causal_features(Kalman(raw))`，Q=1e-10、R=1e-8、P0=1e-8（均为 V²，Q 为每时间步过程方差），窗口内 reset、单向递推；实际训练 device 为 NVIDIA GeForce GTX 1660 SUPER CUDA。57 名受试者、16,067 个 6 秒窗口使用 subject-disjoint 五折，固定 24 epochs/full-batch（每折仅 24 optimizer steps）；raw CNN 输入为窗口内 6 点块平均到 250 点，未做幅值规范化。最新 OOF 指标为：no_kalman MLP bACC/AUC=0.552594/0.576365，kalman MLP=0.541790/0.563675，raw CNN=0.501161/0.496074，raw+Kalman CNN=0.499004/0.497447。推荐候选为 no_kalman MLP；CNN 结果接近随机，不能声称充分检验 DL 潜力。真实 OOF、正确 fold ID、逐 subject 指标、checkpoint、曲线和图表保存到 `test/kalman_deep_*`；另有正式回归测试 `test/03_deep/test_kalman_deep.py`。旧错误 `test/kalman_deep_final.pt` 已于 2026-11-02 整理时删除（git 历史可恢复），不可作为可用 checkpoint；只使用四个新命名 checkpoint。详细结构、参数、测试和指标见 `卡尔曼深度学习实验报告.md`。现有传统模型不替换。
 
 ### BIOT 官方预训练迁移实验
 
-已在真实数据上运行 `test/transfer_pretrained.py`：57 个 subject、16,067 个 6 秒窗口，使用 `StratifiedGroupKFold(5, shuffle=True, random_state=0)` 且 subject 完全隔离。原始单通道约 250 Hz 波形通过 `scipy.signal.resample` 重采样为 200 Hz、每窗 1,200 点，再复制为 16 个相同通道，仅用于匹配 BIOT 的 16-channel 输入接口，不代表获得了真实空间通道信息。实验未修改 `EEG_dataset` 原始附件。
+已在真实数据上运行 `test/03_deep/transfer_pretrained.py`：57 个 subject、16,067 个 6 秒窗口，使用 `StratifiedGroupKFold(5, shuffle=True, random_state=0)` 且 subject 完全隔离。原始单通道约 250 Hz 波形通过 `scipy.signal.resample` 重采样为 200 Hz、每窗 1,200 点，再复制为 16 个相同通道，仅用于匹配 BIOT 的 16-channel 输入接口，不代表获得了真实空间通道信息。实验未修改 `EEG_dataset` 原始附件。
 
 官方 checkpoint 下载自 [ycq091044/BIOT](https://github.com/ycq091044/BIOT) 的 `EEG-PREST-16-channels.ckpt`：
 `https://raw.githubusercontent.com/ycq091044/BIOT/main/pretrained-models/EEG-PREST-16-channels.ckpt`。文件保存在 `test/pretrained_cache/EEG-PREST-16-channels.ckpt`，大小 13,791,969 bytes，SHA256 为 `40f55f5d23e83796495616c8145c8336fcff2b901c42e8ba5115223081c2ad70`；仓库许可证为 MIT。运行环境为 Python 3.11.9、PyTorch 2.5.1+cu121、MNE 1.13.2、CUDA。
@@ -142,17 +142,17 @@ BIOT 重采样已明确拆为：完整离线窗口使用抗混叠 `resample_poly
 | 随机同构冻结 backbone + 分类头 | 3,186,449 | 257 | 0.499015 | 0.496448 |
 | 随机同构全量微调 | 3,186,449 | 3,186,433 | 0.485803 | 0.494699 |
 
-结果、四个 OOF 文件和比较图分别保存在 `test/pretrained_transfer_results.json`、`test/pretrained_transfer_oof_*.npz` 和 `test/pretrained_transfer_comparison.png`。复现命令：
+结果、四个 OOF 文件和比较图分别保存在 `test/03_deep/pretrained_transfer_results.json`、`test/pretrained_transfer_oof_*.npz` 和 `test/03_deep/pretrained_transfer_comparison.png`。复现命令：
 
 ```powershell
-python test/transfer_pretrained.py
+python test/03_deep/transfer_pretrained.py
 ```
 
 BIOT 使用 `center=False` 的 STFT，未读取 6 秒窗口以外的样本；但其线性注意力对完整 6 秒窗口内 token 做双向全局建模。因此上述结果仅是完整 6 秒窗口的离线迁移实验，不能作为严格在线因果模型或提交方案。结果接近随机，BIOT 在本数据协议下没有超过随机同构对照；不能据此宣称 AUC/bACC 达到 0.9。由于 BIOT checkpoint 已成功下载并加载，无需继续尝试 EEGPT/LaBraM；本轮无失败候选模型。
 
 ### 非平稳 DWT / STFT 真实消融（2026-10-28）
 
-新增 `test/nonstationary_ablation.py` 和 `test/test_nonstationary.py`。PyWavelets 已安装，无需重复安装。重新读取全部 57 名受试者、16,067 个严格 6 秒窗口，步长 6 秒，按事件与坏段过滤；采用 `StratifiedGroupKFold(5, shuffle=True, random_state=0)`。VarianceThreshold、StandardScaler、可选 ANOVA SelectKBest(k=30) 均只在训练折拟合；固定 balanced LogisticRegression(C=1, max_iter=2000)，概率阈值 0.5。
+新增 `test/08_diagnostics/nonstationary_ablation.py` 和 `test/08_diagnostics/test_nonstationary.py`。PyWavelets 已安装，无需重复安装。重新读取全部 57 名受试者、16,067 个严格 6 秒窗口，步长 6 秒，按事件与坏段过滤；采用 `StratifiedGroupKFold(5, shuffle=True, random_state=0)`。VarianceThreshold、StandardScaler、可选 ANOVA SelectKBest(k=30) 均只在训练折拟合；固定 balanced LogisticRegression(C=1, max_iter=2000)，概率阈值 0.5。
 
 - DWT：db4、level=5，A5/D5/D4/D3/D2/D1 的对数总能量、相对能量、归一化系数能量熵，以及相邻尺度对数能量比，共 23 维。`mode='zero'` 为窗口两端合成零延拓，保留边界系数，因此存在边界偏差；不读取真实未来样本。尺度不是精确 EEG 频带。
 - STFT：1 秒 Hann、0.5 秒步长、11 帧，`boundary=None,padded=False`；五频带对数功率/相对功率的均值、标准差、线性时间趋势、最大值和最小值，共 50 维。新分支先做窗口重置的单向 1–45Hz 四阶 SOS 和 50Hz/Q30 陷波。
@@ -175,18 +175,18 @@ BIOT 使用 `center=False` 的 STFT，未读取 6 秒窗口以外的样本；但
 
 ```powershell
 python -m unittest discover -s test -p test_nonstationary.py -v
-python -u test/nonstationary_ablation.py
+python -u test/08_diagnostics/nonstationary_ablation.py
 ```
 
-六项新测试通过；完整 unittest discovery 同时通过现有因果/预处理导入检查。脚本检测到同名结果时会拒绝覆盖，重跑应先自行归档本轮 `nonstationary_*` 输出。产物：`test/nonstationary_results.json`、`test/nonstationary_oof.npz`，以及以下三图（诊断统计不用于特征选择）：
+六项新测试通过；完整 unittest discovery 同时通过现有因果/预处理导入检查。脚本检测到同名结果时会拒绝覆盖，重跑应先自行归档本轮 `nonstationary_*` 输出。产物：`test/08_diagnostics/nonstationary_results.json`、`test/nonstationary_oof.npz`，以及以下三图（诊断统计不用于特征选择）：
 
-![非平稳方法对比](test/nonstationary_comparison.png)
-![特征诊断](test/nonstationary_diagnostics.png)
-![真实窗口时频示意](test/nonstationary_timefreq.png)
+![非平稳方法对比](test/08_diagnostics/nonstationary_comparison.png)
+![特征诊断](test/08_diagnostics/nonstationary_diagnostics.png)
+![真实窗口时频示意](test/08_diagnostics/nonstationary_timefreq.png)
 
 ### 高维特征与较大网络真实实验（2026-10-28）
 
-`test/highdim_deep_ablation.py` 重新读取57名subject的16,067个非重叠6秒窗口，构建总计858维候选池（包含原82维，另新增776维）：0.5/1/2秒STFT，对数/相对频带功率的mean/std/skew/kurtosis/trend、五分位点、极值和绝对值归一化熵；db4/sym5/coif2五层DWT系数统计；五频带Hilbert包络与瞬时频率；Hjorth、样本熵、排列熵、零交叉和五种滞后自相关。0.5秒对应125点，重叠62点（最接近50%的整数实现）；DWT合成零延拓，Hilbert仅使用当前整窗。瞬时频率受边界和低包络影响，非精确频带真值。单通道空间极化不适用，不构造伪极化域。
+`test/03_deep/highdim_deep_ablation.py` 重新读取57名subject的16,067个非重叠6秒窗口，构建总计858维候选池（包含原82维，另新增776维）：0.5/1/2秒STFT，对数/相对频带功率的mean/std/skew/kurtosis/trend、五分位点、极值和绝对值归一化熵；db4/sym5/coif2五层DWT系数统计；五频带Hilbert包络与瞬时频率；Hjorth、样本熵、排列熵、零交叉和五种滞后自相关。0.5秒对应125点，重叠62点（最接近50%的整数实现）；DWT合成零延拓，Hilbert仅使用当前整窗。瞬时频率受边界和低包络影响，非精确频带真值。单通道空间极化不适用，不构造伪极化域。
 
 外层固定subject-disjoint StratifiedGroupKFold(5,shuffle=True,random_state=0)。方差阈值1e-20、可选贪心绝对相关阈值0.98、SelectKBest(f_classif)、StandardScaler只在训练分区拟合。82维保留原顺序；150/300/600从858维池选择；variance对照为方差过滤后按原顺序截取前300维，并非按方差大小排序。深度网络在外层训练折内再取subject-disjoint四折的第一折作早停验证，选择器/Scaler仅拟合内部训练集，不回到完整外层训练集重训；Logistic使用全部外层训练集，因此二者训练样本量不同。
 
@@ -209,22 +209,22 @@ python -u test/nonstationary_ablation.py
 
 大MLP本轮略优于小MLP，但subject宏AUC只增加0.000205；CNN明显更差且接近随机，不能解释为参数越多越好。600维未在OOF指标上超过300维。所有结果都远未达到0.9；仍是重复使用开发集的探索性候选比较，没有独立测试、重复随机种子或显著性检验。subject与session仍混杂。Hjorth activity在标准化后近似常数，会在选择分支中被过滤；样本熵使用窗内每5点抽取、m=2/r=.2及计数+1稳定化，非全采样精确样本熵。STFT、Hilbert和CNN仅在窗口末端输出，不可回填窗口内较早时刻；是否接受整窗内部双向运算应确认赛方接口要求。
 
-本轮探索性最终候选为大MLP300（不是已部署模型），轻量备选为Logistic300 corr+KBest；正式`test/logistic.joblib`仍未替换。大MLP的领先不能视作已证明的泛化优势。
+本轮探索性最终候选为大MLP300（不是已部署模型），轻量备选为Logistic300 corr+KBest；正式`test/00_baseline/logistic.joblib`仍未替换。大MLP的领先不能视作已证明的泛化优势。
 
 实际耗时996.95秒，其中提取821.32秒。最终质量核对未重新训练，重新执行下列unittest命令，12项全部通过（高维6项+非平稳6项，0.842秒），另有因果前缀/分块和预处理质量/重采样导入检查PASS。注意这12项计数不包含非unittest形式的独立脚本检查，不代表所有其他实验脚本均重新验证。命令（第二条为历史训练复现入口，本次未执行）：
 
 ```powershell
 python -m unittest discover -s test -p "test_*.py" -v
-python -u test/highdim_deep_ablation.py
+python -u test/03_deep/highdim_deep_ablation.py
 ```
 
-输出为`test/highdim_deep_results.json`、`test/highdim_deep_oof.npz`、`test/highdim_deep_features.npz`、`test/highdim_deep_comparison.png`及50个`test/highdim_*_fold*.pt`。JSON含每折指标、内部训练/验证及外部测试subject、选择索引、真实参数量、训练曲线、运行时间和窗口元数据；OOF折归属可用JSON测试subject映射。checkpoint为可信本地产物，加载需`torch.load(...,weights_only=False)`；其中transform为字典，含indices/scaler或CNN的mean/scale，神经网络由脚本network(kind,input_dim)恢复state_dict。不得加载不可信pickle。脚本发现既有高维产物即拒绝覆盖；已有正式模型和历史结果未替换。
+输出为`test/03_deep/highdim_deep_results.json`、`test/highdim_deep_oof.npz`、`test/highdim_deep_features.npz`、`test/03_deep/highdim_deep_comparison.png`及50个`test/highdim_*_fold*.pt`。JSON含每折指标、内部训练/验证及外部测试subject、选择索引、真实参数量、训练曲线、运行时间和窗口元数据；OOF折归属可用JSON测试subject映射。checkpoint为可信本地产物，加载需`torch.load(...,weights_only=False)`；其中transform为字典，含indices/scaler或CNN的mean/scale，神经网络由脚本network(kind,input_dim)恢复state_dict。不得加载不可信pickle。脚本发现既有高维产物即拒绝覆盖；已有正式模型和历史结果未替换。
 
-![高维与深度模型对比](test/highdim_deep_comparison.png)
+![高维与深度模型对比](test/03_deep/highdim_deep_comparison.png)
 
 ### 训练轮数消融：增加 epoch 是否有用（2026-10-28）
 
-`test/epoch_ablation.py` 复用 `test/highdim_deep_features.npz` 中已缓存的858维池与同一批16,067窗口，外层仍为 `StratifiedGroupKFold(5,shuffle=True,random_state=0)`，内部仍是受试者隔离的四折早停验证；每折随机种子、batch128、AdamW(weight_decay=.01)、dropout .2、0.5阈值全部固定，只改变最大轮数、patience 和学习率，因此差异只来自训练预算。
+`test/08_diagnostics/epoch_ablation.py` 复用 `test/highdim_deep_features.npz` 中已缓存的858维池与同一批16,067窗口，外层仍为 `StratifiedGroupKFold(5,shuffle=True,random_state=0)`，内部仍是受试者隔离的四折早停验证；每折随机种子、batch128、AdamW(weight_decay=.01)、dropout .2、0.5阈值全部固定，只改变最大轮数、patience 和学习率，因此差异只来自训练预算。
 
 |配置|最大轮数/patience|实际训练轮数|OOF AUC|OOF bACC|subject宏 AUC|subject宏 bACC|
 |---|---|---:|---:|---:|---:|---:|
@@ -245,17 +245,17 @@ python -u test/highdim_deep_ablation.py
 
 因此该MLP的有效训练预算就是约10轮；继续加轮数、加宽网络或加深层数都不会把AUC推向0.9。瓶颈在特征与跨受试者分布差异，而不在优化时长。本轮耗时506.7秒，其中两个强制满轮配置占352.7秒。
 
-输出为 `test/epoch_ablation_results.json`、`test/epoch_ablation_oof.npz`、`test/epoch_ablation_results.png`（左：subject宏指标；右：各配置平均内部验证损失曲线，patience更长的配置在后期明显上翘）。
+输出为 `test/08_diagnostics/epoch_ablation_results.json`、`test/epoch_ablation_oof.npz`、`test/08_diagnostics/epoch_ablation_results.png`（左：subject宏指标；右：各配置平均内部验证损失曲线，patience更长的配置在后期明显上翘）。
 
-![训练轮数消融](test/epoch_ablation_results.png)
+![训练轮数消融](test/08_diagnostics/epoch_ablation_results.png)
 
 ### 瓶颈诊断：为什么指标停在 0.6 附近（2026-10-28）
 
 三个诊断脚本都读取已有缓存，不重新提特征、不覆盖旧结果：
 
-- `test/bottleneck_diagnosis.py`：同受试者随机窗切分 vs 跨受试者，加每受试者方差占比与oracle归一化。
-- `test/bottleneck_diagnosis_trials.py`：按trial整块留出，检查特征方向跨受试者是否一致。
-- `test/bottleneck_signal_ceiling.py`：每受试者留一trial，仅用10个频带均值+强正则，给出诚实的单被试上限。
+- `test/08_diagnostics/bottleneck_diagnosis.py`：同受试者随机窗切分 vs 跨受试者，加每受试者方差占比与oracle归一化。
+- `test/08_diagnostics/bottleneck_diagnosis_trials.py`：按trial整块留出，检查特征方向跨受试者是否一致。
+- `test/08_diagnostics/bottleneck_signal_ceiling.py`：每受试者留一trial，仅用10个频带均值+强正则，给出诚实的单被试上限。
 
 关键数字：
 
@@ -279,13 +279,13 @@ python -u test/highdim_deep_ablation.py
 
 因此在不改变标签粒度、不增加通道、不允许使用受试者自身无标签校准的前提下，双指标0.9不可达；现实上限约0.65–0.70。要继续提升只能改问题设定：用`key_press`等更细事件做标签、引入多通道空间信息，或取得赛方允许的受试者级在线自适应。
 
-产物：`test/bottleneck_diagnosis.json`、`test/bottleneck_diagnosis_trials.json`、`test/bottleneck_signal_ceiling.json`、`test/bottleneck_diagnosis.png`、`test/bottleneck_diagnosis_trials.png`。
+产物：`test/08_diagnostics/bottleneck_diagnosis.json`、`test/08_diagnostics/bottleneck_diagnosis_trials.json`、`test/08_diagnostics/bottleneck_signal_ceiling.json`、`test/08_diagnostics/bottleneck_diagnosis.png`、`test/08_diagnostics/bottleneck_diagnosis_trials.png`。
 
-![瓶颈诊断：同被试与跨被试分布](test/bottleneck_diagnosis.png)
+![瓶颈诊断：同被试与跨被试分布](test/08_diagnostics/bottleneck_diagnosis.png)
 
 ### 利用过去窗口的因果历史（2026-10-28）
 
-规则第 2 条允许“仅使用当前及过去已到达的无标签测试数据进行自动在线自适应”，但第 1 条要求单次判断的有效感受野不超过 6 秒。因此分两类处理：按受试者对过去窗口做无标签统计量去偏属于合规的在线自适应；把过去窗口的分数平滑进当前输出会让感受野超过 6 秒，只作为参照。测试流按受试者时间顺序连续排列，跨 trial 不重置，因为推理时不知道 trial 边界。脚本为 `test/causal_history.py`，结果写入 `test/causal_history_results.json`，耗时 57 秒。
+规则第 2 条允许“仅使用当前及过去已到达的无标签测试数据进行自动在线自适应”，但第 1 条要求单次判断的有效感受野不超过 6 秒。因此分两类处理：按受试者对过去窗口做无标签统计量去偏属于合规的在线自适应；把过去窗口的分数平滑进当前输出会让感受野超过 6 秒，只作为参照。测试流按受试者时间顺序连续排列，跨 trial 不重置，因为推理时不知道 trial 边界。脚本为 `test/02_models/causal_history.py`，结果写入 `test/02_models/causal_history_results.json`，耗时 57 秒。
 
 |方法|合规|pooled AUC|bACC|每受试者 AUC|
 |---|---|---:|---:|---:|
@@ -300,9 +300,9 @@ python -u test/highdim_deep_ablation.py
 
 ### 协议先验、块边缘窗与异构集成（2026-10-28）
 
-**1. 协议不变量**：57 人全部是 6 个块、严格 `relax→task→relax→task→relax→task`、首块必为 relax，块长 218–382 秒（均值 300 秒）。据此可用首块做极性锚点。`test/protocol_prior.py` 结果：用真标签做 oracle 极性翻转只把 AUC 从 0.6283 提到 0.6410；用首块 30 个窗估计符号反而降到 0.5793（翻错 17 人）。原因是首块的绝对分数水平由该受试者的偏置决定，与判别方向无关，所以首块均值不是可靠锚点。这条路收益很小，且依赖协议先验（相当于由实验设计推出部分测试标签），不纳入正式方案。
+**1. 协议不变量**：57 人全部是 6 个块、严格 `relax→task→relax→task→relax→task`、首块必为 relax，块长 218–382 秒（均值 300 秒）。据此可用首块做极性锚点。`test/08_diagnostics/protocol_prior.py` 结果：用真标签做 oracle 极性翻转只把 AUC 从 0.6283 提到 0.6410；用首块 30 个窗估计符号反而降到 0.5793（翻错 17 人）。原因是首块的绝对分数水平由该受试者的偏置决定，与判别方向无关，所以首块均值不是可靠锚点。这条路收益很小，且依赖协议先验（相当于由实验设计推出部分测试标签），不纳入正式方案。
 
-**2. 块边缘窗**：`test/edge_ablation.py`。训练时剔除每块首尾各 e 秒的窗口，再评估。
+**2. 块边缘窗**：`test/08_diagnostics/edge_ablation.py`。训练时剔除每块首尾各 e 秒的窗口，再评估。
 
 | 边缘剔除 | 只在保留窗上评估 AUC | 训练过滤/全窗评估 AUC | 保留窗数 |
 |---|---:|---:|---:|
@@ -313,7 +313,7 @@ python -u test/highdim_deep_ablation.py
 
 “保留窗上”的提升很大，但一旦对**全部**窗口打分就回落到 0.624——比赛按全部窗口计分，且推理时不知道块边界，所以这不是可部署增益。有价值的副产物：状态可分性集中在块中心，块首尾约 45 秒存在标签延迟/瞬态，这部分窗口是所有方法共同的主要误差来源。
 
-**3. 在线特征标准化 + 异构集成**（`test/online_deep.py`、`test/ensemble_check.py`）：把因果累计标准化放进特征后重训深度模型，并用 rank 平均集成。
+**3. 在线特征标准化 + 异构集成**（`test/06_adaptive/online_deep.py`、`test/02_models/ensemble_check.py`）：把因果累计标准化放进特征后重训深度模型，并用 rank 平均集成。
 
 | 方案 | AUC | bACC |
 |---|---:|---:|
@@ -326,13 +326,13 @@ python -u test/highdim_deep_ablation.py
 
 嵌套验证里 5 折都选中同一组合，均值 0.6775，比最佳单模型高 0.015，说明集成收益不是挑模型挑出来的。折间 AUC 0.595–0.719 仍是受试者构成差异。
 
-![集成结果](test/ensemble_results.png)
+![集成结果](test/02_models/ensemble_results.png)
 
 综合本轮：合规上限从 0.635 上移到约 0.68。剩余误差的主要来源依次是块首尾瞬态、约 12% 受试者的判别方向相反、以及 339 个状态块带来的样本量限制。
 
 ### 分数校准与因果协方差对齐（2026-10-28）
 
-**1. bACC 的阈值**（`test/score_calibration.py`）：三模型 rank 集成是当前最好的分数，bACC 一直是按固定 0.5 判定。尝试用因果在线统计量替换固定阈值。
+**1. bACC 的阈值**（`test/06_adaptive/score_calibration.py`）：三模型 rank 集成是当前最好的分数，bACC 一直是按固定 0.5 判定。尝试用因果在线统计量替换固定阈值。
 
 |阈值方式|AUC|bACC|每受试者 bACC|
 |---|---:|---:|---:|
@@ -345,7 +345,7 @@ python -u test/highdim_deep_ablation.py
 
 结论：所有可用的无标签阈值规则都不超过固定 0.5。因为特征端已经做过在线标准化，分数再做一次中心化属于重复校正，反而把受试者间的可比性破坏掉。真标签下的每受试者最优阈值能把 bACC 提到 0.657，说明上限还有约 0.027 的空间，但这一部分无法在不使用标签的情况下取得。
 
-**2. 因果协方差对齐**（`test/coral_online.py`）：对角标准化只匹配每维的均值和方差，受试者之间还存在特征相关结构的差异。在 300 维筛选后的 PCA-40 子空间里，用该受试者过去窗口的累计协方差（收缩到训练集协方差）做白化-再着色，每 10 个窗口更新一次矩阵。
+**2. 因果协方差对齐**（`test/06_adaptive/coral_online.py`）：对角标准化只匹配每维的均值和方差，受试者之间还存在特征相关结构的差异。在 300 维筛选后的 PCA-40 子空间里，用该受试者过去窗口的累计协方差（收缩到训练集协方差）做白化-再着色，每 10 个窗口更新一次矩阵。
 
 |收缩系数 λ|AUC|bACC|每受试者 AUC|
 |---|---:|---:|---:|
@@ -356,7 +356,7 @@ python -u test/highdim_deep_ablation.py
 
 结论：协方差对齐没有收益，λ 越接近“完全不校正”越好。原因是受试者间的差异主要是各维的幅度差异（已由对角标准化处理），相关结构差异在 47 窗一块、块间切换的条件下估不准，反而引入噪声。
 
-**3. 用无标签代理做分数收缩**（`test/reliability_shrink.py`）：pooled AUC 把所有人的窗口放在一起排序，一个判反的受试者会占住排序两端。检验“分数分布的双峰性”能否作为该受试者可信度的无标签代理，并据此把不可靠受试者的分数向 0.5 收缩。
+**3. 用无标签代理做分数收缩**（`test/06_adaptive/reliability_shrink.py`）：pooled AUC 把所有人的窗口放在一起排序，一个判反的受试者会占住排序两端。检验“分数分布的双峰性”能否作为该受试者可信度的无标签代理，并据此把不可靠受试者的分数向 0.5 收缩。
 
 |代理指标（与真实每受试者 AUC 的 Spearman）|ρ|
 |---|---:|
@@ -378,7 +378,7 @@ python -u test/highdim_deep_ablation.py
 
 检查特征池构成时发现一个遗漏：858 维池的所有谱特征（STFT、DWT、Hilbert、频带功率、质量指标）都建立在 `causal_filter` 输出的 **1–45 Hz** 信号上，45 Hz 以上的能量只通过原始波形的标准差、峰度、极值间接体现。而单通道下，肌电张力与眨眼/眼动是 relax/task 最直接的生理差别之一（任务态肌肉更紧张、眼动更多）。
 
-直接从缓存的原始 6 秒窗（16067×1500 @250 Hz）补算 20 个特征：40–120 Hz 七个子带的绝对与相对功率、40–120 Hz 对数谱斜率、高通后的标准差/峰度/爆发比例、0.5–4 Hz 慢波上的眨眼计数与宽度。脚本 `test/emg_blink.py`（第一版 15 维）、`test/emg_v2.py`（细化 20 维 + 深度模型 + 集成）。
+直接从缓存的原始 6 秒窗（16067×1500 @250 Hz）补算 20 个特征：40–120 Hz 七个子带的绝对与相对功率、40–120 Hz 对数谱斜率、高通后的标准差/峰度/爆发比例、0.5–4 Hz 慢波上的眨眼计数与宽度。脚本 `test/01_features/emg_blink.py`（第一版 15 维）、`test/01_features/emg_v2.py`（细化 20 维 + 深度模型 + 集成）。
 
 |方案|AUC|bACC|每受试者 AUC|
 |---|---:|---:|---:|
@@ -406,9 +406,9 @@ python -u test/highdim_deep_ablation.py
 
 - 每折训练/测试受试者交集为 0；把训练标签打乱后 AUC 立刻降到 0.476，所以不是标签泄漏。
 - 排列重要度显示，0.42 的贡献集中在单一特征 `raw_activity_normalized`。
-- 该特征来自 [nonstationary_ablation.py](file:///d:/BCIC2026/CogState/test/nonstationary_ablation.py) 的 `nonlinear()`：先对信号做 z 标准化再取方差，结果恒等于 1，是一个**常数特征**。逐受试者在线标准化用 1e-6 量级的分母把它放大成浮点舍入噪声，树模型正好能切分这个数值伪影。
+- 该特征来自 [nonstationary_ablation.py](file:///d:/BCIC2026/CogState/test/08_diagnostics/nonstationary_ablation.py) 的 `nonlinear()`：先对信号做 z 标准化再取方差，结果恒等于 1，是一个**常数特征**。逐受试者在线标准化用 1e-6 量级的分母把它放大成浮点舍入噪声，树模型正好能切分这个数值伪影。
 
-剔除全部近常数特征（std<1e-8）后重算（`test/sanitize.py`）：HistGB 降到 0.6885，属正常范围。同时确认**此前所有走 `FeatureTransform` 的结果都没有被污染**——它的方差过滤（var>1e-20）恰好挡掉了这一列，逐个数字与旧结果完全吻合（0.6547 / 0.6713 / 0.6786）。只有“直接把归一化矩阵喂给模型”的写法才会中招，此后所有实验都先做这步清洗。
+剔除全部近常数特征（std<1e-8）后重算（`test/01_features/sanitize.py`）：HistGB 降到 0.6885，属正常范围。同时确认**此前所有走 `FeatureTransform` 的结果都没有被污染**——它的方差过滤（var>1e-20）恰好挡掉了这一列，逐个数字与旧结果完全吻合（0.6547 / 0.6713 / 0.6786）。只有“直接把归一化矩阵喂给模型”的写法才会中招，此后所有实验都先做这步清洗。
 
 **再说有收益的部分。** 剔除伪影后，树模型依然明显强于 Logistic 和小 MLP：
 
@@ -429,7 +429,7 @@ python -u test/highdim_deep_ablation.py
 
 ### 窗口长度消融（2026-10-28）
 
-`test/window_ablation.py`、`test/window_eval.py`。同一套 858 维特征、同一在线标准化与 Logistic300 流程，只改窗长（等长跳步，非重叠）。
+`test/01_features/window_ablation.py`、`test/00_baseline/window_eval.py`。同一套 858 维特征、同一在线标准化与 Logistic300 流程，只改窗长（等长跳步，非重叠）。
 
 |窗长|窗数|AUC|bACC|每受试者 AUC|
 |---|---:|---:|---:|---:|

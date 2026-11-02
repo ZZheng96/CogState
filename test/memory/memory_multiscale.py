@@ -11,6 +11,22 @@ Controls: position-only HGB (56/57 subjects start with relax -> position alone c
 prefix invariance of history features, label shuffle.
 Run: python test/memory/memory_multiscale.py [--smoke]
 """
+# --- test layout bootstrap (generated 2026-11-02): locate test/ root, shared modules and cache ---
+import sys as _sys
+from pathlib import Path as _Path
+_HERE = _Path(__file__).resolve().parent
+_TEST = _HERE
+while _TEST.name != "test" and _TEST.parent != _TEST:
+    _TEST = _TEST.parent
+CACHE_DIR = _TEST / "cache"
+if str(_TEST) not in _sys.path:
+    _sys.path.append(str(_TEST))
+for _d in sorted(_TEST.iterdir()):
+    if _d.is_dir() and _d.name not in {"cache", "results", "pretrained_cache", "reports", "experiments", "_orphans", "__pycache__"}:
+        if str(_d) not in _sys.path:
+            _sys.path.append(str(_d))
+# --- end bootstrap ---
+
 import argparse, json
 
 import numpy as np
@@ -124,7 +140,7 @@ def main():
     for nm in ('D_hgb', 'D_hgb+smooth', 'D_hgb+center_smooth'):
         m = evaluate(y3, g, L[nm], ev, grp_of); R['checks']['label_shuffle'][nm] = m
         print(f'[check] label shuffle {nm}: AUC={m["AUC"]:.4f} mac={m["subject_macro_bACC"]:.4f} (expect ~.5)', flush=True)
-    old = TEST / 'history_leakfree_results.json'
+    old = TEST / '05_history/history_leakfree_results.json'
     if old.exists():
         R['old_history_leakfree_D_hgb'] = json.loads(old.read_text('utf-8'))['fusion'].get('D_hgb')
     np.savez(HERE / (stem + '_oof.npz'), y=y, g=g, fold=fold, ev=ev, pos=pos, **L)

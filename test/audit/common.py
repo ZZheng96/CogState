@@ -1,4 +1,20 @@
 """Shared loading for test/audit experiments (copies the depositioned_anchor_direction.py loading / fold pattern)."""
+# --- test layout bootstrap (generated 2026-11-02): locate test/ root, shared modules and cache ---
+import sys as _sys
+from pathlib import Path as _Path
+_HERE = _Path(__file__).resolve().parent
+_TEST = _HERE
+while _TEST.name != "test" and _TEST.parent != _TEST:
+    _TEST = _TEST.parent
+CACHE_DIR = _TEST / "cache"
+if str(_TEST) not in _sys.path:
+    _sys.path.append(str(_TEST))
+for _d in sorted(_TEST.iterdir()):
+    if _d.is_dir() and _d.name not in {"cache", "results", "pretrained_cache", "reports", "experiments", "_orphans", "__pycache__"}:
+        if str(_d) not in _sys.path:
+            _sys.path.append(str(_d))
+# --- end bootstrap ---
+
 import json, sys, time
 from pathlib import Path
 
@@ -26,10 +42,10 @@ def load_all():
     man, subs, data = load_db()
     Fc = np.vstack([data[s][0] for s in subs]); y = np.concatenate([data[s][1] for s in subs])
     g = np.concatenate([np.full(len(data[s][1]), s) for s in subs])
-    A_ = np.load(TEST / 'depositioned_aperiodic_emg_oof.npz')
+    A_ = np.load(CACHE_DIR / 'depositioned_aperiodic_emg_oof.npz')
     assert np.array_equal(A_['y'], y) and np.array_equal(A_['groups'], g)
     Fn = A_['new_features']; assert Fc.shape[1] == 858 and Fn.shape == (len(y), 31)
-    diag = json.loads((TEST / 'depositioned_subject_diagnosis.json').read_text(encoding='utf-8'))
+    diag = json.loads((TEST / '07_depositioned/depositioned_subject_diagnosis.json').read_text(encoding='utf-8'))
     grp_of = {s: G for G in GROUPS for s in diag['diagnosis']['groups'][G]['subjects']}
     assert all(s in grp_of for s in subs)
     Xa, ya, ga, _ = arrange(subs, data, 0, 'independent'); fold_of = {}

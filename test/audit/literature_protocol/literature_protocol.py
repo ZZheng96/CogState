@@ -25,6 +25,22 @@ Checks: fold == npz; real_time y/groups == canonical; test-label shuffle -> stri
 determinism (strict lr fold 0 refit identical); v2 recomputation == v2 json; real-time order-free scores identical.
 Run: python test/audit/literature_protocol/literature_protocol.py [--smoke]  (smoke: fold 0 / stream 0, boot 100)
 """
+# --- test layout bootstrap (generated 2026-11-02): locate test/ root, shared modules and cache ---
+import sys as _sys
+from pathlib import Path as _Path
+_HERE = _Path(__file__).resolve().parent
+_TEST = _HERE
+while _TEST.name != "test" and _TEST.parent != _TEST:
+    _TEST = _TEST.parent
+CACHE_DIR = _TEST / "cache"
+if str(_TEST) not in _sys.path:
+    _sys.path.append(str(_TEST))
+for _d in sorted(_TEST.iterdir()):
+    if _d.is_dir() and _d.name not in {"cache", "results", "pretrained_cache", "reports", "experiments", "_orphans", "__pycache__"}:
+        if str(_d) not in _sys.path:
+            _sys.path.append(str(_d))
+# --- end bootstrap ---
+
 import argparse, json, sys, time, warnings
 from pathlib import Path
 
@@ -145,8 +161,8 @@ def main():
     res['checks']['real_time_order_free'] = 'lr/hgb strict scores do not depend on row order (row-wise fit/score)'
 
     # ---------- v2 pipeline (stored branches) ----------
-    A_ = D['A_']; B_ = np.load(TEST / 'depositioned_resnet_timefreq_oof.npz')
-    v2 = json.loads((TEST / f'depositioned_within_subject_adapt_v2{sfx}.json').read_text(encoding='utf-8'))
+    A_ = D['A_']; B_ = np.load(CACHE_DIR / 'depositioned_resnet_timefreq_oof.npz')
+    v2 = json.loads((TEST / '07_depositioned' / f'depositioned_within_subject_adapt_v2{sfx}.json').read_text(encoding='utf-8'))
     ZZt = np.full((n, 889), np.nan)
     for k in run_folds:
         tr, te = np.flatnonzero(fold != k), np.flatnonzero(fold == k); ZZt[te] = zz(D, tr)[te]

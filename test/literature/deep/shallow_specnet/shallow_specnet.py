@@ -3,6 +3,22 @@ Input 4 s crop -> STFT (Hann 1 s / hop 31 samples ~0.124 s, 250 Hz) -> log power
 frequency bins (training statistics only) -> 2 x [Conv2d 3x3 + BN + ReLU + MaxPool2d 2] -> dropout -> linear.
 Run: python test/literature/deep/shallow_specnet/shallow_specnet.py [--smoke] [--seeds 0,1,2]
 """
+# --- test layout bootstrap (generated 2026-11-02): locate test/ root, shared modules and cache ---
+import sys as _sys
+from pathlib import Path as _Path
+_HERE = _Path(__file__).resolve().parent
+_TEST = _HERE
+while _TEST.name != "test" and _TEST.parent != _TEST:
+    _TEST = _TEST.parent
+CACHE_DIR = _TEST / "cache"
+if str(_TEST) not in _sys.path:
+    _sys.path.append(str(_TEST))
+for _d in sorted(_TEST.iterdir()):
+    if _d.is_dir() and _d.name not in {"cache", "results", "pretrained_cache", "reports", "experiments", "_orphans", "__pycache__"}:
+        if str(_d) not in _sys.path:
+            _sys.path.append(str(_d))
+# --- end bootstrap ---
+
 import sys
 from pathlib import Path
 

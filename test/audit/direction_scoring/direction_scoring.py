@@ -14,6 +14,22 @@ Reported per subject and per group (high/mid/low; low is post-hoc defined from p
 Checks (assert): fold == npz; test-label shuffle leaves xs scores bit-identical; determinism of own_in / own_cv.
 Run: python test/audit/direction_scoring/direction_scoring.py [--smoke]   (smoke: fold 0, 4 null permutations)
 """
+# --- test layout bootstrap (generated 2026-11-02): locate test/ root, shared modules and cache ---
+import sys as _sys
+from pathlib import Path as _Path
+_HERE = _Path(__file__).resolve().parent
+_TEST = _HERE
+while _TEST.name != "test" and _TEST.parent != _TEST:
+    _TEST = _TEST.parent
+CACHE_DIR = _TEST / "cache"
+if str(_TEST) not in _sys.path:
+    _sys.path.append(str(_TEST))
+for _d in sorted(_TEST.iterdir()):
+    if _d.is_dir() and _d.name not in {"cache", "results", "pretrained_cache", "reports", "experiments", "_orphans", "__pycache__"}:
+        if str(_d) not in _sys.path:
+            _sys.path.append(str(_d))
+# --- end bootstrap ---
+
 import argparse, sys, time, warnings
 from pathlib import Path
 

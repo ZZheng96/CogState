@@ -10,6 +10,22 @@ No raw history, test labels, test-subject calibration, or position features are
 used. This script deliberately reuses the audited OOF cache rather than
 re-extracting BDF windows.
 """
+# --- test layout bootstrap (generated 2026-11-02): locate test/ root, shared modules and cache ---
+import sys as _sys
+from pathlib import Path as _Path
+_HERE = _Path(__file__).resolve().parent
+_TEST = _HERE
+while _TEST.name != "test" and _TEST.parent != _TEST:
+    _TEST = _TEST.parent
+CACHE_DIR = _TEST / "cache"
+if str(_TEST) not in _sys.path:
+    _sys.path.append(str(_TEST))
+for _d in sorted(_TEST.iterdir()):
+    if _d.is_dir() and _d.name not in {"cache", "results", "pretrained_cache", "reports", "experiments", "_orphans", "__pycache__"}:
+        if str(_d) not in _sys.path:
+            _sys.path.append(str(_d))
+# --- end bootstrap ---
+
 import json
 import sys
 import time
@@ -29,8 +45,8 @@ _mod = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_mod)
 fit_hgb, fit_logreg = _mod.fit_hgb, _mod.fit_logreg
 
-OUT = Path(__file__).resolve().parent.parent
-CACHE = OUT / "broadband_shape_window6_oof.npz"
+OUT = Path(__file__).resolve().parent
+CACHE = CACHE_DIR / 'broadband_shape_window6_oof.npz'
 RES = OUT / "theory_p0_p1_observation_state_results.json"
 N_SPLITS = 5
 SEED = 0
@@ -165,7 +181,7 @@ def metrics(y, g, p):
 def main():
     d = np.load(CACHE, allow_pickle=False)
     y = d["y"].astype(int); groups = d["groups"]; fold_id = d["fold_id"].astype(int)
-    feat = np.load(OUT / "broadband_shape_features.npz", allow_pickle=False)
+    feat = np.load(CACHE_DIR / 'broadband_shape_features.npz', allow_pickle=False)
     X = feat["X"]
     assert np.array_equal(y, d["y"]) and len(np.unique(fold_id)) == N_SPLITS
     assert np.array_equal(y, feat["y"]) and np.array_equal(groups, feat["groups"])
@@ -178,7 +194,7 @@ def main():
     ])
     # One fixed exploratory comparison of linear and nonlinear observation models.
     names = [k for k in ("logreg__all_new", "hgb__all_new") if k in d.files]
-    feat = np.load(OUT / "broadband_shape_features.npz", allow_pickle=False)
+    feat = np.load(CACHE_DIR / 'broadband_shape_features.npz', allow_pickle=False)
     X = feat["X"]
     fitters = {"logreg__all_new": fit_logreg, "hgb__all_new": fit_hgb}
     result = {"protocol": {"P0": "strict current 6-second observation", "P1": "causal finite-memory two-state filter", "K": list(KS), "K_interpretation": "current plus seven preceding chronological windows; exploratory effective history is up to about 48 seconds", "emissions": list(KINDS), "outer": "same stored StratifiedGroupKFold(5), subject-disjoint", "inner_oof": "outer-train subjects only, StratifiedGroupKFold(4, shuffle=True, random_state=0), per base model", "chronology": "real_time.npz exact float32 replay alignment, per-subject t_end order", "test_history": True, "labels_used_for_test": False}, "variants": {}}

@@ -12,6 +12,22 @@ Training (all methods, same recipe as raw_waveform_window6): AdamW(LR, WD), BS, 
 random 4 s crop + amplitude scale + noise augmentation; inference = mean logit over N_TTA equispaced 4 s crops.
 Metrics: AUC, subject-macro bACC (thr .5), #subjects bACC>=.9; STRICT: paired subject bootstrap vs stored ResNet.
 """
+# --- test layout bootstrap (generated 2026-11-02): locate test/ root, shared modules and cache ---
+import sys as _sys
+from pathlib import Path as _Path
+_HERE = _Path(__file__).resolve().parent
+_TEST = _HERE
+while _TEST.name != "test" and _TEST.parent != _TEST:
+    _TEST = _TEST.parent
+CACHE_DIR = _TEST / "cache"
+if str(_TEST) not in _sys.path:
+    _sys.path.append(str(_TEST))
+for _d in sorted(_TEST.iterdir()):
+    if _d.is_dir() and _d.name not in {"cache", "results", "pretrained_cache", "reports", "experiments", "_orphans", "__pycache__"}:
+        if str(_d) not in _sys.path:
+            _sys.path.append(str(_d))
+# --- end bootstrap ---
+
 import os
 os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG', ':4096:8')
 import argparse, json, sys, time
@@ -46,7 +62,7 @@ def load_all():
     assert float(man['fs']) == FS and float(man['window_seconds']) * FS == WIN
     Xraw, Fc, y, g = load_raw(subs)
     assert Xraw.shape == (len(y), WIN), Xraw.shape
-    A = np.load(TEST / 'depositioned_aperiodic_emg_oof.npz')
+    A = np.load(CACHE_DIR / 'depositioned_aperiodic_emg_oof.npz')
     assert np.array_equal(A['y'], y) and np.array_equal(A['groups'], g)
     Xa, ya, ga, _ = arrange(subs, data, 0, 'independent'); fold_of = {}
     for k, (_, te) in enumerate(StratifiedGroupKFold(5, shuffle=True, random_state=0).split(Xa, ya, ga)):
@@ -167,7 +183,7 @@ def run(method, make):
     print('[check] derived SGKF folds == depositioned_aperiodic_emg_oof.npz[fold]', flush=True)
     Xw, n_flat = normalize(Xraw); Xs = session_norm(Xraw, g)
     yg = torch.tensor(y, dtype=torch.float32, device=dev)
-    R = np.load(TEST / 'depositioned_resnet_timefreq_oof.npz')
+    R = np.load(CACHE_DIR / 'depositioned_resnet_timefreq_oof.npz')
     for q in ('y', 'groups'): assert np.array_equal(R[q], y if q == 'y' else g)
     assert np.array_equal(R['fold'], fold_s)
 

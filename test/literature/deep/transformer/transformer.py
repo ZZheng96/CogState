@@ -3,6 +3,22 @@ linear patch embedding (d=64) + learnable [CLS] + learnable positional encoding 
 FFN 128, dropout .1, pre-LN) -> LayerNorm(CLS) -> linear. Input: 4 s crop = 20 patches.
 Run: python test/literature/deep/transformer/transformer.py [--smoke] [--seeds 0,1,2]
 """
+# --- test layout bootstrap (generated 2026-11-02): locate test/ root, shared modules and cache ---
+import sys as _sys
+from pathlib import Path as _Path
+_HERE = _Path(__file__).resolve().parent
+_TEST = _HERE
+while _TEST.name != "test" and _TEST.parent != _TEST:
+    _TEST = _TEST.parent
+CACHE_DIR = _TEST / "cache"
+if str(_TEST) not in _sys.path:
+    _sys.path.append(str(_TEST))
+for _d in sorted(_TEST.iterdir()):
+    if _d.is_dir() and _d.name not in {"cache", "results", "pretrained_cache", "reports", "experiments", "_orphans", "__pycache__"}:
+        if str(_d) not in _sys.path:
+            _sys.path.append(str(_d))
+# --- end bootstrap ---
+
 import sys
 from pathlib import Path
 

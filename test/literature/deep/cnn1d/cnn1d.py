@@ -2,6 +2,22 @@
 Stacked Conv1d+BN+ReLU+MaxPool blocks, flatten, dense head with dropout. Input: 4 s crop (1000 samples @ 250 Hz).
 Run: python test/literature/deep/cnn1d/cnn1d.py [--smoke] [--seeds 0,1,2] [--protocols STRICT,LIT_WINDOW,LIT_SESSION_NORM]
 """
+# --- test layout bootstrap (generated 2026-11-02): locate test/ root, shared modules and cache ---
+import sys as _sys
+from pathlib import Path as _Path
+_HERE = _Path(__file__).resolve().parent
+_TEST = _HERE
+while _TEST.name != "test" and _TEST.parent != _TEST:
+    _TEST = _TEST.parent
+CACHE_DIR = _TEST / "cache"
+if str(_TEST) not in _sys.path:
+    _sys.path.append(str(_TEST))
+for _d in sorted(_TEST.iterdir()):
+    if _d.is_dir() and _d.name not in {"cache", "results", "pretrained_cache", "reports", "experiments", "_orphans", "__pycache__"}:
+        if str(_d) not in _sys.path:
+            _sys.path.append(str(_d))
+# --- end bootstrap ---
+
 import sys
 from pathlib import Path
 

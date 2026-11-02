@@ -18,7 +18,7 @@ from cogstate import make_dataset, save_bundle
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 X, y, groups, meta = make_dataset(os.path.join(ROOT, "EEG_dataset"))
-np.savez(os.path.join(ROOT, "test", "features.npz"), X=X, y=y, groups=groups)
+np.savez(os.path.join(ROOT, "test", "cache", "features.npz"), X=X, y=y, groups=groups)
 models = {
     "logistic": make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000, class_weight="balanced")),
     "linear_svc_calibrated": make_pipeline(StandardScaler(), CalibratedClassifierCV(LinearSVC(class_weight="balanced", random_state=0), method="sigmoid", cv=3)),
@@ -55,7 +55,7 @@ for name, model in models.items():
     result = {**score(y, all_p), "folds": fold_rows, "subject": grouped_scores(y, all_p, meta, "subject"), "trial": grouped_scores(y, all_p, meta, "trial_id")}
     res["models"][name] = result
     model.fit(X, y)
-    save_bundle(model, os.path.join(ROOT, "test", f"{name}.joblib"))
+    save_bundle(model, os.path.join(ROOT, "test", "00_baseline", f"{name}.joblib"))
     print(name, result, flush=True)
-with open(os.path.join(ROOT, "test", "results.json"), "w", encoding="utf-8") as f:
+with open(os.path.join(ROOT, "test", "00_baseline", "results.json"), "w", encoding="utf-8") as f:
     json.dump(res, f, ensure_ascii=False, indent=2)

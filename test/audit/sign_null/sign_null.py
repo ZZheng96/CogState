@@ -17,6 +17,22 @@ Nulls:
 Checks: observed C_G == anchor json; determinism (two observed computations identical).
 Run: python test/audit/sign_null/sign_null.py [--smoke]   (smoke: 20 permutations, 20 splits)
 """
+# --- test layout bootstrap (generated 2026-11-02): locate test/ root, shared modules and cache ---
+import sys as _sys
+from pathlib import Path as _Path
+_HERE = _Path(__file__).resolve().parent
+_TEST = _HERE
+while _TEST.name != "test" and _TEST.parent != _TEST:
+    _TEST = _TEST.parent
+CACHE_DIR = _TEST / "cache"
+if str(_TEST) not in _sys.path:
+    _sys.path.append(str(_TEST))
+for _d in sorted(_TEST.iterdir()):
+    if _d.is_dir() and _d.name not in {"cache", "results", "pretrained_cache", "reports", "experiments", "_orphans", "__pycache__"}:
+        if str(_d) not in _sys.path:
+            _sys.path.append(str(_d))
+# --- end bootstrap ---
+
 import argparse, json, sys, time, warnings
 from pathlib import Path
 
@@ -70,7 +86,7 @@ def main():
     locs = [np.flatnonzero(g == s) for s in subs]; ys = [y[l] for l in locs]
     Dobs = all_d(Z, ys, locs); obs, per_obs = cons_stats(Dobs, subs, grp_of)
     Dobs2 = all_d(Z, ys, locs); assert np.array_equal(Dobs, Dobs2), 'determinism'
-    ref = json.loads((TEST / 'depositioned_anchor_direction.json').read_text(encoding='utf-8'))['diagnostics']
+    ref = json.loads((TEST / '07_depositioned/depositioned_anchor_direction.json').read_text(encoding='utf-8'))['diagnostics']
     for G in GROUPS:
         assert abs(ref[G]['sign_consistency_vs_global_median'] - obs[G]) < 1e-12, (G, obs[G])
     print(f'[obs] reproduces anchor json: ' + ' '.join(f'{k}={v:.4f}' for k, v in obs.items()) + f' {el()}', flush=True)

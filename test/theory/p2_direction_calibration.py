@@ -6,6 +6,22 @@ Calibration estimates only a sign and intercept for the frozen score; it never
 uses later labels. This is a protocol experiment, not a claim that the
 competition grants these labels.
 """
+# --- test layout bootstrap (generated 2026-11-02): locate test/ root, shared modules and cache ---
+import sys as _sys
+from pathlib import Path as _Path
+_HERE = _Path(__file__).resolve().parent
+_TEST = _HERE
+while _TEST.name != "test" and _TEST.parent != _TEST:
+    _TEST = _TEST.parent
+CACHE_DIR = _TEST / "cache"
+if str(_TEST) not in _sys.path:
+    _sys.path.append(str(_TEST))
+for _d in sorted(_TEST.iterdir()):
+    if _d.is_dir() and _d.name not in {"cache", "results", "pretrained_cache", "reports", "experiments", "_orphans", "__pycache__"}:
+        if str(_d) not in _sys.path:
+            _sys.path.append(str(_d))
+# --- end bootstrap ---
+
 import json
 import time
 from pathlib import Path
@@ -13,8 +29,8 @@ from pathlib import Path
 import numpy as np
 from sklearn.metrics import balanced_accuracy_score, roc_auc_score
 
-OUT = Path(__file__).resolve().parent.parent
-CACHE = OUT / "broadband_shape_window6_oof.npz"
+OUT = Path(__file__).resolve().parent
+CACHE = CACHE_DIR / 'broadband_shape_window6_oof.npz'
 RES = OUT / "theory_p2_direction_calibration_results.json"
 MS = (1, 3, 5, 10, 20)
 START = time.perf_counter()

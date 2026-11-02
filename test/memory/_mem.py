@@ -6,6 +6,22 @@ Input: test/memory/realorder_oof.npz written by `python test/realorder/realorder
   pos           0-based position of each row in its subject's real order;  t  recording time (s, window end)
 Window step = 6 s (non-overlapping 6 s windows; median diff of t_end), so half-life h windows = 6 h s.
 """
+# --- test layout bootstrap (generated 2026-11-02): locate test/ root, shared modules and cache ---
+import sys as _sys
+from pathlib import Path as _Path
+_HERE = _Path(__file__).resolve().parent
+_TEST = _HERE
+while _TEST.name != "test" and _TEST.parent != _TEST:
+    _TEST = _TEST.parent
+CACHE_DIR = _TEST / "cache"
+if str(_TEST) not in _sys.path:
+    _sys.path.append(str(_TEST))
+for _d in sorted(_TEST.iterdir()):
+    if _d.is_dir() and _d.name not in {"cache", "results", "pretrained_cache", "reports", "experiments", "_orphans", "__pycache__"}:
+        if str(_d) not in _sys.path:
+            _sys.path.append(str(_d))
+# --- end bootstrap ---
+
 import json, sys, time, warnings
 from pathlib import Path
 
