@@ -21,8 +21,8 @@
     },
     {
       "path": "README.md",
-      "size": 52102,
-      "sha256": "00508d09db78d4aca95d3e058dbef3d23e087d454aa8383a21cf4b01c717d1ea"
+      "size": 52256,
+      "sha256": "5cbfa53fc87ce17a8a0e81178b2e95169b5f83121a39d69f663e079a11178301"
     },
     {
       "path": "test/experiments/实验方法索引.md",
@@ -4210,6 +4210,26 @@
           "status": "has_result_json"
         },
         {
+          "id": "test/10_projects/protocol_20261102/sweep_u.py",
+          "path": "test/10_projects/protocol_20261102/sweep_u.py",
+          "summary": "端到端 u_assume 敏感性：57 份 BDF 只读一遍，再用导出的表对 u=0..12 重算指标。 为什么需要：P6 的端到端结果是 u_assume=9 的单一取值。若该取值只是碰巧，结论就不稳。 这里给出完整的 bACC/AUC ",
+          "artifacts": [
+            {
+              "path": "test/10_projects/protocol_20261102/sweep_u.json",
+              "kind": "result",
+              "size": 2480,
+              "sha256": "a95027f13aad8666705684255264710ffe50958f9f1a2d0ba3e86a4bdab37752"
+            },
+            {
+              "path": "test/10_projects/protocol_20261102/sweep_u.log",
+              "kind": "log",
+              "size": 3075,
+              "sha256": "dd1cdb4caaba14eb2ab89a23e42b6cf59bcd8a41060434a692a60b0b1c93f6c6"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
           "id": "test/10_projects/protocol_20261102/test_protocol_stream.py",
           "path": "test/10_projects/protocol_20261102/test_protocol_stream.py",
           "summary": "协议时间表解码器的流式一致性测试。 验证三件事（不需要 EEG/训练数据）： 1. 任意分块长度得到逐窗口完全相同的 (t_end, p_task)； 2. 前缀不变：前 m 个窗口的输出只依赖前 m*win 个采样点； 3. save/l",
@@ -4256,8 +4276,8 @@
         {
           "path": "test/10_projects/protocol_20261102/报告_P6_流式部署与端到端验证.md",
           "kind": "other",
-          "size": 6853,
-          "sha256": "dd00323d5b978686d47329d3b9a77d42f591c26bc57e7e048aa648b15eb6c30e",
+          "size": 7850,
+          "sha256": "c209b526dbe35bc585d996dbd905ab1e38b87d23fb4e39ddd52cc51502411c6c",
           "suggested_script": null
         }
       ]
@@ -39178,6 +39198,206 @@
       "value": 0.5610621192325085
     },
     {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.0.AUC",
+      "value": 0.903375124729621
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.0.F1_macro",
+      "value": 0.8561721714148235
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.0.bACC",
+      "value": 0.856264179884247
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.0.subject_macro_bACC",
+      "value": 0.8576773621539615
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.1.AUC",
+      "value": 0.9162700422370758
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.1.F1_macro",
+      "value": 0.8722196188292912
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.1.bACC",
+      "value": 0.8722758674802652
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.1.subject_macro_bACC",
+      "value": 0.873329770798769
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.10.AUC",
+      "value": 0.9885872093502709
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.10.F1_macro",
+      "value": 0.9791923017073655
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.10.bACC",
+      "value": 0.979196712134464
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.10.subject_macro_bACC",
+      "value": 0.9778552312162204
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.11.AUC",
+      "value": 0.9844460282741496
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.11.F1_macro",
+      "value": 0.9625701394518075
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.11.bACC",
+      "value": 0.9625808711208905
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.11.subject_macro_bACC",
+      "value": 0.9612214907843468
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.12.AUC",
+      "value": 0.9733081945845151
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.12.F1_macro",
+      "value": 0.9458229942100911
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.12.bACC",
+      "value": 0.9458421195861766
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.12.subject_macro_bACC",
+      "value": 0.9444848341032759
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.2.AUC",
+      "value": 0.9290520087957121
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.2.F1_macro",
+      "value": 0.8881349944463974
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.2.bACC",
+      "value": 0.8881644323268132
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.2.subject_macro_bACC",
+      "value": 0.8888795735098438
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.3.AUC",
+      "value": 0.9406851682473434
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.3.F1_macro",
+      "value": 0.9034287421535308
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.3.bACC",
+      "value": 0.9034382323393286
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.3.subject_macro_bACC",
+      "value": 0.9038295128176352
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.4.AUC",
+      "value": 0.9526881355632103
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.4.F1_macro",
+      "value": 0.9182217402169509
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.4.bACC",
+      "value": 0.9182193291256338
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.4.subject_macro_bACC",
+      "value": 0.9183091061496468
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.5.AUC",
+      "value": 0.9630755450387324
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.5.F1_macro",
+      "value": 0.932945828293813
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.5.bACC",
+      "value": 0.9329376972813914
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.5.subject_macro_bACC",
+      "value": 0.9327785109705556
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.6.AUC",
+      "value": 0.9738446774832776
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.6.F1_macro",
+      "value": 0.9464965338609236
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.6.bACC",
+      "value": 0.946486717659677
+    },
+    {
+      "file": "test/10_projects/protocol_20261102/sweep_u.json",
+      "key": "u.6.subject_macro_bACC",
+      "value": 0.946100806714722
+    },
+    {
       "file": "test/_orphans/causal_covariance_transport_results.json",
       "key": "methods.diagonal.all.AUC",
       "value": 0.660426461487161
@@ -49747,6 +49967,7 @@
     "test/10_projects/protocol_20261102/protocol_segment_off10.json": 2136,
     "test/10_projects/protocol_20261102/protocol_segment_smoke.json": 270,
     "test/10_projects/protocol_20261102/realorder_manifest.json": 0,
+    "test/10_projects/protocol_20261102/sweep_u.json": 52,
     "test/_orphans/causal_covariance_transport_results.json": 48,
     "test/_orphans/causal_covariance_transport_smoke_results.json": 48,
     "test/audit/direction_scoring/direction_scoring.json": 312,
@@ -51905,10 +52126,10 @@
     }
   ],
   "summary": {
-    "files_scanned": 931,
-    "py_scripts": 227,
-    "json_results": 266,
-    "metrics_entries": 8770,
+    "files_scanned": 934,
+    "py_scripts": 228,
+    "json_results": 267,
+    "metrics_entries": 8810,
     "missing_reference_count": 524,
     "database_window_files": 116
   }

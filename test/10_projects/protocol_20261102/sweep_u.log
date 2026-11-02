@@ -1,0 +1,71 @@
+﻿[1/57] sub-001 scored=293 elapsed=0s
+[2/57] sub-002 scored=273 elapsed=0s
+[3/57] sub-003 scored=271 elapsed=0s
+[4/57] sub-004 scored=278 elapsed=0s
+[5/57] sub-005 scored=285 elapsed=1s
+[6/57] sub-006 scored=280 elapsed=1s
+[7/57] sub-007 scored=289 elapsed=2s
+[8/57] sub-008 scored=288 elapsed=2s
+[9/57] sub-009 scored=218 elapsed=2s
+[10/57] sub-010 scored=291 elapsed=2s
+[11/57] sub-011 scored=292 elapsed=2s
+[12/57] sub-012 scored=280 elapsed=3s
+[13/57] sub-013 scored=288 elapsed=3s
+[14/57] sub-014 scored=295 elapsed=3s
+[15/57] sub-015 scored=268 elapsed=3s
+[16/57] sub-016 scored=295 elapsed=4s
+[17/57] sub-017 scored=283 elapsed=5s
+[18/57] sub-018 scored=292 elapsed=6s
+[19/57] sub-019 scored=292 elapsed=6s
+[20/57] sub-020 scored=285 elapsed=6s
+[21/57] sub-021 scored=287 elapsed=6s
+[22/57] sub-022 scored=299 elapsed=6s
+[23/57] sub-023 scored=297 elapsed=6s
+[24/57] sub-024 scored=294 elapsed=6s
+[25/57] sub-025 scored=288 elapsed=6s
+[26/57] sub-026 scored=295 elapsed=6s
+[27/57] sub-027 scored=287 elapsed=6s
+[28/57] sub-028 scored=290 elapsed=6s
+[29/57] sub-029 scored=294 elapsed=6s
+[30/57] sub-030 scored=299 elapsed=6s
+[31/57] sub-031 scored=296 elapsed=6s
+[32/57] sub-034 scored=121 elapsed=6s
+[33/57] sub-035 scored=296 elapsed=6s
+[34/57] sub-036 scored=286 elapsed=6s
+[35/57] sub-037 scored=288 elapsed=6s
+[36/57] sub-038 scored=295 elapsed=7s
+[37/57] sub-039 scored=299 elapsed=7s
+[38/57] sub-040 scored=288 elapsed=7s
+[39/57] sub-041 scored=290 elapsed=7s
+[40/57] sub-042 scored=289 elapsed=7s
+[41/57] sub-043 scored=286 elapsed=7s
+[42/57] sub-044 scored=288 elapsed=7s
+[43/57] sub-045 scored=288 elapsed=7s
+[44/57] sub-046 scored=288 elapsed=7s
+[45/57] sub-047 scored=290 elapsed=8s
+[46/57] sub-048 scored=290 elapsed=8s
+[47/57] sub-049 scored=283 elapsed=8s
+[48/57] sub-050 scored=289 elapsed=8s
+[49/57] sub-051 scored=294 elapsed=8s
+[50/57] sub-052 scored=293 elapsed=8s
+[51/57] sub-053 scored=297 elapsed=8s
+[52/57] sub-054 scored=295 elapsed=8s
+[53/57] sub-055 scored=288 elapsed=8s
+[54/57] sub-056 scored=295 elapsed=8s
+[55/57] sub-057 scored=283 elapsed=8s
+[56/57] sub-058 scored=292 elapsed=8s
+[57/57] sub-059 scored=291 elapsed=8s
+[u= 0] AUC=0.9034 bACC=0.8563 F1m=0.8562 macro=0.8577 n>=.9=6
+[u= 1] AUC=0.9163 bACC=0.8723 F1m=0.8722 macro=0.8733 n>=.9=8
+[u= 2] AUC=0.9291 bACC=0.8882 F1m=0.8881 macro=0.8889 n>=.9=8
+[u= 3] AUC=0.9407 bACC=0.9034 F1m=0.9034 macro=0.9038 n>=.9=19
+[u= 4] AUC=0.9527 bACC=0.9182 F1m=0.9182 macro=0.9183 n>=.9=55
+[u= 5] AUC=0.9631 bACC=0.9329 F1m=0.9329 macro=0.9328 n>=.9=56
+[u= 6] AUC=0.9738 bACC=0.9465 F1m=0.9465 macro=0.9461 n>=.9=55
+[u= 7] AUC=0.9872 bACC=0.9600 F1m=0.9600 macro=0.9593 n>=.9=55
+[u= 8] AUC=0.9917 bACC=0.9723 F1m=0.9723 macro=0.9713 n>=.9=54
+[u= 9] AUC=0.9911 bACC=0.9840 F1m=0.9840 macro=0.9828 n>=.9=53
+[u=10] AUC=0.9886 bACC=0.9792 F1m=0.9792 macro=0.9779 n>=.9=53
+[u=11] AUC=0.9844 bACC=0.9626 F1m=0.9626 macro=0.9612 n>=.9=51
+[u=12] AUC=0.9733 bACC=0.9458 F1m=0.9458 macro=0.9445 n>=.9=51
+[done] -> sweep_u.json 9.5s
