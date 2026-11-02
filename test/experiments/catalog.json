@@ -41,8 +41,8 @@
     },
     {
       "path": "理论框架.md",
-      "size": 22628,
-      "sha256": "be846069b1f4e3d99b93aa6a4dcf1e9119fd7db5b9bc9466b4acb8967905e62e"
+      "size": 24091,
+      "sha256": "8f6e09834a8e8e12a1f5cc27fae6495dd08d36ae3386cf39479027f152949bdb"
     },
     {
       "path": "研究报告.md",
@@ -7634,8 +7634,8 @@
         {
           "path": "test/11_individual_20261102/报告_E13_逐被试细搜与坏块诊断.md",
           "kind": "other",
-          "size": 6667,
-          "sha256": "e3f8e34bb17e8eb7722331f081e3eb3880f4ee04344ac9796a963cc13f4ace3d",
+          "size": 8907,
+          "sha256": "152d1d2cee1da6a047f476e6e55fa96bc39a88b5d7c7e248d2c2e5a1102e993c",
           "suggested_script": null
         }
       ]
