@@ -1,0 +1,11 @@
+﻿[data] windows=16067 subs=57 anchors=8 elapsed=4.7s
+[anchor] alpha_rel        AUC=0.474 cons=0.58 medD=-0.12
+[anchor] alpha_peakiness  AUC=0.513 cons=0.65 medD=+0.09
+[anchor] theta_rel        AUC=0.536 cons=0.54 medD=+0.08
+[anchor] alpha_theta      AUC=0.432 cons=0.70 medD=-0.23
+[anchor] blink_rate       AUC=0.487 cons=0.53 medD=-0.02
+[anchor] lowfreq_rel      AUC=0.533 cons=0.53 medD=+0.10
+[anchor] one_over_f       AUC=0.457 cons=0.60 medD=-0.18
+[anchor] spec_entropy     AUC=0.453 cons=0.61 medD=-0.18
+[cv anchors-only] AUC=0.5543 bACC=0.5402 F1m=0.5357 macro=0.5406 n>=.9=0/57
+[done] 4.9s

@@ -4086,6 +4086,26 @@
           "status": "has_result_json"
         },
         {
+          "id": "test/10_projects/eeg_only_20261102/anchor_features.py",
+          "path": "test/10_projects/eeg_only_20261102/anchor_features.py",
+          "summary": "E5：生理锚点能否给\"本人方向\"定符号？ 思路：跨被试失败的核心是约 1/3 被试的判别方向相反，而无标签数据里不能定符号（label switching）。 但如果存在一个**生理上方向固定**的量，它就能当锚。最自然的候选是\"闭眼/睁眼",
+          "artifacts": [
+            {
+              "path": "test/10_projects/eeg_only_20261102/anchor_features.json",
+              "kind": "result",
+              "size": 1439,
+              "sha256": "22a03904dd14a64c62a52977eef6ad0c330eb04d2bd0b266186a7ec73c0c0a73"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/anchor_features.log",
+              "kind": "log",
+              "size": 610,
+              "sha256": "5c91772d48e02a9fd52442faefea04854d7b3c68e689a350ab686a908b2300cb"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
           "id": "test/10_projects/eeg_only_20261102/causal_norm.py",
           "path": "test/10_projects/eeg_only_20261102/causal_norm.py",
           "summary": "E4：因果被试标准化（只用本人已到达的无标签窗）能否把跨被试 0.645 拉近被试内 0.80？ 规范： * 每个判断仍只用当前 6 s 窗的特征；不使用时间表、窗序号、块序号； * 标准化用的参考统计量**只来自本人更早到达的窗**（先预",
@@ -4121,6 +4141,26 @@
               "kind": "log",
               "size": 849,
               "sha256": "2ae68e7562aa4ef99936d71d887305affd14df81ced15a27c86b5306e9e2b502"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/10_projects/eeg_only_20261102/hp_check.py",
+          "path": "test/10_projects/eeg_only_20261102/hp_check.py",
+          "summary": "E5b：高通截止频率是否把 α/δ 的判别方向洗掉了？ 动机：E5 里 α 相对功率的池化 AUC 只有 0.474（低于随机）、符号一致率 0.58，与\"任务→α 抑制\"的 经典结论相反；而历史 858 维里最好的单特征是 1–4 Hz（",
+          "artifacts": [
+            {
+              "path": "test/10_projects/eeg_only_20261102/hp_check.json",
+              "kind": "result",
+              "size": 1218,
+              "sha256": "1b3c36ccf327477e0e132456bc8c27b1db9e7d03a7a4e80f664a2f440a11f317"
+            },
+            {
+              "path": "test/10_projects/eeg_only_20261102/hp_check.log",
+              "kind": "log",
+              "size": 377,
+              "sha256": "441f759ba428f4fa695bccacd2ce48e8277c58b980bc9720a7e240b6b2868e18"
             }
           ],
           "status": "has_result_json"
@@ -4341,8 +4381,8 @@
         {
           "path": "test/10_projects/eeg_only_20261102/报告_E1_纯EEG天花板.md",
           "kind": "other",
-          "size": 7746,
-          "sha256": "29092ced36f8d797b93075ed9e53504668f44166076e2f45b3db9498c3d95263",
+          "size": 8737,
+          "sha256": "01db7f9e6e22a9ad54266c79dbbf6826ac0fe8094f77cb382272b1cb6eac4f2b",
           "suggested_script": null
         },
         {
@@ -37993,6 +38033,66 @@
       "value": 0.5817035437490584
     },
     {
+      "file": "test/10_projects/eeg_only_20261102/anchor_features.json",
+      "key": "anchors[0].AUC",
+      "value": 0.4739653090197106
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/anchor_features.json",
+      "key": "anchors[1].AUC",
+      "value": 0.513473442846283
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/anchor_features.json",
+      "key": "anchors[2].AUC",
+      "value": 0.5362068009097465
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/anchor_features.json",
+      "key": "anchors[3].AUC",
+      "value": 0.4324150180688
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/anchor_features.json",
+      "key": "anchors[4].AUC",
+      "value": 0.48666125578857033
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/anchor_features.json",
+      "key": "anchors[5].AUC",
+      "value": 0.5333928808835164
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/anchor_features.json",
+      "key": "anchors[6].AUC",
+      "value": 0.45697859170276245
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/anchor_features.json",
+      "key": "anchors[7].AUC",
+      "value": 0.4532735657531704
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/anchor_features.json",
+      "key": "cv.AUC",
+      "value": 0.5543447476209646
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/anchor_features.json",
+      "key": "cv.F1_macro",
+      "value": 0.5356962998991741
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/anchor_features.json",
+      "key": "cv.bACC",
+      "value": 0.5402187376911045
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/anchor_features.json",
+      "key": "cv.subject_macro_bACC",
+      "value": 0.5405580192347232
+    },
+    {
       "file": "test/10_projects/eeg_only_20261102/causal_norm.json",
       "key": "methods.hgb|cum.AUC",
       "value": 0.5960231285597984
@@ -38301,6 +38401,46 @@
       "file": "test/10_projects/eeg_only_20261102/feature_probe.json",
       "key": "methods.new_only_lr.subject_macro_bACC",
       "value": 0.5733126515692195
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/hp_check.json",
+      "key": "rows[0].alpha_rel.AUC",
+      "value": 0.5391410246517251
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/hp_check.json",
+      "key": "rows[0].delta_rel.AUC",
+      "value": 0.462855886871121
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/hp_check.json",
+      "key": "rows[1].alpha_rel.AUC",
+      "value": 0.5391565042256603
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/hp_check.json",
+      "key": "rows[1].delta_rel.AUC",
+      "value": 0.4621220404030825
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/hp_check.json",
+      "key": "rows[2].alpha_rel.AUC",
+      "value": 0.5390903712711503
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/hp_check.json",
+      "key": "rows[2].delta_rel.AUC",
+      "value": 0.46210784691987467
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/hp_check.json",
+      "key": "rows[3].alpha_rel.AUC",
+      "value": 0.540094761644002
+    },
+    {
+      "file": "test/10_projects/eeg_only_20261102/hp_check.json",
+      "key": "rows[3].delta_rel.AUC",
+      "value": 0.4736613422510554
     },
     {
       "file": "test/10_projects/eeg_only_20261102/sign_consistency.json",
@@ -50693,8 +50833,10 @@
     "test/09_database/database_models_results.json": 62,
     "test/09_database/database_training_results.json": 24,
     "test/10_projects/eeg_only_20261102/aligned_lr.json": 9,
+    "test/10_projects/eeg_only_20261102/anchor_features.json": 12,
     "test/10_projects/eeg_only_20261102/causal_norm.json": 32,
     "test/10_projects/eeg_only_20261102/feature_probe.json": 30,
+    "test/10_projects/eeg_only_20261102/hp_check.json": 8,
     "test/10_projects/eeg_only_20261102/sign_consistency.json": 16,
     "test/10_projects/protocol_20261102/boundary_refine.json": 20,
     "test/10_projects/protocol_20261102/boundary_refine_smoke.json": 20,
@@ -52745,11 +52887,19 @@
       "reference": "sub-*.npz"
     },
     {
+      "script": "test/10_projects/eeg_only_20261102/anchor_features.py",
+      "reference": "sub-*.npz"
+    },
+    {
       "script": "test/10_projects/eeg_only_20261102/causal_norm.py",
       "reference": "realorder.npz"
     },
     {
       "script": "test/10_projects/eeg_only_20261102/feature_probe.py",
+      "reference": "sub-*.npz"
+    },
+    {
+      "script": "test/10_projects/eeg_only_20261102/hp_check.py",
       "reference": "sub-*.npz"
     },
     {
@@ -52886,11 +53036,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 949,
-    "py_scripts": 232,
-    "json_results": 272,
-    "metrics_entries": 8937,
-    "missing_reference_count": 529,
+    "files_scanned": 955,
+    "py_scripts": 234,
+    "json_results": 274,
+    "metrics_entries": 8957,
+    "missing_reference_count": 531,
     "database_window_files": 116
   }
 }

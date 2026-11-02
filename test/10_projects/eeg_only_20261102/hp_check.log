@@ -1,0 +1,6 @@
+﻿[data] windows=16067
+[hp=0.5] alpha AUC=0.539 cons=0.58 medD=+0.12 | delta AUC=0.463 cons=0.56 medD=-0.19
+[hp=1.0] alpha AUC=0.539 cons=0.58 medD=+0.07 | delta AUC=0.462 cons=0.58 medD=-0.04
+[hp=2.0] alpha AUC=0.539 cons=0.58 medD=+0.06 | delta AUC=0.462 cons=0.58 medD=-0.08
+[hp=4.0] alpha AUC=0.540 cons=0.56 medD=+0.12 | delta AUC=0.474 cons=0.61 medD=-0.19
+[done]
