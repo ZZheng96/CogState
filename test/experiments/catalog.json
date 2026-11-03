@@ -21,13 +21,13 @@
     },
     {
       "path": "README.md",
-      "size": 65019,
-      "sha256": "10fe54528a905b90d36d13db68df7f3594c6f6e6df837bfa01d78fc4cacbb421"
+      "size": 65005,
+      "sha256": "871dd4a6c6b3cf9355cff6784128cc562d688c69c62cf5552b9a3c3450de54b0"
     },
     {
       "path": "test/experiments/实验方法索引.md",
-      "size": 67605,
-      "sha256": "8d41655ea45e7c270645309a7c014e57d865cb9661385d7980d561f88202bd68"
+      "size": 67652,
+      "sha256": "243b1d1f80dd27dc04bf6e57c3b80c049cb02753932f713166e6fd59964cea28"
     },
     {
       "path": "test/reports/卡尔曼深度学习实验报告.md",
@@ -42,7 +42,7 @@
     {
       "path": "理论框架.md",
       "size": 30137,
-      "sha256": "751f5358a2161e781c125e35b0b22f5957b77836bed82f082762ca3a31f59958"
+      "sha256": "f009601107fa0803f85cfac9702be84116b20bcf661d26e5e9d773ebf0a6133d"
     },
     {
       "path": "研究报告.md",
@@ -5631,6 +5631,26 @@
           "status": "has_result_json"
         },
         {
+          "id": "test/22_subject/round8.py",
+          "path": "test/22_subject/round8.py",
+          "summary": "",
+          "artifacts": [
+            {
+              "path": "test/22_subject/round8.json",
+              "kind": "result",
+              "size": 559,
+              "sha256": "fcedfd712adcf5fa58602f5d95f48ed18275777b08fcde45f8d074e3de835f98"
+            },
+            {
+              "path": "test/22_subject/round8.log",
+              "kind": "log",
+              "size": 342,
+              "sha256": "2550af20eb2a7355db4e135ddc2e67376b9c9f711f28eb5a92bf959e99544509"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
           "id": "test/22_subject/subject.py",
           "path": "test/22_subject/subject.py",
           "summary": "E22：逐个被试推进到 0.9（E13 思路的合规版）。 与 E13 的区别（按理论框架第 13 节）： - 学习阶段只用本人块 0–3（带标签）+ 其他被试数据；块 4–5 为推理测试段。 - 推理每帧只读当前 6 s 窗特征；去掉分数 ",
@@ -10162,15 +10182,15 @@
         {
           "path": "test/22_subject/best.json",
           "kind": "result",
-          "size": 8748,
-          "sha256": "64fd7f93c1120bf846091902c8fe857a362a32bc9020b976addab8c3137bb75e",
+          "size": 8879,
+          "sha256": "fd6e834c1d29f208a29bc53fc8090f808ecc7a4faebe0e11da7ab02655f00d4a",
           "suggested_script": null
         },
         {
           "path": "test/22_subject/报告_E22_逐被试推进.md",
           "kind": "other",
-          "size": 4764,
-          "sha256": "e517b952b1aa2ef22561e546e6cbdc7d4a2d903ea314dbf0682d2d7d7c56ddce",
+          "size": 5443,
+          "sha256": "25d99a063f128d621f219a29a31b18f0e4eb0b0764b8aaecc52a0253d765c932",
           "suggested_script": null
         }
       ]
@@ -52529,6 +52549,36 @@
       "value": 0.8846153846153846
     },
     {
+      "file": "test/22_subject/round8.json",
+      "key": "022.auc",
+      "value": 0.962538913870633
+    },
+    {
+      "file": "test/22_subject/round8.json",
+      "key": "022.bacc",
+      "value": 0.9389081056151274
+    },
+    {
+      "file": "test/22_subject/round8.json",
+      "key": "022.f1",
+      "value": 0.9379310344827586
+    },
+    {
+      "file": "test/22_subject/round8.json",
+      "key": "042.auc",
+      "value": 0.9586640211640212
+    },
+    {
+      "file": "test/22_subject/round8.json",
+      "key": "042.bacc",
+      "value": 0.9108205782312926
+    },
+    {
+      "file": "test/22_subject/round8.json",
+      "key": "042.f1",
+      "value": 0.9112627986348123
+    },
+    {
       "file": "test/22_subject/subject.json",
       "key": "per_subject.001.calsel.auc",
       "value": 0.928073668491787
@@ -63359,6 +63409,7 @@
     "test/22_subject/round5.json": 18,
     "test/22_subject/round6.json": 15,
     "test/22_subject/round7.json": 6,
+    "test/22_subject/round8.json": 6,
     "test/22_subject/subject.json": 513,
     "test/_orphans/causal_covariance_transport_results.json": 48,
     "test/_orphans/causal_covariance_transport_smoke_results.json": 48,
@@ -65585,6 +65636,10 @@
       "reference": "xblock2_scores.npz"
     },
     {
+      "script": "test/22_subject/round8.py",
+      "reference": "xblock2_scores.npz"
+    },
+    {
       "script": "test/22_subject/subject.py",
       "reference": "xblock2_scores.npz"
     },
@@ -65710,11 +65765,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 1648,
-    "py_scripts": 288,
-    "json_results": 328,
-    "metrics_entries": 10477,
-    "missing_reference_count": 572,
+    "files_scanned": 1651,
+    "py_scripts": 289,
+    "json_results": 329,
+    "metrics_entries": 10483,
+    "missing_reference_count": 573,
     "database_window_files": 116
   }
 }

@@ -1,0 +1,16 @@
+{
+ "022": {
+  "cfg": "(ghilbert_k200+fghilbert_envelope_3_k20)+(fghilbert_frequency_3_k65+fgstft_log_power_k125)+(fghilbert_envelope_3_k20+idxoth3)+[f4]|t300q0.55",
+  "ncfg": 514703,
+  "bacc": 0.9389081056151274,
+  "auc": 0.962538913870633,
+  "f1": 0.9379310344827586
+ },
+ "042": {
+  "cfg": "(b23n10_C0.1+wcal100_C0.1)+(b23n50_C0.001+fbstft_1.0_relative_k325)+(fbhilbert_frequency_0_k65+fbstft_1.0_relative_k325)+[idxemg3]|t300q0.525",
+  "ncfg": 514703,
+  "bacc": 0.9108205782312926,
+  "auc": 0.9586640211640212,
+  "f1": 0.9112627986348123
+ }
+}
