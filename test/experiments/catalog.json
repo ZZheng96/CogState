@@ -21,13 +21,13 @@
     },
     {
       "path": "README.md",
-      "size": 63565,
-      "sha256": "ac879d185124d96c5fefcad9d11e27949854b85cbc56b2d1845791554172c6ef"
+      "size": 64175,
+      "sha256": "b345e4ba463d7113ca1c5cdd45882d723f16afbfebc706bae5a1bb52088347d3"
     },
     {
       "path": "test/experiments/实验方法索引.md",
-      "size": 65438,
-      "sha256": "75fffdd40819b11e88de47ab3e828d964a07618dcb77f9692c54b5e2c44fa8c4"
+      "size": 66430,
+      "sha256": "3b89c9145f7dd0f28c7f209a8b63243759665dfc414a742d08a1f1ec11bb7972"
     },
     {
       "path": "test/reports/卡尔曼深度学习实验报告.md",
@@ -41,8 +41,8 @@
     },
     {
       "path": "理论框架.md",
-      "size": 28031,
-      "sha256": "b915b3fcd2f9a6c1c3f34efb0ce1af3cdffa05d18f28e5871097b12a23e3d1db"
+      "size": 28839,
+      "sha256": "8a342018af869f74bef31f9d12a2c70b74f3bfa829d836ae29683d79db845bd5"
     },
     {
       "path": "研究报告.md",
@@ -4828,7 +4828,9 @@
         "test/11_individual_20261102",
         "test/15_nested_select",
         "test/16_subject_push",
-        "test/17_compliant"
+        "test/17_compliant",
+        "test/18_calib",
+        "test/19_xblock"
       ],
       "scripts": [
         {
@@ -5346,6 +5348,112 @@
               "kind": "log",
               "size": 1001,
               "sha256": "f1499c986e6d9a671f592ca7656d9d6abf6f688392b3bf80dcb91cc21d42c025"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/18_calib/calib.py",
+          "path": "test/18_calib/calib.py",
+          "summary": "E18：决赛口径——学习阶段用本人带标签校准块，推理阶段单窗 6 s 因果 + 无标签在线自适应。 每人：前 K 个块（时间顺序）= 校准段（有标签，模拟决赛调试期采集）；其余块 = 流式测试段。 特征：sliding1 878 维，多尺度",
+          "artifacts": [
+            {
+              "path": "test/18_calib/calib.json",
+              "kind": "result",
+              "size": 244256,
+              "sha256": "4fc7b5f76f4d2bbe03297c22fa90aa12777f56aa16eff5e403eadea9d28612cc"
+            },
+            {
+              "path": "test/18_calib/calib.log",
+              "kind": "log",
+              "size": 10318,
+              "sha256": "5472276499ebc1030c286d98524ab2c68a53ac0c756a066daa905d0d313cf0ea"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/18_calib/calib2.py",
+          "path": "test/18_calib/calib2.py",
+          "summary": "E18b：逐人在校准段内选方法（学习阶段），测试段单窗 6 s 因果推理。 校准段 = 块 0–3（R,T,R,T，带标签）；测试段 = 块 4–5。 内层：块(0,1)→验证(2,3) 与 (2,3)→(0,1) 两折，按 bACC 选该",
+          "artifacts": [
+            {
+              "path": "test/18_calib/calib2.json",
+              "kind": "result",
+              "size": 980245,
+              "sha256": "de91321cb561b00d2e7b95922518f2c61feea8174c3f64e58951f81abdee3428"
+            },
+            {
+              "path": "test/18_calib/calib2.log",
+              "kind": "log",
+              "size": 6183,
+              "sha256": "aff1a579fc4b635669baa6bde8a90e9fe019376105a1c42108e782e8ae45f3f2"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/18_calib/calib3.py",
+          "path": "test/18_calib/calib3.py",
+          "summary": "E18c：稳健选择 + 推理阶段无标签阈值自适应。 协议同 calib2：块 0–3 为校准（带标签，学习阶段），块 4–5 为测试（推理阶段，单窗 6 s 因果）。 选择策略（每人只用校准块内层两折结果）： seed        跨被试",
+          "artifacts": [
+            {
+              "path": "test/18_calib/calib3.json",
+              "kind": "result",
+              "size": 224470,
+              "sha256": "5b8e4a2edf4323bbca48aaf677b7dfa99642fea04b65f12c6d114b1d05320581"
+            },
+            {
+              "path": "test/18_calib/calib3.log",
+              "kind": "log",
+              "size": 4344,
+              "sha256": "4569d0cc2432645aaa4a6700bfb77339884fb3094f15f88a4fd533bd2fe94e63"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/19_xblock/xblock.py",
+          "path": "test/19_xblock/xblock.py",
+          "summary": "E19：提高校准→测试的跨块可分性（诊断各候选族的测试段 AUC/bACC）。 协议同 E18：块 0–3 校准（带标签，学习阶段），块 4–5 测试（单窗 6 s 因果推理，阈值 0 来自校准统计量）。 候选族： seed        ",
+          "artifacts": [
+            {
+              "path": "test/19_xblock/xblock.json",
+              "kind": "result",
+              "size": 91423,
+              "sha256": "664795e457e70b91629148f3cfb2e10f107141c4668a3bd1447f45b977d76243"
+            },
+            {
+              "path": "test/19_xblock/xblock.log",
+              "kind": "log",
+              "size": 17046,
+              "sha256": "ab042143a1edd8c9f17f39a570c0db2d94a18619fc42b123c6d4fa021fe018b1"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/19_xblock/xblock2.py",
+          "path": "test/19_xblock/xblock2.py",
+          "summary": "E19b：联合训练（其他被试 + 本人校准）× 一致性特征数 k × 本人权重 wo 扫描。协议同 xblock.py。 运行：.venv\\\\Scripts\\\\python.exe test/19_xblock/xblock2.py",
+          "artifacts": [
+            {
+              "path": "test/19_xblock/xblock2.json",
+              "kind": "result",
+              "size": 56407,
+              "sha256": "06f2d39e0d7ecaad1ca4aab3de419ed892f5f6a259288e13ac2286642580b933"
+            },
+            {
+              "path": "test/19_xblock/xblock2.log",
+              "kind": "log",
+              "size": 10124,
+              "sha256": "297167452f6940f7af558dfe45927c2eb711387faf8fadeb5406c396ab524770"
+            },
+            {
+              "path": "test/19_xblock/xblock2_scores.npz",
+              "kind": "array",
+              "size": 2891717,
+              "sha256": "957a6124fb6c0330c010fb1bbebb3af00fe3f4b070a74e8039ea7dc1114f102d"
             }
           ],
           "status": "has_result_json"
@@ -6258,7 +6366,9 @@
         "test/16_subject_push/scores_ps4",
         "test/16_subject_push/scores_ps5",
         "test/16_subject_push/scores_ps6",
-        "test/17_compliant"
+        "test/17_compliant",
+        "test/18_calib",
+        "test/19_xblock"
       ],
       "scripts": [],
       "unassigned": [
@@ -9802,6 +9912,20 @@
           "kind": "other",
           "size": 2960,
           "sha256": "584b6b0b235518416592e29fa1dac574c0032b30518c690c176ec4e0e28b961c",
+          "suggested_script": null
+        },
+        {
+          "path": "test/18_calib/报告_E18_校准推理.md",
+          "kind": "other",
+          "size": 1876,
+          "sha256": "c5375d6c4552ae4a7a74aa1f970f4cb37702ed35a2f25a60d6ef5753c4d37d29",
+          "suggested_script": null
+        },
+        {
+          "path": "test/19_xblock/报告_E19_联合训练与一致性特征.md",
+          "kind": "other",
+          "size": 2442,
+          "sha256": "8830631c1d66a61debaea7dee23740d64e2e956cd01399f202177101243ee760",
           "suggested_script": null
         }
       ]
@@ -49652,6 +49776,1006 @@
       "value": 0.9640117994100295
     },
     {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.001.auc",
+      "value": 0.9780558257876225
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.001.bacc",
+      "value": 0.9038554216867469
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.001.f1",
+      "value": 0.9066442388561816
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.002.auc",
+      "value": 0.7639225181598064
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.002.bacc",
+      "value": 0.6573642929575133
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.002.f1",
+      "value": 0.5343320848938826
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.003.auc",
+      "value": 0.9541523694704628
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.003.bacc",
+      "value": 0.9145375436644101
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.003.f1",
+      "value": 0.9083063646170443
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.004.auc",
+      "value": 0.3011786083681508
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.004.bacc",
+      "value": 0.35537918871252205
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.004.f1",
+      "value": 0.37056277056277054
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.005.auc",
+      "value": 0.9009149056756539
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.005.bacc",
+      "value": 0.8065128329689903
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.005.f1",
+      "value": 0.8047016274864376
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.006.auc",
+      "value": 0.7189921915263963
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.006.bacc",
+      "value": 0.6267653341371945
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.006.f1",
+      "value": 0.5508474576271186
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.007.auc",
+      "value": 0.9435540883634866
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.007.bacc",
+      "value": 0.8412958215763298
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.007.f1",
+      "value": 0.8314606741573034
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.008.auc",
+      "value": 0.4600344827586207
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.008.bacc",
+      "value": 0.519294670846395
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.008.f1",
+      "value": 0.3046875
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.009.auc",
+      "value": 0.34616060025542783
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.009.bacc",
+      "value": 0.5501436781609196
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.009.f1",
+      "value": 0.3661417322834646
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.010.auc",
+      "value": 0.32568175096125407
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.010.bacc",
+      "value": 0.3219387755102041
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.010.f1",
+      "value": 0.22615535889872174
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.011.auc",
+      "value": 0.7886519283912052
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.011.bacc",
+      "value": 0.632917818094437
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.011.f1",
+      "value": 0.4976190476190476
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.012.auc",
+      "value": 0.7275270592551824
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.012.bacc",
+      "value": 0.6335927876929528
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.012.f1",
+      "value": 0.5837615621788284
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested.013.auc",
+      "value": 0.8565335341955711
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested_summary.auc",
+      "value": 0.7850070590852116
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested_summary.bacc",
+      "value": 0.7226479626438348
+    },
+    {
+      "file": "test/18_calib/calib.json",
+      "key": "nested_summary.f1",
+      "value": 0.7026313243259873
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.001.auc",
+      "value": 0.9405413733437626
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.001.bacc",
+      "value": 0.8205160112825618
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.001.f1",
+      "value": 0.8295081967213115
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.001.oracle_bacc",
+      "value": 0.9059233449477352
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.002.auc",
+      "value": 0.7796335399495947
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.002.bacc",
+      "value": 0.6813500442749132
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.002.f1",
+      "value": 0.6778398510242085
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.002.oracle_bacc",
+      "value": 0.7846536339486412
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.003.auc",
+      "value": 0.9185278336686787
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.003.bacc",
+      "value": 0.9003437290409122
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.003.f1",
+      "value": 0.8872901678657075
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.003.oracle_bacc",
+      "value": 0.907385982562039
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.004.auc",
+      "value": 0.5221892940840949
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.004.bacc",
+      "value": 0.6547112725829851
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.004.f1",
+      "value": 0.5971370143149284
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.004.oracle_bacc",
+      "value": 0.7321475070368395
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.005.auc",
+      "value": 0.8416759747512794
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.005.bacc",
+      "value": 0.7361158012312647
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.005.f1",
+      "value": 0.7521079258010118
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.005.oracle_bacc",
+      "value": 0.8520014546588046
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.006.auc",
+      "value": 0.8388351144183965
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.006.bacc",
+      "value": 0.6450092318021596
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.006.f1",
+      "value": 0.545045045045045
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.006.oracle_bacc",
+      "value": 0.7825351088233649
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.007.auc",
+      "value": 0.9397801803648289
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.007.bacc",
+      "value": 0.7945595921295348
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.007.f1",
+      "value": 0.7920433996383364
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.007.oracle_bacc",
+      "value": 0.945512656282025
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.008.auc",
+      "value": 0.42039139567656675
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.008.bacc",
+      "value": 0.4227046717541014
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.008.f1",
+      "value": 0.05521472392638037
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.008.oracle_bacc",
+      "value": 0.4227046717541014
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.009.auc",
+      "value": 0.6473699256718125
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.009.bacc",
+      "value": 0.6080974842767296
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.009.f1",
+      "value": 0.4463768115942029
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "per_subject.009.oracle_bacc",
+      "value": 0.7255931961120641
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "summary.auc",
+      "value": 0.7693355000098071
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "summary.bacc",
+      "value": 0.714008639427767
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "summary.f1",
+      "value": 0.7039363330953987
+    },
+    {
+      "file": "test/18_calib/calib2.json",
+      "key": "summary.oracle_bacc",
+      "value": 0.8416305362085338
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "summary.auc",
+      "value": 0.7513837188166542
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "summary.bacc",
+      "value": 0.672075010010371
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "summary.f1",
+      "value": 0.6503545450195087
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens10|t0.auc",
+      "value": 0.7645081610426855
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens10|t0.bacc",
+      "value": 0.7198356189710606
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens10|t0.f1",
+      "value": 0.7110993563393517
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens10|t300.auc",
+      "value": 0.8016933791942316
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens10|t300.bacc",
+      "value": 0.7230618095970295
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens10|t300.f1",
+      "value": 0.7078717299440883
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens10|t600.auc",
+      "value": 0.7499684166839365
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens10|t600.bacc",
+      "value": 0.7024232872523916
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens10|t600.f1",
+      "value": 0.6780385506060382
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens10|t900.auc",
+      "value": 0.7763447675704759
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens10|t900.bacc",
+      "value": 0.7201772054731241
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens10|t900.f1",
+      "value": 0.7025234761276572
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens3|t0.auc",
+      "value": 0.7567768849137234
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens3|t0.bacc",
+      "value": 0.7186108565635596
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens3|t0.f1",
+      "value": 0.7112535875067726
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens3|t300.auc",
+      "value": 0.7932763601578323
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens3|t300.bacc",
+      "value": 0.7140274207342144
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens3|t300.f1",
+      "value": 0.6951242165188829
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens3|t600.auc",
+      "value": 0.744272263706084
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens3|t600.bacc",
+      "value": 0.6975866871268949
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens3|t600.f1",
+      "value": 0.6694323426368971
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens3|t900.auc",
+      "value": 0.766218642711835
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens3|t900.bacc",
+      "value": 0.7191268660231352
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens3|t900.f1",
+      "value": 0.703676156767914
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens5|t0.auc",
+      "value": 0.7570246248927409
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens5|t0.bacc",
+      "value": 0.7161194748827937
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens5|t0.f1",
+      "value": 0.7091261295280552
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens5|t300.auc",
+      "value": 0.7951915089735015
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens5|t300.bacc",
+      "value": 0.7162129931835148
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens5|t300.f1",
+      "value": 0.6993614378130008
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens5|t600.auc",
+      "value": 0.7441153901265055
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens5|t600.bacc",
+      "value": 0.697235050242727
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens5|t600.f1",
+      "value": 0.6697252570224107
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens5|t900.auc",
+      "value": 0.7682864854579415
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens5|t900.bacc",
+      "value": 0.7180766908532661
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.ens5|t900.f1",
+      "value": 0.7014996067002605
+    },
+    {
+      "file": "test/18_calib/calib3.json",
+      "key": "table.pick|t0.auc",
+      "value": 0.7693355000098071
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.001.seed.auc",
+      "value": 0.9405413733437626
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.001.seed.bacc",
+      "value": 0.8205160112825618
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.001.seed.f1",
+      "value": 0.8295081967213115
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.002.seed.auc",
+      "value": 0.5402356787684763
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.002.seed.bacc",
+      "value": 0.5980655268714665
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.002.seed.f1",
+      "value": 0.5132743362831859
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.003.seed.auc",
+      "value": 0.9086351441985244
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.003.seed.bacc",
+      "value": 0.8967723004694836
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.003.seed.f1",
+      "value": 0.883054892601432
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.004.seed.auc",
+      "value": 0.353106749166119
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.004.seed.bacc",
+      "value": 0.42432452540082083
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.004.seed.f1",
+      "value": 0.4253075571177504
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.005.seed.auc",
+      "value": 0.8416759747512794
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.005.seed.bacc",
+      "value": 0.7361158012312647
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.005.seed.f1",
+      "value": 0.7521079258010118
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.006.seed.auc",
+      "value": 0.7057013372125552
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.006.seed.bacc",
+      "value": 0.5439909360487887
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.006.seed.f1",
+      "value": 0.30319148936170215
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.007.seed.auc",
+      "value": 0.9471203115392499
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.007.seed.bacc",
+      "value": 0.8227223816355811
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.007.seed.f1",
+      "value": 0.8176795580110497
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.008.seed.auc",
+      "value": 0.42039139567656675
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.008.seed.bacc",
+      "value": 0.4227046717541014
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.008.seed.f1",
+      "value": 0.05521472392638037
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.009.seed.auc",
+      "value": 0.36985420240137223
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.009.seed.bacc",
+      "value": 0.5170811892510006
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.009.seed.f1",
+      "value": 0.1003584229390681
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.010.seed.auc",
+      "value": 0.20861678004535145
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.010.seed.bacc",
+      "value": 0.28840702947845803
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.010.seed.f1",
+      "value": 0.11940298507462686
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.011.seed.auc",
+      "value": 0.8746131916863624
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.011.seed.bacc",
+      "value": 0.8064009161570138
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.011.seed.f1",
+      "value": 0.7925233644859813
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.012.seed.auc",
+      "value": 0.743203415507506
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.012.seed.bacc",
+      "value": 0.6987398429968324
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.012.seed.f1",
+      "value": 0.7147887323943662
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "per_subject.013.seed.auc",
+      "value": 0.8178530092592593
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "table.seed.auc",
+      "value": 0.743825127486639
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "table.seed.bacc",
+      "value": 0.7038312907146993
+    },
+    {
+      "file": "test/19_xblock/xblock.json",
+      "key": "table.seed.f1",
+      "value": 0.6846355654964391
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "per_subject.001.k1600_w0.6.auc",
+      "value": 0.9155704093484083
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "per_subject.001.k1600_w0.6.bacc",
+      "value": 0.892193462750954
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "per_subject.001.k1600_w0.6.f1",
+      "value": 0.903125
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "per_subject.001.k1600_w0.85.auc",
+      "value": 0.9160089122757117
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "per_subject.001.k1600_w0.85.bacc",
+      "value": 0.8801642608262816
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "per_subject.001.k1600_w0.85.f1",
+      "value": 0.892018779342723
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "per_subject.001.k400_w0.6.auc",
+      "value": 0.8851122330465286
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "per_subject.001.k400_w0.6.bacc",
+      "value": 0.8314252530280405
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "per_subject.001.k400_w0.6.f1",
+      "value": 0.8541353383458646
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "per_subject.001.k400_w0.85.auc",
+      "value": 0.8867832847424685
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "per_subject.001.k400_w0.85.bacc",
+      "value": 0.8349095735855318
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "per_subject.001.k400_w0.85.f1",
+      "value": 0.8567119155354449
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "per_subject.001.k4390_w0.6.auc",
+      "value": 0.928073668491787
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "per_subject.001.k4390_w0.6.bacc",
+      "value": 0.8765140202422432
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "per_subject.001.k4390_w0.6.f1",
+      "value": 0.8906009244992296
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "per_subject.001.k4390_w0.85.auc",
+      "value": 0.926864822584086
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k1600_w0.6.auc",
+      "value": 0.8031412416978859
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k1600_w0.6.bacc",
+      "value": 0.7465191173442136
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k1600_w0.6.f1",
+      "value": 0.749630815702632
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k1600_w0.85.auc",
+      "value": 0.803450367915653
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k1600_w0.85.bacc",
+      "value": 0.745978946611625
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k1600_w0.85.f1",
+      "value": 0.7520103313500239
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k400_w0.6.auc",
+      "value": 0.7950043593306279
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k400_w0.6.bacc",
+      "value": 0.7319711189621169
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k400_w0.6.f1",
+      "value": 0.7434172300040641
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k400_w0.85.auc",
+      "value": 0.7896898585698728
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k400_w0.85.bacc",
+      "value": 0.7276592046951029
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k400_w0.85.f1",
+      "value": 0.7365348596115469
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k4390_w0.6.auc",
+      "value": 0.7848517683489559
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k4390_w0.6.bacc",
+      "value": 0.7319435492521051
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k4390_w0.6.f1",
+      "value": 0.7334802240325493
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k4390_w0.85.auc",
+      "value": 0.7828879128254533
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k4390_w0.85.bacc",
+      "value": 0.7321446113138921
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k4390_w0.85.f1",
+      "value": 0.734126711999888
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k800_w0.6.auc",
+      "value": 0.7983712564283597
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k800_w0.6.bacc",
+      "value": 0.7393002230131486
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k800_w0.6.f1",
+      "value": 0.7509315911929129
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k800_w0.85.auc",
+      "value": 0.8020055192912283
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k800_w0.85.bacc",
+      "value": 0.7374181078509332
+    },
+    {
+      "file": "test/19_xblock/xblock2.json",
+      "key": "table.k800_w0.85.f1",
+      "value": 0.7476164693485181
+    },
+    {
       "file": "test/_orphans/causal_covariance_transport_results.json",
       "key": "methods.diagonal.all.AUC",
       "value": 0.660426461487161
@@ -60267,6 +61391,11 @@
     "test/17_compliant/multiscale_round1.json": 2565,
     "test/17_compliant/pseudo_c60_120_300_600_all.json": 11115,
     "test/17_compliant/test_streaming.json": 3,
+    "test/18_calib/calib.json": 6327,
+    "test/18_calib/calib2.json": 16524,
+    "test/18_calib/calib3.json": 5475,
+    "test/19_xblock/xblock.json": 2223,
+    "test/19_xblock/xblock2.json": 1368,
     "test/_orphans/causal_covariance_transport_results.json": 48,
     "test/_orphans/causal_covariance_transport_smoke_results.json": 48,
     "test/audit/direction_scoring/direction_scoring.json": 312,
@@ -62585,10 +63714,10 @@
     }
   ],
   "summary": {
-    "files_scanned": 1596,
-    "py_scripts": 273,
-    "json_results": 312,
-    "metrics_entries": 9934,
+    "files_scanned": 1614,
+    "py_scripts": 278,
+    "json_results": 317,
+    "metrics_entries": 10134,
     "missing_reference_count": 564,
     "database_window_files": 116
   }
