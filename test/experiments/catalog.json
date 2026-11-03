@@ -21,13 +21,13 @@
     },
     {
       "path": "README.md",
-      "size": 64987,
-      "sha256": "5fcad8c76f7b9b55cd81632f4c06ffa38160c3124ad17ca790be11dddf9c9468"
+      "size": 65019,
+      "sha256": "10fe54528a905b90d36d13db68df7f3594c6f6e6df837bfa01d78fc4cacbb421"
     },
     {
       "path": "test/experiments/实验方法索引.md",
-      "size": 67533,
-      "sha256": "bb0371dcf21a24993342599b14edbd548d784fd4088c3e38031032188445d775"
+      "size": 67605,
+      "sha256": "8d41655ea45e7c270645309a7c014e57d865cb9661385d7980d561f88202bd68"
     },
     {
       "path": "test/reports/卡尔曼深度学习实验报告.md",
@@ -42,7 +42,7 @@
     {
       "path": "理论框架.md",
       "size": 30137,
-      "sha256": "497cbdac34300ea9f5e7a5dcad21d0f77113bcbc4952af0932f320b9b54ef5a5"
+      "sha256": "751f5358a2161e781c125e35b0b22f5957b77836bed82f082762ca3a31f59958"
     },
     {
       "path": "研究报告.md",
@@ -5591,6 +5591,46 @@
           "status": "has_result_json"
         },
         {
+          "id": "test/22_subject/round6.py",
+          "path": "test/22_subject/round6.py",
+          "summary": "E22 第 6 轮：第 5 轮 + 本人块 2–3 LR（近块）、三元组合扩到前 45、分位数阈值扩到前 300 配置， q=.2–.8 步 .025，w=60/120/300/600/1200/2400。 以下为第 5 轮说明：第 4 轮",
+          "artifacts": [
+            {
+              "path": "test/22_subject/round6.json",
+              "kind": "result",
+              "size": 1099,
+              "sha256": "22668a1ef859e9f366691be405e67aa4610dacefc4ceff8f40c29dac696a2cfa"
+            },
+            {
+              "path": "test/22_subject/round6.log",
+              "kind": "log",
+              "size": 554,
+              "sha256": "bee8e6822316dca1f2d3357739dd32ee2b26259a04f7f6b4d1b492fa08b767e2"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/22_subject/round7.py",
+          "path": "test/22_subject/round7.py",
+          "summary": "",
+          "artifacts": [
+            {
+              "path": "test/22_subject/round7.json",
+              "kind": "result",
+              "size": 437,
+              "sha256": "f28fa399d4f5bcd479a62b9fec3ac5f807290bf4d32385ae5a7a90c1d624a8a6"
+            },
+            {
+              "path": "test/22_subject/round7.log",
+              "kind": "log",
+              "size": 220,
+              "sha256": "d89b174f4b9b859806333909f399a81c7d5a67b0bc5c61276e1526a82b8c41dd"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
           "id": "test/22_subject/subject.py",
           "path": "test/22_subject/subject.py",
           "summary": "E22：逐个被试推进到 0.9（E13 思路的合规版）。 与 E13 的区别（按理论框架第 13 节）： - 学习阶段只用本人块 0–3（带标签）+ 其他被试数据；块 4–5 为推理测试段。 - 推理每帧只读当前 6 s 窗特征；去掉分数 ",
@@ -10122,15 +10162,15 @@
         {
           "path": "test/22_subject/best.json",
           "kind": "result",
-          "size": 8696,
-          "sha256": "dd967fcf0668746ece53829d2f1c1d363ea96b5ebeda9e2cf75d852ff745f5d1",
+          "size": 8748,
+          "sha256": "64fd7f93c1120bf846091902c8fe857a362a32bc9020b976addab8c3137bb75e",
           "suggested_script": null
         },
         {
           "path": "test/22_subject/报告_E22_逐被试推进.md",
           "kind": "other",
-          "size": 3839,
-          "sha256": "6aa6853b717ef5923038e2ffcac596ecdb461fbee6104cba0f307f0fc56ddf09",
+          "size": 4764,
+          "sha256": "e517b952b1aa2ef22561e546e6cbdc7d4a2d903ea314dbf0682d2d7d7c56ddce",
           "suggested_script": null
         }
       ]
@@ -52384,6 +52424,111 @@
       "value": 0.8924731182795699
     },
     {
+      "file": "test/22_subject/round6.json",
+      "key": "022.auc",
+      "value": 0.9221030785195435
+    },
+    {
+      "file": "test/22_subject/round6.json",
+      "key": "022.bacc",
+      "value": 0.8725815750028825
+    },
+    {
+      "file": "test/22_subject/round6.json",
+      "key": "022.f1",
+      "value": 0.8788368336025848
+    },
+    {
+      "file": "test/22_subject/round6.json",
+      "key": "029.auc",
+      "value": 0.9720306240963285
+    },
+    {
+      "file": "test/22_subject/round6.json",
+      "key": "029.bacc",
+      "value": 0.9403102704496433
+    },
+    {
+      "file": "test/22_subject/round6.json",
+      "key": "029.f1",
+      "value": 0.9376114081996435
+    },
+    {
+      "file": "test/22_subject/round6.json",
+      "key": "041.auc",
+      "value": 0.9479011116641779
+    },
+    {
+      "file": "test/22_subject/round6.json",
+      "key": "041.bacc",
+      "value": 0.9062551850008296
+    },
+    {
+      "file": "test/22_subject/round6.json",
+      "key": "041.f1",
+      "value": 0.9111470113085622
+    },
+    {
+      "file": "test/22_subject/round6.json",
+      "key": "042.auc",
+      "value": 0.9092261904761905
+    },
+    {
+      "file": "test/22_subject/round6.json",
+      "key": "042.bacc",
+      "value": 0.8712089002267573
+    },
+    {
+      "file": "test/22_subject/round6.json",
+      "key": "042.f1",
+      "value": 0.8709122203098106
+    },
+    {
+      "file": "test/22_subject/round6.json",
+      "key": "052.auc",
+      "value": 0.9607243594301832
+    },
+    {
+      "file": "test/22_subject/round6.json",
+      "key": "052.bacc",
+      "value": 0.9004479840716775
+    },
+    {
+      "file": "test/22_subject/round6.json",
+      "key": "052.f1",
+      "value": 0.8989547038327527
+    },
+    {
+      "file": "test/22_subject/round7.json",
+      "key": "022.auc",
+      "value": 0.9221030785195435
+    },
+    {
+      "file": "test/22_subject/round7.json",
+      "key": "022.bacc",
+      "value": 0.8725815750028825
+    },
+    {
+      "file": "test/22_subject/round7.json",
+      "key": "022.f1",
+      "value": 0.8788368336025848
+    },
+    {
+      "file": "test/22_subject/round7.json",
+      "key": "042.auc",
+      "value": 0.8859008881330309
+    },
+    {
+      "file": "test/22_subject/round7.json",
+      "key": "042.bacc",
+      "value": 0.877125850340136
+    },
+    {
+      "file": "test/22_subject/round7.json",
+      "key": "042.f1",
+      "value": 0.8846153846153846
+    },
+    {
       "file": "test/22_subject/subject.json",
       "key": "per_subject.001.calsel.auc",
       "value": 0.928073668491787
@@ -63212,6 +63357,8 @@
     "test/22_subject/round3.json": 48,
     "test/22_subject/round4.json": 24,
     "test/22_subject/round5.json": 18,
+    "test/22_subject/round6.json": 15,
+    "test/22_subject/round7.json": 6,
     "test/22_subject/subject.json": 513,
     "test/_orphans/causal_covariance_transport_results.json": 48,
     "test/_orphans/causal_covariance_transport_smoke_results.json": 48,
@@ -65430,6 +65577,14 @@
       "reference": "xblock2_scores.npz"
     },
     {
+      "script": "test/22_subject/round6.py",
+      "reference": "xblock2_scores.npz"
+    },
+    {
+      "script": "test/22_subject/round7.py",
+      "reference": "xblock2_scores.npz"
+    },
+    {
       "script": "test/22_subject/subject.py",
       "reference": "xblock2_scores.npz"
     },
@@ -65555,11 +65710,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 1642,
-    "py_scripts": 286,
-    "json_results": 326,
-    "metrics_entries": 10456,
-    "missing_reference_count": 570,
+    "files_scanned": 1648,
+    "py_scripts": 288,
+    "json_results": 328,
+    "metrics_entries": 10477,
+    "missing_reference_count": 572,
     "database_window_files": 116
   }
 }
