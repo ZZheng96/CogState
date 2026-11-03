@@ -1,0 +1,5 @@
+﻿nested[all] bACC 0.798 AUC 0.875 F1 0.794 n90 13 {'ax3_ward_k6': 14, 'ax5_ward_k3': 41, 'cal_km_k2': 1, 'cal_km_k4': 1}
+nested[ward] bACC 0.803 AUC 0.879 F1 0.798 n90 14 {'ax3_ward_k4': 1, 'ax3_ward_k6': 15, 'ax5_ward_k3': 41}
+nested[ax3] bACC 0.803 AUC 0.880 F1 0.804 n90 11 {'ax3_ward_k4': 1, 'ax3_ward_k6': 53, 'ax3_ward_k7': 3}
+nested[ax5] bACC 0.823 AUC 0.896 F1 0.818 n90 15 {'ax5_km_k3': 1, 'ax5_ward_k3': 56}
+nested[cal] bACC 0.786 AUC 0.856 F1 0.772 n90 10 {'cal_km_k2': 28, 'cal_km_k4': 17, 'cal_ward_k4': 1, 'cal_ward_k8': 11}
