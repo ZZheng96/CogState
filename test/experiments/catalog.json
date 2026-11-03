@@ -21,13 +21,13 @@
     },
     {
       "path": "README.md",
-      "size": 64577,
-      "sha256": "12e86c3f5a36e7f3d1a32432ba7454c6e58c996dcf7442090b0d8ef8b12039b4"
+      "size": 64822,
+      "sha256": "6adf0f41ee930afe3ae574c5ef02ff2e8ed12f25ac6f070869a614fc61f1c3e3"
     },
     {
       "path": "test/experiments/实验方法索引.md",
-      "size": 67087,
-      "sha256": "c6d934ce89e86410cf5e0d8e449c008b2fa664ec747dbc1267dc462e685b9e33"
+      "size": 67362,
+      "sha256": "b03498571cad4a3b6514ce76b18035c27cbb0f81f51c0cd84a6aee1c452254e4"
     },
     {
       "path": "test/reports/卡尔曼深度学习实验报告.md",
@@ -41,8 +41,8 @@
     },
     {
       "path": "理论框架.md",
-      "size": 29978,
-      "sha256": "3ace2a150e36ff6cb465888e7c5966035e278e00925b6a9fa558f51f5b40c767"
+      "size": 30078,
+      "sha256": "6ac88787a85b653fc01f7b8ca0bca5749c38d9cb0de83b17b3ab23430a379b5a"
     },
     {
       "path": "研究报告.md",
@@ -4676,20 +4676,6 @@
           "suggested_script": null
         },
         {
-          "path": "test/10_projects/eeg_only_20261102/subject_summary.csv",
-          "kind": "other",
-          "size": 7923,
-          "sha256": "ada7486ff5039ca84bf6123dd51ee2488980cd6056bef622b2ec2e947bd10369",
-          "suggested_script": null
-        },
-        {
-          "path": "test/10_projects/eeg_only_20261102/subject_summary.md",
-          "kind": "other",
-          "size": 5130,
-          "sha256": "08dfa915f56abae376d13ead9f29b7fa5361a7633fa769eeb75d6575f8563d3e",
-          "suggested_script": null
-        },
-        {
           "path": "test/10_projects/eeg_only_20261102/报告_E10_方法被试矩阵与个体规律.md",
           "kind": "other",
           "size": 12720,
@@ -4825,6 +4811,7 @@
     {
       "name": "其他基线",
       "dirs": [
+        "test/10_projects/eeg_only_20261102",
         "test/11_individual_20261102",
         "test/15_nested_select",
         "test/16_subject_push",
@@ -4832,7 +4819,10 @@
         "test/18_calib",
         "test/19_xblock",
         "test/20_adapt",
-        "test/21_push"
+        "test/21_push",
+        "test/22_subject",
+        "test/theory",
+        "vis/output"
       ],
       "scripts": [
         {
@@ -5519,9 +5509,78 @@
             }
           ],
           "status": "has_result_json"
+        },
+        {
+          "id": "test/22_subject/round2.py",
+          "path": "test/22_subject/round2.py",
+          "summary": "E22 第 2 轮：只对第 1 轮 oracle<0.9 的被试扩大候选族（全部只用校准块学习）。 新增候选： jw{wo}_k{k}_C{C}   联合 LR，wo∈{.3,.95}，k∈{200,800,1600}，C∈{1e-3,1e",
+          "artifacts": [
+            {
+              "path": "test/22_subject/round2.json",
+              "kind": "result",
+              "size": 6868,
+              "sha256": "78810f921c9b6b233df12cd65821e8020caee962ca48e4baba9504145e28709d"
+            },
+            {
+              "path": "test/22_subject/round2.log",
+              "kind": "log",
+              "size": 1122,
+              "sha256": "b372252e1347900209ca5f2b5230709685da6fe98548dbabe56986a1f398b4c9"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/22_subject/subject.py",
+          "path": "test/22_subject/subject.py",
+          "summary": "E22：逐个被试推进到 0.9（E13 思路的合规版）。 与 E13 的区别（按理论框架第 13 节）： - 学习阶段只用本人块 0–3（带标签）+ 其他被试数据；块 4–5 为推理测试段。 - 推理每帧只读当前 6 s 窗特征；去掉分数 ",
+          "artifacts": [
+            {
+              "path": "test/22_subject/subject.json",
+              "kind": "result",
+              "size": 25655,
+              "sha256": "f761e4233628dc1aba7de77d212ad90dee8f240ab1ae635bdd61fd1e75d5a3f0"
+            },
+            {
+              "path": "test/22_subject/subject.log",
+              "kind": "log",
+              "size": 4735,
+              "sha256": "1a2cf9033819b861c50340d89127a90d6bb4117cb4ad552e9fd20bf8a5b2a446"
+            }
+          ],
+          "status": "has_result_json"
         }
       ],
-      "unassigned": []
+      "unassigned": [
+        {
+          "path": "test/10_projects/eeg_only_20261102/subject_summary.csv",
+          "kind": "other",
+          "size": 7923,
+          "sha256": "ada7486ff5039ca84bf6123dd51ee2488980cd6056bef622b2ec2e947bd10369",
+          "suggested_script": "test/22_subject/subject.py"
+        },
+        {
+          "path": "test/10_projects/eeg_only_20261102/subject_summary.md",
+          "kind": "other",
+          "size": 5130,
+          "sha256": "08dfa915f56abae376d13ead9f29b7fa5361a7633fa769eeb75d6575f8563d3e",
+          "suggested_script": "test/22_subject/subject.py"
+        },
+        {
+          "path": "test/theory/subject_offset_ea.stdout.txt",
+          "kind": "text",
+          "size": 14271,
+          "sha256": "de080982611a06e13130108380d5274f8c368856b1ed30244646263be33481b0",
+          "suggested_script": "test/22_subject/subject.py"
+        },
+        {
+          "path": "vis/output/subject_feature_effects.png",
+          "kind": "figure",
+          "size": 165751,
+          "sha256": "fc997c143ae8e384c59f9bab2725cff6ba79aeb4c451a8d057bcd90f3d1b10ea",
+          "suggested_script": "test/22_subject/subject.py"
+        }
+      ]
     },
     {
       "name": "可视化（vis）",
@@ -5565,13 +5624,6 @@
           "kind": "figure",
           "size": 166814,
           "sha256": "02170d40558f0bcd6b077c9d4469ba269663b13593769dbf28ebd48079c0c408",
-          "suggested_script": null
-        },
-        {
-          "path": "vis/output/subject_feature_effects.png",
-          "kind": "figure",
-          "size": 165751,
-          "sha256": "fc997c143ae8e384c59f9bab2725cff6ba79aeb4c451a8d057bcd90f3d1b10ea",
           "suggested_script": null
         },
         {
@@ -6432,7 +6484,8 @@
         "test/18_calib",
         "test/19_xblock",
         "test/20_adapt",
-        "test/21_push"
+        "test/21_push",
+        "test/22_subject"
       ],
       "scripts": [],
       "unassigned": [
@@ -10005,6 +10058,20 @@
           "size": 2085,
           "sha256": "df862d17b75d376c461933e5f0c962135a972bb12ca2f4fe23fc5d9b91560cc9",
           "suggested_script": null
+        },
+        {
+          "path": "test/22_subject/best.json",
+          "kind": "result",
+          "size": 7977,
+          "sha256": "b6a5623970a6f8a32c6008742fc344876d3b82856f3b17f87bb49f5100adbad9",
+          "suggested_script": null
+        },
+        {
+          "path": "test/22_subject/报告_E22_逐被试推进.md",
+          "kind": "other",
+          "size": 2238,
+          "sha256": "1c01c62e2a7c06665e2dbbc14afb15b08fc63c9a4569f5e56871ea3786642ff2",
+          "suggested_script": null
         }
       ]
     },
@@ -10261,13 +10328,6 @@
           "kind": "text",
           "size": 20201,
           "sha256": "14c8eaf0625e5c54401f097d653dec7acb2813080ebb50aac2d08904b9af88f9",
-          "suggested_script": null
-        },
-        {
-          "path": "test/theory/subject_offset_ea.stdout.txt",
-          "kind": "text",
-          "size": 14271,
-          "sha256": "de080982611a06e13130108380d5274f8c368856b1ed30244646263be33481b0",
           "suggested_script": null
         }
       ]
@@ -51454,6 +51514,606 @@
       "value": 0.7521361259134108
     },
     {
+      "file": "test/22_subject/best.json",
+      "key": "001.auc",
+      "value": 0.9167081466733035
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "001.bacc",
+      "value": 0.9111498257839721
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "001.f1",
+      "value": 0.92018779342723
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "002.auc",
+      "value": 0.9640623935699203
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "002.bacc",
+      "value": 0.9084462911245827
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "002.f1",
+      "value": 0.9156626506024096
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "003.auc",
+      "value": 0.9369550637156271
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "003.bacc",
+      "value": 0.9140677397719652
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "003.f1",
+      "value": 0.9041769041769042
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "004.auc",
+      "value": 0.9209394025816211
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "004.bacc",
+      "value": 0.8780487804878049
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "004.f1",
+      "value": 0.8611111111111112
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "005.auc",
+      "value": 0.9567368885887212
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "005.bacc",
+      "value": 0.8911928202197574
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "005.f1",
+      "value": 0.8841698841698842
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "006.auc",
+      "value": 0.8994572819336429
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "006.bacc",
+      "value": 0.8644883343590891
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "006.f1",
+      "value": 0.8555347091932458
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "007.auc",
+      "value": 0.990225968436155
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "007.bacc",
+      "value": 0.9643881943021111
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "007.f1",
+      "value": 0.9635036496350365
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "008.auc",
+      "value": 0.9150469302560558
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "008.bacc",
+      "value": 0.951048951048951
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "008.f1",
+      "value": 0.9494584837545126
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "009.auc",
+      "value": 0.9751286449399656
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "009.bacc",
+      "value": 0.8863636363636364
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "009.f1",
+      "value": 0.8717948717948718
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "010.auc",
+      "value": 0.9442318594104309
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "010.bacc",
+      "value": 0.9382440476190477
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "010.f1",
+      "value": 0.9381443298969072
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "011.auc",
+      "value": 0.8740893253088375
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "011.bacc",
+      "value": 0.8516544431178578
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "011.f1",
+      "value": 0.8521739130434782
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "012.auc",
+      "value": 0.9977826745627324
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "012.bacc",
+      "value": 0.979865032364688
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "012.f1",
+      "value": 0.9795918367346939
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "013.auc",
+      "value": 0.9793475115740741
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "013.bacc",
+      "value": 0.9288194444444444
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "013.f1",
+      "value": 0.9236499068901304
+    },
+    {
+      "file": "test/22_subject/best.json",
+      "key": "014.auc",
+      "value": 0.9500255841719256
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "001.calsel.auc",
+      "value": 0.928073668491787
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "001.calsel.bacc",
+      "value": 0.8765140202422432
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "001.calsel.f1",
+      "value": 0.8906009244992296
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "001.oracle.auc",
+      "value": 0.9167081466733035
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "001.oracle.bacc",
+      "value": 0.9111498257839721
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "001.oracle.f1",
+      "value": 0.92018779342723
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "004.calsel.auc",
+      "value": 0.5554453358463426
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "004.calsel.bacc",
+      "value": 0.5474289186206553
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "004.calsel.f1",
+      "value": 0.5545927209705372
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "004.oracle.auc",
+      "value": 0.9209394025816211
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "004.oracle.bacc",
+      "value": 0.8780487804878049
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "004.oracle.f1",
+      "value": 0.8611111111111112
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "005.calsel.auc",
+      "value": 0.7917500064940125
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "005.calsel.bacc",
+      "value": 0.7424604514637505
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "005.calsel.f1",
+      "value": 0.7423423423423423
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "005.oracle.auc",
+      "value": 0.9567368885887212
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "005.oracle.bacc",
+      "value": 0.8911928202197574
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "005.oracle.f1",
+      "value": 0.8841698841698842
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "006.calsel.auc",
+      "value": 0.7522380126447714
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "006.calsel.bacc",
+      "value": 0.613243439825435
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "006.calsel.f1",
+      "value": 0.5333333333333333
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "006.oracle.auc",
+      "value": 0.8994572819336429
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "006.oracle.bacc",
+      "value": 0.8644883343590891
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "006.oracle.f1",
+      "value": 0.8555347091932458
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "009.calsel.auc",
+      "value": 0.026586620926243566
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "009.calsel.bacc",
+      "value": 0.26418667810177243
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "009.calsel.f1",
+      "value": 0.03389830508474576
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "009.oracle.auc",
+      "value": 0.9751286449399656
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "009.oracle.bacc",
+      "value": 0.8863636363636364
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "009.oracle.f1",
+      "value": 0.8717948717948718
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "011.calsel.auc",
+      "value": 0.8754294486001803
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "011.calsel.bacc",
+      "value": 0.8150812602032114
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "011.calsel.f1",
+      "value": 0.8072727272727273
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "011.oracle.auc",
+      "value": 0.8740893253088375
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "011.oracle.bacc",
+      "value": 0.8516544431178578
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "011.oracle.f1",
+      "value": 0.8521739130434782
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "015.calsel.auc",
+      "value": 0.3369670075245997
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "015.calsel.bacc",
+      "value": 0.3460994276159239
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "015.calsel.f1",
+      "value": 0.1396508728179551
+    },
+    {
+      "file": "test/22_subject/round2.json",
+      "key": "015.oracle.auc",
+      "value": 0.9739854653032349
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.001.calsel.auc",
+      "value": 0.928073668491787
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.001.calsel.bacc",
+      "value": 0.8765140202422432
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.001.calsel.f1",
+      "value": 0.8906009244992296
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.001.ens8.auc",
+      "value": 0.9135319633079713
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.001.ens8.bacc",
+      "value": 0.872822299651568
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.001.ens8.f1",
+      "value": 0.8895612708018155
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.001.oracle.auc",
+      "value": 0.9155704093484083
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.001.oracle.bacc",
+      "value": 0.892193462750954
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.001.oracle.f1",
+      "value": 0.903125
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.002.calsel.auc",
+      "value": 0.6730467951774403
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.002.calsel.bacc",
+      "value": 0.5969484367549894
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.002.calsel.f1",
+      "value": 0.6727272727272727
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.002.ens8.auc",
+      "value": 0.8416729105646754
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.002.ens8.bacc",
+      "value": 0.7362509365847013
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.002.ens8.f1",
+      "value": 0.7793427230046949
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.002.oracle.auc",
+      "value": 0.9640623935699203
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.002.oracle.bacc",
+      "value": 0.9084462911245827
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.002.oracle.f1",
+      "value": 0.9156626506024096
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.003.calsel.auc",
+      "value": 0.9180583501006037
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.003.calsel.bacc",
+      "value": 0.8552397719651241
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.003.calsel.f1",
+      "value": 0.836027713625866
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.003.ens8.auc",
+      "value": 0.9309188464118041
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.003.ens8.bacc",
+      "value": 0.8561619718309859
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.003.ens8.f1",
+      "value": 0.8381374722838137
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.003.oracle.auc",
+      "value": 0.9369550637156271
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.003.oracle.bacc",
+      "value": 0.9140677397719652
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.003.oracle.f1",
+      "value": 0.9041769041769042
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.004.calsel.auc",
+      "value": 0.5554453358463426
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.004.calsel.bacc",
+      "value": 0.5474289186206553
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.004.calsel.f1",
+      "value": 0.5545927209705372
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "per_subject.004.ens8.auc",
+      "value": 0.5956328195717137
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "table.calsel.auc",
+      "value": 0.7985126426815208
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "table.calsel.bacc",
+      "value": 0.7428943128301869
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "table.calsel.f1",
+      "value": 0.7389450082098382
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "table.ens8.auc",
+      "value": 0.8108958219730856
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "table.ens8.bacc",
+      "value": 0.7521135306674537
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "table.ens8.f1",
+      "value": 0.7600718893531085
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "table.oracle.auc",
+      "value": 0.946140153646257
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "table.oracle.bacc",
+      "value": 0.901463036850507
+    },
+    {
+      "file": "test/22_subject/subject.json",
+      "key": "table.oracle.f1",
+      "value": 0.8985855219189798
+    },
+    {
       "file": "test/_orphans/causal_covariance_transport_results.json",
       "key": "methods.diagonal.all.AUC",
       "value": 0.660426461487161
@@ -62077,6 +62737,9 @@
     "test/20_adapt/adapt.json": 1539,
     "test/20_adapt/mlp.json": 513,
     "test/21_push/inner.json": 1521,
+    "test/22_subject/best.json": 168,
+    "test/22_subject/round2.json": 126,
+    "test/22_subject/subject.json": 513,
     "test/_orphans/causal_covariance_transport_results.json": 48,
     "test/_orphans/causal_covariance_transport_smoke_results.json": 48,
     "test/audit/direction_scoring/direction_scoring.json": 312,
@@ -64278,6 +64941,14 @@
       "reference": "xblock2_scores.npz"
     },
     {
+      "script": "test/22_subject/round2.py",
+      "reference": "xblock2_scores.npz"
+    },
+    {
+      "script": "test/22_subject/subject.py",
+      "reference": "xblock2_scores.npz"
+    },
+    {
       "script": "test/audit/common.py",
       "reference": "depositioned_aperiodic_emg_oof.npz"
     },
@@ -64399,11 +65070,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 1625,
-    "py_scripts": 281,
-    "json_results": 320,
-    "metrics_entries": 10254,
-    "missing_reference_count": 565,
+    "files_scanned": 1633,
+    "py_scripts": 283,
+    "json_results": 323,
+    "metrics_entries": 10374,
+    "missing_reference_count": 567,
     "database_window_files": 116
   }
 }
