@@ -22,12 +22,12 @@
     {
       "path": "README.md",
       "size": 64987,
-      "sha256": "d3fe0c853335282cf4731ab9326f9e75b0383ebb1dc6d48bccb86c192b17b8a6"
+      "sha256": "5fcad8c76f7b9b55cd81632f4c06ffa38160c3124ad17ca790be11dddf9c9468"
     },
     {
       "path": "test/experiments/实验方法索引.md",
-      "size": 67465,
-      "sha256": "13cd46f9de21b72fdc38d8d4a48cf60cb6fa1daa5e56774390ba79e52c97ad8b"
+      "size": 67533,
+      "sha256": "bb0371dcf21a24993342599b14edbd548d784fd4088c3e38031032188445d775"
     },
     {
       "path": "test/reports/卡尔曼深度学习实验报告.md",
@@ -42,7 +42,7 @@
     {
       "path": "理论框架.md",
       "size": 30137,
-      "sha256": "542ebab810928ff06a5cbec80dd5ce5e0fecfad65d38ef36101ce7ac81012a07"
+      "sha256": "497cbdac34300ea9f5e7a5dcad21d0f77113bcbc4952af0932f320b9b54ef5a5"
     },
     {
       "path": "研究报告.md",
@@ -5551,6 +5551,46 @@
           "status": "has_result_json"
         },
         {
+          "id": "test/22_subject/round4.py",
+          "path": "test/22_subject/round4.py",
+          "summary": "E22 第 4 轮：在第 3 轮候选上增加 sim 近邻数 5/20、单特征/特征组指数、贪心第 4 项（只用校准块 0–3 学习）。 以下为沿用的第 3 轮说明。 新增候选： g{grp}_k{k}        按特征组（stft/dw",
+          "artifacts": [
+            {
+              "path": "test/22_subject/round4.json",
+              "kind": "result",
+              "size": 1698,
+              "sha256": "2e206342652174f32bd2dbace13fdfc8142eab42dda71f1c2ff83481a029fbf1"
+            },
+            {
+              "path": "test/22_subject/round4.log",
+              "kind": "log",
+              "size": 848,
+              "sha256": "9a787ccbe5a3e312b6741b9d5b73ed2829a2d4cbadc2d72757c16ec8cc397a23"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/22_subject/round5.py",
+          "path": "test/22_subject/round5.py",
+          "summary": "E22 第 5 轮：第 4 轮候选 + 阈值改为过去 w 帧分数的 q 分位数（q∈.3–.7，因果，无标签）。 第 4 轮：在第 3 轮候选上增加 sim 近邻数 5/20、单特征/特征组指数、贪心第 4 项（只用校准块 0–3 学习）。",
+          "artifacts": [
+            {
+              "path": "test/22_subject/round5.json",
+              "kind": "result",
+              "size": 1365,
+              "sha256": "10c9ff81710d58d220b951d3dd4ead9aaaa0ea8d8e801cc0f9a337e17d3a42e1"
+            },
+            {
+              "path": "test/22_subject/round5.log",
+              "kind": "log",
+              "size": 731,
+              "sha256": "e8fc2a21224d4e1828262c593c05f48686bf246525738d249a1481dcc402561b"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
           "id": "test/22_subject/subject.py",
           "path": "test/22_subject/subject.py",
           "summary": "E22：逐个被试推进到 0.9（E13 思路的合规版）。 与 E13 的区别（按理论框架第 13 节）： - 学习阶段只用本人块 0–3（带标签）+ 其他被试数据；块 4–5 为推理测试段。 - 推理每帧只读当前 6 s 窗特征；去掉分数 ",
@@ -10082,15 +10122,15 @@
         {
           "path": "test/22_subject/best.json",
           "kind": "result",
-          "size": 8622,
-          "sha256": "a35d14cacee255357257741b5aba55fd50928a47f8a00f74ff5dc03e0a99df9a",
+          "size": 8696,
+          "sha256": "dd967fcf0668746ece53829d2f1c1d363ea96b5ebeda9e2cf75d852ff745f5d1",
           "suggested_script": null
         },
         {
           "path": "test/22_subject/报告_E22_逐被试推进.md",
           "kind": "other",
-          "size": 2830,
-          "sha256": "a0bd99b681025134e8ddb6d23a9244ac2c65f247ebf0126875eaaf71c9e2803c",
+          "size": 3839,
+          "sha256": "6aa6853b717ef5923038e2ffcac596ecdb461fbee6104cba0f307f0fc56ddf09",
           "suggested_script": null
         }
       ]
@@ -51581,17 +51621,17 @@
     {
       "file": "test/22_subject/best.json",
       "key": "004.auc",
-      "value": 0.9213733926866466
+      "value": 0.9459992312175283
     },
     {
       "file": "test/22_subject/best.json",
       "key": "004.bacc",
-      "value": 0.8797909407665505
+      "value": 0.9006968641114983
     },
     {
       "file": "test/22_subject/best.json",
       "key": "004.f1",
-      "value": 0.8633663366336634
+      "value": 0.8897485493230174
     },
     {
       "file": "test/22_subject/best.json",
@@ -51656,17 +51696,17 @@
     {
       "file": "test/22_subject/best.json",
       "key": "009.auc",
-      "value": 0.9751286449399656
+      "value": 0.9949971412235564
     },
     {
       "file": "test/22_subject/best.json",
       "key": "009.bacc",
-      "value": 0.8863636363636364
+      "value": 0.9412878787878788
     },
     {
       "file": "test/22_subject/best.json",
       "key": "009.f1",
-      "value": 0.8717948717948718
+      "value": 0.937625754527163
     },
     {
       "file": "test/22_subject/best.json",
@@ -52132,6 +52172,216 @@
       "file": "test/22_subject/round3.json",
       "key": "050.auc",
       "value": 0.9834900864260295
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "004.auc",
+      "value": 0.9459992312175283
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "004.bacc",
+      "value": 0.9006968641114983
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "004.f1",
+      "value": 0.8897485493230174
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "009.auc",
+      "value": 0.9949971412235564
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "009.bacc",
+      "value": 0.9412878787878788
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "009.f1",
+      "value": 0.937625754527163
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "022.auc",
+      "value": 0.9309581459702525
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "022.bacc",
+      "value": 0.8759598754756139
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "022.f1",
+      "value": 0.8832
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "029.auc",
+      "value": 0.7922444239019649
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "029.bacc",
+      "value": 0.8017670482827277
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "029.f1",
+      "value": 0.7760617760617761
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "030.auc",
+      "value": 0.8989507667473768
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "030.bacc",
+      "value": 0.8962642684192321
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "030.f1",
+      "value": 0.9060092449922958
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "041.auc",
+      "value": 0.9490862547109437
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "041.bacc",
+      "value": 0.890326862452298
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "041.f1",
+      "value": 0.8929765886287625
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "042.auc",
+      "value": 0.8749468537414966
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "042.bacc",
+      "value": 0.8497378117913832
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "042.f1",
+      "value": 0.8603174603174604
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "052.auc",
+      "value": 0.9723387612884875
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "052.bacc",
+      "value": 0.8604612576738012
+    },
+    {
+      "file": "test/22_subject/round4.json",
+      "key": "052.f1",
+      "value": 0.8392156862745098
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "022.auc",
+      "value": 0.9309581459702525
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "022.bacc",
+      "value": 0.8759598754756139
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "022.f1",
+      "value": 0.8832
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "029.auc",
+      "value": 0.7922444239019649
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "029.bacc",
+      "value": 0.8017670482827277
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "029.f1",
+      "value": 0.7760617760617761
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "030.auc",
+      "value": 0.8830162573503978
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "030.bacc",
+      "value": 0.9013720742534301
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "030.f1",
+      "value": 0.9099378881987578
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "041.auc",
+      "value": 0.9549645642229017
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "041.bacc",
+      "value": 0.896797743487639
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "041.f1",
+      "value": 0.8961937716262975
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "042.auc",
+      "value": 0.9118008314436885
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "042.bacc",
+      "value": 0.8523242630385488
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "042.f1",
+      "value": 0.852233676975945
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "052.auc",
+      "value": 0.9668396975514945
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "052.bacc",
+      "value": 0.8973369835739173
+    },
+    {
+      "file": "test/22_subject/round5.json",
+      "key": "052.f1",
+      "value": 0.8924731182795699
     },
     {
       "file": "test/22_subject/subject.json",
@@ -62960,6 +63210,8 @@
     "test/22_subject/best.json": 168,
     "test/22_subject/round2.json": 126,
     "test/22_subject/round3.json": 48,
+    "test/22_subject/round4.json": 24,
+    "test/22_subject/round5.json": 18,
     "test/22_subject/subject.json": 513,
     "test/_orphans/causal_covariance_transport_results.json": 48,
     "test/_orphans/causal_covariance_transport_smoke_results.json": 48,
@@ -65170,6 +65422,14 @@
       "reference": "xblock2_scores.npz"
     },
     {
+      "script": "test/22_subject/round4.py",
+      "reference": "xblock2_scores.npz"
+    },
+    {
+      "script": "test/22_subject/round5.py",
+      "reference": "xblock2_scores.npz"
+    },
+    {
       "script": "test/22_subject/subject.py",
       "reference": "xblock2_scores.npz"
     },
@@ -65295,11 +65555,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 1636,
-    "py_scripts": 284,
-    "json_results": 324,
-    "metrics_entries": 10414,
-    "missing_reference_count": 568,
+    "files_scanned": 1642,
+    "py_scripts": 286,
+    "json_results": 326,
+    "metrics_entries": 10456,
+    "missing_reference_count": 570,
     "database_window_files": 116
   }
 }
