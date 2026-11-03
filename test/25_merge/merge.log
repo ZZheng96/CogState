@@ -1,0 +1,66 @@
+pool sizes {'n_cands': 13224, 'n_pair': 192720, 'n_excl': 7, 'pool_np': 220} total 205951
+每人 oracle≥.9: 57 / 57 未达: []
+覆盖：cands 50，+pairs 51，+excl 57
+
+=== matching ===
+round 1: ng=30 sizes=[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1] min_bacc=0.900
+round 2: ng=21 sizes=[4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1] min_bacc=0.900
+final: {'bacc': 0.9212156670135364, 'auc': 0.9656078250784623, 'f1': 0.9216978163049933, 'n90': 57}
+[4] min 0.902 mean 0.913 ens8 0.882 z[sim4390_C0.001 ; k4390_w0.6+b23n400_C0.1] | m300 | {'sim_top10': 0.541, 'drift_sign': 0.525, 'd_emg': 0.714, 'drift_cos': 0.144, 'd_top20': 1.122} | 012 023 049 046
+[4] min 0.913 mean 0.928 ens8 0.927 k400_w0.6+ens8 | t0 | {'sim_top10': 0.767, 'drift_sign': 0.907, 'd_emg': 1.417, 'drift_cos': 0.625, 'd_top20': 1.83} | 007 017 051 031
+[4] min 0.904 mean 0.929 ens8 0.894 own4390_C0.1+idxgdwt10 | q300_.4 | {'sim_top10': 0.667, 'drift_sign': 0.749, 'd_emg': 1.018, 'drift_cos': 0.439, 'd_top20': 1.238} | 016 013 006 058
+[4] min 0.908 mean 0.911 ens8 0.844 z[k1600_w0.85+gemg_k50 ; k4390_w0.85+goth_k200] | q300_.6 | {'sim_top10': 0.683, 'drift_sign': 0.73, 'd_emg': 1.001, 'drift_cos': 0.312, 'd_top20': 1.383} | 027 045 003 047
+[4] min 0.928 mean 0.942 ens8 0.796 z[k4390_w0.85+idxgdwt10 ; b23r100_C0.1+b23n100_C0.1] | q300_.6 | {'sim_top10': 0.551, 'drift_sign': 0.54, 'd_emg': 1.063, 'drift_cos': 0.166, 'd_top20': 1.521} | 014 037 036 008
+[4] min 0.901 mean 0.915 ens8 0.833 z[f2+sim800_C0.01 ; ghilbert_k50+gstft_k200] | m300 | {'sim_top10': 0.567, 'drift_sign': 0.479, 'd_emg': 0.61, 'drift_cos': 0.066, 'd_top20': 1.183} | 040 050 019 015
+[4] min 0.908 mean 0.926 ens8 0.884 z[sim800_C0.001+sim800_C0.01 ; sim800_C0.01+b23r400_C0.1] | t0 | {'sim_top10': 0.761, 'drift_sign': 0.639, 'd_emg': 1.505, 'drift_cos': 0.404, 'd_top20': 1.861} | 018 048 056 021
+[4] min 0.901 mean 0.910 ens8 0.852 专属配方(053) | {'sim_top10': 0.587, 'drift_sign': 0.771, 'd_emg': 1.006, 'drift_cos': 0.312, 'd_top20': 1.372} | 025 028 010 053
+[4] min 0.901 mean 0.912 ens8 0.895 z[gdwt_k200+sim800_C0.01 ; ghilbert_k200+b23n100_C0.1] | q600_.4 | {'sim_top10': 0.711, 'drift_sign': 0.559, 'd_emg': 1.463, 'drift_cos': 0.261, 'd_top20': 1.749} | 044 057 024 026
+[2] min 0.906 mean 0.915 ens8 0.812 z[sim4390_C0.01+b23n400_C0.1 ; b23r400_C0.1+b23n100_C0.1] | q300_.4 | {'sim_top10': 0.528, 'drift_sign': 0.5, 'd_emg': 0.41, 'drift_cos': 0.116, 'd_top20': 0.82} | 011 004
+[2] min 0.908 mean 0.932 ens8 0.824 z[k4390_w0.6+goth_k50 ; gemg_k200+goth_k200] | q600_.6 | {'sim_top10': 0.62, 'drift_sign': 0.48, 'd_emg': 0.215, 'drift_cos': -0.088, 'd_top20': 0.638} | 034 041
+[2] min 0.943 mean 0.953 ens8 0.725 z[b23n100_C0.1 ; b23n100_C0.1+b23n400_C0.1] | t0 | {'sim_top10': 0.576, 'drift_sign': 0.502, 'd_emg': 0.973, 'drift_cos': 0.121, 'd_top20': 1.176} | 039 009
+[2] min 0.911 mean 0.917 ens8 0.868 z[idx3+sim800_C0.01 ; gemg_k50+sim800_C0.001] | t0 | {'sim_top10': 0.576, 'drift_sign': 0.467, 'd_emg': 0.955, 'drift_cos': 0.043, 'd_top20': 1.759} | 038 059
+[2] min 0.901 mean 0.905 ens8 0.851 专属配方(030) | {'sim_top10': 0.64, 'drift_sign': 0.5, 'd_emg': 0.817, 'drift_cos': -0.039, 'd_top20': 1.18} | 005 030
+[2] min 0.920 mean 0.921 ens8 0.869 专属配方(054) | {'sim_top10': 0.8, 'drift_sign': 1.0, 'd_emg': 1.802, 'drift_cos': 0.635, 'd_top20': 2.096} | 043 054
+[2] min 0.906 mean 0.907 ens8 0.876 z[k4390_w0.6+gemg_k200 ; sim4390_C0.01+b23n100_C0.1] | t0 | {'sim_top10': 0.734, 'drift_sign': 1.0, 'd_emg': 1.116, 'drift_cos': 0.593, 'd_top20': 1.559} | 001 035
+[2] min 0.900 mean 0.913 ens8 0.866 专属配方(052) | {'sim_top10': 0.626, 'drift_sign': 0.505, 'd_emg': 0.668, 'drift_cos': 0.173, 'd_top20': 1.563} | 055 052
+[2] min 0.925 mean 0.936 ens8 0.818 z[k4390_w0.6+own200_C0.1 ; own200_C0.1+goth_k200] | t0 | {'sim_top10': 0.775, 'drift_sign': 0.62, 'd_emg': 1.257, 'drift_cos': 0.298, 'd_top20': 1.764} | 002 020
+[1] min 0.939 mean 0.939 ens8 0.696 专属配方(022) | {'sim_top10': 0.52, 'drift_sign': 0.025, 'd_emg': 0.749, 'drift_cos': -0.497, 'd_top20': 0.716} | 022
+[1] min 0.917 mean 0.917 ens8 0.708 sim4390_C0.01+b23n400_C0.1 | m120 | {'sim_top10': 0.495, 'drift_sign': 1.0, 'd_emg': 0.907, 'drift_cos': 0.279, 'd_top20': 1.441} | 029
+[1] min 0.911 mean 0.911 ens8 0.515 专属配方(042) | {'sim_top10': 0.57, 'drift_sign': 0.985, 'd_emg': 0.327, 'drift_cos': 0.344, 'd_top20': 0.846} | 042
+
+=== hac ===
+HAC 合并 34 步, 组数 57→23; 最终 sizes=[7, 6, 5, 4, 4, 3, 3, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+final: {'bacc': 0.9257391063790572, 'auc': 0.9665935750593219, 'f1': 0.9258780573543749, 'n90': 57}
+[7] min 0.906 mean 0.925 ens8 0.895 z[sim800_C0.01 ; k1600_w0.6+sim800_C0.001] | t0 | {'sim_top10': 0.727, 'drift_sign': 0.654, 'd_emg': 1.203, 'drift_cos': 0.326, 'd_top20': 1.683} | 019 024 049 018 056 043 048
+[6] min 0.900 mean 0.922 ens8 0.849 z[ens8+gdwt_k50 ; f4+gdwt_k200] | q300_.6 | {'sim_top10': 0.57, 'drift_sign': 0.527, 'd_emg': 1.01, 'drift_cos': 0.229, 'd_top20': 1.445} | 037 039 040 008 012 036
+[5] min 0.901 mean 0.930 ens8 0.908 z[k400_w0.6+b23r100_C0.1 ; k800_w0.85+b23r100_C0.1] | t0 | {'sim_top10': 0.711, 'drift_sign': 0.824, 'd_emg': 1.484, 'drift_cos': 0.597, 'd_top20': 1.888} | 051 021 044 007 017
+[4] min 0.909 mean 0.948 ens8 0.873 z[k4390_w0.6+idxgdwt10 ; own4390_C0.01+idxgstft10] | q300_.4 | {'sim_top10': 0.561, 'drift_sign': 0.781, 'd_emg': 0.905, 'drift_cos': 0.52, 'd_top20': 1.195} | 006 023 013 016
+[4] min 0.901 mean 0.929 ens8 0.894 z[k1600_w0.6 ; goth_k200+sim4390_C0.01] | q300_.4 | {'sim_top10': 0.601, 'drift_sign': 0.512, 'd_emg': 0.63, 'drift_cos': 0.063, 'd_top20': 0.98} | 035 045 027 028
+[3] min 0.929 mean 0.945 ens8 0.811 z[k4390_w0.85+gemg_k200 ; b23n100_C0.1+b23n400_C0.1] | q300_.6 | {'sim_top10': 0.734, 'drift_sign': 0.983, 'd_emg': 1.464, 'drift_cos': 0.613, 'd_top20': 2.011} | 047 014 025
+[3] min 0.916 mean 0.927 ens8 0.857 z[sim4390_C0.01 ; gdwt_k200+b23n400_C0.1] | q300_.4 | {'sim_top10': 0.64, 'drift_sign': 0.0, 'd_emg': 0.542, 'drift_cos': -0.637, 'd_top20': 0.697} | 011 005 058
+[3] min 0.901 mean 0.910 ens8 0.880 z[k4390_w0.6+gemg_k200 ; k4390_w0.6+sim800_C0.01] | t0 | {'sim_top10': 0.784, 'drift_sign': 0.952, 'd_emg': 1.49, 'drift_cos': 0.47, 'd_top20': 2.039} | 001 026 038
+[3] min 0.904 mean 0.922 ens8 0.820 z[k4390_w0.6+goth_k200 ; gemg_k200+goth_k200] | q600_.6 | {'sim_top10': 0.574, 'drift_sign': 0.74, 'd_emg': 0.659, 'drift_cos': 0.218, 'd_top20': 1.042} | 041 010 034
+[2] min 0.925 mean 0.936 ens8 0.818 z[k4390_w0.6+own200_C0.1 ; own200_C0.1+goth_k200] | t0 | {'sim_top10': 0.775, 'drift_sign': 0.62, 'd_emg': 1.257, 'drift_cos': 0.298, 'd_top20': 1.764} | 002 020
+[2] min 0.920 mean 0.931 ens8 0.757 z[idxgstft10+b23n400_C0.1 ; sim4390_C0.001+b23n100_C0.1] | q600_.4 | {'sim_top10': 0.67, 'drift_sign': 0.143, 'd_emg': 0.995, 'drift_cos': -0.215, 'd_top20': 1.184} | 009 057
+[2] min 0.922 mean 0.923 ens8 0.784 z[ghilbert_k50+gstft_k200 ; sim800_C0.01+b23r100_C0.1] | m300 | {'sim_top10': 0.416, 'drift_sign': 0.457, 'd_emg': 0.315, 'drift_cos': -0.05, 'd_top20': 0.846} | 015 050
+[2] min 0.913 mean 0.920 ens8 0.911 z[k1600_w0.6+ens8 ; sim800_C0.01+sim4390_C0.01] | m600 | {'sim_top10': 0.779, 'drift_sign': 0.815, 'd_emg': 1.277, 'drift_cos': 0.431, 'd_top20': 1.517} | 003 031
+[2] min 0.917 mean 0.920 ens8 0.878 z[k4390_w0.85+sim4390_C0.01 ; k4390_w0.85+b23n400_C0.1] | q300_.4 | {'sim_top10': 0.592, 'drift_sign': 0.92, 'd_emg': 0.971, 'drift_cos': 0.546, 'd_top20': 1.217} | 046 055
+[1] min 0.923 mean 0.923 ens8 0.826 z[b23r400_C0.1+b23n100_C0.1 ; b23r400_C0.1+b23n400_C0.1] | q300_.4 | {'sim_top10': 0.504, 'drift_sign': 1.0, 'd_emg': 0.643, 'drift_cos': 0.717, 'd_top20': 1.303} | 004
+[1] min 0.939 mean 0.939 ens8 0.696 专属配方(022) | {'sim_top10': 0.52, 'drift_sign': 0.025, 'd_emg': 0.749, 'drift_cos': -0.497, 'd_top20': 0.716} | 022
+[1] min 0.917 mean 0.917 ens8 0.708 sim4390_C0.01+b23n400_C0.1 | m120 | {'sim_top10': 0.495, 'drift_sign': 1.0, 'd_emg': 0.907, 'drift_cos': 0.279, 'd_top20': 1.441} | 029
+[1] min 0.901 mean 0.901 ens8 0.823 专属配方(030) | {'sim_top10': 0.603, 'drift_sign': 1.0, 'd_emg': 1.097, 'drift_cos': 0.783, 'd_top20': 1.663} | 030
+[1] min 0.911 mean 0.911 ens8 0.515 专属配方(042) | {'sim_top10': 0.57, 'drift_sign': 0.985, 'd_emg': 0.327, 'drift_cos': 0.344, 'd_top20': 0.846} | 042
+[1] min 0.900 mean 0.900 ens8 0.826 专属配方(052) | {'sim_top10': 0.722, 'drift_sign': 0.02, 'd_emg': 0.562, 'drift_cos': -0.358, 'd_top20': 1.946} | 052
+[1] min 0.901 mean 0.901 ens8 0.719 专属配方(053) | {'sim_top10': 0.66, 'drift_sign': 1.0, 'd_emg': 0.856, 'drift_cos': 0.299, 'd_top20': 1.207} | 053
+[1] min 0.920 mean 0.920 ens8 0.824 专属配方(054) | {'sim_top10': 0.797, 'drift_sign': 1.0, 'd_emg': 1.937, 'drift_cos': 0.629, 'd_top20': 2.308} | 054
+[1] min 0.914 mean 0.914 ens8 0.863 z[k1600_w0.6+f1 ; sim800_C0.01+b23r400_C0.1] | t0 | {'sim_top10': 0.393, 'drift_sign': 0.015, 'd_emg': 0.832, 'drift_cos': -0.133, 'd_top20': 1.107} | 059
+
+=== matching 逐轮 57 人平均（每组取组内最小≥.9 下平均最高的配方）===
+round 0: ng=57 不同配方数=57 bACC 0.950 AUC 0.978 F1 0.950 n90 57 组内最小 0.900
+round 1: ng=30 不同配方数=30 bACC 0.937 AUC 0.971 F1 0.937 n90 57 组内最小 0.900
+round 2: ng=21 不同配方数=21 bACC 0.921 AUC 0.966 F1 0.922 n90 57 组内最小 0.900
+
+=== LOSO 画像分配（ax5 z 画像；其余 56 人重跑 matching 合并）===
+centroid: bACC 0.760 AUC 0.850 F1 0.749 n90 2 分组正确率 0.035
+1nn: bACC 0.754 AUC 0.823 F1 0.731 n90 4 分组正确率 0.070
+留出者存在任一可用组（≥.9）比例 0.421; 56 人合并后组数 中位 21 范围 20–22
