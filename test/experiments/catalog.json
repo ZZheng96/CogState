@@ -21,13 +21,13 @@
     },
     {
       "path": "README.md",
-      "size": 64325,
-      "sha256": "7716aaeee3c5125986a4b36cd7758073e42daa19e491f56a6bb0562a07e3c381"
+      "size": 64577,
+      "sha256": "12e86c3f5a36e7f3d1a32432ba7454c6e58c996dcf7442090b0d8ef8b12039b4"
     },
     {
       "path": "test/experiments/实验方法索引.md",
-      "size": 66750,
-      "sha256": "d9d9a504ce1366ee49cdf634147b339bc69f9c21e56c74d53f9417db2b207594"
+      "size": 67087,
+      "sha256": "c6d934ce89e86410cf5e0d8e449c008b2fa664ec747dbc1267dc462e685b9e33"
     },
     {
       "path": "test/reports/卡尔曼深度学习实验报告.md",
@@ -41,8 +41,8 @@
     },
     {
       "path": "理论框架.md",
-      "size": 29904,
-      "sha256": "8262dd5982a34a5ce30b54bbb86957e88c5d0eb4a116404dccf871c3b644ca88"
+      "size": 29978,
+      "sha256": "3ace2a150e36ff6cb465888e7c5966035e278e00925b6a9fa558f51f5b40c767"
     },
     {
       "path": "研究报告.md",
@@ -4831,7 +4831,8 @@
         "test/17_compliant",
         "test/18_calib",
         "test/19_xblock",
-        "test/20_adapt"
+        "test/20_adapt",
+        "test/21_push"
       ],
       "scripts": [
         {
@@ -5495,6 +5496,26 @@
               "kind": "log",
               "size": 2718,
               "sha256": "bb17442d3b762ad3fc83d33ab16bb7028cf2072286651bcae1200686a48217c3"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/21_push/inner.py",
+          "path": "test/21_push/inner.py",
+          "summary": "E21：逐人在校准块内层选参（学习阶段），测试段只报告。 内层两折：本人块 (0,1) 训练 → (2,3) 验证，及反向；训练集 = 其他被试全部帧 + 本人内层训练块。 内层特征排序只有一对块可用，按单对 |d| 排序；最终模型（全部校",
+          "artifacts": [
+            {
+              "path": "test/21_push/inner.json",
+              "kind": "result",
+              "size": 66204,
+              "sha256": "979cda0bd1db64126549df50655cf27508fca25842df29e6879a6334d660ec05"
+            },
+            {
+              "path": "test/21_push/inner.log",
+              "kind": "log",
+              "size": 5629,
+              "sha256": "ce8a42451a4243b0114955def6d706b45f8851cdb7a3393a956fac6544609ed2"
             }
           ],
           "status": "has_result_json"
@@ -6410,7 +6431,8 @@
         "test/17_compliant",
         "test/18_calib",
         "test/19_xblock",
-        "test/20_adapt"
+        "test/20_adapt",
+        "test/21_push"
       ],
       "scripts": [],
       "unassigned": [
@@ -9975,6 +9997,13 @@
           "kind": "other",
           "size": 2181,
           "sha256": "43163e893bb899b9412fc4fd8c8bbe3859ed61d7255e25320a0759c2e2bd188e",
+          "suggested_script": null
+        },
+        {
+          "path": "test/21_push/报告_E21_校准块内层选参.md",
+          "kind": "other",
+          "size": 2085,
+          "sha256": "df862d17b75d376c461933e5f0c962135a972bb12ca2f4fe23fc5d9b91560cc9",
           "suggested_script": null
         }
       ]
@@ -51225,6 +51254,206 @@
       "value": 0.7309429338005045
     },
     {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.001.fold_auc[0]",
+      "value": 0.9132110796554394
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.001.fold_auc[1]",
+      "value": 0.7752568797553865
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.002.fold_auc[0]",
+      "value": 0.7282140062051038
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.002.fold_auc[1]",
+      "value": 0.5117113574753209
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.003.fold_auc[0]",
+      "value": 0.8659174024535944
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.003.fold_auc[1]",
+      "value": 0.7572929682076912
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.004.fold_auc[0]",
+      "value": 0.7514301658163266
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.004.fold_auc[1]",
+      "value": 0.740859290520245
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.005.fold_auc[0]",
+      "value": 0.385976824189752
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.005.fold_auc[1]",
+      "value": 0.17459608843537416
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.006.fold_auc[0]",
+      "value": 0.4991621902826171
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.006.fold_auc[1]",
+      "value": 0.5360546538351048
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.007.fold_auc[0]",
+      "value": 0.8891247859209828
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.007.fold_auc[1]",
+      "value": 0.7753577650572424
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.008.fold_auc[0]",
+      "value": 0.817759072270023
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.008.fold_auc[1]",
+      "value": 0.700962727748442
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.009.fold_auc[0]",
+      "value": 0.5444871115819209
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.009.fold_auc[1]",
+      "value": 0.3460633385298564
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.010.fold_auc[0]",
+      "value": 0.4300321173765673
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.010.fold_auc[1]",
+      "value": 0.5713486842105263
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.011.fold_auc[0]",
+      "value": 0.7692348716490081
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.011.fold_auc[1]",
+      "value": 0.5262136803874091
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.012.fold_auc[0]",
+      "value": 0.6933594969590249
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.012.fold_auc[1]",
+      "value": 0.7853778698979592
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.013.fold_auc[0]",
+      "value": 0.7915282133612107
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.013.fold_auc[1]",
+      "value": 0.8644385521563221
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.014.fold_auc[0]",
+      "value": 0.7899560030709267
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.014.fold_auc[1]",
+      "value": 0.771621637979035
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.015.fold_auc[0]",
+      "value": 0.7017063878080414
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.015.fold_auc[1]",
+      "value": 0.45002627787226
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "per_subject.016.fold_auc[0]",
+      "value": 0.9115003824254271
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "table.best1.auc",
+      "value": 0.7995673871201939
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "table.best1.bacc",
+      "value": 0.7478984207231696
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "table.best1.f1",
+      "value": 0.7456666913549892
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "table.ens8.auc",
+      "value": 0.8108958219730856
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "table.ens8.bacc",
+      "value": 0.7521135306674537
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "table.ens8.f1",
+      "value": 0.7600718893531085
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "table.top3.auc",
+      "value": 0.8035982829748188
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "table.top3.bacc",
+      "value": 0.7480218779947521
+    },
+    {
+      "file": "test/21_push/inner.json",
+      "key": "table.top3.f1",
+      "value": 0.7521361259134108
+    },
+    {
       "file": "test/_orphans/causal_covariance_transport_results.json",
       "key": "methods.diagonal.all.AUC",
       "value": 0.660426461487161
@@ -61847,6 +62076,7 @@
     "test/19_xblock/xblock2.json": 1368,
     "test/20_adapt/adapt.json": 1539,
     "test/20_adapt/mlp.json": 513,
+    "test/21_push/inner.json": 1521,
     "test/_orphans/causal_covariance_transport_results.json": 48,
     "test/_orphans/causal_covariance_transport_smoke_results.json": 48,
     "test/audit/direction_scoring/direction_scoring.json": 312,
@@ -64044,6 +64274,10 @@
       "reference": "sub-*.npz"
     },
     {
+      "script": "test/21_push/inner.py",
+      "reference": "xblock2_scores.npz"
+    },
+    {
       "script": "test/audit/common.py",
       "reference": "depositioned_aperiodic_emg_oof.npz"
     },
@@ -64165,11 +64399,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 1621,
-    "py_scripts": 280,
-    "json_results": 319,
-    "metrics_entries": 10214,
-    "missing_reference_count": 564,
+    "files_scanned": 1625,
+    "py_scripts": 281,
+    "json_results": 320,
+    "metrics_entries": 10254,
+    "missing_reference_count": 565,
     "database_window_files": 116
   }
 }
