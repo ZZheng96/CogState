@@ -1,0 +1,5 @@
+﻿[train] subjects=57 frames=96091 dim=4390 task_frac=0.502
+[train] mlp seed 0 done
+[train] mlp seed 1 done
+[train] mlp seed 2 done
+[train] std_lr=2.1679 std_mlp=5.4116 train_bACC=0.9320 -> D:\WORK\BCIC2026\CogState\test\17_compliant\model_bundle.pt

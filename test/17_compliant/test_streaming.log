@@ -1,0 +1,10 @@
+﻿[run] streaming
+  chunk=1.0s max_s=None frames=1731 129s
+  chunk=0.1s max_s=None frames=1731 6s
+  chunk=0.37s max_s=None frames=1731 7s
+  chunk=5.0s max_s=None frames=1731 6s
+[offline] {'n_stream': 1731, 'n_offline': 1731, 'time_aligned': True, 'max_abs_dt': 0.0016806640625190994, 'label_equal': True, 'raw_feat_max_abs': 0.0, 'raw_feat_max_rel': 0.0, 'norm_feat_max_abs': 0.0, 'score_max_abs': 2.1457672119140625e-06, 'state_agree': 1.0}
+  chunk=1.0s max_s=600.0 frames=578 2s
+[prefix] {'N_s': 600.0, 'n_prefix': 578, 'identical': True, 'score_max_abs': 0.0}
+[chunks] {'1.0': {'n': 1731, 'same_times': True, 'score_max_abs': 0.0, 'identical': True}, '0.1': {'n': 1731, 'same_times': True, 'score_max_abs': 0.0, 'identical': True}, '0.37': {'n': 1731, 'same_times': True, 'score_max_abs': 0.0, 'identical': True}, '5.0': {'n': 1731, 'same_times': True, 'score_max_abs': 0.0, 'identical': True}}
+[metrics] {'bacc': 0.9647725907434354, 'auc': 0.9914135818125994, 'f1': 0.9640117994100295}

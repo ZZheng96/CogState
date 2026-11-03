@@ -1,0 +1,29 @@
+﻿c30_60_120_300_600_all lr   bACC 0.735 AUC 0.793 F1 0.721 n>=.9 2
+c30_60_120_300_600_all mlp  bACC 0.745 AUC 0.807 F1 0.736 n>=.9 4
+c30_60_120_300_600_all ens  bACC 0.754 AUC 0.813 F1 0.741 n>=.9 5
+c60_120_300_600_all lr   bACC 0.736 AUC 0.793 F1 0.722 n>=.9 2
+c60_120_300_600_all mlp  bACC 0.743 AUC 0.805 F1 0.732 n>=.9 4
+c60_120_300_600_all ens  bACC 0.754 AUC 0.814 F1 0.739 n>=.9 5
+c60_120_240_480_all lr   bACC 0.727 AUC 0.782 F1 0.715 n>=.9 1
+c60_120_240_480_all mlp  bACC 0.727 AUC 0.790 F1 0.717 n>=.9 1
+c60_120_240_480_all ens  bACC 0.741 AUC 0.801 F1 0.728 n>=.9 1
+..\..\.venv\Scripts\python.exe : Traceback (most recent call last):
+所在位置 行:15 字符: 3683
++ ... round1.log; ..\..\.venv\Scripts\python.exe multiscale.py c30_60_120_3 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "D:\WORK\BCIC2026\CogState\test\17_compliant\multiscale.py", line 88, in <module>
+    main()
+  File "D:\WORK\BCIC2026\CogState\test\17_compliant\multiscale.py", line 67, in main
+    flr = L.fit_lr(X, y, 0.001)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\WORK\BCIC2026\CogState\test\17_compliant\loso.py", line 75, in fit_lr
+    Z = (X - mu) / sd
+        ~~~~~~~~~^~~~
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.49 GiB. GPU 0 has a total capacity of 16.00 GiB of whic
+h 777.00 MiB is free. Of the allocated memory 9.48 GiB is allocated by PyTorch, and 3.85 GiB is reserved by PyTorch but
+ unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True 
+to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#envi
+ronment-variables)

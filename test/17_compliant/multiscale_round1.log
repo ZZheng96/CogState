@@ -1,0 +1,15 @@
+﻿c300               lr   bACC 0.677 AUC 0.729 F1 0.671 n>=.9 0
+c300               mlp  bACC 0.674 AUC 0.730 F1 0.682 n>=.9 0
+c300               ens  bACC 0.687 AUC 0.741 F1 0.689 n>=.9 0
+c300_600           lr   bACC 0.674 AUC 0.730 F1 0.666 n>=.9 0
+c300_600           mlp  bACC 0.679 AUC 0.738 F1 0.676 n>=.9 0
+c300_600           ens  bACC 0.689 AUC 0.747 F1 0.684 n>=.9 0
+c120_300_600       lr   bACC 0.734 AUC 0.789 F1 0.724 n>=.9 2
+c120_300_600       mlp  bACC 0.740 AUC 0.801 F1 0.730 n>=.9 1
+c120_300_600       ens  bACC 0.754 AUC 0.809 F1 0.742 n>=.9 5
+raw_c300_all       lr   bACC 0.683 AUC 0.742 F1 0.673 n>=.9 0
+raw_c300_all       mlp  bACC 0.661 AUC 0.720 F1 0.638 n>=.9 0
+raw_c300_all       ens  bACC 0.684 AUC 0.746 F1 0.666 n>=.9 0
+c120_300_600_all   lr   bACC 0.738 AUC 0.794 F1 0.723 n>=.9 4
+c120_300_600_all   mlp  bACC 0.737 AUC 0.796 F1 0.724 n>=.9 2
+c120_300_600_all   ens  bACC 0.753 AUC 0.811 F1 0.738 n>=.9 6

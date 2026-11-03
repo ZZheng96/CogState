@@ -21,13 +21,13 @@
     },
     {
       "path": "README.md",
-      "size": 62994,
-      "sha256": "b1ff9852562468ebb693afa2532e9adc24c35f0a80e947b6add75f04e5c5dbc7"
+      "size": 63565,
+      "sha256": "ac879d185124d96c5fefcad9d11e27949854b85cbc56b2d1845791554172c6ef"
     },
     {
       "path": "test/experiments/实验方法索引.md",
-      "size": 64867,
-      "sha256": "4fa4773789eaf04d800a92324939d799f17300800218a08188811e92df23652f"
+      "size": 65438,
+      "sha256": "75fffdd40819b11e88de47ab3e828d964a07618dcb77f9692c54b5e2c44fa8c4"
     },
     {
       "path": "test/reports/卡尔曼深度学习实验报告.md",
@@ -41,8 +41,8 @@
     },
     {
       "path": "理论框架.md",
-      "size": 26115,
-      "sha256": "2823b2ca234f68833f127d04a75cded08f39bf39b41d910e565f282890aa08f5"
+      "size": 28031,
+      "sha256": "b915b3fcd2f9a6c1c3f34efb0ce1af3cdffa05d18f28e5871097b12a23e3d1db"
     },
     {
       "path": "研究报告.md",
@@ -4827,7 +4827,8 @@
       "dirs": [
         "test/11_individual_20261102",
         "test/15_nested_select",
-        "test/16_subject_push"
+        "test/16_subject_push",
+        "test/17_compliant"
       ],
       "scripts": [
         {
@@ -5248,6 +5249,106 @@
           "summary": "记录（若优于已有结果）",
           "artifacts": [],
           "status": "script_only"
+        },
+        {
+          "id": "test/17_compliant/loso.py",
+          "path": "test/17_compliant/loso.py",
+          "summary": "E17：合规基线。跨被试训练（只用训练被试标签），测试被试只做无标签因果自适应，单窗 6 s 决策。 档位： w=0      纯 6 s：特征只来自当前窗，训练集统计量做 z-score w>0      6 s + 因果标准化：用测试被",
+          "artifacts": [
+            {
+              "path": "test/17_compliant/loso.json",
+              "kind": "result",
+              "size": 488947,
+              "sha256": "d62e00774f24c8b0b3f08ba8e426204c316ace21e1a370ae5aaa46511883c376"
+            },
+            {
+              "path": "test/17_compliant/loso.log",
+              "kind": "log",
+              "size": 826,
+              "sha256": "440d9fbed1853a6e0c1bfcbf0d24d44d528a4bbec0304b0e397f2cac8e95d19f"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/17_compliant/multiscale.py",
+          "path": "test/17_compliant/multiscale.py",
+          "summary": "E17b：多尺度因果标准化拼接 + 跨被试 LR / MLP 集成。单窗决策，无分数平滑，测试被试无标签。 特征 = [raw(训练集 z-score), cstd(w1), cstd(w2), ...]，每个 cstd 只用测试被试过去 ",
+          "artifacts": [
+            {
+              "path": "test/17_compliant/multiscale_round1.json",
+              "kind": "result",
+              "size": 94218,
+              "sha256": "8175fa29691a9bd256f2de4e520d1ac83419e244f68462a42eea1deac7e7cd78"
+            },
+            {
+              "path": "test/17_compliant/multiscale_round1.log",
+              "kind": "log",
+              "size": 948,
+              "sha256": "f857fa483df151a05e5214612a3f82312c66bd473418af3ab0d954143c7ff926"
+            },
+            {
+              "path": "test/17_compliant/multiscale_round2.log",
+              "kind": "log",
+              "size": 1897,
+              "sha256": "1d54ef3c7e951e3c219195417b336b137191233f55cd6b941499dfc170abf08b"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/17_compliant/pseudo.py",
+          "path": "test/17_compliant/pseudo.py",
+          "summary": "E17c：测试被试无标签伪标签自适应（先预测后更新）。 1. 种子：跨被试 LR+MLP 集成（多尺度因果标准化特征，训练被试标签）。 2. 测试被试上，每 R 帧用\"已到达帧\"的种子分数做伪标签（取 |z| 最大的 top 比例两端）， ",
+          "artifacts": [
+            {
+              "path": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+              "kind": "result",
+              "size": 411262,
+              "sha256": "34d91c49933b2e90f85575fd5af4efc37b63e96cf661c696b2034c0a94918c4d"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
+          "id": "test/17_compliant/streaming.py",
+          "path": "test/17_compliant/streaming.py",
+          "summary": "E17 分块流式推理程序（比赛提交形态）。 决策：每 1 s 输出一次，窗口 = 过去 6 s 原始单通道 EEG（250 Hz），严格因果。 特征：highdim_features(x,fs) ++ features_v2(x)，共 87",
+          "artifacts": [
+            {
+              "path": "test/17_compliant/streaming_demo.log",
+              "kind": "log",
+              "size": 250,
+              "sha256": "91cc48259abbe8ac245e1d1163294c683b6ca1bec6ba20ec99c03708ddc62e82"
+            },
+            {
+              "path": "test/17_compliant/streaming_train.log",
+              "kind": "log",
+              "size": 256,
+              "sha256": "ae95e667598919e79fee4eb6a7db79762912e3c01ac04d640e1aabc013dcbb4c"
+            }
+          ],
+          "status": "artifacts_only"
+        },
+        {
+          "id": "test/17_compliant/test_streaming.py",
+          "path": "test/17_compliant/test_streaming.py",
+          "summary": "流式推理一致性测试（被试 018，全部 trial）。 1. 流式 878 维原始特征 / 5×878 标准化特征 / 分数 vs 离线 sliding1 npz + loso.run_stats_t（帧时间对齐） 2. 前缀不变性：只喂前",
+          "artifacts": [
+            {
+              "path": "test/17_compliant/test_streaming.json",
+              "kind": "result",
+              "size": 963,
+              "sha256": "85d7c409e53819ad5a7a27d52d57eb8de9f9be25c93064cc19df6ccbb311bb10"
+            },
+            {
+              "path": "test/17_compliant/test_streaming.log",
+              "kind": "log",
+              "size": 1001,
+              "sha256": "f1499c986e6d9a671f592ca7656d9d6abf6f688392b3bf80dcb91cc21d42c025"
+            }
+          ],
+          "status": "has_result_json"
         }
       ],
       "unassigned": []
@@ -6156,7 +6257,8 @@
         "test/16_subject_push/scores_ps3",
         "test/16_subject_push/scores_ps4",
         "test/16_subject_push/scores_ps5",
-        "test/16_subject_push/scores_ps6"
+        "test/16_subject_push/scores_ps6",
+        "test/17_compliant"
       ],
       "scripts": [],
       "unassigned": [
@@ -9677,8 +9779,29 @@
         {
           "path": "test/16_subject_push/报告_E16_逐人攻关.md",
           "kind": "other",
-          "size": 4845,
-          "sha256": "5d43117d412b8f97b95ec6d467ad47babc45573e466ee9783ebf1ce769d7e059",
+          "size": 5792,
+          "sha256": "5e682ef30b916c5f8476aa4ed495e72f69f68091acf73413e238bb59c7f5edd6",
+          "suggested_script": null
+        },
+        {
+          "path": "test/17_compliant/model_bundle.pt",
+          "kind": "weights",
+          "size": 6947162,
+          "sha256": "e0096e91139e5260f05971f48676855941abe7a6266169f712bf1a2f0d5838b8",
+          "suggested_script": null
+        },
+        {
+          "path": "test/17_compliant/pseudo2.log",
+          "kind": "log",
+          "size": 4567,
+          "sha256": "2d4b65ceda2c51c2ea8d8d5cd1ccf62ad087b453c0ca3931ed79dfe80b9e76e3",
+          "suggested_script": null
+        },
+        {
+          "path": "test/17_compliant/报告_E17_合规方案.md",
+          "kind": "other",
+          "size": 2960,
+          "sha256": "584b6b0b235518416592e29fa1dac574c0032b30518c690c176ec4e0e28b961c",
           "suggested_script": null
         }
       ]
@@ -48914,6 +49037,621 @@
       "value": 0.9591781938821413
     },
     {
+      "file": "test/17_compliant/loso.json",
+      "key": "chosen[0].inner_bacc",
+      "value": 0.6715738972325145
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "chosen[1].inner_bacc",
+      "value": 0.6733599995818219
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "chosen[2].inner_bacc",
+      "value": 0.6812875946122167
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "chosen[3].inner_bacc",
+      "value": 0.6691698926110845
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "chosen[4].inner_bacc",
+      "value": 0.6489174730538467
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "macro.auc",
+      "value": 0.7292467018031017
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "macro.bacc",
+      "value": 0.6774997047178893
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "macro.f1",
+      "value": 0.6713051624384527
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.001.auc",
+      "value": 0.8878312377699882
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.001.bacc",
+      "value": 0.807203974057792
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.001.f1",
+      "value": 0.826694257630626
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.002.auc",
+      "value": 0.6810061540299934
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.002.bacc",
+      "value": 0.6341862340921312
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.002.f1",
+      "value": 0.6296296296296297
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.003.auc",
+      "value": 0.8794948178489419
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.003.bacc",
+      "value": 0.7860997331347359
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.003.f1",
+      "value": 0.7907822922983626
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.004.auc",
+      "value": 0.40270103452043793
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.004.bacc",
+      "value": 0.42262655377409475
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.004.f1",
+      "value": 0.3889955214331414
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.005.auc",
+      "value": 0.6699602916756913
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.005.bacc",
+      "value": 0.6151072124756336
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.005.f1",
+      "value": 0.6014943960149439
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.006.auc",
+      "value": 0.41645085817363503
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.006.bacc",
+      "value": 0.42572243753460376
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.006.f1",
+      "value": 0.40326633165829145
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.007.auc",
+      "value": 0.8627758305770845
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.007.bacc",
+      "value": 0.7747623592393301
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.007.f1",
+      "value": 0.7770700636942676
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.008.auc",
+      "value": 0.6141591757634152
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.008.bacc",
+      "value": 0.5246515498231745
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.008.f1",
+      "value": 0.4953329184816428
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.009.auc",
+      "value": 0.582059123343527
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.009.bacc",
+      "value": 0.5699469159309907
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.009.f1",
+      "value": 0.6124737210932025
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.010.auc",
+      "value": 0.632114842279429
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.010.bacc",
+      "value": 0.6083499125821427
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.010.f1",
+      "value": 0.6106958021851638
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.011.auc",
+      "value": 0.7106176572911929
+    },
+    {
+      "file": "test/17_compliant/loso.json",
+      "key": "per_subject.011.bacc",
+      "value": 0.6612686327508228
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.001.auc",
+      "value": 0.958268150795713
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.001.bacc",
+      "value": 0.8865837102872627
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.001.f1",
+      "value": 0.8860613071139387
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.002.auc",
+      "value": 0.8375410766565095
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.002.bacc",
+      "value": 0.7650803608770986
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.002.f1",
+      "value": 0.7408394403730846
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.003.auc",
+      "value": 0.9471591261714144
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.003.bacc",
+      "value": 0.9031201514305219
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.003.f1",
+      "value": 0.8947006194081212
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.004.auc",
+      "value": 0.4458168813180907
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.004.bacc",
+      "value": 0.49027202305890827
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.004.f1",
+      "value": 0.4257627118644068
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.005.auc",
+      "value": 0.7936755468919212
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.005.bacc",
+      "value": 0.7115009746588694
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.005.f1",
+      "value": 0.7097163548581774
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.006.auc",
+      "value": 0.6244813154495068
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.006.bacc",
+      "value": 0.6080768933102344
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.006.f1",
+      "value": 0.6109440769693325
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.007.auc",
+      "value": 0.9152871709642209
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.007.bacc",
+      "value": 0.8426936093421753
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.007.f1",
+      "value": 0.8347718865598027
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.008.auc",
+      "value": 0.7291956357504954
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.008.bacc",
+      "value": 0.6445808196380278
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.008.f1",
+      "value": 0.5900747790618627
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.009.auc",
+      "value": 0.5439337987806051
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.009.bacc",
+      "value": 0.5481362875771738
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.009.f1",
+      "value": 0.45640074211502785
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.010.auc",
+      "value": 0.4843378013571538
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.010.bacc",
+      "value": 0.5030626394164104
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.010.f1",
+      "value": 0.44887459807073954
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.011.auc",
+      "value": 0.8045855969170659
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.011.bacc",
+      "value": 0.7142659298311345
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.011.f1",
+      "value": 0.7164179104477612
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.012.auc",
+      "value": 0.7974420537445748
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.012.bacc",
+      "value": 0.7117512870532829
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.012.f1",
+      "value": 0.6915167095115681
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.013.auc",
+      "value": 0.8692841557639102
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.013.bacc",
+      "value": 0.8316155112916974
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.013.f1",
+      "value": 0.8233846153846154
+    },
+    {
+      "file": "test/17_compliant/multiscale_round1.json",
+      "key": "c120_300_600_all_ens.014.auc",
+      "value": 0.923697774640959
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.001.auc",
+      "value": 0.9440362618190302
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.001.bacc",
+      "value": 0.8687676655724839
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.001.f1",
+      "value": 0.8748627881448957
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.002.auc",
+      "value": 0.8261710581346717
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.002.bacc",
+      "value": 0.7429773854334707
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.002.f1",
+      "value": 0.7179827471798275
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.003.auc",
+      "value": 0.9454431204617388
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.003.bacc",
+      "value": 0.9127117855148017
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.003.f1",
+      "value": 0.9084924292297564
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.004.auc",
+      "value": 0.4732141011367026
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.004.bacc",
+      "value": 0.49945955683660603
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.004.f1",
+      "value": 0.46619446233097234
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.005.auc",
+      "value": 0.7965258826077539
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.005.bacc",
+      "value": 0.7095191682910982
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.005.f1",
+      "value": 0.7228229937393283
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.006.auc",
+      "value": 0.6765462306442107
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.006.bacc",
+      "value": 0.6490886928256328
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.006.f1",
+      "value": 0.6655052264808362
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.007.auc",
+      "value": 0.9164212096778617
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.007.bacc",
+      "value": 0.8470391579316889
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.007.f1",
+      "value": 0.8434313137372526
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.008.auc",
+      "value": 0.7981219821970152
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.008.bacc",
+      "value": 0.6931818181818181
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.008.f1",
+      "value": 0.6570111915734036
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.009.auc",
+      "value": 0.5263761467889908
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.009.bacc",
+      "value": 0.5634556574923548
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.009.f1",
+      "value": 0.5158526135389888
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.010.auc",
+      "value": 0.5526684217225002
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.010.bacc",
+      "value": 0.49521914752517027
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.010.f1",
+      "value": 0.4852420306965762
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.011.auc",
+      "value": 0.8513902641368052
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.011.bacc",
+      "value": 0.7828317767013675
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.011.f1",
+      "value": 0.7949699289229087
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.012.auc",
+      "value": 0.8713134292178408
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.012.bacc",
+      "value": 0.7783966952165482
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.012.f1",
+      "value": 0.7715170278637771
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.013.auc",
+      "value": 0.8835963511280664
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.013.bacc",
+      "value": 0.8303790380196567
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.013.f1",
+      "value": 0.8260084286574353
+    },
+    {
+      "file": "test/17_compliant/pseudo_c60_120_300_600_all.json",
+      "key": "_nested.014.auc",
+      "value": 0.9233114647161357
+    },
+    {
+      "file": "test/17_compliant/test_streaming.json",
+      "key": "stream_metrics.auc",
+      "value": 0.9914135818125994
+    },
+    {
+      "file": "test/17_compliant/test_streaming.json",
+      "key": "stream_metrics.bacc",
+      "value": 0.9647725907434354
+    },
+    {
+      "file": "test/17_compliant/test_streaming.json",
+      "key": "stream_metrics.f1",
+      "value": 0.9640117994100295
+    },
+    {
       "file": "test/_orphans/causal_covariance_transport_results.json",
       "key": "methods.diagonal.all.AUC",
       "value": 0.660426461487161
@@ -59525,6 +60263,10 @@
     "test/15_nested_select/nested_select_sf.json": 0,
     "test/15_nested_select/nested_select_sf2.json": 0,
     "test/16_subject_push/results.json": 84,
+    "test/17_compliant/loso.json": 12707,
+    "test/17_compliant/multiscale_round1.json": 2565,
+    "test/17_compliant/pseudo_c60_120_300_600_all.json": 11115,
+    "test/17_compliant/test_streaming.json": 3,
     "test/_orphans/causal_covariance_transport_results.json": 48,
     "test/_orphans/causal_covariance_transport_smoke_results.json": 48,
     "test/audit/direction_scoring/direction_scoring.json": 312,
@@ -61714,6 +62456,14 @@
       "reference": "sub-*.npz"
     },
     {
+      "script": "test/17_compliant/loso.py",
+      "reference": "sub-*.npz"
+    },
+    {
+      "script": "test/17_compliant/streaming.py",
+      "reference": "sub-*.npz"
+    },
+    {
       "script": "test/audit/common.py",
       "reference": "depositioned_aperiodic_emg_oof.npz"
     },
@@ -61835,11 +62585,11 @@
     }
   ],
   "summary": {
-    "files_scanned": 1578,
-    "py_scripts": 268,
-    "json_results": 308,
-    "metrics_entries": 9811,
-    "missing_reference_count": 562,
+    "files_scanned": 1596,
+    "py_scripts": 273,
+    "json_results": 312,
+    "metrics_entries": 9934,
+    "missing_reference_count": 564,
     "database_window_files": 116
   }
 }

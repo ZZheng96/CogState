@@ -1,0 +1,5 @@
+﻿[demo] subject 018 chunk~0.37s frames=1731 trials=6
+  t_end=66.000s score=-0.0831 state=relax label=0
+  t_end=67.000s score=-0.0453 state=relax label=0
+  t_end=68.000s score=-0.4158 state=relax label=0
+[demo] bACC 0.9648 AUC 0.9914 F1 0.9640

@@ -1,0 +1,16 @@
+﻿[fold 0] best (300, 0.001, 0) inner 0.672
+[fold 1] best (300, 0.001, 0) inner 0.673
+[fold 2] best (300, 0.001, 0) inner 0.681
+[fold 3] best (300, 0.001, 0) inner 0.669
+[fold 4] best (300, 0.001, 0) inner 0.649
+[nested] bACC 0.677 AUC 0.729 F1 0.671 n>=.9 0
+  w300_C0.001_t0         bACC 0.677 AUC 0.729 F1 0.671
+  w300_C0.01_t0          bACC 0.674 AUC 0.724 F1 0.668
+  w300_C0.1_t0           bACC 0.671 AUC 0.721 F1 0.664
+  w600_C0.001_t0         bACC 0.651 AUC 0.695 F1 0.645
+  w99999_C0.001_t0       bACC 0.650 AUC 0.699 F1 0.636
+  w300_C0.001_t600       bACC 0.648 AUC 0.702 F1 0.660
+  w99999_C0.001_t300     bACC 0.647 AUC 0.694 F1 0.655
+  w99999_C0.01_t0        bACC 0.646 AUC 0.695 F1 0.634
+  w300_C0.01_t600        bACC 0.646 AUC 0.697 F1 0.657
+  w600_C0.001_t300       bACC 0.645 AUC 0.694 F1 0.654
