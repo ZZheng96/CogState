@@ -21,13 +21,13 @@
     },
     {
       "path": "README.md",
-      "size": 65005,
-      "sha256": "871dd4a6c6b3cf9355cff6784128cc562d688c69c62cf5552b9a3c3450de54b0"
+      "size": 65124,
+      "sha256": "0f200b0ee52a01627815fb9b6d4c99416e66bf7593e5fa51e3d2a9fdcd9f1deb"
     },
     {
       "path": "test/experiments/实验方法索引.md",
-      "size": 67652,
-      "sha256": "243b1d1f80dd27dc04bf6e57c3b80c049cb02753932f713166e6fd59964cea28"
+      "size": 67726,
+      "sha256": "4ed8893a20467e8f19b46f4000b6d82b940ebb593e37369e6a0c648dbfaad2ec"
     },
     {
       "path": "test/reports/卡尔曼深度学习实验报告.md",
@@ -41,8 +41,8 @@
     },
     {
       "path": "理论框架.md",
-      "size": 30137,
-      "sha256": "f009601107fa0803f85cfac9702be84116b20bcf661d26e5e9d773ebf0a6133d"
+      "size": 30159,
+      "sha256": "d18f03d67d9499a2e1f50f6254646eb23d8ad8911ee5d69172ae9794fd86a834"
     },
     {
       "path": "研究报告.md",
@@ -5651,6 +5651,26 @@
           "status": "has_result_json"
         },
         {
+          "id": "test/22_subject/s034.py",
+          "path": "test/22_subject/s034.py",
+          "summary": "E22 补充：034 单独评估。 034 录音前 16.84 分钟采集中断（BAD_ACQ_SKIP），块 0–2 全部缺失，块 3 只剩约 144 帧（T）。 可用：块 3 残段（T，学习阶段）、块 4（R）、块 5（T）作测试段。本人校",
+          "artifacts": [
+            {
+              "path": "test/22_subject/s034.json",
+              "kind": "result",
+              "size": 291,
+              "sha256": "9a73099bf91ed68d3ee677cf7c52642430342a0f87b51391c896a11855a50857"
+            },
+            {
+              "path": "test/22_subject/s034.log",
+              "kind": "log",
+              "size": 296,
+              "sha256": "a9c950b376a7183989b03e6084592bc4bf7187dc950aed5bc42a4097096d37d4"
+            }
+          ],
+          "status": "has_result_json"
+        },
+        {
           "id": "test/22_subject/subject.py",
           "path": "test/22_subject/subject.py",
           "summary": "E22：逐个被试推进到 0.9（E13 思路的合规版）。 与 E13 的区别（按理论框架第 13 节）： - 学习阶段只用本人块 0–3（带标签）+ 其他被试数据；块 4–5 为推理测试段。 - 推理每帧只读当前 6 s 窗特征；去掉分数 ",
@@ -10182,15 +10202,15 @@
         {
           "path": "test/22_subject/best.json",
           "kind": "result",
-          "size": 8879,
-          "sha256": "fd6e834c1d29f208a29bc53fc8090f808ecc7a4faebe0e11da7ab02655f00d4a",
+          "size": 9083,
+          "sha256": "2bd5cede54d435f77bb2442c7147d3704826b4d85207c1f47df2a52aab50a4b2",
           "suggested_script": null
         },
         {
           "path": "test/22_subject/报告_E22_逐被试推进.md",
           "kind": "other",
-          "size": 5443,
-          "sha256": "25d99a063f128d621f219a29a31b18f0e4eb0b0764b8aaecc52a0253d765c932",
+          "size": 6518,
+          "sha256": "942c98650449f385cbe1c22051541bf4329edc183b84a9bc9ed511c9c47ad0d3",
           "suggested_script": null
         }
       ]
@@ -52579,6 +52599,26 @@
       "value": 0.9112627986348123
     },
     {
+      "file": "test/22_subject/s034.json",
+      "key": "034.auc",
+      "value": 0.997404536727583
+    },
+    {
+      "file": "test/22_subject/s034.json",
+      "key": "034.bacc",
+      "value": 0.9775178364028538
+    },
+    {
+      "file": "test/22_subject/s034.json",
+      "key": "034.f1",
+      "value": 0.9771528998242531
+    },
+    {
+      "file": "test/22_subject/s034.json",
+      "key": "best_single_xsubj.bacc",
+      "value": 0.9055500626564026
+    },
+    {
       "file": "test/22_subject/subject.json",
       "key": "per_subject.001.calsel.auc",
       "value": 0.928073668491787
@@ -63402,7 +63442,7 @@
     "test/20_adapt/adapt.json": 1539,
     "test/20_adapt/mlp.json": 513,
     "test/21_push/inner.json": 1521,
-    "test/22_subject/best.json": 168,
+    "test/22_subject/best.json": 171,
     "test/22_subject/round2.json": 126,
     "test/22_subject/round3.json": 48,
     "test/22_subject/round4.json": 24,
@@ -63410,6 +63450,7 @@
     "test/22_subject/round6.json": 15,
     "test/22_subject/round7.json": 6,
     "test/22_subject/round8.json": 6,
+    "test/22_subject/s034.json": 4,
     "test/22_subject/subject.json": 513,
     "test/_orphans/causal_covariance_transport_results.json": 48,
     "test/_orphans/causal_covariance_transport_smoke_results.json": 48,
@@ -65765,10 +65806,10 @@
     }
   ],
   "summary": {
-    "files_scanned": 1651,
-    "py_scripts": 289,
-    "json_results": 329,
-    "metrics_entries": 10483,
+    "files_scanned": 1654,
+    "py_scripts": 290,
+    "json_results": 330,
+    "metrics_entries": 10487,
     "missing_reference_count": 573,
     "database_window_files": 116
   }
