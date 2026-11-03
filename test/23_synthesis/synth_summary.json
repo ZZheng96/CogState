@@ -1,0 +1,53 @@
+{
+ "family_count": {
+  "idx": 10,
+  "joint": 42,
+  "own": 18,
+  "f": 4,
+  "sim": 8,
+  "g": 10,
+  "idxg": 4,
+  "ens8": 3,
+  "fg": 2,
+  "b23": 4,
+  "cross": 1
+ },
+ "combo": {
+  "idx+joint": 7,
+  "joint+own": 11,
+  "joint": 17,
+  "f": 1,
+  "sim": 1,
+  "g+own": 1,
+  "idx": 1,
+  "f+idxg+sim": 1,
+  "g+own+sim": 2,
+  "own": 1,
+  "ens8+joint": 1,
+  "g+joint+own": 1,
+  "f+fg+g+idxg": 1,
+  "idx+own": 1,
+  "ens8+idx": 1,
+  "b23+joint+sim": 2,
+  "ens8+idxg+sim": 1,
+  "cross+g": 1,
+  "b23+f+g+sim": 1,
+  "b23+fg+idxg+own": 1,
+  "g+joint": 3
+ },
+ "thr": {
+  "中位数": 32,
+  "t0": 18,
+  "分位数": 7
+ },
+ "rounds": {
+  "2": 5,
+  "1": 35,
+  "4": 2,
+  "3": 8,
+  "8": 2,
+  "6": 3,
+  "5": 1,
+  "034专项": 1
+ }
+}

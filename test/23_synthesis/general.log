@@ -1,0 +1,210 @@
+﻿E22_oracle                   bACC 0.929 AUC 0.966 F1 0.929 n90 57
+ens8|t0(本候选集)                bACC 0.748 AUC 0.810 F1 0.747 n90 10
+oracle_in_set                bACC 0.939 AUC 0.972 F1 0.939 n90 50
+calsel_in_set                bACC 0.743 AUC 0.799 F1 0.726 n90 3
+C1[ens8]|t0                  bACC 0.748 AUC 0.810 F1 0.747 n90 10
+C1[ens8]|m300                bACC 0.766 AUC 0.865 F1 0.751 n90 3
+C1[ens8]|q300_.4             bACC 0.769 AUC 0.861 F1 0.773 n90 5
+C1[ens8]|q300_.6             bACC 0.757 AUC 0.875 F1 0.715 n90 2
+C1[ens8+own]|t0              bACC 0.724 AUC 0.794 F1 0.713 n90 8
+C1[ens8+own]|m300            bACC 0.762 AUC 0.852 F1 0.751 n90 4
+C1[ens8+own]|q300_.4         bACC 0.759 AUC 0.850 F1 0.766 n90 1
+C1[ens8+own]|q300_.6         bACC 0.750 AUC 0.857 F1 0.715 n90 2
+C1[ens8+own+idx]|t0          bACC 0.695 AUC 0.786 F1 0.688 n90 5
+C1[ens8+own+idx]|m300        bACC 0.763 AUC 0.849 F1 0.749 n90 3
+C1[ens8+own+idx]|q300_.4     bACC 0.756 AUC 0.848 F1 0.764 n90 1
+C1[ens8+own+idx]|q300_.6     bACC 0.755 AUC 0.853 F1 0.712 n90 4
+C1[ens8+own+idx+g]|t0        bACC 0.704 AUC 0.783 F1 0.690 n90 4
+C1[ens8+own+idx+g]|m300      bACC 0.778 AUC 0.854 F1 0.760 n90 1
+C1[ens8+own+idx+g]|q300_.4   bACC 0.775 AUC 0.855 F1 0.773 n90 1
+C1[ens8+own+idx+g]|q300_.6   bACC 0.763 AUC 0.855 F1 0.725 n90 2
+C1[ens8+own+idx+g+sim]|t0    bACC 0.722 AUC 0.793 F1 0.709 n90 4
+C1[ens8+own+idx+g+sim]|m300  bACC 0.780 AUC 0.857 F1 0.761 n90 4
+C1[ens8+own+idx+g+sim]|q300_.4 bACC 0.777 AUC 0.858 F1 0.775 n90 5
+C1[ens8+own+idx+g+sim]|q300_.6 bACC 0.767 AUC 0.859 F1 0.728 n90 3
+C1[ens8+own+idx+g+sim+b23]|t0 bACC 0.728 AUC 0.796 F1 0.726 n90 5
+C1[ens8+own+idx+g+sim+b23]|m300 bACC 0.777 AUC 0.853 F1 0.758 n90 2
+C1[ens8+own+idx+g+sim+b23]|q300_.4 bACC 0.772 AUC 0.855 F1 0.769 n90 1
+C1[ens8+own+idx+g+sim+b23]|q300_.6 bACC 0.766 AUC 0.854 F1 0.727 n90 5
+C1L[ens8+own+idx]|m300       bACC 0.767 AUC 0.845 F1 0.751 n90 1
+C1L[ens8+own+idx+g+sim]|m300 bACC 0.777 AUC 0.857 F1 0.760 n90 4
+C1L[ens8+joint+own+idx+idxg+g+sim+b23+f]|m300 bACC 0.768 AUC 0.850 F1 0.751 n90 3
+C2global_top1                bACC 0.712 AUC 0.793 F1 0.724 n90 0
+C2global_top3ens             bACC 0.696 AUC 0.774 F1 0.709 n90 0
+  knn 001 hp 20 0.878
+  knn 002 hp 20 0.846
+  knn 003 hp 20 0.860
+  knn 004 hp 20 0.822
+  knn 005 hp 10 0.829
+  knn 006 hp 20 0.813
+  knn 007 hp 20 0.919
+  knn 008 hp 20 0.736
+  knn 009 hp 55 0.225
+  knn 010 hp 20 0.928
+  knn 011 hp 20 0.826
+  knn 012 hp 20 0.808
+  knn 013 hp 20 0.929
+  knn 014 hp 20 0.678
+  knn 015 hp 20 0.786
+  knn 016 hp 20 0.820
+  knn 017 hp 20 0.681
+  knn 018 hp 20 0.935
+  knn 019 hp 55 0.853
+  knn 020 hp 55 0.836
+  knn 021 hp 20 0.721
+  knn 022 hp 20 0.640
+  knn 023 hp 20 0.796
+  knn 024 hp 20 0.852
+  knn 025 hp 20 0.941
+  knn 026 hp 20 0.890
+  knn 027 hp 20 0.928
+  knn 028 hp 20 0.885
+  knn 029 hp 20 0.060
+  knn 030 hp 20 0.752
+  knn 031 hp 20 0.874
+  knn 035 hp 20 0.846
+  knn 036 hp 20 0.893
+  knn 037 hp 20 0.788
+  knn 038 hp 20 0.900
+  knn 039 hp 20 0.769
+  knn 040 hp 10 0.793
+  knn 041 hp 20 0.638
+  knn 042 hp 20 0.415
+  knn 043 hp 20 0.930
+  knn 044 hp 20 0.929
+  knn 045 hp 55 0.852
+  knn 046 hp 20 0.850
+  knn 047 hp 20 0.597
+  knn 048 hp 20 0.915
+  knn 049 hp 55 0.744
+  knn 050 hp 20 0.754
+  knn 051 hp 20 0.887
+  knn 052 hp 20 0.518
+  knn 053 hp 20 0.544
+  knn 054 hp 20 0.774
+  knn 055 hp 20 0.906
+  knn 056 hp 20 0.918
+  knn 057 hp 20 0.918
+  knn 058 hp 20 0.855
+  knn 059 hp 20 0.788
+  knn 034 hp 20 0.913
+C2knn_top1                   bACC 0.789 AUC 0.867 F1 0.792 n90 13
+C2knn_top3ens                bACC 0.789 AUC 0.866 F1 0.790 n90 14
+  ridge 001 hp 1000 0.869
+  ridge 002 hp 1000 0.862
+  ridge 003 hp 1000 0.875
+  ridge 004 hp 100 0.829
+  ridge 005 hp 1000 0.938
+  ridge 006 hp 1000 0.813
+  ridge 007 hp 1000 0.879
+  ridge 008 hp 1000 0.630
+  ridge 009 hp 1000 0.225
+  ridge 010 hp 1000 0.877
+  ridge 011 hp 1000 0.826
+  ridge 012 hp 1000 0.808
+  ridge 013 hp 1000 0.929
+  ridge 014 hp 1000 0.813
+  ridge 015 hp 1000 0.829
+  ridge 016 hp 1000 0.813
+  ridge 017 hp 1000 0.747
+  ridge 018 hp 1000 0.930
+  ridge 019 hp 1000 0.870
+  ridge 020 hp 1000 0.836
+  ridge 021 hp 1000 0.742
+  ridge 022 hp 1000 0.703
+  ridge 023 hp 1000 0.841
+  ridge 024 hp 1000 0.840
+  ridge 025 hp 1000 0.932
+  ridge 026 hp 1000 0.894
+  ridge 027 hp 100 0.594
+  ridge 028 hp 1000 0.942
+  ridge 029 hp 1000 0.108
+  ridge 030 hp 1000 0.752
+  ridge 031 hp 1000 0.874
+  ridge 035 hp 100 0.866
+  ridge 036 hp 1000 0.893
+  ridge 037 hp 1000 0.746
+  ridge 038 hp 1000 0.908
+  ridge 039 hp 1000 0.803
+  ridge 040 hp 1000 0.797
+  ridge 041 hp 100 0.567
+  ridge 042 hp 1000 0.502
+  ridge 043 hp 1000 0.930
+  ridge 044 hp 1000 0.931
+  ridge 045 hp 1000 0.873
+  ridge 046 hp 100 0.850
+  ridge 047 hp 100 0.689
+  ridge 048 hp 1000 0.930
+  ridge 049 hp 1000 0.777
+  ridge 050 hp 1000 0.804
+  ridge 051 hp 1000 0.892
+  ridge 052 hp 1000 0.444
+  ridge 053 hp 100 0.533
+  ridge 054 hp 1000 0.815
+  ridge 055 hp 1000 0.920
+  ridge 056 hp 1000 0.918
+  ridge 057 hp 1000 0.907
+  ridge 058 hp 1000 0.808
+  ridge 059 hp 1000 0.818
+  ridge 034 hp 1000 0.704
+C2ridge_top1                 bACC 0.790 AUC 0.864 F1 0.792 n90 12
+C2ridge_top3ens              bACC 0.786 AUC 0.867 F1 0.785 n90 11
+  glob+cal 001 hp 0.25 0.866
+  glob+cal 002 hp 0.1 0.862
+  glob+cal 003 hp 0.25 0.875
+  glob+cal 004 hp 0.1 0.690
+  glob+cal 005 hp 0.1 0.749
+  glob+cal 006 hp 0.1 0.781
+  glob+cal 007 hp 0.1 0.879
+  glob+cal 008 hp 0.5 0.869
+  glob+cal 009 hp 0.1 0.127
+  glob+cal 010 hp 0.1 0.865
+  glob+cal 011 hp 0.1 0.785
+  glob+cal 012 hp 0.1 0.803
+  glob+cal 013 hp 0.1 0.826
+  glob+cal 014 hp 0.25 0.813
+  glob+cal 015 hp 0.25 0.498
+  glob+cal 016 hp 0.25 0.930
+  glob+cal 017 hp 0.25 0.916
+  glob+cal 018 hp 0.25 0.914
+  glob+cal 019 hp 0.25 0.853
+  glob+cal 020 hp 0.25 0.856
+  glob+cal 021 hp 0.25 0.821
+  glob+cal 022 hp 0.25 0.753
+  glob+cal 023 hp 0.25 0.678
+  glob+cal 024 hp 0.1 0.866
+  glob+cal 025 hp 0.25 0.920
+  glob+cal 026 hp 0.25 0.897
+  glob+cal 027 hp 0.25 0.814
+  glob+cal 028 hp 0.25 0.724
+  glob+cal 029 hp 0.25 0.330
+  glob+cal 030 hp 0.25 0.752
+  glob+cal 031 hp 0.1 0.876
+  glob+cal 035 hp 0.25 0.855
+  glob+cal 036 hp 0.1 0.900
+  glob+cal 037 hp 0.25 0.623
+  glob+cal 038 hp 0.25 0.908
+  glob+cal 039 hp 0.25 0.820
+  glob+cal 040 hp 0.25 0.887
+  glob+cal 041 hp 0.25 0.706
+  glob+cal 042 hp 0.25 0.140
+  glob+cal 043 hp 0.1 0.930
+  glob+cal 044 hp 0.1 0.926
+  glob+cal 045 hp 0.1 0.852
+  glob+cal 046 hp 0.25 0.861
+  glob+cal 047 hp 0.1 0.655
+  glob+cal 048 hp 0.25 0.930
+  glob+cal 049 hp 0.25 0.894
+  glob+cal 050 hp 0.1 0.742
+  glob+cal 051 hp 0.1 0.887
+  glob+cal 052 hp 0.1 0.444
+  glob+cal 053 hp 0.25 0.408
+  glob+cal 054 hp 0.25 0.807
+  glob+cal 055 hp 0.75 0.590
+  glob+cal 056 hp 0.25 0.892
+  glob+cal 057 hp 0.25 0.907
+  glob+cal 058 hp 0.25 0.890
+  glob+cal 059 hp 0.25 0.867
+  glob+cal 034 hp 0.25 0.777
+C2glob+cal_top1              bACC 0.777 AUC 0.828 F1 0.787 n90 9
+C2glob+cal_top3ens           bACC 0.775 AUC 0.829 F1 0.787 n90 10
