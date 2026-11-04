@@ -229,12 +229,11 @@ def run_set(name):
                         v = dv if Mi is None else torch.linalg.solve(Mi, dv)
                         R[f"p|w{w}|{pj}|a{a:g}|b{b:g}"] = Zr @ v
                 del Sg, Id, Rc, Zr
-        names = list(R)
+        names = ROWS.setdefault("names", list(R))  # 034 分支生成顺序不同，按首个被试的顺序对齐
+        assert set(names) == set(R), (q, set(names) ^ set(R))
         tst = torch.tensor(np.where(blk >= 4)[0], device=dev)
         yy = torch.tensor(y[blk >= 4], device=dev).bool()
         M = torch.stack([zc(R[n].float(), cal) for n in names])
-        ROWS.setdefault("names", names)
-        assert ROWS["names"] == names
         ROWS.setdefault("EV", []).append(E.metrics(M, tst, yy).cpu().numpy())
         ROWS[q] = M.half().cpu().numpy()
         CVLOG[q] = cvq
