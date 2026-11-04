@@ -1,0 +1,84 @@
+﻿001 oracle 0.92 a|none=0.91 a|own=0.91 a|sh=0.86 b|proto=0.91 b|pair=0.92 c|lda=0.90 c|lrpen=0.91 c|rc=0.90
+002 oracle 0.92 a|none=0.74 a|own=0.80 a|sh=0.77 b|proto=0.92 b|pair=0.81 c|lda=0.80 c|lrpen=0.79 c|rc=0.91
+003 oracle 0.94 a|none=0.91 a|own=0.93 a|sh=0.90 b|proto=0.92 b|pair=0.92 c|lda=0.94 c|lrpen=0.93 c|rc=0.94
+004 oracle 0.92 a|none=0.81 a|own=0.90 a|sh=0.92 b|proto=0.88 b|pair=0.85 c|lda=0.83 c|lrpen=0.81 c|rc=0.90
+005 oracle 0.86 a|none=0.79 a|own=0.82 a|sh=0.81 b|proto=0.83 b|pair=0.80 c|lda=0.81 c|lrpen=0.80 c|rc=0.81
+006 oracle 0.95 a|none=0.90 a|own=0.93 a|sh=0.93 b|proto=0.88 b|pair=0.95 c|lda=0.93 c|lrpen=0.93 c|rc=0.81
+007 oracle 0.98 a|none=0.95 a|own=0.95 a|sh=0.93 b|proto=0.96 b|pair=0.98 c|lda=0.98 c|lrpen=0.95 c|rc=0.98
+008 oracle 0.96 a|none=0.94 a|own=0.96 a|sh=0.88 b|proto=0.95 b|pair=0.95 c|lda=0.94 c|lrpen=0.92 c|rc=0.89
+009 oracle 0.98 a|none=0.82 a|own=0.86 a|sh=0.78 b|proto=0.98 b|pair=0.86 c|lda=0.94 c|lrpen=0.85 c|rc=0.97
+010 oracle 0.93 a|none=0.91 a|own=0.92 a|sh=0.89 b|proto=0.93 b|pair=0.92 c|lda=0.92 c|lrpen=0.91 c|rc=0.89
+011 oracle 0.90 a|none=0.89 a|own=0.89 a|sh=0.88 b|proto=0.90 b|pair=0.76 c|lda=0.89 c|lrpen=0.90 c|rc=0.89
+012 oracle 0.94 a|none=0.92 a|own=0.93 a|sh=0.89 b|proto=0.93 b|pair=0.93 c|lda=0.94 c|lrpen=0.91 c|rc=0.90
+013 oracle 0.98 a|none=0.94 a|own=0.97 a|sh=0.97 b|proto=0.94 b|pair=0.87 c|lda=0.96 c|lrpen=0.94 c|rc=0.98
+014 oracle 0.93 a|none=0.88 a|own=0.84 a|sh=0.74 b|proto=0.89 b|pair=0.67 c|lda=0.81 c|lrpen=0.87 c|rc=0.93
+015 oracle 0.94 a|none=0.85 a|own=0.93 a|sh=0.93 b|proto=0.92 b|pair=0.94 c|lda=0.88 c|lrpen=0.86 c|rc=0.93
+016 oracle 0.94 a|none=0.94 a|own=0.93 a|sh=0.91 b|proto=0.93 b|pair=0.92 c|lda=0.92 c|lrpen=0.94 c|rc=0.93
+017 oracle 0.95 a|none=0.93 a|own=0.93 a|sh=0.92 b|proto=0.95 b|pair=0.90 c|lda=0.94 c|lrpen=0.93 c|rc=0.95
+018 oracle 0.98 a|none=0.93 a|own=0.92 a|sh=0.95 b|proto=0.95 b|pair=0.98 c|lda=0.92 c|lrpen=0.92 c|rc=0.96
+019 oracle 0.92 a|none=0.88 a|own=0.89 a|sh=0.83 b|proto=0.92 b|pair=0.89 c|lda=0.89 c|lrpen=0.88 c|rc=0.91
+020 oracle 0.93 a|none=0.86 a|own=0.93 a|sh=0.91 b|proto=0.91 b|pair=0.80 c|lda=0.85 c|lrpen=0.85 c|rc=0.91
+021 oracle 0.97 a|none=0.81 a|own=0.81 a|sh=0.80 b|proto=0.97 b|pair=0.92 c|lda=0.85 c|lrpen=0.81 c|rc=0.95
+022 oracle 0.84 a|none=0.78 a|own=0.81 a|sh=0.81 b|proto=0.84 b|pair=0.83 c|lda=0.78 c|lrpen=0.81 c|rc=0.81
+023 oracle 0.95 a|none=0.93 a|own=0.94 a|sh=0.87 b|proto=0.93 b|pair=0.68 c|lda=0.94 c|lrpen=0.95 c|rc=0.94
+024 oracle 0.89 a|none=0.88 a|own=0.88 a|sh=0.85 b|proto=0.87 b|pair=0.79 c|lda=0.88 c|lrpen=0.88 c|rc=0.89
+025 oracle 0.98 a|none=0.98 a|own=0.98 a|sh=0.91 b|proto=0.95 b|pair=0.98 c|lda=0.96 c|lrpen=0.98 c|rc=0.98
+026 oracle 0.95 a|none=0.91 a|own=0.93 a|sh=0.93 b|proto=0.95 b|pair=0.92 c|lda=0.94 c|lrpen=0.92 c|rc=0.93
+027 oracle 0.87 a|none=0.76 a|own=0.82 a|sh=0.87 b|proto=0.87 b|pair=0.85 c|lda=0.80 c|lrpen=0.76 c|rc=0.84
+028 oracle 0.92 a|none=0.83 a|own=0.89 a|sh=0.92 b|proto=0.91 b|pair=0.86 c|lda=0.89 c|lrpen=0.83 c|rc=0.92
+029 oracle 0.72 a|none=0.49 a|own=0.51 a|sh=0.57 b|proto=0.72 b|pair=0.50 c|lda=0.50 c|lrpen=0.50 c|rc=0.63
+030 oracle 0.89 a|none=0.70 a|own=0.74 a|sh=0.76 b|proto=0.72 b|pair=0.73 c|lda=0.73 c|lrpen=0.68 c|rc=0.78
+031 oracle 0.93 a|none=0.86 a|own=0.91 a|sh=0.89 b|proto=0.93 b|pair=0.93 c|lda=0.88 c|lrpen=0.86 c|rc=0.89
+034 oracle 0.85 a|none=0.85 a|own=0.85 a|sh=0.85 b|proto=0.85 b|pair=0.85 c|lda=0.85 c|lrpen=0.85 c|rc=0.85
+035 oracle 0.96 a|none=0.87 a|own=0.90 a|sh=0.92 b|proto=0.91 b|pair=0.96 c|lda=0.93 c|lrpen=0.90 c|rc=0.96
+036 oracle 0.92 a|none=0.90 a|own=0.92 a|sh=0.92 b|proto=0.91 b|pair=0.92 c|lda=0.90 c|lrpen=0.91 c|rc=0.92
+037 oracle 0.88 a|none=0.87 a|own=0.87 a|sh=0.80 b|proto=0.88 b|pair=0.83 c|lda=0.86 c|lrpen=0.87 c|rc=0.60
+038 oracle 0.93 a|none=0.88 a|own=0.90 a|sh=0.90 b|proto=0.93 b|pair=0.89 c|lda=0.89 c|lrpen=0.90 c|rc=0.90
+039 oracle 0.92 a|none=0.86 a|own=0.86 a|sh=0.89 b|proto=0.92 b|pair=0.74 c|lda=0.84 c|lrpen=0.85 c|rc=0.89
+040 oracle 0.95 a|none=0.91 a|own=0.93 a|sh=0.91 b|proto=0.94 b|pair=0.92 c|lda=0.95 c|lrpen=0.92 c|rc=0.95
+041 oracle 0.86 a|none=0.74 a|own=0.86 a|sh=0.86 b|proto=0.81 b|pair=0.78 c|lda=0.80 c|lrpen=0.74 c|rc=0.84
+042 oracle 0.73 a|none=0.61 a|own=0.61 a|sh=0.73 b|proto=0.70 b|pair=0.71 c|lda=0.52 c|lrpen=0.62 c|rc=0.69
+043 oracle 0.92 a|none=0.82 a|own=0.84 a|sh=0.86 b|proto=0.89 b|pair=0.85 c|lda=0.86 c|lrpen=0.84 c|rc=0.87
+044 oracle 0.94 a|none=0.92 a|own=0.92 a|sh=0.91 b|proto=0.94 b|pair=0.93 c|lda=0.93 c|lrpen=0.92 c|rc=0.92
+045 oracle 0.91 a|none=0.82 a|own=0.90 a|sh=0.81 b|proto=0.86 b|pair=0.91 c|lda=0.90 c|lrpen=0.81 c|rc=0.91
+046 oracle 0.98 a|none=0.94 a|own=0.94 a|sh=0.92 b|proto=0.94 b|pair=0.94 c|lda=0.94 c|lrpen=0.95 c|rc=0.98
+047 oracle 0.92 a|none=0.88 a|own=0.88 a|sh=0.92 b|proto=0.87 b|pair=0.92 c|lda=0.86 c|lrpen=0.87 c|rc=0.91
+048 oracle 0.94 a|none=0.88 a|own=0.88 a|sh=0.82 b|proto=0.94 b|pair=0.90 c|lda=0.88 c|lrpen=0.87 c|rc=0.93
+049 oracle 0.90 a|none=0.81 a|own=0.82 a|sh=0.80 b|proto=0.86 b|pair=0.82 c|lda=0.80 c|lrpen=0.82 c|rc=0.90
+050 oracle 0.85 a|none=0.69 a|own=0.71 a|sh=0.85 b|proto=0.81 b|pair=0.81 c|lda=0.68 c|lrpen=0.69 c|rc=0.79
+051 oracle 0.96 a|none=0.76 a|own=0.83 a|sh=0.83 b|proto=0.91 b|pair=0.85 c|lda=0.82 c|lrpen=0.81 c|rc=0.92
+052 oracle 0.75 a|none=0.70 a|own=0.71 a|sh=0.75 b|proto=0.74 b|pair=0.73 c|lda=0.68 c|lrpen=0.68 c|rc=0.75
+053 oracle 0.75 a|none=0.59 a|own=0.63 a|sh=0.75 b|proto=0.73 b|pair=0.57 c|lda=0.59 c|lrpen=0.63 c|rc=0.69
+054 oracle 0.92 a|none=0.84 a|own=0.88 a|sh=0.86 b|proto=0.92 b|pair=0.66 c|lda=0.89 c|lrpen=0.87 c|rc=0.87
+055 oracle 1.00 a|none=0.86 a|own=0.98 a|sh=0.92 b|proto=0.92 b|pair=1.00 c|lda=0.99 c|lrpen=0.98 c|rc=0.84
+056 oracle 0.94 a|none=0.92 a|own=0.93 a|sh=0.92 b|proto=0.91 b|pair=0.94 c|lda=0.91 c|lrpen=0.93 c|rc=0.93
+057 oracle 0.94 a|none=0.87 a|own=0.88 a|sh=0.84 b|proto=0.94 b|pair=0.94 c|lda=0.90 c|lrpen=0.87 c|rc=0.93
+058 oracle 0.93 a|none=0.93 a|own=0.93 a|sh=0.89 b|proto=0.93 b|pair=0.93 c|lda=0.92 c|lrpen=0.93 c|rc=0.92
+059 oracle 0.88 a|none=0.75 a|own=0.85 a|sh=0.88 b|proto=0.80 b|pair=0.75 c|lda=0.75 c|lrpen=0.75 c|rc=0.82
+E28a_none(own基线)       bACC 0.781 AUC 0.851 F1 0.764 n90  7 min 0.031 a|none|l3@m300
+E28a_own投影             bACC 0.791 AUC 0.860 F1 0.775 n90 11 min 0.043 a|own1|l1@m300
+E28a_共享投影              bACC 0.779 AUC 0.858 F1 0.766 n90  1 min 0.170 a|sh30|l1@m300
+E28b_原型                bACC 0.789 AUC 0.864 F1 0.774 n90  7 min 0.113 b|proto_w0_d100_K1@m300
+E28b_pair              bACC 0.731 AUC 0.792 F1 0.729 n90  9 min 0.050 b|pair_rc300_a0.3@q1200_0.4
+E28c_LDA块惩罚            bACC 0.800 AUC 0.870 F1 0.787 n90 10 min 0.055 c|lda_g100_a0.5@m300
+E28c_LR块惩罚             bACC 0.787 AUC 0.858 F1 0.770 n90  7 min 0.052 c|lrpen10|l1@m300
+E28c_rc_ownLR          bACC 0.799 AUC 0.877 F1 0.778 n90  8 min 0.251 c|rc300|l0.03@m300
+E28a_all               bACC 0.791 AUC 0.860 F1 0.775 n90 11 min 0.043 a|own1|l1@m300
+E28b_all               bACC 0.789 AUC 0.864 F1 0.774 n90  7 min 0.113 b|proto_w0_d100_K1@m300
+E28c_all               bACC 0.772 AUC 0.849 F1 0.754 n90  5 min 0.055 c|lda_g100_a0.5@m300
+ALL                    bACC 0.772 AUC 0.849 F1 0.754 n90  5 min 0.055 c|lda_g100_a0.5@m300
+  c|lda_g100_a0.5              0.800 0.870 0.787 n90 10 m300
+  c|lda_g1000_a0.1             0.799 0.869 0.786 n90 9 m300
+  c|rc300|l0.03                0.799 0.877 0.778 n90 8 m300
+  c|rc300|l0.1                 0.795 0.873 0.772 n90 6 m300
+  a|own1|l1                    0.792 0.862 0.777 n90 11 m300
+  a|own1|l3                    0.791 0.862 0.777 n90 10 m300
+  c|lrpen10|l1                 0.790 0.863 0.775 n90 7 m300
+  a|own2|l1                    0.790 0.859 0.775 n90 9 m300
+  c|lda_g10_a0.5               0.790 0.859 0.771 n90 8 m300
+  a|own1|l0.3                  0.789 0.860 0.773 n90 6 m300
+  c|lrpen1000|l1               0.789 0.859 0.774 n90 8 m300
+  b|proto_w0_d100_K1           0.789 0.864 0.774 n90 7 m300
+  a|own1|l0.03                 0.789 0.860 0.770 n90 5 m300
+  c|lrpen10|l3                 0.789 0.862 0.774 n90 9 m300
+  c|lrpen1|l1                  0.789 0.859 0.772 n90 8 m300
