@@ -1,10 +1,9 @@
-# E29 缓存重建链 + 最接近组对聚合，随后恢复 E28 raw/cat/comb（串行，避免争显存）
+# E29 最接近组对聚合，随后 E28 cat/comb（缓存与 raw 已从旧机器拷入；串行，避免争显存）
+# 启动须用 WMI（Invoke-CimMethod Win32_Process Create），否则随终端命令结束被杀
 Set-Location D:\BCIC2026\CogState
 $st = "test\29_closest_pair\run_chain.status"
-Copy-Item test\26_merge2\merge2.json test\29_closest_pair\merge2_orig.json -Force
-$jobs = @(@("test\19_xblock\xblock2.py"), @("test\23_synthesis\common.py"), @("test\25_merge\pairs.py"),
-          @("test\26_merge2\merge2.py"), @("test\29_closest_pair\closest.py"),
-          @("test\28_block_invariant\e28main.py","raw"), @("test\28_block_invariant\e28main.py","cat"),
+$jobs = @(@("test\29_closest_pair\closest.py"),
+          @("test\28_block_invariant\e28main.py","cat"),
           @("test\28_block_invariant\e28main.py","comb"), @("test\28_block_invariant\e28.py"))
 foreach ($j in $jobs) {
   $tag = [IO.Path]::GetFileNameWithoutExtension($j[0]) + $(if ($j.Count -gt 1) { "_" + $j[1] } else { "" })
