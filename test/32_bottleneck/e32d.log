@@ -1,0 +1,65 @@
+016 blk23 RA rauc 0.916 bACC 0.937 | RB rauc 0.941 bACC 0.836
+016 blk01 RA rauc 0.815 bACC 0.604 | RB rauc 0.837 bACC 0.790
+016 blk03 RA rauc 0.798 bACC 0.641 | RB rauc 0.591 bACC 0.448
+016 blk12 RA rauc 0.895 bACC 0.846 | RB rauc 0.892 bACC 0.793
+013 blk23 RA rauc 0.807 bACC 0.884 | RB rauc 0.815 bACC 0.774
+013 blk01 RA rauc 0.885 bACC 0.665 | RB rauc 0.878 bACC 0.790
+013 blk03 RA rauc 0.717 bACC 0.622 | RB rauc 0.670 bACC 0.502
+013 blk12 RA rauc 0.895 bACC 0.783 | RB rauc 0.849 bACC 0.826
+006 blk23 RA rauc 0.847 bACC 0.929 | RB rauc 0.864 bACC 0.845
+006 blk01 RA rauc 0.789 bACC 0.598 | RB rauc 0.765 bACC 0.675
+006 blk03 RA rauc 0.678 bACC 0.606 | RB rauc 0.602 bACC 0.542
+006 blk12 RA rauc 0.858 bACC 0.690 | RB rauc 0.696 bACC 0.649
+058 blk23 RA rauc 0.460 bACC 0.751 | RB rauc 0.748 bACC 0.704
+058 blk01 RA rauc 0.344 bACC 0.691 | RB rauc 0.360 bACC 0.494
+058 blk03 RA rauc 0.509 bACC 0.156 | RB rauc 0.244 bACC 0.092
+058 blk12 RA rauc 0.557 bACC 0.630 | RB rauc 0.539 bACC 0.632
+014 blk23 RA rauc 0.887 bACC 0.847 | RB rauc 0.917 bACC 0.861
+014 blk01 RA rauc 0.918 bACC 0.758 | RB rauc 0.903 bACC 0.895
+014 blk03 RA rauc 0.082 bACC 0.729 | RB rauc 0.080 bACC 0.174
+014 blk12 RA rauc 0.205 bACC 0.603 | RB rauc 0.322 bACC 0.580
+037 blk23 RA rauc 0.245 bACC 0.742 | RB rauc 0.205 bACC 0.342
+037 blk01 RA rauc 0.262 bACC 0.342 | RB rauc 0.410 bACC 0.345
+037 blk03 RA rauc 0.002 bACC 0.559 | RB rauc 0.051 bACC 0.199
+037 blk12 RA rauc 0.004 bACC 0.393 | RB rauc 0.006 bACC 0.376
+036 blk23 RA rauc 0.962 bACC 0.617 | RB rauc 0.974 bACC 0.859
+036 blk01 RA rauc 0.979 bACC 0.596 | RB rauc 0.979 bACC 0.588
+036 blk03 RA rauc 0.008 bACC 0.715 | RB rauc 0.007 bACC 0.429
+036 blk12 RA rauc 0.103 bACC 0.473 | RB rauc 0.045 bACC 0.493
+008 blk23 RA rauc 0.216 bACC 0.560 | RB rauc 0.465 bACC 0.543
+008 blk01 RA rauc 0.610 bACC 0.779 | RB rauc 0.598 bACC 0.687
+008 blk03 RA rauc 0.016 bACC 0.117 | RB rauc 0.015 bACC 0.153
+008 blk12 RA rauc 0.326 bACC 0.565 | RB rauc 0.160 bACC 0.489
+018 blk23 RA rauc 0.962 bACC 0.891 | RB rauc 0.946 bACC 0.907
+018 blk01 RA rauc 0.909 bACC 0.619 | RB rauc 0.890 bACC 0.641
+018 blk03 RA rauc 0.098 bACC 0.656 | RB rauc 0.407 bACC 0.464
+018 blk12 RA rauc 0.327 bACC 0.636 | RB rauc 0.426 bACC 0.600
+048 blk23 RA rauc 0.894 bACC 0.907 | RB rauc 0.946 bACC 0.882
+048 blk01 RA rauc 0.489 bACC 0.825 | RB rauc 0.523 bACC 0.704
+048 blk03 RA rauc 0.361 bACC 0.491 | RB rauc 0.486 bACC 0.456
+048 blk12 RA rauc 0.864 bACC 0.798 | RB rauc 0.831 bACC 0.753
+056 blk23 RA rauc 0.948 bACC 0.874 | RB rauc 0.977 bACC 0.916
+056 blk01 RA rauc 0.605 bACC 0.425 | RB rauc 0.763 bACC 0.425
+056 blk03 RA rauc 0.266 bACC 0.855 | RB rauc 0.816 bACC 0.740
+056 blk12 RA rauc 0.334 bACC 0.645 | RB rauc 0.408 bACC 0.451
+021 blk23 RA rauc 0.458 bACC 0.653 | RB rauc 0.523 bACC 0.496
+021 blk01 RA rauc 0.825 bACC 0.680 | RB rauc 0.578 bACC 0.525
+021 blk03 RA rauc 0.066 bACC 0.647 | RB rauc 0.141 bACC 0.483
+021 blk12 RA rauc 0.187 bACC 0.766 | RB rauc 0.289 bACC 0.484
+038 blk23 RA rauc 0.692 bACC 0.723 | RB rauc 0.650 bACC 0.711
+038 blk01 RA rauc 0.192 bACC 0.569 | RB rauc 0.553 bACC 0.377
+038 blk03 RA rauc 0.002 bACC 0.606 | RB rauc 0.007 bACC 0.215
+038 blk12 RA rauc 0.358 bACC 0.719 | RB rauc 0.569 bACC 0.663
+059 blk23 RA rauc 0.794 bACC 0.901 | RB rauc 0.762 bACC 0.725
+059 blk01 RA rauc 0.375 bACC 0.175 | RB rauc 0.529 bACC 0.284
+059 blk03 RA rauc 0.879 bACC 0.790 | RB rauc 0.891 bACC 0.711
+059 blk12 RA rauc 0.881 bACC 0.838 | RB rauc 0.876 bACC 0.652
+dAUC_23     正确 4/14 margin -0.3302 合并 min 0.4038 bACC 0.8366 AUC 0.8813 F1 0.8167
+dbACC_23    正确 8/14 margin -0.4173 合并 min 0.7378 bACC 0.8787 AUC 0.9554 F1 0.8837
+sum_23      正确 7/14 margin -0.4609 合并 min 0.4038 bACC 0.8455 AUC 0.8912 F1 0.8234
+dAUC_mean   正确 9/14 margin -0.0407 合并 min 0.4038 bACC 0.8370 AUC 0.8697 F1 0.8148
+dbACC_mean  正确 8/14 margin -0.1814 合并 min 0.8259 bACC 0.8882 AUC 0.9601 F1 0.8868
+sum_mean    正确 10/14 margin -0.1712 合并 min 0.8275 bACC 0.8997 AUC 0.9653 F1 0.8992
+vote4       正确 10/14 margin -6.0000 合并 min 0.4038 bACC 0.8562 AUC 0.8921 F1 0.8311
+oracle {'min_bacc': 0.9002406001091003, 'bacc': 0.9163798562117985, 'auc': 0.969169727393559, 'f1': 0.9168034621647426}
+gate_check(应≈0) {'016': (0.0, 0.0), '013': (0.0, 0.0), '006': (0.0, 0.0), '058': (0.0, 0.0), '014': (0.0, 0.0), '037': (0.0, 0.0), '036': (0.0, 0.0), '008': (0.0, 0.0), '018': (0.0, 0.0), '048': (0.0, 0.0), '056': (0.0, 0.0), '021': (0.0, 0.0), '038': (0.0, 0.0), '059': (0.0, 0.0)}
