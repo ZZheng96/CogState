@@ -1,0 +1,23 @@
+﻿== E35 ==
+json 逐人重算: bACC 0.956429 AUC 0.983744 F1 0.956362 n90 57 min 0.907707
+重跑 vs 备份 完全一致: True
+== E34 ==
+fixed_best_in_sample_selection json 逐人重算: bACC 0.834119 AUC 0.904244 F1 0.838445 n90 17 min 0.249750
+nested_loso json 逐人重算: bACC 0.805088 AUC 0.877821 F1 0.807042 n90 12 min 0.202437
+test_oracle 存档: {'bacc': 0.947807788848877, 'auc': 0.9764458537101746, 'f1': 0.9481656551361084, 'n90': 51, 'min_bacc': 0.8104779124259949}
+重跑 json vs 备份 完全一致: True
+重跑 EV vs 备份 最大差: 0.0 NaN 位置一致: True
+LOSO 所选阈值方法计数: {'block_mean': 33, 'block_median': 2, 'mean': 11, 'q0.5': 11}
+== E33 ==
+E23 omnibus_nested json 逐人重算: bACC 0.732740 AUC 0.801400 F1 0.727251 n90 5 min 0.126715
+E23 soft_all_raw json 逐人重算: bACC 0.766924 AUC 0.825409 F1 0.769459 n90 7 min 0.126715
+E23 global_loso json 逐人重算: bACC 0.727509 AUC 0.812460 F1 0.728985 n90 2 min 0.108387
+E23 oracle_test_upper json 逐人重算: bACC 0.938738 AUC 0.972120 F1 0.938744 n90 50 min 0.844813
+E28 omnibus_nested json 逐人重算: bACC 0.814142 AUC 0.884520 F1 0.806106 n90 16 min 0.132902
+E28 soft_all_raw json 逐人重算: bACC 0.836441 AUC 0.904199 F1 0.819430 n90 19 min 0.452275
+E28 fixed_pool_anchor json 逐人重算: bACC 0.821413 AUC 0.904244 F1 0.809931 n90 18 min 0.245962
+E28 global_loso json 逐人重算: bACC 0.793840 AUC 0.875393 F1 0.775912 n90 11 min 0.183533
+E28 oracle_test_upper json 逐人重算: bACC 0.946099 AUC 0.974871 F1 0.945653 n90 50 min 0.784760
+E28 omnibus 由 traces+EV 重建: bACC 0.814142 AUC 0.884520 F1 0.806106 n90 16 min 0.132902
+omnibus 选中即 oracle 最优的人数: 1 /57
+扰动外层目标测试标签后 内层得分/外层选择变化或与存档不符: 0/40 (应为0)
