@@ -44,8 +44,11 @@ def main():
     lab = np.array(json.load(open(T / "24_cluster" / "prof_groups.json"))["ax5_ward_k3"])
     S28 = np.load(HERE / "e28_scores.npz")
     names = list(S28["names"])
-    assert list(np.load(HERE / "e28_ev.npz")["subs"]) == subs
-    EV28 = np.load(HERE / "e28_ev.npz")["EV"]  # (nr,nq,85,3)
+    E28 = np.load(HERE / "e28_ev.npz")
+    e28_subs = E28["subs"].tolist()
+    assert set(e28_subs) == set(subs)
+    order = [e28_subs.index(q) for q in subs]
+    EV28 = E28["EV"][:, order]  # (nr,nq,85,3)，统一为 E23/E24 的被试顺序
     i27 = names.index("e27|kcv+own")
     # E24 逐人分数（同 prof_cluster.top1）
     s24, chk = {}, []
