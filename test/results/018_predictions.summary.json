@@ -1,0 +1,18 @@
+{
+  "input": "EEG_dataset\\018\\018_20261020_133304.100_UTC+0800.bdf",
+  "output": "test\\results\\018_predictions.csv",
+  "model": "D:\\WORK\\BCIC2026\\CogState\\test\\17_compliant\\model_bundle.pt",
+  "engine": "E17_multiscale_LR_MLP",
+  "chunk_size": 250,
+  "input_unit": "uV converted to V for feature extraction",
+  "score_direction": "higher means task",
+  "windows": 1860,
+  "valid_windows": 1860,
+  "task_windows": 919,
+  "threshold": 0.0,
+  "window_s": 6.0,
+  "feature_mode": "878_features_x_5_causal_scales",
+  "postprocess": "causal_ema_detrend_hl1200+forward_hmm_d300_t1",
+  "protocol_prior": false,
+  "protocol_weight": null
+}

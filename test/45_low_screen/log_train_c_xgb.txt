@@ -1,0 +1,22 @@
+﻿.venv\Scripts\python.exe : Traceback (most recent call last):
+所在位置 行:15 字符: 3662
++ ... Sleep 20 }; .venv\Scripts\python.exe test\45_low_screen\e45.py train  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "D:\WORK\BCIC2026\CogState\test\45_low_screen\e45.py", line 373, in <module>
+    main()
+  File "D:\WORK\BCIC2026\CogState\test\45_low_screen\e45.py", line 366, in main
+    stage_train(subs, D, a.variant, folds)
+  File "D:\WORK\BCIC2026\CogState\test\45_low_screen\e45.py", line 260, in stage_train
+    tr_m = bst.inplace_predict(X, predict_type="margin")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\WORK\BCIC2026\CogState\.venv\Lib\site-packages\xgboost\core.py", line 2292, in inplace_predict
+    _check_call(
+  File "D:\WORK\BCIC2026\CogState\.venv\Lib\site-packages\xgboost\core.py", line 279, in _check_call
+    raise XGBoostError(py_str(_LIB.XGBGetLastError()))
+xgboost.core.XGBoostError: [23:58:12] C:\buildkite-agent\builds\buildkite-windows-cpu-autoscaling-group-i-0fdc6d574b9c0
+d168-1\xgboost\xgboost-ci-windows\src\gbm\gbtree.h:286: Check failed: success: Unsupported data type for inplace predic
+t.
+Current Predictor: gpu_predictor
