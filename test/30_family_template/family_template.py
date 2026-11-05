@@ -10,29 +10,13 @@
 from __future__ import annotations
 
 import json
-import re
-import sys
 import time
-from pathlib import Path
 
 import numpy as np
 import torch
 
-HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parent / "29_closest_pair"))
-from e29lib import GROUPS, R, THR2, TH, base, cfg_name, dev, ev2b, metrics, sd, slabel, subs  # noqa: E402
+from ft_common import F, HERE, R, REC, RG, TH, U, dev, gi, home, metrics, sd, subs
 
-FAM = {"A": [0, 2, 3, 6, 7, 9, 10, 11, 13, 16], "B": [1, 4, 8, 12, 14, 17], "C": [5, 15]}
-F = sys.argv[1] if len(sys.argv) > 1 else "A"
-G = json.load(open(HERE.parent / "26_merge2" / "merge2.json", encoding="utf-8"))["groups"]
-NAME2C = {}
-for c in range(ev2b.shape[1]):
-    n = cfg_name(c, base)
-    NAME2C[n] = c
-    if "+" in n:
-        a, b = n.split("+")
-        NAME2C[f"{b}+{a}"] = c
-TNAME = [t[0] for t in THR2]
 log = open(HERE / f"family_{F}.log", "w", encoding="utf-8")
 
 
@@ -43,16 +27,6 @@ def pr(*a):
     log.flush()
 
 
-def recipe_of(g):
-    lab = g["recipe"]
-    if lab.startswith("专属"):  # excl.json 只有测试指标、无分数序列，无法在校准块上评分 → 不进候选
-        return None
-    body, thr = [x.strip() for x in lab.rsplit("|", 1)]
-    body = body[2:-1] if body.startswith("z[") else body
-    cs = [NAME2C[p.strip()] for p in body.split(";")]
-    return lab, cs, TNAME.index(thr)
-
-
 def score(C, cal_t, cs):
     M = C[cs].sum(0, keepdim=True)
     if len(cs) == 1:
@@ -60,15 +34,6 @@ def score(C, cal_t, cs):
     return (M - M[:, cal_t].mean(1, keepdim=True)) / (M[:, cal_t].std(1, keepdim=True) + 1e-6)
 
 
-gi = FAM[F]
-REC, RG = [], []
-for i in gi:
-    r = recipe_of(G[i])
-    if r:
-        REC.append(r)
-        RG.append(i)
-U = [j for i in gi for j in GROUPS[i]]
-home = {j: (RG.index(i) if i in RG else -1) for i in gi for j in GROUPS[i]}
 pr(f"家族 {F}：组 {gi}，成员 {len(U)} 人，候选配方 {len(REC)}（专属配方组 {[i for i in gi if i not in RG]} 无分数序列，"
    f"其成员只用族内其他配方，home=-1）")
 for k, (lab, cs, t) in enumerate(REC):
