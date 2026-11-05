@@ -1,0 +1,63 @@
+﻿loaded 57 subjects; GPU=NVIDIA GeForce RTX 3080 Laptop GPU
+[01/57] 001 groups=[28, 28] fold=3.1s total=6.1s GPUpeak=1.689/1.877GiB
+[02/57] 002 groups=[28, 28] fold=1.6s total=7.7s GPUpeak=1.698/1.877GiB
+[03/57] 003 groups=[28, 28] fold=1.7s total=9.3s GPUpeak=1.698/1.877GiB
+[04/57] 004 groups=[28, 28] fold=1.5s total=10.9s GPUpeak=1.698/1.877GiB
+[05/57] 005 groups=[28, 28] fold=1.6s total=12.4s GPUpeak=1.698/1.877GiB
+[06/57] 006 groups=[28, 28] fold=1.6s total=14.0s GPUpeak=1.698/1.877GiB
+[07/57] 007 groups=[28, 28] fold=1.6s total=15.6s GPUpeak=1.698/1.877GiB
+[08/57] 008 groups=[28, 28] fold=1.6s total=17.1s GPUpeak=1.698/1.877GiB
+[09/57] 009 groups=[28, 28] fold=1.6s total=18.7s GPUpeak=1.703/1.877GiB
+[10/57] 010 groups=[28, 28] fold=1.6s total=20.3s GPUpeak=1.703/1.877GiB
+[11/57] 011 groups=[28, 28] fold=1.6s total=21.9s GPUpeak=1.703/1.877GiB
+[12/57] 012 groups=[28, 28] fold=1.6s total=23.5s GPUpeak=1.703/1.877GiB
+[13/57] 013 groups=[28, 28] fold=1.4s total=24.9s GPUpeak=1.703/1.877GiB
+[14/57] 014 groups=[28, 28] fold=1.3s total=26.2s GPUpeak=1.703/1.877GiB
+[15/57] 015 groups=[28, 28] fold=1.3s total=27.5s GPUpeak=1.703/1.877GiB
+[16/57] 016 groups=[28, 28] fold=1.3s total=28.8s GPUpeak=1.703/1.877GiB
+[17/57] 017 groups=[28, 28] fold=1.3s total=30.2s GPUpeak=1.703/1.877GiB
+[18/57] 018 groups=[28, 28] fold=1.4s total=31.5s GPUpeak=1.703/1.877GiB
+[19/57] 019 groups=[28, 28] fold=1.5s total=33.0s GPUpeak=1.703/1.877GiB
+[20/57] 020 groups=[28, 28] fold=1.4s total=34.3s GPUpeak=1.703/1.877GiB
+[21/57] 021 groups=[28, 28] fold=1.4s total=35.7s GPUpeak=1.703/1.877GiB
+[22/57] 022 groups=[28, 28] fold=1.4s total=37.1s GPUpeak=1.703/1.877GiB
+[23/57] 023 groups=[28, 28] fold=1.3s total=38.4s GPUpeak=1.703/1.877GiB
+[24/57] 024 groups=[28, 28] fold=1.5s total=39.9s GPUpeak=1.703/1.877GiB
+[25/57] 025 groups=[28, 28] fold=1.4s total=41.2s GPUpeak=1.703/1.877GiB
+[26/57] 026 groups=[28, 28] fold=1.5s total=42.7s GPUpeak=1.703/1.877GiB
+[27/57] 027 groups=[28, 28] fold=1.4s total=44.1s GPUpeak=1.703/1.877GiB
+[28/57] 028 groups=[28, 28] fold=1.4s total=45.5s GPUpeak=1.703/1.877GiB
+[29/57] 029 groups=[28, 28] fold=1.4s total=46.9s GPUpeak=1.703/1.877GiB
+[30/57] 030 groups=[28, 28] fold=1.4s total=48.3s GPUpeak=1.703/1.877GiB
+[31/57] 031 groups=[28, 28] fold=1.4s total=49.7s GPUpeak=1.703/1.877GiB
+[32/57] 034 groups=[28, 28] fold=1.4s total=51.2s GPUpeak=1.708/1.877GiB
+[33/57] 035 groups=[28, 28] fold=1.5s total=52.6s GPUpeak=1.708/1.877GiB
+[34/57] 036 groups=[28, 28] fold=1.4s total=54.0s GPUpeak=1.708/1.877GiB
+[35/57] 037 groups=[28, 28] fold=1.4s total=55.5s GPUpeak=1.708/1.877GiB
+[36/57] 038 groups=[28, 28] fold=1.4s total=56.9s GPUpeak=1.708/1.877GiB
+[37/57] 039 groups=[28, 28] fold=1.4s total=58.3s GPUpeak=1.708/1.877GiB
+[38/57] 040 groups=[28, 28] fold=1.4s total=59.8s GPUpeak=1.708/1.877GiB
+[39/57] 041 groups=[28, 28] fold=1.5s total=61.2s GPUpeak=1.708/1.877GiB
+[40/57] 042 groups=[28, 28] fold=1.4s total=62.6s GPUpeak=1.708/1.877GiB
+[41/57] 043 groups=[28, 28] fold=1.4s total=64.1s GPUpeak=1.708/1.877GiB
+[42/57] 044 groups=[28, 28] fold=1.5s total=65.5s GPUpeak=1.708/1.877GiB
+[43/57] 045 groups=[28, 28] fold=1.6s total=67.1s GPUpeak=1.708/1.877GiB
+[44/57] 046 groups=[28, 28] fold=1.5s total=68.6s GPUpeak=1.708/1.877GiB
+[45/57] 047 groups=[28, 28] fold=1.5s total=70.1s GPUpeak=1.708/1.877GiB
+[46/57] 048 groups=[28, 28] fold=1.5s total=71.6s GPUpeak=1.708/1.877GiB
+[47/57] 049 groups=[28, 28] fold=1.9s total=73.5s GPUpeak=1.708/1.877GiB
+[48/57] 050 groups=[28, 28] fold=1.9s total=75.3s GPUpeak=1.708/1.877GiB
+[49/57] 051 groups=[28, 28] fold=2.8s total=78.2s GPUpeak=1.708/1.877GiB
+[50/57] 052 groups=[28, 28] fold=2.8s total=81.0s GPUpeak=1.708/1.877GiB
+[51/57] 053 groups=[28, 28] fold=1.7s total=82.7s GPUpeak=1.708/1.877GiB
+[52/57] 054 groups=[28, 28] fold=1.7s total=84.4s GPUpeak=1.708/1.877GiB
+[53/57] 055 groups=[28, 28] fold=1.6s total=86.0s GPUpeak=1.708/1.877GiB
+[54/57] 056 groups=[28, 28] fold=1.4s total=87.5s GPUpeak=1.708/1.877GiB
+[55/57] 057 groups=[28, 28] fold=1.4s total=88.9s GPUpeak=1.708/1.877GiB
+[56/57] 058 groups=[28, 28] fold=1.4s total=90.3s GPUpeak=1.708/1.877GiB
+[57/57] 059 groups=[28, 28] fold=1.4s total=91.7s GPUpeak=1.708/1.877GiB
+E1_global raw {"bACC": 0.6480717825566235, "AUC": 0.6918491920025563, "F1": 0.6390007010081623}
+E1_global center300 {"bACC": 0.6455697581981564, "AUC": 0.695615242655698, "F1": 0.6530074748603529}
+E5_soft raw {"bACC": 0.6517325033894272, "AUC": 0.6941965714848342, "F1": 0.6361175567340788}
+E5_soft center300 {"bACC": 0.6486382944913865, "AUC": 0.6994711275078374, "F1": 0.6565978140994307}
+done: D:\WORK\BCIC2026\CogState\test\50_subject_group\e50.json; elapsed=93.8s
