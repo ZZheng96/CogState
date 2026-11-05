@@ -1,0 +1,407 @@
+﻿[data] windows=16067 subjects=57 raw=(16067, 1500) f=(16067, 858) relax=8012 task=8055
+[env] torch=2.4.1+cu118 gpu=NVIDIA GeForce RTX 3080 Laptop GPU epochs=10 batch=64 lr_steps=100 smoke=False
+[check] STFT single/batch maxabs=7.25e-05
+
+[fold 1/57] target=sub-001 train=15776 test=291 seed=49000
+    LR steps=54 loss=0.64501 time=5.0s
+    CNN epoch 01/10 loss=0.65163
+    CNN epoch 05/10 loss=0.56788
+    CNN epoch 10/10 loss=0.35639
+    [causal] input_change=0 score_change=0.000616 batch_score_diff=0.000616
+    CNN bACC=0.5094 AUC=0.5620 F1=0.6039; LR bACC=0.6630 AUC=0.7164 F1=0.6423
+
+[fold 2/57] target=sub-002 train=15796 test=271 seed=49001
+    LR steps=57 loss=0.64458 time=0.5s
+    CNN epoch 01/10 loss=0.65673
+    CNN epoch 05/10 loss=0.57739
+    CNN epoch 10/10 loss=0.39034
+    CNN bACC=0.5743 AUC=0.6330 F1=0.6524; LR bACC=0.5565 AUC=0.5948 F1=0.5021
+
+[fold 3/57] target=sub-003 train=15799 test=268 seed=49002
+    LR steps=53 loss=0.64415 time=2.2s
+    CNN epoch 01/10 loss=0.65118
+    CNN epoch 05/10 loss=0.56910
+    CNN epoch 10/10 loss=0.36711
+    CNN bACC=0.5287 AUC=0.6929 F1=0.6649; LR bACC=0.6022 AUC=0.6380 F1=0.6687
+
+[fold 4/57] target=sub-004 train=15791 test=276 seed=49003
+    LR steps=51 loss=0.64347 time=0.6s
+    CNN epoch 01/10 loss=0.65491
+    CNN epoch 05/10 loss=0.57329
+    CNN epoch 10/10 loss=0.37658
+    CNN bACC=0.4995 AUC=0.5071 F1=0.6000; LR bACC=0.4393 AUC=0.4193 F1=0.5350
+
+[fold 5/57] target=sub-005 train=15788 test=279 seed=49004
+    LR steps=50 loss=0.64375 time=1.7s
+    CNN epoch 01/10 loss=0.65760
+    CNN epoch 05/10 loss=0.57265
+    CNN epoch 10/10 loss=0.37799
+    CNN bACC=0.5000 AUC=0.5774 F1=0.1807; LR bACC=0.5491 AUC=0.5772 F1=0.5500
+
+[fold 6/57] target=sub-006 train=15791 test=276 seed=49005
+    LR steps=51 loss=0.64516 time=0.6s
+    CNN epoch 01/10 loss=0.65329
+    CNN epoch 05/10 loss=0.57822
+    CNN epoch 10/10 loss=0.40597
+    CNN bACC=0.6199 AUC=0.6745 F1=0.7191; LR bACC=0.5153 AUC=0.6287 F1=0.3947
+
+[fold 7/57] target=sub-007 train=15780 test=287 seed=49006
+    LR steps=53 loss=0.64448 time=0.4s
+    CNN epoch 01/10 loss=0.65280
+    CNN epoch 05/10 loss=0.55647
+    CNN epoch 10/10 loss=0.32091
+    CNN bACC=0.5620 AUC=0.5844 F1=0.4240; LR bACC=0.6223 AUC=0.6702 F1=0.5610
+
+[fold 8/57] target=sub-008 train=15782 test=285 seed=49007
+    LR steps=45 loss=0.64186 time=2.0s
+    CNN epoch 01/10 loss=0.65116
+    CNN epoch 05/10 loss=0.56760
+    CNN epoch 10/10 loss=0.36184
+    CNN bACC=0.4844 AUC=0.5103 F1=0.5432; LR bACC=0.4763 AUC=0.4282 F1=0.5192
+
+[fold 9/57] target=sub-009 train=15850 test=217 seed=49008
+    LR steps=46 loss=0.64364 time=0.6s
+    CNN epoch 01/10 loss=0.65329
+    CNN epoch 05/10 loss=0.57704
+    CNN epoch 10/10 loss=0.38996
+    CNN bACC=0.4434 AUC=0.4584 F1=0.2840; LR bACC=0.4052 AUC=0.3919 F1=0.4464
+
+[fold 10/57] target=sub-010 train=15777 test=290 seed=49009
+    LR steps=49 loss=0.64462 time=0.9s
+    CNN epoch 01/10 loss=0.65593
+    CNN epoch 05/10 loss=0.57716
+    CNN epoch 10/10 loss=0.39959
+    CNN bACC=0.4539 AUC=0.5242 F1=0.5827; LR bACC=0.5439 AUC=0.6169 F1=0.6633
+
+[fold 11/57] target=sub-011 train=15777 test=290 seed=49010
+    LR steps=49 loss=0.64518 time=1.2s
+    CNN epoch 01/10 loss=0.65391
+    CNN epoch 05/10 loss=0.57296
+    CNN epoch 10/10 loss=0.38112
+    CNN bACC=0.6350 AUC=0.6995 F1=0.6045; LR bACC=0.6946 AUC=0.7411 F1=0.7634
+
+[fold 12/57] target=sub-012 train=15789 test=278 seed=49011
+    LR steps=52 loss=0.64414 time=0.6s
+    CNN epoch 01/10 loss=0.65104
+    CNN epoch 05/10 loss=0.57167
+    CNN epoch 10/10 loss=0.38243
+    CNN bACC=0.6187 AUC=0.6668 F1=0.5000; LR bACC=0.5647 AUC=0.5937 F1=0.6059
+
+[fold 13/57] target=sub-013 train=15781 test=286 seed=49012
+    LR steps=50 loss=0.64497 time=1.3s
+    CNN epoch 01/10 loss=0.65087
+    CNN epoch 05/10 loss=0.57444
+    CNN epoch 10/10 loss=0.39052
+    CNN bACC=0.5156 AUC=0.4965 F1=0.6040; LR bACC=0.6411 AUC=0.7299 F1=0.6944
+
+[fold 14/57] target=sub-014 train=15776 test=291 seed=49013
+    LR steps=48 loss=0.64456 time=0.7s
+    CNN epoch 01/10 loss=0.65286
+    CNN epoch 05/10 loss=0.57870
+    CNN epoch 10/10 loss=0.43357
+    CNN bACC=0.5899 AUC=0.6320 F1=0.4783; LR bACC=0.6405 AUC=0.6456 F1=0.7045
+
+[fold 15/57] target=sub-015 train=15800 test=267 seed=49014
+    LR steps=58 loss=0.64406 time=0.6s
+    CNN epoch 01/10 loss=0.65491
+    CNN epoch 05/10 loss=0.57996
+    CNN epoch 10/10 loss=0.39494
+    CNN bACC=0.5585 AUC=0.6172 F1=0.4595; LR bACC=0.4675 AUC=0.4829 F1=0.5316
+
+[fold 16/57] target=sub-016 train=15776 test=291 seed=49015
+    LR steps=51 loss=0.64402 time=2.7s
+    CNN epoch 01/10 loss=0.65118
+    CNN epoch 05/10 loss=0.58012
+    CNN epoch 10/10 loss=0.40607
+    CNN bACC=0.5354 AUC=0.5875 F1=0.6732; LR bACC=0.5423 AUC=0.5836 F1=0.5723
+
+[fold 17/57] target=sub-017 train=15788 test=279 seed=49016
+    LR steps=48 loss=0.64525 time=0.6s
+    CNN epoch 01/10 loss=0.65454
+    CNN epoch 05/10 loss=0.57760
+    CNN epoch 10/10 loss=0.40339
+    CNN bACC=0.6291 AUC=0.7354 F1=0.5291; LR bACC=0.6415 AUC=0.7567 F1=0.7308
+
+[fold 18/57] target=sub-018 train=15779 test=288 seed=49017
+    LR steps=51 loss=0.64548 time=0.4s
+    CNN epoch 01/10 loss=0.65444
+    CNN epoch 05/10 loss=0.57534
+    CNN epoch 10/10 loss=0.38472
+    CNN bACC=0.5310 AUC=0.8363 F1=0.6762; LR bACC=0.7041 AUC=0.8101 F1=0.6667
+
+[fold 19/57] target=sub-019 train=15777 test=290 seed=49018
+    LR steps=49 loss=0.64385 time=1.0s
+    CNN epoch 01/10 loss=0.65592
+    CNN epoch 05/10 loss=0.57308
+    CNN epoch 10/10 loss=0.37749
+    CNN bACC=0.6252 AUC=0.6463 F1=0.6093; LR bACC=0.5198 AUC=0.5466 F1=0.6102
+
+[fold 20/57] target=sub-020 train=15785 test=282 seed=49019
+    LR steps=48 loss=0.64423 time=0.6s
+    CNN epoch 01/10 loss=0.65493
+    CNN epoch 05/10 loss=0.58260
+    CNN epoch 10/10 loss=0.42947
+    CNN bACC=0.5639 AUC=0.6108 F1=0.5591; LR bACC=0.6336 AUC=0.6511 F1=0.6645
+
+[fold 21/57] target=sub-021 train=15782 test=285 seed=49020
+    LR steps=50 loss=0.64482 time=1.4s
+    CNN epoch 01/10 loss=0.65879
+    CNN epoch 05/10 loss=0.57368
+    CNN epoch 10/10 loss=0.38747
+    CNN bACC=0.6589 AUC=0.7364 F1=0.7188; LR bACC=0.6313 AUC=0.6663 F1=0.6602
+
+[fold 22/57] target=sub-022 train=15772 test=295 seed=49021
+    LR steps=46 loss=0.64423 time=0.3s
+    CNN epoch 01/10 loss=0.65460
+    CNN epoch 05/10 loss=0.57215
+    CNN epoch 10/10 loss=0.36785
+    CNN bACC=0.6466 AUC=0.7386 F1=0.7204; LR bACC=0.6092 AUC=0.6372 F1=0.6997
+
+[fold 23/57] target=sub-023 train=15773 test=294 seed=49022
+    LR steps=51 loss=0.64298 time=0.3s
+    CNN epoch 01/10 loss=0.65140
+    CNN epoch 05/10 loss=0.57645
+    CNN epoch 10/10 loss=0.39524
+    CNN bACC=0.5068 AUC=0.5446 F1=0.3439; LR bACC=0.4252 AUC=0.4510 F1=0.2620
+
+[fold 24/57] target=sub-024 train=15776 test=291 seed=49023
+    LR steps=50 loss=0.64281 time=0.3s
+    CNN epoch 01/10 loss=0.64740
+    CNN epoch 05/10 loss=0.56458
+    CNN epoch 10/10 loss=0.36997
+    CNN bACC=0.5080 AUC=0.4853 F1=0.5372; LR bACC=0.4705 AUC=0.3861 F1=0.2365
+
+[fold 25/57] target=sub-025 train=15783 test=284 seed=49024
+    LR steps=52 loss=0.64509 time=0.3s
+    CNN epoch 01/10 loss=0.65321
+    CNN epoch 05/10 loss=0.58439
+    CNN epoch 10/10 loss=0.42966
+    CNN bACC=0.5809 AUC=0.6152 F1=0.5735; LR bACC=0.6835 AUC=0.7368 F1=0.6980
+
+[fold 26/57] target=sub-026 train=15775 test=292 seed=49025
+    LR steps=51 loss=0.64549 time=0.3s
+    CNN epoch 01/10 loss=0.65395
+    CNN epoch 05/10 loss=0.58198
+    CNN epoch 10/10 loss=0.40218
+    CNN bACC=0.5490 AUC=0.5644 F1=0.4634; LR bACC=0.7153 AUC=0.7625 F1=0.7348
+
+[fold 27/57] target=sub-027 train=15786 test=281 seed=49026
+    LR steps=54 loss=0.64435 time=0.3s
+    CNN epoch 01/10 loss=0.65189
+    CNN epoch 05/10 loss=0.57373
+    CNN epoch 10/10 loss=0.39512
+    CNN bACC=0.5204 AUC=0.5052 F1=0.6580; LR bACC=0.5554 AUC=0.5537 F1=0.5154
+
+[fold 28/57] target=sub-028 train=15781 test=286 seed=49027
+    LR steps=48 loss=0.64448 time=0.3s
+    CNN epoch 01/10 loss=0.65078
+    CNN epoch 05/10 loss=0.57159
+    CNN epoch 10/10 loss=0.38666
+    CNN bACC=0.6062 AUC=0.6556 F1=0.4286; LR bACC=0.5985 AUC=0.6371 F1=0.6302
+
+[fold 29/57] target=sub-029 train=15775 test=292 seed=49028
+    LR steps=48 loss=0.64192 time=0.3s
+    CNN epoch 01/10 loss=0.65497
+    CNN epoch 05/10 loss=0.56927
+    CNN epoch 10/10 loss=0.37299
+    CNN bACC=0.4381 AUC=0.4176 F1=0.1789; LR bACC=0.4167 AUC=0.3458 F1=0.1809
+
+[fold 30/57] target=sub-030 train=15771 test=296 seed=49029
+    LR steps=51 loss=0.64732 time=0.3s
+    CNN epoch 01/10 loss=0.65585
+    CNN epoch 05/10 loss=0.58006
+    CNN epoch 10/10 loss=0.41753
+    CNN bACC=0.6999 AUC=0.7703 F1=0.6716; LR bACC=0.7068 AUC=0.8002 F1=0.6742
+
+[fold 31/57] target=sub-031 train=15775 test=292 seed=49030
+    LR steps=51 loss=0.64500 time=0.3s
+    CNN epoch 01/10 loss=0.65500
+    CNN epoch 05/10 loss=0.56784
+    CNN epoch 10/10 loss=0.38140
+    CNN bACC=0.6130 AUC=0.7724 F1=0.4084; LR bACC=0.6575 AUC=0.6907 F1=0.6183
+
+[fold 32/57] target=sub-034 train=15946 test=121 seed=49031
+    LR steps=48 loss=0.64510 time=0.3s
+    CNN epoch 01/10 loss=0.65259
+    CNN epoch 05/10 loss=0.57455
+    CNN epoch 10/10 loss=0.37060
+    CNN bACC=0.5150 AUC=0.6273 F1=0.6905; LR bACC=0.5920 AUC=0.5822 F1=0.4762
+
+[fold 33/57] target=sub-035 train=15775 test=292 seed=49032
+    LR steps=49 loss=0.64523 time=0.3s
+    CNN epoch 01/10 loss=0.65228
+    CNN epoch 05/10 loss=0.57171
+    CNN epoch 10/10 loss=0.38620
+    CNN bACC=0.6146 AUC=0.7226 F1=0.4717; LR bACC=0.6702 AUC=0.7481 F1=0.6129
+
+[fold 34/57] target=sub-036 train=15783 test=284 seed=49033
+    LR steps=57 loss=0.64667 time=0.4s
+    CNN epoch 01/10 loss=0.65607
+    CNN epoch 05/10 loss=0.57696
+    CNN epoch 10/10 loss=0.36731
+    CNN bACC=0.6976 AUC=0.7836 F1=0.7014; LR bACC=0.6733 AUC=0.8645 F1=0.7568
+
+[fold 35/57] target=sub-037 train=15778 test=289 seed=49034
+    LR steps=53 loss=0.64318 time=0.3s
+    CNN epoch 01/10 loss=0.65263
+    CNN epoch 05/10 loss=0.57653
+    CNN epoch 10/10 loss=0.39163
+    CNN bACC=0.4496 AUC=0.4426 F1=0.4045; LR bACC=0.4426 AUC=0.4255 F1=0.3784
+
+[fold 36/57] target=sub-038 train=15776 test=291 seed=49035
+    LR steps=56 loss=0.64647 time=0.4s
+    CNN epoch 01/10 loss=0.65385
+    CNN epoch 05/10 loss=0.56071
+    CNN epoch 10/10 loss=0.35478
+    CNN bACC=0.5351 AUC=0.5558 F1=0.2418; LR bACC=0.7284 AUC=0.8409 F1=0.6875
+
+[fold 37/57] target=sub-039 train=15774 test=293 seed=49036
+    LR steps=50 loss=0.64285 time=0.3s
+    CNN epoch 01/10 loss=0.65239
+    CNN epoch 05/10 loss=0.57786
+    CNN epoch 10/10 loss=0.37249
+    CNN bACC=0.5070 AUC=0.5951 F1=0.0886; LR bACC=0.4871 AUC=0.4410 F1=0.2788
+
+[fold 38/57] target=sub-040 train=15787 test=280 seed=49037
+    LR steps=53 loss=0.64502 time=0.3s
+    CNN epoch 01/10 loss=0.65225
+    CNN epoch 05/10 loss=0.56823
+    CNN epoch 10/10 loss=0.35853
+    CNN bACC=0.5250 AUC=0.6354 F1=0.6764; LR bACC=0.6500 AUC=0.7258 F1=0.6172
+
+[fold 39/57] target=sub-041 train=15779 test=288 seed=49038
+    LR steps=51 loss=0.64451 time=0.3s
+    CNN epoch 01/10 loss=0.65241
+    CNN epoch 05/10 loss=0.57837
+    CNN epoch 10/10 loss=0.41610
+    CNN bACC=0.5853 AUC=0.6483 F1=0.4175; LR bACC=0.5838 AUC=0.6249 F1=0.5556
+
+[fold 40/57] target=sub-042 train=15782 test=285 seed=49039
+    LR steps=50 loss=0.64271 time=0.3s
+    CNN epoch 01/10 loss=0.65238
+    CNN epoch 05/10 loss=0.57345
+    CNN epoch 10/10 loss=0.40095
+    CNN bACC=0.5046 AUC=0.4462 F1=0.3896; LR bACC=0.4283 AUC=0.4210 F1=0.4691
+
+[fold 41/57] target=sub-043 train=15785 test=282 seed=49040
+    LR steps=57 loss=0.64540 time=0.4s
+    CNN epoch 01/10 loss=0.65373
+    CNN epoch 05/10 loss=0.57234
+    CNN epoch 10/10 loss=0.39803
+    CNN bACC=0.6476 AUC=0.7815 F1=0.7155; LR bACC=0.6999 AUC=0.7804 F1=0.6613
+
+[fold 42/57] target=sub-044 train=15783 test=284 seed=49041
+    LR steps=49 loss=0.64564 time=0.3s
+    CNN epoch 01/10 loss=0.65350
+    CNN epoch 05/10 loss=0.58120
+    CNN epoch 10/10 loss=0.40763
+    CNN bACC=0.6338 AUC=0.7103 F1=0.6810; LR bACC=0.6937 AUC=0.7751 F1=0.6836
+
+[fold 43/57] target=sub-045 train=15783 test=284 seed=49042
+    LR steps=47 loss=0.64459 time=0.3s
+    CNN epoch 01/10 loss=0.65737
+    CNN epoch 05/10 loss=0.56814
+    CNN epoch 10/10 loss=0.35922
+    CNN bACC=0.5729 AUC=0.7639 F1=0.7094; LR bACC=0.5706 AUC=0.6958 F1=0.6972
+
+[fold 44/57] target=sub-046 train=15783 test=284 seed=49043
+    LR steps=59 loss=0.64527 time=0.4s
+    CNN epoch 01/10 loss=0.65526
+    CNN epoch 05/10 loss=0.57679
+    CNN epoch 10/10 loss=0.39132
+    CNN bACC=0.6268 AUC=0.6786 F1=0.5351; LR bACC=0.6761 AUC=0.7352 F1=0.6000
+
+[fold 45/57] target=sub-047 train=15780 test=287 seed=49044
+    LR steps=46 loss=0.64463 time=0.3s
+    CNN epoch 01/10 loss=0.65440
+    CNN epoch 05/10 loss=0.57633
+    CNN epoch 10/10 loss=0.39764
+    CNN bACC=0.5671 AUC=0.6134 F1=0.6816; LR bACC=0.6300 AUC=0.7057 F1=0.6515
+
+[fold 46/57] target=sub-048 train=15779 test=288 seed=49045
+    LR steps=48 loss=0.64584 time=0.3s
+    CNN epoch 01/10 loss=0.66050
+    CNN epoch 05/10 loss=0.58162
+    CNN epoch 10/10 loss=0.38097
+    CNN bACC=0.6374 AUC=0.7092 F1=0.5357; LR bACC=0.7369 AUC=0.8274 F1=0.7610
+
+[fold 47/57] target=sub-049 train=15785 test=282 seed=49046
+    LR steps=48 loss=0.64444 time=0.3s
+    CNN epoch 01/10 loss=0.65254
+    CNN epoch 05/10 loss=0.57319
+    CNN epoch 10/10 loss=0.37366
+    CNN bACC=0.5179 AUC=0.6005 F1=0.0690; LR bACC=0.5794 AUC=0.6607 F1=0.6448
+
+[fold 48/57] target=sub-050 train=15780 test=287 seed=49047
+    LR steps=47 loss=0.64352 time=0.3s
+    CNN epoch 01/10 loss=0.65434
+    CNN epoch 05/10 loss=0.57370
+    CNN epoch 10/10 loss=0.37076
+    CNN bACC=0.5577 AUC=0.5571 F1=0.6684; LR bACC=0.4682 AUC=0.5120 F1=0.3274
+
+[fold 49/57] target=sub-051 train=15776 test=291 seed=49048
+    LR steps=49 loss=0.64418 time=0.3s
+    CNN epoch 01/10 loss=0.65092
+    CNN epoch 05/10 loss=0.56659
+    CNN epoch 10/10 loss=0.39165
+    CNN bACC=0.5933 AUC=0.7573 F1=0.6875; LR bACC=0.6004 AUC=0.6407 F1=0.6444
+
+[fold 50/57] target=sub-052 train=15779 test=288 seed=49049
+    LR steps=52 loss=0.64258 time=0.3s
+    CNN epoch 01/10 loss=0.65244
+    CNN epoch 05/10 loss=0.57508
+    CNN epoch 10/10 loss=0.38513
+    CNN bACC=0.5590 AUC=0.5978 F1=0.4774; LR bACC=0.4167 AUC=0.3956 F1=0.1765
+
+[fold 51/57] target=sub-053 train=15777 test=290 seed=49050
+    LR steps=49 loss=0.64395 time=0.3s
+    CNN epoch 01/10 loss=0.65234
+    CNN epoch 05/10 loss=0.56841
+    CNN epoch 10/10 loss=0.37643
+    CNN bACC=0.5071 AUC=0.5919 F1=0.0779; LR bACC=0.5625 AUC=0.5901 F1=0.5836
+
+[fold 52/57] target=sub-054 train=15778 test=289 seed=49051
+    LR steps=52 loss=0.64497 time=0.3s
+    CNN epoch 01/10 loss=0.65431
+    CNN epoch 05/10 loss=0.56831
+    CNN epoch 10/10 loss=0.35998
+    CNN bACC=0.5597 AUC=0.6835 F1=0.6521; LR bACC=0.6066 AUC=0.7763 F1=0.4356
+
+[fold 53/57] target=sub-055 train=15780 test=287 seed=49052
+    LR steps=53 loss=0.64418 time=0.3s
+    CNN epoch 01/10 loss=0.64995
+    CNN epoch 05/10 loss=0.57409
+    CNN epoch 10/10 loss=0.39814
+    CNN bACC=0.5566 AUC=0.5746 F1=0.5781; LR bACC=0.5202 AUC=0.5613 F1=0.4135
+
+[fold 54/57] target=sub-056 train=15775 test=292 seed=49053
+    LR steps=50 loss=0.64437 time=0.3s
+    CNN epoch 01/10 loss=0.65746
+    CNN epoch 05/10 loss=0.57977
+    CNN epoch 10/10 loss=0.37183
+    CNN bACC=0.5240 AUC=0.5940 F1=0.1576; LR bACC=0.6027 AUC=0.6526 F1=0.5207
+
+[fold 55/57] target=sub-057 train=15786 test=281 seed=49054
+    LR steps=47 loss=0.64510 time=0.3s
+    CNN epoch 01/10 loss=0.65502
+    CNN epoch 05/10 loss=0.57751
+    CNN epoch 10/10 loss=0.40011
+    CNN bACC=0.5277 AUC=0.5571 F1=0.3383; LR bACC=0.6803 AUC=0.7675 F1=0.6154
+
+[fold 56/57] target=sub-058 train=15778 test=289 seed=49055
+    LR steps=49 loss=0.64531 time=0.3s
+    CNN epoch 01/10 loss=0.65127
+    CNN epoch 05/10 loss=0.57887
+    CNN epoch 10/10 loss=0.41333
+    CNN bACC=0.5209 AUC=0.7502 F1=0.0921; LR bACC=0.6045 AUC=0.8113 F1=0.4356
+
+[fold 57/57] target=sub-059 train=15778 test=289 seed=49056
+    LR steps=59 loss=0.64441 time=0.4s
+    CNN epoch 01/10 loss=0.65525
+    CNN epoch 05/10 loss=0.58092
+    CNN epoch 10/10 loss=0.40220
+    CNN bACC=0.5189 AUC=0.5566 F1=0.5123; LR bACC=0.6152 AUC=0.6411 F1=0.5843
+[final cnn] macro={'bACC': 0.5590811949460279, 'AUC': 0.6244256290886987, 'F1': 0.5070439160622945} pooled={'bACC': 0.5612038413515668, 'AUC': 0.5905368979429676, 'F1': 0.5528568710761621, 'n': 16067, 'n_relax': 8012, 'n_task': 8055}
+[final lr] macro={'bACC': 0.5861775243611076, 'AUC': 0.6332100315208058, 'F1': 0.5650145121090161} pooled={'bACC': 0.5872445134284916, 'AUC': 0.6237643534697954, 'F1': 0.5853963490872718, 'n': 16067, 'n_relax': 8012, 'n_task': 8055}
+
+[done] status=complete elapsed=629.7s peak_allocated=728.3MiB peak_reserved=1014.0MiB
