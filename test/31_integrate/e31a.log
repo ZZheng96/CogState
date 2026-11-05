@@ -1,0 +1,76 @@
+E31a start | gpu NVIDIA GeForce RTX 3080 Laptop GPU 16GB
+feats 20/57 [5s]
+feats 40/57 [5s]
+feats done, gpu mem 3.49GB [6s]
+components 025 done [12s]
+components 028 done [15s]
+components 010 done [18s]
+components 053 done [21s]
+components 043 done [24s]
+components 054 done [27s]
+components 011 done [30s]
+components 004 done [33s]
+components 055 done [36s]
+components 052 done [39s]
+组件重建校验 054 sc+jw|t0: bACC 0.919736 (excl.json 0.919736) AUC 0.9178 F1 0.9223 → OK
+[anchor b|pool|w300|a0.5] max|dev|=0.0035 [8s]
+  025 bACC 0.8801 (ref 0.8784, dev +0.0017) AUC 0.9470 F1 0.8871 thr m300
+  028 bACC 0.9584 (ref 0.9584, dev -0.0000) AUC 0.9954 F1 0.9580 thr m300
+  010 bACC 0.8265 (ref 0.8265, dev -0.0000) AUC 0.9289 F1 0.8256 thr m300
+  053 bACC 0.9282 (ref 0.9317, dev -0.0035) AUC 0.9685 F1 0.9253 thr m300
+  043 bACC 0.8257 (ref 0.8276, dev -0.0019) AUC 0.9384 F1 0.8218 thr m300
+  054 bACC 0.8201 (ref 0.8167, dev +0.0034) AUC 0.9204 F1 0.8052 thr m300
+  011 bACC 0.8867 (ref 0.8867, dev +0.0000) AUC 0.9438 F1 0.8748 thr m300
+  004 bACC 0.9042 (ref 0.9059, dev -0.0017) AUC 0.9147 F1 0.8940 thr m300
+  055 bACC 0.9250 (ref 0.9284, dev -0.0034) AUC 0.9903 F1 0.9206 thr m300
+  052 bACC 0.9437 (ref 0.9437, dev +0.0000) AUC 0.9943 F1 0.9414 thr m300
+w300 U1 pool 6人×24配置 done [13s]
+w300 U2 pool 4人×24配置 done [8s]
+[anchor b|pool|w600|a0.5] max|dev|=0.0057 [8s]
+  025 bACC 0.9305 (ref 0.9339, dev -0.0034) AUC 0.9837 F1 0.9310 thr m300
+  028 bACC 0.9633 (ref 0.9633, dev +0.0000) AUC 0.9890 F1 0.9623 thr m300
+  010 bACC 0.9220 (ref 0.9237, dev -0.0017) AUC 0.9645 F1 0.9165 thr m300
+  053 bACC 0.8884 (ref 0.8919, dev -0.0035) AUC 0.9330 F1 0.8866 thr m300
+  043 bACC 0.8815 (ref 0.8872, dev -0.0057) AUC 0.9585 F1 0.8812 thr m300
+  054 bACC 0.9067 (ref 0.9066, dev +0.0001) AUC 0.9667 F1 0.9029 thr m300
+w600 U1 pool 6人×24配置 done [12s]
+w600 U2 pool 4人×24配置 done [8s]
+w1200 U1 pool 6人×24配置 done [12s]
+w1200 U2 pool 4人×24配置 done [8s]
+[U1] metrics 025 done [1s]
+[U1] metrics 028 done [1s]
+[U1] metrics 010 done [2s]
+[U1] metrics 053 done [3s]
+[U1] metrics 043 done [4s]
+[U1] metrics 054 done [5s]
+[U1] singles+pairs best min 0.8909 | b|pool|w600|a0.4|tinf | m300 [5s]
+[U1] 扩展：top20 pool × top6 组件 ['k4390_w0.6', 'jw0.95_k1600_C0.1', 'k1600_w0.85', 'sc99999_k200', 'sim4390_C0.01', 'gemg_k200'] → 300 个三配置
+[U1] +三配置后 best min 0.8909 | b|pool|w600|a0.4|tinf | m300
+[U1] top10:
+  #1 min 0.8909 macro 0.9132/0.9650/0.9114 thr m300 | b|pool|w600|a0.4|tinf | 025:0.913 028:0.963 010:0.920 053:0.894 043:0.891 054:0.898
+  #2 min 0.8895 macro 0.9104/0.9641/0.9087 thr m300 | b|pool|w600|a0.35|tinf | 025:0.901 028:0.962 010:0.920 053:0.895 043:0.895 054:0.889
+  #3 min 0.8872 macro 0.9126/0.9652/0.9106 thr m300 | b|pool|w600|a0.45|tinf | 025:0.915 028:0.963 010:0.920 053:0.890 043:0.887 054:0.900
+  #4 min 0.8834 macro 0.9151/0.9661/0.9132 thr m300 | b|pool|w600|a0.5|tinf | 025:0.929 028:0.963 010:0.924 053:0.887 043:0.883 054:0.905
+  #5 min 0.8815 macro 0.9163/0.9664/0.9143 thr m300 | b|pool|w600|a0.55|tinf | 025:0.934 028:0.965 010:0.924 053:0.887 043:0.881 054:0.907
+  #6 min 0.8777 macro 0.9162/0.9663/0.9143 thr m300 | b|pool|w600|a0.6|tinf | 025:0.934 028:0.965 010:0.927 053:0.885 043:0.878 054:0.908
+  #7 min 0.8758 macro 0.9008/0.9578/0.8988 thr m300 | z[b|pool|w600|a0.35|tinf;k4390_w0.6] | 025:0.878 028:0.942 010:0.934 053:0.892 043:0.876 054:0.882
+  #8 min 0.8739 macro 0.9025/0.9588/0.9003 thr m300 | z[b|pool|w600|a0.45|tinf;k4390_w0.6] | 025:0.882 028:0.944 010:0.938 053:0.891 043:0.874 054:0.888
+  #9 min 0.8721 macro 0.9013/0.9585/0.8992 thr m300 | z[b|pool|w600|a0.4|tinf;k4390_w0.6] | 025:0.880 028:0.942 010:0.934 053:0.892 043:0.872 054:0.888
+  #10 min 0.8701 macro 0.9042/0.9604/0.9019 thr m300 | z[b|pool|w600|a0.55|tinf;k4390_w0.6] | 025:0.890 028:0.947 010:0.941 053:0.880 043:0.870 054:0.896
+[U2] metrics 011 done [1s]
+[U2] metrics 004 done [2s]
+[U2] metrics 055 done [2s]
+[U2] metrics 052 done [3s]
+[U2] singles+pairs best min 0.9268 | z[b|pool|w300|a0.7|tinf;b23n400_C0.1] | m300 [3s]
+[U2] top10:
+  #1 min 0.9268 macro 0.9448/0.9747/0.9418 thr m300 | z[b|pool|w300|a0.7|tinf;b23n400_C0.1] | 011:0.956 004:0.927 055:0.959 052:0.937
+  #2 min 0.9268 macro 0.9418/0.9742/0.9384 thr m300 | z[b|pool|w300|a0.65|tinf;b23n400_C0.1] | 011:0.955 004:0.927 055:0.954 052:0.932
+  #3 min 0.9251 macro 0.9397/0.9738/0.9361 thr m300 | z[b|pool|w300|a0.6|tinf;b23n400_C0.1] | 011:0.955 004:0.925 055:0.942 052:0.937
+  #4 min 0.9233 macro 0.9401/0.9733/0.9365 thr m300 | z[b|pool|w300|a0.55|tinf;b23n400_C0.1] | 011:0.955 004:0.923 055:0.940 052:0.942
+  #5 min 0.9216 macro 0.9371/0.9727/0.9332 thr m300 | z[b|pool|w300|a0.5|tinf;b23n400_C0.1] | 011:0.955 004:0.922 055:0.932 052:0.940
+  #6 min 0.9181 macro 0.9341/0.9717/0.9298 thr m300 | z[b|pool|w300|a0.45|tinf;b23n400_C0.1] | 011:0.955 004:0.918 055:0.922 052:0.942
+  #7 min 0.9181 macro 0.9320/0.9703/0.9274 thr m300 | z[b|pool|w300|a0.4|tinf;b23n400_C0.1] | 011:0.953 004:0.918 055:0.918 052:0.939
+  #8 min 0.9111 macro 0.9350/0.9679/0.9305 thr m300 | z[b|pool|w300|a0.65|t0.5;b23n100_C0.1] | 011:0.956 004:0.911 055:0.942 052:0.930
+  #9 min 0.9097 macro 0.9290/0.9686/0.9241 thr m300 | z[b|pool|w300|a0.35|tinf;b23n400_C0.1] | 011:0.951 004:0.918 055:0.910 052:0.937
+  #10 min 0.9094 macro 0.9354/0.9682/0.9309 thr m300 | z[b|pool|w300|a0.7|t0.5;b23n100_C0.1] | 011:0.958 004:0.909 055:0.942 052:0.932
+total 128s
