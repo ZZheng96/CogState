@@ -165,6 +165,9 @@ def labels_from_trials(
 def load_bdf(path: str | Path) -> dict:
     import mne
 
+    # MNE 1.4 仍调用 NumPy 2.x 已移除的 in1d 别名。
+    if not hasattr(np, "in1d"):
+        np.in1d = np.isin
     raw = mne.io.read_raw_bdf(path, preload=True, verbose="ERROR")
     fs = int(round(raw.info["sfreq"]))
     signal_uv = raw.get_data(picks=[0])[0].astype(np.float64) * 1e6
