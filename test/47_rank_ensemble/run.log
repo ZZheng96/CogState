@@ -1,0 +1,35 @@
+﻿1/57 001 elapsed=13.5s
+2/57 002 elapsed=23.8s
+3/57 003 elapsed=35.2s
+4/57 004 elapsed=46.3s
+5/57 005 elapsed=57.6s
+6/57 006 elapsed=68.9s
+7/57 007 elapsed=80.6s
+8/57 008 elapsed=91.4s
+9/57 009 elapsed=102.6s
+10/57 010 elapsed=114.5s
+python.exe : Traceback (most recent call last):
+所在位置 行:15 字符: 3567
++ ... M = 'dumb'; & .\.venv\Scripts\python.exe test\47_rank_ensemble\e47.py ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "D:\WORK\BCIC2026\CogState\test\47_rank_ensemble\e47.py", line 102, in <module>
+    main()
+  File "D:\WORK\BCIC2026\CogState\test\47_rank_ensemble\e47.py", line 83, in main
+    booster = fit_xgb(xtr, ytr)
+              ^^^^^^^^^^^^^^^^^
+  File "D:\WORK\BCIC2026\CogState\test\47_rank_ensemble\e47.py", line 34, in fit_xgb
+    train = xgb.QuantileDMatrix(x, label=y, max_bin=64)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\WORK\BCIC2026\CogState\.venv\Lib\site-packages\xgboost\core.py", line 620, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "D:\WORK\BCIC2026\CogState\.venv\Lib\site-packages\xgboost\core.py", line 1386, in __init__
+    self._init(
+  File "D:\WORK\BCIC2026\CogState\.venv\Lib\site-packages\xgboost\core.py", line 1447, in _init
+    _check_call(ret)
+  File "D:\WORK\BCIC2026\CogState\.venv\Lib\site-packages\xgboost\core.py", line 279, in _check_call
+    raise XGBoostError(py_str(_LIB.XGBGetLastError()))
+xgboost.core.XGBoostError: bad allocation

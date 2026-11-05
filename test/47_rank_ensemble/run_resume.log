@@ -1,0 +1,61 @@
+﻿resume with 10 completed folds
+skip completed 1/57 001
+skip completed 2/57 002
+skip completed 3/57 003
+skip completed 4/57 004
+skip completed 5/57 005
+skip completed 6/57 006
+skip completed 7/57 007
+skip completed 8/57 008
+skip completed 9/57 009
+skip completed 10/57 010
+11/57 011 elapsed=12.2s
+12/57 012 elapsed=19.7s
+13/57 013 elapsed=27.2s
+14/57 014 elapsed=34.7s
+15/57 015 elapsed=42.1s
+16/57 016 elapsed=50.1s
+17/57 017 elapsed=58.9s
+18/57 018 elapsed=67.4s
+19/57 019 elapsed=76.2s
+20/57 020 elapsed=84.9s
+21/57 021 elapsed=93.7s
+22/57 022 elapsed=102.3s
+23/57 023 elapsed=111.3s
+24/57 024 elapsed=119.9s
+25/57 025 elapsed=128.9s
+26/57 026 elapsed=136.5s
+27/57 027 elapsed=143.8s
+28/57 028 elapsed=151.5s
+29/57 029 elapsed=161.0s
+30/57 030 elapsed=171.9s
+31/57 031 elapsed=182.5s
+32/57 034 elapsed=194.0s
+33/57 035 elapsed=204.3s
+34/57 036 elapsed=215.4s
+35/57 037 elapsed=225.2s
+36/57 038 elapsed=235.2s
+37/57 039 elapsed=245.0s
+38/57 040 elapsed=256.3s
+39/57 041 elapsed=267.4s
+40/57 042 elapsed=278.6s
+41/57 043 elapsed=289.9s
+42/57 044 elapsed=301.4s
+43/57 045 elapsed=313.2s
+44/57 046 elapsed=324.8s
+45/57 047 elapsed=336.4s
+46/57 048 elapsed=348.1s
+47/57 049 elapsed=359.9s
+48/57 050 elapsed=371.2s
+49/57 051 elapsed=382.6s
+50/57 052 elapsed=394.1s
+51/57 053 elapsed=405.8s
+52/57 054 elapsed=417.2s
+53/57 055 elapsed=428.7s
+54/57 056 elapsed=440.1s
+55/57 057 elapsed=452.0s
+56/57 058 elapsed=464.0s
+57/57 059 elapsed=475.5s
+lr {"bACC": 0.6774438707005576, "AUC": 0.7344728477007064, "F1": 0.66792170739181}
+xgb {"bACC": 0.6965695906085106, "AUC": 0.7629843908812658, "F1": 0.690159767643666}
+rank_mean {"bACC": 0.6463188130814569, "AUC": 0.6993813838641679, "F1": 0.6750504457677667}
