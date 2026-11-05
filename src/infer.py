@@ -43,6 +43,55 @@ class ForwardHMM:
         return float(self.logpost[1] - self.logpost[0])
 
 
+class CausalDetrend:
+    """因果 EMA 去趋势（E44 dt1200）：返回 score - m_t，m_t 含当前帧，首帧 m_0 = score_0。
+
+    与 test/44_late_drift/e44.py 的 ema_mean 逐行一致：a = 1 - 0.5**(1/halflife)，
+    m_t = m_{t-1} + a*(s_t - m_{t-1})；减均值后不做尺度处理。
+    """
+
+    def __init__(self, halflife: float = 1200):
+        self.alpha = 1 - 0.5 ** (1 / halflife)
+        self.mean = None
+
+    def update(self, score: float) -> float:
+        if self.mean is None:
+            self.mean = score
+        else:
+            self.mean = self.mean + self.alpha * (score - self.mean)
+        return score - self.mean
+
+
+class PostProcessor:
+    """融合分数 -> [可选 dt 去趋势] -> ForwardHMM。halflife=None 退回 E42 的纯 HMM。"""
+
+    def __init__(self, detrend_halflife: float | None = 1200, dwell: int = 300, temperature: float = 1.0):
+        self.detrend = CausalDetrend(detrend_halflife) if detrend_halflife else None
+        self.hmm = ForwardHMM(dwell=dwell, temperature=temperature)
+
+    def update(self, score: float) -> float:
+        if self.detrend is not None:
+            score = self.detrend.update(score)
+        return self.hmm.update(score)
+
+
+def stream_outputs(decoder, post: PostProcessor, signal_v: np.ndarray, fs: float, chunk_size: int) -> list[dict]:
+    outputs = []
+    n_samples = len(signal_v)
+    for start in range(0, n_samples, chunk_size):
+        end = min(start + chunk_size, n_samples)
+        for time_s, score, _ in decoder.update(signal_v[start:end]):
+            hmm_score = post.update(score)
+            outputs.append({
+                "sample_index": int(round(time_s * fs)) - 1,
+                "time_s": round(time_s, 6),
+                "score_task": hmm_score,
+                "prediction": "task" if hmm_score > 0 else "relax",
+                "valid": 1,
+            })
+    return outputs
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="对 BDF 执行严格因果的分块 EEG 推理")
     parser.add_argument(
@@ -51,6 +100,10 @@ def main() -> None:
     parser.add_argument("--input", type=Path, required=True, help="输入 BDF 文件")
     parser.add_argument("--output", type=Path, required=True, help="输出预测 CSV")
     parser.add_argument("--chunk-size", type=int, default=250, help="每次输入的采样点数")
+    parser.add_argument(
+        "--detrend-halflife", type=float, default=1200,
+        help="HMM 前因果 EMA 去趋势半衰期（帧，1 帧=1 s）；<=0 关闭，退回纯 HMM",
+    )
     args = parser.parse_args()
     if args.chunk_size <= 0:
         raise ValueError("chunk-size 必须为正整数")
@@ -62,23 +115,13 @@ def main() -> None:
         raise ValueError("模型原始 EEG 窗口超过 6 秒")
     record = load_bdf(args.input)
     decoder = StreamingInference(bundle, fs=record["fs"], step=1.0)
-    hmm = ForwardHMM(dwell=300, temperature=1.0)
+    halflife = args.detrend_halflife if args.detrend_halflife > 0 else None
+    post = PostProcessor(detrend_halflife=halflife, dwell=300, temperature=1.0)
 
     # E17 特征函数使用 BDF 原始伏特单位；无效采样以 NaN 触发因果缓冲重置。
     signal_v = np.asarray(record["signal_uv"], dtype=float) * 1e-6
     signal_v[~record["valid"]] = np.nan
-    outputs = []
-    for start in range(0, record["n_samples"], args.chunk_size):
-        end = min(start + args.chunk_size, record["n_samples"])
-        for time_s, score, _ in decoder.update(signal_v[start:end]):
-            hmm_score = hmm.update(score)
-            outputs.append({
-                "sample_index": int(round(time_s * record["fs"])) - 1,
-                "time_s": round(time_s, 6),
-                "score_task": hmm_score,
-                "prediction": "task" if hmm_score > 0 else "relax",
-                "valid": 1,
-            })
+    outputs = stream_outputs(decoder, post, signal_v, record["fs"], args.chunk_size)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("w", encoding="utf-8-sig", newline="") as handle:
@@ -102,7 +145,8 @@ def main() -> None:
         "threshold": 0.0,
         "window_s": float(bundle["win_s"]),
         "feature_mode": "878_features_x_5_causal_scales",
-        "postprocess": "forward_hmm_d300_t1",
+        "postprocess": (f"causal_ema_detrend_hl{halflife:g}+forward_hmm_d300_t1" if halflife
+                        else "forward_hmm_d300_t1"),
         "protocol_prior": False,
         "protocol_weight": None,
     }

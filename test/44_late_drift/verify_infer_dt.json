@@ -1,0 +1,74 @@
+{
+ "reproduce": {
+  "max_abs_vs_e44": 1.0344300239384374e-05,
+  "max_abs_vs_e44_float64": 3.9968028886505635e-15,
+  "sign_agree": 1.0,
+  "full": {
+   "bacc": 0.7824,
+   "auc": 0.8315,
+   "f1": 0.7742
+  },
+  "late45": {
+   "bacc": 0.7282,
+   "auc": 0.7601,
+   "f1": 0.713
+  },
+  "e44_full": {
+   "bacc": 0.7824,
+   "auc": 0.8315,
+   "f1": 0.7742
+  },
+  "e44_late45": {
+   "bacc": 0.7282,
+   "auc": 0.7601,
+   "f1": 0.713
+  }
+ },
+ "streaming": {
+  "n_frames": 1860,
+  "prefix": {
+   "N_s": 1500.0,
+   "n": 1467,
+   "identical": true,
+   "max_abs": 0.0
+  },
+  "chunks": {
+   "250pt": {
+    "n": 1860,
+    "same_times": true,
+    "identical": true,
+    "max_abs": 0.0
+   },
+   "137pt": {
+    "n": 1860,
+    "same_times": true,
+    "identical": true,
+    "max_abs": 0.0
+   },
+   "0.1s": {
+    "n": 1860,
+    "same_times": true,
+    "identical": true,
+    "max_abs": 0.0
+   },
+   "0.37s": {
+    "n": 1860,
+    "same_times": true,
+    "identical": true,
+    "max_abs": 0.0
+   },
+   "1s": {
+    "n": 1860,
+    "same_times": true,
+    "identical": true,
+    "max_abs": 0.0
+   },
+   "5s": {
+    "n": 1860,
+    "same_times": true,
+    "identical": true,
+    "max_abs": 0.0
+   }
+  }
+ }
+}
