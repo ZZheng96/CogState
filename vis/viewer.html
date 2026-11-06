@@ -12,7 +12,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);
     font:12px/1.45 "Segoe UI","Microsoft YaHei",system-ui,sans-serif;overflow:hidden}
-  #app{display:grid;grid-template-columns:150px 1fr 330px;grid-template-rows:40px 1fr;height:100vh}
+  #app{display:grid;grid-template-columns:170px 1fr 340px;grid-template-rows:40px 1fr;height:100vh}
   header{grid-column:1/4;display:flex;align-items:center;gap:12px;padding:0 12px;
     background:var(--panel);border-bottom:1px solid var(--line)}
   header h1{font-size:14px;margin:0;font-weight:600}
@@ -71,6 +71,14 @@
   @media (max-height:700px){
     .bars{grid-template-columns:40px 1fr 32px 40px 1fr 32px}
   }
+  .tagA,.tagB{display:inline-block;padding:0 5px;border-radius:4px;color:#fff;font-weight:600;font-size:11px;line-height:15px}
+  .tagA{background:#1f2328} .tagB{background:#bf3989}
+  select.sch{max-width:240px}
+  .up{color:var(--accent)} .dn{color:var(--task)}
+  .subj .d{font-size:10px;width:30px;text-align:right}
+  .nav{display:flex;gap:4px;padding:2px 2px 4px;position:sticky;top:-4px;background:var(--panel);z-index:1}
+  .nav button{flex:1;padding:2px 4px}
+  .mt td{padding:1px 6px} .mt td.v{font-size:15px;font-weight:600}
   #loading{position:fixed;left:50%;top:48px;transform:translateX(-50%);display:none;
     background:#fff;border:1px solid var(--line);border-radius:6px;padding:3px 12px;z-index:9;box-shadow:0 2px 8px #0001}
   #loading.show{display:block}
@@ -80,13 +88,17 @@
 <div id="app">
   <header>
     <h1>工业场景 EEG 认知状态查看器</h1>
-    <span class="dim">单通道 · 250 Hz 原始采样率 · 6 s 因果感受野</span>
+    <span class="dim">单通道 · 250 Hz · 6 s 因果感受野</span>
     <span style="flex:1"></span>
+    <label class="dim"><span class="tagA">A</span> <select id="schA" class="sch"></select></label>
+    <label class="dim"><span class="tagB">B</span> <select id="schB" class="sch"></select></label>
     <span class="badge" id="hdrMetric">方案指标计算中…</span>
     <span class="badge" id="dsInfo">加载中…</span>
   </header>
 
-  <aside id="subjects"><div class="tip">点击多选（≤6），右侧数字为方案 bACC</div><div id="subjList"></div></aside>
+  <aside id="subjects">
+    <div class="nav"><button id="subjUp" title="高亮道换成上一个被试（[）">▲ 上一个</button><button id="subjDn" title="高亮道换成下一个被试（]）">下一个 ▼</button></div>
+    <div class="tip" id="subjTip">点击多选（≤6），数字为方案 A 的 bACC</div><div id="subjList"></div></aside>
 
   <section id="main">
     <div id="toolbar">
@@ -144,9 +156,20 @@ const S = {
   span: 30, start: 0,                 // 视图（相对每个被试首样本的秒，所有道共用）
   t: null,                            // 判断时刻（窗口 = [t-6, t]）
   filt: true, events: false, gain: 1,
-  lanes: {},                          // sid -> {meta, env, envKey, pred, win, ctrl}
-  metrics: null,
+  lanes: {},                          // sid -> {meta, env, envKey, pred:{[scheme]:p}, win, ctrl}
+  schemes: [], A: 'current', B: '',   // 方案 A（主）/ B（对比，'' 表示无）
+  mA: null, mB: null,                 // 方案汇总指标
 };
+const keys = () => S.B && S.B !== S.A ? [S.A, S.B] : [S.A];
+const schLabel = k => S.schemes.find(s => s.key === k)?.label || k;
+function frameAt(p, t){
+  if(!p?.ready) return null;
+  const i = lowerBound(p.t, t + 1e-6) - 1;
+  if(i < 0 || p.t[i] < t - 1.01) return null;
+  return {score: p.score[i], pred: p.score[i] > 0 ? 'task' : 'relax', label: p.y[i]};
+}
+const dCls = d => d == null ? '' : d > 0.0005 ? 'up' : d < -0.0005 ? 'dn' : 'dim';
+const dTxt = (d, k = 100, n = 1) => d == null ? '' : `${d > 0 ? '+' : ''}${(d * k).toFixed(n)}`;
 
 /* ---------- 工具 ---------- */
 const fmtT = t => { t = Math.max(0, t); const m = Math.floor(t / 60), s = t - m * 60;
@@ -175,17 +198,52 @@ async function loadSubjects(){
 }
 
 function renderSubjList(){
-  const per = {};
-  for(const r of (S.metrics?.subjects || [])) per[r.subject] = r.post;
+  const per = m => Object.fromEntries((m?.subjects || []).map(r => [r.subject, r]));
+  const pa = per(S.mA), pb = S.B ? per(S.mB) : null;
+  $('#subjTip').textContent = pb ? '点击多选（≤6），数字为 A 的 bACC，右列 Δ=B−A' : '点击多选（≤6），数字为方案 A 的 bACC';
   $('#subjList').innerHTML = S.subjects.map(s => {
-    const m = per[s.subject];
+    const m = pa[s.subject], mb = pb?.[s.subject];
     const cls = !m ? '' : m.bacc >= .9 ? 'ok' : m.bacc < .7 ? 'lo' : '';
+    const d = m && mb ? mb.bacc - m.bacc : null;
     return `<div class="subj ${S.sel.includes(s.subject) ? 'sel' : ''} ${S.focus === s.subject ? 'focus' : ''}"
       data-sid="${s.subject}" title="时长 ${fmtDur(s.duration || 0)} · ${s.n_trials} trial">
       <span class="id">${s.subject}</span><span class="dim">${fmtDur(s.duration || 0)}</span>
-      <span class="m ${cls}">${m ? pct(m.bacc) : '…'}</span></div>`;
+      <span class="m ${cls}">${m ? pct(m.bacc) : '…'}</span>${pb ? `<span class="d ${dCls(d)}">${d == null ? '…' : dTxt(d)}</span>` : ''}</div>`;
   }).join('');
   document.querySelectorAll('.subj').forEach(el => el.onclick = () => toggleSubject(el.dataset.sid));
+}
+
+async function ensureLane(sid){
+  if(!S.lanes[sid]) S.lanes[sid] = {pred: {}};
+  const L = S.lanes[sid];
+  if(!L.meta){
+    loading(true);
+    try{ L.meta = await api('/api/subject/' + sid); }
+    finally{ loading(false); }
+  }
+  for(const k of keys()) loadPred(sid, k);
+  return L;
+}
+
+// 高亮道换成列表中上/下一个未选被试（循环）
+async function stepSubject(dir){
+  const ids = S.subjects.map(s => s.subject);
+  if(!ids.length) return;
+  let i = ids.indexOf(S.focus);
+  for(let n = 0; n < ids.length; n++){
+    i = (i + dir + ids.length) % ids.length;
+    if(!S.sel.includes(ids[i])) break;
+  }
+  const sid = ids[i];
+  if(S.sel.includes(sid)) return;
+  try{ await ensureLane(sid); } catch(e){ alert(`被试 ${sid} 读取失败：${e.message}`); return; }
+  const k = S.sel.indexOf(S.focus);
+  if(k >= 0) S.sel[k] = sid; else S.sel.push(sid);
+  S.focus = sid;
+  const dur = S.lanes[sid].meta.duration;
+  if(S.t > dur){ S.t = Math.max(WIN, dur); centerOnWindow(); }
+  renderAll();
+  document.querySelector('.subj.focus')?.scrollIntoView({block: 'nearest'});
 }
 
 async function toggleSubject(sid){
@@ -198,20 +256,15 @@ async function toggleSubject(sid){
   }
   if(S.sel.length >= MAXSEL) S.sel.shift();
   S.sel.push(sid); S.focus = sid;
-  if(!S.lanes[sid]) S.lanes[sid] = {};
-  const L = S.lanes[sid];
-  loading(true);
-  try{
-    if(!L.meta) L.meta = await api('/api/subject/' + sid);
-  } catch(e){ alert(`被试 ${sid} 读取失败：${e.message}`); S.sel = S.sel.filter(s => s !== sid); }
-  finally{ loading(false); }
+  let L;
+  try{ L = await ensureLane(sid); }
+  catch(e){ alert(`被试 ${sid} 读取失败：${e.message}`); S.sel = S.sel.filter(s => s !== sid); S.focus = S.sel[S.sel.length - 1]; renderAll(); return; }
   if(S.t == null){
     // 默认：第一个 task trial 的第 30 s（若不足则取末尾）
     const tr = L.meta.trials.find(t => t.phase === 'task') || L.meta.trials[0];
     S.t = tr ? Math.min(tr.end, tr.start + 30) : WIN;
     centerOnWindow();
   }
-  loadPred(sid);
   renderAll();
 }
 
@@ -246,23 +299,47 @@ function loadWindows(){
 }
 const loadWindowsSoon = debounce(loadWindows, 80);
 
-async function loadPred(sid){
+async function loadPred(sid, key){
   const L = S.lanes[sid];
-  if(L.pred?.ready) return;
+  if(!L || L.pred[key]?.ready || L.pred[key]?.pending) return;
+  L.pred[key] = {...(L.pred[key] || {}), pending: true};
   try{
-    const p = await api('/api/pred/' + sid);
-    if(p.ready){ L.pred = p; L.winKey = null; loadWindows(); drawWave(); renderSide(); loadMetrics(); }
-    else { L.pred = p; renderSide(); setTimeout(() => S.lanes[sid] && loadPred(sid), 5000); }
-  } catch(e){ console.warn(e); }
+    const p = await api(`/api/pred/${sid}?scheme=${encodeURIComponent(key)}`);
+    L.pred[key] = p;
+    if(p.ready){ drawWave(); drawZoom(); renderSide(); }
+    else {
+      renderSide(); drawWave();
+      setTimeout(() => S.lanes[sid] && keys().includes(key) && loadPred(sid, key), p.computable ? 5000 : 15000);
+    }
+  } catch(e){ L.pred[key] = null; console.warn(e); }
 }
 
 async function loadMetrics(){
-  try{ S.metrics = await api('/api/metrics'); } catch(e){ return; }
-  const m = S.metrics;
-  $('#hdrMetric').innerHTML = m.post
-    ? `当前方案（训练集内，${m.n_done}/${m.n_total} 人）bACC <b>${pct(m.post.bacc)}</b> · AUC <b>${f3(m.post.auc)}</b>`
-    : `方案指标计算中（${m.n_done}/${m.n_total}）`;
+  const get = k => api(`/api/metrics?scheme=${encodeURIComponent(k)}`).catch(() => null);
+  const [a, b] = await Promise.all([get(S.A), S.B && S.B !== S.A ? get(S.B) : null]);
+  if(a) S.mA = a;
+  S.mB = S.B && S.B !== S.A ? b : null;
+  const h = (m, tag) => m?.mean ? `<span class="${tag}">${tag === 'tagA' ? 'A' : 'B'}</span> bACC <b>${pct(m.mean.bacc)}</b> · AUC <b>${f3(m.mean.auc)}</b> <span class="dim">(${m.n_done}/${m.n_total})</span>`
+    : `<span class="${tag}">${tag === 'tagA' ? 'A' : 'B'}</span> ${m ? `未就绪 ${m.n_done}/${m.n_total}` : '…'}`;
+  $('#hdrMetric').innerHTML = h(S.mA, 'tagA') + (S.mB !== null || S.B ? ' &nbsp; ' + h(S.mB, 'tagB') : '');
   renderSubjList(); renderSide();
+}
+
+async function loadSchemes(){
+  const d = await api('/api/schemes');
+  S.schemes = d.schemes; S.A = d.default || d.schemes[0]?.key;
+  const groups = [...new Set(d.schemes.map(s => s.group || '其他'))];
+  const opts = groups.map(g => `<optgroup label="${g}">${d.schemes.filter(s => (s.group || '其他') === g)
+    .map(s => `<option value="${s.key}">${s.label}</option>`).join('')}</optgroup>`).join('');
+  $('#schA').innerHTML = opts; $('#schA').value = S.A;
+  $('#schB').innerHTML = '<option value="">（无对比）</option>' + opts; $('#schB').value = '';
+  const onSch = () => {
+    S.A = $('#schA').value; S.B = $('#schB').value === S.A ? '' : $('#schB').value;
+    if(!S.B) $('#schB').value = '';
+    for(const sid of S.sel) for(const k of keys()) loadPred(sid, k);
+    loadMetrics(); renderAll();
+  };
+  $('#schA').onchange = onSch; $('#schB').onchange = onSch;
 }
 
 /* ---------- 视图控制 ---------- */
@@ -306,7 +383,7 @@ function laneRects(h){
   const lh = (h - PAD.t - PAD.b - gap * (n - 1)) / n;
   return S.sel.map((sid, i) => {
     const y = PAD.t + i * (lh + gap);
-    const sh = Math.min(26, Math.max(14, lh * 0.22));   // 方案输出条
+    const sh = Math.min(keys().length > 1 ? 40 : 26, Math.max(14, lh * (keys().length > 1 ? 0.32 : 0.22)));   // 方案输出条
     return {sid, y, h: lh, wy: y, wh: lh - sh - 3, sy: y + lh - sh, sh};
   });
 }
@@ -394,29 +471,36 @@ function drawWave(){
     // 方案输出条：上半为方案后处理得分（>0 判 task），底部 3px 为真值
     ctx.fillStyle = '#fff'; ctx.fillRect(PAD.l, R.sy, w, R.sh);
     ctx.strokeStyle = C.grid; ctx.strokeRect(PAD.l + .5, R.sy + .5, w - PAD.l - PAD.r - 1, R.sh - 1);
-    const p = L.pred;
-    if(p?.ready){
-      const zm = R.sy + (R.sh - 4) / 2;
-      const i0 = Math.max(0, lowerBound(p.t, t0) - 1), i1 = Math.min(p.t.length, lowerBound(p.t, t1) + 1);
-      const sc = (R.sh - 6) / 2 / 6;
-      for(let i = i0; i < i1; i++){
-        const x0 = xOf(p.t[i] - 1, w), x1 = xOf(p.t[i], w), v = Math.max(-6, Math.min(6, p.post[i]));
-        ctx.fillStyle = v > 0 ? '#cf222ebb' : '#0969dabb';
-        ctx.fillRect(x0, v > 0 ? zm - v * sc : zm, Math.max(1, x1 - x0), Math.abs(v * sc));
-        if(p.y[i] >= 0){ ctx.fillStyle = p.y[i] ? C.task : C.relax; ctx.fillRect(x0, R.sy + R.sh - 3, Math.max(1, x1 - x0), 3); }
+    const ks = keys(), sub = (R.sh - 3) / ks.length;
+    let truthDrawn = false;
+    ks.forEach((k, j) => {
+      const p = L.pred?.[k], y0 = R.sy + j * sub;
+      if(p?.ready){
+        const zm = y0 + sub / 2, sc = (sub - 2) / 2 / 6;
+        const i0 = Math.max(0, lowerBound(p.t, t0) - 1), i1 = Math.min(p.t.length, lowerBound(p.t, t1) + 1);
+        for(let i = i0; i < i1; i++){
+          const x0 = xOf(p.t[i] - 1, w), x1 = xOf(p.t[i], w), v = Math.max(-6, Math.min(6, p.score[i]));
+          ctx.fillStyle = v > 0 ? '#cf222ebb' : '#0969dabb';
+          ctx.fillRect(x0, v > 0 ? zm - v * sc : zm, Math.max(1, x1 - x0), Math.max(0.5, Math.abs(v * sc)));
+          if(!truthDrawn && p.y[i] >= 0){ ctx.fillStyle = p.y[i] ? C.task : C.relax; ctx.fillRect(x0, R.sy + R.sh - 3, Math.max(1, x1 - x0), 3); }
+        }
+        truthDrawn = true;
+        ctx.strokeStyle = '#8c959f'; ctx.beginPath(); ctx.moveTo(PAD.l, zm); ctx.lineTo(w, zm); ctx.stroke();
+      } else {
+        ctx.fillStyle = C.axis; ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.font = '10px Segoe UI, Microsoft YaHei';
+        ctx.fillText(p && p.ready === false ? (p.computable ? '方案输出计算中（约 1 分钟）…' : '该方案尚无此被试的缓存结果') : '方案输出加载中…', PAD.l + 4, y0 + sub / 2);
+        ctx.font = '11px Segoe UI, Microsoft YaHei';
       }
-      ctx.strokeStyle = '#8c959f'; ctx.beginPath(); ctx.moveTo(PAD.l, zm); ctx.lineTo(w, zm); ctx.stroke();
-    } else {
-      ctx.fillStyle = C.axis; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
-      ctx.fillText(p && !p.ready ? '方案输出计算中（约 1 分钟）…' : '方案输出加载中…', PAD.l + 4, R.sy + R.sh / 2);
-    }
+      if(j) { ctx.strokeStyle = C.grid; ctx.beginPath(); ctx.moveTo(PAD.l, y0); ctx.lineTo(w, y0); ctx.stroke(); }
+    });
     ctx.restore();
     // 道标签
     ctx.fillStyle = S.focus === R.sid ? C.relax : C.fg || '#1f2328';
     ctx.font = '600 12px Segoe UI'; ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
     ctx.fillText(R.sid, PAD.l - 6, R.wy + R.wh / 2);
-    ctx.font = '10px Segoe UI'; ctx.fillStyle = C.axis;
-    ctx.fillText('方案', PAD.l - 6, R.sy + R.sh / 2);
+    ctx.font = '600 10px Segoe UI';
+    if(ks.length === 1){ ctx.fillStyle = C.axis; ctx.fillText('A', PAD.l - 6, R.sy + R.sh / 2); }
+    else ks.forEach((k, j) => { ctx.fillStyle = j ? '#bf3989' : '#1f2328'; ctx.fillText(j ? 'B' : 'A', PAD.l - 6, R.sy + (j + .5) * (R.sh - 3) / 2); });
     ctx.font = '11px Segoe UI, Microsoft YaHei';
   }
 
@@ -482,11 +566,14 @@ function drawZoom(){
     line(W_.raw, '#8c959f88', 1, rawMean);
     line(W_.filtered, C.filt, 1.3);
     ctx.restore();
-    const m = W_.model?.frame;
-    const tag = m ? `方案 ${m.pred === 'task' ? 'TASK' : 'RELAX'}  s=${m.post.toFixed(2)}` : (W_.model ? '' : '方案计算中');
     ctx.textAlign = 'right'; ctx.textBaseline = 'top'; ctx.font = '600 11px Segoe UI, Microsoft YaHei';
-    ctx.fillStyle = m ? (m.pred === 'task' ? C.task : C.relax) : C.axis;
-    ctx.fillText(tag, w - pr - 4, y0 + 3);
+    let xr = w - pr - 4;
+    [...keys()].reverse().forEach(k => {
+      const m = frameAt(S.lanes[sid].pred?.[k], S.t), nm = k === S.A ? 'A' : 'B';
+      const tag = m ? `${nm} ${m.pred === 'task' ? 'TASK' : 'RELAX'} s=${m.score.toFixed(2)}` : `${nm} —`;
+      ctx.fillStyle = m ? (m.pred === 'task' ? C.task : C.relax) : C.axis;
+      ctx.fillText(tag, xr, y0 + 3); xr -= ctx.measureText(tag).width + 12;
+    });
     ctx.font = '11px Segoe UI, Microsoft YaHei'; ctx.fillStyle = C.axis; ctx.textAlign = 'left';
     ctx.fillText(`±${(ref / S.gain).toFixed(0)} µV${W_.bad ? ' · 含缺失段' : ''}${W_.within_trial ? '' : ' · 跨 trial 边界'}`, pl + 4, y0 + 3);
   });
@@ -494,47 +581,54 @@ function drawZoom(){
 
 /* ---------- 右侧信息栏 ---------- */
 function renderSide(){
-  const m = S.metrics, sc = m?.scheme;
-  $('#cardScheme').innerHTML = `<h2>当前采用方案</h2>
-    <div style="font-weight:600">${sc ? sc.name : 'src/infer.py'}</div>
-    <div class="note">入口 ${sc?.entry || 'src/infer.py'} · 模型 ${sc?.model || ''}<br>
-    每 ${sc?.step_s || 1} s 决策一次，输入为过去 ${WIN} s；得分 s &gt; 0 判为 task</div>`;
+  const ks = keys(), two = ks.length > 1;
+  const sInfo = k => S.schemes.find(s => s.key === k) || {label: k, desc: ''};
+  $('#cardScheme').innerHTML = `<h2>方案（每 1 s 决策，输入过去 ${WIN} s，s &gt; 0 判 task）</h2>` +
+    ks.map((k, j) => { const s = sInfo(k); return `<div style="margin-top:${j ? 4 : 0}px"><span class="${j ? 'tagB' : 'tagA'}">${j ? 'B' : 'A'}</span>
+      <b>${s.label}</b> <span class="dim">[${s.group || ''}]</span><div class="note">${s.desc}</div></div>`; }).join('');
 
-  const mm = (k, lab) => m?.[k] ? `<div><div class="dim">${lab}</div>
-      <div class="big">${pct(m[k].bacc)}<span class="dim" style="font-size:11px"> bACC</span></div>
-      <div>AUC <b>${f3(m[k].auc)}</b> · F1 <b>${f3(m[k].f1)}</b></div></div>` : `<div><div class="dim">${lab}</div><div class="big">—</div></div>`;
-  $('#cardMetric').innerHTML = `<h2>方案评估指标（${m ? `${m.n_done}/${m.n_total} 人` : '加载中'}，被试平均）</h2>
-    <div class="mrow">${mm('post', '最终输出（去趋势+HMM）')}${mm('raw', '单窗口 6 s 原始得分')}</div>
-    <div class="note" style="margin-top:3px">${m?.post ? `bACC ≥ 90% 的被试 ${m.post.n_ge_09}/${m.n_done}。` : ''}
-    评估帧：[t−6,t] 完全落在单个 trial 内且不含缺失段。模型用全部 57 人训练，此为训练集内指标；
-    跨被试 5 折：bACC 76.2% · AUC 0.823（E17 报告）。${m?.computing?.length ? `<br>后台计算：${m.computing.join(', ')}` : ''}</div>`;
+  const mA = S.mA?.mean, mB = two ? S.mB?.mean : null;
+  const row = (lab, f, k, n) => `<tr><td class="dim">${lab}</td><td class="v">${mA ? f(mA[k]) : '—'}</td>${two ? `<td class="v" style="color:#bf3989">${mB ? f(mB[k]) : '—'}</td>
+      <td class="${mA && mB ? dCls(mB[k] - mA[k]) : ''}">${mA && mB ? dTxt(mB[k] - mA[k], n ? 1 : (k === 'bacc' ? 100 : 1), n ? 0 : (k === 'bacc' ? 1 : 3)) : ''}</td>` : ''}</tr>`;
+  const cnt = v => v == null ? '—' : String(v);
+  $('#cardMetric').innerHTML = `<h2>评估指标（被试宏平均${S.mA ? `，A ${S.mA.n_done}/${S.mA.n_total} 人` : ''}${two && S.mB ? `，B ${S.mB.n_done}/${S.mB.n_total} 人` : ''}）</h2>
+    <table class="mt"><tr><th></th><th><span class="tagA">A</span></th>${two ? '<th><span class="tagB">B</span></th><th>Δ B−A</th>' : ''}</tr>
+    ${row('bACC %', pct, 'bacc')}${row('AUC', f3, 'auc')}${row('F1', f3, 'f1')}${row('bACC≥90% 人数', cnt, 'n_ge_09', true)}</table>
+    <div class="note" style="margin-top:3px">评估帧：[t−6,t] 完全落在单个 trial 内且不含缺失段。
+    “训练集内”方案的模型见过被评估被试，指标偏乐观；“跨被试”方案为 5 折 OOF，代表未见被试的水平。
+    ${S.mA?.computing?.length ? `<br>后台计算：${S.mA.computing.join(', ')}` : ''}</div>`;
 
+  const pill = v => v ? `<span class="pill ${v}">${v}</span>` : '<span class="pill na">—</span>';
   const rows = S.sel.map(sid => {
-    const L = S.lanes[sid], W_ = L.win, f = W_?.model?.frame, pm = L.pred?.metrics?.post;
-    const truth = f && f.label >= 0 ? (f.label ? 'task' : 'relax') : (W_?.phase && W_.within_trial ? W_.phase : null);
-    const pred = f ? f.pred : null;
-    const pill = v => v ? `<span class="pill ${v}">${v}</span>` : '<span class="pill na">—</span>';
-    const ok = truth && pred ? (truth === pred ? '<span style="color:#1a7f37">✓</span>' : '<span class="task">✗</span>') : '';
-    return `<tr${S.focus === sid ? ' style="background:#ddf4ff"' : ''}><td><b>${sid}</b></td><td>${pill(truth)}</td><td>${pill(pred)} ${ok}</td>
-      <td>${f ? f.post.toFixed(2) : '—'}</td><td>${pm ? pct(pm.bacc) : '…'}</td><td>${pm ? f3(pm.auc) : '…'}</td></tr>`;
+    const L = S.lanes[sid], W_ = L.win;
+    const fs = ks.map(k => frameAt(L.pred?.[k], S.t));
+    const f0 = fs.find(f => f);
+    const truth = f0 && f0.label >= 0 ? (f0.label ? 'task' : 'relax') : (W_?.phase && W_.within_trial ? W_.phase : null);
+    const cell = f => { if(!f) return '<td>—</td>';
+      const ok = truth ? (truth === f.pred ? '<span style="color:#1a7f37">✓</span>' : '<span class="task">✗</span>') : '';
+      return `<td>${pill(f.pred)}${ok} <span class="dim">${f.score.toFixed(1)}</span></td>`; };
+    const bac = k => { const m = L.pred?.[k]?.metrics; return `<td>${m ? pct(m.bacc) : '…'}</td>`; };
+    return `<tr${S.focus === sid ? ' style="background:#ddf4ff"' : ''}><td><b>${sid}</b></td><td>${pill(truth)}</td>
+      ${fs.map(cell).join('')}${ks.map(bac).join('')}</tr>`;
   }).join('');
   $('#cardWin').innerHTML = `<h2>判断时刻 t = ${S.t != null ? fmtT(S.t) : '—'}（窗口 [t−6 s, t]）</h2>
-    <table><tr><th>被试</th><th>真值</th><th>方案预测</th><th>得分</th><th>bACC</th><th>AUC</th></tr>${rows}</table>
+    <table><tr><th>被试</th><th>真值</th><th>A 预测·s</th>${two ? '<th>B 预测·s</th>' : ''}<th>A bACC</th>${two ? '<th>B bACC</th>' : ''}</tr>${rows}</table>
     <div class="note">真值为空：窗口跨 trial 边界或含缺失段，不计入评估。</div>`;
 
   const L = S.lanes[S.focus], meta = L?.meta, W_ = L?.win;
   if(!meta){ $('#cardSubj').innerHTML = ''; return; }
   const bars = W_ ? W_.bands.map(b => `<span>${b.band}</span><i style="width:${(100 * b.relative).toFixed(1)}%"></i><span>${pct(b.relative)}%</span>`).join('') : '';
-  const pm = L.pred?.metrics;
+  const pmRows = ks.map((k, j) => { const pm = L.pred?.[k]?.metrics;
+    return `<span><span class="${j ? 'tagB' : 'tagA'}">${j ? 'B' : 'A'}</span></span><span>${pm ? `bACC ${pct(pm.bacc)} · AUC ${f3(pm.auc)} · F1 ${f3(pm.f1)}` : '—'}</span>`; }).join('');
+  const nEval = L.pred?.[S.A]?.metrics?.n;
   $('#cardSubj').innerHTML = `<h2>被试 ${meta.subject}（高亮道）</h2>
     <div class="grid">
       <span>记录</span><span>${fmtDur(meta.duration)} · ${meta.n_trials} trial · 缺失 ${meta.bad_seconds.toFixed(1)} s</span>
       <span>relax / task</span><span><span class="relax">${fmtDur(meta.relax_seconds)}</span> / <span class="task">${fmtDur(meta.task_seconds)}</span></span>
       <span>按键 / 失败</span><span>${meta.n_key_press} / ${meta.n_task_failure}</span>
       <span>幅值 std / p1–p99</span><span>${meta.stats.std.toFixed(1)} / ${meta.stats.p1.toFixed(0)}~${meta.stats.p99.toFixed(0)} µV</span>
-      <span>方案 最终</span><span>${pm?.post ? `bACC ${pct(pm.post.bacc)} · AUC ${f3(pm.post.auc)} · F1 ${f3(pm.post.f1)}` : '计算中'}</span>
-      <span>方案 单窗口</span><span>${pm?.raw ? `bACC ${pct(pm.raw.bacc)} · AUC ${f3(pm.raw.auc)}` : '—'}</span>
-      <span>评估帧数</span><span>${pm?.post?.n ?? '—'}</span>
+      ${pmRows}
+      <span>评估帧数</span><span>${nEval ?? '—'}</span>
       <span>窗口 RMS / 峰峰</span><span>${W_ ? `${W_.rms.toFixed(1)} / ${W_.ptp.toFixed(0)} µV` : '—'}</span>
     </div>
     <div class="dim" style="margin:4px 0 2px">窗口相对频带功率（因果滤波后）</div>
@@ -614,12 +708,19 @@ window.addEventListener('keydown', e => {
   else if(e.key === 'ArrowLeft') $('#btnPrev').click();
   else if(e.key === 'ArrowRight') $('#btnNext').click();
   else if(e.key === 'f' || e.key === 'F') $('#btnFocus').click();
+  else if(e.key === '[') stepSubject(-1);
+  else if(e.key === ']') stepSubject(1);
 });
+$('#subjUp').onclick = () => stepSubject(-1);
+$('#subjDn').onclick = () => stepSubject(1);
 window.addEventListener('resize', debounce(() => { for(const s of S.sel) S.lanes[s].envKey = null; renderAll(); }, 120));
 
-loadMetrics();
-setInterval(loadMetrics, 30000);
-loadSubjects().catch(e => alert('加载失败：' + e.message));
+(async () => {
+  try{ await loadSchemes(); } catch(e){ console.warn('方案列表加载失败', e); }
+  loadMetrics();
+  setInterval(loadMetrics, 30000);
+  await loadSubjects();
+})().catch(e => alert('加载失败：' + e.message));
 </script>
 </body>
 </html>

@@ -44,17 +44,18 @@ SCHEME = {
 }
 
 _lock = threading.Lock()
-_decoder = None
+_decoders: dict[str, object] = {}
 
 
-def _engine():
-    global _decoder
-    if _decoder is None:
+def _engine(bundle_path: Path = BUNDLE_PATH):
+    key = str(bundle_path)
+    if key not in _decoders:
         import torch
         from streaming import StreamingInference
-        bundle = torch.load(BUNDLE_PATH, map_location="cpu", weights_only=False)
-        _decoder = StreamingInference(bundle, fs=250, step=1.0)
-    return _decoder
+        bundle = torch.load(bundle_path, map_location="cpu", weights_only=False)
+        _decoders.clear()  # 同时只保留一个模型在显存中
+        _decoders[key] = StreamingInference(bundle, fs=250, step=1.0)
+    return _decoders[key]
 
 
 def _trials(sid: str):
@@ -76,7 +77,7 @@ def _labels(t: np.ndarray, trials, bad: list[tuple[float, float]]) -> np.ndarray
     return y
 
 
-def compute(sid: str) -> dict:
+def compute(sid: str, bundle_path: Path = BUNDLE_PATH, out: Path | None = None) -> dict:
     from eeg_decoder import load_bdf
     from infer import PostProcessor, stream_outputs
     bdf, trials = _trials(sid)
@@ -85,7 +86,7 @@ def compute(sid: str) -> dict:
     x = np.asarray(rec["signal_uv"], dtype=float) * 1e-6
     x[~rec["valid"]] = np.nan
     with _lock:
-        dec = _engine()
+        dec = _engine(bundle_path)
         dec.reset()
         raw_scores = []
         orig = dec.update
@@ -105,10 +106,11 @@ def compute(sid: str) -> dict:
     raw = np.array(raw_scores, dtype=np.float32)
     bad = [(a / fs, b / fs) for a, b in rec["bad_intervals"]]
     y = _labels(t, trials, bad)
-    CACHE.mkdir(exist_ok=True)
-    tmp = CACHE / f"pred_{sid}.tmp.npz"
+    out = out or CACHE / f"pred_{sid}.npz"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    tmp = out.with_suffix(".tmp.npz")
     np.savez(tmp, t=t, raw=raw, post=post, y=y)
-    tmp.replace(CACHE / f"pred_{sid}.npz")
+    tmp.replace(out)
     return {"t": t, "raw": raw, "post": post, "y": y}
 
 

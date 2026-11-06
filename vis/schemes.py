@@ -1,0 +1,81 @@
+"""查看器的算法方案注册表。
+
+每个方案 = 一组逐帧决策分数（每 1 s 一帧，窗口 [t-6, t]，分数 > 0 判为 task），按被试缓存为 npz
+（字段 t / y / 若干分数列）。注册方式：
+
+    register("key", label="...", desc="...", file=lambda sid: Path(...), field="post",
+             compute=lambda sid: ...)   # compute 可选：缓存缺失时按需生成 npz
+
+指标统一由 model_eval.metrics 计算（bACC / AUC / F1，评估帧规则见 model_eval）。
+"""
+from __future__ import annotations
+
+from pathlib import Path
+from typing import Callable
+
+import numpy as np
+
+import model_eval as ME
+
+REGISTRY: dict[str, dict] = {}
+
+
+def register(key: str, *, label: str, desc: str, file: Callable[[str], Path], field: str,
+             compute: Callable[[str], object] | None = None, group: str = "") -> None:
+    REGISTRY[key] = {"key": key, "label": label, "desc": desc, "file": file, "field": field,
+                     "compute": compute, "group": group}
+
+
+def info() -> list[dict]:
+    return [{k: v for k, v in s.items() if k in ("key", "label", "desc", "field", "group")} for s in REGISTRY.values()]
+
+
+def get(key: str) -> dict:
+    if key not in REGISTRY:
+        raise ValueError(f"未知方案：{key}")
+    return REGISTRY[key]
+
+
+def load(key: str, sid: str, compute_missing: bool = False) -> dict | None:
+    s = get(key)
+    f = s["file"](sid)
+    if not f.exists():
+        if not (compute_missing and s["compute"]):
+            return None
+        s["compute"](sid)
+    z = np.load(f)
+    return {"t": z["t"], "y": z["y"], "score": z[s["field"]]}
+
+
+def subject_metrics(key: str, sid: str) -> dict | None:
+    d = load(key, sid)
+    return None if d is None else {"subject": sid, **(ME.metrics(d["y"], d["score"]) or {})}
+
+
+def summary(key: str, sids: list[str]) -> dict:
+    rows = [r for r in (subject_metrics(key, s) for s in sids) if r and "bacc" in r]
+    out = {"scheme": {k: v for k, v in get(key).items() if k in ("key", "label", "desc")},
+           "n_done": len(rows), "n_total": len(sids), "subjects": rows}
+    if rows:
+        out["mean"] = {k: float(np.mean([r[k] for r in rows])) for k in ("bacc", "auc", "f1")}
+        out["mean"]["n_ge_09"] = int(sum(r["bacc"] >= 0.9 for r in rows))
+    return out
+
+
+# ---------------------------------------------------------------- 已注册方案
+_insample = lambda sid: ME.CACHE / f"pred_{sid}.npz"  # noqa: E731
+_cv = lambda sid: ME.CACHE / "e17_cv" / f"pred_{sid}.npz"  # noqa: E731
+_POST = "因果 EMA 去趋势(hl=1200 s) + 前向 HMM(dwell=300 s)"
+
+register("current", group="训练集内", file=_insample, field="post", compute=ME.compute,
+         label="当前方案 src/infer.py（E17 + 后处理）",
+         desc=f"E17 多尺度 LR+MLP，全部 57 人训练；{_POST}。被评估被试在训练集中，指标偏乐观。")
+register("e17_raw", group="训练集内", file=_insample, field="raw", compute=ME.compute,
+         label="E17 原始分数（无后处理）",
+         desc="同一 model_bundle.pt 的逐帧原始分数，不做跨帧平滑。被评估被试在训练集中。")
+register("e17_cv_post", group="跨被试", file=_cv, field="post",
+         label="E17 跨被试 5 折 + 后处理",
+         desc=f"每个被试由不含它的 4 折模型预测（vis/build_oof.py）；{_POST}。")
+register("e17_cv_raw", group="跨被试", file=_cv, field="raw",
+         label="E17 跨被试 5 折（无后处理）",
+         desc="每个被试由不含它的 4 折模型预测，逐帧原始分数。最接近未见被试的真实成绩。")

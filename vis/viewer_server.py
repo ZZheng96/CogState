@@ -13,8 +13,9 @@ vis/viewer.html。BDF 读取结果按被试缓存在内存中，避免重复解�
                                  -> 6 秒因果窗口：原始 + 1–45 Hz 因果滤波 + 频带功率 + 方案输出
   GET /api/envelope/<sid>?t0=&t1=&bins=&filt=0|1
                                  -> 任意时间跨度的 min/max 包络（点少时返回原始样本）
-  GET /api/pred/<sid>            -> 当前方案（src/infer.py）逐秒输出；未缓存时后台计算
-  GET /api/metrics               -> 当前方案 bACC / AUC / F1 汇总
+  GET /api/schemes               -> 已注册方案列表（vis/schemes.py）
+  GET /api/pred/<sid>?scheme=    -> 方案逐秒决策分数；可计算的方案未缓存时后台计算
+  GET /api/metrics?scheme=       -> 方案 bACC / AUC / F1 汇总（逐被试 + 宏平均）
 
 用法：
   python vis/viewer_server.py
@@ -44,6 +45,7 @@ import mne  # noqa: E402
 from scipy.signal import butter, sosfilt, welch  # noqa: E402
 
 import model_eval  # noqa: E402  当前方案（src/infer.py）推理与评估
+import schemes  # noqa: E402  方案注册表（可切换 / 对比）
 
 ROOT = Path(__file__).resolve().parents[1]
 DATASET = ROOT / "EEG_dataset"
@@ -254,7 +256,6 @@ class SubjectStore:
                 break
         return {
             "within_trial": inside,
-            "model": model_eval.at(sid, i1 / sfreq),
             "subject": sid,
             "start": round(i0 / sfreq, 4),
             "end": round(i1 / sfreq, 4),
@@ -326,25 +327,31 @@ class Handler(BaseHTTPRequestHandler):
                     int(q.get("bins", ["1500"])[0]), q.get("filt", ["0"])[0] == "1",
                 ))
                 return
+            if path == "/api/schemes":
+                self._json({"default": "current", "schemes": schemes.info()})
+                return
             if path.startswith("/api/pred/"):
                 sid = path.rsplit("/", 1)[-1]
+                key = parse_qs(url.query).get("scheme", ["current"])[0]
                 STORE.paths_ok(sid)
-                d = model_eval.load(sid, compute_missing=False)
+                d = schemes.load(key, sid)
                 if d is None:
-                    start_pred(sid)
-                    self._json({"subject": sid, "ready": False})
+                    can = schemes.get(key)["compute"] is not None
+                    if can:
+                        start_pred(sid)
+                    self._json({"subject": sid, "scheme": key, "ready": False, "computable": can})
                     return
                 self._json({
-                    "subject": sid, "ready": True,
+                    "subject": sid, "scheme": key, "ready": True,
                     "t": np.round(d["t"], 3).tolist(),
-                    "raw": np.round(d["raw"], 4).tolist(),
-                    "post": np.round(d["post"], 4).tolist(),
+                    "score": np.round(d["score"], 4).tolist(),
                     "y": d["y"].tolist(),
-                    "metrics": model_eval.subject_metrics(sid, compute_missing=False),
+                    "metrics": schemes.subject_metrics(key, sid),
                 })
                 return
             if path == "/api/metrics":
-                s = model_eval.summary(STORE.subjects())
+                key = parse_qs(url.query).get("scheme", ["current"])[0]
+                s = schemes.summary(key, STORE.subjects())
                 s["computing"] = sorted(PENDING)
                 self._json(s)
                 return

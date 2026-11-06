@@ -67,12 +67,12 @@ def _closure(f):
     return cv
 
 
-def train_bundle(out_path=BUNDLE):
+def train_bundle(out_path=BUNDLE, subs=None):
     _paths()
     import loso as L
     from multiscale import fit_mlp
     dev = L.dev
-    subs = sorted(p.stem[4:] for p in SLID.glob("sub-*.npz"))
+    subs = list(subs) if subs else sorted(p.stem[4:] for p in SLID.glob("sub-*.npz"))
     Xs, ys = [], []
     for q in subs:
         S = np.load(SLID / f"sub-{q}.npz")
