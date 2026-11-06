@@ -79,3 +79,15 @@ register("e17_cv_post", group="跨被试", file=_cv, field="post",
 register("e17_cv_raw", group="跨被试", file=_cv, field="raw",
          label="E17 跨被试 5 折（无后处理）",
          desc="每个被试由不含它的 4 折模型预测，逐帧原始分数。最接近未见被试的真实成绩。")
+
+_e44 = lambda sid: ME.CACHE / "e44" / f"pred_{sid}.npz"  # noqa: E731
+register("e44_dt1200_hmm", group="跨被试 LOSO", file=_e44, field="dt1200_hmm",
+         label="E44 最佳：E42 + EMA 去趋势 + HMM",
+         desc="E42 的 57 人 LOSO 分数，先减去因果 EMA 均值（hl=1200 帧），再做前向 HMM（dwell=300）。"
+              "来源 test/44_late_drift，由 vis/build_e44.py 生成。")
+register("e42_hmm", group="跨被试 LOSO", file=_e44, field="hmm",
+         label="E42 基线：LOSO + HMM",
+         desc="E17 特征 LR+3MLP 的 57 人 LOSO 分数，只做前向 HMM（dwell=300），不去趋势。")
+register("e42_raw", group="跨被试 LOSO", file=_e44, field="raw",
+         label="E42 LOSO 原始分数",
+         desc="E42 的 57 人 LOSO 逐帧融合分数，不做跨帧后处理。")
