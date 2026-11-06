@@ -1,0 +1,50 @@
+{
+ "reproduce": {
+  "max_abs_vs_e44": 16.395254135131836,
+  "sign_agree": 0.5201215514460251,
+  "full": {
+   "bacc": 0.5,
+   "auc": 0.6651,
+   "f1": 0.0
+  },
+  "late45": {
+   "bacc": 0.5,
+   "auc": 1.0,
+   "f1": 0.0
+  }
+ },
+ "direction": {
+  "plus": 0.5,
+  "minus": 0.5
+ },
+ "streaming": {
+  "n_frames": 1860,
+  "prefix": {
+   "n": 1467,
+   "identical": true,
+   "max_abs": 0.0
+  },
+  "chunks": {
+   "250pt": {
+    "n": 1860,
+    "identical": true,
+    "max_abs": 0.0
+   },
+   "137pt": {
+    "n": 1860,
+    "identical": true,
+    "max_abs": 0.0
+   },
+   "0.37s": {
+    "n": 1860,
+    "identical": true,
+    "max_abs": 0.0
+   },
+   "5s": {
+    "n": 1860,
+    "identical": true,
+    "max_abs": 0.0
+   }
+  }
+ }
+}
