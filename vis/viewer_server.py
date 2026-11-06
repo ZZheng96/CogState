@@ -16,6 +16,11 @@ vis/viewer.html。BDF 读取结果按被试缓存在内存中，避免重复解�
   GET /api/schemes               -> 已注册方案列表（vis/schemes.py）
   GET /api/pred/<sid>?scheme=    -> 方案逐秒决策分数；可计算的方案未缓存时后台计算
   GET /api/metrics?scheme=       -> 方案 bACC / AUC / F1 汇总（逐被试 + 宏平均）
+  GET  /api/runnable             -> 可在线运行的方案（system/runner.py）
+  POST /api/run                  -> 启动流式回放 {scheme, source, subject, speed, chunk}，返回 run 信息
+  GET  /api/runs                 -> 全部回放任务
+  GET  /api/run/<id>/stream      -> SSE：frames（逐帧 t/score/raw/y）、status（状态+累计指标+延迟）
+  POST /api/run/<id>/stop        -> 停止回放
 
 用法：
   python vis/viewer_server.py
@@ -46,10 +51,12 @@ from scipy.signal import butter, sosfilt, welch  # noqa: E402
 
 import model_eval  # noqa: E402  当前方案（src/infer.py）推理与评估
 import schemes  # noqa: E402  方案注册表（可切换 / 对比）
+from system import runner  # noqa: E402  流式回放运行器（schemes 已把 ROOT 加入 sys.path）
 
 ROOT = Path(__file__).resolve().parents[1]
 DATASET = ROOT / "EEG_dataset"
 VIEWER = Path(__file__).resolve().parent / "viewer.html"
+SYSTEM_PAGE = Path(__file__).resolve().parent / "system.html"
 TZ = timezone(timedelta(hours=8))
 MAX_CHUNK = 250 * 600  # 单次最多返回 10 分钟
 BANDS = (("delta", 1, 4), ("theta", 4, 8), ("alpha", 8, 13), ("beta", 13, 30), ("gamma", 30, 45))
@@ -312,10 +319,75 @@ class Handler(BaseHTTPRequestHandler):
     def _json(self, obj, code: int = 200):
         self._send(code, json.dumps(obj, ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8")
 
+    def _body(self) -> dict:
+        n = int(self.headers.get("Content-Length") or 0)
+        if n > 1 << 20:
+            raise ValueError("请求体过大")
+        return json.loads(self.rfile.read(n) or b"{}")
+
+    def _sse(self, run: "runner.Run", cursor: int) -> None:
+        self.send_response(200)
+        self.send_header("Content-Type", "text/event-stream; charset=utf-8")
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("Connection", "close")
+        self.end_headers()
+        self.close_connection = True
+
+        def emit(event: str, obj) -> None:
+            self.wfile.write(f"event: {event}\ndata: {json.dumps(obj, ensure_ascii=False)}\n\n".encode("utf-8"))
+            self.wfile.flush()
+
+        try:
+            emit("status", run.info())
+            for new, cursor, ended in run.follow(cursor):
+                if new:
+                    emit("frames", {"cursor": cursor, "frames": new})
+                emit("status", run.info())
+                if ended and not new:
+                    break
+        except (BrokenPipeError, ConnectionResetError, ConnectionAbortedError):
+            pass
+
+    def do_POST(self):  # noqa: N802
+        path = urlparse(self.path).path
+        try:
+            if path == "/api/run":
+                b = self._body()
+                r = runner.Run(str(b.get("scheme", "current")), str(b.get("source", "builtin")),
+                               str(b["subject"]), float(b.get("speed", 1.0)), int(b.get("chunk", 250)))
+                self._json(r.info())
+                return
+            m = re.fullmatch(r"/api/run/(r\d+)/stop", path)
+            if m and m.group(1) in runner.RUNS:
+                runner.RUNS[m.group(1)].stop()
+                self._json(runner.RUNS[m.group(1)].info())
+                return
+            self._json({"error": "not found"}, 404)
+        except (KeyError, ValueError, FileNotFoundError) as exc:
+            self._json({"error": f"{type(exc).__name__}: {exc}"}, 400)
+        except Exception as exc:  # noqa: BLE001
+            self._json({"error": f"{type(exc).__name__}: {exc}"}, 500)
+
     def do_GET(self):  # noqa: N802
         url = urlparse(self.path)
         path = url.path
         try:
+            if path == "/api/runnable":
+                self._json({"schemes": runner.runnable(),
+                            "sources": {s: runner.dataset.subjects(s) for s in runner.dataset.sources()}})
+                return
+            if path in ("/system", "/system.html"):
+                self._send(200, SYSTEM_PAGE.read_bytes(), "text/html; charset=utf-8")
+                return
+            if path == "/api/runs":
+                self._json({"runs": [r.info() for r in runner.RUNS.values()]})
+                return
+            m = re.fullmatch(r"/api/run/(r\d+)/stream", path)
+            if m:
+                if m.group(1) not in runner.RUNS:
+                    raise FileNotFoundError("回放任务不存在")
+                self._sse(runner.RUNS[m.group(1)], int(parse_qs(url.query).get("cursor", ["0"])[0]))
+                return
             if path in ("/", "/index.html", "/viewer.html"):
                 self._send(200, VIEWER.read_bytes(), "text/html; charset=utf-8")
                 return

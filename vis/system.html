@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>CogState 决赛验证系统</title>
+<style>
+  :root{--bg:#fff;--panel:#f6f8fa;--line:#d0d7de;--line2:#eaeef2;--fg:#1f2328;--dim:#656d76;
+    --relax:#0969da;--task:#cf222e;--bad:#8c959f;--accent:#1a7f37;--win:#bf8700}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);
+    font:12px/1.45 "Segoe UI","Microsoft YaHei",system-ui,sans-serif;overflow:hidden}
+  #app{display:grid;grid-template-rows:40px 1fr;height:100vh}
+  header{display:flex;align-items:center;gap:12px;padding:0 12px;background:var(--panel);border-bottom:1px solid var(--line)}
+  header h1{font-size:14px;margin:0;font-weight:600}
+  .tabs{display:flex;gap:2px;margin-left:12px}
+  .tabs button{border:1px solid transparent;background:none;padding:4px 12px;border-radius:5px;cursor:pointer;font:inherit}
+  .tabs button.on{background:#fff;border-color:var(--line);font-weight:600}
+  .dim{color:var(--dim)} a{color:var(--relax)}
+  button,select,input{background:#fff;color:var(--fg);border:1px solid var(--line);border-radius:5px;padding:2px 8px;font:inherit}
+  button{cursor:pointer} button:hover{background:#f3f4f6} button:disabled{opacity:.5;cursor:default}
+  button.pri{background:#1f883d;color:#fff;border-color:#1a7f37} button.pri:hover{background:#1a7f37}
+  .page{display:none;min-height:0} .page.on{display:grid}
+  #live{grid-template-columns:1fr 330px;min-height:0}
+  #liveMain{display:flex;flex-direction:column;min-width:0;min-height:0}
+  .toolbar{display:flex;align-items:center;gap:8px;padding:6px 8px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .toolbar label{color:var(--dim);display:flex;align-items:center;gap:4px}
+  .cv{position:relative;min-height:0} .cv canvas{display:block;width:100%;height:100%}
+  #cvScore{flex:1} #cvWave{height:30%;min-height:140px;border-top:1px solid var(--line)}
+  .hint{position:absolute;right:8px;top:4px;color:var(--dim);font-size:11px;pointer-events:none;background:#ffffffcc;padding:0 4px}
+  aside{background:var(--panel);border-left:1px solid var(--line);padding:8px 10px;display:flex;flex-direction:column;gap:7px;overflow:auto}
+  .card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:6px 8px}
+  .card h2{font-size:11px;color:var(--dim);margin:0 0 4px;font-weight:600}
+  .grid{display:grid;grid-template-columns:auto 1fr;column-gap:8px;row-gap:1px}
+  .grid span:nth-child(odd){color:var(--dim)} .grid span:nth-child(even){font-variant-numeric:tabular-nums;text-align:right}
+  .big{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}
+  .mrow{display:flex;gap:10px} .mrow>div{flex:1}
+  .pill{padding:0 6px;border-radius:8px;font-size:11px}
+  .pill.relax{background:#ddf4ff;color:var(--relax)} .pill.task{background:#ffebe9;color:var(--task)} .pill.na{background:#eaeef2;color:var(--dim)}
+  .st{font-weight:600} .st.running{color:var(--accent)} .st.error{color:var(--task)} .st.done{color:var(--relax)}
+  .note{color:var(--dim);font-size:11px;line-height:1.35}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>CogState 决赛验证系统</h1>
+    <div class="tabs" id="tabs">
+      <button data-p="live" class="on">实时回放</button>
+    </div>
+    <span style="flex:1"></span>
+    <a href="/" target="_blank">波形查看器 ↗</a>
+  </header>
+
+  <!-- ================= 实时回放 ================= -->
+  <section class="page on" id="live">
+    <div id="liveMain">
+      <div class="toolbar">
+        <label>方案 <select id="lvScheme"></select></label>
+        <label>数据源 <select id="lvSource"></select></label>
+        <label>被试 <select id="lvSubject"></select></label>
+        <label>速度 <select id="lvSpeed">
+          <option value="1">1×（实时）</option><option value="5">5×</option><option value="20" selected>20×</option>
+          <option value="0">不限速</option></select></label>
+        <label>块长 <select id="lvChunk">
+          <option value="25">0.1 s</option><option value="125">0.5 s</option><option value="250" selected>1 s</option>
+          <option value="1250">5 s</option></select></label>
+        <button class="pri" id="lvStart">▶ 开始</button>
+        <button id="lvStop" disabled>■ 停止</button>
+        <span class="dim" id="lvMsg"></span>
+      </div>
+      <div class="cv" id="cvScore"><canvas id="score"></canvas>
+        <div class="hint">逐帧分数（>0 判 task）· 底色 = 真值（蓝 relax / 红 task / 灰 不评估）</div></div>
+      <div class="cv" id="cvWave"><canvas id="wave"></canvas>
+        <div class="hint">最新 6 s 感受野（1–45 Hz 因果滤波，µV）</div></div>
+    </div>
+    <aside>
+      <div class="card"><h2>运行状态</h2><div class="grid" id="lvState"></div></div>
+      <div class="card"><h2>累计指标（黑盒统一口径）</h2>
+        <div class="mrow"><div><div class="dim">bACC</div><div class="big" id="mB">–</div></div>
+          <div><div class="dim">AUC</div><div class="big" id="mA">–</div></div>
+          <div><div class="dim">F1</div><div class="big" id="mF">–</div></div></div>
+        <div class="note" id="mN"></div></div>
+      <div class="card"><h2>当前帧</h2><div class="grid" id="lvFrame"></div></div>
+      <div class="card note">数据按块喂给方案，方案只能看到已到达的样本；每 1 s 输出一帧 (t, score)。
+        真值只由 BDF + events 生成：窗口 [t−6, t] 完整落在单个 trial 内且不跨缺失段的帧才参与评估。
+        结束后结果缓存到 system/cache/runs/。</div>
+    </aside>
+  </section>
+</div>
+<script>
+const $ = s => document.querySelector(s);
+const fmt = (v, d = 3) => v == null || !isFinite(v) ? "–" : (+v).toFixed(d);
+const api = async (u, o) => { const r = await fetch(u, o); const j = await r.json(); if (!r.ok) throw new Error(j.error || r.status); return j; };
+const post = (u, b) => api(u, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(b || {})});
+
+document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => {
+  document.querySelectorAll("#tabs button").forEach(x => x.classList.toggle("on", x === b));
+  document.querySelectorAll(".page").forEach(p => p.classList.toggle("on", p.id === b.dataset.p));
+  window.dispatchEvent(new Event("resize"));
+});
+
+// ---------------------------------------------------------------- 实时回放
+let SRC = {}, RUN = null, ES = null, FR = [], META = null, DUR = 0, WAVE = null, waveBusy = false, lastWave = 0;
+
+async function initLive() {
+  const r = await api("/api/runnable");
+  SRC = r.sources;
+  $("#lvScheme").innerHTML = r.schemes.map(s => `<option value="${s.key}">${s.label}</option>`).join("");
+  $("#lvSource").innerHTML = Object.keys(SRC).map(s => `<option>${s}</option>`).join("");
+  fillSubjects();
+}
+function fillSubjects() {
+  $("#lvSubject").innerHTML = (SRC[$("#lvSource").value] || []).map(s => `<option>${s}</option>`).join("");
+}
+$("#lvSource").onchange = fillSubjects;
+
+$("#lvStart").onclick = async () => {
+  if (ES) ES.close();
+  const b = {scheme: $("#lvScheme").value, source: $("#lvSource").value, subject: $("#lvSubject").value,
+             speed: +$("#lvSpeed").value, chunk: +$("#lvChunk").value};
+  FR = []; WAVE = null; META = null; DUR = 0;
+  try { RUN = await post("/api/run", b); } catch (e) { $("#lvMsg").textContent = "启动失败：" + e.message; return; }
+  $("#lvMsg").textContent = "";
+  if (b.source === "builtin") api(`/api/subject/${b.subject}`).then(m => { META = m; DUR = m.duration; draw(); }).catch(() => {});
+  $("#lvStart").disabled = true; $("#lvStop").disabled = false;
+  ES = new EventSource(`/api/run/${RUN.id}/stream`);
+  ES.addEventListener("frames", e => { FR.push(...JSON.parse(e.data).frames); onFrames(); });
+  ES.addEventListener("status", e => { RUN = JSON.parse(e.data); showState();
+    if (!["starting", "loading", "running"].includes(RUN.status)) { ES.close(); ES = null;
+      $("#lvStart").disabled = false; $("#lvStop").disabled = true; draw(); } });
+  ES.onerror = () => { if (ES && ES.readyState === 2) { $("#lvStart").disabled = false; $("#lvStop").disabled = true; } };
+};
+$("#lvStop").onclick = () => RUN && post(`/api/run/${RUN.id}/stop`);
+
+function showState() {
+  const s = RUN.stats || {};
+  if (!DUR && s.duration) DUR = s.duration;
+  const last = FR.length ? FR[FR.length - 1].t : 0;
+  $("#lvState").innerHTML = [
+    ["任务", RUN.id], ["状态", `<span class="st ${RUN.status}">${RUN.status}</span>`],
+    ["进度", DUR ? `${last.toFixed(0)} / ${DUR.toFixed(0)} s（${(100 * last / DUR).toFixed(1)}%）` : "–"],
+    ["帧数", RUN.n_frames], ["计算耗时", fmt(s.compute_s, 1) + " s"],
+    ["实时倍率 RTF", s.rtf ? s.rtf + "×" : "–"], ["单块最大延迟", fmt(s.max_latency_ms, 1) + " ms"],
+  ].map(([k, v]) => `<span>${k}</span><span>${v}</span>`).join("") + (RUN.error ? `<span>错误</span><span class="st error">${RUN.error}</span>` : "");
+  const m = RUN.metrics || {};
+  $("#mB").textContent = fmt(m.bacc); $("#mA").textContent = fmt(m.auc); $("#mF").textContent = fmt(m.f1);
+  $("#mN").textContent = m.n ? `评估帧 ${m.n}` + (m.coverage != null ? ` · 覆盖率 ${(100 * m.coverage).toFixed(1)}%` : "") +
+    (RUN.status === "done" ? " · 最终" : " · 运行中累计") : "";
+}
+
+function onFrames() {
+  const f = FR[FR.length - 1];
+  const yl = {1: '<span class="pill task">task</span>', 0: '<span class="pill relax">relax</span>', "-1": '<span class="pill na">不评估</span>'};
+  const pred = f.score > 0 ? '<span class="pill task">task</span>' : '<span class="pill relax">relax</span>';
+  $("#lvFrame").innerHTML = [["t", f.t.toFixed(1) + " s"], ["分数", fmt(f.score, 4)], ["原始分数", fmt(f.raw, 4)],
+    ["判定", pred], ["真值", yl[f.y]], ["正确", f.y < 0 ? "–" : ((f.score > 0) === (f.y === 1) ? "✓" : "✗")]]
+    .map(([k, v]) => `<span>${k}</span><span>${v}</span>`).join("");
+  draw();
+  const now = performance.now();
+  if (RUN && RUN.source === "builtin" && !waveBusy && now - lastWave > 400) {
+    waveBusy = true; lastWave = now;
+    api(`/api/window/${RUN.subject}?end=${f.t}&seconds=6`).then(w => { WAVE = w; drawWave(); })
+      .catch(() => {}).finally(() => waveBusy = false);
+  }
+}
+
+function ctx2d(id) {
+  const c = $(id), r = c.getBoundingClientRect(), dpr = devicePixelRatio || 1;
+  c.width = r.width * dpr; c.height = r.height * dpr;
+  const g = c.getContext("2d"); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, r.width, r.height];
+}
+function draw() {
+  const [g, W, H] = ctx2d("#score");
+  const L = 44, R = 10, T = 10, B = 22, w = W - L - R, h = H - T - B;
+  const t1 = Math.max(DUR, FR.length ? FR[FR.length - 1].t : 60, 60);
+  const X = t => L + w * t / t1;
+  let lim = 1;
+  for (const f of FR) lim = Math.max(lim, Math.abs(f.score));
+  lim = Math.min(lim * 1.05, 50);
+  const Y = v => T + h / 2 - (h / 2) * Math.max(-1, Math.min(1, v / lim));
+  if (META) {
+    for (const tr of META.trials) { g.fillStyle = tr.label ? "#ffebe9" : "#ddf4ff"; g.fillRect(X(tr.start), T, X(tr.end) - X(tr.start), h); }
+    g.fillStyle = "#8c959f55";
+    for (const b of META.bad_intervals) g.fillRect(X(b.start), T, Math.max(1, X(b.end) - X(b.start)), h);
+  } else {
+    for (const f of FR) { if (f.y < 0) continue; g.fillStyle = f.y ? "#ffebe9" : "#ddf4ff"; g.fillRect(X(f.t - 1), T, X(f.t) - X(f.t - 1) + .5, h); }
+  }
+  g.strokeStyle = "#d0d7de"; g.strokeRect(L, T, w, h);
+  g.strokeStyle = "#656d76"; g.setLineDash([4, 3]); g.beginPath(); g.moveTo(L, Y(0)); g.lineTo(L + w, Y(0)); g.stroke(); g.setLineDash([]);
+  g.fillStyle = "#656d76"; g.font = "11px Segoe UI"; g.textAlign = "right";
+  for (const v of [lim, lim / 2, 0, -lim / 2, -lim]) g.fillText(v.toFixed(1), L - 4, Y(v) + 4);
+  g.textAlign = "center";
+  const step = [30, 60, 120, 300, 600].find(s => t1 / s <= 12) || 600;
+  for (let t = 0; t <= t1; t += step) g.fillText(t + "s", X(t), H - 6);
+  g.strokeStyle = "#1f2328"; g.lineWidth = 1.2; g.beginPath();
+  let prev = null;
+  for (const f of FR) { if (prev != null && f.t - prev > 1.5) g.moveTo(X(f.t), Y(f.score)); else g.lineTo(X(f.t), Y(f.score)); prev = f.t; }
+  g.stroke(); g.lineWidth = 1;
+  if (FR.length) { const f = FR[FR.length - 1]; g.strokeStyle = "#bf8700"; g.beginPath(); g.moveTo(X(f.t), T); g.lineTo(X(f.t), T + h); g.stroke(); }
+}
+function drawWave() {
+  const [g, W, H] = ctx2d("#wave");
+  if (!WAVE) return;
+  const x = WAVE.filtered, n = x.length, L = 44, R = 10, T = 8, B = 18, w = W - L - R, h = H - T - B;
+  let lim = 1e-9; for (const v of x) lim = Math.max(lim, Math.abs(v));
+  g.strokeStyle = "#d0d7de"; g.strokeRect(L, T, w, h);
+  g.fillStyle = "#656d76"; g.font = "11px Segoe UI"; g.textAlign = "right";
+  g.fillText(lim.toFixed(0), L - 4, T + 10); g.fillText((-lim).toFixed(0), L - 4, T + h);
+  g.textAlign = "center"; g.fillText(`${WAVE.start.toFixed(1)} s`, L + 20, H - 4); g.fillText(`${WAVE.end.toFixed(1)} s`, L + w - 20, H - 4);
+  g.strokeStyle = WAVE.bad ? "#8c959f" : "#0969da"; g.beginPath();
+  for (let i = 0; i < n; i++) { const px = L + w * i / (n - 1), py = T + h / 2 - (h / 2) * x[i] / lim; i ? g.lineTo(px, py) : g.moveTo(px, py); }
+  g.stroke();
+}
+window.addEventListener("resize", () => { draw(); drawWave(); });
+initLive().then(draw).catch(e => $("#lvMsg").textContent = "初始化失败：" + e.message);
+</script>
+</body>
+</html>
