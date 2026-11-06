@@ -67,15 +67,19 @@ def _closure(f):
     return cv
 
 
-def train_bundle(out_path=BUNDLE, subs=None):
+def train_bundle(out_path=BUNDLE, subs=None, files=None):
+    """files：可选 {被试名: 特征 npz 路径}（F/y/t，同 sliding1 格式），用于训练任意数据源。"""
     _paths()
     import loso as L
     from multiscale import fit_mlp
     dev = L.dev
-    subs = list(subs) if subs else sorted(p.stem[4:] for p in SLID.glob("sub-*.npz"))
+    if files is None:
+        subs = list(subs) if subs else sorted(p.stem[4:] for p in SLID.glob("sub-*.npz"))
+        files = {q: SLID / f"sub-{q}.npz" for q in subs}
+    subs = list(files)
     Xs, ys = [], []
     for q in subs:
-        S = np.load(SLID / f"sub-{q}.npz")
+        S = np.load(files[q])
         o = np.argsort(S["t"], kind="stable")
         X = torch.tensor(np.nan_to_num(S["F"][o].astype(np.float32)), device=dev)
         parts = []

@@ -23,6 +23,9 @@ vis/viewer.html。BDF 读取结果按被试缓存在内存中，避免重复解�
   POST /api/run/<id>/stop        -> 停止回放
   POST /api/job/eval             -> 批量评估 {schemes:[...], source, subjects?, mode: auto|live|cache}，写 reports/*.md
   POST /api/job/compliance       -> 合规检查 {scheme, source, subject}，写 reports/*.md
+  POST /api/job/import           -> 导入数据 {name, path}：复制被试目录到 data_import/<name>/
+  POST /api/job/train            -> 重训 {name, items:[[source, sid], ...]}，产出 models/<name>.pt 并注册为 m_<name>
+  GET  /api/models               -> 已训练模型
   GET  /api/jobs                 -> 全部后台任务
   GET  /api/job/<id>?logs_from=  -> 任务进度、日志、结果
   POST /api/job/<id>/stop        -> 取消任务
@@ -56,7 +59,7 @@ from scipy.signal import butter, sosfilt, welch  # noqa: E402
 
 import model_eval  # noqa: E402  当前方案（src/infer.py）推理与评估
 import schemes  # noqa: E402  方案注册表（可切换 / 对比）
-from system import compliance, jobs, report, runner  # noqa: E402  （schemes 已把 ROOT 加入 sys.path）
+from system import compliance, jobs, report, runner, train  # noqa: E402  （schemes 已把 ROOT 加入 sys.path）
 
 ROOT = Path(__file__).resolve().parents[1]
 DATASET = ROOT / "EEG_dataset"
@@ -408,6 +411,26 @@ class Handler(BaseHTTPRequestHandler):
                 j = jobs.Job("compliance", {"scheme": key, "source": src, "subject": sid}, comp)
                 self._json(j.brief())
                 return
+            if path == "/api/job/import":
+                b = self._body()
+                name, src = str(b["name"]), str(b["path"])
+                runner.dataset._check(name)
+                if name == "builtin":
+                    raise ValueError("名称不能为 builtin")
+                j = jobs.Job("import", {"name": name, "path": src}, lambda job: train.import_dir(job, name, src))
+                self._json(j.brief())
+                return
+            if path == "/api/job/train":
+                b = self._body()
+                name = str(b["name"])
+                items = [(str(s), str(q)) for s, q in b.get("items") or []]
+                if not items:
+                    raise ValueError("未选择训练被试")
+                for s, q in items:
+                    runner.dataset.paths(s, q)
+                j = jobs.Job("train", {"name": name, "n": len(items)}, lambda job: train.train(job, name, items))
+                self._json(j.brief())
+                return
             m = re.fullmatch(r"/api/job/(j\d+)/stop", path)
             if m and m.group(1) in jobs.JOBS:
                 jobs.JOBS[m.group(1)].cancel.set()
@@ -431,6 +454,9 @@ class Handler(BaseHTTPRequestHandler):
             if path == "/api/runnable":
                 self._json({"schemes": runner.runnable(),
                             "sources": {s: runner.dataset.subjects(s) for s in runner.dataset.sources()}})
+                return
+            if path == "/api/models":
+                self._json({"models": train.models()})
                 return
             if path in ("/system", "/system.html"):
                 self._send(200, SYSTEM_PAGE.read_bytes(), "text/html; charset=utf-8")

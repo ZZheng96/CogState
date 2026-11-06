@@ -62,6 +62,7 @@
       <button data-p="live" class="on">实时回放</button>
       <button data-p="eval">批量评估</button>
       <button data-p="comp">合规检查</button>
+      <button data-p="train">数据与训练</button>
     </div>
     <span style="flex:1"></span>
     <a href="/" target="_blank">波形查看器 ↗</a>
@@ -137,6 +138,30 @@
         6 s 感受野、历史依赖（信息项）、实时性。</div>
     </div>
     <div class="main" id="cpOut"><div class="dim">选择方案后开始检查。</div></div>
+  </section>
+
+  <!-- ================= 数据与训练 ================= -->
+  <section class="page" id="train">
+    <div class="side">
+      <div class="card"><h2>导入数据</h2>
+        <label>名称 <input id="imName" placeholder="如 final_day1" style="flex:1"></label>
+        <label>路径 <input id="imPath" placeholder="含被试子目录（.bdf + *_events.csv）的目录" style="flex:1"></label>
+        <div style="display:flex;gap:6px"><button class="pri" id="imStart">导入</button><button id="imStop" disabled>■ 取消</button></div>
+        <div class="bar"><div id="imBar"></div></div><div class="note" id="imMsg"></div>
+        <div class="log" id="imLog" style="height:80px"></div></div>
+      <div class="card"><h2>重训</h2>
+        <label>模型名 <input id="trName" placeholder="如 final_v1" style="flex:1"></label>
+        <div style="display:flex;gap:6px"><button class="pri" id="trStart">▶ 训练</button><button id="trStop" disabled>■ 取消</button></div>
+        <div class="bar"><div id="trBar"></div></div><div class="note" id="trMsg"></div></div>
+      <div class="log" id="trLog"></div>
+      <div class="note">训练流程同 test/17_compliant/streaming.py：878 维特征 × 多尺度因果 z-score，LR + 3 种子 MLP。
+        产出 models/&lt;名称&gt;.pt，自动注册为 m_&lt;名称&gt;，可直接在回放、评估、合规页使用。
+        注意：用于评估的被试若参与了训练，指标是训练集指标。</div>
+    </div>
+    <div class="main">
+      <h3>训练集被试</h3><div id="trData"></div>
+      <h3>已训练模型</h3><div id="trModels"></div>
+    </div>
   </section>
 </div>
 <script>
@@ -356,8 +381,38 @@ function showComp(r) {
   $("#cpOut").innerHTML = h;
 }
 
+// ---------------------------------------------------------------- 数据与训练
+async function initTrain() {
+  const [rn, md] = await Promise.all([api("/api/runnable"), api("/api/models")]);
+  let h = "";
+  for (const [src, subs] of Object.entries(rn.sources)) {
+    h += `<div class="grp"><label><input type="checkbox" class="trAll" data-src="${src}"> ${src}（${subs.length} 人）</label></div>
+      <div class="chk" style="display:flex;flex-wrap:wrap;gap:2px 10px;margin-bottom:8px">` +
+      subs.map(s => `<label><input type="checkbox" class="trSub" data-src="${src}" value="${s}"> ${s}</label>`).join("") + "</div>";
+  }
+  $("#trData").innerHTML = h;
+  document.querySelectorAll(".trAll").forEach(a => a.onchange = () =>
+    document.querySelectorAll(`.trSub[data-src="${a.dataset.src}"]`).forEach(c => c.checked = a.checked));
+  $("#trModels").innerHTML = md.models.length ? `<table class="t"><tr><th>模型</th><th>方案键</th><th>被试数</th><th>训练集 bACC</th><th>创建时间</th><th>文件</th></tr>` +
+    md.models.map(m => `<tr><td>${m.name}</td><td>${m.scheme}</td><td>${m.n_subjects}</td><td>${fmt(m.train_bacc, 4)}</td><td>${m.created || "–"}</td><td>${m.bundle}</td></tr>`).join("") + "</table>"
+    : '<div class="dim">暂无</div>';
+}
+const refreshAll = () => Promise.all([initLive(), initJobs(), initTrain()]).catch(e => alert(e.message));
+
+$("#imStart").onclick = async () => {
+  const b = {name: $("#imName").value.trim(), path: $("#imPath").value.trim()};
+  try { watchJob(await post("/api/job/import", b), "im", refreshAll); } catch (e) { $("#imMsg").textContent = "启动失败：" + e.message; }
+};
+$("#trStart").onclick = async () => {
+  const items = [...document.querySelectorAll(".trSub:checked")].map(c => [c.dataset.src, c.value]);
+  if (!items.length) return $("#trMsg").textContent = "请勾选训练被试";
+  const b = {name: $("#trName").value.trim(), items};
+  try { watchJob(await post("/api/job/train", b), "tr", refreshAll); } catch (e) { $("#trMsg").textContent = "启动失败：" + e.message; }
+};
+
 initLive().then(draw).catch(e => $("#lvMsg").textContent = "初始化失败：" + e.message);
 initJobs().catch(e => $("#evMsg").textContent = "初始化失败：" + e.message);
+initTrain().catch(e => $("#trMsg").textContent = "初始化失败：" + e.message);
 </script>
 </body>
 </html>
