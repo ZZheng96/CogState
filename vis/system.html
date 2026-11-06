@@ -38,6 +38,20 @@
   .pill.relax{background:#ddf4ff;color:var(--relax)} .pill.task{background:#ffebe9;color:var(--task)} .pill.na{background:#eaeef2;color:var(--dim)}
   .st{font-weight:600} .st.running{color:var(--accent)} .st.error{color:var(--task)} .st.done{color:var(--relax)}
   .note{color:var(--dim);font-size:11px;line-height:1.35}
+  #eval,#comp{grid-template-columns:300px 1fr;min-height:0}
+  .side{background:var(--panel);border-right:1px solid var(--line);padding:8px 10px;display:flex;flex-direction:column;gap:7px;overflow:auto}
+  .side label{display:flex;align-items:center;gap:6px}
+  .main{padding:10px 14px;overflow:auto;min-width:0}
+  .chk{display:flex;flex-direction:column;gap:2px;max-height:260px;overflow:auto}
+  .chk label{align-items:flex-start} .chk .grp{color:var(--dim);font-size:11px;margin-top:4px}
+  .bar{height:6px;background:var(--line2);border-radius:3px;overflow:hidden} .bar>div{height:100%;background:var(--accent);width:0}
+  .log{font:11px/1.35 Consolas,monospace;background:#fff;border:1px solid var(--line);border-radius:5px;padding:4px 6px;
+    height:180px;overflow:auto;white-space:pre-wrap}
+  table.t{border-collapse:collapse;font-variant-numeric:tabular-nums;margin-bottom:12px}
+  table.t th,table.t td{border:1px solid var(--line2);padding:2px 8px;text-align:right}
+  table.t th{background:var(--panel);font-weight:600} table.t td:first-child,table.t th:first-child{text-align:left}
+  .ok{color:var(--accent);font-weight:600} .ng{color:var(--task);font-weight:600} .lo{color:var(--task)}
+  h3{font-size:13px;margin:6px 0}
 </style>
 </head>
 <body>
@@ -46,6 +60,8 @@
     <h1>CogState 决赛验证系统</h1>
     <div class="tabs" id="tabs">
       <button data-p="live" class="on">实时回放</button>
+      <button data-p="eval">批量评估</button>
+      <button data-p="comp">合规检查</button>
     </div>
     <span style="flex:1"></span>
     <a href="/" target="_blank">波形查看器 ↗</a>
@@ -85,6 +101,42 @@
         真值只由 BDF + events 生成：窗口 [t−6, t] 完整落在单个 trial 内且不跨缺失段的帧才参与评估。
         结束后结果缓存到 system/cache/runs/。</div>
     </aside>
+  </section>
+
+  <!-- ================= 批量评估 ================= -->
+  <section class="page" id="eval">
+    <div class="side">
+      <div class="card"><h2>方案（可多选对比）</h2><div class="chk" id="evSchemes"></div></div>
+      <div class="card"><h2>数据</h2>
+        <label>数据源 <select id="evSource"></select></label>
+        <label>被试 <input id="evSubs" placeholder="留空=全部，如 001,005-010" style="flex:1"></label></div>
+      <div class="card"><h2>取数模式</h2>
+        <label><input type="radio" name="evMode" value="auto" checked> auto：缓存优先，缺失再在线计算</label>
+        <label><input type="radio" name="evMode" value="live"> live：全部重新流式计算</label>
+        <label><input type="radio" name="evMode" value="cache"> cache：只用已有结果</label></div>
+      <div style="display:flex;gap:6px"><button class="pri" id="evStart">▶ 开始评估</button><button id="evStop" disabled>■ 取消</button></div>
+      <div class="card"><h2>进度</h2><div class="bar"><div id="evBar"></div></div><div class="note" id="evMsg"></div></div>
+      <div class="log" id="evLog"></div>
+      <div class="note">指标由 system/evaluate.py 重新计算：方案只提供 (t, score)，标签由 BDF + events 独立生成。
+        “来源”列标明分数取自 runner 缓存、离线 npz 还是本次在线计算。</div>
+    </div>
+    <div class="main" id="evOut"><div class="dim">选择方案后开始评估。</div></div>
+  </section>
+
+  <!-- ================= 合规检查 ================= -->
+  <section class="page" id="comp">
+    <div class="side">
+      <div class="card"><h2>检查对象</h2>
+        <label>方案 <select id="cpScheme" style="flex:1"></select></label>
+        <label>数据源 <select id="cpSource"></select></label>
+        <label>被试 <select id="cpSubject"></select></label></div>
+      <div style="display:flex;gap:6px"><button class="pri" id="cpStart">▶ 开始检查</button><button id="cpStop" disabled>■ 取消</button></div>
+      <div class="card"><h2>进度</h2><div class="bar"><div id="cpBar"></div></div><div class="note" id="cpMsg"></div></div>
+      <div class="log" id="cpLog"></div>
+      <div class="note">黑盒检查（取前 900 s）：分块一致性、前缀一致性（未来数据不影响过去输出）、输出时延、
+        6 s 感受野、历史依赖（信息项）、实时性。</div>
+    </div>
+    <div class="main" id="cpOut"><div class="dim">选择方案后开始检查。</div></div>
   </section>
 </div>
 <script>
@@ -212,7 +264,100 @@ function drawWave() {
   g.stroke();
 }
 window.addEventListener("resize", () => { draw(); drawWave(); });
+
+// ---------------------------------------------------------------- 后台任务（评估 / 合规）
+const ORIGIN = {runner_cache: "runner 缓存", offline: "离线 npz", live: "在线计算", missing: "缺失"};
+function parseSubs(s) {
+  const out = [];
+  for (const p of s.split(/[,，\s]+/).filter(Boolean)) {
+    const m = p.match(/^(\d+)-(\d+)$/);
+    if (m) for (let i = +m[1]; i <= +m[2]; i++) out.push(String(i).padStart(3, "0"));
+    else out.push(/^\d+$/.test(p) ? p.padStart(3, "0") : p);
+  }
+  return out;
+}
+function watchJob(job, pre, onDone) {
+  let from = 0;
+  const btnS = $(`#${pre}Start`), btnX = $(`#${pre}Stop`), log = $(`#${pre}Log`);
+  btnS.disabled = true; btnX.disabled = false; log.textContent = "";
+  btnX.onclick = () => post(`/api/job/${job.id}/stop`);
+  const tick = async () => {
+    let j;
+    try { j = await api(`/api/job/${job.id}?logs_from=${from}`); } catch (e) { $(`#${pre}Msg`).textContent = e.message; return; }
+    from = j.n_logs;
+    if (j.logs.length) { log.textContent += j.logs.join("\n") + "\n"; log.scrollTop = log.scrollHeight; }
+    $(`#${pre}Bar`).style.width = (100 * j.progress).toFixed(1) + "%";
+    $(`#${pre}Msg`).innerHTML = `${j.id} · <span class="st ${j.status}">${j.status}</span> · ${(100 * j.progress).toFixed(1)}% · ${j.elapsed} s` +
+      (j.error ? `<br><span class="ng">${j.error}</span>` : "");
+    if (j.status === "running") return setTimeout(tick, 1000);
+    btnS.disabled = false; btnX.disabled = true;
+    if (j.result) onDone(j.result);
+  };
+  tick();
+}
+
+async function initJobs() {
+  const [sc, rn] = await Promise.all([api("/api/schemes"), api("/api/runnable")]);
+  const run = new Set(rn.schemes.map(s => s.key));
+  const items = sc.schemes.map(s => ({key: s.key, label: s.label, group: s.group || "离线", live: run.has(s.key)}));
+  for (const s of rn.schemes) if (!items.find(i => i.key === s.key)) items.push({key: s.key, label: s.label, group: "仅在线", live: true});
+  let g = null, h = "";
+  for (const i of items) {
+    if (i.group !== g) { g = i.group; h += `<div class="grp">${g}</div>`; }
+    h += `<label><input type="checkbox" value="${i.key}" ${i.key === "current" ? "checked" : ""}>
+      <span>${i.label}${i.live ? ' <span class="pill relax">可在线</span>' : ""}</span></label>`;
+  }
+  $("#evSchemes").innerHTML = h;
+  const srcOpts = Object.keys(rn.sources).map(s => `<option>${s}</option>`).join("");
+  $("#evSource").innerHTML = srcOpts; $("#cpSource").innerHTML = srcOpts;
+  $("#cpScheme").innerHTML = rn.schemes.map(s => `<option value="${s.key}">${s.label}</option>`).join("");
+  const fill = () => $("#cpSubject").innerHTML = (rn.sources[$("#cpSource").value] || []).map(s => `<option>${s}</option>`).join("");
+  $("#cpSource").onchange = fill; fill();
+}
+
+$("#evStart").onclick = async () => {
+  const b = {schemes: [...document.querySelectorAll("#evSchemes input:checked")].map(i => i.value),
+             source: $("#evSource").value, subjects: parseSubs($("#evSubs").value),
+             mode: document.querySelector("input[name=evMode]:checked").value};
+  try { watchJob(await post("/api/job/eval", b), "ev", showEval); } catch (e) { $("#evMsg").textContent = "启动失败：" + e.message; }
+};
+function showEval(r) {
+  const S = Object.entries(r.schemes);
+  let h = `<h3>汇总（数据源 ${r.source} · 模式 ${r.mode} · ${r.subjects.length} 人）</h3>
+    <table class="t"><tr><th>方案</th><th>bACC</th><th>AUC</th><th>F1</th><th>覆盖率</th><th>bACC≥0.9</th><th>人数</th><th>分数来源</th></tr>`;
+  for (const [k, s] of S) {
+    const m = s.mean || {};
+    const o = Object.entries(s.origin).filter(([, v]) => v).map(([a, v]) => `${ORIGIN[a]} ${v}`).join("，");
+    h += `<tr><td>${s.label}<div class="dim">${k}</div></td><td>${fmt(m.bacc, 4)}</td><td>${fmt(m.auc, 4)}</td><td>${fmt(m.f1, 4)}</td>
+      <td>${m.coverage != null ? (100 * m.coverage).toFixed(1) + "%" : "–"}</td><td>${m.n_ge_09 ?? "–"}</td><td>${m.n_subjects ?? 0}</td><td>${o}</td></tr>`;
+  }
+  h += "</table>";
+  if (r.report) h += `<div class="note">报告已写入 ${r.report}</div>`;
+  h += `<h3>逐被试 bACC / AUC</h3><table class="t"><tr><th>被试</th>${S.map(([k]) => `<th colspan="2">${k}</th>`).join("")}</tr><tr><th></th>${S.map(() => "<th>bACC</th><th>AUC</th>").join("")}</tr>`;
+  const idx = S.map(([, s]) => Object.fromEntries(s.rows.map(x => [x.subject, x])));
+  for (const sid of r.subjects) {
+    h += `<tr><td>${sid}</td>` + idx.map(d => { const x = d[sid];
+      return x ? `<td class="${x.bacc < 0.7 ? "lo" : ""}">${fmt(x.bacc)}</td><td>${fmt(x.auc)}</td>` : "<td>–</td><td>–</td>"; }).join("") + "</tr>";
+  }
+  $("#evOut").innerHTML = h + "</table>";
+}
+
+$("#cpStart").onclick = async () => {
+  const b = {scheme: $("#cpScheme").value, source: $("#cpSource").value, subject: $("#cpSubject").value};
+  try { watchJob(await post("/api/job/compliance", b), "cp", showComp); } catch (e) { $("#cpMsg").textContent = "启动失败：" + e.message; }
+};
+function showComp(r) {
+  const tag = p => p === true ? '<span class="ok">通过</span>' : p === false ? '<span class="ng">不通过</span>' : '<span class="dim">信息</span>';
+  let h = `<h3>${r.label}（${r.scheme}）· ${r.source}/${r.subject} · 前 ${r.seconds} s · 总体 ${tag(r.pass)}</h3>
+    <table class="t"><tr><th>检查项</th><th>结果</th><th style="text-align:left">说明</th></tr>`;
+  for (const it of r.items) h += `<tr><td>${it.name}</td><td>${tag(it.pass)}</td><td style="text-align:left">${it.detail}</td></tr>`;
+  h += "</table>";
+  if (r.report) h += `<div class="note">报告已写入 ${r.report}</div>`;
+  $("#cpOut").innerHTML = h;
+}
+
 initLive().then(draw).catch(e => $("#lvMsg").textContent = "初始化失败：" + e.message);
+initJobs().catch(e => $("#evMsg").textContent = "初始化失败：" + e.message);
 </script>
 </body>
 </html>

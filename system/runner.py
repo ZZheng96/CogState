@@ -10,6 +10,7 @@ import itertools
 import threading
 import time
 from pathlib import Path
+from typing import Callable
 
 import numpy as np
 
@@ -19,27 +20,37 @@ FS = 250
 RUNNABLE: dict[str, dict] = {}
 
 
-def register(key: str, *, label: str, bundle: Path, detrend: float | None = 1200, dwell: int = 300,
-             post: bool = True) -> None:
-    RUNNABLE[key] = {"key": key, "label": label, "bundle": Path(bundle), "detrend": detrend,
-                     "dwell": dwell, "post": post}
+def register(key: str, *, label: str, bundle: Path | None = None, detrend: float | None = 1200,
+             dwell: int = 300, post: bool = True, factory: Callable[[], object] | None = None) -> None:
+    """bundle 方案：StreamingInference + PostProcessor；或 factory() 返回任意满足 Decoder 协议的对象。"""
+    RUNNABLE[key] = {"key": key, "label": label, "bundle": Path(bundle) if bundle else None,
+                     "detrend": detrend, "dwell": dwell, "post": post, "factory": factory}
 
 
-register("current", label="当前方案 src/infer.py（E17 + 去趋势 + HMM）",
-         bundle=ROOT / "test" / "17_compliant" / "model_bundle.pt")
-register("e17_raw", label="E17 原始分数（无后处理）",
-         bundle=ROOT / "test" / "17_compliant" / "model_bundle.pt", post=False)
+def _rel(p: Path | None) -> str | None:
+    if p is None:
+        return None
+    return str(p.relative_to(ROOT)) if p.is_relative_to(ROOT) else str(p)
 
 
 def runnable() -> list[dict]:
-    return [{"key": k, "label": v["label"], "bundle": str(v["bundle"].relative_to(ROOT))
-             if v["bundle"].is_relative_to(ROOT) else str(v["bundle"])} for k, v in RUNNABLE.items()]
+    return [{"key": k, "label": v["label"], "bundle": _rel(v["bundle"])} for k, v in RUNNABLE.items()]
+
+
+def version(key: str) -> str:
+    """方案版本指纹（bundle 修改时间），缓存失效判断用。"""
+    b = RUNNABLE[key]["bundle"]
+    return f"{b.stat().st_mtime_ns}" if b and b.exists() else "factory"
 
 
 class Pipeline:
     """bundle 推理 + 因果后处理，整体满足 Decoder 协议。"""
 
     _bundles: dict[str, object] = {}
+
+    def __new__(cls, key: str):
+        f = RUNNABLE[key]["factory"]
+        return f() if f else super().__new__(cls)
 
     def __init__(self, key: str):
         import torch
@@ -97,16 +108,86 @@ class FileReplay:
             yield i, self.x[i:j]
 
 
+def run_signal(key: str, x: np.ndarray, chunk: int = 250, pipe=None) -> dict:
+    """同步把信号按块喂完（不限速），返回 t / score / raw / fed（输出该帧时已喂入的样本数）。"""
+    pipe = pipe or Pipeline(key)
+    pipe.reset()
+    rows, fed = [], []
+    for i, c in FileReplay(x, chunk, 0):
+        for r in pipe.update(c):
+            rows.append(r)
+            fed.append(i + len(c))
+    a = np.asarray(rows, dtype=np.float64).reshape(-1, 3)
+    return {"t": a[:, 0], "score": a[:, 1].astype(np.float32), "raw": a[:, 2].astype(np.float32),
+            "fed": np.asarray(fed, np.int64)}
+
+
 def run_file(key: str, source: str, sid: str, chunk: int = 250) -> dict:
     """同步跑完一条记录（不限速），返回 t / score / raw。"""
-    pipe = Pipeline(key)
-    rows = [r for _, c in FileReplay(load_signal_v(source, sid), chunk, 0) for r in pipe.update(c)]
-    a = np.asarray(rows, dtype=np.float64).reshape(-1, 3)
-    return {"t": a[:, 0], "score": a[:, 1].astype(np.float32), "raw": a[:, 2].astype(np.float32)}
+    return run_signal(key, load_signal_v(source, sid), chunk)
 
 
 def cache_path(key: str, source: str, sid: str) -> Path:
     return CACHE / "runs" / key / source / f"{sid}.npz"
+
+
+def save_cache(key: str, source: str, sid: str, t, score, raw) -> None:
+    f = cache_path(key, source, sid)
+    f.parent.mkdir(parents=True, exist_ok=True)
+    np.savez(f, t=np.asarray(t, np.float64), score=np.asarray(score, np.float32),
+             raw=np.asarray(raw, np.float32), version=version(key))
+
+
+def load_cache(key: str, source: str, sid: str) -> dict | None:
+    f = cache_path(key, source, sid)
+    if not f.exists():
+        return None
+    z = np.load(f)
+    if "version" not in z or str(z["version"]) != version(key):
+        return None
+    return {"t": z["t"], "score": z["score"], "raw": z["raw"]}
+
+
+def get_or_run(key: str, source: str, sid: str, force: bool = False) -> tuple[dict, bool]:
+    """返回 (结果, 是否新算)。新算时占用 GPU 锁并写缓存。"""
+    if not force:
+        d = load_cache(key, source, sid)
+        if d is not None:
+            return d, False
+    with _gpu:
+        d = run_file(key, source, sid)
+    save_cache(key, source, sid, d["t"], d["score"], d["raw"])
+    return d, True
+
+
+class NonCausalDemo:
+    """【违规反例】在 E17 原始分数上做 ±5 帧居中平滑：每帧要等 5 s 后的数据才输出。
+    仅用于验证合规检查能识别"使用未来数据"。"""
+
+    def __init__(self, half: int = 5):
+        self.base, self.half = Pipeline("e17_raw"), half
+        self.reset()
+
+    def reset(self) -> None:
+        self.base.reset()
+        self.q: list[tuple[float, float]] = []
+
+    def update(self, chunk):
+        out = []
+        for t, s, _ in self.base.update(chunk):
+            self.q.append((t, s))
+            if len(self.q) >= 2 * self.half + 1:
+                c = self.q[-self.half - 1]
+                v = float(np.mean([q[1] for q in self.q[-2 * self.half - 1:]]))
+                out.append((c[0], v, c[1]))
+        return out
+
+
+register("current", label="当前方案 src/infer.py（E17 + 去趋势 + HMM）",
+         bundle=ROOT / "test" / "17_compliant" / "model_bundle.pt")
+register("e17_raw", label="E17 原始分数（无后处理）",
+         bundle=ROOT / "test" / "17_compliant" / "model_bundle.pt", post=False)
+register("demo_noncausal", label="【反例】E17 + 双向平滑（违规，合规检查演示）", factory=NonCausalDemo)
 
 
 _ids = itertools.count(1)
@@ -182,11 +263,8 @@ class Run:
                         self.cond.notify_all()
             stopped = self.src.stop.is_set()
             if not stopped and self.frames:
-                f = cache_path(self.key, self.source, self.sid)
-                f.parent.mkdir(parents=True, exist_ok=True)
-                np.savez(f, t=np.array([r["t"] for r in self.frames]),
-                         score=np.array([r["score"] for r in self.frames], np.float32),
-                         raw=np.array([r["raw"] for r in self.frames], np.float32))
+                save_cache(self.key, self.source, self.sid, [r["t"] for r in self.frames],
+                           [r["score"] for r in self.frames], [r["raw"] for r in self.frames])
             final = evaluate.subject(self.source, self.sid, np.array([r["t"] for r in self.frames]),
                                      np.array([r["score"] for r in self.frames])) if self.frames else None
             self._push(status="stopped" if stopped else "done", metrics=final)

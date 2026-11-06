@@ -21,6 +21,11 @@ vis/viewer.html。BDF 读取结果按被试缓存在内存中，避免重复解�
   GET  /api/runs                 -> 全部回放任务
   GET  /api/run/<id>/stream      -> SSE：frames（逐帧 t/score/raw/y）、status（状态+累计指标+延迟）
   POST /api/run/<id>/stop        -> 停止回放
+  POST /api/job/eval             -> 批量评估 {schemes:[...], source, subjects?, mode: auto|live|cache}，写 reports/*.md
+  POST /api/job/compliance       -> 合规检查 {scheme, source, subject}，写 reports/*.md
+  GET  /api/jobs                 -> 全部后台任务
+  GET  /api/job/<id>?logs_from=  -> 任务进度、日志、结果
+  POST /api/job/<id>/stop        -> 取消任务
 
 用法：
   python vis/viewer_server.py
@@ -51,7 +56,7 @@ from scipy.signal import butter, sosfilt, welch  # noqa: E402
 
 import model_eval  # noqa: E402  当前方案（src/infer.py）推理与评估
 import schemes  # noqa: E402  方案注册表（可切换 / 对比）
-from system import runner  # noqa: E402  流式回放运行器（schemes 已把 ROOT 加入 sys.path）
+from system import compliance, jobs, report, runner  # noqa: E402  （schemes 已把 ROOT 加入 sys.path）
 
 ROOT = Path(__file__).resolve().parents[1]
 DATASET = ROOT / "EEG_dataset"
@@ -302,6 +307,14 @@ def start_pred(sid: str) -> None:
     threading.Thread(target=run, daemon=True).start()
 
 
+def _np_default(o):
+    if isinstance(o, np.generic):
+        return o.item()
+    if isinstance(o, np.ndarray):
+        return o.tolist()
+    raise TypeError(type(o).__name__)
+
+
 class Handler(BaseHTTPRequestHandler):
     server_version = "CogStateViewer/1.0"
 
@@ -317,7 +330,8 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def _json(self, obj, code: int = 200):
-        self._send(code, json.dumps(obj, ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8")
+        self._send(code, json.dumps(obj, ensure_ascii=False, default=_np_default).encode("utf-8"),
+                   "application/json; charset=utf-8")
 
     def _body(self) -> dict:
         n = int(self.headers.get("Content-Length") or 0)
@@ -357,6 +371,48 @@ class Handler(BaseHTTPRequestHandler):
                                str(b["subject"]), float(b.get("speed", 1.0)), int(b.get("chunk", 250)))
                 self._json(r.info())
                 return
+            if path == "/api/job/eval":
+                b = self._body()
+                keys = [str(k) for k in b.get("schemes") or []]
+                if not keys:
+                    raise ValueError("未选择方案")
+                src, mode = str(b.get("source", "builtin")), str(b.get("mode", "auto"))
+                if mode not in ("auto", "live", "cache"):
+                    raise ValueError("mode 须为 auto/live/cache")
+                subs = [str(s) for s in b.get("subjects") or []] or None
+                labels = {s["key"]: s["label"] for s in schemes.info()}
+                labels.update({s["key"]: s["label"] for s in runner.runnable()})
+                for k in keys:
+                    if k not in labels:
+                        raise ValueError(f"未知方案：{k}")
+
+                def offline(k, sid):
+                    return schemes.load(k, sid) if k in schemes.REGISTRY else None
+
+                j = jobs.Job("eval", {"schemes": keys, "source": src, "subjects": subs, "mode": mode},
+                             lambda job: report.evaluate_schemes(job, keys, src, subs, mode, offline, labels))
+                self._json(j.brief())
+                return
+            if path == "/api/job/compliance":
+                b = self._body()
+                key, src, sid = str(b["scheme"]), str(b.get("source", "builtin")), str(b["subject"])
+                if key not in runner.RUNNABLE:
+                    raise ValueError(f"方案 {key} 不可在线运行")
+                runner.dataset.paths(src, sid)
+
+                def comp(job):
+                    res = compliance.check(key, src, sid, job)
+                    res["report"] = report.write_compliance_md(res)
+                    return res
+
+                j = jobs.Job("compliance", {"scheme": key, "source": src, "subject": sid}, comp)
+                self._json(j.brief())
+                return
+            m = re.fullmatch(r"/api/job/(j\d+)/stop", path)
+            if m and m.group(1) in jobs.JOBS:
+                jobs.JOBS[m.group(1)].cancel.set()
+                self._json(jobs.JOBS[m.group(1)].brief())
+                return
             m = re.fullmatch(r"/api/run/(r\d+)/stop", path)
             if m and m.group(1) in runner.RUNS:
                 runner.RUNS[m.group(1)].stop()
@@ -381,6 +437,15 @@ class Handler(BaseHTTPRequestHandler):
                 return
             if path == "/api/runs":
                 self._json({"runs": [r.info() for r in runner.RUNS.values()]})
+                return
+            if path == "/api/jobs":
+                self._json({"jobs": [j.brief() for j in jobs.JOBS.values()]})
+                return
+            m = re.fullmatch(r"/api/job/(j\d+)", path)
+            if m:
+                if m.group(1) not in jobs.JOBS:
+                    raise FileNotFoundError("任务不存在")
+                self._json(jobs.JOBS[m.group(1)].info(int(parse_qs(url.query).get("logs_from", ["0"])[0])))
                 return
             m = re.fullmatch(r"/api/run/(r\d+)/stream", path)
             if m:
