@@ -6,16 +6,22 @@
     register("key", label="...", desc="...", file=lambda sid: Path(...), field="post",
              compute=lambda sid: ...)   # compute 可选：缓存缺失时按需生成 npz
 
-指标统一由 model_eval.metrics 计算（bACC / AUC / F1，评估帧规则见 model_eval）。
+指标为黑盒统一口径：npz 里的 y 字段被忽略，标签由 system.truth 按 BDF+events 生成，
+指标与覆盖率由 system.evaluate 计算。
 """
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 from typing import Callable
 
 import numpy as np
 
 import model_eval as ME
+
+if str(ME.ROOT) not in sys.path:
+    sys.path.insert(0, str(ME.ROOT))
+from system import evaluate as EV, truth as TR  # noqa: E402
 
 REGISTRY: dict[str, dict] = {}
 
@@ -44,12 +50,14 @@ def load(key: str, sid: str, compute_missing: bool = False) -> dict | None:
             return None
         s["compute"](sid)
     z = np.load(f)
-    return {"t": z["t"], "y": z["y"], "score": z[s["field"]]}
+    t = z["t"].astype(np.float64)
+    # 黑盒统一口径：方案只提供 (t, score)，y 一律由 system.truth 生成
+    return {"t": t, "y": TR.labels("builtin", sid, t), "score": z[s["field"]]}
 
 
 def subject_metrics(key: str, sid: str) -> dict | None:
     d = load(key, sid)
-    return None if d is None else {"subject": sid, **(ME.metrics(d["y"], d["score"]) or {})}
+    return None if d is None else EV.subject("builtin", sid, d["t"], d["score"])
 
 
 def summary(key: str, sids: list[str]) -> dict:
@@ -57,8 +65,7 @@ def summary(key: str, sids: list[str]) -> dict:
     out = {"scheme": {k: v for k, v in get(key).items() if k in ("key", "label", "desc")},
            "n_done": len(rows), "n_total": len(sids), "subjects": rows}
     if rows:
-        out["mean"] = {k: float(np.mean([r[k] for r in rows])) for k in ("bacc", "auc", "f1")}
-        out["mean"]["n_ge_09"] = int(sum(r["bacc"] >= 0.9 for r in rows))
+        out["mean"] = EV.aggregate(rows)
     return out
 
 

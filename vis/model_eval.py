@@ -66,15 +66,12 @@ def _trials(sid: str):
     return bdf, load_trials(str(csv), str(bdf))
 
 
-def _labels(t: np.ndarray, trials, bad: list[tuple[float, float]]) -> np.ndarray:
-    """-1 = 不参与评估。"""
-    y = np.full(len(t), -1, dtype=np.int8)
-    for tr in trials:
-        m = (t - WIN_S >= tr.start - 1e-6) & (t <= tr.end + 1e-6)
-        y[m] = tr.label
-    for a, b in bad:
-        y[(t - WIN_S < b) & (t > a)] = -1
-    return y
+def _labels(sid: str, t: np.ndarray) -> np.ndarray:
+    """-1 = 不参与评估。唯一实现在 system.truth。"""
+    if str(ROOT) not in sys.path:
+        sys.path.insert(0, str(ROOT))
+    from system import truth
+    return truth.labels("builtin", sid, t)
 
 
 def compute(sid: str, bundle_path: Path = BUNDLE_PATH, out: Path | None = None) -> dict:
@@ -104,8 +101,7 @@ def compute(sid: str, bundle_path: Path = BUNDLE_PATH, out: Path | None = None) 
     t = np.array([o["time_s"] for o in outs], dtype=np.float64)
     post = np.array([o["score_task"] for o in outs], dtype=np.float32)
     raw = np.array(raw_scores, dtype=np.float32)
-    bad = [(a / fs, b / fs) for a, b in rec["bad_intervals"]]
-    y = _labels(t, trials, bad)
+    y = _labels(sid, t)
     out = out or CACHE / f"pred_{sid}.npz"
     out.parent.mkdir(parents=True, exist_ok=True)
     tmp = out.with_suffix(".tmp.npz")
@@ -123,18 +119,10 @@ def load(sid: str, compute_missing: bool = True) -> dict | None:
 
 
 def metrics(y: np.ndarray, s: np.ndarray) -> dict | None:
-    from sklearn.metrics import f1_score, roc_auc_score
-    m = y >= 0
-    y, s = y[m].astype(int), s[m]
-    if len(y) == 0 or y.min() == y.max():
-        return None
-    p = (s > 0).astype(int)
-    return {
-        "bacc": float(0.5 * (p[y == 1].mean() + 1 - p[y == 0].mean())),
-        "auc": float(roc_auc_score(y, s)),
-        "f1": float(f1_score(y, p)),
-        "n": int(len(y)),
-    }
+    if str(ROOT) not in sys.path:
+        sys.path.insert(0, str(ROOT))
+    from system.evaluate import metrics as _m
+    return _m(y, s)
 
 
 def subject_metrics(sid: str, compute_missing: bool = True) -> dict | None:
