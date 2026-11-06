@@ -1,0 +1,185 @@
+{
+  "duration_s": 1860.0,
+  "invalid_samples": 17575,
+  "n_outputs": 1736,
+  "inference_seconds": 51.19759789999807,
+  "trial_starts_s": [
+    -0.0010204315185546875,
+    300.00310802459717,
+    600.0004115104675,
+    900.000669002533,
+    1200.0030481815338,
+    1500.0100157260895
+  ],
+  "metrics": {
+    "baseline": {
+      "reset_output_times_s": [],
+      "parts": {
+        "full": {
+          "bacc": 0.8416908178715581,
+          "auc": 0.9165457319209108,
+          "f1": 0.835272504592774,
+          "n": 1674
+        },
+        "first600": {
+          "bacc": 0.8493150684931507,
+          "auc": 0.9582841284837034,
+          "f1": 0.8225806451612904,
+          "n": 524
+        },
+        "block45": {
+          "bacc": 0.8583916083916084,
+          "auc": 0.9076971979069881,
+          "f1": 0.869983948635634,
+          "n": 572
+        },
+        "block4plus": {
+          "bacc": 0.797396040919357,
+          "auc": 0.8599586941555853,
+          "f1": 0.8512911843276937,
+          "n": 865
+        }
+      }
+    },
+    "dt_reset_hmm_keep": {
+      "reset_output_times_s": [
+        301.0,
+        601.0,
+        901.0,
+        1201.0,
+        1501.0
+      ],
+      "parts": {
+        "full": {
+          "bacc": 0.9462148973496347,
+          "auc": 0.9919117888858229,
+          "f1": 0.9455621301775148,
+          "n": 1674
+        },
+        "first600": {
+          "bacc": 0.928082191780822,
+          "auc": 0.987807038261691,
+          "f1": 0.922509225092251,
+          "n": 524
+        },
+        "block45": {
+          "bacc": 0.951048951048951,
+          "auc": 0.9897183236344076,
+          "f1": 0.950530035335689,
+          "n": 572
+        },
+        "block4plus": {
+          "bacc": 0.9548624950179354,
+          "auc": 0.9932243921881228,
+          "f1": 0.9640035118525022,
+          "n": 865
+        }
+      }
+    },
+    "dt_reset_hmm_reset": {
+      "reset_output_times_s": [
+        301.0,
+        601.0,
+        901.0,
+        1201.0,
+        1501.0
+      ],
+      "parts": {
+        "full": {
+          "bacc": 0.968038197745824,
+          "auc": 0.9981248561293541,
+          "f1": 0.9677040516735174,
+          "n": 1674
+        },
+        "first600": {
+          "bacc": 0.9571917808219178,
+          "auc": 0.9923904700047237,
+          "f1": 0.9552772808586762,
+          "n": 524
+        },
+        "block45": {
+          "bacc": 0.965034965034965,
+          "auc": 0.9989058144652551,
+          "f1": 0.9644128113879004,
+          "n": 572
+        },
+        "block4plus": {
+          "bacc": 0.972260468374458,
+          "auc": 0.9991847530707634,
+          "f1": 0.9763365468886941,
+          "n": 865
+        }
+      }
+    }
+  },
+  "checks": {
+    "92": {
+      "prefix_seconds": 400.0,
+      "n_outputs": 332,
+      "seconds": 9.803209400000924,
+      "times_identical": true,
+      "raw_identical": true,
+      "raw_max_abs": 0.0,
+      "post": {
+        "baseline": {
+          "identical": true,
+          "max_abs": 0.0
+        },
+        "dt_reset_hmm_keep": {
+          "identical": true,
+          "max_abs": 0.0
+        },
+        "dt_reset_hmm_reset": {
+          "identical": true,
+          "max_abs": 0.0
+        }
+      }
+    },
+    "250": {
+      "prefix_seconds": 400.0,
+      "n_outputs": 332,
+      "seconds": 9.779584600000817,
+      "times_identical": true,
+      "raw_identical": true,
+      "raw_max_abs": 0.0,
+      "post": {
+        "baseline": {
+          "identical": true,
+          "max_abs": 0.0
+        },
+        "dt_reset_hmm_keep": {
+          "identical": true,
+          "max_abs": 0.0
+        },
+        "dt_reset_hmm_reset": {
+          "identical": true,
+          "max_abs": 0.0
+        }
+      }
+    },
+    "1250": {
+      "prefix_seconds": 400.0,
+      "n_outputs": 332,
+      "seconds": 9.866864499999792,
+      "times_identical": true,
+      "raw_identical": true,
+      "raw_max_abs": 0.0,
+      "post": {
+        "baseline": {
+          "identical": true,
+          "max_abs": 0.0
+        },
+        "dt_reset_hmm_keep": {
+          "identical": true,
+          "max_abs": 0.0
+        },
+        "dt_reset_hmm_reset": {
+          "identical": true,
+          "max_abs": 0.0
+        }
+      }
+    }
+  },
+  "in_training": true,
+  "total_seconds": 80.84934570000041
+}

@@ -1,0 +1,49 @@
+﻿subject,chunk,prefix_seconds,n_outputs,source,t_consistent,y_consistent,length_consistent,raw_identical,raw_max_abs,mode,post_identical,post_max_abs,cache_n,cache_t_y_length_consistent,cache_finite_scores
+004,137,1860.0,1736,cached full-record reference (not independent),True,True,True,True,0.0,baseline,True,0.0,1736,True,True
+004,137,1860.0,1736,cached full-record reference (not independent),True,True,True,True,0.0,dt_reset_hmm_keep,True,0.0,1736,True,True
+004,137,1860.0,1736,cached full-record reference (not independent),True,True,True,True,0.0,dt_reset_hmm_reset,True,0.0,1736,True,True
+004,250,400.0,332,independent prefix rerun,True,True,True,True,0.0,baseline,True,0.0,1736,True,True
+004,250,400.0,332,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_keep,True,0.0,1736,True,True
+004,250,400.0,332,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_reset,True,0.0,1736,True,True
+004,92,400.0,332,independent prefix rerun,True,True,True,True,0.0,baseline,True,0.0,1736,True,True
+004,92,400.0,332,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_keep,True,0.0,1736,True,True
+004,92,400.0,332,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_reset,True,0.0,1736,True,True
+004,1250,400.0,332,independent prefix rerun,True,True,True,True,0.0,baseline,True,0.0,1736,True,True
+004,1250,400.0,332,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_keep,True,0.0,1736,True,True
+004,1250,400.0,332,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_reset,True,0.0,1736,True,True
+018,137,1919.992,1860,cached full-record reference (not independent),True,True,True,True,0.0,baseline,True,0.0,1860,True,True
+018,137,1919.992,1860,cached full-record reference (not independent),True,True,True,True,0.0,dt_reset_hmm_keep,True,0.0,1860,True,True
+018,137,1919.992,1860,cached full-record reference (not independent),True,True,True,True,0.0,dt_reset_hmm_reset,True,0.0,1860,True,True
+018,250,400.0,381,independent prefix rerun,True,True,True,True,0.0,baseline,True,0.0,1860,True,True
+018,250,400.0,381,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_keep,True,0.0,1860,True,True
+018,250,400.0,381,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_reset,True,0.0,1860,True,True
+018,92,400.0,381,independent prefix rerun,True,True,True,True,0.0,baseline,True,0.0,1860,True,True
+018,92,400.0,381,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_keep,True,0.0,1860,True,True
+018,92,400.0,381,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_reset,True,0.0,1860,True,True
+018,1250,400.0,381,independent prefix rerun,True,True,True,True,0.0,baseline,True,0.0,1860,True,True
+018,1250,400.0,381,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_keep,True,0.0,1860,True,True
+018,1250,400.0,381,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_reset,True,0.0,1860,True,True
+009,137,1919.992,1426,cached full-record reference (not independent),True,True,True,True,0.0,baseline,True,0.0,1426,True,True
+009,137,1919.992,1426,cached full-record reference (not independent),True,True,True,True,0.0,dt_reset_hmm_keep,True,0.0,1426,True,True
+009,137,1919.992,1426,cached full-record reference (not independent),True,True,True,True,0.0,dt_reset_hmm_reset,True,0.0,1426,True,True
+009,250,400.0,388,independent prefix rerun,True,True,True,True,0.0,baseline,True,0.0,1426,True,True
+009,250,400.0,388,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_keep,True,0.0,1426,True,True
+009,250,400.0,388,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_reset,True,0.0,1426,True,True
+009,92,,,not available in existing result,,True,,,,dt_reset_hmm_reset,,,1426,True,True
+009,1250,,,not available in existing result,,True,,,,dt_reset_hmm_reset,,,1426,True,True
+010,137,1915.008,1857,cached full-record reference (not independent),True,True,True,True,0.0,baseline,True,0.0,1857,True,True
+010,137,1915.008,1857,cached full-record reference (not independent),True,True,True,True,0.0,dt_reset_hmm_keep,True,0.0,1857,True,True
+010,137,1915.008,1857,cached full-record reference (not independent),True,True,True,True,0.0,dt_reset_hmm_reset,True,0.0,1857,True,True
+010,250,400.0,379,independent prefix rerun,True,True,True,True,0.0,baseline,True,0.0,1857,True,True
+010,250,400.0,379,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_keep,True,0.0,1857,True,True
+010,250,400.0,379,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_reset,True,0.0,1857,True,True
+010,92,,,not available in existing result,,True,,,,dt_reset_hmm_reset,,,1857,True,True
+010,1250,,,not available in existing result,,True,,,,dt_reset_hmm_reset,,,1857,True,True
+050,137,1902.356,1847,cached full-record reference (not independent),True,True,True,True,0.0,baseline,True,0.0,1847,True,True
+050,137,1902.356,1847,cached full-record reference (not independent),True,True,True,True,0.0,dt_reset_hmm_keep,True,0.0,1847,True,True
+050,137,1902.356,1847,cached full-record reference (not independent),True,True,True,True,0.0,dt_reset_hmm_reset,True,0.0,1847,True,True
+050,250,400.0,388,independent prefix rerun,True,True,True,True,0.0,baseline,True,0.0,1847,True,True
+050,250,400.0,388,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_keep,True,0.0,1847,True,True
+050,250,400.0,388,independent prefix rerun,True,True,True,True,0.0,dt_reset_hmm_reset,True,0.0,1847,True,True
+050,92,,,not available in existing result,,True,,,,dt_reset_hmm_reset,,,1847,True,True
+050,1250,,,not available in existing result,,True,,,,dt_reset_hmm_reset,,,1847,True,True

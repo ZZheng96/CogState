@@ -191,8 +191,10 @@ def stage_verify(sid):
     data = np.load(SCORES)
     scores = {q: data[q] for q in subs}
     ref = post_variants(subs, scores)["dt1200_hmm"]
-    mine = {q: np.array([infer.PostProcessor(detrend_halflife=1200).update(float(s)) for s in scores[q]])
-            for q in subs}
+    mine = {}
+    for q in subs:
+        post = infer.PostProcessor(detrend_halflife=1200)
+        mine[q] = np.array([post.update(float(s)) for s in scores[q]])
     diff = max(float(np.abs(mine[q] - ref[q]).max()) for q in subs)
     sign = float(np.mean(np.concatenate([(mine[q] > 0) == (ref[q] > 0) for q in subs])))
     grp = E44.groups()

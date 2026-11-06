@@ -1,0 +1,185 @@
+{
+  "duration_s": 1919.992,
+  "invalid_samples": 4750,
+  "n_outputs": 1860,
+  "inference_seconds": 59.54917009999917,
+  "trial_starts_s": [
+    59.9997935295105,
+    360.0030884742737,
+    660.0015902519226,
+    959.9976768493652,
+    1259.9969165325165,
+    1559.999507188797
+  ],
+  "metrics": {
+    "baseline": {
+      "reset_output_times_s": [],
+      "parts": {
+        "full": {
+          "bacc": 0.9579931972789115,
+          "auc": 0.9934446505875077,
+          "f1": 0.9576174112256587,
+          "n": 1762
+        },
+        "first600": {
+          "bacc": 0.9322033898305084,
+          "auc": 0.9946522501461134,
+          "f1": 0.9272727272727272,
+          "n": 526
+        },
+        "block45": {
+          "bacc": 0.9573378839590444,
+          "auc": 0.9974024158697248,
+          "f1": 0.9582637729549248,
+          "n": 586
+        },
+        "block4plus": {
+          "bacc": 0.957302819206134,
+          "auc": 0.9971305343868343,
+          "f1": 0.9736170212765958,
+          "n": 877
+        }
+      }
+    },
+    "dt_reset_hmm_keep": {
+      "reset_output_times_s": [
+        364.0,
+        661.0,
+        960.0,
+        1260.0,
+        1560.0
+      ],
+      "parts": {
+        "full": {
+          "bacc": 0.9227440218511647,
+          "auc": 0.9901502267573696,
+          "f1": 0.9175757575757576,
+          "n": 1762
+        },
+        "first600": {
+          "bacc": 0.9406779661016949,
+          "auc": 0.9997662185856224,
+          "f1": 0.9369369369369369,
+          "n": 526
+        },
+        "block45": {
+          "bacc": 0.9488054607508533,
+          "auc": 0.9986021968805694,
+          "f1": 0.9460431654676259,
+          "n": 586
+        },
+        "block4plus": {
+          "bacc": 0.9186643835616438,
+          "auc": 0.9918591331993081,
+          "f1": 0.9114631873252563,
+          "n": 877
+        }
+      }
+    },
+    "dt_reset_hmm_reset": {
+      "reset_output_times_s": [
+        364.0,
+        661.0,
+        960.0,
+        1260.0,
+        1560.0
+      ],
+      "parts": {
+        "full": {
+          "bacc": 0.9289824263038549,
+          "auc": 0.9927283034425891,
+          "f1": 0.923919659160073,
+          "n": 1762
+        },
+        "first600": {
+          "bacc": 0.9449152542372881,
+          "auc": 1.0,
+          "f1": 0.9417040358744395,
+          "n": 526
+        },
+        "block45": {
+          "bacc": 0.9488054607508533,
+          "auc": 0.997524723642675,
+          "f1": 0.9460431654676259,
+          "n": 586
+        },
+        "block4plus": {
+          "bacc": 0.9186643835616438,
+          "auc": 0.9903688812006172,
+          "f1": 0.9114631873252563,
+          "n": 877
+        }
+      }
+    }
+  },
+  "checks": {
+    "92": {
+      "prefix_seconds": 400.0,
+      "n_outputs": 381,
+      "seconds": 11.602077000003192,
+      "times_identical": true,
+      "raw_identical": true,
+      "raw_max_abs": 0.0,
+      "post": {
+        "baseline": {
+          "identical": true,
+          "max_abs": 0.0
+        },
+        "dt_reset_hmm_keep": {
+          "identical": true,
+          "max_abs": 0.0
+        },
+        "dt_reset_hmm_reset": {
+          "identical": true,
+          "max_abs": 0.0
+        }
+      }
+    },
+    "250": {
+      "prefix_seconds": 400.0,
+      "n_outputs": 381,
+      "seconds": 11.901305400002457,
+      "times_identical": true,
+      "raw_identical": true,
+      "raw_max_abs": 0.0,
+      "post": {
+        "baseline": {
+          "identical": true,
+          "max_abs": 0.0
+        },
+        "dt_reset_hmm_keep": {
+          "identical": true,
+          "max_abs": 0.0
+        },
+        "dt_reset_hmm_reset": {
+          "identical": true,
+          "max_abs": 0.0
+        }
+      }
+    },
+    "1250": {
+      "prefix_seconds": 400.0,
+      "n_outputs": 381,
+      "seconds": 11.435263499995926,
+      "times_identical": true,
+      "raw_identical": true,
+      "raw_max_abs": 0.0,
+      "post": {
+        "baseline": {
+          "identical": true,
+          "max_abs": 0.0
+        },
+        "dt_reset_hmm_keep": {
+          "identical": true,
+          "max_abs": 0.0
+        },
+        "dt_reset_hmm_reset": {
+          "identical": true,
+          "max_abs": 0.0
+        }
+      }
+    }
+  },
+  "in_training": true,
+  "total_seconds": 95.57231260000117
+}
