@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>工业场景 EEG 认知状态查看器</title>
+<style>
+  :root{
+    --bg:#ffffff; --panel:#f6f8fa; --line:#d0d7de; --line2:#eaeef2;
+    --fg:#1f2328; --dim:#656d76; --relax:#0969da; --task:#cf222e;
+    --bad:#8c959f; --accent:#1a7f37; --win:#bf8700;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);
+    font:12px/1.45 "Segoe UI","Microsoft YaHei",system-ui,sans-serif;overflow:hidden}
+  #app{display:grid;grid-template-columns:150px 1fr 330px;grid-template-rows:40px 1fr;height:100vh}
+  header{grid-column:1/4;display:flex;align-items:center;gap:12px;padding:0 12px;
+    background:var(--panel);border-bottom:1px solid var(--line)}
+  header h1{font-size:14px;margin:0;font-weight:600}
+  .dim{color:var(--dim)}
+  .badge{padding:1px 8px;border-radius:10px;font-size:11px;border:1px solid var(--line);background:#fff;white-space:nowrap}
+  .badge b{font-variant-numeric:tabular-nums}
+  #subjects{background:var(--panel);border-right:1px solid var(--line);overflow-y:auto;padding:4px}
+  #subjects .tip{color:var(--dim);font-size:11px;padding:2px 4px 4px}
+  .subj{display:flex;align-items:center;gap:6px;padding:3px 6px;border-radius:5px;cursor:pointer;
+    border:1px solid transparent;margin-bottom:1px;font-variant-numeric:tabular-nums}
+  .subj:hover{background:#eaeef2}
+  .subj.sel{background:#ddf4ff;border-color:#54aeff}
+  .subj.focus{box-shadow:inset 3px 0 0 var(--relax)}
+  .subj .id{font-weight:600;width:28px}
+  .subj .m{color:var(--dim);font-size:11px;flex:1;text-align:right}
+  .subj .m.ok{color:var(--accent)} .subj .m.lo{color:var(--task)}
+  #main{display:flex;flex-direction:column;min-width:0;min-height:0}
+  #toolbar{display:flex;align-items:center;gap:8px;padding:5px 8px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  #toolbar label{color:var(--dim);display:flex;align-items:center;gap:4px}
+  button,select,input[type=number]{background:#fff;color:var(--fg);border:1px solid var(--line);border-radius:5px;
+    padding:2px 8px;font-size:12px;font-family:inherit}
+  button{cursor:pointer} button:hover{background:#f3f4f6}
+  button.on{background:#ddf4ff;border-color:#54aeff}
+  input[type=number]{width:84px;padding:2px 4px}
+  #waveWrap{position:relative;flex:1;min-height:0}
+  #zoomWrap{position:relative;height:34%;min-height:150px;border-top:1px solid var(--line)}
+  canvas{display:block;width:100%;height:100%}
+  .hint{position:absolute;right:8px;top:4px;color:var(--dim);font-size:11px;pointer-events:none;
+    background:#ffffffcc;padding:0 4px;border-radius:3px}
+  #side{background:var(--panel);border-left:1px solid var(--line);padding:8px 10px;overflow:hidden;
+    display:flex;flex-direction:column;gap:7px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:6px 8px}
+  .card h2{font-size:11px;letter-spacing:.4px;color:var(--dim);margin:0 0 4px;font-weight:600}
+  .grid{display:grid;grid-template-columns:auto 1fr;column-gap:8px;row-gap:1px}
+  .grid span:nth-child(odd){color:var(--dim)}
+  .grid span:nth-child(even){font-variant-numeric:tabular-nums;text-align:right}
+  table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+  th,td{padding:1px 4px;text-align:right;white-space:nowrap}
+  th{color:var(--dim);font-weight:500;border-bottom:1px solid var(--line2)}
+  th:first-child,td:first-child{text-align:left}
+  .big{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}
+  .mrow{display:flex;gap:10px;align-items:baseline}
+  .mrow>div{flex:1}
+  .relax{color:var(--relax)} .task{color:var(--task)} .warn{color:var(--win)}
+  .pill{padding:0 6px;border-radius:8px;font-size:11px}
+  .pill.relax{background:#ddf4ff} .pill.task{background:#ffebe9} .pill.na{background:#eaeef2;color:var(--dim)}
+  .note{color:var(--dim);font-size:11px;line-height:1.35}
+  .bars{display:grid;grid-template-columns:52px 1fr 38px;column-gap:6px;align-items:center;font-size:11px}
+  .bars i{display:block;height:7px;background:#2da44e;border-radius:2px}
+  @media (max-height:820px){
+    #side{gap:4px;padding:5px 8px;font-size:11px}
+    .card{padding:4px 7px} .card h2{margin-bottom:2px}
+    .big{font-size:16px} .note{font-size:10px;line-height:1.25}
+    .bars{grid-template-columns:44px 1fr 34px;font-size:10px} .bars i{height:5px}
+  }
+  @media (max-height:700px){
+    .bars{grid-template-columns:40px 1fr 32px 40px 1fr 32px}
+  }
+  #loading{position:fixed;left:50%;top:48px;transform:translateX(-50%);display:none;
+    background:#fff;border:1px solid var(--line);border-radius:6px;padding:3px 12px;z-index:9;box-shadow:0 2px 8px #0001}
+  #loading.show{display:block}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>工业场景 EEG 认知状态查看器</h1>
+    <span class="dim">单通道 · 250 Hz 原始采样率 · 6 s 因果感受野</span>
+    <span style="flex:1"></span>
+    <span class="badge" id="hdrMetric">方案指标计算中…</span>
+    <span class="badge" id="dsInfo">加载中…</span>
+  </header>
+
+  <aside id="subjects"><div class="tip">点击多选（≤6），右侧数字为方案 bACC</div><div id="subjList"></div></aside>
+
+  <section id="main">
+    <div id="toolbar">
+      <label>跨度
+        <select id="spanSel">
+          <option value="12">12 s</option>
+          <option value="30" selected>30 s</option>
+          <option value="60">60 s</option>
+          <option value="120">120 s</option>
+          <option value="300">300 s</option>
+          <option value="900">900 s</option>
+          <option value="0">全程</option>
+        </select>
+      </label>
+      <button id="btnPrev" title="向前翻页（←）">◀</button>
+      <button id="btnNext" title="向后翻页（→）">▶</button>
+      <button id="btnFocus" title="视图居中到 6 s 窗口（F）">定位窗口</button>
+      <label><input type="checkbox" id="chkFilter" checked> 1–45 Hz 因果滤波</label>
+      <label><input type="checkbox" id="chkEvents"> 按键事件</label>
+      <label>增益 <button id="gainDn">−</button><button id="gainUp">+</button></label>
+      <span style="flex:1"></span>
+      <label>判断时刻 t <input type="number" id="tInput" step="1" min="6"> s</label>
+      <button id="btnStepB" title="t − 1 s（,）">−1s</button>
+      <button id="btnStepF" title="t + 1 s（.）">+1s</button>
+      <button id="btnPrevTr" title="上一个 trial 末尾">⇤ trial</button>
+      <button id="btnNextTr" title="下一个 trial 末尾">trial ⇥</button>
+    </div>
+    <div id="waveWrap">
+      <canvas id="wave"></canvas>
+      <div class="hint">滚轮缩放 · 拖拽空白处平移 · 拖拽黄色窗口移动 · 单击设判断时刻 · 双击看全程</div>
+    </div>
+    <div id="zoomWrap">
+      <canvas id="zoom"></canvas>
+      <div class="hint">6 s 感受野放大：[t−6, t]，只用过去数据</div>
+    </div>
+  </section>
+
+  <aside id="side">
+    <div class="card" id="cardScheme"></div>
+    <div class="card" id="cardMetric"></div>
+    <div class="card" id="cardWin"></div>
+    <div class="card" id="cardSubj"></div>
+  </aside>
+</div>
+<div id="loading">读取中…</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const WIN = 6, MAXSEL = 6;
+const C = {relax:'#0969da', task:'#cf222e', bad:'#8c959f', wave:'#24292f', filt:'#1a7f37',
+  win:'#bf8700', grid:'#eaeef2', axis:'#656d76', relaxBg:'#0969da12', taskBg:'#cf222e12', badBg:'#8c959f40'};
+
+const S = {
+  subjects: [], rows: {}, sel: [], focus: null,
+  span: 30, start: 0,                 // 视图（相对每个被试首样本的秒，所有道共用）
+  t: null,                            // 判断时刻（窗口 = [t-6, t]）
+  filt: true, events: false, gain: 1,
+  lanes: {},                          // sid -> {meta, env, envKey, pred, win, ctrl}
+  metrics: null,
+};
+
+/* ---------- 工具 ---------- */
+const fmtT = t => { t = Math.max(0, t); const m = Math.floor(t / 60), s = t - m * 60;
+  return `${m}:${s.toFixed(s < 10 ? 2 : 2).padStart(5, '0')}`; };
+const fmtDur = s => s >= 60 ? `${Math.floor(s / 60)}m${String(Math.round(s % 60)).padStart(2, '0')}` : `${s.toFixed(0)}s`;
+const pct = v => v == null ? '—' : (100 * v).toFixed(1);
+const f3 = v => v == null ? '—' : v.toFixed(3);
+const loading = on => $('#loading').classList.toggle('show', on);
+const maxDur = () => Math.max(...S.sel.map(s => S.lanes[s]?.meta?.duration || 0), 1);
+async function api(path, signal){
+  const r = await fetch(path, {signal});
+  const j = await r.json();
+  if(!r.ok) throw new Error(j.error || r.statusText);
+  return j;
+}
+const debounce = (fn, ms) => { let h; return (...a) => { clearTimeout(h); h = setTimeout(() => fn(...a), ms); }; };
+
+/* ---------- 被试列表 ---------- */
+async function loadSubjects(){
+  const d = await api('/api/subjects');
+  S.subjects = d.subjects;
+  for(const r of d.subjects) S.rows[r.subject] = r;
+  $('#dsInfo').textContent = `${d.n_subjects} 名被试`;
+  renderSubjList();
+  if(d.subjects.length) await toggleSubject(d.subjects[0].subject);
+}
+
+function renderSubjList(){
+  const per = {};
+  for(const r of (S.metrics?.subjects || [])) per[r.subject] = r.post;
+  $('#subjList').innerHTML = S.subjects.map(s => {
+    const m = per[s.subject];
+    const cls = !m ? '' : m.bacc >= .9 ? 'ok' : m.bacc < .7 ? 'lo' : '';
+    return `<div class="subj ${S.sel.includes(s.subject) ? 'sel' : ''} ${S.focus === s.subject ? 'focus' : ''}"
+      data-sid="${s.subject}" title="时长 ${fmtDur(s.duration || 0)} · ${s.n_trials} trial">
+      <span class="id">${s.subject}</span><span class="dim">${fmtDur(s.duration || 0)}</span>
+      <span class="m ${cls}">${m ? pct(m.bacc) : '…'}</span></div>`;
+  }).join('');
+  document.querySelectorAll('.subj').forEach(el => el.onclick = () => toggleSubject(el.dataset.sid));
+}
+
+async function toggleSubject(sid){
+  if(S.sel.includes(sid)){
+    if(S.focus !== sid){ S.focus = sid; renderAll(); return; }
+    if(S.sel.length === 1) return;
+    S.sel = S.sel.filter(s => s !== sid);
+    S.focus = S.sel[S.sel.length - 1];
+    renderAll(); return;
+  }
+  if(S.sel.length >= MAXSEL) S.sel.shift();
+  S.sel.push(sid); S.focus = sid;
+  if(!S.lanes[sid]) S.lanes[sid] = {};
+  const L = S.lanes[sid];
+  loading(true);
+  try{
+    if(!L.meta) L.meta = await api('/api/subject/' + sid);
+  } catch(e){ alert(`被试 ${sid} 读取失败：${e.message}`); S.sel = S.sel.filter(s => s !== sid); }
+  finally{ loading(false); }
+  if(S.t == null){
+    // 默认：第一个 task trial 的第 30 s（若不足则取末尾）
+    const tr = L.meta.trials.find(t => t.phase === 'task') || L.meta.trials[0];
+    S.t = tr ? Math.min(tr.end, tr.start + 30) : WIN;
+    centerOnWindow();
+  }
+  loadPred(sid);
+  renderAll();
+}
+
+/* ---------- 数据加载 ---------- */
+function loadEnvelopes(){
+  const W = $('#wave').clientWidth;
+  for(const sid of S.sel){
+    const L = S.lanes[sid];
+    const t0 = S.start, t1 = S.start + S.span;
+    const key = `${t0.toFixed(3)}|${t1.toFixed(3)}|${S.filt}|${W}`;
+    if(L.envKey === key) continue;
+    L.envKey = key;
+    L.envCtrl?.abort(); L.envCtrl = new AbortController();
+    api(`/api/envelope/${sid}?t0=${t0}&t1=${t1}&bins=${W}&filt=${S.filt ? 1 : 0}`, L.envCtrl.signal)
+      .then(e => { L.env = e; L.env.key = key; drawWave(); })
+      .catch(e => { if(e.name !== 'AbortError') console.warn(e); });
+  }
+}
+const loadEnvelopesSoon = debounce(loadEnvelopes, 60);
+
+function loadWindows(){
+  for(const sid of S.sel){
+    const L = S.lanes[sid];
+    const key = S.t.toFixed(3);
+    if(L.winKey === key) continue;
+    L.winKey = key;
+    L.winCtrl?.abort(); L.winCtrl = new AbortController();
+    api(`/api/window/${sid}?end=${S.t}&seconds=${WIN}`, L.winCtrl.signal)
+      .then(w => { L.win = w; drawZoom(); renderSide(); })
+      .catch(e => { if(e.name !== 'AbortError') console.warn(e); });
+  }
+}
+const loadWindowsSoon = debounce(loadWindows, 80);
+
+async function loadPred(sid){
+  const L = S.lanes[sid];
+  if(L.pred?.ready) return;
+  try{
+    const p = await api('/api/pred/' + sid);
+    if(p.ready){ L.pred = p; L.winKey = null; loadWindows(); drawWave(); renderSide(); loadMetrics(); }
+    else { L.pred = p; renderSide(); setTimeout(() => S.lanes[sid] && loadPred(sid), 5000); }
+  } catch(e){ console.warn(e); }
+}
+
+async function loadMetrics(){
+  try{ S.metrics = await api('/api/metrics'); } catch(e){ return; }
+  const m = S.metrics;
+  $('#hdrMetric').innerHTML = m.post
+    ? `当前方案（训练集内，${m.n_done}/${m.n_total} 人）bACC <b>${pct(m.post.bacc)}</b> · AUC <b>${f3(m.post.auc)}</b>`
+    : `方案指标计算中（${m.n_done}/${m.n_total}）`;
+  renderSubjList(); renderSide();
+}
+
+/* ---------- 视图控制 ---------- */
+function clampView(){
+  const dur = maxDur();
+  if(S.span <= 0 || S.span > dur) S.span = dur;
+  S.span = Math.max(2, S.span);
+  S.start = Math.min(Math.max(0, S.start), Math.max(0, dur - S.span));
+}
+function centerOnWindow(){
+  // 窗口位于视图偏右 2/3 处，保证左侧能看到之前的上下文
+  S.start = S.t - WIN / 2 - S.span * 0.6;
+  clampView();
+}
+function setT(t, {follow = false} = {}){
+  const dur = S.focus ? S.lanes[S.focus].meta.duration : maxDur();
+  S.t = Math.round(Math.min(Math.max(WIN, t), dur) * 4) / 4;  // 0.25 s 分辨率
+  $('#tInput').value = S.t.toFixed(2);
+  if(follow && (S.t - WIN < S.start || S.t > S.start + S.span)){ centerOnWindow(); loadEnvelopesSoon(); }
+  drawWave(); loadWindowsSoon(); renderSide();
+}
+function renderAll(){
+  clampView();
+  $('#tInput').value = S.t?.toFixed(2) ?? '';
+  renderSubjList(); loadEnvelopes(); loadWindows(); drawWave(); drawZoom(); renderSide();
+}
+
+/* ---------- 波形主图 ---------- */
+const PAD = {l: 46, r: 10, t: 6, b: 22};
+function setupCanvas(cv){
+  const dpr = window.devicePixelRatio || 1;
+  const w = cv.clientWidth, h = cv.clientHeight;
+  if(cv.width !== w * dpr || cv.height !== h * dpr){ cv.width = w * dpr; cv.height = h * dpr; }
+  const ctx = cv.getContext('2d');
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.clearRect(0, 0, w, h);
+  return [ctx, w, h];
+}
+function laneRects(h){
+  const n = Math.max(1, S.sel.length), gap = 6;
+  const lh = (h - PAD.t - PAD.b - gap * (n - 1)) / n;
+  return S.sel.map((sid, i) => {
+    const y = PAD.t + i * (lh + gap);
+    const sh = Math.min(26, Math.max(14, lh * 0.22));   // 方案输出条
+    return {sid, y, h: lh, wy: y, wh: lh - sh - 3, sy: y + lh - sh, sh};
+  });
+}
+const xOf = (t, w) => PAD.l + (t - S.start) / S.span * (w - PAD.l - PAD.r);
+const tOf = (x, w) => S.start + (x - PAD.l) / (w - PAD.l - PAD.r) * S.span;
+
+function niceStep(span, px){
+  const target = span / Math.max(2, px / 90);
+  for(const s of [0.1, 0.2, 0.5, 1, 2, 5, 10, 15, 30, 60, 120, 300, 600, 1200]) if(s >= target) return s;
+  return 1800;
+}
+
+function drawWave(){
+  const [ctx, w, h] = setupCanvas($('#wave'));
+  if(!S.sel.length || S.t == null) return;
+  const t0 = S.start, t1 = S.start + S.span;
+  const rects = laneRects(h);
+  const step = niceStep(S.span, w - PAD.l - PAD.r);
+
+  // 时间网格 + 轴
+  ctx.font = '11px Segoe UI, Microsoft YaHei'; ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+  for(let t = Math.ceil(t0 / step) * step; t <= t1; t += step){
+    const x = xOf(t, w);
+    ctx.strokeStyle = C.grid; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(x, PAD.t); ctx.lineTo(x, h - PAD.b); ctx.stroke();
+    ctx.fillStyle = C.axis; ctx.fillText(fmtT(t), x, h - PAD.b + 4);
+  }
+
+  for(const R of rects){
+    const L = S.lanes[R.sid], meta = L.meta;
+    if(!meta) continue;
+    ctx.save();
+    ctx.beginPath(); ctx.rect(PAD.l, R.y, w - PAD.l - PAD.r, R.h); ctx.clip();
+    // trial 背景
+    for(const tr of meta.trials){
+      if(tr.end < t0 || tr.start > t1) continue;
+      ctx.fillStyle = tr.phase === 'task' ? C.taskBg : C.relaxBg;
+      ctx.fillRect(xOf(tr.start, w), R.wy, xOf(tr.end, w) - xOf(tr.start, w), R.wh);
+    }
+    for(const b of meta.bad_intervals){
+      if(b.end < t0 || b.start > t1) continue;
+      ctx.fillStyle = C.badBg;
+      ctx.fillRect(xOf(b.start, w), R.y, Math.max(1, xOf(b.end, w) - xOf(b.start, w)), R.h);
+    }
+    if(meta.duration < t1){
+      ctx.fillStyle = '#f6f8fa'; ctx.fillRect(xOf(meta.duration, w), R.y, w, R.h);
+    }
+    // 波形
+    const env = L.env;
+    if(env){
+      const mid = R.wy + R.wh / 2;
+      const vals = env.mode === 'raw' ? env.values : env.max.concat(env.min);
+      const fin = vals.filter(v => v != null).map(Math.abs).sort((a, b) => a - b);
+      const ref = (fin[Math.floor(fin.length * 0.98)] || 1);
+      const sc = (R.wh / 2 - 2) / ref * S.gain;
+      ctx.strokeStyle = S.filt ? C.filt : C.wave; ctx.fillStyle = S.filt ? '#1a7f3755' : '#24292f44'; ctx.lineWidth = 1;
+      if(env.mode === 'raw'){
+        ctx.beginPath(); let pen = false;
+        env.values.forEach((v, i) => {
+          if(v == null){ pen = false; return; }
+          const x = xOf(env.start + i * env.dt, w), y = mid - v * sc;
+          pen ? ctx.lineTo(x, y) : ctx.moveTo(x, y); pen = true;
+        });
+        ctx.stroke();
+      } else {
+        ctx.beginPath();
+        env.min.forEach((lo, i) => {
+          const hi = env.max[i]; if(lo == null) return;
+          const x = Math.round(xOf(env.start + i * env.dt, w)) + 0.5;
+          ctx.moveTo(x, mid - hi * sc); ctx.lineTo(x, mid - lo * sc + 0.5);
+        });
+        ctx.stroke();
+      }
+      ctx.fillStyle = C.axis; ctx.textAlign = 'left'; ctx.textBaseline = 'top';
+      ctx.fillText(`±${(ref / S.gain).toFixed(0)} µV`, PAD.l + 3, R.wy + 2);
+    }
+    // 事件
+    if(S.events){
+      ctx.strokeStyle = '#8250df88';
+      for(const e of meta.events){
+        if(e.event !== 'key_press' || e.t < t0 || e.t > t1) continue;
+        const x = xOf(e.t, w); ctx.beginPath(); ctx.moveTo(x, R.wy); ctx.lineTo(x, R.wy + 6); ctx.stroke();
+      }
+    }
+    // 方案输出条：上半为方案后处理得分（>0 判 task），底部 3px 为真值
+    ctx.fillStyle = '#fff'; ctx.fillRect(PAD.l, R.sy, w, R.sh);
+    ctx.strokeStyle = C.grid; ctx.strokeRect(PAD.l + .5, R.sy + .5, w - PAD.l - PAD.r - 1, R.sh - 1);
+    const p = L.pred;
+    if(p?.ready){
+      const zm = R.sy + (R.sh - 4) / 2;
+      const i0 = Math.max(0, lowerBound(p.t, t0) - 1), i1 = Math.min(p.t.length, lowerBound(p.t, t1) + 1);
+      const sc = (R.sh - 6) / 2 / 6;
+      for(let i = i0; i < i1; i++){
+        const x0 = xOf(p.t[i] - 1, w), x1 = xOf(p.t[i], w), v = Math.max(-6, Math.min(6, p.post[i]));
+        ctx.fillStyle = v > 0 ? '#cf222ebb' : '#0969dabb';
+        ctx.fillRect(x0, v > 0 ? zm - v * sc : zm, Math.max(1, x1 - x0), Math.abs(v * sc));
+        if(p.y[i] >= 0){ ctx.fillStyle = p.y[i] ? C.task : C.relax; ctx.fillRect(x0, R.sy + R.sh - 3, Math.max(1, x1 - x0), 3); }
+      }
+      ctx.strokeStyle = '#8c959f'; ctx.beginPath(); ctx.moveTo(PAD.l, zm); ctx.lineTo(w, zm); ctx.stroke();
+    } else {
+      ctx.fillStyle = C.axis; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+      ctx.fillText(p && !p.ready ? '方案输出计算中（约 1 分钟）…' : '方案输出加载中…', PAD.l + 4, R.sy + R.sh / 2);
+    }
+    ctx.restore();
+    // 道标签
+    ctx.fillStyle = S.focus === R.sid ? C.relax : C.fg || '#1f2328';
+    ctx.font = '600 12px Segoe UI'; ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+    ctx.fillText(R.sid, PAD.l - 6, R.wy + R.wh / 2);
+    ctx.font = '10px Segoe UI'; ctx.fillStyle = C.axis;
+    ctx.fillText('方案', PAD.l - 6, R.sy + R.sh / 2);
+    ctx.font = '11px Segoe UI, Microsoft YaHei';
+  }
+
+  // 6 s 感受野：真实宽度的带 + 两侧括号；跨所有道
+  const xa = xOf(S.t - WIN, w), xb = xOf(S.t, w), top = PAD.t, bot = h - PAD.b;
+  ctx.fillStyle = '#bf870022'; ctx.fillRect(xa, top, xb - xa, bot - top);
+  ctx.strokeStyle = C.win; ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(xa, top); ctx.lineTo(xa, bot); ctx.stroke();
+  ctx.lineWidth = 2.5; ctx.beginPath(); ctx.moveTo(xb, top); ctx.lineTo(xb, bot); ctx.stroke();
+  ctx.lineWidth = 1;
+  const narrow = xb - xa < 40;
+  // 顶部标签栏：在窄窗时延伸括号，避免成为“一条线”
+  const lx = narrow ? xb + 6 : (xa + xb) / 2;
+  ctx.fillStyle = C.win; ctx.font = '600 11px Segoe UI, Microsoft YaHei';
+  ctx.textAlign = narrow ? 'left' : 'center'; ctx.textBaseline = 'top';
+  const label = `6 s 感受野 [${fmtT(S.t - WIN)} – ${fmtT(S.t)}]${narrow ? '（视图过宽，按 F 放大）' : ''}`;
+  ctx.fillStyle = '#ffffffdd';
+  const tw = ctx.measureText(label).width;
+  ctx.fillRect(narrow ? lx - 2 : lx - tw / 2 - 3, top, tw + 6, 15);
+  ctx.fillStyle = C.win; ctx.fillText(label, lx, top + 1);
+  // 底部轴上的宽度刻度
+  ctx.fillStyle = C.win; ctx.fillRect(xa, bot - 4, Math.max(2, xb - xa), 4);
+  // 指向判断时刻 t 的三角形
+  ctx.beginPath(); ctx.moveTo(xb - 5, bot); ctx.lineTo(xb + 5, bot); ctx.lineTo(xb, bot - 8); ctx.fill();
+}
+function lowerBound(a, v){ let lo = 0, hi = a.length; while(lo < hi){ const m = (lo + hi) >> 1; a[m] < v ? lo = m + 1 : hi = m; } return lo; }
+
+/* ---------- 6 s 窗口放大 ---------- */
+function drawZoom(){
+  const [ctx, w, h] = setupCanvas($('#zoom'));
+  if(!S.sel.length || S.t == null) return;
+  const pl = 46, pr = 10, pt = 20, pb = 18, n = S.sel.length, gap = 4;
+  const lh = (h - pt - pb - gap * (n - 1)) / n;
+  const x = s => pl + s / WIN * (w - pl - pr);
+  ctx.font = '11px Segoe UI, Microsoft YaHei';
+  // 秒刻度
+  ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+  for(let s = 0; s <= WIN; s++){
+    ctx.strokeStyle = C.grid; ctx.beginPath(); ctx.moveTo(x(s), pt); ctx.lineTo(x(s), h - pb); ctx.stroke();
+    ctx.fillStyle = C.axis; ctx.fillText(s === WIN ? 't' : `t−${WIN - s}s`, x(s), h - pb + 3);
+  }
+  ctx.fillStyle = C.win; ctx.textAlign = 'left'; ctx.textBaseline = 'top'; ctx.font = '600 11px Segoe UI, Microsoft YaHei';
+  ctx.fillText(`感受野 [${fmtT(S.t - WIN)}, ${fmtT(S.t)}] · 1500 样本 · 粗线=因果滤波 细灰=原始`, pl, 3);
+  ctx.font = '11px Segoe UI, Microsoft YaHei';
+  S.sel.forEach((sid, k) => {
+    const y0 = pt + k * (lh + gap), mid = y0 + lh / 2, W_ = S.lanes[sid].win;
+    ctx.strokeStyle = C.win + '66'; ctx.strokeRect(pl + .5, y0 + .5, w - pl - pr - 1, lh - 1);
+    ctx.fillStyle = S.focus === sid ? C.relax : '#1f2328'; ctx.font = '600 12px Segoe UI';
+    ctx.textAlign = 'right'; ctx.textBaseline = 'middle'; ctx.fillText(sid, pl - 6, mid);
+    ctx.font = '11px Segoe UI, Microsoft YaHei';
+    if(!W_ || Math.abs(W_.end - S.t) > 0.01 && W_.end !== S.lanes[sid].meta?.duration) return;
+    if(W_.phase){ ctx.fillStyle = W_.phase === 'task' ? C.taskBg : C.relaxBg; ctx.fillRect(pl + 1, y0 + 1, w - pl - pr - 2, lh - 2); }
+    const off = W_.start - (S.t - WIN);
+    const ref = Math.max(...W_.filtered.map(Math.abs).sort((a, b) => a - b).slice(Math.floor(W_.filtered.length * .98), Math.floor(W_.filtered.length * .98) + 1), 1);
+    const sc = (lh / 2 - 3) / ref * S.gain;
+    const rawMean = W_.raw.reduce((a, b) => a + b, 0) / W_.raw.length;
+    const line = (arr, col, lw, sub = 0) => {
+      ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.beginPath();
+      arr.forEach((v, i) => { const xx = x(off + i / W_.sfreq), yy = mid - (v - sub) * sc; i ? ctx.lineTo(xx, yy) : ctx.moveTo(xx, yy); });
+      ctx.stroke(); ctx.lineWidth = 1;
+    };
+    ctx.save(); ctx.beginPath(); ctx.rect(pl, y0, w - pl - pr, lh); ctx.clip();
+    line(W_.raw, '#8c959f88', 1, rawMean);
+    line(W_.filtered, C.filt, 1.3);
+    ctx.restore();
+    const m = W_.model?.frame;
+    const tag = m ? `方案 ${m.pred === 'task' ? 'TASK' : 'RELAX'}  s=${m.post.toFixed(2)}` : (W_.model ? '' : '方案计算中');
+    ctx.textAlign = 'right'; ctx.textBaseline = 'top'; ctx.font = '600 11px Segoe UI, Microsoft YaHei';
+    ctx.fillStyle = m ? (m.pred === 'task' ? C.task : C.relax) : C.axis;
+    ctx.fillText(tag, w - pr - 4, y0 + 3);
+    ctx.font = '11px Segoe UI, Microsoft YaHei'; ctx.fillStyle = C.axis; ctx.textAlign = 'left';
+    ctx.fillText(`±${(ref / S.gain).toFixed(0)} µV${W_.bad ? ' · 含缺失段' : ''}${W_.within_trial ? '' : ' · 跨 trial 边界'}`, pl + 4, y0 + 3);
+  });
+}
+
+/* ---------- 右侧信息栏 ---------- */
+function renderSide(){
+  const m = S.metrics, sc = m?.scheme;
+  $('#cardScheme').innerHTML = `<h2>当前采用方案</h2>
+    <div style="font-weight:600">${sc ? sc.name : 'src/infer.py'}</div>
+    <div class="note">入口 ${sc?.entry || 'src/infer.py'} · 模型 ${sc?.model || ''}<br>
+    每 ${sc?.step_s || 1} s 决策一次，输入为过去 ${WIN} s；得分 s &gt; 0 判为 task</div>`;
+
+  const mm = (k, lab) => m?.[k] ? `<div><div class="dim">${lab}</div>
+      <div class="big">${pct(m[k].bacc)}<span class="dim" style="font-size:11px"> bACC</span></div>
+      <div>AUC <b>${f3(m[k].auc)}</b> · F1 <b>${f3(m[k].f1)}</b></div></div>` : `<div><div class="dim">${lab}</div><div class="big">—</div></div>`;
+  $('#cardMetric').innerHTML = `<h2>方案评估指标（${m ? `${m.n_done}/${m.n_total} 人` : '加载中'}，被试平均）</h2>
+    <div class="mrow">${mm('post', '最终输出（去趋势+HMM）')}${mm('raw', '单窗口 6 s 原始得分')}</div>
+    <div class="note" style="margin-top:3px">${m?.post ? `bACC ≥ 90% 的被试 ${m.post.n_ge_09}/${m.n_done}。` : ''}
+    评估帧：[t−6,t] 完全落在单个 trial 内且不含缺失段。模型用全部 57 人训练，此为训练集内指标；
+    跨被试 5 折：bACC 76.2% · AUC 0.823（E17 报告）。${m?.computing?.length ? `<br>后台计算：${m.computing.join(', ')}` : ''}</div>`;
+
+  const rows = S.sel.map(sid => {
+    const L = S.lanes[sid], W_ = L.win, f = W_?.model?.frame, pm = L.pred?.metrics?.post;
+    const truth = f && f.label >= 0 ? (f.label ? 'task' : 'relax') : (W_?.phase && W_.within_trial ? W_.phase : null);
+    const pred = f ? f.pred : null;
+    const pill = v => v ? `<span class="pill ${v}">${v}</span>` : '<span class="pill na">—</span>';
+    const ok = truth && pred ? (truth === pred ? '<span style="color:#1a7f37">✓</span>' : '<span class="task">✗</span>') : '';
+    return `<tr${S.focus === sid ? ' style="background:#ddf4ff"' : ''}><td><b>${sid}</b></td><td>${pill(truth)}</td><td>${pill(pred)} ${ok}</td>
+      <td>${f ? f.post.toFixed(2) : '—'}</td><td>${pm ? pct(pm.bacc) : '…'}</td><td>${pm ? f3(pm.auc) : '…'}</td></tr>`;
+  }).join('');
+  $('#cardWin').innerHTML = `<h2>判断时刻 t = ${S.t != null ? fmtT(S.t) : '—'}（窗口 [t−6 s, t]）</h2>
+    <table><tr><th>被试</th><th>真值</th><th>方案预测</th><th>得分</th><th>bACC</th><th>AUC</th></tr>${rows}</table>
+    <div class="note">真值为空：窗口跨 trial 边界或含缺失段，不计入评估。</div>`;
+
+  const L = S.lanes[S.focus], meta = L?.meta, W_ = L?.win;
+  if(!meta){ $('#cardSubj').innerHTML = ''; return; }
+  const bars = W_ ? W_.bands.map(b => `<span>${b.band}</span><i style="width:${(100 * b.relative).toFixed(1)}%"></i><span>${pct(b.relative)}%</span>`).join('') : '';
+  const pm = L.pred?.metrics;
+  $('#cardSubj').innerHTML = `<h2>被试 ${meta.subject}（高亮道）</h2>
+    <div class="grid">
+      <span>记录</span><span>${fmtDur(meta.duration)} · ${meta.n_trials} trial · 缺失 ${meta.bad_seconds.toFixed(1)} s</span>
+      <span>relax / task</span><span><span class="relax">${fmtDur(meta.relax_seconds)}</span> / <span class="task">${fmtDur(meta.task_seconds)}</span></span>
+      <span>按键 / 失败</span><span>${meta.n_key_press} / ${meta.n_task_failure}</span>
+      <span>幅值 std / p1–p99</span><span>${meta.stats.std.toFixed(1)} / ${meta.stats.p1.toFixed(0)}~${meta.stats.p99.toFixed(0)} µV</span>
+      <span>方案 最终</span><span>${pm?.post ? `bACC ${pct(pm.post.bacc)} · AUC ${f3(pm.post.auc)} · F1 ${f3(pm.post.f1)}` : '计算中'}</span>
+      <span>方案 单窗口</span><span>${pm?.raw ? `bACC ${pct(pm.raw.bacc)} · AUC ${f3(pm.raw.auc)}` : '—'}</span>
+      <span>评估帧数</span><span>${pm?.post?.n ?? '—'}</span>
+      <span>窗口 RMS / 峰峰</span><span>${W_ ? `${W_.rms.toFixed(1)} / ${W_.ptp.toFixed(0)} µV` : '—'}</span>
+    </div>
+    <div class="dim" style="margin:4px 0 2px">窗口相对频带功率（因果滤波后）</div>
+    <div class="bars">${bars}</div>`;
+}
+
+/* ---------- 交互 ---------- */
+const wave = $('#wave');
+let drag = null;
+wave.addEventListener('mousedown', e => {
+  const r = wave.getBoundingClientRect(), x = e.clientX - r.left, w = r.width;
+  const xa = xOf(S.t - WIN, w), xb = xOf(S.t, w);
+  const onWin = x >= Math.min(xa, xb - 12) - 4 && x <= xb + 6;
+  drag = {x0: e.clientX, start0: S.start, t0: S.t, mode: onWin ? 'win' : 'pan', moved: false};
+  wave.style.cursor = onWin ? 'ew-resize' : 'grabbing';
+});
+window.addEventListener('mousemove', e => {
+  const r = wave.getBoundingClientRect();
+  if(!drag){
+    if(e.target !== wave) return;
+    const x = e.clientX - r.left, xa = xOf(S.t - WIN, r.width), xb = xOf(S.t, r.width);
+    wave.style.cursor = x >= Math.min(xa, xb - 12) - 4 && x <= xb + 6 ? 'ew-resize' : 'crosshair';
+    return;
+  }
+  const dx = e.clientX - drag.x0;
+  if(Math.abs(dx) > 3) drag.moved = true;
+  if(!drag.moved) return;
+  const dt = dx / (r.width - PAD.l - PAD.r) * S.span;
+  if(drag.mode === 'win') setT(drag.t0 + dt);
+  else { S.start = drag.start0 - dt; clampView(); drawWave(); loadEnvelopesSoon(); }
+});
+window.addEventListener('mouseup', e => {
+  if(!drag) return;
+  const d = drag; drag = null; wave.style.cursor = 'crosshair';
+  if(!d.moved && e.target === wave && e.detail === 1){
+    const r = wave.getBoundingClientRect();
+    const lane = laneRects(r.height).find(R => e.clientY - r.top >= R.y && e.clientY - r.top <= R.y + R.h);
+    if(lane && lane.sid !== S.focus){ S.focus = lane.sid; renderSubjList(); drawZoom(); }
+    setT(tOf(e.clientX - r.left, r.width));
+  }
+});
+wave.addEventListener('dblclick', () => { S.span = 0; $('#spanSel').value = '0'; clampView(); renderAll(); });
+wave.addEventListener('wheel', e => {
+  e.preventDefault();
+  const r = wave.getBoundingClientRect(), tc = tOf(e.clientX - r.left, r.width);
+  const f = e.deltaY > 0 ? 1.25 : 0.8, ns = Math.min(maxDur(), Math.max(2, S.span * f));
+  S.start = tc - (tc - S.start) * ns / S.span; S.span = ns; clampView();
+  drawWave(); loadEnvelopesSoon();
+}, {passive: false});
+
+$('#spanSel').onchange = e => {
+  const v = +e.target.value;
+  S.span = v || maxDur(); centerOnWindow(); renderAll();
+};
+$('#btnPrev').onclick = () => { S.start -= S.span * 0.8; renderAll(); };
+$('#btnNext').onclick = () => { S.start += S.span * 0.8; renderAll(); };
+$('#btnFocus').onclick = () => { if(S.span > 60){ S.span = 30; $('#spanSel').value = '30'; } centerOnWindow(); renderAll(); };
+$('#chkFilter').onchange = e => { S.filt = e.target.checked; renderAll(); };
+$('#chkEvents').onchange = e => { S.events = e.target.checked; drawWave(); };
+$('#gainUp').onclick = () => { S.gain *= 1.5; drawWave(); drawZoom(); };
+$('#gainDn').onclick = () => { S.gain /= 1.5; drawWave(); drawZoom(); };
+$('#tInput').onchange = e => setT(+e.target.value, {follow: true});
+$('#btnStepB').onclick = () => setT(S.t - 1, {follow: true});
+$('#btnStepF').onclick = () => setT(S.t + 1, {follow: true});
+function jumpTrial(dir){
+  const trs = S.lanes[S.focus]?.meta?.trials || [];
+  const ends = trs.map(t => t.end);
+  const tgt = dir > 0 ? ends.find(v => v > S.t + 0.3) : [...ends].reverse().find(v => v < S.t - 0.3);
+  if(tgt != null) setT(tgt, {follow: true});
+}
+$('#btnPrevTr').onclick = () => jumpTrial(-1);
+$('#btnNextTr').onclick = () => jumpTrial(1);
+window.addEventListener('keydown', e => {
+  if(e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+  if(e.key === ',') setT(S.t - 1, {follow: true});
+  else if(e.key === '.') setT(S.t + 1, {follow: true});
+  else if(e.key === 'ArrowLeft') $('#btnPrev').click();
+  else if(e.key === 'ArrowRight') $('#btnNext').click();
+  else if(e.key === 'f' || e.key === 'F') $('#btnFocus').click();
+});
+window.addEventListener('resize', debounce(() => { for(const s of S.sel) S.lanes[s].envKey = null; renderAll(); }, 120));
+
+loadMetrics();
+setInterval(loadMetrics, 30000);
+loadSubjects().catch(e => alert('加载失败：' + e.message));
+</script>
+</body>
+</html>

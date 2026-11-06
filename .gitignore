@@ -12,3 +12,7 @@ __pycache__/
 *.tmp
 *.swp
 ~$*
+
+# 查看器缓存（逐秒预测、日志）
+vis/cache/
+vis/viewer_data/
