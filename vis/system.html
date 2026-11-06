@@ -38,7 +38,7 @@
   .pill.relax{background:#ddf4ff;color:var(--relax)} .pill.task{background:#ffebe9;color:var(--task)} .pill.na{background:#eaeef2;color:var(--dim)}
   .st{font-weight:600} .st.running{color:var(--accent)} .st.error{color:var(--task)} .st.done{color:var(--relax)}
   .note{color:var(--dim);font-size:11px;line-height:1.35}
-  #eval,#comp{grid-template-columns:300px 1fr;min-height:0}
+  #eval,#comp,#expo{grid-template-columns:300px 1fr;min-height:0}
   .side{background:var(--panel);border-right:1px solid var(--line);padding:8px 10px;display:flex;flex-direction:column;gap:7px;overflow:auto}
   .side label{display:flex;align-items:center;gap:6px}
   .main{padding:10px 14px;overflow:auto;min-width:0}
@@ -63,6 +63,7 @@
       <button data-p="eval">批量评估</button>
       <button data-p="comp">合规检查</button>
       <button data-p="train">数据与训练</button>
+      <button data-p="expo">导出提交</button>
     </div>
     <span style="flex:1"></span>
     <a href="/" target="_blank">波形查看器 ↗</a>
@@ -162,6 +163,25 @@
       <h3>训练集被试</h3><div id="trData"></div>
       <h3>已训练模型</h3><div id="trModels"></div>
     </div>
+  </section>
+
+  <!-- ================= 导出提交 ================= -->
+  <section class="page" id="expo">
+    <div class="side">
+      <div class="card"><h2>提交包</h2>
+        <label>包名 <input id="exName" placeholder="如 final_submit" style="flex:1"></label>
+        <label>方案 <select id="exScheme" style="flex:1"></select></label></div>
+      <div class="card"><h2>自检数据</h2>
+        <label>数据源 <select id="exSource"></select></label>
+        <label>被试 <input id="exSubs" value="018" placeholder="如 018,020" style="flex:1"></label></div>
+      <div style="display:flex;gap:6px"><button class="pri" id="exStart">▶ 导出并自检</button><button id="exStop" disabled>■ 取消</button></div>
+      <div class="card"><h2>进度</h2><div class="bar"><div id="exBar"></div></div><div class="note" id="exMsg"></div></div>
+      <div class="log" id="exLog"></div>
+      <div class="note">按仓库相对布局复制推理依赖闭包（动态追踪 import）+ 模型到 exports/&lt;包名&gt;/ 并打 zip。
+        自检在包目录内用独立子进程运行 src/infer.py：依赖自足、与系统结果逐帧一致、由输出 CSV 独立计算指标、合规检查。
+        仅支持 bundle 方案且后处理与 infer.py 默认一致。</div>
+    </div>
+    <div class="main" id="exOut"><div class="dim">选择方案后导出。</div></div>
   </section>
 </div>
 <script>
@@ -397,7 +417,32 @@ async function initTrain() {
     md.models.map(m => `<tr><td>${m.name}</td><td>${m.scheme}</td><td>${m.n_subjects}</td><td>${fmt(m.train_bacc, 4)}</td><td>${m.created || "–"}</td><td>${m.bundle}</td></tr>`).join("") + "</table>"
     : '<div class="dim">暂无</div>';
 }
-const refreshAll = () => Promise.all([initLive(), initJobs(), initTrain()]).catch(e => alert(e.message));
+const refreshAll = () => Promise.all([initLive(), initJobs(), initTrain(), initExport()]).catch(e => alert(e.message));
+
+// ---------------------------------------------------------------- 导出提交
+async function initExport() {
+  const rn = await api("/api/runnable");
+  $("#exScheme").innerHTML = rn.schemes.filter(s => s.bundle).map(s => `<option value="${s.key}">${s.label}</option>`).join("");
+  $("#exSource").innerHTML = Object.keys(rn.sources).map(s => `<option>${s}</option>`).join("");
+}
+$("#exStart").onclick = async () => {
+  const b = {name: $("#exName").value.trim(), scheme: $("#exScheme").value, source: $("#exSource").value,
+             subjects: parseSubs($("#exSubs").value)};
+  try { watchJob(await post("/api/job/export", b), "ex", showExport); } catch (e) { $("#exMsg").textContent = "启动失败：" + e.message; }
+};
+function showExport(r) {
+  const tag = p => p ? '<span class="ok">通过</span>' : '<span class="ng">不通过</span>';
+  let h = `<h3>${r.name}（${r.scheme}）· 自检 ${tag(r.pass)}</h3>
+    <table class="t"><tr><th>检查项</th><th>结果</th><th style="text-align:left">说明</th></tr>` +
+    r.checks.map(c => `<tr><td>${c.name}</td><td>${tag(c.pass)}</td><td style="text-align:left">${c.detail}</td></tr>`).join("") + "</table>";
+  h += `<h3>包输出独立计算的指标</h3><table class="t"><tr><th>被试</th><th>bACC</th><th>AUC</th><th>F1</th><th>覆盖率</th><th>帧数</th><th>最大分数差</th><th>耗时 s</th></tr>` +
+    r.rows.map(x => `<tr><td>${x.subject}</td><td>${fmt(x.bacc, 4)}</td><td>${fmt(x.auc, 4)}</td><td>${fmt(x.f1, 4)}</td>
+      <td>${x.coverage != null ? (100 * x.coverage).toFixed(1) + "%" : "–"}</td><td>${x.frames}</td><td>${x.max_diff.toExponential(2)}</td><td>${x.wall_s}</td></tr>`).join("");
+  const m = r.mean || {};
+  if (m.bacc != null) h += `<tr><td><b>宏平均</b></td><td>${fmt(m.bacc, 4)}</td><td>${fmt(m.auc, 4)}</td><td>${fmt(m.f1, 4)}</td><td></td><td></td><td></td><td></td></tr>`;
+  h += `</table><div class="note">目录 ${r.dir}（${r.n_files} 个文件）· 压缩包 ${r.zip} · 报告 ${r.report}</div>`;
+  $("#exOut").innerHTML = h;
+}
 
 $("#imStart").onclick = async () => {
   const b = {name: $("#imName").value.trim(), path: $("#imPath").value.trim()};
@@ -413,6 +458,7 @@ $("#trStart").onclick = async () => {
 initLive().then(draw).catch(e => $("#lvMsg").textContent = "初始化失败：" + e.message);
 initJobs().catch(e => $("#evMsg").textContent = "初始化失败：" + e.message);
 initTrain().catch(e => $("#trMsg").textContent = "初始化失败：" + e.message);
+initExport().catch(e => $("#exMsg").textContent = "初始化失败：" + e.message);
 </script>
 </body>
 </html>

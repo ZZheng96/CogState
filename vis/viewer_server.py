@@ -26,6 +26,7 @@ vis/viewer.html。BDF 读取结果按被试缓存在内存中，避免重复解�
   POST /api/job/import           -> 导入数据 {name, path}：复制被试目录到 data_import/<name>/
   POST /api/job/train            -> 重训 {name, items:[[source, sid], ...]}，产出 models/<name>.pt 并注册为 m_<name>
   GET  /api/models               -> 已训练模型
+  POST /api/job/export           -> 导出提交包 {name, scheme, source?, subjects?}：exports/<name>/ + .zip，包内自检
   GET  /api/jobs                 -> 全部后台任务
   GET  /api/job/<id>?logs_from=  -> 任务进度、日志、结果
   POST /api/job/<id>/stop        -> 取消任务
@@ -59,7 +60,7 @@ from scipy.signal import butter, sosfilt, welch  # noqa: E402
 
 import model_eval  # noqa: E402  当前方案（src/infer.py）推理与评估
 import schemes  # noqa: E402  方案注册表（可切换 / 对比）
-from system import compliance, jobs, report, runner, train  # noqa: E402  （schemes 已把 ROOT 加入 sys.path）
+from system import compliance, export, jobs, report, runner, train  # noqa: E402  （schemes 已把 ROOT 加入 sys.path）
 
 ROOT = Path(__file__).resolve().parents[1]
 DATASET = ROOT / "EEG_dataset"
@@ -429,6 +430,15 @@ class Handler(BaseHTTPRequestHandler):
                 for s, q in items:
                     runner.dataset.paths(s, q)
                 j = jobs.Job("train", {"name": name, "n": len(items)}, lambda job: train.train(job, name, items))
+                self._json(j.brief())
+                return
+            if path == "/api/job/export":
+                b = self._body()
+                name, key, src = str(b["name"]), str(b["scheme"]), str(b.get("source") or "builtin")
+                subs = [str(s) for s in b.get("subjects") or []] or None
+                runner.dataset._check(name)
+                j = jobs.Job("export", {"name": name, "scheme": key, "source": src, "subjects": subs},
+                             lambda job: export.build(job, name, key, src, subs))
                 self._json(j.brief())
                 return
             m = re.fullmatch(r"/api/job/(j\d+)/stop", path)
