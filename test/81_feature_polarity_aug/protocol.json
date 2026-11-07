@@ -1,0 +1,79 @@
+{
+  "experiment": "E81_feature_polarity_aug",
+  "status": "complete",
+  "diagnostic": true,
+  "subjects_evaluated": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006"
+  ],
+  "n_folds": 6,
+  "all_dataset_subjects": 57,
+  "features": "E42 fixed multiscale features, scales=(60,120,300,600,99999)",
+  "baseline": "E74 LR C=0.001 + mean of MLP seeds [0,1,2]; train-fold output std; fixed wLR=.50",
+  "augmentation": "training fold only: retain X and append one duplicate with a fixed random 50% feature-dimension sign mask; labels unchanged; target is unmodified",
+  "polarity_seed": 8101,
+  "polarity_fraction": 0.5,
+  "postprocessing": "E61 ema_center(raw,1200,None) then forward hmm(300)",
+  "threshold": 0,
+  "parts": {
+    "full": "all frames",
+    "early": "block<=2",
+    "late": "block>=4"
+  },
+  "expansion_rule": "expand to 57 only if six-fold diagnostic shows clear potential; no score post-processing gate",
+  "device": "cuda",
+  "data_checks": {
+    "001": {
+      "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-001.npz",
+      "source_sha256": "3a6ea1c02234f560d8cc8cb926ebd302b077be75f9610bb5e7a8e2bbf7e78342",
+      "n": 1737,
+      "sorted_time_strictly_increasing": true,
+      "label_order_equal_L_load": true,
+      "block_order_equal_L_load": true
+    },
+    "002": {
+      "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-002.npz",
+      "source_sha256": "2431b63b50826682ee23d8f8203be2adee302e2e5c3d1c5b7ff424215bf6c764",
+      "n": 1637,
+      "sorted_time_strictly_increasing": true,
+      "label_order_equal_L_load": true,
+      "block_order_equal_L_load": true
+    },
+    "003": {
+      "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-003.npz",
+      "source_sha256": "298a23e4181930621e8d3652951bae27ee0a55c7383ef19de7e0e091ab7db401",
+      "n": 1606,
+      "sorted_time_strictly_increasing": true,
+      "label_order_equal_L_load": true,
+      "block_order_equal_L_load": true
+    },
+    "004": {
+      "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-004.npz",
+      "source_sha256": "8bc385e5d3e2cdf67473439bd70f4e942479c448515bded1e21ed93fae090ba8",
+      "n": 1647,
+      "sorted_time_strictly_increasing": true,
+      "label_order_equal_L_load": true,
+      "block_order_equal_L_load": true
+    },
+    "005": {
+      "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-005.npz",
+      "source_sha256": "0e7b5c0c3d1ce96f728adb0240cd46afb4d2a77299e198d950aa0168002b849a",
+      "n": 1665,
+      "sorted_time_strictly_increasing": true,
+      "label_order_equal_L_load": true,
+      "block_order_equal_L_load": true
+    },
+    "006": {
+      "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-006.npz",
+      "source_sha256": "07978404be5caa8a5ce9d85795aa3f7add295d1a9c4d2902a651b32913e817a7",
+      "n": 1643,
+      "sorted_time_strictly_increasing": true,
+      "label_order_equal_L_load": true,
+      "block_order_equal_L_load": true
+    }
+  }
+}
