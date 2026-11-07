@@ -1,0 +1,532 @@
+{
+ "protocol": {
+  "experiment": "E67_mlp_loso",
+  "subjects": [
+   "001",
+   "002",
+   "003",
+   "004",
+   "005",
+   "006",
+   "007",
+   "008",
+   "009",
+   "010",
+   "011",
+   "012",
+   "013",
+   "014",
+   "015",
+   "016",
+   "017",
+   "018",
+   "019",
+   "020",
+   "021",
+   "022",
+   "023",
+   "024",
+   "025",
+   "026",
+   "027",
+   "028",
+   "029",
+   "030",
+   "031",
+   "034",
+   "035",
+   "036",
+   "037",
+   "038",
+   "039",
+   "040",
+   "041",
+   "042",
+   "043",
+   "044",
+   "045",
+   "046",
+   "047",
+   "048",
+   "049",
+   "050",
+   "051",
+   "052",
+   "053",
+   "054",
+   "055",
+   "056",
+   "057",
+   "058",
+   "059"
+  ],
+  "n_folds": 57,
+  "features": "E42 fixed multiscale features, scales=(60, 120, 300, 600, 99999)",
+  "training": "LOSO training fold only; MLP seeds [0,1,2], unchanged fit_mlp defaults",
+  "score": "raw = 2 * mlp_scaled; std_mlp is pooled training-fold output std",
+  "postprocessing": "E61 ema_center(raw,1200,None) then forward hmm(dwell=300); no tuning",
+  "threshold": 0,
+  "positive_label": 1,
+  "device": "cuda",
+  "cache_rule": "E63 six component caches reused only after target/train_subjects/data_hashes validation",
+  "baseline": "E53 e53_scores raw, same ema_center(1200,None)+hmm(300)"
+ },
+ "data_checks": {
+  "001": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-001.npz",
+   "source_sha256": "3a6ea1c02234f560d8cc8cb926ebd302b077be75f9610bb5e7a8e2bbf7e78342",
+   "n": 1737,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "002": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-002.npz",
+   "source_sha256": "2431b63b50826682ee23d8f8203be2adee302e2e5c3d1c5b7ff424215bf6c764",
+   "n": 1637,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "003": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-003.npz",
+   "source_sha256": "298a23e4181930621e8d3652951bae27ee0a55c7383ef19de7e0e091ab7db401",
+   "n": 1606,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "004": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-004.npz",
+   "source_sha256": "8bc385e5d3e2cdf67473439bd70f4e942479c448515bded1e21ed93fae090ba8",
+   "n": 1647,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "005": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-005.npz",
+   "source_sha256": "0e7b5c0c3d1ce96f728adb0240cd46afb4d2a77299e198d950aa0168002b849a",
+   "n": 1665,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "006": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-006.npz",
+   "source_sha256": "07978404be5caa8a5ce9d85795aa3f7add295d1a9c4d2902a651b32913e817a7",
+   "n": 1643,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "007": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-007.npz",
+   "source_sha256": "8e9ad0921b3c4c9c933e94af7f141b61e54543fe12464f3ea9e4ee7571cdcce9",
+   "n": 1708,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "008": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-008.npz",
+   "source_sha256": "a482bcc1c0db6a2c2382668382c48a89a279ac4317c9b4a896f1f99ddb3a62b5",
+   "n": 1710,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "009": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-009.npz",
+   "source_sha256": "60f755bbe381137a6f2b178e688c8c9121a727885ddd0917a6a6e24748603131",
+   "n": 1290,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "010": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-010.npz",
+   "source_sha256": "3b0a703f3f5f0e02ce23a64d6a7b586cd6598dd0f7f2af0bc7c79b6ad8fd9e8b",
+   "n": 1728,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "011": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-011.npz",
+   "source_sha256": "bb2641116fd0ef1f4685fe1e552186babf49cf2bbd803cf0b8b79ec010e3b942",
+   "n": 1729,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "012": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-012.npz",
+   "source_sha256": "7c4e493d8838a983f0952a06a1fda445a2cc30e6c00db388efeebc9ed16ea79c",
+   "n": 1665,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "013": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-013.npz",
+   "source_sha256": "f68c8b7febf28d54cbffb577f283363902e221cfe5ebd1ef1467a6c00df62290",
+   "n": 1703,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "014": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-014.npz",
+   "source_sha256": "591bdecb70ed252acb73fdbae30640b98e663afc87f62d47a520088c41259d83",
+   "n": 1730,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "015": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-015.npz",
+   "source_sha256": "0c7857925dca655e2a7e64ee33394082ad7bd5b41407610711abbe476a0bb828",
+   "n": 1606,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "016": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-016.npz",
+   "source_sha256": "d28aae9b4a5752bf403c8b1b6928ec90ef3a3c280b9acfdcf179d62defe9d7ca",
+   "n": 1738,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "017": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-017.npz",
+   "source_sha256": "a666b3a5d2b979b8b34ba6d898c515b97fc01f2205b05d74c1061384b479b55d",
+   "n": 1666,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "018": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-018.npz",
+   "source_sha256": "0466583771463f573682985c95478b4b5ba5a7b2014b353ec0432b04c81526e7",
+   "n": 1731,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "019": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-019.npz",
+   "source_sha256": "8c8023ccf7109969524afba4042ba07d3ffea691b2322230b8587472445bfa0b",
+   "n": 1729,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "020": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-020.npz",
+   "source_sha256": "e913fee3387d42035178be4ded79da09421a7a3627c85bedc6db461a46c901bc",
+   "n": 1687,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "021": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-021.npz",
+   "source_sha256": "7b01f2f86373d5f1a3c1264810a3f69d6cf37ae6b72771c54b7dd84152eb124e",
+   "n": 1719,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "022": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-022.npz",
+   "source_sha256": "2bdc3095cc3d1c7ca8d6600bf048fdc16800216b19076b140e84b71f222260ef",
+   "n": 1753,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "023": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-023.npz",
+   "source_sha256": "70d4d4554bdf5132f2e0f28a776d8475dddb3891b7b0c4b741524823c952be33",
+   "n": 1752,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "024": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-024.npz",
+   "source_sha256": "16516c9b1f754f0ca19fe5b1956df689cca9f83467ce8e56e1adb3a5bc24e240",
+   "n": 1744,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "025": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-025.npz",
+   "source_sha256": "0667fff6fe7eba8bc6166c049d6e60b4cd66c436db56b9e85575806cf0e05c5a",
+   "n": 1685,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "026": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-026.npz",
+   "source_sha256": "11d10bf8ac957b66c0cb9add16bdbd2b9cbf2e5bc4b344da3ce829dbb89fba3c",
+   "n": 1738,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "027": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-027.npz",
+   "source_sha256": "dd9cbac254c21f82c46e32fbd17f29adea15dae9f7b8950995a2434fe5b80aa5",
+   "n": 1686,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "028": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-028.npz",
+   "source_sha256": "b3ec5f2787f2d7b86b277d9e674499025810c5e109ab851193df5173d30679b4",
+   "n": 1713,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "029": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-029.npz",
+   "source_sha256": "0f4893494912ef722c238893084212c9ef757d8e186f590af6513b877be7f4e8",
+   "n": 1735,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "030": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-030.npz",
+   "source_sha256": "5c06d99f2eb32e7ba5e6f523c8a7a9ec86d18e8318795eb00acd9429cf90347e",
+   "n": 1766,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "031": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-031.npz",
+   "source_sha256": "15836fe8919e42a2d7ada8ae7457152a487f1bdab42e9d72e3f0efaa1f333cf0",
+   "n": 1744,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "034": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-034.npz",
+   "source_sha256": "dae9aef258a3f9376c9567817a19ba06f22ead2730a7e971dea6e07180ce4fd3",
+   "n": 725,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "035": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-035.npz",
+   "source_sha256": "ef80140b825018e3726904801de51e6d8bb75ef027a8d29cdde1101c2022e73b",
+   "n": 1750,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "036": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-036.npz",
+   "source_sha256": "1790cc6ffb9d84270cf360aadf9628ad9b16b21e3ebb1573c0b736e01f6b5cbb",
+   "n": 1698,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "037": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-037.npz",
+   "source_sha256": "a16503628d907d7f42b1338f865dc88e7e719eb6321f66a726042fc3c582b48f",
+   "n": 1729,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "038": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-038.npz",
+   "source_sha256": "dc11e91f111d6eca82f01f804d8bae93c50621f331827d568e6babf6ac1c02e2",
+   "n": 1729,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "039": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-039.npz",
+   "source_sha256": "76940221149dbb4bf1a84358595482d52271bf535364d71de2a791a1f3dac0c7",
+   "n": 1757,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "040": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-040.npz",
+   "source_sha256": "5bb5aa8ea0595c12990368c4918283b3e0ad36c4b5010f93c7a4f0e5ff0242f9",
+   "n": 1680,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "041": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-041.npz",
+   "source_sha256": "3c1822244ed2531e9123e74479647cbced619cde044c58bfa331905c901df983",
+   "n": 1731,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "042": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-042.npz",
+   "source_sha256": "de6d2bdc670b7bb6dd14d0eda24b0a53007ea9ff727b3590579ee1f42cd4705d",
+   "n": 1696,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "043": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-043.npz",
+   "source_sha256": "cee85a9e9ee8dbd57ebf1110bf02c56d0cf7fbc7d0ba9766e67aeac31ebb6fe8",
+   "n": 1702,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "044": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-044.npz",
+   "source_sha256": "e5f2c77dc7be956a3ce00a4cc383fee4d228f425c11fa2d8403761003d928256",
+   "n": 1695,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "045": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-045.npz",
+   "source_sha256": "757de190a1fdbfc458da12d905500eecf2e388b008dc4fcdd89475ebd51031c0",
+   "n": 1716,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "046": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-046.npz",
+   "source_sha256": "310cc4c5ac9e305c1828ae4246fb9905e909bce40e107fd9aa0c1d384beb942f",
+   "n": 1701,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "047": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-047.npz",
+   "source_sha256": "8aa8a28dd5ffd489cd3d0f425cfb589206133935329386e1143c185daddfcde4",
+   "n": 1723,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "048": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-048.npz",
+   "source_sha256": "c1d9abbf0cc30c7a1c3f9d420f7f5ff51428bded6acc68f6a4529a0c2e7956f4",
+   "n": 1714,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "049": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-049.npz",
+   "source_sha256": "b4c521689cae33afc6ba55ec2f3799b39df67e1e8ea0f685b6ad280083392e1f",
+   "n": 1694,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "050": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-050.npz",
+   "source_sha256": "229c44745772fb8559ffeb95defaeb81654fa47474b5df093bd628ad9d52bfc0",
+   "n": 1716,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "051": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-051.npz",
+   "source_sha256": "ffdfeb0945f357b15127b134a7d171c47928eec94b67d260deb228e1c2973eb3",
+   "n": 1737,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "052": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-052.npz",
+   "source_sha256": "6ff8b7644793385db28f14f2f696651ce86b82a20ab92c6fd7930464a0a56154",
+   "n": 1729,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "053": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-053.npz",
+   "source_sha256": "21f8c43c684ef7880f53bfe392afe654316da2e9516f9f958f347ccaca586dfd",
+   "n": 1743,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "054": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-054.npz",
+   "source_sha256": "986f960b5ee7772cbb9b33cf0a0cfa9fe00823c1d07a316f606103d541b46610",
+   "n": 1736,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "055": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-055.npz",
+   "source_sha256": "c46b4eaa313df325da5c69242af31ff9d70f89868c395e8495f67494c6ea097a",
+   "n": 1727,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "056": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-056.npz",
+   "source_sha256": "b487545bcf2084eef4158f9b792be85938bbc2f360031077fac6746138064cce",
+   "n": 1735,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "057": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-057.npz",
+   "source_sha256": "e4ae3f87e8d8d9a169dc1d7fd9dd6bd1161022dc9e7addad4eddbe515b93a881",
+   "n": 1672,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "058": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-058.npz",
+   "source_sha256": "0fd3adc164853dd37b514a720b83a90511aed0728ab328dbba0e79785a2b7850",
+   "n": 1730,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "059": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-059.npz",
+   "source_sha256": "747b6d4cf30bc0b8b8915bfd94461fbb068a4ad2c11972e7a8db632aa475d7f9",
+   "n": 1736,
+   "sorted_time_strictly_increasing": true,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  }
+ }
+}
