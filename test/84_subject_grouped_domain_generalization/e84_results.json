@@ -1,0 +1,834 @@
+{
+  "protocol": {
+    "experiment": "E84_subject_grouped_domain_generalization",
+    "status": "complete",
+    "scope": "strict six-subject LOSO diagnostic; targets 001-006 only",
+    "features": "E42 fixed multiscale features from real deployable input, scales=(60,120,300,600,99999), causal online normalization",
+    "models": {
+      "erm": "single low-capacity logistic model, pooled training frames, train-fold feature scaling",
+      "subject_risk_variance": "same logistic model and optimizer; add fixed pre-registered lambda=0.1 times variance of per-subject mean BCE risks"
+    },
+    "regularizer": {
+      "lambda": 0.1,
+      "selection": "fixed before target evaluation; no target-label tuning"
+    },
+    "postprocessing": "EMA half-life 1200 followed by causal forward HMM dwell=300",
+    "parts": {
+      "full": "all valid frames",
+      "early": "block<=2 diagnostic partition only",
+      "late": "block>=4 diagnostic partition only"
+    },
+    "prohibitions": [
+      "no block feature or block-conditioned model",
+      "no phase feature",
+      "no target statistics",
+      "no target labels for adaptation or tuning",
+      "no future samples",
+      "no target-record normalization"
+    ],
+    "expansion_rule": "do not expand to 57 unless both full and late show common explicit potential in six-fold diagnostic",
+    "device": "cuda",
+    "data_source": "test/11_individual_20261102/sliding1/sub-*.npz; labels only for training folds and final held-out evaluation",
+    "data_checks": {
+      "001": {
+        "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-001.npz",
+        "source_sha256": "3a6ea1c02234f560d8cc8cb926ebd302b077be75f9610bb5e7a8e2bbf7e78342",
+        "n": 1737,
+        "sorted_time_strictly_increasing": true,
+        "label_order_equal_L_load": true,
+        "block_not_used_as_feature": true,
+        "phase_not_used": true,
+        "target_statistics_not_used": true,
+        "future_data_not_used": true
+      },
+      "002": {
+        "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-002.npz",
+        "source_sha256": "2431b63b50826682ee23d8f8203be2adee302e2e5c3d1c5b7ff424215bf6c764",
+        "n": 1637,
+        "sorted_time_strictly_increasing": true,
+        "label_order_equal_L_load": true,
+        "block_not_used_as_feature": true,
+        "phase_not_used": true,
+        "target_statistics_not_used": true,
+        "future_data_not_used": true
+      },
+      "003": {
+        "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-003.npz",
+        "source_sha256": "298a23e4181930621e8d3652951bae27ee0a55c7383ef19de7e0e091ab7db401",
+        "n": 1606,
+        "sorted_time_strictly_increasing": true,
+        "label_order_equal_L_load": true,
+        "block_not_used_as_feature": true,
+        "phase_not_used": true,
+        "target_statistics_not_used": true,
+        "future_data_not_used": true
+      },
+      "004": {
+        "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-004.npz",
+        "source_sha256": "8bc385e5d3e2cdf67473439bd70f4e942479c448515bded1e21ed93fae090ba8",
+        "n": 1647,
+        "sorted_time_strictly_increasing": true,
+        "label_order_equal_L_load": true,
+        "block_not_used_as_feature": true,
+        "phase_not_used": true,
+        "target_statistics_not_used": true,
+        "future_data_not_used": true
+      },
+      "005": {
+        "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-005.npz",
+        "source_sha256": "0e7b5c0c3d1ce96f728adb0240cd46afb4d2a77299e198d950aa0168002b849a",
+        "n": 1665,
+        "sorted_time_strictly_increasing": true,
+        "label_order_equal_L_load": true,
+        "block_not_used_as_feature": true,
+        "phase_not_used": true,
+        "target_statistics_not_used": true,
+        "future_data_not_used": true
+      },
+      "006": {
+        "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-006.npz",
+        "source_sha256": "07978404be5caa8a5ce9d85795aa3f7add295d1a9c4d2902a651b32913e817a7",
+        "n": 1643,
+        "sorted_time_strictly_increasing": true,
+        "label_order_equal_L_load": true,
+        "block_not_used_as_feature": true,
+        "phase_not_used": true,
+        "target_statistics_not_used": true,
+        "future_data_not_used": true
+      }
+    }
+  },
+  "aggregate": {
+    "erm": {
+      "full": {
+        "auc": 0.7833411396662456,
+        "f1": 0.7335944800491889,
+        "bacc": 0.7456661351720606
+      },
+      "early": {
+        "auc": 0.7777948985937505,
+        "f1": 0.6913783721126051,
+        "bacc": 0.7622786880890606
+      },
+      "late": {
+        "auc": 0.7381638832288151,
+        "f1": 0.6484676929594019,
+        "bacc": 0.6833879188645406
+      }
+    },
+    "subject_risk_variance": {
+      "full": {
+        "auc": 0.7855430672768312,
+        "f1": 0.7365518492988388,
+        "bacc": 0.748715206880879
+      },
+      "early": {
+        "auc": 0.7819658621048426,
+        "f1": 0.6958600466363803,
+        "bacc": 0.7665052169346857
+      },
+      "late": {
+        "auc": 0.7413327721571171,
+        "f1": 0.6518438649821586,
+        "bacc": 0.6862374734114683
+      }
+    }
+  },
+  "subject_risk_variance_vs_erm": {
+    "full": {
+      "auc": {
+        "improved": 5,
+        "regressed": 1,
+        "equal": 0
+      },
+      "f1": {
+        "improved": 5,
+        "regressed": 1,
+        "equal": 0
+      },
+      "bacc": {
+        "improved": 5,
+        "regressed": 1,
+        "equal": 0
+      }
+    },
+    "early": {
+      "auc": {
+        "improved": 3,
+        "regressed": 3,
+        "equal": 0
+      },
+      "f1": {
+        "improved": 5,
+        "regressed": 1,
+        "equal": 0
+      },
+      "bacc": {
+        "improved": 5,
+        "regressed": 1,
+        "equal": 0
+      }
+    },
+    "late": {
+      "auc": {
+        "improved": 5,
+        "regressed": 1,
+        "equal": 0
+      },
+      "f1": {
+        "improved": 3,
+        "regressed": 1,
+        "equal": 2
+      },
+      "bacc": {
+        "improved": 3,
+        "regressed": 1,
+        "equal": 2
+      }
+    }
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "target": "001",
+      "train_subjects": [
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "010",
+        "011",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018",
+        "019",
+        "020",
+        "021",
+        "022",
+        "023",
+        "024",
+        "025",
+        "026",
+        "027",
+        "028",
+        "029",
+        "030",
+        "031",
+        "034",
+        "035",
+        "036",
+        "037",
+        "038",
+        "039",
+        "040",
+        "041",
+        "042",
+        "043",
+        "044",
+        "045",
+        "046",
+        "047",
+        "048",
+        "049",
+        "050",
+        "051",
+        "052",
+        "053",
+        "054",
+        "055",
+        "056",
+        "057",
+        "058",
+        "059"
+      ],
+      "train_frames": 94354,
+      "lambda": 0.1,
+      "metrics": {
+        "erm": {
+          "full": {
+            "n": 1737,
+            "auc": 0.985810534912209,
+            "f1": 0.934559221200649,
+            "bacc": 0.9303770953423873
+          },
+          "early": {
+            "n": 869,
+            "auc": 0.9859190344480765,
+            "f1": 0.9056,
+            "bacc": 0.9457804997784882
+          },
+          "late": {
+            "n": 581,
+            "auc": 0.9848657232928015,
+            "f1": 0.9046153846153846,
+            "bacc": 0.89198606271777
+          }
+        },
+        "subject_risk_variance": {
+          "full": {
+            "n": 1737,
+            "auc": 0.9860173513705567,
+            "f1": 0.9371614301191766,
+            "bacc": 0.9332546281811288
+          },
+          "early": {
+            "n": 869,
+            "auc": 0.9871163954643964,
+            "f1": 0.9131832797427653,
+            "bacc": 0.9509590861740723
+          },
+          "late": {
+            "n": 581,
+            "auc": 0.986027163478632,
+            "f1": 0.9046153846153846,
+            "bacc": 0.89198606271777
+          }
+        }
+      },
+      "elapsed_s": 8.6
+    },
+    {
+      "fold": 2,
+      "target": "002",
+      "train_subjects": [
+        "001",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "010",
+        "011",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018",
+        "019",
+        "020",
+        "021",
+        "022",
+        "023",
+        "024",
+        "025",
+        "026",
+        "027",
+        "028",
+        "029",
+        "030",
+        "031",
+        "034",
+        "035",
+        "036",
+        "037",
+        "038",
+        "039",
+        "040",
+        "041",
+        "042",
+        "043",
+        "044",
+        "045",
+        "046",
+        "047",
+        "048",
+        "049",
+        "050",
+        "051",
+        "052",
+        "053",
+        "054",
+        "055",
+        "056",
+        "057",
+        "058",
+        "059"
+      ],
+      "train_frames": 94454,
+      "lambda": 0.1,
+      "metrics": {
+        "erm": {
+          "full": {
+            "n": 1637,
+            "auc": 0.8126695345641394,
+            "f1": 0.7378640776699029,
+            "bacc": 0.7545931170460656
+          },
+          "early": {
+            "n": 826,
+            "auc": 0.9056250319676743,
+            "f1": 0.785829307568438,
+            "bacc": 0.8369584675975654
+          },
+          "late": {
+            "n": 542,
+            "auc": 0.5863905728492609,
+            "f1": 0.48735632183908045,
+            "bacc": 0.5932225325250324
+          }
+        },
+        "subject_risk_variance": {
+          "full": {
+            "n": 1637,
+            "auc": 0.8066155822429348,
+            "f1": 0.7341115434500648,
+            "bacc": 0.7515848120929677
+          },
+          "early": {
+            "n": 826,
+            "auc": 0.904499769832745,
+            "f1": 0.7779578606158833,
+            "bacc": 0.83015574650913
+          },
+          "late": {
+            "n": 542,
+            "auc": 0.5742251890198216,
+            "f1": 0.48623853211009177,
+            "bacc": 0.5913357400722021
+          }
+        }
+      },
+      "elapsed_s": 6.37
+    },
+    {
+      "fold": 3,
+      "target": "003",
+      "train_subjects": [
+        "001",
+        "002",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "010",
+        "011",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018",
+        "019",
+        "020",
+        "021",
+        "022",
+        "023",
+        "024",
+        "025",
+        "026",
+        "027",
+        "028",
+        "029",
+        "030",
+        "031",
+        "034",
+        "035",
+        "036",
+        "037",
+        "038",
+        "039",
+        "040",
+        "041",
+        "042",
+        "043",
+        "044",
+        "045",
+        "046",
+        "047",
+        "048",
+        "049",
+        "050",
+        "051",
+        "052",
+        "053",
+        "054",
+        "055",
+        "056",
+        "057",
+        "058",
+        "059"
+      ],
+      "train_frames": 94485,
+      "lambda": 0.1,
+      "metrics": {
+        "erm": {
+          "full": {
+            "n": 1606,
+            "auc": 0.951064357971824,
+            "f1": 0.9247457627118644,
+            "bacc": 0.9295739465028239
+          },
+          "early": {
+            "n": 834,
+            "auc": 0.9369425547996976,
+            "f1": 0.9087591240875912,
+            "bacc": 0.9188397581254724
+          },
+          "late": {
+            "n": 493,
+            "auc": 0.9265090543259556,
+            "f1": 0.9168765743073047,
+            "bacc": 0.9236586183769282
+          }
+        },
+        "subject_risk_variance": {
+          "full": {
+            "n": 1606,
+            "auc": 0.9514103518897784,
+            "f1": 0.9261016949152543,
+            "bacc": 0.9308198349159065
+          },
+          "early": {
+            "n": 834,
+            "auc": 0.9362433862433862,
+            "f1": 0.9104204753199269,
+            "bacc": 0.9197656840513984
+          },
+          "late": {
+            "n": 493,
+            "auc": 0.9283869885982562,
+            "f1": 0.9168765743073047,
+            "bacc": 0.9236586183769282
+          }
+        }
+      },
+      "elapsed_s": 6.37
+    },
+    {
+      "fold": 4,
+      "target": "004",
+      "train_subjects": [
+        "001",
+        "002",
+        "003",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "010",
+        "011",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018",
+        "019",
+        "020",
+        "021",
+        "022",
+        "023",
+        "024",
+        "025",
+        "026",
+        "027",
+        "028",
+        "029",
+        "030",
+        "031",
+        "034",
+        "035",
+        "036",
+        "037",
+        "038",
+        "039",
+        "040",
+        "041",
+        "042",
+        "043",
+        "044",
+        "045",
+        "046",
+        "047",
+        "048",
+        "049",
+        "050",
+        "051",
+        "052",
+        "053",
+        "054",
+        "055",
+        "056",
+        "057",
+        "058",
+        "059"
+      ],
+      "train_frames": 94444,
+      "lambda": 0.1,
+      "metrics": {
+        "erm": {
+          "full": {
+            "n": 1647,
+            "auc": 0.41024508949797855,
+            "f1": 0.37945791726105566,
+            "bacc": 0.47793190416141235
+          },
+          "early": {
+            "n": 799,
+            "auc": 0.5390488893728224,
+            "f1": 0.49814126394052044,
+            "bacc": 0.6191916648519163
+          },
+          "late": {
+            "n": 568,
+            "auc": 0.31587039815492207,
+            "f1": 0.234375,
+            "bacc": 0.31093531067491664
+          }
+        },
+        "subject_risk_variance": {
+          "full": {
+            "n": 1647,
+            "auc": 0.4179161338527101,
+            "f1": 0.3863150392017106,
+            "bacc": 0.48338137272563503
+          },
+          "early": {
+            "n": 799,
+            "auc": 0.5380553135888502,
+            "f1": 0.49906191369606,
+            "bacc": 0.6213557545731707
+          },
+          "late": {
+            "n": 568,
+            "auc": 0.3181519461356281,
+            "f1": 0.2514506769825919,
+            "bacc": 0.31964611206864485
+          }
+        }
+      },
+      "elapsed_s": 6.37
+    },
+    {
+      "fold": 5,
+      "target": "005",
+      "train_subjects": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "006",
+        "007",
+        "008",
+        "009",
+        "010",
+        "011",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018",
+        "019",
+        "020",
+        "021",
+        "022",
+        "023",
+        "024",
+        "025",
+        "026",
+        "027",
+        "028",
+        "029",
+        "030",
+        "031",
+        "034",
+        "035",
+        "036",
+        "037",
+        "038",
+        "039",
+        "040",
+        "041",
+        "042",
+        "043",
+        "044",
+        "045",
+        "046",
+        "047",
+        "048",
+        "049",
+        "050",
+        "051",
+        "052",
+        "053",
+        "054",
+        "055",
+        "056",
+        "057",
+        "058",
+        "059"
+      ],
+      "train_frames": 94426,
+      "lambda": 0.1,
+      "metrics": {
+        "erm": {
+          "full": {
+            "n": 1665,
+            "auc": 0.7725059562486463,
+            "f1": 0.6807538549400343,
+            "bacc": 0.6661468486029889
+          },
+          "early": {
+            "n": 847,
+            "auc": 0.5621434314814105,
+            "f1": 0.37583892617449666,
+            "bacc": 0.5213302957205397
+          },
+          "late": {
+            "n": 555,
+            "auc": 0.7947242642283815,
+            "f1": 0.7027027027027027,
+            "bacc": 0.664850507831779
+          }
+        },
+        "subject_risk_variance": {
+          "full": {
+            "n": 1665,
+            "auc": 0.7783726806728755,
+            "f1": 0.6861732644865175,
+            "bacc": 0.6732293697205978
+          },
+          "early": {
+            "n": 847,
+            "auc": 0.5786333295044097,
+            "f1": 0.38917089678510997,
+            "bacc": 0.5337934423300277
+          },
+          "late": {
+            "n": 555,
+            "auc": 0.8018806660259241,
+            "f1": 0.7028753993610224,
+            "bacc": 0.6665844091747408
+          }
+        }
+      },
+      "elapsed_s": 6.37
+    },
+    {
+      "fold": 6,
+      "target": "006",
+      "train_subjects": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "007",
+        "008",
+        "009",
+        "010",
+        "011",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018",
+        "019",
+        "020",
+        "021",
+        "022",
+        "023",
+        "024",
+        "025",
+        "026",
+        "027",
+        "028",
+        "029",
+        "030",
+        "031",
+        "034",
+        "035",
+        "036",
+        "037",
+        "038",
+        "039",
+        "040",
+        "041",
+        "042",
+        "043",
+        "044",
+        "045",
+        "046",
+        "047",
+        "048",
+        "049",
+        "050",
+        "051",
+        "052",
+        "053",
+        "054",
+        "055",
+        "056",
+        "057",
+        "058",
+        "059"
+      ],
+      "train_frames": 94448,
+      "lambda": 0.1,
+      "metrics": {
+        "erm": {
+          "full": {
+            "n": 1643,
+            "auc": 0.7677513648026766,
+            "f1": 0.7441860465116279,
+            "bacc": 0.7153738993766855
+          },
+          "early": {
+            "n": 818,
+            "auc": 0.7370904494928218,
+            "f1": 0.6741016109045849,
+            "bacc": 0.7315714424603817
+          },
+          "late": {
+            "n": 537,
+            "auc": 0.8206232865215688,
+            "f1": 0.644880174291939,
+            "bacc": 0.715674481060818
+          }
+        },
+        "subject_risk_variance": {
+          "full": {
+            "n": 1643,
+            "auc": 0.7729263036321313,
+            "f1": 0.7494481236203091,
+            "bacc": 0.7200212236490389
+          },
+          "early": {
+            "n": 818,
+            "auc": 0.7472469779952685,
+            "f1": 0.6853658536585366,
+            "bacc": 0.7430015879703147
+          },
+          "late": {
+            "n": 537,
+            "auc": 0.8393246796844402,
+            "f1": 0.6490066225165563,
+            "bacc": 0.724213898058524
+          }
+        }
+      },
+      "elapsed_s": 6.32
+    }
+  ]
+}
