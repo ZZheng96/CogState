@@ -1,0 +1,10 @@
+{
+  "experiment": "E77_late_gated_fusion",
+  "goal": "诊断E76 late退化并测试无标签因果稳定性保护",
+  "source": "E76逐折NPZ缓存（源自E74组件输出）",
+  "constraints": ["不修改src、旧实验、原始数据", "严格嵌套57折LOSO", "不使用block/目标标签决定规则", "统一EMA1200+HMM300"],
+  "candidate": "因果滚动分歧/门控偏离稳定性；不稳定点更强收缩到固定w=.5，稳定点保留E76半收缩",
+  "threshold": "每个外层训练折无标签池的因果滚动标准差75分位数",
+  "fallback": "若候选无效，仅运行一次符号保持的门控幅度限制替代",
+  "parts": {"full": "all", "early": "block<=2", "late": "block>=4"}
+}

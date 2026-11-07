@@ -1,0 +1,12 @@
+{
+  "experiment": "E78_early_only_clip_57fold",
+  "source": "../76_conditioned_fusion/fold_*.npz",
+  "folds": 57,
+  "base_score": "raw=0.5*(lr_scaled+mlp_scaled)",
+  "direction": "fixed sign(raw)",
+  "adaptation": "only block<=2: abs(conditioned)/max(abs(raw),eps), clipped [0.75,1.25]",
+  "preserved": "block>=3 unchanged; specifically late block>=4 strictly retains raw",
+  "postprocess": "causal EMA1200 + forward HMM300",
+  "outputs": ["e78_early_only_57v1_fold_*.npz", "e78_early_only_57_results.json", "报告_E78_early_only_clip_57人.md"],
+  "preserve_existing": true
+}

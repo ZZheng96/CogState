@@ -1,0 +1,73 @@
+{
+ "experiment": "E75_direction_invariant",
+ "status": "complete",
+ "targets": [
+  "004",
+  "009",
+  "010",
+  "018",
+  "034",
+  "050"
+ ],
+ "n_folds": 6,
+ "features": "E42 fixed multiscale features, unchanged; no feature selected by target labels",
+ "training": "each target is LOSO: 56 training subjects; LR C=.001; MLP default 30 epochs; seeds 0/1/2 mean",
+ "A_e74_raw": "exact E74 wLR=.5 reference implementation",
+ "B_subject_z": "each subject X-only mean/std, independently for train and target, then LR+MLP fusion wLR=.5",
+ "B_subject_robust": "each subject X-only median/IQR, independently for train and target, then LR+MLP fusion wLR=.5",
+ "C_center_abs": "each subject X-only mean-center then abs, then LR+MLP fusion wLR=.5",
+ "fusion": "raw=2*(.5*LR_scaled+.5*MLP_scaled); output std pooled over transformed training subjects only",
+ "postprocessing": "E61 EMA1200 then forward HMM300; threshold 0; positive label 1",
+ "parts": {
+  "full": "all frames",
+  "early": "block<=2",
+  "late": "block>=4"
+ },
+ "first_failure": "first chronological complete block with AUC<0.5, fixed before target scoring; not used for selection",
+ "target_label_usage": "target labels only used after scoring for reporting; no candidate selection",
+ "device": "cuda",
+ "data_checks": {
+  "004": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-004.npz",
+   "source_sha256": "8bc385e5d3e2cdf67473439bd70f4e942479c448515bded1e21ed93fae090ba8",
+   "n": 1647,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "009": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-009.npz",
+   "source_sha256": "60f755bbe381137a6f2b178e688c8c9121a727885ddd0917a6a6e24748603131",
+   "n": 1290,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "010": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-010.npz",
+   "source_sha256": "3b0a703f3f5f0e02ce23a64d6a7b586cd6598dd0f7f2af0bc7c79b6ad8fd9e8b",
+   "n": 1728,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "018": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-018.npz",
+   "source_sha256": "0466583771463f573682985c95478b4b5ba5a7b2014b353ec0432b04c81526e7",
+   "n": 1731,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "034": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-034.npz",
+   "source_sha256": "dae9aef258a3f9376c9567817a19ba06f22ead2730a7e971dea6e07180ce4fd3",
+   "n": 725,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  },
+  "050": {
+   "source": "D:\\WORK\\BCIC2026\\CogState\\test\\11_individual_20261102\\sliding1\\sub-050.npz",
+   "source_sha256": "229c44745772fb8559ffeb95defaeb81654fa47474b5df093bd628ad9d52bfc0",
+   "n": 1716,
+   "label_order_equal_L_load": true,
+   "block_order_equal_L_load": true
+  }
+ }
+}

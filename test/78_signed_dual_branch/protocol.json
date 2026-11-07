@@ -1,0 +1,12 @@
+{
+  "experiment": "E78_signed_dual_branch",
+  "goal": "诊断保留门控符号与幅度双分支融合是否改善后段退化",
+  "scope": "先执行六人诊断；只有出现明确潜力才扩展57人",
+  "source": "../76_conditioned_fusion/fold_*.npz，仅使用已生成的逐折缓存",
+  "split": "严格按目标被试留出；训练池不含目标被试；六人固定为数据集前六个被试",
+  "signed_branch": "保留conditioned门控分数的符号，符号分数与固定w=.5原始分数的符号冲突时取原始符号",
+  "magnitude_branch": "使用门控与固定w=.5幅度的几何均值，避免单分支异常幅度主导",
+  "fusion": "score = sign_branch * magnitude_branch；随后统一因果EMA1200与forward HMM300",
+  "parts": {"full":"all", "early":"block<=2", "late":"block>=4"},
+  "constraints": ["不修改原始数据、src和旧实验", "窗口与后处理遵守已有E76严格因果口径", "六人结果真实运行并保存JSON和中文报告"]
+}

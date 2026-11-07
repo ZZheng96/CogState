@@ -1,0 +1,26 @@
+{
+  "experiment": "E79_late_orientation_invariant",
+  "status": "complete",
+  "n_folds": 57,
+  "source": "E76 fold NPZ cache only; no src/raw data/old experiments modified",
+  "outer_split": "strict 57-fold LOSO; target excluded from all training frames",
+  "training_frames": "train subjects only, block>=4",
+  "features": "[abs(lr_scaled), abs(mlp_scaled), abs(lr_scaled-mlp_scaled)]",
+  "standardization": "training-fold mean/std only; zero std replaced by 1",
+  "logistic": "C=0.1, class_weight=balanced, solver=liblinear, max_iter=300, random_state=0",
+  "baseline": "exact E76 cached score_w0.50; never restaged",
+  "comparators": [
+    "fixed_w05",
+    "late_mlp",
+    "late_abs_only",
+    "late_abs_blend025"
+  ],
+  "activation": "block<=2 and block==3 fixed baseline; block>=4 expert candidate",
+  "postprocessing": "causal EMA1200 + forward HMM300, no target labels/future data",
+  "parts": {
+    "full": "all",
+    "early": "block<=2",
+    "late": "block>=4"
+  },
+  "causal_check": "suffix perturbation prefix invariance recorded per fold"
+}

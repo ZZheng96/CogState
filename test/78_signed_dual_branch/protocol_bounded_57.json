@@ -1,0 +1,18 @@
+{
+  "experiment": "E78_bounded_magnitude_57fold",
+  "source": "../76_conditioned_fusion/fold_*.npz",
+  "folds": 57,
+  "direction": "fixed sign of w=.5 raw",
+  "candidates": {
+    "e78_clip_ratio": "abs(conditioned)/max(abs(raw),eps), clipped to [0.75,1.25]",
+    "e78_convex_ratio": "0.5+0.5*clip_ratio, range [0.875,1.125]"
+  },
+  "postprocess": "causal EMA1200 + forward HMM300",
+  "metrics": ["full", "early", "late", "AUC", "F1", "bACC"],
+  "outputs": {
+    "fold_npz": "e78_bounded_fold_{fold:02d}_{subject}.npz",
+    "aggregate_json": "e78_bounded_57_results.json",
+    "report": "报告_E78_有界幅度57人验证.md"
+  },
+  "preserve_existing": true
+}

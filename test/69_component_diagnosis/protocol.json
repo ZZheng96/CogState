@@ -1,0 +1,41 @@
+{
+ "protocol": {
+  "experiment": "E69_component_diagnosis",
+  "targets": [
+   "004",
+   "009",
+   "010",
+   "018",
+   "034",
+   "050"
+  ],
+  "scope": "six E63 validated component-cache folds",
+  "cache_source": "D:\\WORK\\BCIC2026\\CogState\\test\\63_layer_ablation",
+  "components": [
+   "LR scaled",
+   "MLP scaled"
+  ],
+  "fusion": "raw = 2*(w*LR_scaled + (1-w)*MLP_scaled)",
+  "weights_evaluated": [
+   0.0,
+   0.5
+  ],
+  "baseline_weight": 0.5,
+  "postprocessing": {
+   "detrend": "ema_center(1200,None)",
+   "hmm": "hmm(300)",
+   "continuous_sequence": true,
+   "block_reset": false
+  },
+  "threshold": 0,
+  "positive_label": 1,
+  "evaluation_parts": [
+   "full",
+   "early (block<=2)",
+   "late (block>=4)"
+  ],
+  "selection": "none; no target labels used for weight choice",
+  "single_class": "AUC and bACC are null; F1 uses positive-class threshold 0",
+  "training": "no retraining; reuse E63 component caches"
+ }
+}

@@ -1,0 +1,14 @@
+{
+  "experiment": "E78_bounded_magnitude_variants",
+  "source": "../76_conditioned_fusion/fold_*.npz",
+  "scope": "固定预先声明的两个六人候选，不覆盖E78首个双分支结果",
+  "direction": "固定w=.5 signed raw方向，score符号不变",
+  "candidates": {
+    "e78_clip_ratio": "ratio=abs(conditioned)/max(abs(raw),eps)，clip到[0.75,1.25]",
+    "e78_convex_ratio": "0.5+0.5*clip(ratio)，幅度比例范围[0.875,1.125]"
+  },
+  "postprocess": "causal EMA1200 + forward HMM300",
+  "evaluation": "六人：001-006；比较full/early/late AUC、F1、bACC",
+  "expansion_rule": "仅当至少一个候选full AUC高于w=.5且late AUC不下降时进入57人，否则停止",
+  "preservation": "不覆盖e78_six_results.json和报告_E78_六人诊断.md"
+}

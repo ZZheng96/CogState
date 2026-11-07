@@ -1,0 +1,18 @@
+{
+  "experiment": "E70",
+  "title": "E53基线分数上的保守HMM软混合",
+  "data_source": "../53_e17_post_loso/e53_scores.npz",
+  "subjects": 57,
+  "no_retraining": true,
+  "no_src_change": true,
+  "no_target_label_parameter_selection": true,
+  "base_score": "E53 raw LOSO score",
+  "detrend": "causal EMA mean half-life 1200 frames",
+  "hmm": {"dwell": 300, "temperature": 1.0, "forward_only": true},
+  "fixed_candidates": ["raw", "dt1200", "dt1200_hmm300", "softmix_alpha_0.25", "softmix_alpha_0.5", "softmix_alpha_0.75", "conservative_sign_agree"],
+  "softmix_definition": "score=(1-alpha)*dt1200 + alpha*hmm(dt1200)",
+  "conservative_definition": "use hmm(dt1200) only when sign(hmm)==sign(dt1200), otherwise use dt1200",
+  "evaluation_splits": {"full": "all labelled frames", "early": "block<=1", "late": "block>=4"},
+  "metric": "per-subject macro mean of bACC, AUC, F1; threshold score>0",
+  "baseline_comparison": "E53 dt1200_hmm (dwell=300, temperature=1.0)"
+}

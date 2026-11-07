@@ -1,0 +1,34 @@
+{
+  "experiment": "E72_root_cause",
+  "purpose": "证据驱动定位 E53/E67/E69 后段性能退化首次失效环节",
+  "inputs": {
+    "e53_scores": "../53_e17_post_loso/e53_scores.npz",
+    "e69_component_cache": "../69_component_diagnosis/fold_{subject}.npz",
+    "canonical_labels": "../17_compliant/sliding1/sub-{subject}.npz"
+  },
+  "subjects": {"all": 57, "重点": ["004", "009", "010", "018", "034", "050"]},
+  "parts": {"full": "all frames", "early": "block <= 2", "late": "block >= 4"},
+  "scores": ["raw_lr", "raw_mlp", "fusion", "dt", "hmm"],
+  "metrics": ["AUC", "F1", "bACC", "sign_flip_rate", "pearson_r", "score_drift", "score_variance"],
+  "definitions": {
+    "fusion": "2*(0.5*lr_scaled + 0.5*mlp_scaled)",
+    "dt": "E69 ema_center(raw_fusion, halflife=1200)",
+    "hmm": "E69 forward HMM on dt, dwell=300",
+    "sign_flip_rate": "fraction of adjacent score differences whose sign changes; boundary excluded",
+    "score_drift": "mean(late score) - mean(early score), same score scale",
+    "score_variance": "population variance within requested part",
+    "pearson_r": "Pearson correlation of score with frame order within requested part"
+  },
+  "hypotheses": {
+    "H1": "模型输出在后段已失效",
+    "H2": "LR/MLP融合抵消",
+    "H3": "EMA/HMM首次引入失真",
+    "H4": "时间/标签/块对齐异常"
+  },
+  "controls": [
+    "只读既有缓存和规范标签，不修改src、原数据或旧实验",
+    "不按目标标签调参；固定 E69 既有融合和后处理参数",
+    "单类别分段的AUC/bACC记为null，F1按阈值0计算",
+    "late/early仅作描述性比较，不构成新模型选择"
+  ]
+}

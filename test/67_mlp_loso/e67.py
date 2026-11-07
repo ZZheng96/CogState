@@ -90,9 +90,16 @@ def main():
                 'threshold': 0, 'positive_label': 1, 'device': 'cuda',
                 'cache_rule': 'E63 six component caches reused only after target/train_subjects/data_hashes validation',
                 'baseline': 'E53 e53_scores raw, same ema_center(1200,None)+hmm(300)'}
-    save_json(HERE / 'protocol.json', {'protocol': protocol, 'data_checks': checks})
+    if not (HERE / 'protocol.json').exists():
+        save_json(HERE / 'protocol.json', {'protocol': protocol, 'data_checks': checks})
     folds = []
     for i, q in enumerate(subs, 1):
+        existing_json = HERE / f'fold_{i:02d}_{q}.json'
+        existing_npz = HERE / f'fold_{i:02d}_{q}.npz'
+        if existing_json.exists() and existing_npz.exists():
+            folds.append(json.loads(existing_json.read_text(encoding='utf-8')))
+            print(f'[{i}/57] {q} reused existing E67 fold', flush=True)
+            continue
         t0 = time.time(); tr = [p for p in subs if p != q]
         cached = load_cache(q, tr, checks)
         if cached:
@@ -125,11 +132,12 @@ def main():
     for s in ('raw','dt1200','dt1200_hmm300'):
         aggregate[s] = {}
         for part in ('full','early','late'):
-            aggregate[s][part] = {m: float(np.mean([r['metrics'][s][part][m] for r in folds])) for m in ('auc','f1','bacc')}
+            aggregate[s][part] = {m: (float(np.mean(vals)) if vals else None) for m in ('auc','f1','bacc')
+                                    for vals in [[r['metrics'][s][part][m] for r in folds if r['metrics'][s][part][m] is not None]]}
             for r in folds:
                 d = r['delta_vs_e53'][s][part]
                 comparisons.append({'target': r['target'], 'stage': s, 'part': part, 'baseline': r['baseline_e53'][s][part], 'mlp': r['metrics'][s][part], 'delta': d,
-                                    'status': 'improved' if d['bacc'] > 0 else ('regressed' if d['bacc'] < 0 else 'equal')})
+                                    'status': ('improved' if d['bacc'] > 0 else ('regressed' if d['bacc'] < 0 else 'equal')) if d['bacc'] is not None else 'undefined'})
     save_json(HERE / 'e67_results.json', {'protocol': protocol, 'aggregate': aggregate, 'folds': folds})
     save_json(HERE / 'e67_vs_e53_per_subject.json', {'protocol': protocol, 'comparisons': comparisons})
     print('AGGREGATE', json.dumps(aggregate, ensure_ascii=False), flush=True)
