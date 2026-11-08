@@ -1,12 +1,11 @@
-"""决赛验证系统后端核心：数据源、真值、黑盒评估、流式运行、合规检查、训练、导出。"""
+"""决赛验证系统后端核心：数据源、真值、黑盒评估、流式运行、合规检查、训练、导出。
+
+算法代码全部位于 system/algorithms/（包内相对导入），不依赖 src/ 或 test/。
+"""
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / "system" / "cache"
-for _p in (ROOT / "src", ROOT / "test" / "17_compliant"):
-    if str(_p) not in sys.path:
-        sys.path.insert(0, str(_p))
 
 import numpy as _np  # noqa: E402
 

@@ -21,9 +21,9 @@ from scipy.signal import stft, welch
 from scipy.stats import rankdata
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "src"))
-from cogstate import BANDS  # noqa: E402
-from preprocessing import PreprocessingConfig, causal_filter  # noqa: E402
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from system.algorithms.features import BANDS, PreprocessingConfig, causal_filter  # noqa: E402
 
 FS = 250.0
 CLASS_NAMES = {0: "relax", 1: "task"}

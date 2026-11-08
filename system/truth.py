@@ -26,7 +26,7 @@ def meta(source: str, sid: str) -> dict:
         if m.get("bdf") == bdf.name and m.get("csv") == csv.name:
             return m
     import mne
-    from cogstate import load_trials
+    from .algorithms.io import load_trials
     raw = mne.io.read_raw_bdf(str(bdf), preload=False, verbose="ERROR")
     fs = float(raw.info["sfreq"])
     bad = [(float(o), float(o + d)) for o, d, s in zip(raw.annotations.onset, raw.annotations.duration,

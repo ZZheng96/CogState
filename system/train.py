@@ -1,7 +1,7 @@
 """数据导入、特征构建与重训。产出 models/<名称>.pt（+ .json 元信息），并自动注册为可在线运行方案。
 
-特征与 test/17_compliant/streaming.py 推理完全一致：6 s 窗、1 s 步长，窗口须完整落在单个 trial 内且不含缺失段。
-内置数据源直接复用 test/11_individual_20261102/sliding1/；其他数据源按需构建并缓存到 system/cache/feat/。
+特征与 system/algorithms/e17.py 流式推理完全一致：6 s 窗、1 s 步长，窗口须完整落在单个 trial 内且不含缺失段。
+所有数据源（含内置）均由系统内 window_features 按需构建并缓存到 system/cache/feat/<source>/。
 """
 from __future__ import annotations
 
@@ -17,7 +17,6 @@ import numpy as np
 from . import CACHE, ROOT, dataset, runner, truth
 
 MODELS = ROOT / "models"
-SLID = ROOT / "test" / "11_individual_20261102" / "sliding1"
 
 
 # ---------------------------------------------------------------- 导入
@@ -51,8 +50,6 @@ def import_dir(job, name: str, src: str) -> dict:
 
 # ---------------------------------------------------------------- 特征
 def feat_path(source: str, sid: str) -> Path:
-    if source == "builtin" and (SLID / f"sub-{sid}.npz").exists():
-        return SLID / f"sub-{sid}.npz"
     return CACHE / "feat" / source / f"sub-{sid}.npz"
 
 
@@ -60,7 +57,7 @@ def build_features(source: str, sid: str, log=print) -> Path:
     f = feat_path(source, sid)
     if f.exists():
         return f
-    from streaming import window_features
+    from .algorithms.features import window_features
     t, y = truth.reference_grid(source, sid)
     x = runner.load_signal_v(source, sid)
     fs, n = runner.FS, int(round(truth.WIN_S * runner.FS))
@@ -92,7 +89,7 @@ class _JobOut(io.TextIOBase):
 def train(job, name: str, items: list[tuple[str, str]]) -> dict:
     """items: [(source, sid)]。"""
     dataset._check(name)
-    if name in ("current", "e17_raw", "demo_noncausal"):
+    if name in ("current", "e17_raw", "e76_gated", "demo_noncausal"):
         raise ValueError("名称与内置方案冲突")
     files = {}
     for i, (src, sid) in enumerate(items):
@@ -100,7 +97,7 @@ def train(job, name: str, items: list[tuple[str, str]]) -> dict:
             return {}
         files[f"{src}/{sid}"] = build_features(src, sid, job.log)
         job.progress = 0.5 * (i + 1) / len(items)
-    from streaming import train_bundle
+    from .algorithms.e17 import train_bundle
     MODELS.mkdir(exist_ok=True)
     out = MODELS / f"{name}.pt"
     job.log(f"开始训练：{len(files)} 名被试")

@@ -58,9 +58,9 @@ if not hasattr(np, "in1d"):
 import mne  # noqa: E402
 from scipy.signal import butter, sosfilt, welch  # noqa: E402
 
-import model_eval  # noqa: E402  当前方案（src/infer.py）推理与评估
+import model_eval  # noqa: E402,F401  方案计算入口（委托 system.runner；把仓库根加入 sys.path）
 import schemes  # noqa: E402  方案注册表（可切换 / 对比）
-from system import compliance, export, jobs, report, runner, train  # noqa: E402  （schemes 已把 ROOT 加入 sys.path）
+from system import compliance, export, jobs, report, runner, train  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 DATASET = ROOT / "EEG_dataset"
@@ -289,24 +289,24 @@ class SubjectStore:
 
 STORE: SubjectStore | None = None
 SUBJECT_ROWS: list[dict] = []
-PENDING: set[str] = set()
+PENDING: set[tuple[str, str]] = set()
 _PRED_LOCK = threading.Lock()
 
 
-def start_pred(sid: str) -> None:
-    """后台计算被试的方案输出（逐被试串行，GPU 推理在 model_eval 内加锁）。"""
+def start_pred(key: str, sid: str) -> None:
+    """后台计算被试的方案输出（GPU 推理在 runner 内加锁）。"""
     with _PRED_LOCK:
-        if sid in PENDING:
+        if (key, sid) in PENDING:
             return
-        PENDING.add(sid)
+        PENDING.add((key, sid))
 
     def run():
         try:
-            model_eval.load(sid, compute_missing=True)
+            schemes.load(key, sid, compute_missing=True)
         except Exception as exc:  # noqa: BLE001
-            print(f"[pred] {sid} 失败：{exc}", flush=True)
+            print(f"[pred] {key}/{sid} 失败：{exc}", flush=True)
         finally:
-            PENDING.discard(sid)
+            PENDING.discard((key, sid))
 
     threading.Thread(target=run, daemon=True).start()
 
@@ -509,9 +509,8 @@ class Handler(BaseHTTPRequestHandler):
                 STORE.paths_ok(sid)
                 d = schemes.load(key, sid)
                 if d is None:
-                    can = schemes.get(key)["compute"] is not None
-                    if can:
-                        start_pred(sid)
+                    can = True
+                    start_pred(key, sid)
                     self._json({"subject": sid, "scheme": key, "ready": False, "computable": can})
                     return
                 self._json({
@@ -525,7 +524,7 @@ class Handler(BaseHTTPRequestHandler):
             if path == "/api/metrics":
                 key = parse_qs(url.query).get("scheme", ["current"])[0]
                 s = schemes.summary(key, STORE.subjects())
-                s["computing"] = sorted(PENDING)
+                s["computing"] = sorted(sid for k, sid in PENDING if k == key)
                 self._json(s)
                 return
             if path == "/api/subjects":

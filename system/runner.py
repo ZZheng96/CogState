@@ -39,10 +39,22 @@ def runnable() -> list[dict]:
     return [{"key": k, "label": v["label"], "bundle": _rel(v["bundle"])} for k, v in RUNNABLE.items()]
 
 
+_HASH: dict[tuple[str, int, int], str] = {}
+
+
+def _file_hash(f: Path) -> str:
+    st = f.stat()
+    k = (str(f), st.st_mtime_ns, st.st_size)
+    if k not in _HASH:
+        import hashlib
+        _HASH[k] = hashlib.sha1(f.read_bytes()).hexdigest()[:12]
+    return _HASH[k]
+
+
 def version(key: str) -> str:
-    """方案版本指纹（bundle 修改时间），缓存失效判断用。"""
+    """方案版本指纹（bundle/参数文件内容哈希），缓存失效判断用。"""
     files = [RUNNABLE[key]["bundle"], *RUNNABLE[key]["deps"]]
-    v = "-".join(str(f.stat().st_mtime_ns) for f in files if f and f.exists())
+    v = "-".join(_file_hash(f) for f in files if f and f.exists())
     return v or "factory"
 
 
@@ -57,8 +69,8 @@ class Pipeline:
 
     def __init__(self, key: str):
         import torch
-        from infer import PostProcessor
-        from streaming import StreamingInference
+        from .algorithms.postprocess import PostProcessor
+        from .algorithms.e17 import StreamingInference
         spec = RUNNABLE[key]
         p = str(spec["bundle"])
         if p not in self._bundles:
@@ -83,7 +95,7 @@ class Pipeline:
 
 
 def load_signal_v(source: str, sid: str) -> np.ndarray:
-    from eeg_decoder import load_bdf
+    from .algorithms.io import load_bdf
     bdf, _ = dataset.paths(source, sid)
     rec = load_bdf(bdf)
     x = np.asarray(rec["signal_uv"], dtype=float) * 1e-6
@@ -186,7 +198,8 @@ class NonCausalDemo:
         return out
 
 
-E76_GATE = ROOT / "test" / "76_conditioned_fusion" / "deploy_gate.json"
+E17_BUNDLE = ROOT / "system" / "algorithms" / "models" / "e17_bundle.pt"
+E76_GATE = ROOT / "system" / "algorithms" / "models" / "e76_gate.json"
 
 
 class _CausalGate:
@@ -211,10 +224,11 @@ class _CausalGate:
         return self.shrink * float(x @ self.coef + self.b) + (1 - self.shrink) * (lr + mlp)
 
 
-class E76Pipeline:
-    """E17 bundle 分别输出 lr/std_lr、mlp/std_mlp → E76 条件化半收缩门控 → EMA1200 + HMM300。"""
+class E17Components:
+    """E17 原始分数，同时逐帧给出 lr/std_lr、mlp/std_mlp 两个分量。update -> [(t, lr, mlp, raw)]。"""
 
-    def __init__(self, key: str = "e76_gated"):
+    def __init__(self):
+        import torch
         self.base = Pipeline("e17_raw")
         sc = self.base.dec.scorer
         comp: list[tuple[float, float]] = []
@@ -227,35 +241,48 @@ class E76Pipeline:
             comp.append((float(a[0]), float(b[0])))
             return a + b
 
-        import torch
         sc.forward = torch.no_grad()(forward)
         self.comp = comp
+
+    def reset(self) -> None:
+        self.base.reset()
+        self.comp.clear()
+
+    def update(self, chunk) -> list[tuple[float, float, float, float]]:
+        out = []
+        for t, _, raw in self.base.update(chunk):
+            lr, mlp = self.comp.pop(0)
+            out.append((t, lr, mlp, raw))
+        return out
+
+
+class E76Pipeline:
+    """E17 bundle 分别输出 lr/std_lr、mlp/std_mlp → E76 条件化半收缩门控 → EMA1200 + HMM300。"""
+
+    def __init__(self, key: str = "e76_gated"):
+        from .algorithms.postprocess import PostProcessor
+        self.base = E17Components()
         self.gate = _CausalGate(E76_GATE)
-        from infer import PostProcessor
         self._post_cls = PostProcessor
         self.reset()
 
     def reset(self) -> None:
         self.base.reset()
-        self.comp.clear()
         self.gate.reset()
         self.post = self._post_cls(detrend_halflife=1200, dwell=300)
 
     def update(self, chunk) -> list[tuple[float, float, float]]:
         out = []
-        for t, _, _ in self.base.update(chunk):
-            lr, mlp = self.comp.pop(0)
+        for t, lr, mlp, _ in self.base.update(chunk):
             g = self.gate.update(lr, mlp)
             out.append((t, float(self.post.update(g)), g))
         return out
 
 
-register("e76_gated", label="E76 条件化半收缩门控（E17 LR/MLP 分量 + 因果门控 + EMA1200 + HMM300；门控由E76嵌套LOSO折外分数拟合）",
-         bundle=ROOT / "test" / "17_compliant" / "model_bundle.pt", factory=E76Pipeline, deps=(E76_GATE,))
-register("current", label="当前方案 src/infer.py（E17 + 去趋势 + HMM）",
-         bundle=ROOT / "test" / "17_compliant" / "model_bundle.pt")
-register("e17_raw", label="E17 原始分数（无后处理）",
-         bundle=ROOT / "test" / "17_compliant" / "model_bundle.pt", post=False)
+register("e76_gated", label="E76 条件化半收缩门控（E17 LR/MLP 分量 + 因果门控 + EMA1200 + HMM300；门控在 57 人训练集内拟合）",
+         bundle=E17_BUNDLE, factory=E76Pipeline, deps=(E76_GATE,))
+register("current", label="当前方案（E17 + 去趋势 + HMM）", bundle=E17_BUNDLE)
+register("e17_raw", label="E17 原始分数（无后处理）", bundle=E17_BUNDLE, post=False)
 register("demo_noncausal", label="【反例】E17 + 双向平滑（违规，合规检查演示）", factory=NonCausalDemo)
 
 

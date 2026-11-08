@@ -1,39 +1,38 @@
 """查看器的算法方案注册表。
 
-每个方案 = 一组逐帧决策分数（每 1 s 一帧，窗口 [t-6, t]，分数 > 0 判为 task），按被试缓存为 npz
-（字段 t / y / 若干分数列）。注册方式：
+方案直接对应 system.runner.RUNNABLE 的键（current / e17_raw / e76_gated）。逐帧分数（每 1 s 一帧，
+窗口 [t-6, t]，分数 > 0 判为 task）由 runner.get_or_run 用系统内部算法 system/algorithms/ 计算，
+缓存于 system/cache/runs/<key>/builtin/<sid>.npz（带版本指纹）。不读取任何外部缓存或文档。
 
-    register("key", label="...", desc="...", file=lambda sid: Path(...), field="post",
-             compute=lambda sid: ...)   # compute 可选：缓存缺失时按需生成 npz
-
-指标为黑盒统一口径：npz 里的 y 字段被忽略，标签由 system.truth 按 BDF+events 生成，
-指标与覆盖率由 system.evaluate 计算。
+口径：模型用全部 57 人训练，在训练集上推理（训练集内 / in-sample）。不含 LOSO / 交叉验证方案。
+标签由 system.truth 按 BDF+events 生成，指标与覆盖率由 system.evaluate 计算。
 """
 from __future__ import annotations
 
-import sys
-from pathlib import Path
-from typing import Callable
-
-import numpy as np
-
 import model_eval as ME
+from system import evaluate as EV, runner as RN, truth as TR
 
-if str(ME.ROOT) not in sys.path:
-    sys.path.insert(0, str(ME.ROOT))
-from system import evaluate as EV, truth as TR  # noqa: E402
-
+GROUP = "57人全量训练（训练集内）"
 REGISTRY: dict[str, dict] = {}
 
+_DESC = {
+    "current": "E17 多尺度 LR+3MLP（57 人全量训练）；因果 EMA 去趋势(hl=1200 s) + 前向 HMM(dwell=300 s)。",
+    "e17_raw": "同一 E17 bundle 的逐帧原始分数，不做跨帧平滑。",
+    "e76_gated": "E17 的 LR/MLP 分量 + E76 因果门控（门控 LR 在 57 人训练集内拟合，"
+                 "system/algorithms/fit_e76_gate.py），0.5×门控 + 0.5×(lr+mlp)，再 EMA1200 + HMM300。",
+}
 
-def register(key: str, *, label: str, desc: str, file: Callable[[str], Path], field: str,
-             compute: Callable[[str], object] | None = None, group: str = "") -> None:
-    REGISTRY[key] = {"key": key, "label": label, "desc": desc, "file": file, "field": field,
-                     "compute": compute, "group": group}
+
+def register(key: str, *, label: str, desc: str, field: str = "score", group: str = GROUP) -> None:
+    REGISTRY[key] = {"key": key, "label": label, "desc": desc, "field": field, "group": group}
+
+
+for _k in ("current", "e17_raw", "e76_gated"):
+    register(_k, label=RN.RUNNABLE[_k]["label"], desc=_DESC[_k] + "被评估被试在训练集中，指标偏乐观。")
 
 
 def info() -> list[dict]:
-    return [{k: v for k, v in s.items() if k in ("key", "label", "desc", "field", "group")} for s in REGISTRY.values()]
+    return [dict(s) for s in REGISTRY.values()]
 
 
 def get(key: str) -> dict:
@@ -44,15 +43,11 @@ def get(key: str) -> dict:
 
 def load(key: str, sid: str, compute_missing: bool = False) -> dict | None:
     s = get(key)
-    f = s["file"](sid)
-    if not f.exists():
-        if not (compute_missing and s["compute"]):
-            return None
-        s["compute"](sid)
-    z = np.load(f)
-    t = z["t"].astype(np.float64)
-    # 黑盒统一口径：方案只提供 (t, score)，y 一律由 system.truth 生成
-    return {"t": t, "y": TR.labels("builtin", sid, t), "score": z[s["field"]]}
+    d = ME.load(key, sid, compute_missing=compute_missing)
+    if d is None:
+        return None
+    t = d["t"].astype("float64")
+    return {"t": t, "y": TR.labels("builtin", sid, t), "score": d[s["field"]]}
 
 
 def subject_metrics(key: str, sid: str) -> dict | None:
@@ -67,57 +62,3 @@ def summary(key: str, sids: list[str]) -> dict:
     if rows:
         out["mean"] = EV.aggregate(rows)
     return out
-
-
-# ---------------------------------------------------------------- 已注册方案
-_insample = lambda sid: ME.CACHE / f"pred_{sid}.npz"  # noqa: E731
-_cv = lambda sid: ME.CACHE / "e17_cv" / f"pred_{sid}.npz"  # noqa: E731
-_POST = "因果 EMA 去趋势(hl=1200 s) + 前向 HMM(dwell=300 s)"
-
-register("current", group="训练集内", file=_insample, field="post", compute=ME.compute,
-         label="当前方案 src/infer.py（E17 + 后处理）",
-         desc=f"E17 多尺度 LR+MLP，全部 57 人训练；{_POST}。被评估被试在训练集中，指标偏乐观。")
-register("e17_raw", group="训练集内", file=_insample, field="raw", compute=ME.compute,
-         label="E17 原始分数（无后处理）",
-         desc="同一 model_bundle.pt 的逐帧原始分数，不做跨帧平滑。被评估被试在训练集中。")
-register("e17_cv_post", group="跨被试", file=_cv, field="post",
-         label="E17 跨被试 5 折 + 后处理",
-         desc=f"每个被试由不含它的 4 折模型预测（system/web/build_oof.py）；{_POST}。")
-register("e17_cv_raw", group="跨被试", file=_cv, field="raw",
-         label="E17 跨被试 5 折（无后处理）",
-         desc="每个被试由不含它的 4 折模型预测，逐帧原始分数。最接近未见被试的真实成绩。")
-
-_e44 = lambda sid: ME.CACHE / "e44" / f"pred_{sid}.npz"  # noqa: E731
-register("e44_dt1200_hmm", group="跨被试 LOSO", file=_e44, field="dt1200_hmm",
-         label="E44 最佳：E42 + EMA 去趋势 + HMM",
-         desc="E42 的 57 人 LOSO 分数，先减去因果 EMA 均值（hl=1200 帧），再做前向 HMM（dwell=300）。"
-              "来源 test/44_late_drift，由 system/web/build_e44.py 生成。")
-register("e42_hmm", group="跨被试 LOSO", file=_e44, field="hmm",
-         label="E42 基线：LOSO + HMM",
-         desc="E17 特征 LR+3MLP 的 57 人 LOSO 分数，只做前向 HMM（dwell=300），不去趋势。")
-register("e42_raw", group="跨被试 LOSO", file=_e44, field="raw",
-         label="E42 LOSO 原始分数",
-         desc="E42 的 57 人 LOSO 逐帧融合分数，不做跨帧后处理。")
-
-_E76_NESTED = ME.ROOT / "test" / "76_conditioned_fusion" / "nested_loso" / "cache"
-_e76n = lambda sid: next(iter(sorted(_E76_NESTED.glob(f"fold_*_{sid}.npz"))), _E76_NESTED / f"fold_00_{sid}.npz")  # noqa: E731
-register("e76_nested_w050", group="跨被试 LOSO", file=_e76n, field="score_w0.50",
-         label="E74 嵌套LOSO w=0.5（E76 对照基线）",
-         desc="与 e76_nested_shrink 同一外折 LOSO 分量，固定 lr+mlp，再做 EMA 去趋势(1200) + HMM(300)。")
-
-_e87 = lambda sid: ME.CACHE / "e87_deploy" / f"pred_{sid}.npz"  # noqa: E731
-register("e76_insample_deploy", group="训练集内", file=_e87, field="deploy_shrink",
-         label="E76 部署版（57人全量基座 + 折外门控）",
-         desc="训练集内口径，与 current/e17_raw 对齐：E87 全量 57 人 LR/MLP 分量 + deploy_gate.json"
-              "（嵌套 LOSO 折外分数拟合，即 system 中 e76_gated 所用门控），再 EMA1200 + HMM300。由 system/web/build_e87.py 生成。")
-register("e87_insample_shrink", group="训练集内", file=_e87, field="e87_shrink",
-         label="E87 conditioned_shrink（门控也在训练集内拟合）",
-         desc="E87 原始结果：门控用全量基座的样本内分量拟合，比部署版更乐观，仅作参考。")
-register("e87_insample_w050", group="训练集内", file=_e87, field="w050",
-         label="E87 w=0.5（全量基座 + EMA/HMM）",
-         desc="E87 全量 57 人基座，固定 lr+mlp，EMA1200 + HMM300；与 current 应基本一致。")
-
-register("e76_nested_shrink", group="跨被试 LOSO", file=_e76n, field="score_conditioned_shrink",
-         label="E76 嵌套LOSO conditioned_shrink",
-         desc="57 折嵌套 LOSO：外折被试完全不参与 LR/MLP/门控训练；0.5×门控 + 0.5×(lr+mlp)，"
-              "再做 EMA 去趋势(1200) + HMM(300)。来源 test/76_conditioned_fusion/nested_loso/nested_loso.py。")

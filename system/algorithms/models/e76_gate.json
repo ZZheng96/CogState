@@ -1,0 +1,34 @@
+{
+ "coef": [
+  -0.74868932065744,
+  9.75053648259741,
+  0.0789726633454443,
+  -0.6337635622311912,
+  1.1955342242632663,
+  -0.6358815473922813,
+  0.2510029450213298,
+  -0.5175324976599385,
+  -0.9855700284490754
+ ],
+ "intercept": 0.6560667154906626,
+ "window": 120,
+ "shrink": 0.5,
+ "C": 0.1,
+ "class_weight": "balanced",
+ "solver": "liblinear",
+ "features": [
+  "lr",
+  "mlp",
+  "d",
+  "mean_lr",
+  "mean_mlp",
+  "mean_d",
+  "std_lr",
+  "std_mlp",
+  "std_d"
+ ],
+ "n_frames": 95981,
+ "n_subjects": 57,
+ "fitted_on": "57 subjects in-sample",
+ "base": "system/algorithms/models/e17_bundle.pt"
+}
