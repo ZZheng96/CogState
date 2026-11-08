@@ -11,7 +11,7 @@ if %errorlevel%==0 (
   start "" "%URL%"
   exit /b 0
 )
-
+cd ..
 if not exist ".venv\Scripts\python.exe" (
   echo [ERROR] .venv\Scripts\python.exe not found. Create the venv first.
   pause
