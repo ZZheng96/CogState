@@ -1,0 +1,23 @@
+{
+  "experiment": "E76_conditioned_fusion",
+  "status": "complete",
+  "n_folds": 57,
+  "source": "E74 fold NPZ only; no src/data/old experiments modified",
+  "diagnostics": "per-subject unlabeled component disagreement, correlation, volatility and linear drift, plus labeled descriptive metrics",
+  "gate": "strict outer LOSO; inner training uses only other 56 cached component outputs and labels; LogisticRegression C=0.1; features=lr,mlp,abs_diff,causal rolling means/stds (window 120)",
+  "comparators": [
+    "fixed w=.5",
+    "fixed w=.25",
+    "pure MLP",
+    "conditioned_shrink (one minimal iteration)"
+  ],
+  "iteration": "After first gate, one predeclared half-shrink toward w=.5 was evaluated; no further search.",
+  "postprocessing": "EMA1200 + forward HMM300",
+  "parts": {
+    "full": "all",
+    "early": "block<=2",
+    "late": "block>=4"
+  },
+  "threshold": 0,
+  "diagnostic_subjects": 57
+}
