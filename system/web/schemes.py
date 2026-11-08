@@ -101,7 +101,23 @@ register("e42_raw", group="跨被试 LOSO", file=_e44, field="raw",
 
 _E76_NESTED = ME.ROOT / "test" / "76_conditioned_fusion" / "nested_loso" / "cache"
 _e76n = lambda sid: next(iter(sorted(_E76_NESTED.glob(f"fold_*_{sid}.npz"))), _E76_NESTED / f"fold_00_{sid}.npz")  # noqa: E731
+register("e76_nested_w050", group="跨被试 LOSO", file=_e76n, field="score_w0.50",
+         label="E74 嵌套LOSO w=0.5（E76 对照基线）",
+         desc="与 e76_nested_shrink 同一外折 LOSO 分量，固定 lr+mlp，再做 EMA 去趋势(1200) + HMM(300)。")
+
+_e87 = lambda sid: ME.CACHE / "e87_deploy" / f"pred_{sid}.npz"  # noqa: E731
+register("e76_insample_deploy", group="训练集内", file=_e87, field="deploy_shrink",
+         label="E76 部署版（57人全量基座 + 折外门控）",
+         desc="训练集内口径，与 current/e17_raw 对齐：E87 全量 57 人 LR/MLP 分量 + deploy_gate.json"
+              "（嵌套 LOSO 折外分数拟合，即 system 中 e76_gated 所用门控），再 EMA1200 + HMM300。由 system/web/build_e87.py 生成。")
+register("e87_insample_shrink", group="训练集内", file=_e87, field="e87_shrink",
+         label="E87 conditioned_shrink（门控也在训练集内拟合）",
+         desc="E87 原始结果：门控用全量基座的样本内分量拟合，比部署版更乐观，仅作参考。")
+register("e87_insample_w050", group="训练集内", file=_e87, field="w050",
+         label="E87 w=0.5（全量基座 + EMA/HMM）",
+         desc="E87 全量 57 人基座，固定 lr+mlp，EMA1200 + HMM300；与 current 应基本一致。")
+
 register("e76_nested_shrink", group="跨被试 LOSO", file=_e76n, field="score_conditioned_shrink",
-         label="E76 嵌套LOSO conditioned_shrink（0.8417/0.7748/0.7887）",
+         label="E76 嵌套LOSO conditioned_shrink",
          desc="57 折嵌套 LOSO：外折被试完全不参与 LR/MLP/门控训练；0.5×门控 + 0.5×(lr+mlp)，"
               "再做 EMA 去趋势(1200) + HMM(300)。来源 test/76_conditioned_fusion/nested_loso/nested_loso.py。")
