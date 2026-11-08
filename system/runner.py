@@ -250,7 +250,7 @@ class E76Pipeline:
         return out
 
 
-register("e76_gated", label="E76 条件化半收缩门控（E17 LR/MLP 分量 + 因果门控 + EMA1200 + HMM300）",
+register("e76_gated", label="E76 条件化半收缩门控（E17 LR/MLP 分量 + 因果门控 + EMA1200 + HMM300；门控由E76嵌套LOSO折外分数拟合）",
          bundle=ROOT / "test" / "17_compliant" / "model_bundle.pt", factory=E76Pipeline, deps=(E76_GATE,))
 register("current", label="当前方案 src/infer.py（E17 + 去趋势 + HMM）",
          bundle=ROOT / "test" / "17_compliant" / "model_bundle.pt")

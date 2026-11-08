@@ -1,15 +1,15 @@
 """把 src/infer.py 的当前方案（E17 多尺度 LR+MLP + 因果 EMA 去趋势 + 前向 HMM）接入查看器。
 
 对每个被试按 infer.py 的口径从记录首样本起流式推理（每 1 s 一个决策，窗口 = 过去 6 s），
-缓存逐帧结果到 vis/cache/pred_<sid>.npz，并计算 bACC / AUC / F1。
+缓存逐帧结果到 system/web/cache/pred_<sid>.npz，并计算 bACC / AUC / F1。
 
 评估帧：6 s 窗口 [t-6, t] 完全落在单个 trial 内且不跨缺失段，标签 = 该 trial 的 phase。
 注意：model_bundle.pt 用全部 57 人训练，这里的指标是训练集内（in-sample）指标，
 跨被试泛化成绩见 test/17_compliant/报告_E17_合规方案.md。
 
 用法：
-  python vis/model_eval.py --all          # 预计算全部被试
-  python vis/model_eval.py --subject 018
+  python system/web/model_eval.py --all          # 预计算全部被试
+  python system/web/model_eval.py --subject 018
 """
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ from pathlib import Path
 
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / "src"
 CACHE = Path(__file__).resolve().parent / "cache"
 BUNDLE_PATH = ROOT / "test" / "17_compliant" / "model_bundle.pt"

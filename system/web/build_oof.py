@@ -2,9 +2,9 @@
 
 外层划分与 test/17_compliant/multiscale.py 相同：perm = RandomState(0).permutation(subs)，
 outer = perm[k::5]。每折用其余 4 折训练 bundle（与 model_bundle.pt 同配方），再对本折被试
-按 src/infer.py 口径流式推理，结果写入 vis/cache/e17_cv/pred_<sid>.npz。
+按 src/infer.py 口径流式推理，结果写入 system/web/cache/e17_cv/pred_<sid>.npz。
 
-用法：python vis/build_oof.py
+用法：python system/web/build_oof.py
 """
 from __future__ import annotations
 

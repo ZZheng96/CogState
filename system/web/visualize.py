@@ -20,7 +20,7 @@ import pandas as pd
 from scipy.signal import stft, welch
 from scipy.stats import rankdata
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 from cogstate import BANDS  # noqa: E402
 from preprocessing import PreprocessingConfig, causal_filter  # noqa: E402
@@ -343,7 +343,7 @@ def parse_args():
     parser.add_argument("--data", type=Path, default=ROOT / "test" / "highdim_deep_features.npz", help="波形与特征缓存")
     parser.add_argument("--manifest", type=Path, default=ROOT / "database" / "manifest.json", help="特征名称清单")
     parser.add_argument("--subject", default="001", help="波形示例受试者，默认 001")
-    parser.add_argument("--output-dir", type=Path, default=ROOT / "vis" / "output", help="输出目录")
+    parser.add_argument("--output-dir", type=Path, default=ROOT / "system" / "web" / "output", help="输出目录")
     parser.add_argument("--top", type=int, default=6, help="类别分布图展示的特征数")
     parser.add_argument("--psd-windows-per-class", type=int, default=30, help="PSD 每名受试者每类最多窗口数")
     parser.add_argument("--dpi", type=int, default=160, help="输出图片 DPI")

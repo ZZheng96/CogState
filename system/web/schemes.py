@@ -82,7 +82,7 @@ register("e17_raw", group="训练集内", file=_insample, field="raw", compute=M
          desc="同一 model_bundle.pt 的逐帧原始分数，不做跨帧平滑。被评估被试在训练集中。")
 register("e17_cv_post", group="跨被试", file=_cv, field="post",
          label="E17 跨被试 5 折 + 后处理",
-         desc=f"每个被试由不含它的 4 折模型预测（vis/build_oof.py）；{_POST}。")
+         desc=f"每个被试由不含它的 4 折模型预测（system/web/build_oof.py）；{_POST}。")
 register("e17_cv_raw", group="跨被试", file=_cv, field="raw",
          label="E17 跨被试 5 折（无后处理）",
          desc="每个被试由不含它的 4 折模型预测，逐帧原始分数。最接近未见被试的真实成绩。")
@@ -91,10 +91,17 @@ _e44 = lambda sid: ME.CACHE / "e44" / f"pred_{sid}.npz"  # noqa: E731
 register("e44_dt1200_hmm", group="跨被试 LOSO", file=_e44, field="dt1200_hmm",
          label="E44 最佳：E42 + EMA 去趋势 + HMM",
          desc="E42 的 57 人 LOSO 分数，先减去因果 EMA 均值（hl=1200 帧），再做前向 HMM（dwell=300）。"
-              "来源 test/44_late_drift，由 vis/build_e44.py 生成。")
+              "来源 test/44_late_drift，由 system/web/build_e44.py 生成。")
 register("e42_hmm", group="跨被试 LOSO", file=_e44, field="hmm",
          label="E42 基线：LOSO + HMM",
          desc="E17 特征 LR+3MLP 的 57 人 LOSO 分数，只做前向 HMM（dwell=300），不去趋势。")
 register("e42_raw", group="跨被试 LOSO", file=_e44, field="raw",
          label="E42 LOSO 原始分数",
          desc="E42 的 57 人 LOSO 逐帧融合分数，不做跨帧后处理。")
+
+_E76_NESTED = ME.ROOT / "test" / "76_conditioned_fusion" / "nested_loso" / "cache"
+_e76n = lambda sid: next(iter(sorted(_E76_NESTED.glob(f"fold_*_{sid}.npz"))), _E76_NESTED / f"fold_00_{sid}.npz")  # noqa: E731
+register("e76_nested_shrink", group="跨被试 LOSO", file=_e76n, field="score_conditioned_shrink",
+         label="E76 嵌套LOSO conditioned_shrink（0.8417/0.7748/0.7887）",
+         desc="57 折嵌套 LOSO：外折被试完全不参与 LR/MLP/门控训练；0.5×门控 + 0.5×(lr+mlp)，"
+              "再做 EMA 去趋势(1200) + HMM(300)。来源 test/76_conditioned_fusion/nested_loso/nested_loso.py。")

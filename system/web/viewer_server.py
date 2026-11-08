@@ -1,7 +1,7 @@
 """EEG 波形查看器的本地数据服务（只读，不导出、不落盘）。
 
 按需从 EEG_dataset 读取 BDF 原始采样率（250 Hz）数据，通过 HTTP 提供给
-vis/viewer.html。BDF 读取结果按被试缓存在内存中，避免重复解析。
+system/web/viewer.html。BDF 读取结果按被试缓存在内存中，避免重复解析。
 
 接口：
   GET /                          -> viewer.html
@@ -13,7 +13,7 @@ vis/viewer.html。BDF 读取结果按被试缓存在内存中，避免重复解�
                                  -> 6 秒因果窗口：原始 + 1–45 Hz 因果滤波 + 频带功率 + 方案输出
   GET /api/envelope/<sid>?t0=&t1=&bins=&filt=0|1
                                  -> 任意时间跨度的 min/max 包络（点少时返回原始样本）
-  GET /api/schemes               -> 已注册方案列表（vis/schemes.py）
+  GET /api/schemes               -> 已注册方案列表（system/web/schemes.py）
   GET /api/pred/<sid>?scheme=    -> 方案逐秒决策分数；可计算的方案未缓存时后台计算
   GET /api/metrics?scheme=       -> 方案 bACC / AUC / F1 汇总（逐被试 + 宏平均）
   GET  /api/runnable             -> 可在线运行的方案（system/runner.py）
@@ -32,8 +32,8 @@ vis/viewer.html。BDF 读取结果按被试缓存在内存中，避免重复解�
   POST /api/job/<id>/stop        -> 取消任务
 
 用法：
-  python vis/viewer_server.py
-  python vis/viewer_server.py --port 8765 --no-browser
+  python system/web/viewer_server.py
+  python system/web/viewer_server.py --port 8765 --no-browser
 """
 from __future__ import annotations
 
@@ -62,7 +62,7 @@ import model_eval  # noqa: E402  当前方案（src/infer.py）推理与评估
 import schemes  # noqa: E402  方案注册表（可切换 / 对比）
 from system import compliance, export, jobs, report, runner, train  # noqa: E402  （schemes 已把 ROOT 加入 sys.path）
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 DATASET = ROOT / "EEG_dataset"
 VIEWER = Path(__file__).resolve().parent / "viewer.html"
 SYSTEM_PAGE = Path(__file__).resolve().parent / "system.html"

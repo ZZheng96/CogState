@@ -19,5 +19,5 @@ if not exist ".venv\Scripts\python.exe" (
 )
 
 echo Starting EEG viewer at %URL%  (close this window to stop)
-".venv\Scripts\python.exe" "vis\viewer_server.py" --port %PORT%
+".venv\Scripts\python.exe" "system\web\viewer_server.py" --port %PORT%
 if errorlevel 1 pause

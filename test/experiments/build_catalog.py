@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 OUT = Path(__file__).resolve().parent
 
-SCAN_DIRS = ["src", "test", "vis", "database"]
+SCAN_DIRS = ["src", "test", "system", "database"]
 ROOT_DOCS = sorted(p.name for p in ROOT.iterdir() if p.is_file() and p.suffix.lower() == ".md")
 
 KIND = {
@@ -46,7 +46,7 @@ TEST_FAMILY_RULES = [
 
 DIR_FAMILIES = {
     "src": "src 核心源码",
-    "vis": "可视化（vis）",
+    "system": "验证系统（system，含 web 前端）",
     "test/00_baseline": "00 基线、对齐与回归测试",
     "test/01_features": "01 特征工程与窗口协议",
     "test/02_models": "02 传统模型、融合与状态映射",

@@ -9,7 +9,7 @@
 - 规则原文：[赛题要求和操作细则](赛题要求和操作细则.md)、[数据说明](EEG_dataset/README.txt)。
 - 历史原文：[(1) Solve Project with C....md](<(1) Solve Project with C....md>)；旧机器绝对路径仅作历史记录，不代表本机可运行路径。
 
-目录职责：`src/` 是推理/训练源码；`EEG_dataset/` 是不可修改的原始记录；`database/` 是派生窗口；`test/` 按方法族组织实验——`00_baseline`、`01_features`、`02_models`、`03_deep`、`04_temporal`、`05_history`、`06_adaptive`、`07_depositioned`、`08_diagnostics`、`09_database`，另有 `audit/`、`literature/`、`memory/`、`realorder/`、`theory/`；共享数组在 `test/cache/`，历史报告在 `test/reports/`，检索入口在 `test/experiments/`，无脚本产物在 `test/_orphans/`；`vis/` 是可视化。新假设实验放入 `test/10_projects/`。
+目录职责：`src/` 是推理/训练源码；`EEG_dataset/` 是不可修改的原始记录；`database/` 是派生窗口；`test/` 按方法族组织实验——`00_baseline`、`01_features`、`02_models`、`03_deep`、`04_temporal`、`05_history`、`06_adaptive`、`07_depositioned`、`08_diagnostics`、`09_database`，另有 `audit/`、`literature/`、`memory/`、`realorder/`、`theory/`；共享数组在 `test/cache/`，历史报告在 `test/reports/`，检索入口在 `test/experiments/`，无脚本产物在 `test/_orphans/`；`system/web/` 是可视化。新假设实验放入 `test/10_projects/`。
 
 **阅读警告：以下为累计历史记录，不是统一的当前排行榜或已验证提交包。** 不同阶段的窗口、划分、真实/随机顺序、历史自适应和 oracle 结果不能直接比较；后面的旧“最佳”“合法”描述必须结合对应结果和规则重新判断。官方指标为 **AUC + bACC**，项目报告另需 **F1**；未保存的 F1 标为“未记录”，不能用 AUC/bACC 换算。历史单次运行输出不保证在当前环境复现。
 

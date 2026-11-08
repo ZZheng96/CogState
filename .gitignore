@@ -14,8 +14,8 @@ __pycache__/
 ~$*
 
 # 查看器缓存（逐秒预测、日志）
-vis/cache/
-vis/viewer_data/
+system/web/cache/
+system/web/viewer_data/
 system/cache/
 data_import/
 models/

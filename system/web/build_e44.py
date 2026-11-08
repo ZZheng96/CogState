@@ -1,4 +1,4 @@
-"""把 E42/E44 的 LOSO 逐帧分数转换成查看器 npz（vis/cache/e44/pred_<sid>.npz）。
+"""把 E42/E44 的 LOSO 逐帧分数转换成查看器 npz（system/web/cache/e44/pred_<sid>.npz）。
 
 帧时间 t / 标签 y 取自 test/11_individual_20261102/sliding1/sub-<sid>.npz（与 E42/E44 的 L.load 同序）。
 字段：raw（E42 LOSO 融合分数）、hmm（E42 基线 hmm_d300）、dt1200_hmm（E44 最佳）。
@@ -13,7 +13,7 @@ import torch
 
 import model_eval as ME
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 SLID = ROOT / "test" / "11_individual_20261102" / "sliding1"
 SRC = ROOT / "test" / "42_e17_loso_hmm" / "e42_scores.npz"
 OUT = ME.CACHE / "e44"

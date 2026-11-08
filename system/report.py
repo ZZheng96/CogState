@@ -9,7 +9,7 @@ import numpy as np
 from . import ROOT, dataset, evaluate, runner
 
 REPORTS = ROOT / "reports"
-# 离线结果加载器（由服务端注入 vis.schemes）：(key, sid) -> {"t","score"} 或 None
+# 离线结果加载器（由服务端注入 system/web/schemes.py）：(key, sid) -> {"t","score"} 或 None
 OfflineLoader = Callable[[str, str], "dict | None"]
 
 
