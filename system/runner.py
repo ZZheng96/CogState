@@ -36,7 +36,8 @@ def _rel(p: Path | None) -> str | None:
 
 
 def runnable() -> list[dict]:
-    return [{"key": k, "label": v["label"], "bundle": _rel(v["bundle"])} for k, v in RUNNABLE.items()]
+    return [{"key": k, "label": v["label"], "bundle": _rel(v["bundle"])} for k, v in RUNNABLE.items()
+            if not k.startswith("_")]  # "_" 开头为内部原始分数方案，不在界面列出
 
 
 _HASH: dict[tuple[str, int, int], str] = {}
@@ -200,7 +201,7 @@ class NonCausalDemo:
 
 E17_BUNDLE = ROOT / "system" / "algorithms" / "models" / "e17_bundle.pt"
 E76_GATE = ROOT / "system" / "algorithms" / "models" / "e76_gate.json"
-DEPLOY_GATE = ROOT / "system" / "algorithms" / "models" / "deploy_gate.json"   # = commit/pack/model/deploy_gate.json
+DEPLOY_GATE = ROOT / "src" / "model" / "deploy_gate.json"   # 与 commit/pack/model/deploy_gate.json 相同，受 git 跟踪
 
 
 class _CausalGate:
@@ -228,9 +229,9 @@ class _CausalGate:
 class E17Components:
     """E17 原始分数，同时逐帧给出 lr/std_lr、mlp/std_mlp 两个分量。update -> [(t, lr, mlp, raw)]。"""
 
-    def __init__(self):
+    def __init__(self, raw_key: str = "e17_raw"):
         import torch
-        self.base = Pipeline("e17_raw")
+        self.base = Pipeline(raw_key)
         sc = self.base.dec.scorer
         comp: list[tuple[float, float]] = []
 
@@ -260,9 +261,9 @@ class E17Components:
 class E76Pipeline:
     """E17 bundle 分别输出 lr/std_lr、mlp/std_mlp → E76 条件化半收缩门控 → EMA1200 + HMM300。"""
 
-    def __init__(self, gate: Path = E76_GATE):
+    def __init__(self, gate: Path = E76_GATE, raw_key: str = "e17_raw"):
         from .algorithms.postprocess import PostProcessor
-        self.base = E17Components()
+        self.base = E17Components(raw_key)
         self.gate = _CausalGate(gate)
         self._post_cls = PostProcessor
         self.reset()

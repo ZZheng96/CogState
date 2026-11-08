@@ -111,11 +111,26 @@ def train(job, name: str, items: list[tuple[str, str]]) -> dict:
     return {**meta, "bundle": str(out.relative_to(ROOT)), "scheme": f"m_{name}"}
 
 
+def gate_path(pt: Path) -> Path:
+    return pt.with_name(f"{pt.stem}_gate.json")
+
+
 def register_model(pt: Path) -> None:
+    """注册为与提交版 commit/pack 相同的流程：新 bundle + 门控 + EMA1200 + HMM300。
+    门控默认复制随包 deploy_gate.json（与 pack/code/train.py 默认行为一致）。"""
     j = pt.with_suffix(".json")
     meta = json.loads(j.read_text(encoding="utf-8")) if j.exists() else {}
     n = len(meta.get("subjects", []))
-    runner.register(f"m_{pt.stem}", label=f"训练模型 {pt.stem}（{n} 人，+去趋势+HMM）", bundle=pt)
+    g = gate_path(pt)
+    if not g.exists() and runner.DEPLOY_GATE.exists():
+        shutil.copy2(runner.DEPLOY_GATE, g)
+    if not g.exists():  # 无门控文件时退回 LR+MLP 等权
+        runner.register(f"m_{pt.stem}", label=f"训练模型 {pt.stem}（{n} 人，+去趋势+HMM）", bundle=pt)
+        return
+    raw = f"_raw_m_{pt.stem}"
+    runner.register(raw, label=raw, bundle=pt, post=False)
+    runner.register(f"m_{pt.stem}", label=f"训练模型 {pt.stem}（{n} 人，+门控+去趋势+HMM，同提交版）",
+                    bundle=pt, factory=lambda: runner.E76Pipeline(g, raw), deps=(g,))
 
 
 def models() -> list[dict]:
