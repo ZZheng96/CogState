@@ -21,10 +21,12 @@ RUNNABLE: dict[str, dict] = {}
 
 
 def register(key: str, *, label: str, bundle: Path | None = None, detrend: float | None = 1200,
-             dwell: int = 300, post: bool = True, factory: Callable[[], object] | None = None) -> None:
-    """bundle 方案：StreamingInference + PostProcessor；或 factory() 返回任意满足 Decoder 协议的对象。"""
+             dwell: int = 300, post: bool = True, factory: Callable[[], object] | None = None,
+             deps: tuple[Path, ...] = ()) -> None:
+    """bundle 方案：StreamingInference + PostProcessor；或 factory() 返回任意满足 Decoder 协议的对象。
+    deps：额外参数文件，参与版本指纹。"""
     RUNNABLE[key] = {"key": key, "label": label, "bundle": Path(bundle) if bundle else None,
-                     "detrend": detrend, "dwell": dwell, "post": post, "factory": factory}
+                     "detrend": detrend, "dwell": dwell, "post": post, "factory": factory, "deps": deps}
 
 
 def _rel(p: Path | None) -> str | None:
@@ -39,8 +41,9 @@ def runnable() -> list[dict]:
 
 def version(key: str) -> str:
     """方案版本指纹（bundle 修改时间），缓存失效判断用。"""
-    b = RUNNABLE[key]["bundle"]
-    return f"{b.stat().st_mtime_ns}" if b and b.exists() else "factory"
+    files = [RUNNABLE[key]["bundle"], *RUNNABLE[key]["deps"]]
+    v = "-".join(str(f.stat().st_mtime_ns) for f in files if f and f.exists())
+    return v or "factory"
 
 
 class Pipeline:
@@ -183,6 +186,72 @@ class NonCausalDemo:
         return out
 
 
+E76_GATE = ROOT / "test" / "76_conditioned_fusion" / "deploy_gate.json"
+
+
+class _CausalGate:
+    """E76 门控的在线版：lr/mlp 分量 + |差| 及其最近 window 帧（含当前）的均值/总体标准差。"""
+
+    def __init__(self, spec: dict):
+        import json
+        g = json.loads(Path(spec).read_text(encoding="utf-8")) if not isinstance(spec, dict) else spec
+        self.coef, self.b = np.asarray(g["coef"], float), float(g["intercept"])
+        self.w, self.shrink = int(g["window"]), float(g["shrink"])
+        self.reset()
+
+    def reset(self) -> None:
+        from collections import deque
+        self.q = deque(maxlen=self.w)
+
+    def update(self, lr: float, mlp: float) -> float:
+        d = abs(lr - mlp)
+        self.q.append((lr, mlp, d))
+        a = np.asarray(self.q)
+        x = np.r_[lr, mlp, d, a.mean(0), a.std(0)]
+        return self.shrink * float(x @ self.coef + self.b) + (1 - self.shrink) * (lr + mlp)
+
+
+class E76Pipeline:
+    """E17 bundle 分别输出 lr/std_lr、mlp/std_mlp → E76 条件化半收缩门控 → EMA1200 + HMM300。"""
+
+    def __init__(self, key: str = "e76_gated"):
+        self.base = Pipeline("e17_raw")
+        sc = self.base.dec.scorer
+        comp: list[tuple[float, float]] = []
+
+        def forward(X):
+            lr = sc.lr
+            s_lr = ((X - lr["mu"]) / lr["sd"]) @ lr["w"] + lr["b"]
+            s_m = torch.stack([n((X - mu) / sd).squeeze(1) for mu, sd, n in sc.nets]).mean(0)
+            a, b = s_lr / sc.std_lr, s_m / sc.std_mlp
+            comp.append((float(a[0]), float(b[0])))
+            return a + b
+
+        import torch
+        sc.forward = torch.no_grad()(forward)
+        self.comp = comp
+        self.gate = _CausalGate(E76_GATE)
+        from infer import PostProcessor
+        self._post_cls = PostProcessor
+        self.reset()
+
+    def reset(self) -> None:
+        self.base.reset()
+        self.comp.clear()
+        self.gate.reset()
+        self.post = self._post_cls(detrend_halflife=1200, dwell=300)
+
+    def update(self, chunk) -> list[tuple[float, float, float]]:
+        out = []
+        for t, _, _ in self.base.update(chunk):
+            lr, mlp = self.comp.pop(0)
+            g = self.gate.update(lr, mlp)
+            out.append((t, float(self.post.update(g)), g))
+        return out
+
+
+register("e76_gated", label="E76 条件化半收缩门控（E17 LR/MLP 分量 + 因果门控 + EMA1200 + HMM300）",
+         bundle=ROOT / "test" / "17_compliant" / "model_bundle.pt", factory=E76Pipeline, deps=(E76_GATE,))
 register("current", label="当前方案 src/infer.py（E17 + 去趋势 + HMM）",
          bundle=ROOT / "test" / "17_compliant" / "model_bundle.pt")
 register("e17_raw", label="E17 原始分数（无后处理）",
