@@ -1,0 +1,11 @@
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.7.1+cu118
+numpy==2.4.6
+scipy==1.17.1
+pandas==2.3.3
+scikit-learn==1.9.1
+mne==1.13.2
+PyWavelets==1.9.0
+matplotlib==3.11.2
+joblib==1.6.0
+threadpoolctl==3.7.0

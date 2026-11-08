@@ -89,7 +89,7 @@ class _JobOut(io.TextIOBase):
 def train(job, name: str, items: list[tuple[str, str]]) -> dict:
     """items: [(source, sid)]。"""
     dataset._check(name)
-    if name in ("current", "e17_raw", "e76_gated", "demo_noncausal"):
+    if name in ("current", "e17_raw", "e76_gated", "e76_deploy", "demo_noncausal"):
         raise ValueError("名称与内置方案冲突")
     files = {}
     for i, (src, sid) in enumerate(items):

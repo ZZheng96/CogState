@@ -1,0 +1,29 @@
+{
+  "source": "E74 out-of-fold lr_scaled/mlp_scaled, 57 subjects",
+  "window": 120,
+  "features": [
+    "lr",
+    "mlp",
+    "abs_diff",
+    "lr_mean",
+    "mlp_mean",
+    "diff_mean",
+    "lr_std",
+    "mlp_std",
+    "diff_std"
+  ],
+  "coef": [
+    0.6475031002987681,
+    0.7447603681249747,
+    0.030964157355380398,
+    -0.01214219321488772,
+    1.2925306620873664,
+    -0.33365341659492675,
+    1.0241486793652346,
+    -1.0870567306410273,
+    -0.8959759579180285
+  ],
+  "intercept": 0.5014523581219651,
+  "shrink": 0.5,
+  "score": "shrink*gate + (1-shrink)*(lr+mlp) -> EMA1200 + HMM300"
+}

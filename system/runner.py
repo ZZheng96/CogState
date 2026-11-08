@@ -200,6 +200,7 @@ class NonCausalDemo:
 
 E17_BUNDLE = ROOT / "system" / "algorithms" / "models" / "e17_bundle.pt"
 E76_GATE = ROOT / "system" / "algorithms" / "models" / "e76_gate.json"
+DEPLOY_GATE = ROOT / "system" / "algorithms" / "models" / "deploy_gate.json"   # = commit/pack/model/deploy_gate.json
 
 
 class _CausalGate:
@@ -259,10 +260,10 @@ class E17Components:
 class E76Pipeline:
     """E17 bundle 分别输出 lr/std_lr、mlp/std_mlp → E76 条件化半收缩门控 → EMA1200 + HMM300。"""
 
-    def __init__(self, key: str = "e76_gated"):
+    def __init__(self, gate: Path = E76_GATE):
         from .algorithms.postprocess import PostProcessor
         self.base = E17Components()
-        self.gate = _CausalGate(E76_GATE)
+        self.gate = _CausalGate(gate)
         self._post_cls = PostProcessor
         self.reset()
 
@@ -281,6 +282,8 @@ class E76Pipeline:
 
 register("e76_gated", label="E76 条件化半收缩门控（E17 LR/MLP 分量 + 因果门控 + EMA1200 + HMM300；门控在 57 人训练集内拟合）",
          bundle=E17_BUNDLE, factory=E76Pipeline, deps=(E76_GATE,))
+register("e76_deploy", label="提交版（commit/pack 同算法：E17 + E74 OOF 门控 deploy_gate.json + EMA1200 + HMM300）",
+         bundle=E17_BUNDLE, factory=lambda: E76Pipeline(DEPLOY_GATE), deps=(DEPLOY_GATE,))
 register("current", label="当前方案（E17 + 去趋势 + HMM）", bundle=E17_BUNDLE)
 register("e17_raw", label="E17 原始分数（无后处理）", bundle=E17_BUNDLE, post=False)
 register("demo_noncausal", label="【反例】E17 + 双向平滑（违规，合规检查演示）", factory=NonCausalDemo)

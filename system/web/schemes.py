@@ -20,6 +20,8 @@ _DESC = {
     "e17_raw": "同一 E17 bundle 的逐帧原始分数，不做跨帧平滑。",
     "e76_gated": "E17 的 LR/MLP 分量 + E76 因果门控（门控 LR 在 57 人训练集内拟合，"
                  "system/algorithms/fit_e76_gate.py），0.5×门控 + 0.5×(lr+mlp)，再 EMA1200 + HMM300。",
+    "e76_deploy": "提交版算法（与 commit/pack/code 一致）：E17 LR/MLP 分量 + E74 OOF 门控（deploy_gate.json），"
+                  "0.5×门控 + 0.5×(lr+mlp)，再 EMA1200 + HMM300。",
 }
 
 
@@ -27,7 +29,7 @@ def register(key: str, *, label: str, desc: str, field: str = "score", group: st
     REGISTRY[key] = {"key": key, "label": label, "desc": desc, "field": field, "group": group}
 
 
-for _k in ("current", "e17_raw", "e76_gated"):
+for _k in ("current", "e17_raw", "e76_gated", "e76_deploy"):
     register(_k, label=RN.RUNNABLE[_k]["label"], desc=_DESC[_k] + "被评估被试在训练集中，指标偏乐观。")
 
 
